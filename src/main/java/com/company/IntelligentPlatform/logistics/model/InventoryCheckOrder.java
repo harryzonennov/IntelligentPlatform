@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - InventoryCheckOrder (extends DocumentContent)
@@ -11,34 +13,65 @@ import jakarta.persistence.*;
 @Table(name = "InventoryCheckOrder", schema = "logistics")
 public class InventoryCheckOrder extends DocumentContent {
 
-    public static final int STATUS_INITIAL      = 1;
-    public static final int STATUS_SUBMITTED    = 2;
-    public static final int STATUS_APPROVED     = 3;
-    public static final int STATUS_PROCESSDONE  = 100;
-    public static final int STATUS_DELIVERYDONE = 200;
-    public static final int STATUS_REJECTED     = 305;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.InventoryCheckOrder;
 
-    @Column(name = "refWarehouseUUID")
-    private String refWarehouseUUID;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "refWarehouseAreaUUID")
-    private String refWarehouseAreaUUID;
+	public static final int STATUS_INPROCESS = 2;
 
-    @Column(name = "grossUpdateValue")
-    private double grossUpdateValue;
+	public static final int STATUS_SUBMITTED = 3;
 
-    @Column(name = "grossCheckResult")
-    private int grossCheckResult;
+	public static final int STATUS_APPROVED = 3;
 
-    public String getRefWarehouseUUID() { return refWarehouseUUID; }
-    public void setRefWarehouseUUID(String refWarehouseUUID) { this.refWarehouseUUID = refWarehouseUUID; }
+	public static final int STATUS_PROCESSDONE = 100;
 
-    public String getRefWarehouseAreaUUID() { return refWarehouseAreaUUID; }
-    public void setRefWarehouseAreaUUID(String refWarehouseAreaUUID) { this.refWarehouseAreaUUID = refWarehouseAreaUUID; }
+	public static final int STATUS_DELIVERYDONE = 200;
 
-    public double getGrossUpdateValue() { return grossUpdateValue; }
-    public void setGrossUpdateValue(double grossUpdateValue) { this.grossUpdateValue = grossUpdateValue; }
+	public static final int STATUS_REJECTED = 305;
 
-    public int getGrossCheckResult() { return grossCheckResult; }
-    public void setGrossCheckResult(int grossCheckResult) { this.grossCheckResult = grossCheckResult; }
+	@Column(name = "refWarehouseUUID")
+	protected String refWarehouseUUID;
+
+	@Column(name = "refWarehouseAreaUUID")
+	protected String refWarehouseAreaUUID;
+
+	@Column(name = "grossUpdateValue")
+	protected double grossUpdateValue;
+
+	@Column(name = "grossCheckResult")
+	protected int grossCheckResult;
+
+	public String getRefWarehouseUUID() {
+		return refWarehouseUUID;
+	}
+
+	public void setRefWarehouseUUID(String refWarehouseUUID) {
+		this.refWarehouseUUID = refWarehouseUUID;
+	}
+
+	public String getRefWarehouseAreaUUID() {
+		return refWarehouseAreaUUID;
+	}
+
+	public void setRefWarehouseAreaUUID(String refWarehouseAreaUUID) {
+		this.refWarehouseAreaUUID = refWarehouseAreaUUID;
+	}
+
+	public double getGrossUpdateValue() {
+		return grossUpdateValue;
+	}
+
+	public void setGrossUpdateValue(double grossUpdateValue) {
+		this.grossUpdateValue = grossUpdateValue;
+	}
+
+	public int getGrossCheckResult() {
+		return grossCheckResult;
+	}
+
+	public void setGrossCheckResult(int grossCheckResult) {
+		this.grossCheckResult = grossCheckResult;
+	}
+
 }

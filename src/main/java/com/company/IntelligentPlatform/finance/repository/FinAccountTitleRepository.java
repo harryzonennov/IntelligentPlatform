@@ -14,4 +14,5 @@ public interface FinAccountTitleRepository extends JpaRepository<FinAccountTitle
     List<FinAccountTitle> findByParentAccountTitleUUID(String parentAccountTitleUUID);
 
     List<FinAccountTitle> findByClient(String client);
+
 }

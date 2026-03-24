@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductionOrderRepository extends JpaRepository<ProductionOrder, String>, JpaSpecificationExecutor<ProductionOrder> {
     List<ProductionOrder> findByStatus(int status);
     List<ProductionOrder> findByRefMaterialSKUUUID(String refMaterialSKUUUID);
+
 }

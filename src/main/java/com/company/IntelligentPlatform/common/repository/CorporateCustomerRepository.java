@@ -16,4 +16,5 @@ public interface CorporateCustomerRepository extends JpaRepository<CorporateCust
     List<CorporateCustomer> findByClient(String client);
 
     List<CorporateCustomer> findByStatus(int status);
+
 }

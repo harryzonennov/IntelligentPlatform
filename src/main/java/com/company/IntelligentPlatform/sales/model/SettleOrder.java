@@ -15,31 +15,54 @@ import java.time.LocalDate;
 @Table(name = "SettleOrder", schema = "sales")
 public class SettleOrder extends DocumentContent {
 
-    public static final int STATUS_INIT               = 1;
-    public static final int STATUS_PARTICALLY_SETTLE  = 2;
-    public static final int STATUS_FULLY_SETTLE       = 3;
+	public static final int STATUS_INIT               = 1;
 
-    @Column(name = "refOrderUUID")
-    private String refOrderUUID;
+	public static final int STATUS_PARTICALLY_SETTLE  = 2;
 
-    @Column(name = "refOrderType")
-    private int refOrderType;
+	public static final int STATUS_FULLY_SETTLE       = 3;
 
-    @Column(name = "executionDate")
-    private LocalDate executionDate;
+	@Column(name = "refOrderUUID")
+	protected String refOrderUUID;
 
-    @Column(name = "curGrossSettlePrice")
-    private double curGrossSettlePrice;
+	@Column(name = "refOrderType")
+	protected int refOrderType;
 
-    public String getRefOrderUUID() { return refOrderUUID; }
-    public void setRefOrderUUID(String refOrderUUID) { this.refOrderUUID = refOrderUUID; }
+	@Column(name = "executionDate")
+	protected LocalDate executionDate;
 
-    public int getRefOrderType() { return refOrderType; }
-    public void setRefOrderType(int refOrderType) { this.refOrderType = refOrderType; }
+	@Column(name = "curGrossSettlePrice")
+	protected double curGrossSettlePrice;
 
-    public LocalDate getExecutionDate() { return executionDate; }
-    public void setExecutionDate(LocalDate executionDate) { this.executionDate = executionDate; }
+	public String getRefOrderUUID() {
+		return refOrderUUID;
+	}
 
-    public double getCurGrossSettlePrice() { return curGrossSettlePrice; }
-    public void setCurGrossSettlePrice(double curGrossSettlePrice) { this.curGrossSettlePrice = curGrossSettlePrice; }
+	public void setRefOrderUUID(String refOrderUUID) {
+		this.refOrderUUID = refOrderUUID;
+	}
+
+	public int getRefOrderType() {
+		return refOrderType;
+	}
+
+	public void setRefOrderType(int refOrderType) {
+		this.refOrderType = refOrderType;
+	}
+
+	public LocalDate getExecutionDate() {
+		return executionDate;
+	}
+
+	public void setExecutionDate(LocalDate executionDate) {
+		this.executionDate = executionDate;
+	}
+
+	public double getCurGrossSettlePrice() {
+		return curGrossSettlePrice;
+	}
+
+	public void setCurGrossSettlePrice(double curGrossSettlePrice) {
+		this.curGrossSettlePrice = curGrossSettlePrice;
+	}
+
 }

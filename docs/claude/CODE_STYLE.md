@@ -63,8 +63,9 @@ public ProductionPlan() {
 
 ### Getters and Setters
 - Each getter/setter pair is **always multi-line** — never collapsed to a single line.
-- The getter body is on its own line, indented with a tab.
-- The setter body is on its own line, indented with a tab.
+- The opening brace `{` is on the **same line** as the method declaration.
+- The method body is on a **new line**, indented with a tab.
+- The closing brace `}` is on its **own new line**, at the same indent level as the method declaration.
 - **One blank line between every getter/setter method** (including between the getter and its paired setter).
 - Getters use `return fieldName;` — NOT `return this.fieldName;` (no `this.` prefix in returns).
 - Setters use `this.fieldName = fieldName;`.
@@ -87,7 +88,7 @@ public void setAmount(double amount) {
     this.amount = amount;
 }
 
-// WRONG — collapsed single-line getters/setters
+// WRONG — collapsed single-line getters/setters (body and braces on same line as declaration)
 public String getRefMaterialSKUUUID() { return refMaterialSKUUUID; }
 public void setRefMaterialSKUUUID(String v) { this.refMaterialSKUUUID = v; }
 
@@ -111,6 +112,24 @@ public void setFinAccountMaterialItemList(
 }
 ```
 
+### Class closing brace
+- There must be **one blank line between the last method and the closing `}` of the class**.
+
+```java
+// CORRECT
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+}
+
+// WRONG — no blank line before closing brace
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+}
+```
+
 ### Indentation
 - **Tabs**, not spaces.
 - Class body: one tab.
@@ -125,6 +144,7 @@ public void setFinAccountMaterialItemList(
 - One blank line between each `@Autowired` field.
 - Public methods have one blank line between them.
 - Constants (METHOD_* strings) declared at the top of the class, each on its own line with a blank line between them.
+- All methods: opening brace `{` on the same line as the declaration; body on a new line indented with a tab; closing brace `}` on its own new line.
 
 ```java
 @Autowired

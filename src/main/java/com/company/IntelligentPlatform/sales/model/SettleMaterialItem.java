@@ -14,33 +14,59 @@ import jakarta.persistence.*;
 @Table(name = "SettleMaterialItem", schema = "sales")
 public class SettleMaterialItem extends ReferenceNode {
 
-    @Column(name = "settlePrice")
-    private double settlePrice;
+	@Column(name = "settlePrice")
+	protected double settlePrice;
 
-    @Column(name = "settleAmount")
-    private double settleAmount;
+	@Column(name = "settleAmount")
+	protected double settleAmount;
 
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    @Column(name = "refSourceMaterialItemUUID")
-    private String refSourceMaterialItemUUID;
+	@Column(name = "refSourceMaterialItemUUID")
+	protected String refSourceMaterialItemUUID;
 
-    @Column(name = "itemStatus")
-    private int itemStatus;
+	@Column(name = "itemStatus")
+	protected int itemStatus;
 
-    public double getSettlePrice() { return settlePrice; }
-    public void setSettlePrice(double settlePrice) { this.settlePrice = settlePrice; }
+	public double getSettlePrice() {
+		return settlePrice;
+	}
 
-    public double getSettleAmount() { return settleAmount; }
-    public void setSettleAmount(double settleAmount) { this.settleAmount = settleAmount; }
+	public void setSettlePrice(double settlePrice) {
+		this.settlePrice = settlePrice;
+	}
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	public double getSettleAmount() {
+		return settleAmount;
+	}
 
-    public String getRefSourceMaterialItemUUID() { return refSourceMaterialItemUUID; }
-    public void setRefSourceMaterialItemUUID(String refSourceMaterialItemUUID) { this.refSourceMaterialItemUUID = refSourceMaterialItemUUID; }
+	public void setSettleAmount(double settleAmount) {
+		this.settleAmount = settleAmount;
+	}
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	public String getRefSourceMaterialItemUUID() {
+		return refSourceMaterialItemUUID;
+	}
+
+	public void setRefSourceMaterialItemUUID(String refSourceMaterialItemUUID) {
+		this.refSourceMaterialItemUUID = refSourceMaterialItemUUID;
+	}
+
+	public int getItemStatus() {
+		return itemStatus;
+	}
+
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
 }

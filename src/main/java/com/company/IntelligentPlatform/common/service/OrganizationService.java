@@ -7,39 +7,42 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Replaces: ThorsteinPlatform OrganizationManager (ServiceEntityManager subclass)
  */
 @Service
 @Transactional
-public class OrganizationService {
+public class OrganizationService extends ServiceEntityService {
 
-    @Autowired
-    private OrganizationRepository organizationRepository;
+	@Autowired
+	protected OrganizationRepository organizationRepository;
 
-    public Organization create(Organization org) {
-        org.setUuid(UUID.randomUUID().toString());
-        return organizationRepository.save(org);
-    }
+	public Organization create(Organization org, String userUUID, String orgUUID) {
+		return insertSENode(organizationRepository, org, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public Organization getByUuid(String uuid) {
-        return organizationRepository.findById(uuid).orElse(null);
-    }
+	@Transactional(readOnly = true)
+	public Organization getByUuid(String uuid) {
+		return getEntityNodeByUUID(organizationRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<Organization> getByClient(String client) {
-        return organizationRepository.findByClient(client);
-    }
+	@Transactional(readOnly = true)
+	public List<Organization> getByClient(String client) {
+		return organizationRepository.findByClient(client);
+	}
 
-    @Transactional(readOnly = true)
-    public List<Organization> getChildren(String parentOrganizationUUID) {
-        return organizationRepository.findByParentOrganizationUUID(parentOrganizationUUID);
-    }
+	@Transactional(readOnly = true)
+	public List<Organization> getChildren(String parentOrganizationUUID) {
+		return organizationRepository.findByParentOrganizationUUID(parentOrganizationUUID);
+	}
 
-    public Organization update(Organization org) {
-        return organizationRepository.save(org);
-    }
+	public Organization update(Organization org, String userUUID, String orgUUID) {
+		return updateSENode(organizationRepository, org, userUUID, orgUUID);
+	}
+
+	public void delete(String uuid) {
+		deleteSENode(organizationRepository, uuid);
+	}
+
 }

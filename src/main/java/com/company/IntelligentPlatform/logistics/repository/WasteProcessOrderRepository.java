@@ -12,4 +12,5 @@ public interface WasteProcessOrderRepository extends JpaRepository<WasteProcessO
 
     List<WasteProcessOrder> findByClient(String client);
     List<WasteProcessOrder> findByClientAndStatus(String client, int status);
+
 }

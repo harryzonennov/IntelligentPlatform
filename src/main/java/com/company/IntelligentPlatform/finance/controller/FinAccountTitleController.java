@@ -16,26 +16,27 @@ import java.util.List;
 @RequestMapping("/api/v1/finance/finAccountTitles")
 public class FinAccountTitleController {
 
-    @Autowired
-    private FinAccountService finAccountService;
+	@Autowired
+	protected FinAccountService finAccountService;
 
-    @GetMapping("/{uuid}")
-    public ApiResponse<FinAccountTitle> get(@PathVariable String uuid) {
-        return ApiResponse.success(finAccountService.getTitleByUuid(uuid));
-    }
+	@GetMapping("/{uuid}")
+	public ApiResponse<FinAccountTitle> get(@PathVariable String uuid) {
+		return ApiResponse.success(finAccountService.getTitleByUuid(uuid));
+	}
 
-    @GetMapping
-    public ApiResponse<List<FinAccountTitle>> getByClient(@RequestParam String client) {
-        return ApiResponse.success(finAccountService.getTitlesByClient(client));
-    }
+	@GetMapping
+	public ApiResponse<List<FinAccountTitle>> getByClient(@RequestParam String client) {
+		return ApiResponse.success(finAccountService.getTitlesByClient(client));
+	}
 
-    @GetMapping("/{uuid}/children")
-    public ApiResponse<List<FinAccountTitle>> getChildren(@PathVariable String uuid) {
-        return ApiResponse.success(finAccountService.getTitleChildren(uuid));
-    }
+	@GetMapping("/{uuid}/children")
+	public ApiResponse<List<FinAccountTitle>> getChildren(@PathVariable String uuid) {
+		return ApiResponse.success(finAccountService.getTitleChildren(uuid));
+	}
 
-    @PostMapping
-    public ApiResponse<FinAccountTitle> create(@RequestBody FinAccountTitle title) {
-        return ApiResponse.success(finAccountService.createTitle(title));
-    }
+	@PostMapping
+	public ApiResponse<FinAccountTitle> create(@RequestBody FinAccountTitle title) {
+		return ApiResponse.success(finAccountService.createTitle(title, "", ""));
+	}
+
 }

@@ -1,0 +1,167 @@
+package com.company.IntelligentPlatform.production.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import com.company.IntelligentPlatform.production.dto.ProdJobOrderUIModel;
+import com.company.IntelligentPlatform.production.service.ProcessRouteOrderManager;
+import com.company.IntelligentPlatform.production.service.ProdJobOrderManager;
+import com.company.IntelligentPlatform.production.service.ProdProcessManager;
+import com.company.IntelligentPlatform.production.service.ProdWorkCenterManager;
+import com.company.IntelligentPlatform.production.service.ProductionOrderManager;
+import com.company.IntelligentPlatform.production.model.ProdJobMaterialItem;
+import com.company.IntelligentPlatform.production.model.ProdJobOrder;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.common.controller.LogonActionController;
+import com.company.IntelligentPlatform.common.controller.SEEditorController;
+import com.company.IntelligentPlatform.common.service.LockObjectManager;
+import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
+import com.company.IntelligentPlatform.common.service.LogonInfoException;
+import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
+import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.common.model.LogonUser;
+import com.company.IntelligentPlatform.common.model.Organization;
+import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+
+@Scope("session")
+@Controller(value = "prodJobOrderEditorController")
+@RequestMapping(value = "/prodJobOrder")
+public class ProdJobOrderEditorController extends SEEditorController {
+
+	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_PROD_WORKCENTER;
+
+	@Autowired
+	protected ServiceDropdownListHelper serviceDropdownListHelper;
+
+	@Autowired
+	protected LogonActionController logonActionController;
+
+	@Autowired
+	protected LockObjectManager lockObjectManager;
+
+	@Autowired
+	protected ServiceBasicUtilityController serviceBasicUtilityController;
+
+	@Autowired
+	protected ProdJobOrderManager prodJobOrderManager;
+
+	@Autowired
+	protected ProductionOrderManager productionOrderManager;
+
+	@Autowired
+	protected ProcessRouteOrderManager processRouteOrderManager;
+
+	@Autowired
+	protected ProdProcessManager prodProcessManager;
+
+	@Autowired
+	protected MaterialStockKeepUnitManager materialStockKeepUnitManager;
+
+	@Autowired
+	protected ProdWorkCenterManager prodWorkCenterManager;
+
+	@Autowired
+	protected ProdJobMaterialItemListController prodJobMaterialItemListController;
+
+
+	protected String getPreWarnMsg(String key, Map<String, String> preWarnMap) {
+		return preWarnMap.get(key);
+	}
+
+	protected Map<String, String> getPreWarnMap() throws IOException {
+		Locale locale = Locale.getDefault();
+		String path = ProdJobOrderUIModel.class.getResource("").getPath();
+		String resFileName = ProdJobOrder.SENAME;
+		Map<String, String> preWarnMap = serviceDropdownListHelper
+				.getDropDownMap(path, resFileName, locale);
+		return preWarnMap;
+	}
+
+	protected void saveInternal(ProdJobOrderUIModel prodJobOrderUIModel)
+			throws ServiceEntityConfigureException, LogonInfoException {
+		String baseUUID = prodJobOrderUIModel.getUuid();
+		ProdJobOrder prodJobOrder = (ProdJobOrder) getServiceEntityNodeFromBuffer(
+				ProdJobOrder.NODENAME, baseUUID);
+		prodJobOrderManager.convUIToProdJobOrder(prodJobOrder,
+				prodJobOrderUIModel);		
+		LogonUser logonUser = logonActionController.getLogonUser();
+		if (logonUser == null) {
+			throw new LogonInfoException(LogonInfoException.TYPE_NO_LOGON_USER);
+		}
+		Organization organization = logonActionController
+				.getOrganizationByUser(logonUser.getUuid());
+		this.save(baseUUID, prodJobOrderManager, logonUser, organization);
+	}
+
+	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
+	public @ResponseBody String checkDuplicateID(
+			@RequestBody SimpleSEJSONRequest simpleRequest) {
+		LogonUser logonUser = logonActionController.getLogonUser();
+		simpleRequest.setClient(logonUser.getClient());
+		return super.checkDuplicateIDCore(simpleRequest, prodJobOrderManager);
+	}
+
+	/**
+	 * pre-check if the edit object list could be locked, whether the EX-lock
+	 * exist or not.
+	 */
+	@RequestMapping(value = "/preLock", produces = "text/html;charset=UTF-8")
+	public @ResponseBody String preLock(String uuid) {
+		try {
+			LogonUser logonUser = logonActionController.getLogonUser();
+			if (logonUser == null) {
+				throw new LogonInfoException(
+						LogonInfoException.TYPE_NO_LOGON_USER);
+			}
+			ProdJobOrder prodJobOrder = (ProdJobOrder) prodJobOrderManager
+					.getEntityNodeByKey(uuid,
+							IServiceEntityNodeFieldConstant.UUID,
+							ProdJobOrder.NODENAME, logonUser.getClient(), null);
+			String baseUUID = prodJobOrder.getUuid();
+			List<ServiceEntityNode> lockSEList = new ArrayList<ServiceEntityNode>();
+			lockSEList.add(prodJobOrder);
+			ProdJobMaterialItem prodJobMaterialItem = (ProdJobMaterialItem) prodJobOrderManager
+					.getEntityNodeByKey(prodJobOrder.getUuid(),
+							IServiceEntityNodeFieldConstant.ROOTNODEUUID,
+							ProdJobMaterialItem.NODENAME,
+							prodJobOrder.getClient(), null);
+			lockSEList.add(prodJobMaterialItem);
+			List<ServiceEntityNode> lockResult = lockObjectManager
+					.preLockServiceEntityList(lockSEList, logonUser.getUuid());
+			return lockObjectManager.genJSONLockCheckResult(lockResult,
+					prodJobOrder.getName(), prodJobOrder.getId(), baseUUID);
+
+		} catch (ServiceEntityConfigureException e) {
+			return lockObjectManager.genJSONLockCheckOtherIssue(e.getMessage());
+		} catch (LogonInfoException e) {
+			return lockObjectManager.genJSONLockCheckOtherIssue(e
+					.getErrorMessage());
+		}
+	}
+
+
+	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
+	public @ResponseBody String exitEditor(
+			@RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
+		return exitEditorCore(serviceExitLockJSONModule);
+	}
+
+}

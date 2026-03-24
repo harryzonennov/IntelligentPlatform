@@ -17,35 +17,36 @@ import java.util.List;
 @RequestMapping("/api/v1/platform/corporateCustomers")
 public class CorporateCustomerController {
 
-    @Autowired
-    private CorporateCustomerService corporateCustomerService;
+	@Autowired
+	protected CorporateCustomerService corporateCustomerService;
 
-    @GetMapping("/{uuid}")
-    public ApiResponse<CorporateCustomer> get(@PathVariable String uuid) {
-        return ApiResponse.success(corporateCustomerService.getByUuid(uuid));
-    }
+	@GetMapping("/{uuid}")
+	public ApiResponse<CorporateCustomer> get(@PathVariable String uuid) {
+		return ApiResponse.success(corporateCustomerService.getByUuid(uuid));
+	}
 
-    @GetMapping
-    public ApiResponse<List<CorporateCustomer>> getByClient(@RequestParam String client) {
-        return ApiResponse.success(corporateCustomerService.getByClient(client));
-    }
+	@GetMapping
+	public ApiResponse<List<CorporateCustomer>> getByClient(@RequestParam String client) {
+		return ApiResponse.success(corporateCustomerService.getByClient(client));
+	}
 
-    @PostMapping
-    public ApiResponse<CorporateCustomer> create(@RequestBody CorporateCustomerDto dto) {
-        CorporateCustomer customer = dto.toEntity();
-        return ApiResponse.success(corporateCustomerService.create(customer));
-    }
+	@PostMapping
+	public ApiResponse<CorporateCustomer> create(@RequestBody CorporateCustomerDto dto) {
+		CorporateCustomer customer = dto.toEntity();
+		return ApiResponse.success(corporateCustomerService.create(customer, "", ""));
+	}
 
-    @PutMapping("/{uuid}")
-    public ApiResponse<CorporateCustomer> update(@PathVariable String uuid, @RequestBody CorporateCustomerDto dto) {
-        CorporateCustomer customer = corporateCustomerService.getByUuid(uuid);
-        dto.applyTo(customer);
-        return ApiResponse.success(corporateCustomerService.update(customer));
-    }
+	@PutMapping("/{uuid}")
+	public ApiResponse<CorporateCustomer> update(@PathVariable String uuid, @RequestBody CorporateCustomerDto dto) {
+		CorporateCustomer customer = corporateCustomerService.getByUuid(uuid);
+		dto.applyTo(customer);
+		return ApiResponse.success(corporateCustomerService.update(customer, "", ""));
+	}
 
-    @PutMapping("/{uuid}/status/{status}")
-    public ApiResponse<Void> setStatus(@PathVariable String uuid, @PathVariable int status) {
-        corporateCustomerService.setStatus(uuid, status);
-        return ApiResponse.success(null);
-    }
+	@PutMapping("/{uuid}/status/{status}")
+	public ApiResponse<Void> setStatus(@PathVariable String uuid, @PathVariable int status) {
+		corporateCustomerService.setStatus(uuid, status, "", "");
+		return ApiResponse.success(null);
+	}
+
 }

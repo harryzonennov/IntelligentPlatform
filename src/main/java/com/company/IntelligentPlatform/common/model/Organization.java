@@ -12,70 +12,129 @@ import jakarta.persistence.*;
 @Table(name = "Organization", schema = "platform")
 public class Organization extends CorporateAccount {
 
-    public static final int ORGFUNCTION_HOSTCOMPANY  = 1;
-    public static final int ORGFUNCTION_SUBSIDIARY   = 2;
-    public static final int ORGFUNCTION_SALES_DEPT   = 3;
-    public static final int ORGFUNCTION_PROD_DEPT    = 4;
-    public static final int ORGFUNCTION_DEV_DEPT     = 5;
-    public static final int ORGFUNCTION_TRANSSITE    = 6;
-    public static final int ORGFUNCTION_SUPPORT_DEPT = 7;
-    public static final int ORGFUNCTION_PURCHASE     = 8;
-    public static final int ORGFUNCTION_FINANCE      = 9;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.Organization;
 
-    public static final int ORGAN_TYPE_TRANSSITE = 5;
+	public static final int ORGFUNCTION_HOSTCOMPANY = 1;
 
-    @Column(name = "parentOrganizationUUID")
-    private String parentOrganizationUUID;
+	public static final int ORGFUNCTION_SUBSIDIARY = 2;
 
-    @Column(name = "organType")
-    private int organType;
+	public static final int ORGFUNCTION_SALES_DEPT = 3;
 
-    @Column(name = "organLevel")
-    private int organLevel;
+	public static final int ORGFUNCTION_PROD_DEPT = 4;
 
-    @Column(name = "organizationFunction")
-    private int organizationFunction;
+	public static final int ORGFUNCTION_DEV_DEPT = 5;
 
-    @Column(name = "refOrganizationFunction")
-    private String refOrganizationFunction;
+	public static final int ORGFUNCTION_TRANSSITE = 6;
 
-    @Column(name = "mainContactUUID")
-    private String mainContactUUID;
+	public static final int ORGFUNCTION_SUPPORT_DEPT = 7;
 
-    // Cross-module refs — UUID only, no FK
-    @Column(name = "refCashierUUID")
-    private String refCashierUUID;
+	public static final int ORGFUNCTION_PURCHASE = 8;
 
-    @Column(name = "refAccountantUUID")
-    private String refAccountantUUID;
+	public static final int ORGFUNCTION_FINANCE = 9;
 
-    @Column(name = "refFinOrgUUID")
-    private String refFinOrgUUID;
+	public static final int ORGAN_TYPE_TRANSSITE = 5;
 
-    public String getParentOrganizationUUID() { return parentOrganizationUUID; }
-    public void setParentOrganizationUUID(String parentOrganizationUUID) { this.parentOrganizationUUID = parentOrganizationUUID; }
+	public static final String PARENT_ORG_UUID = "parentOrganizationUUID";
 
-    public int getOrganType() { return organType; }
-    public void setOrganType(int organType) { this.organType = organType; }
+	@Column(name = "parentOrganizationUUID")
+	protected String parentOrganizationUUID;
 
-    public int getOrganLevel() { return organLevel; }
-    public void setOrganLevel(int organLevel) { this.organLevel = organLevel; }
+	@Column(name = "organType")
+	protected int organType;
 
-    public int getOrganizationFunction() { return organizationFunction; }
-    public void setOrganizationFunction(int organizationFunction) { this.organizationFunction = organizationFunction; }
+	@Column(name = "organLevel")
+	protected int organLevel;
 
-    public String getRefOrganizationFunction() { return refOrganizationFunction; }
-    public void setRefOrganizationFunction(String refOrganizationFunction) { this.refOrganizationFunction = refOrganizationFunction; }
+	@Column(name = "organizationFunction")
+	protected int organizationFunction;
 
-    public String getMainContactUUID() { return mainContactUUID; }
-    public void setMainContactUUID(String mainContactUUID) { this.mainContactUUID = mainContactUUID; }
+	@Column(name = "refOrganizationFunction")
+	protected String refOrganizationFunction;
 
-    public String getRefCashierUUID() { return refCashierUUID; }
-    public void setRefCashierUUID(String refCashierUUID) { this.refCashierUUID = refCashierUUID; }
+	@Column(name = "mainContactUUID")
+	protected String mainContactUUID;
 
-    public String getRefAccountantUUID() { return refAccountantUUID; }
-    public void setRefAccountantUUID(String refAccountantUUID) { this.refAccountantUUID = refAccountantUUID; }
+	// Cross-module refs — UUID only, no FK
+	@Column(name = "refCashierUUID")
+	protected String refCashierUUID;
 
-    public String getRefFinOrgUUID() { return refFinOrgUUID; }
-    public void setRefFinOrgUUID(String refFinOrgUUID) { this.refFinOrgUUID = refFinOrgUUID; }
+	@Column(name = "refAccountantUUID")
+	protected String refAccountantUUID;
+
+	@Column(name = "refFinOrgUUID")
+	protected String refFinOrgUUID;
+
+	public String getParentOrganizationUUID() {
+		return parentOrganizationUUID;
+	}
+
+	public void setParentOrganizationUUID(String parentOrganizationUUID) {
+		this.parentOrganizationUUID = parentOrganizationUUID;
+	}
+
+	public int getOrganType() {
+		return organType;
+	}
+
+	public void setOrganType(int organType) {
+		this.organType = organType;
+	}
+
+	public int getOrganLevel() {
+		return organLevel;
+	}
+
+	public void setOrganLevel(int organLevel) {
+		this.organLevel = organLevel;
+	}
+
+	public int getOrganizationFunction() {
+		return organizationFunction;
+	}
+
+	public void setOrganizationFunction(int organizationFunction) {
+		this.organizationFunction = organizationFunction;
+	}
+
+	public String getRefOrganizationFunction() {
+		return refOrganizationFunction;
+	}
+
+	public void setRefOrganizationFunction(String refOrganizationFunction) {
+		this.refOrganizationFunction = refOrganizationFunction;
+	}
+
+	public String getMainContactUUID() {
+		return mainContactUUID;
+	}
+
+	public void setMainContactUUID(String mainContactUUID) {
+		this.mainContactUUID = mainContactUUID;
+	}
+
+	public String getRefCashierUUID() {
+		return refCashierUUID;
+	}
+
+	public void setRefCashierUUID(String refCashierUUID) {
+		this.refCashierUUID = refCashierUUID;
+	}
+
+	public String getRefAccountantUUID() {
+		return refAccountantUUID;
+	}
+
+	public void setRefAccountantUUID(String refAccountantUUID) {
+		this.refAccountantUUID = refAccountantUUID;
+	}
+
+	public String getRefFinOrgUUID() {
+		return refFinOrgUUID;
+	}
+
+	public void setRefFinOrgUUID(String refFinOrgUUID) {
+		this.refFinOrgUUID = refFinOrgUUID;
+	}
+
 }

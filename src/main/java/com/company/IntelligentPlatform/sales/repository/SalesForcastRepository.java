@@ -12,4 +12,5 @@ public interface SalesForcastRepository extends JpaRepository<SalesForcast, Stri
 
     List<SalesForcast> findByClient(String client);
     List<SalesForcast> findByClientAndStatus(String client, int status);
+
 }

@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.sales.model;
 
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinSalesDistribution - SalesReturnOrder (extends DocumentContent)
@@ -15,54 +17,102 @@ import jakarta.persistence.*;
 @Table(name = "SalesReturnOrder", schema = "sales")
 public class SalesReturnOrder extends DocumentContent {
 
-    public static final int STATUS_INITIAL        = 1;
-    public static final int STATUS_SUBMITTED      = 2;
-    public static final int STATUS_APPROVED       = 3;
-    public static final int STATUS_INDELIVERY     = 4;
-    public static final int STATUS_DELIVERY_DONE  = 5;
-    public static final int STATUS_PROCESS_DONE   = 6;
-    public static final int STATUS_REJECT_APPROVAL = 305;
-    public static final int STATUS_ARCHIVED       = 400;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.SalesReturnOrder;
 
-    @Column(name = "grossPrice")
-    private double grossPrice;
+	public static final int STATUS_INITIAL        = 1;
 
-    @Column(name = "grossPriceDisplay")
-    private double grossPriceDisplay;
+	public static final int STATUS_SUBMITTED      = 2;
 
-    @Column(name = "refInWarehouseUUID")
-    private String refInWarehouseUUID;
+	public static final int STATUS_APPROVED       = 3;
 
-    @Column(name = "refInboundDeliveryUUID")
-    private String refInboundDeliveryUUID;
+	public static final int STATUS_INDELIVERY     = 4;
 
-    @Column(name = "barcode")
-    private String barcode;
+	public static final int STATUS_DELIVERY_DONE  = 5;
 
-    @Column(name = "taxRate")
-    private double taxRate;
+	public static final int STATUS_DELIVERYDONE   = 5;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	public static final int STATUS_PROCESS_DONE   = 6;
 
-    public double getGrossPrice() { return grossPrice; }
-    public void setGrossPrice(double grossPrice) { this.grossPrice = grossPrice; }
+	public static final int STATUS_REJECT_APPROVAL = 305;
 
-    public double getGrossPriceDisplay() { return grossPriceDisplay; }
-    public void setGrossPriceDisplay(double grossPriceDisplay) { this.grossPriceDisplay = grossPriceDisplay; }
+	public static final int STATUS_ARCHIVED       = 400;
 
-    public String getRefInWarehouseUUID() { return refInWarehouseUUID; }
-    public void setRefInWarehouseUUID(String refInWarehouseUUID) { this.refInWarehouseUUID = refInWarehouseUUID; }
+	@Column(name = "grossPrice")
+	protected double grossPrice;
 
-    public String getRefInboundDeliveryUUID() { return refInboundDeliveryUUID; }
-    public void setRefInboundDeliveryUUID(String refInboundDeliveryUUID) { this.refInboundDeliveryUUID = refInboundDeliveryUUID; }
+	@Column(name = "grossPriceDisplay")
+	protected double grossPriceDisplay;
 
-    public String getBarcode() { return barcode; }
-    public void setBarcode(String barcode) { this.barcode = barcode; }
+	@Column(name = "refInWarehouseUUID")
+	protected String refInWarehouseUUID;
 
-    public double getTaxRate() { return taxRate; }
-    public void setTaxRate(double taxRate) { this.taxRate = taxRate; }
+	@Column(name = "refInboundDeliveryUUID")
+	protected String refInboundDeliveryUUID;
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	@Column(name = "barcode")
+	protected String barcode;
+
+	@Column(name = "taxRate")
+	protected double taxRate;
+
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
+
+	public double getGrossPrice() {
+		return grossPrice;
+	}
+
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+
+	public double getGrossPriceDisplay() {
+		return grossPriceDisplay;
+	}
+
+	public void setGrossPriceDisplay(double grossPriceDisplay) {
+		this.grossPriceDisplay = grossPriceDisplay;
+	}
+
+	public String getRefInWarehouseUUID() {
+		return refInWarehouseUUID;
+	}
+
+	public void setRefInWarehouseUUID(String refInWarehouseUUID) {
+		this.refInWarehouseUUID = refInWarehouseUUID;
+	}
+
+	public String getRefInboundDeliveryUUID() {
+		return refInboundDeliveryUUID;
+	}
+
+	public void setRefInboundDeliveryUUID(String refInboundDeliveryUUID) {
+		this.refInboundDeliveryUUID = refInboundDeliveryUUID;
+	}
+
+	public String getBarcode() {
+		return barcode;
+	}
+
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	public double getTaxRate() {
+		return taxRate;
+	}
+
+	public void setTaxRate(double taxRate) {
+		this.taxRate = taxRate;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
 }

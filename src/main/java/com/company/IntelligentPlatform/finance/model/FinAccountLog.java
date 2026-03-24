@@ -3,6 +3,7 @@ package com.company.IntelligentPlatform.finance.model;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccountLog.java
@@ -13,33 +14,62 @@ import java.time.LocalDateTime;
 @Table(name = "FinAccountLog", schema = "finance")
 public class FinAccountLog extends ServiceEntityNode {
 
-    @Column(name = "financeDate")
-    private LocalDateTime financeDate;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.FinAccountLog;
 
-    @Column(name = "previousAmount")
-    private double previousAmount;
+	@Column(name = "financeDate")
+	protected LocalDateTime financeDate;
 
-    @Column(name = "currentAmount")
-    private double currentAmount;
+	@Column(name = "previousAmount")
+	protected double previousAmount;
 
-    @Column(name = "actionCode")
-    private int actionCode;
+	@Column(name = "currentAmount")
+	protected double currentAmount;
 
-    @Column(name = "auditStatus")
-    private int auditStatus;
+	@Column(name = "actionCode")
+	protected int actionCode;
 
-    public LocalDateTime getFinanceDate() { return financeDate; }
-    public void setFinanceDate(LocalDateTime financeDate) { this.financeDate = financeDate; }
+	@Column(name = "auditStatus")
+	protected int auditStatus;
 
-    public double getPreviousAmount() { return previousAmount; }
-    public void setPreviousAmount(double previousAmount) { this.previousAmount = previousAmount; }
+	public LocalDateTime getFinanceDate() {
+		return financeDate;
+	}
 
-    public double getCurrentAmount() { return currentAmount; }
-    public void setCurrentAmount(double currentAmount) { this.currentAmount = currentAmount; }
+	public void setFinanceDate(LocalDateTime financeDate) {
+		this.financeDate = financeDate;
+	}
 
-    public int getActionCode() { return actionCode; }
-    public void setActionCode(int actionCode) { this.actionCode = actionCode; }
+	public double getPreviousAmount() {
+		return previousAmount;
+	}
 
-    public int getAuditStatus() { return auditStatus; }
-    public void setAuditStatus(int auditStatus) { this.auditStatus = auditStatus; }
+	public void setPreviousAmount(double previousAmount) {
+		this.previousAmount = previousAmount;
+	}
+
+	public double getCurrentAmount() {
+		return currentAmount;
+	}
+
+	public void setCurrentAmount(double currentAmount) {
+		this.currentAmount = currentAmount;
+	}
+
+	public int getActionCode() {
+		return actionCode;
+	}
+
+	public void setActionCode(int actionCode) {
+		this.actionCode = actionCode;
+	}
+
+	public int getAuditStatus() {
+		return auditStatus;
+	}
+
+	public void setAuditStatus(int auditStatus) {
+		this.auditStatus = auditStatus;
+	}
+
 }

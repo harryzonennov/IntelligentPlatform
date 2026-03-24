@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.finance.model;
 
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccountMaterialItem.java
@@ -12,4 +14,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "FinAccountMaterialItem", schema = "finance")
 public class FinAccountMaterialItem extends DocMatItemNode {
+
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.FinAccountMaterialItem;
+
 }

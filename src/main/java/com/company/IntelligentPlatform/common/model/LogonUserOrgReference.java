@@ -13,17 +13,34 @@ import jakarta.persistence.*;
 @Table(name = "LogonUserOrgReference", schema = "platform")
 public class LogonUserOrgReference extends ReferenceNode {
 
-    public static final int ORGROLE_NOR_USER        = 1;
-    public static final int ORGROLE_BOARD_CHAIRMAN  = 2;
-    public static final int ORGROLE_ORG_MAN         = 3;
-    public static final int ORGROLE_ORG_VICEMAN     = 4;
-    public static final int ORGROLE_FIN_ACC         = 5;
-    public static final int ORGROLE_FIN_CASH        = 6;
-    public static final int ORGROLE_QE_INST         = 7;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.LogonUserOrgReference;
 
-    @Column(name = "workRole")
-    private int workRole;
+	public static final int ORGROLE_NOR_USER = 1;
 
-    public int getWorkRole() { return workRole; }
-    public void setWorkRole(int workRole) { this.workRole = workRole; }
+	public static final int ORGROLE_BOARD_CHAIRMAN = 2;
+
+	public static final int ORGROLE_ORG_MAN = 3;
+
+	public static final int ORGROLE_ORG_VICEMAN = 4;
+
+	public static final int ORGROLE_FIN_ACC = 5;
+
+	public static final int ORGROLE_FIN_CASH = 6;
+
+	public static final int ORGROLE_QE_INST = 7;
+
+	public static final String FEILD_WORKROLE = "workRole";
+
+	@Column(name = "workRole")
+	protected int workRole;
+
+	public int getWorkRole() {
+		return workRole;
+	}
+
+	public void setWorkRole(int workRole) {
+		this.workRole = workRole;
+	}
+
 }

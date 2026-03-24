@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.logistics.model;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - PurchaseContract (extends DocumentContent)
@@ -15,63 +17,116 @@ import java.time.LocalDate;
 @Table(name = "PurchaseContract", schema = "logistics")
 public class PurchaseContract extends DocumentContent {
 
-    public static final int STATUS_INITIAL      = 1;
-    public static final int STATUS_SUBMITTED    = 2;
-    public static final int STATUS_APPROVED     = 3;
-    public static final int STATUS_DELIVERYDONE = 200;
-    public static final int STATUS_PROCESSDONE  = 100;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.PurchaseContract;
 
-    @Column(name = "grossPrice")
-    private double grossPrice;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "grossPriceDisplay")
-    private double grossPriceDisplay;
+	public static final int STATUS_SUBMITTED = 2;
 
-    @Column(name = "contractDetails", length = 4000)
-    private String contractDetails;
+	public static final int STATUS_APPROVED = 3;
 
-    @Column(name = "signDate")
-    private LocalDate signDate;
+	public static final int STATUS_DELIVERYDONE = 200;
 
-    @Column(name = "requireExecutionDate")
-    private LocalDate requireExecutionDate;
+	public static final int STATUS_PROCESSDONE = 100;
 
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	@Column(name = "grossPrice")
+	protected double grossPrice;
 
-    @Column(name = "refFinAccountUUID")
-    private String refFinAccountUUID;
+	@Column(name = "grossPriceDisplay")
+	protected double grossPriceDisplay;
 
-    @Column(name = "purchaseBatchNumber")
-    private String purchaseBatchNumber;
+	@Column(name = "contractDetails", length = 4000)
+	protected String contractDetails;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	@Column(name = "signDate")
+	protected LocalDate signDate;
 
-    public double getGrossPrice() { return grossPrice; }
-    public void setGrossPrice(double grossPrice) { this.grossPrice = grossPrice; }
+	@Column(name = "requireExecutionDate")
+	protected LocalDate requireExecutionDate;
 
-    public double getGrossPriceDisplay() { return grossPriceDisplay; }
-    public void setGrossPriceDisplay(double grossPriceDisplay) { this.grossPriceDisplay = grossPriceDisplay; }
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    public String getContractDetails() { return contractDetails; }
-    public void setContractDetails(String contractDetails) { this.contractDetails = contractDetails; }
+	@Column(name = "refFinAccountUUID")
+	protected String refFinAccountUUID;
 
-    public LocalDate getSignDate() { return signDate; }
-    public void setSignDate(LocalDate signDate) { this.signDate = signDate; }
+	@Column(name = "purchaseBatchNumber")
+	protected String purchaseBatchNumber;
 
-    public LocalDate getRequireExecutionDate() { return requireExecutionDate; }
-    public void setRequireExecutionDate(LocalDate requireExecutionDate) { this.requireExecutionDate = requireExecutionDate; }
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	public double getGrossPrice() {
+		return grossPrice;
+	}
 
-    public String getRefFinAccountUUID() { return refFinAccountUUID; }
-    public void setRefFinAccountUUID(String refFinAccountUUID) { this.refFinAccountUUID = refFinAccountUUID; }
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
 
-    public String getPurchaseBatchNumber() { return purchaseBatchNumber; }
-    public void setPurchaseBatchNumber(String purchaseBatchNumber) { this.purchaseBatchNumber = purchaseBatchNumber; }
+	public double getGrossPriceDisplay() {
+		return grossPriceDisplay;
+	}
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	public void setGrossPriceDisplay(double grossPriceDisplay) {
+		this.grossPriceDisplay = grossPriceDisplay;
+	}
+
+	public String getContractDetails() {
+		return contractDetails;
+	}
+
+	public void setContractDetails(String contractDetails) {
+		this.contractDetails = contractDetails;
+	}
+
+	public LocalDate getSignDate() {
+		return signDate;
+	}
+
+	public void setSignDate(LocalDate signDate) {
+		this.signDate = signDate;
+	}
+
+	public LocalDate getRequireExecutionDate() {
+		return requireExecutionDate;
+	}
+
+	public void setRequireExecutionDate(LocalDate requireExecutionDate) {
+		this.requireExecutionDate = requireExecutionDate;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	public String getRefFinAccountUUID() {
+		return refFinAccountUUID;
+	}
+
+	public void setRefFinAccountUUID(String refFinAccountUUID) {
+		this.refFinAccountUUID = refFinAccountUUID;
+	}
+
+	public String getPurchaseBatchNumber() {
+		return purchaseBatchNumber;
+	}
+
+	public void setPurchaseBatchNumber(String purchaseBatchNumber) {
+		this.purchaseBatchNumber = purchaseBatchNumber;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
 }

@@ -18,4 +18,5 @@ public interface FinAccountRepository extends JpaRepository<FinAccount, String>,
     List<FinAccount> findByClientAndStatus(String client, int status);
 
     List<FinAccount> findByAccountTitleUUID(String accountTitleUUID);
+
 }

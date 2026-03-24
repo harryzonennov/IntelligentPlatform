@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - PurchaseOrder (extends DocumentContent)
@@ -15,39 +17,72 @@ import jakarta.persistence.*;
 @Table(name = "PurchaseOrder", schema = "logistics")
 public class PurchaseOrder extends DocumentContent {
 
-    public static final int STATUS_INITIAL   = 1;
-    public static final int STATUS_INSETTLE  = 2;
-    public static final int STATUS_INDELIVERY = 3;
-    public static final int STATUS_FINISHED  = 4;
-    public static final int STATUS_CANCELED  = 5;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.PurchaseOrder;
 
-    @Column(name = "grossNetPrice")
-    private double grossNetPrice;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "refInWarehouseUUID")
-    private String refInWarehouseUUID;
+	public static final int STATUS_INSETTLE = 2;
 
-    @Column(name = "refInboundDeliveryUUID")
-    private String refInboundDeliveryUUID;
+	public static final int STATUS_INDELIVERY = 3;
 
-    @Column(name = "barcode")
-    private String barcode;
+	public static final int STATUS_FINISHED = 4;
 
-    @Column(name = "taxRate")
-    private double taxRate;
+	public static final int STATUS_CANCELED = 5;
 
-    public double getGrossNetPrice() { return grossNetPrice; }
-    public void setGrossNetPrice(double grossNetPrice) { this.grossNetPrice = grossNetPrice; }
+	@Column(name = "grossNetPrice")
+	protected double grossNetPrice;
 
-    public String getRefInWarehouseUUID() { return refInWarehouseUUID; }
-    public void setRefInWarehouseUUID(String refInWarehouseUUID) { this.refInWarehouseUUID = refInWarehouseUUID; }
+	@Column(name = "refInWarehouseUUID")
+	protected String refInWarehouseUUID;
 
-    public String getRefInboundDeliveryUUID() { return refInboundDeliveryUUID; }
-    public void setRefInboundDeliveryUUID(String refInboundDeliveryUUID) { this.refInboundDeliveryUUID = refInboundDeliveryUUID; }
+	@Column(name = "refInboundDeliveryUUID")
+	protected String refInboundDeliveryUUID;
 
-    public String getBarcode() { return barcode; }
-    public void setBarcode(String barcode) { this.barcode = barcode; }
+	@Column(name = "barcode")
+	protected String barcode;
 
-    public double getTaxRate() { return taxRate; }
-    public void setTaxRate(double taxRate) { this.taxRate = taxRate; }
+	@Column(name = "taxRate")
+	protected double taxRate;
+
+	public double getGrossNetPrice() {
+		return grossNetPrice;
+	}
+
+	public void setGrossNetPrice(double grossNetPrice) {
+		this.grossNetPrice = grossNetPrice;
+	}
+
+	public String getRefInWarehouseUUID() {
+		return refInWarehouseUUID;
+	}
+
+	public void setRefInWarehouseUUID(String refInWarehouseUUID) {
+		this.refInWarehouseUUID = refInWarehouseUUID;
+	}
+
+	public String getRefInboundDeliveryUUID() {
+		return refInboundDeliveryUUID;
+	}
+
+	public void setRefInboundDeliveryUUID(String refInboundDeliveryUUID) {
+		this.refInboundDeliveryUUID = refInboundDeliveryUUID;
+	}
+
+	public String getBarcode() {
+		return barcode;
+	}
+
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	public double getTaxRate() {
+		return taxRate;
+	}
+
+	public void setTaxRate(double taxRate) {
+		this.taxRate = taxRate;
+	}
+
 }

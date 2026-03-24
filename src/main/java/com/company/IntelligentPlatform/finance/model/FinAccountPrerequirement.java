@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.finance.model;
 
 import com.company.IntelligentPlatform.common.model.ReferenceNode;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccountPrerequirement.java
@@ -12,11 +14,20 @@ import jakarta.persistence.*;
 @Table(name = "FinAccountPrerequirement", schema = "finance")
 public class FinAccountPrerequirement extends ReferenceNode {
 
-    public static final int RQTYPE_UNLOCK_RECORD = 1;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.FinAccountPrerequirement;
 
-    @Column(name = "requireType")
-    private int requireType;
+	public static final int RQTYPE_UNLOCK_RECORD = 1;
 
-    public int getRequireType() { return requireType; }
-    public void setRequireType(int requireType) { this.requireType = requireType; }
+	@Column(name = "requireType")
+	protected int requireType;
+
+	public int getRequireType() {
+		return requireType;
+	}
+
+	public void setRequireType(int requireType) {
+		this.requireType = requireType;
+	}
+
 }

@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.logistics.model;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - Inquiry (extends DocumentContent)
@@ -12,44 +14,86 @@ import java.time.LocalDate;
 @Table(name = "Inquiry", schema = "logistics")
 public class Inquiry extends DocumentContent {
 
-    public static final int STATUS_INIT      = 1;
-    public static final int STATUS_INPROCESS = 2;
-    public static final int STATUS_SUCCESS   = 3;
-    public static final int STATUS_FAILURE   = 4;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.Inquiry;
 
-    @Column(name = "grossPrice")
-    private double grossPrice;
+	public static final int STATUS_INIT = 1;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "grossPriceDisplay")
-    private double grossPriceDisplay;
+	public static final int STATUS_SUBMITTED = 2;
 
-    @Column(name = "contractDetails", length = 800)
-    private String contractDetails;
+	public static final int STATUS_APPROVED = 3;
 
-    @Column(name = "signDate")
-    private LocalDate signDate;
+	public static final int STATUS_REJECT_APPROVAL = 4;
 
-    @Column(name = "requireExecutionDate")
-    private LocalDate requireExecutionDate;
+	public static final int STATUS_INPROCESS = 5;
 
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	public static final int STATUS_DELIVERYDONE = 100;
 
-    public double getGrossPrice() { return grossPrice; }
-    public void setGrossPrice(double grossPrice) { this.grossPrice = grossPrice; }
+	@Column(name = "grossPrice")
+	protected double grossPrice;
 
-    public double getGrossPriceDisplay() { return grossPriceDisplay; }
-    public void setGrossPriceDisplay(double grossPriceDisplay) { this.grossPriceDisplay = grossPriceDisplay; }
+	@Column(name = "grossPriceDisplay")
+	protected double grossPriceDisplay;
 
-    public String getContractDetails() { return contractDetails; }
-    public void setContractDetails(String contractDetails) { this.contractDetails = contractDetails; }
+	@Column(name = "contractDetails", length = 800)
+	protected String contractDetails;
 
-    public LocalDate getSignDate() { return signDate; }
-    public void setSignDate(LocalDate signDate) { this.signDate = signDate; }
+	@Column(name = "signDate")
+	protected LocalDate signDate;
 
-    public LocalDate getRequireExecutionDate() { return requireExecutionDate; }
-    public void setRequireExecutionDate(LocalDate requireExecutionDate) { this.requireExecutionDate = requireExecutionDate; }
+	@Column(name = "requireExecutionDate")
+	protected LocalDate requireExecutionDate;
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	@Column(name = "currencyCode")
+	protected String currencyCode;
+
+	public double getGrossPrice() {
+		return grossPrice;
+	}
+
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+
+	public double getGrossPriceDisplay() {
+		return grossPriceDisplay;
+	}
+
+	public void setGrossPriceDisplay(double grossPriceDisplay) {
+		this.grossPriceDisplay = grossPriceDisplay;
+	}
+
+	public String getContractDetails() {
+		return contractDetails;
+	}
+
+	public void setContractDetails(String contractDetails) {
+		this.contractDetails = contractDetails;
+	}
+
+	public LocalDate getSignDate() {
+		return signDate;
+	}
+
+	public void setSignDate(LocalDate signDate) {
+		this.signDate = signDate;
+	}
+
+	public LocalDate getRequireExecutionDate() {
+		return requireExecutionDate;
+	}
+
+	public void setRequireExecutionDate(LocalDate requireExecutionDate) {
+		this.requireExecutionDate = requireExecutionDate;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
 }

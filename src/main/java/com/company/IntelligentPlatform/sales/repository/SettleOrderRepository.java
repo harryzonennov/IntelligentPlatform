@@ -11,4 +11,5 @@ public interface SettleOrderRepository extends JpaRepository<SettleOrder, String
     List<SettleOrder> findByClient(String client);
     List<SettleOrder> findByRefOrderUUID(String refOrderUUID);
     List<SettleOrder> findByClientAndStatus(String client, int status);
+
 }

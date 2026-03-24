@@ -12,4 +12,5 @@ public interface SalesContractRepository extends JpaRepository<SalesContract, St
 
     List<SalesContract> findByClient(String client);
     List<SalesContract> findByClientAndStatus(String client, int status);
+
 }

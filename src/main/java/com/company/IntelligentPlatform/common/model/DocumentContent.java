@@ -21,71 +21,141 @@ import jakarta.persistence.*;
 @MappedSuperclass
 public abstract class DocumentContent extends ServiceEntityNode {
 
-    @Column(name = "status")
-    private int status;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.DocumentContent;
 
-    @Column(name = "priorityCode")
-    private int priorityCode;
+	// Document status constants
+	public static final int STATUS_INITIAL = 1;
+	public static final int STATUS_SUBMITTED = 2;
+	public static final int STATUS_APPROVED = 3;
+	public static final int STATUS_ACTIVE = 4;
+	public static final int STATUS_REVOKE_SUBMIT = 5;
+	public static final int STATUS_REJECT_APPROVAL = 6;
+	public static final int STATUS_CANCELED = 7;
+	public static final int STATUS_DELETED = 8;
+	public static final int STATUS_ARCHIVED = 980;
 
-    @Column(name = "documentCategoryType")
-    private int documentCategoryType;
+	@Column(name = "status")
+	protected int status;
 
-    // Document chain — previous document links
-    @Column(name = "prevProfDocType")
-    private int prevProfDocType;
+	@Column(name = "priorityCode")
+	protected int priorityCode;
 
-    @Column(name = "prevProfDocUUID")
-    private String prevProfDocUUID;
+	@Column(name = "documentCategoryType")
+	protected int documentCategoryType;
 
-    @Column(name = "prevDocType")
-    private int prevDocType;
+	// Document chain — previous document links
+	@Column(name = "prevProfDocType")
+	protected int prevProfDocType;
 
-    @Column(name = "prevDocUUID")
-    private String prevDocUUID;
+	@Column(name = "prevProfDocUUID")
+	protected String prevProfDocUUID;
 
-    // Document chain — next document links
-    @Column(name = "nextProfDocType")
-    private int nextProfDocType;
+	@Column(name = "prevDocType")
+	protected int prevDocType;
 
-    @Column(name = "nextProfDocUUID")
-    private String nextProfDocUUID;
+	@Column(name = "prevDocUUID")
+	protected String prevDocUUID;
 
-    @Column(name = "nextDocType")
-    private int nextDocType;
+	// Document chain — next document links
+	@Column(name = "nextProfDocType")
+	protected int nextProfDocType;
 
-    @Column(name = "nextDocUUID")
-    private String nextDocUUID;
+	@Column(name = "nextProfDocUUID")
+	protected String nextProfDocUUID;
 
-    public int getStatus() { return status; }
-    public void setStatus(int status) { this.status = status; }
+	@Column(name = "nextDocType")
+	protected int nextDocType;
 
-    public int getPriorityCode() { return priorityCode; }
-    public void setPriorityCode(int priorityCode) { this.priorityCode = priorityCode; }
+	@Column(name = "nextDocUUID")
+	protected String nextDocUUID;
 
-    public int getDocumentCategoryType() { return documentCategoryType; }
-    public void setDocumentCategoryType(int documentCategoryType) { this.documentCategoryType = documentCategoryType; }
+	public int getStatus() {
+		return status;
+	}
 
-    public int getPrevProfDocType() { return prevProfDocType; }
-    public void setPrevProfDocType(int prevProfDocType) { this.prevProfDocType = prevProfDocType; }
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
-    public String getPrevProfDocUUID() { return prevProfDocUUID; }
-    public void setPrevProfDocUUID(String prevProfDocUUID) { this.prevProfDocUUID = prevProfDocUUID; }
+	public int getPriorityCode() {
+		return priorityCode;
+	}
 
-    public int getPrevDocType() { return prevDocType; }
-    public void setPrevDocType(int prevDocType) { this.prevDocType = prevDocType; }
+	public void setPriorityCode(int priorityCode) {
+		this.priorityCode = priorityCode;
+	}
 
-    public String getPrevDocUUID() { return prevDocUUID; }
-    public void setPrevDocUUID(String prevDocUUID) { this.prevDocUUID = prevDocUUID; }
+	public int getDocumentCategoryType() {
+		return documentCategoryType;
+	}
 
-    public int getNextProfDocType() { return nextProfDocType; }
-    public void setNextProfDocType(int nextProfDocType) { this.nextProfDocType = nextProfDocType; }
+	public void setDocumentCategoryType(int documentCategoryType) {
+		this.documentCategoryType = documentCategoryType;
+	}
 
-    public String getNextProfDocUUID() { return nextProfDocUUID; }
-    public void setNextProfDocUUID(String nextProfDocUUID) { this.nextProfDocUUID = nextProfDocUUID; }
+	public int getPrevProfDocType() {
+		return prevProfDocType;
+	}
 
-    public int getNextDocType() { return nextDocType; }
-    public void setNextDocType(int nextDocType) { this.nextDocType = nextDocType; }
+	public void setPrevProfDocType(int prevProfDocType) {
+		this.prevProfDocType = prevProfDocType;
+	}
 
-    public String getNextDocUUID() { return nextDocUUID; }
-    public void setNextDocUUID(String nextDocUUID) { this.nextDocUUID = nextDocUUID; }
+	public String getPrevProfDocUUID() {
+		return prevProfDocUUID;
+	}
+
+	public void setPrevProfDocUUID(String prevProfDocUUID) {
+		this.prevProfDocUUID = prevProfDocUUID;
+	}
+
+	public int getPrevDocType() {
+		return prevDocType;
+	}
+
+	public void setPrevDocType(int prevDocType) {
+		this.prevDocType = prevDocType;
+	}
+
+	public String getPrevDocUUID() {
+		return prevDocUUID;
+	}
+
+	public void setPrevDocUUID(String prevDocUUID) {
+		this.prevDocUUID = prevDocUUID;
+	}
+
+	public int getNextProfDocType() {
+		return nextProfDocType;
+	}
+
+	public void setNextProfDocType(int nextProfDocType) {
+		this.nextProfDocType = nextProfDocType;
+	}
+
+	public String getNextProfDocUUID() {
+		return nextProfDocUUID;
+	}
+
+	public void setNextProfDocUUID(String nextProfDocUUID) {
+		this.nextProfDocUUID = nextProfDocUUID;
+	}
+
+	public int getNextDocType() {
+		return nextDocType;
+	}
+
+	public void setNextDocType(int nextDocType) {
+		this.nextDocType = nextDocType;
+	}
+
+	public String getNextDocUUID() {
+		return nextDocUUID;
+	}
+
+	public void setNextDocUUID(String nextDocUUID) {
+		this.nextDocUUID = nextDocUUID;
+	}
+
 }

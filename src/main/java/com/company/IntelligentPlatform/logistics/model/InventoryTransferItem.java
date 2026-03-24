@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - InventoryTransferItem (extends DeliveryItem)
@@ -10,45 +12,84 @@ import jakarta.persistence.*;
 @Table(name = "InventoryTransferItem", schema = "logistics")
 public class InventoryTransferItem extends DeliveryItem {
 
-    @Column(name = "outboundFee")
-    private double outboundFee;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.InventoryTransferItem;
 
-    @Column(name = "storageFee")
-    private double storageFee;
+	@Column(name = "outboundFee")
+	protected double outboundFee;
 
-    @Column(name = "refOutboundItemUUID")
-    private String refOutboundItemUUID;
+	@Column(name = "storageFee")
+	protected double storageFee;
 
-    @Column(name = "refInboundItemUUID")
-    private String refInboundItemUUID;
+	@Column(name = "refOutboundItemUUID")
+	protected String refOutboundItemUUID;
 
-    @Column(name = "refStoreItemUUID")
-    private String refStoreItemUUID;
+	@Column(name = "refInboundItemUUID")
+	protected String refInboundItemUUID;
 
-    @Column(name = "itemStatus")
-    private int itemStatus;
+	@Column(name = "refStoreItemUUID")
+	protected String refStoreItemUUID;
 
-    @Column(name = "storeDay")
-    private int storeDay;
+	@Column(name = "itemStatus")
+	protected int itemStatus;
 
-    public double getOutboundFee() { return outboundFee; }
-    public void setOutboundFee(double outboundFee) { this.outboundFee = outboundFee; }
+	@Column(name = "storeDay")
+	protected int storeDay;
 
-    public double getStorageFee() { return storageFee; }
-    public void setStorageFee(double storageFee) { this.storageFee = storageFee; }
+	public double getOutboundFee() {
+		return outboundFee;
+	}
 
-    public String getRefOutboundItemUUID() { return refOutboundItemUUID; }
-    public void setRefOutboundItemUUID(String refOutboundItemUUID) { this.refOutboundItemUUID = refOutboundItemUUID; }
+	public void setOutboundFee(double outboundFee) {
+		this.outboundFee = outboundFee;
+	}
 
-    public String getRefInboundItemUUID() { return refInboundItemUUID; }
-    public void setRefInboundItemUUID(String refInboundItemUUID) { this.refInboundItemUUID = refInboundItemUUID; }
+	public double getStorageFee() {
+		return storageFee;
+	}
 
-    public String getRefStoreItemUUID() { return refStoreItemUUID; }
-    public void setRefStoreItemUUID(String refStoreItemUUID) { this.refStoreItemUUID = refStoreItemUUID; }
+	public void setStorageFee(double storageFee) {
+		this.storageFee = storageFee;
+	}
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	public String getRefOutboundItemUUID() {
+		return refOutboundItemUUID;
+	}
 
-    public int getStoreDay() { return storeDay; }
-    public void setStoreDay(int storeDay) { this.storeDay = storeDay; }
+	public void setRefOutboundItemUUID(String refOutboundItemUUID) {
+		this.refOutboundItemUUID = refOutboundItemUUID;
+	}
+
+	public String getRefInboundItemUUID() {
+		return refInboundItemUUID;
+	}
+
+	public void setRefInboundItemUUID(String refInboundItemUUID) {
+		this.refInboundItemUUID = refInboundItemUUID;
+	}
+
+	public String getRefStoreItemUUID() {
+		return refStoreItemUUID;
+	}
+
+	public void setRefStoreItemUUID(String refStoreItemUUID) {
+		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
+	public int getItemStatus() {
+		return itemStatus;
+	}
+
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
+	public int getStoreDay() {
+		return storeDay;
+	}
+
+	public void setStoreDay(int storeDay) {
+		this.storeDay = storeDay;
+	}
+
 }

@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.sales.model;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinSalesDistribution - SalesContract (extends DocumentContent)
@@ -14,67 +16,124 @@ import java.time.LocalDate;
 @Table(name = "SalesContract", schema = "sales")
 public class SalesContract extends DocumentContent {
 
-    public static final int STATUS_INITIAL        = 1;
-    public static final int STATUS_SUBMITTED      = 2;
-    public static final int STATUS_APPROVED       = 3;
-    public static final int STATUS_INPLAN         = 4;
-    public static final int STATUS_DELIVERYDONE   = 5;
-    public static final int STATUS_PROCESSDONE    = 6;
-    public static final int STATUS_CANCEL         = 7;
-    public static final int STATUS_REJECT_APPROVAL = 305;
-    public static final int STATUS_ARCHIVED       = 400;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.SalesContract;
 
-    @Column(name = "grossPrice")
-    private double grossPrice;
+	public static final int STATUS_INITIAL        = 1;
 
-    @Column(name = "grossPriceDisplay")
-    private double grossPriceDisplay;
+	public static final int STATUS_SUBMITTED      = 2;
 
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	public static final int STATUS_APPROVED       = 3;
 
-    @Column(name = "contractDetails", length = 2000)
-    private String contractDetails;
+	public static final int STATUS_INPLAN         = 4;
 
-    @Column(name = "signDate")
-    private LocalDate signDate;
+	public static final int STATUS_DELIVERYDONE   = 5;
 
-    @Column(name = "requireExecutionDate")
-    private LocalDate requireExecutionDate;
+	public static final int STATUS_PROCESSDONE    = 6;
 
-    @Column(name = "planExecutionDate")
-    private LocalDate planExecutionDate;
+	public static final int STATUS_CANCEL         = 7;
 
-    @Column(name = "refFinAccountUUID")
-    private String refFinAccountUUID;
+	public static final int STATUS_REJECT_APPROVAL = 305;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	public static final int STATUS_ARCHIVED       = 400;
 
-    public double getGrossPrice() { return grossPrice; }
-    public void setGrossPrice(double grossPrice) { this.grossPrice = grossPrice; }
+	@Column(name = "grossPrice")
+	protected double grossPrice;
 
-    public double getGrossPriceDisplay() { return grossPriceDisplay; }
-    public void setGrossPriceDisplay(double grossPriceDisplay) { this.grossPriceDisplay = grossPriceDisplay; }
+	@Column(name = "grossPriceDisplay")
+	protected double grossPriceDisplay;
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    public String getContractDetails() { return contractDetails; }
-    public void setContractDetails(String contractDetails) { this.contractDetails = contractDetails; }
+	@Column(name = "contractDetails", length = 2000)
+	protected String contractDetails;
 
-    public LocalDate getSignDate() { return signDate; }
-    public void setSignDate(LocalDate signDate) { this.signDate = signDate; }
+	@Column(name = "signDate")
+	protected LocalDate signDate;
 
-    public LocalDate getRequireExecutionDate() { return requireExecutionDate; }
-    public void setRequireExecutionDate(LocalDate requireExecutionDate) { this.requireExecutionDate = requireExecutionDate; }
+	@Column(name = "requireExecutionDate")
+	protected LocalDate requireExecutionDate;
 
-    public LocalDate getPlanExecutionDate() { return planExecutionDate; }
-    public void setPlanExecutionDate(LocalDate planExecutionDate) { this.planExecutionDate = planExecutionDate; }
+	@Column(name = "planExecutionDate")
+	protected LocalDate planExecutionDate;
 
-    public String getRefFinAccountUUID() { return refFinAccountUUID; }
-    public void setRefFinAccountUUID(String refFinAccountUUID) { this.refFinAccountUUID = refFinAccountUUID; }
+	@Column(name = "refFinAccountUUID")
+	protected String refFinAccountUUID;
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
+
+	public double getGrossPrice() {
+		return grossPrice;
+	}
+
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+
+	public double getGrossPriceDisplay() {
+		return grossPriceDisplay;
+	}
+
+	public void setGrossPriceDisplay(double grossPriceDisplay) {
+		this.grossPriceDisplay = grossPriceDisplay;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	public String getContractDetails() {
+		return contractDetails;
+	}
+
+	public void setContractDetails(String contractDetails) {
+		this.contractDetails = contractDetails;
+	}
+
+	public LocalDate getSignDate() {
+		return signDate;
+	}
+
+	public void setSignDate(LocalDate signDate) {
+		this.signDate = signDate;
+	}
+
+	public LocalDate getRequireExecutionDate() {
+		return requireExecutionDate;
+	}
+
+	public void setRequireExecutionDate(LocalDate requireExecutionDate) {
+		this.requireExecutionDate = requireExecutionDate;
+	}
+
+	public LocalDate getPlanExecutionDate() {
+		return planExecutionDate;
+	}
+
+	public void setPlanExecutionDate(LocalDate planExecutionDate) {
+		this.planExecutionDate = planExecutionDate;
+	}
+
+	public String getRefFinAccountUUID() {
+		return refFinAccountUUID;
+	}
+
+	public void setRefFinAccountUUID(String refFinAccountUUID) {
+		this.refFinAccountUUID = refFinAccountUUID;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
 }

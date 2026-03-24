@@ -12,4 +12,5 @@ public interface InventoryCheckOrderRepository extends JpaRepository<InventoryCh
 
     List<InventoryCheckOrder> findByClient(String client);
     List<InventoryCheckOrder> findByClientAndStatus(String client, int status);
+
 }

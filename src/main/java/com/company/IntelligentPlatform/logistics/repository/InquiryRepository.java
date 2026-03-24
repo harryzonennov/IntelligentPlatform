@@ -12,4 +12,5 @@ public interface InquiryRepository extends JpaRepository<Inquiry, String>,
 
     List<Inquiry> findByClient(String client);
     List<Inquiry> findByClientAndStatus(String client, int status);
+
 }

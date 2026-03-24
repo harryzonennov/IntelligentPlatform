@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ProdWorkCenterRepository extends JpaRepository<ProdWorkCenter, String> {
     List<ProdWorkCenter> findByParentNodeUUID(String parentNodeUUID);
+
 }

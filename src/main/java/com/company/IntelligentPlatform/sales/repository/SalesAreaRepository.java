@@ -11,4 +11,5 @@ public interface SalesAreaRepository extends JpaRepository<SalesArea, String> {
     List<SalesArea> findByClient(String client);
     List<SalesArea> findByParentAreaUUID(String parentAreaUUID);
     List<SalesArea> findByClientAndLevel(String client, int level);
+
 }

@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.logistics.model;
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - InquiryMaterialItem (extends DocMatItemNode)
@@ -12,45 +14,84 @@ import java.time.LocalDateTime;
 @Table(name = "InquiryMaterialItem", schema = "logistics")
 public class InquiryMaterialItem extends DocMatItemNode {
 
-    @Column(name = "shippingPoint")
-    private String shippingPoint;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.InquiryMaterialItem;
 
-    @Column(name = "requireShippingTime")
-    private LocalDateTime requireShippingTime;
+	@Column(name = "shippingPoint")
+	protected String shippingPoint;
 
-    @Column(name = "itemStatus")
-    private int itemStatus;
+	@Column(name = "requireShippingTime")
+	protected LocalDateTime requireShippingTime;
 
-    @Column(name = "refUnitName")
-    private String refUnitName;
+	@Column(name = "itemStatus")
+	protected int itemStatus;
 
-    @Column(name = "firstUnitPrice")
-    private double firstUnitPrice;
+	@Column(name = "refUnitName")
+	protected String refUnitName;
 
-    @Column(name = "firstItemPrice")
-    private double firstItemPrice;
+	@Column(name = "firstUnitPrice")
+	protected double firstUnitPrice;
 
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	@Column(name = "firstItemPrice")
+	protected double firstItemPrice;
 
-    public String getShippingPoint() { return shippingPoint; }
-    public void setShippingPoint(String shippingPoint) { this.shippingPoint = shippingPoint; }
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    public LocalDateTime getRequireShippingTime() { return requireShippingTime; }
-    public void setRequireShippingTime(LocalDateTime requireShippingTime) { this.requireShippingTime = requireShippingTime; }
+	public String getShippingPoint() {
+		return shippingPoint;
+	}
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	public void setShippingPoint(String shippingPoint) {
+		this.shippingPoint = shippingPoint;
+	}
 
-    public String getRefUnitName() { return refUnitName; }
-    public void setRefUnitName(String refUnitName) { this.refUnitName = refUnitName; }
+	public LocalDateTime getRequireShippingTime() {
+		return requireShippingTime;
+	}
 
-    public double getFirstUnitPrice() { return firstUnitPrice; }
-    public void setFirstUnitPrice(double firstUnitPrice) { this.firstUnitPrice = firstUnitPrice; }
+	public void setRequireShippingTime(LocalDateTime requireShippingTime) {
+		this.requireShippingTime = requireShippingTime;
+	}
 
-    public double getFirstItemPrice() { return firstItemPrice; }
-    public void setFirstItemPrice(double firstItemPrice) { this.firstItemPrice = firstItemPrice; }
+	public int getItemStatus() {
+		return itemStatus;
+	}
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
+	public String getRefUnitName() {
+		return refUnitName;
+	}
+
+	public void setRefUnitName(String refUnitName) {
+		this.refUnitName = refUnitName;
+	}
+
+	public double getFirstUnitPrice() {
+		return firstUnitPrice;
+	}
+
+	public void setFirstUnitPrice(double firstUnitPrice) {
+		this.firstUnitPrice = firstUnitPrice;
+	}
+
+	public double getFirstItemPrice() {
+		return firstItemPrice;
+	}
+
+	public void setFirstItemPrice(double firstItemPrice) {
+		this.firstItemPrice = firstItemPrice;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
 }

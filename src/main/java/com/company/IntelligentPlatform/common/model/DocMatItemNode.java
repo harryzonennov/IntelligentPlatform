@@ -13,199 +13,368 @@ import jakarta.persistence.*;
 @MappedSuperclass
 public abstract class DocMatItemNode extends ReferenceNode {
 
-    // Reservation fields
-    @Column(name = "reservedMatItemUUID")
-    protected String reservedMatItemUUID;
+	// Reservation fields
+	@Column(name = "reservedMatItemUUID")
+	protected String reservedMatItemUUID;
 
-    @Column(name = "reservedDocType")
-    protected int reservedDocType;
+	@Column(name = "reservedDocType")
+	protected int reservedDocType;
 
-    @Column(name = "reservedDocMatItemArrayUUID")
-    protected String reservedDocMatItemArrayUUID;
+	@Column(name = "reservedDocMatItemArrayUUID")
+	protected String reservedDocMatItemArrayUUID;
 
-    @Column(name = "reserveTargetMatItemUUID")
-    protected String reserveTargetMatItemUUID;
+	@Column(name = "reserveTargetMatItemUUID")
+	protected String reserveTargetMatItemUUID;
 
-    @Column(name = "reserveTargetDocType")
-    protected int reserveTargetDocType;
+	@Column(name = "reserveTargetDocType")
+	protected int reserveTargetDocType;
 
-    @Column(name = "itemStatus")
-    protected int itemStatus;
+	@Column(name = "itemStatus")
+	protected int itemStatus;
 
-    @Column(name = "reserveTargetDocMatItemArrayUUID")
-    protected String reserveTargetDocMatItemArrayUUID;
+	@Column(name = "reserveTargetDocMatItemArrayUUID")
+	protected String reserveTargetDocMatItemArrayUUID;
 
-    // Document chain item links (item-level, not document-level)
-    @Column(name = "prevDocType")
-    protected int prevDocType;
+	// Document chain item links (item-level, not document-level)
+	@Column(name = "prevDocType")
+	protected int prevDocType;
 
-    @Column(name = "prevDocMatItemUUID")
-    protected String prevDocMatItemUUID;
+	@Column(name = "prevDocMatItemUUID")
+	protected String prevDocMatItemUUID;
 
-    @Column(name = "prevDocMatItemArrayUUID")
-    protected String prevDocMatItemArrayUUID;
+	@Column(name = "prevDocMatItemArrayUUID")
+	protected String prevDocMatItemArrayUUID;
 
-    @Column(name = "nextDocType")
-    protected int nextDocType;
+	@Column(name = "nextDocType")
+	protected int nextDocType;
 
-    @Column(name = "nextDocMatItemUUID")
-    protected String nextDocMatItemUUID;
+	@Column(name = "nextDocMatItemUUID")
+	protected String nextDocMatItemUUID;
 
-    @Column(name = "nextDocMatItemArrayUUID")
-    protected String nextDocMatItemArrayUUID;
+	@Column(name = "nextDocMatItemArrayUUID")
+	protected String nextDocMatItemArrayUUID;
 
-    // Material and price fields
-    @Column(name = "amount")
-    protected double amount;
+	// Material and price fields
+	@Column(name = "amount")
+	protected double amount;
 
-    @Column(name = "refUnitUUID")
-    protected String refUnitUUID;
+	@Column(name = "refUnitUUID")
+	protected String refUnitUUID;
 
-    @Column(name = "refMaterialSKUUUID")
-    protected String refMaterialSKUUUID;
+	@Column(name = "refMaterialSKUUUID")
+	protected String refMaterialSKUUUID;
 
-    @Column(name = "itemPrice")
-    protected double itemPrice;
+	@Column(name = "itemPrice")
+	protected double itemPrice;
 
-    @Column(name = "unitPrice")
-    protected double unitPrice;
+	@Column(name = "unitPrice")
+	protected double unitPrice;
 
-    @Column(name = "itemPriceDisplay")
-    protected double itemPriceDisplay;
+	@Column(name = "itemPriceDisplay")
+	protected double itemPriceDisplay;
 
-    @Column(name = "unitPriceDisplay")
-    protected double unitPriceDisplay;
+	@Column(name = "unitPriceDisplay")
+	protected double unitPriceDisplay;
 
-    @Column(name = "currencyCode")
-    protected String currencyCode;
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    @Column(name = "refFinMatItemUUID")
-    protected String refFinMatItemUUID;
+	@Column(name = "refFinMatItemUUID")
+	protected String refFinMatItemUUID;
 
-    @Column(name = "productionBatchNumber")
-    protected String productionBatchNumber;
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
 
-    @Column(name = "purchaseBatchNumber")
-    protected String purchaseBatchNumber;
+	@Column(name = "purchaseBatchNumber")
+	protected String purchaseBatchNumber;
 
-    @Column(name = "materialStatus")
-    protected int materialStatus;
+	@Column(name = "materialStatus")
+	protected int materialStatus;
 
-    @Column(name = "homeDocumentType")
-    protected int homeDocumentType;
+	@Column(name = "homeDocumentType")
+	protected int homeDocumentType;
 
-    // Professional document chain links (item-level)
-    @Column(name = "prevProfDocType")
-    protected int prevProfDocType;
+	// Professional document chain links (item-level)
+	@Column(name = "prevProfDocType")
+	protected int prevProfDocType;
 
-    @Column(name = "prevProfDocMatItemUUID")
-    protected String prevProfDocMatItemUUID;
+	@Column(name = "prevProfDocMatItemUUID")
+	protected String prevProfDocMatItemUUID;
 
-    @Column(name = "prevProfDocMatItemArrayUUID")
-    protected String prevProfDocMatItemArrayUUID;
+	@Column(name = "prevProfDocMatItemArrayUUID")
+	protected String prevProfDocMatItemArrayUUID;
 
-    @Column(name = "nextProfDocType")
-    protected int nextProfDocType;
+	@Column(name = "nextProfDocType")
+	protected int nextProfDocType;
 
-    @Column(name = "nextProfDocMatItemUUID")
-    protected String nextProfDocMatItemUUID;
+	@Column(name = "nextProfDocMatItemUUID")
+	protected String nextProfDocMatItemUUID;
 
-    @Column(name = "nextProfDocMatItemArrayUUID")
-    protected String nextProfDocMatItemArrayUUID;
+	@Column(name = "nextProfDocMatItemArrayUUID")
+	protected String nextProfDocMatItemArrayUUID;
 
-    public String getReservedMatItemUUID() { return reservedMatItemUUID; }
-    public void setReservedMatItemUUID(String reservedMatItemUUID) { this.reservedMatItemUUID = reservedMatItemUUID; }
+	public String getReservedMatItemUUID() {
+		return reservedMatItemUUID;
+	}
 
-    public int getReservedDocType() { return reservedDocType; }
-    public void setReservedDocType(int reservedDocType) { this.reservedDocType = reservedDocType; }
+	public void setReservedMatItemUUID(String reservedMatItemUUID) {
+		this.reservedMatItemUUID = reservedMatItemUUID;
+	}
 
-    public String getReservedDocMatItemArrayUUID() { return reservedDocMatItemArrayUUID; }
-    public void setReservedDocMatItemArrayUUID(String reservedDocMatItemArrayUUID) { this.reservedDocMatItemArrayUUID = reservedDocMatItemArrayUUID; }
+	public int getReservedDocType() {
+		return reservedDocType;
+	}
 
-    public String getReserveTargetMatItemUUID() { return reserveTargetMatItemUUID; }
-    public void setReserveTargetMatItemUUID(String reserveTargetMatItemUUID) { this.reserveTargetMatItemUUID = reserveTargetMatItemUUID; }
+	public void setReservedDocType(int reservedDocType) {
+		this.reservedDocType = reservedDocType;
+	}
 
-    public int getReserveTargetDocType() { return reserveTargetDocType; }
-    public void setReserveTargetDocType(int reserveTargetDocType) { this.reserveTargetDocType = reserveTargetDocType; }
+	public String getReservedDocMatItemArrayUUID() {
+		return reservedDocMatItemArrayUUID;
+	}
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	public void setReservedDocMatItemArrayUUID(String reservedDocMatItemArrayUUID) {
+		this.reservedDocMatItemArrayUUID = reservedDocMatItemArrayUUID;
+	}
 
-    public String getReserveTargetDocMatItemArrayUUID() { return reserveTargetDocMatItemArrayUUID; }
-    public void setReserveTargetDocMatItemArrayUUID(String v) { this.reserveTargetDocMatItemArrayUUID = v; }
+	public String getReserveTargetMatItemUUID() {
+		return reserveTargetMatItemUUID;
+	}
 
-    public int getPrevDocType() { return prevDocType; }
-    public void setPrevDocType(int prevDocType) { this.prevDocType = prevDocType; }
+	public void setReserveTargetMatItemUUID(String reserveTargetMatItemUUID) {
+		this.reserveTargetMatItemUUID = reserveTargetMatItemUUID;
+	}
 
-    public String getPrevDocMatItemUUID() { return prevDocMatItemUUID; }
-    public void setPrevDocMatItemUUID(String prevDocMatItemUUID) { this.prevDocMatItemUUID = prevDocMatItemUUID; }
+	public int getReserveTargetDocType() {
+		return reserveTargetDocType;
+	}
 
-    public String getPrevDocMatItemArrayUUID() { return prevDocMatItemArrayUUID; }
-    public void setPrevDocMatItemArrayUUID(String prevDocMatItemArrayUUID) { this.prevDocMatItemArrayUUID = prevDocMatItemArrayUUID; }
+	public void setReserveTargetDocType(int reserveTargetDocType) {
+		this.reserveTargetDocType = reserveTargetDocType;
+	}
 
-    public int getNextDocType() { return nextDocType; }
-    public void setNextDocType(int nextDocType) { this.nextDocType = nextDocType; }
+	public int getItemStatus() {
+		return itemStatus;
+	}
 
-    public String getNextDocMatItemUUID() { return nextDocMatItemUUID; }
-    public void setNextDocMatItemUUID(String nextDocMatItemUUID) { this.nextDocMatItemUUID = nextDocMatItemUUID; }
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
 
-    public String getNextDocMatItemArrayUUID() { return nextDocMatItemArrayUUID; }
-    public void setNextDocMatItemArrayUUID(String nextDocMatItemArrayUUID) { this.nextDocMatItemArrayUUID = nextDocMatItemArrayUUID; }
+	public String getReserveTargetDocMatItemArrayUUID() {
+		return reserveTargetDocMatItemArrayUUID;
+	}
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+	public void setReserveTargetDocMatItemArrayUUID(String reserveTargetDocMatItemArrayUUID) {
+		this.reserveTargetDocMatItemArrayUUID = reserveTargetDocMatItemArrayUUID;
+	}
 
-    public String getRefUnitUUID() { return refUnitUUID; }
-    public void setRefUnitUUID(String refUnitUUID) { this.refUnitUUID = refUnitUUID; }
+	public int getPrevDocType() {
+		return prevDocType;
+	}
 
-    public String getRefMaterialSKUUUID() { return refMaterialSKUUUID; }
-    public void setRefMaterialSKUUUID(String refMaterialSKUUUID) { this.refMaterialSKUUUID = refMaterialSKUUUID; }
+	public void setPrevDocType(int prevDocType) {
+		this.prevDocType = prevDocType;
+	}
 
-    public double getItemPrice() { return itemPrice; }
-    public void setItemPrice(double itemPrice) { this.itemPrice = itemPrice; }
+	public String getPrevDocMatItemUUID() {
+		return prevDocMatItemUUID;
+	}
 
-    public double getUnitPrice() { return unitPrice; }
-    public void setUnitPrice(double unitPrice) { this.unitPrice = unitPrice; }
+	public void setPrevDocMatItemUUID(String prevDocMatItemUUID) {
+		this.prevDocMatItemUUID = prevDocMatItemUUID;
+	}
 
-    public double getItemPriceDisplay() { return itemPriceDisplay; }
-    public void setItemPriceDisplay(double itemPriceDisplay) { this.itemPriceDisplay = itemPriceDisplay; }
+	public String getPrevDocMatItemArrayUUID() {
+		return prevDocMatItemArrayUUID;
+	}
 
-    public double getUnitPriceDisplay() { return unitPriceDisplay; }
-    public void setUnitPriceDisplay(double unitPriceDisplay) { this.unitPriceDisplay = unitPriceDisplay; }
+	public void setPrevDocMatItemArrayUUID(String prevDocMatItemArrayUUID) {
+		this.prevDocMatItemArrayUUID = prevDocMatItemArrayUUID;
+	}
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	public int getNextDocType() {
+		return nextDocType;
+	}
 
-    public String getRefFinMatItemUUID() { return refFinMatItemUUID; }
-    public void setRefFinMatItemUUID(String refFinMatItemUUID) { this.refFinMatItemUUID = refFinMatItemUUID; }
+	public void setNextDocType(int nextDocType) {
+		this.nextDocType = nextDocType;
+	}
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	public String getNextDocMatItemUUID() {
+		return nextDocMatItemUUID;
+	}
 
-    public String getPurchaseBatchNumber() { return purchaseBatchNumber; }
-    public void setPurchaseBatchNumber(String purchaseBatchNumber) { this.purchaseBatchNumber = purchaseBatchNumber; }
+	public void setNextDocMatItemUUID(String nextDocMatItemUUID) {
+		this.nextDocMatItemUUID = nextDocMatItemUUID;
+	}
 
-    public int getMaterialStatus() { return materialStatus; }
-    public void setMaterialStatus(int materialStatus) { this.materialStatus = materialStatus; }
+	public String getNextDocMatItemArrayUUID() {
+		return nextDocMatItemArrayUUID;
+	}
 
-    public int getHomeDocumentType() { return homeDocumentType; }
-    public void setHomeDocumentType(int homeDocumentType) { this.homeDocumentType = homeDocumentType; }
+	public void setNextDocMatItemArrayUUID(String nextDocMatItemArrayUUID) {
+		this.nextDocMatItemArrayUUID = nextDocMatItemArrayUUID;
+	}
 
-    public int getPrevProfDocType() { return prevProfDocType; }
-    public void setPrevProfDocType(int prevProfDocType) { this.prevProfDocType = prevProfDocType; }
+	public double getAmount() {
+		return amount;
+	}
 
-    public String getPrevProfDocMatItemUUID() { return prevProfDocMatItemUUID; }
-    public void setPrevProfDocMatItemUUID(String prevProfDocMatItemUUID) { this.prevProfDocMatItemUUID = prevProfDocMatItemUUID; }
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
 
-    public String getPrevProfDocMatItemArrayUUID() { return prevProfDocMatItemArrayUUID; }
-    public void setPrevProfDocMatItemArrayUUID(String prevProfDocMatItemArrayUUID) { this.prevProfDocMatItemArrayUUID = prevProfDocMatItemArrayUUID; }
+	public String getRefUnitUUID() {
+		return refUnitUUID;
+	}
 
-    public int getNextProfDocType() { return nextProfDocType; }
-    public void setNextProfDocType(int nextProfDocType) { this.nextProfDocType = nextProfDocType; }
+	public void setRefUnitUUID(String refUnitUUID) {
+		this.refUnitUUID = refUnitUUID;
+	}
 
-    public String getNextProfDocMatItemUUID() { return nextProfDocMatItemUUID; }
-    public void setNextProfDocMatItemUUID(String nextProfDocMatItemUUID) { this.nextProfDocMatItemUUID = nextProfDocMatItemUUID; }
+	public String getRefMaterialSKUUUID() {
+		return refMaterialSKUUUID;
+	}
 
-    public String getNextProfDocMatItemArrayUUID() { return nextProfDocMatItemArrayUUID; }
-    public void setNextProfDocMatItemArrayUUID(String nextProfDocMatItemArrayUUID) { this.nextProfDocMatItemArrayUUID = nextProfDocMatItemArrayUUID; }
+	public void setRefMaterialSKUUUID(String refMaterialSKUUUID) {
+		this.refMaterialSKUUUID = refMaterialSKUUUID;
+	}
+
+	public double getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(double itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public double getItemPriceDisplay() {
+		return itemPriceDisplay;
+	}
+
+	public void setItemPriceDisplay(double itemPriceDisplay) {
+		this.itemPriceDisplay = itemPriceDisplay;
+	}
+
+	public double getUnitPriceDisplay() {
+		return unitPriceDisplay;
+	}
+
+	public void setUnitPriceDisplay(double unitPriceDisplay) {
+		this.unitPriceDisplay = unitPriceDisplay;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	public String getRefFinMatItemUUID() {
+		return refFinMatItemUUID;
+	}
+
+	public void setRefFinMatItemUUID(String refFinMatItemUUID) {
+		this.refFinMatItemUUID = refFinMatItemUUID;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
+	public String getPurchaseBatchNumber() {
+		return purchaseBatchNumber;
+	}
+
+	public void setPurchaseBatchNumber(String purchaseBatchNumber) {
+		this.purchaseBatchNumber = purchaseBatchNumber;
+	}
+
+	public int getMaterialStatus() {
+		return materialStatus;
+	}
+
+	public void setMaterialStatus(int materialStatus) {
+		this.materialStatus = materialStatus;
+	}
+
+	public int getHomeDocumentType() {
+		return homeDocumentType;
+	}
+
+	public void setHomeDocumentType(int homeDocumentType) {
+		this.homeDocumentType = homeDocumentType;
+	}
+
+	public int getPrevProfDocType() {
+		return prevProfDocType;
+	}
+
+	public void setPrevProfDocType(int prevProfDocType) {
+		this.prevProfDocType = prevProfDocType;
+	}
+
+	public String getPrevProfDocMatItemUUID() {
+		return prevProfDocMatItemUUID;
+	}
+
+	public void setPrevProfDocMatItemUUID(String prevProfDocMatItemUUID) {
+		this.prevProfDocMatItemUUID = prevProfDocMatItemUUID;
+	}
+
+	public String getPrevProfDocMatItemArrayUUID() {
+		return prevProfDocMatItemArrayUUID;
+	}
+
+	public void setPrevProfDocMatItemArrayUUID(String prevProfDocMatItemArrayUUID) {
+		this.prevProfDocMatItemArrayUUID = prevProfDocMatItemArrayUUID;
+	}
+
+	public int getNextProfDocType() {
+		return nextProfDocType;
+	}
+
+	public void setNextProfDocType(int nextProfDocType) {
+		this.nextProfDocType = nextProfDocType;
+	}
+
+	public String getNextProfDocMatItemUUID() {
+		return nextProfDocMatItemUUID;
+	}
+
+	public void setNextProfDocMatItemUUID(String nextProfDocMatItemUUID) {
+		this.nextProfDocMatItemUUID = nextProfDocMatItemUUID;
+	}
+
+	public String getNextProfDocMatItemArrayUUID() {
+		return nextProfDocMatItemArrayUUID;
+	}
+
+	public void setNextProfDocMatItemArrayUUID(String nextProfDocMatItemArrayUUID) {
+		this.nextProfDocMatItemArrayUUID = nextProfDocMatItemArrayUUID;
+	}
+
+	public void setDocumentType(int documentType) {
+		this.homeDocumentType = documentType;
+	}
+
+	public int getDocumentType() {
+		return homeDocumentType;
+	}
+
 }

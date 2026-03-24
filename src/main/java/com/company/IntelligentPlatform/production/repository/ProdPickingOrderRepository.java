@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ProdPickingOrderRepository extends JpaRepository<ProdPickingOrder, String>, JpaSpecificationExecutor<ProdPickingOrder> {
     List<ProdPickingOrder> findByStatus(int status);
+
 }

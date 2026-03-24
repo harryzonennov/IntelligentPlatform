@@ -13,4 +13,5 @@ public interface WarehouseStoreRepository extends JpaRepository<WarehouseStore, 
     List<WarehouseStore> findByClient(String client);
     List<WarehouseStore> findByClientAndStatus(String client, int status);
     List<WarehouseStore> findByClientAndRefWarehouseUUID(String client, String refWarehouseUUID);
+
 }

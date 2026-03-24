@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - PurchaseReturnOrder (extends DocumentContent)
@@ -11,35 +13,65 @@ import jakarta.persistence.*;
 @Table(name = "PurchaseReturnOrder", schema = "logistics")
 public class PurchaseReturnOrder extends DocumentContent {
 
-    public static final int STATUS_INITIAL        = 1;
-    public static final int STATUS_SUBMITTED      = 2;
-    public static final int STATUS_APPROVED       = 3;
-    public static final int STATUS_DELIVERYDONE   = 200;
-    public static final int STATUS_PROCESSDONE    = 100;
-    public static final int STATUS_REJECT_APPROVAL = 305;
-    public static final int STATUS_ARCHIVED       = 400;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.PurchaseReturnOrder;
 
-    @Column(name = "grossPrice")
-    private double grossPrice;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "grossPriceDisplay")
-    private double grossPriceDisplay;
+	public static final int STATUS_SUBMITTED = 2;
 
-    @Column(name = "taxRate")
-    private double taxRate;
+	public static final int STATUS_APPROVED = 3;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	public static final int STATUS_DELIVERYDONE = 200;
 
-    public double getGrossPrice() { return grossPrice; }
-    public void setGrossPrice(double grossPrice) { this.grossPrice = grossPrice; }
+	public static final int STATUS_PROCESSDONE = 100;
 
-    public double getGrossPriceDisplay() { return grossPriceDisplay; }
-    public void setGrossPriceDisplay(double grossPriceDisplay) { this.grossPriceDisplay = grossPriceDisplay; }
+	public static final int STATUS_REJECT_APPROVAL = 305;
 
-    public double getTaxRate() { return taxRate; }
-    public void setTaxRate(double taxRate) { this.taxRate = taxRate; }
+	public static final int STATUS_ARCHIVED = 400;
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	@Column(name = "grossPrice")
+	protected double grossPrice;
+
+	@Column(name = "grossPriceDisplay")
+	protected double grossPriceDisplay;
+
+	@Column(name = "taxRate")
+	protected double taxRate;
+
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
+
+	public double getGrossPrice() {
+		return grossPrice;
+	}
+
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+
+	public double getGrossPriceDisplay() {
+		return grossPriceDisplay;
+	}
+
+	public void setGrossPriceDisplay(double grossPriceDisplay) {
+		this.grossPriceDisplay = grossPriceDisplay;
+	}
+
+	public double getTaxRate() {
+		return taxRate;
+	}
+
+	public void setTaxRate(double taxRate) {
+		this.taxRate = taxRate;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
 }

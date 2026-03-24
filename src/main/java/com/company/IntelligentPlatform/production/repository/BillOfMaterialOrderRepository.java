@@ -8,4 +8,5 @@ import java.util.List;
 public interface BillOfMaterialOrderRepository extends JpaRepository<BillOfMaterialOrder, String>, JpaSpecificationExecutor<BillOfMaterialOrder> {
     List<BillOfMaterialOrder> findByRefMaterialSKUUUID(String refMaterialSKUUUID);
     List<BillOfMaterialOrder> findByStatus(int status);
+
 }

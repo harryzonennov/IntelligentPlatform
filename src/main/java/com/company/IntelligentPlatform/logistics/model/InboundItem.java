@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - InboundItem (extends DeliveryItem)
@@ -12,15 +14,29 @@ import jakarta.persistence.*;
 @Table(name = "InboundItem", schema = "logistics")
 public class InboundItem extends DeliveryItem {
 
-    @Column(name = "inboundFee")
-    private double inboundFee;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.InboundItem;
 
-    @Column(name = "refStoreItemUUID")
-    private String refStoreItemUUID;
+	@Column(name = "inboundFee")
+	protected double inboundFee;
 
-    public double getInboundFee() { return inboundFee; }
-    public void setInboundFee(double inboundFee) { this.inboundFee = inboundFee; }
+	@Column(name = "refStoreItemUUID")
+	protected String refStoreItemUUID;
 
-    public String getRefStoreItemUUID() { return refStoreItemUUID; }
-    public void setRefStoreItemUUID(String refStoreItemUUID) { this.refStoreItemUUID = refStoreItemUUID; }
+	public double getInboundFee() {
+		return inboundFee;
+	}
+
+	public void setInboundFee(double inboundFee) {
+		this.inboundFee = inboundFee;
+	}
+
+	public String getRefStoreItemUUID() {
+		return refStoreItemUUID;
+	}
+
+	public void setRefStoreItemUUID(String refStoreItemUUID) {
+		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
 }

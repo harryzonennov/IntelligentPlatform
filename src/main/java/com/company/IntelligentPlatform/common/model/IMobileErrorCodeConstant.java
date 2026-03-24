@@ -1,0 +1,53 @@
+package com.company.IntelligentPlatform.common.model;
+
+public interface IMobileErrorCodeConstant {
+
+	String VERSON_ID = "mobileErrorCode";
+
+	int DEF_OK = 1;
+
+	int LOGIN_NO_USER = 101;
+
+	int LOGIN_WRONG_PASS = 102;
+
+	int LOGIN_USER_LOCK = 103;
+
+	int NO_USER_EQUIPMENT = 105;
+
+	int VEHRUN_NO_EXIST = 106;
+
+	int VEHRUN_LOCK = 107;
+
+	int VEHINFO_NO_EXIST = 108;
+
+	int VEHRUN_SAVE_ERROR = 110;
+
+	int VEHRUN_NO_TRANSSITE = 113;
+
+	int NO_TRANSSITE = 114;
+
+	int CANNOT_DEL_START_SITE = 115;
+
+	int CANNOT_DEL_END_SITE = 116;
+
+	int CANNOT_INSERT_DUPLICATE_SITE = 117;
+
+	int WRONG_VEHICLE_STATUS = 118;
+
+	int NOT_MATCH_BK_DESTINATION = 119;
+
+	int JSON_PARSE_ERROR = 120;
+
+	int NO_BK_ID = 121;
+
+	int WRONG_TIME_FORMAT = 122;
+
+	int CANNOT_DEL_SITE_NON_EMPTY_BKLIST = 123;
+
+	int CANNOT_FIND_VERSIONRECORD = 124;
+
+	int VEHRUN_NO_END_TRANSSITE = 125;
+
+	int UNKNOWN_SYS_ERROR = 200;
+
+}

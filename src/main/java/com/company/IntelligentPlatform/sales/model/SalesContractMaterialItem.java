@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.sales.model;
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinSalesDistribution - SalesContractMaterialItem.hbm.xml
@@ -25,82 +27,151 @@ import java.time.LocalDateTime;
 @Table(name = "SalesContractMaterialItem", schema = "sales")
 public class SalesContractMaterialItem extends DocMatItemNode {
 
-    @Column(name = "shippingPoint")
-    private String shippingPoint;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.SalesContractMaterialItem;
 
-    @Column(name = "requireShippingTime")
-    private LocalDateTime requireShippingTime;
+	@Column(name = "shippingPoint")
+	protected String shippingPoint;
 
-    @Column(name = "requirementNote")
-    private String requirementNote;
+	@Column(name = "requireShippingTime")
+	protected LocalDateTime requireShippingTime;
 
-    @Column(name = "refTechStandard")
-    private String refTechStandard;
+	@Column(name = "requirementNote")
+	protected String requirementNote;
 
-    @Column(name = "refUnitName")
-    private String refUnitName;
+	@Column(name = "refTechStandard")
+	protected String refTechStandard;
 
-    // Cross-module refs — UUID only, no FK
-    @Column(name = "refStoreItemUUID")
-    private String refStoreItemUUID;
+	@Column(name = "refUnitName")
+	protected String refUnitName;
 
-    @Column(name = "refFinAccountUUID")
-    private String refFinAccountUUID;
+	// Cross-module refs — UUID only, no FK
+	@Column(name = "refStoreItemUUID")
+	protected String refStoreItemUUID;
 
-    @Column(name = "refOutboundItemUUID")
-    private String refOutboundItemUUID;
+	@Column(name = "refFinAccountUUID")
+	protected String refFinAccountUUID;
 
-    @Column(name = "deliveryDoneBy")
-    private String deliveryDoneBy;
+	@Column(name = "refOutboundItemUUID")
+	protected String refOutboundItemUUID;
 
-    @Column(name = "deliveryDoneTime")
-    private LocalDateTime deliveryDoneTime;
+	@Column(name = "deliveryDoneBy")
+	protected String deliveryDoneBy;
 
-    @Column(name = "processDoneBy")
-    private String processDoneBy;
+	@Column(name = "deliveryDoneTime")
+	protected LocalDateTime deliveryDoneTime;
 
-    @Column(name = "processDoneTime")
-    private LocalDateTime processDoneTime;
+	@Column(name = "processDoneBy")
+	protected String processDoneBy;
 
-    @Column(name = "storeCheckStatus")
-    private int storeCheckStatus;
+	@Column(name = "processDoneTime")
+	protected LocalDateTime processDoneTime;
 
-    public String getShippingPoint() { return shippingPoint; }
-    public void setShippingPoint(String shippingPoint) { this.shippingPoint = shippingPoint; }
+	@Column(name = "storeCheckStatus")
+	protected int storeCheckStatus;
 
-    public LocalDateTime getRequireShippingTime() { return requireShippingTime; }
-    public void setRequireShippingTime(LocalDateTime requireShippingTime) { this.requireShippingTime = requireShippingTime; }
+	public String getShippingPoint() {
+		return shippingPoint;
+	}
 
-    public String getRequirementNote() { return requirementNote; }
-    public void setRequirementNote(String requirementNote) { this.requirementNote = requirementNote; }
+	public void setShippingPoint(String shippingPoint) {
+		this.shippingPoint = shippingPoint;
+	}
 
-    public String getRefTechStandard() { return refTechStandard; }
-    public void setRefTechStandard(String refTechStandard) { this.refTechStandard = refTechStandard; }
+	public LocalDateTime getRequireShippingTime() {
+		return requireShippingTime;
+	}
 
-    public String getRefUnitName() { return refUnitName; }
-    public void setRefUnitName(String refUnitName) { this.refUnitName = refUnitName; }
+	public void setRequireShippingTime(LocalDateTime requireShippingTime) {
+		this.requireShippingTime = requireShippingTime;
+	}
 
-    public String getRefStoreItemUUID() { return refStoreItemUUID; }
-    public void setRefStoreItemUUID(String refStoreItemUUID) { this.refStoreItemUUID = refStoreItemUUID; }
+	public String getRequirementNote() {
+		return requirementNote;
+	}
 
-    public String getRefFinAccountUUID() { return refFinAccountUUID; }
-    public void setRefFinAccountUUID(String refFinAccountUUID) { this.refFinAccountUUID = refFinAccountUUID; }
+	public void setRequirementNote(String requirementNote) {
+		this.requirementNote = requirementNote;
+	}
 
-    public String getRefOutboundItemUUID() { return refOutboundItemUUID; }
-    public void setRefOutboundItemUUID(String refOutboundItemUUID) { this.refOutboundItemUUID = refOutboundItemUUID; }
+	public String getRefTechStandard() {
+		return refTechStandard;
+	}
 
-    public String getDeliveryDoneBy() { return deliveryDoneBy; }
-    public void setDeliveryDoneBy(String deliveryDoneBy) { this.deliveryDoneBy = deliveryDoneBy; }
+	public void setRefTechStandard(String refTechStandard) {
+		this.refTechStandard = refTechStandard;
+	}
 
-    public LocalDateTime getDeliveryDoneTime() { return deliveryDoneTime; }
-    public void setDeliveryDoneTime(LocalDateTime deliveryDoneTime) { this.deliveryDoneTime = deliveryDoneTime; }
+	public String getRefUnitName() {
+		return refUnitName;
+	}
 
-    public String getProcessDoneBy() { return processDoneBy; }
-    public void setProcessDoneBy(String processDoneBy) { this.processDoneBy = processDoneBy; }
+	public void setRefUnitName(String refUnitName) {
+		this.refUnitName = refUnitName;
+	}
 
-    public LocalDateTime getProcessDoneTime() { return processDoneTime; }
-    public void setProcessDoneTime(LocalDateTime processDoneTime) { this.processDoneTime = processDoneTime; }
+	public String getRefStoreItemUUID() {
+		return refStoreItemUUID;
+	}
 
-    public int getStoreCheckStatus() { return storeCheckStatus; }
-    public void setStoreCheckStatus(int storeCheckStatus) { this.storeCheckStatus = storeCheckStatus; }
+	public void setRefStoreItemUUID(String refStoreItemUUID) {
+		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
+	public String getRefFinAccountUUID() {
+		return refFinAccountUUID;
+	}
+
+	public void setRefFinAccountUUID(String refFinAccountUUID) {
+		this.refFinAccountUUID = refFinAccountUUID;
+	}
+
+	public String getRefOutboundItemUUID() {
+		return refOutboundItemUUID;
+	}
+
+	public void setRefOutboundItemUUID(String refOutboundItemUUID) {
+		this.refOutboundItemUUID = refOutboundItemUUID;
+	}
+
+	public String getDeliveryDoneBy() {
+		return deliveryDoneBy;
+	}
+
+	public void setDeliveryDoneBy(String deliveryDoneBy) {
+		this.deliveryDoneBy = deliveryDoneBy;
+	}
+
+	public LocalDateTime getDeliveryDoneTime() {
+		return deliveryDoneTime;
+	}
+
+	public void setDeliveryDoneTime(LocalDateTime deliveryDoneTime) {
+		this.deliveryDoneTime = deliveryDoneTime;
+	}
+
+	public String getProcessDoneBy() {
+		return processDoneBy;
+	}
+
+	public void setProcessDoneBy(String processDoneBy) {
+		this.processDoneBy = processDoneBy;
+	}
+
+	public LocalDateTime getProcessDoneTime() {
+		return processDoneTime;
+	}
+
+	public void setProcessDoneTime(LocalDateTime processDoneTime) {
+		this.processDoneTime = processDoneTime;
+	}
+
+	public int getStoreCheckStatus() {
+		return storeCheckStatus;
+	}
+
+	public void setStoreCheckStatus(int storeCheckStatus) {
+		this.storeCheckStatus = storeCheckStatus;
+	}
+
 }

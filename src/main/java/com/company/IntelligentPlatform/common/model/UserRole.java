@@ -12,4 +12,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "UserRole", schema = "platform")
 public class UserRole extends ReferenceNode {
+
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.UserRole;
+
 }

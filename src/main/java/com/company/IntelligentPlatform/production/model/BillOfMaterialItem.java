@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.production.model;
 
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - BillOfMaterialItem (extends DocMatItemNode)
@@ -11,99 +13,105 @@ import jakarta.persistence.*;
 @Table(name = "BillOfMaterialItem", schema = "production")
 public class BillOfMaterialItem extends DocMatItemNode {
 
-    public static final int ITEM_CATEGORY_SEMIFINISHED = 1;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.BillOfMaterialItem;
 
-    public static final int ITEM_CATEGORY_COMPONENT = 2;
+	public static final int ITEM_CATEGORY_SEMIFINISHED = 1;
 
-    public static final int ITEM_CATEGORY_BYPRODUCT = 3;
+	public static final int ITEM_CATEGORY_COMPONENT = 2;
 
-    public static final int ITEM_CATEGORY_PHANTOM = 4;
+	public static final int ITEM_CATEGORY_BYPRODUCT = 3;
 
-    @Column(name = "layer")
-    private int layer;
+	public static final int ITEM_CATEGORY_PHANTOM = 4;
 
-    @Column(name = "refParentItemUUID")
-    private String refParentItemUUID;
+	public static final String FIELD_refParentItemUUID = "refParentItemUUID";
 
-    @Column(name = "itemCategory")
-    private int itemCategory;
+	@Column(name = "layer")
+	protected int layer;
 
-    @Column(name = "leadTimeOffset")
-    private double leadTimeOffset;
+	@Column(name = "refParentItemUUID")
+	protected String refParentItemUUID;
 
-    @Column(name = "theoLossRate")
-    private double theoLossRate;
+	@Column(name = "itemCategory")
+	protected int itemCategory;
 
-    @Column(name = "refSubBOMUUID")
-    private String refSubBOMUUID;
+	@Column(name = "leadTimeOffset")
+	protected double leadTimeOffset;
 
-    @Column(name = "refRouteProcessItemUUID")
-    private String refRouteProcessItemUUID;
+	@Column(name = "theoLossRate")
+	protected double theoLossRate;
 
-    @Column(name = "refWocUUID")
-    private String refWocUUID;
+	@Column(name = "refSubBOMUUID")
+	protected String refSubBOMUUID;
 
-    public int getLayer() {
-        return layer;
-    }
+	@Column(name = "refRouteProcessItemUUID")
+	protected String refRouteProcessItemUUID;
 
-    public void setLayer(int layer) {
-        this.layer = layer;
-    }
+	@Column(name = "refWocUUID")
+	protected String refWocUUID;
 
-    public String getRefParentItemUUID() {
-        return refParentItemUUID;
-    }
+	public int getLayer() {
+		return layer;
+	}
 
-    public void setRefParentItemUUID(String refParentItemUUID) {
-        this.refParentItemUUID = refParentItemUUID;
-    }
+	public void setLayer(int layer) {
+		this.layer = layer;
+	}
 
-    public int getItemCategory() {
-        return itemCategory;
-    }
+	public String getRefParentItemUUID() {
+		return refParentItemUUID;
+	}
 
-    public void setItemCategory(int itemCategory) {
-        this.itemCategory = itemCategory;
-    }
+	public void setRefParentItemUUID(String refParentItemUUID) {
+		this.refParentItemUUID = refParentItemUUID;
+	}
 
-    public double getLeadTimeOffset() {
-        return leadTimeOffset;
-    }
+	public int getItemCategory() {
+		return itemCategory;
+	}
 
-    public void setLeadTimeOffset(double leadTimeOffset) {
-        this.leadTimeOffset = leadTimeOffset;
-    }
+	public void setItemCategory(int itemCategory) {
+		this.itemCategory = itemCategory;
+	}
 
-    public double getTheoLossRate() {
-        return theoLossRate;
-    }
+	public double getLeadTimeOffset() {
+		return leadTimeOffset;
+	}
 
-    public void setTheoLossRate(double theoLossRate) {
-        this.theoLossRate = theoLossRate;
-    }
+	public void setLeadTimeOffset(double leadTimeOffset) {
+		this.leadTimeOffset = leadTimeOffset;
+	}
 
-    public String getRefSubBOMUUID() {
-        return refSubBOMUUID;
-    }
+	public double getTheoLossRate() {
+		return theoLossRate;
+	}
 
-    public void setRefSubBOMUUID(String refSubBOMUUID) {
-        this.refSubBOMUUID = refSubBOMUUID;
-    }
+	public void setTheoLossRate(double theoLossRate) {
+		this.theoLossRate = theoLossRate;
+	}
 
-    public String getRefRouteProcessItemUUID() {
-        return refRouteProcessItemUUID;
-    }
+	public String getRefSubBOMUUID() {
+		return refSubBOMUUID;
+	}
 
-    public void setRefRouteProcessItemUUID(String refRouteProcessItemUUID) {
-        this.refRouteProcessItemUUID = refRouteProcessItemUUID;
-    }
+	public void setRefSubBOMUUID(String refSubBOMUUID) {
+		this.refSubBOMUUID = refSubBOMUUID;
+	}
 
-    public String getRefWocUUID() {
-        return refWocUUID;
-    }
+	public String getRefRouteProcessItemUUID() {
+		return refRouteProcessItemUUID;
+	}
 
-    public void setRefWocUUID(String refWocUUID) {
-        this.refWocUUID = refWocUUID;
-    }
+	public void setRefRouteProcessItemUUID(String refRouteProcessItemUUID) {
+		this.refRouteProcessItemUUID = refRouteProcessItemUUID;
+	}
+
+	public String getRefWocUUID() {
+		return refWocUUID;
+	}
+
+	public void setRefWocUUID(String refWocUUID) {
+		this.refWocUUID = refWocUUID;
+	}
+
 }

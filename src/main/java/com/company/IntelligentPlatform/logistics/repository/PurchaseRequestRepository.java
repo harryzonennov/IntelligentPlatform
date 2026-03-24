@@ -12,4 +12,5 @@ public interface PurchaseRequestRepository extends JpaRepository<PurchaseRequest
 
     List<PurchaseRequest> findByClient(String client);
     List<PurchaseRequest> findByClientAndStatus(String client, int status);
+
 }

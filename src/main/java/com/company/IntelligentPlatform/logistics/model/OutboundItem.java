@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - OutboundItem (extends DeliveryItem)
@@ -12,27 +14,51 @@ import jakarta.persistence.*;
 @Table(name = "OutboundItem", schema = "logistics")
 public class OutboundItem extends DeliveryItem {
 
-    @Column(name = "outboundFee")
-    private double outboundFee;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.OutboundItem;
 
-    @Column(name = "storageFee")
-    private double storageFee;
+	@Column(name = "outboundFee")
+	protected double outboundFee;
 
-    @Column(name = "refStoreItemUUID")
-    private String refStoreItemUUID;
+	@Column(name = "storageFee")
+	protected double storageFee;
 
-    @Column(name = "storeDay")
-    private int storeDay;
+	@Column(name = "refStoreItemUUID")
+	protected String refStoreItemUUID;
 
-    public double getOutboundFee() { return outboundFee; }
-    public void setOutboundFee(double outboundFee) { this.outboundFee = outboundFee; }
+	@Column(name = "storeDay")
+	protected int storeDay;
 
-    public double getStorageFee() { return storageFee; }
-    public void setStorageFee(double storageFee) { this.storageFee = storageFee; }
+	public double getOutboundFee() {
+		return outboundFee;
+	}
 
-    public String getRefStoreItemUUID() { return refStoreItemUUID; }
-    public void setRefStoreItemUUID(String refStoreItemUUID) { this.refStoreItemUUID = refStoreItemUUID; }
+	public void setOutboundFee(double outboundFee) {
+		this.outboundFee = outboundFee;
+	}
 
-    public int getStoreDay() { return storeDay; }
-    public void setStoreDay(int storeDay) { this.storeDay = storeDay; }
+	public double getStorageFee() {
+		return storageFee;
+	}
+
+	public void setStorageFee(double storageFee) {
+		this.storageFee = storageFee;
+	}
+
+	public String getRefStoreItemUUID() {
+		return refStoreItemUUID;
+	}
+
+	public void setRefStoreItemUUID(String refStoreItemUUID) {
+		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
+	public int getStoreDay() {
+		return storeDay;
+	}
+
+	public void setStoreDay(int storeDay) {
+		this.storeDay = storeDay;
+	}
+
 }

@@ -14,4 +14,5 @@ public interface LogonUserRepository extends JpaRepository<LogonUser, String> {
     Optional<LogonUser> findByName(String name);
 
     boolean existsByName(String name);
+
 }

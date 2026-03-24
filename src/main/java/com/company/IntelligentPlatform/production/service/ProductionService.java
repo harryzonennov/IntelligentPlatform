@@ -1,290 +1,288 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.ServiceEntityService;
 import com.company.IntelligentPlatform.production.model.*;
 import com.company.IntelligentPlatform.production.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @Transactional
-public class ProductionService {
+public class ProductionService extends ServiceEntityService {
 
-    private final ProductionOrderRepository productionOrderRepository;
-    private final RepairProdOrderRepository repairProdOrderRepository;
-    private final ProductionPlanRepository productionPlanRepository;
-    private final BillOfMaterialOrderRepository billOfMaterialOrderRepository;
-    private final BillOfMaterialTemplateRepository billOfMaterialTemplateRepository;
-    private final ProdPickingOrderRepository prodPickingOrderRepository;
-    private final ProdJobOrderRepository prodJobOrderRepository;
-    private final ProcessRouteOrderRepository processRouteOrderRepository;
-    private final ProdWorkCenterRepository prodWorkCenterRepository;
+	@Autowired
+	protected ProductionOrderRepository productionOrderRepository;
 
-    public ProductionService(
-            ProductionOrderRepository productionOrderRepository,
-            RepairProdOrderRepository repairProdOrderRepository,
-            ProductionPlanRepository productionPlanRepository,
-            BillOfMaterialOrderRepository billOfMaterialOrderRepository,
-            BillOfMaterialTemplateRepository billOfMaterialTemplateRepository,
-            ProdPickingOrderRepository prodPickingOrderRepository,
-            ProdJobOrderRepository prodJobOrderRepository,
-            ProcessRouteOrderRepository processRouteOrderRepository,
-            ProdWorkCenterRepository prodWorkCenterRepository) {
-        this.productionOrderRepository = productionOrderRepository;
-        this.repairProdOrderRepository = repairProdOrderRepository;
-        this.productionPlanRepository = productionPlanRepository;
-        this.billOfMaterialOrderRepository = billOfMaterialOrderRepository;
-        this.billOfMaterialTemplateRepository = billOfMaterialTemplateRepository;
-        this.prodPickingOrderRepository = prodPickingOrderRepository;
-        this.prodJobOrderRepository = prodJobOrderRepository;
-        this.processRouteOrderRepository = processRouteOrderRepository;
-        this.prodWorkCenterRepository = prodWorkCenterRepository;
-    }
+	@Autowired
+	protected RepairProdOrderRepository repairProdOrderRepository;
 
-    // ── ProductionOrder ────────────────────────────────────────────────────────
+	@Autowired
+	protected ProductionPlanRepository productionPlanRepository;
 
-    @Transactional(readOnly = true)
-    public List<ProductionOrder> getAllProductionOrders() {
-        return productionOrderRepository.findAll();
-    }
+	@Autowired
+	protected BillOfMaterialOrderRepository billOfMaterialOrderRepository;
 
-    @Transactional(readOnly = true)
-    public Optional<ProductionOrder> getProductionOrderByUuid(String uuid) {
-        return productionOrderRepository.findById(uuid);
-    }
+	@Autowired
+	protected BillOfMaterialTemplateRepository billOfMaterialTemplateRepository;
 
-    @Transactional(readOnly = true)
-    public List<ProductionOrder> getProductionOrdersByStatus(int status) {
-        return productionOrderRepository.findByStatus(status);
-    }
+	@Autowired
+	protected ProdPickingOrderRepository prodPickingOrderRepository;
 
-    public ProductionOrder createProductionOrder(ProductionOrder order) {
-        order.setUuid(UUID.randomUUID().toString());
-        order.setStatus(ProductionOrder.STATUS_INITIAL);
-        return productionOrderRepository.save(order);
-    }
+	@Autowired
+	protected ProdJobOrderRepository prodJobOrderRepository;
 
-    public Optional<ProductionOrder> updateProductionOrder(String uuid, ProductionOrder updated) {
-        return productionOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return productionOrderRepository.save(updated);
-        });
-    }
+	@Autowired
+	protected ProcessRouteOrderRepository processRouteOrderRepository;
 
-    // ── RepairProdOrder ────────────────────────────────────────────────────────
+	@Autowired
+	protected ProdWorkCenterRepository prodWorkCenterRepository;
 
-    @Transactional(readOnly = true)
-    public List<RepairProdOrder> getAllRepairOrders() {
-        return repairProdOrderRepository.findAll();
-    }
+	// ── ProductionOrder ────────────────────────────────────────────────────────
 
-    @Transactional(readOnly = true)
-    public Optional<RepairProdOrder> getRepairOrderByUuid(String uuid) {
-        return repairProdOrderRepository.findById(uuid);
-    }
+	@Transactional(readOnly = true)
+	public List<ProductionOrder> getAllProductionOrders() {
+		return productionOrderRepository.findAll();
+	}
 
-    public RepairProdOrder createRepairOrder(RepairProdOrder order) {
-        order.setUuid(UUID.randomUUID().toString());
-        order.setStatus(ProductionOrder.STATUS_INITIAL);
-        return repairProdOrderRepository.save(order);
-    }
+	@Transactional(readOnly = true)
+	public Optional<ProductionOrder> getProductionOrderByUuid(String uuid) {
+		return productionOrderRepository.findById(uuid);
+	}
 
-    public Optional<RepairProdOrder> updateRepairOrder(String uuid, RepairProdOrder updated) {
-        return repairProdOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return repairProdOrderRepository.save(updated);
-        });
-    }
+	@Transactional(readOnly = true)
+	public List<ProductionOrder> getProductionOrdersByStatus(int status) {
+		return productionOrderRepository.findByStatus(status);
+	}
 
-    // ── ProductionPlan ─────────────────────────────────────────────────────────
+	public ProductionOrder createProductionOrder(ProductionOrder order, String userUUID, String orgUUID) {
+		order.setStatus(ProductionOrder.STATUS_INITIAL);
+		return insertSENode(productionOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProductionPlan> getAllProductionPlans() {
-        return productionPlanRepository.findAll();
-    }
+	public ProductionOrder updateProductionOrder(ProductionOrder order, String userUUID, String orgUUID) {
+		return updateSENode(productionOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<ProductionPlan> getProductionPlanByUuid(String uuid) {
-        return productionPlanRepository.findById(uuid);
-    }
+	public void deleteProductionOrder(String uuid) {
+		deleteSENode(productionOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProductionPlan> getPlansByMainProdOrder(String refMainProdOrderUUID) {
-        return productionPlanRepository.findByRefMainProdOrderUUID(refMainProdOrderUUID);
-    }
+	// ── RepairProdOrder ────────────────────────────────────────────────────────
 
-    public ProductionPlan createProductionPlan(ProductionPlan plan) {
-        plan.setUuid(UUID.randomUUID().toString());
-        plan.setStatus(ProductionPlan.STATUS_INITIAL);
-        return productionPlanRepository.save(plan);
-    }
+	@Transactional(readOnly = true)
+	public List<RepairProdOrder> getAllRepairOrders() {
+		return repairProdOrderRepository.findAll();
+	}
 
-    public Optional<ProductionPlan> updateProductionPlan(String uuid, ProductionPlan updated) {
-        return productionPlanRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return productionPlanRepository.save(updated);
-        });
-    }
+	@Transactional(readOnly = true)
+	public Optional<RepairProdOrder> getRepairOrderByUuid(String uuid) {
+		return repairProdOrderRepository.findById(uuid);
+	}
 
-    // ── BillOfMaterialOrder ────────────────────────────────────────────────────
+	public RepairProdOrder createRepairOrder(RepairProdOrder order, String userUUID, String orgUUID) {
+		order.setStatus(ProductionOrder.STATUS_INITIAL);
+		return insertSENode(repairProdOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<BillOfMaterialOrder> getAllBOMs() {
-        return billOfMaterialOrderRepository.findAll();
-    }
+	public RepairProdOrder updateRepairOrder(RepairProdOrder order, String userUUID, String orgUUID) {
+		return updateSENode(repairProdOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<BillOfMaterialOrder> getBOMByUuid(String uuid) {
-        return billOfMaterialOrderRepository.findById(uuid);
-    }
+	public void deleteRepairOrder(String uuid) {
+		deleteSENode(repairProdOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<BillOfMaterialOrder> getBOMsByMaterialSKU(String refMaterialSKUUUID) {
-        return billOfMaterialOrderRepository.findByRefMaterialSKUUUID(refMaterialSKUUUID);
-    }
+	// ── ProductionPlan ─────────────────────────────────────────────────────────
 
-    public BillOfMaterialOrder createBOM(BillOfMaterialOrder bom) {
-        bom.setUuid(UUID.randomUUID().toString());
-        bom.setStatus(BillOfMaterialOrder.STATUS_INITIAL);
-        return billOfMaterialOrderRepository.save(bom);
-    }
+	@Transactional(readOnly = true)
+	public List<ProductionPlan> getAllProductionPlans() {
+		return productionPlanRepository.findAll();
+	}
 
-    public Optional<BillOfMaterialOrder> updateBOM(String uuid, BillOfMaterialOrder updated) {
-        return billOfMaterialOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return billOfMaterialOrderRepository.save(updated);
-        });
-    }
+	@Transactional(readOnly = true)
+	public Optional<ProductionPlan> getProductionPlanByUuid(String uuid) {
+		return productionPlanRepository.findById(uuid);
+	}
 
-    // ── BillOfMaterialTemplate ─────────────────────────────────────────────────
+	@Transactional(readOnly = true)
+	public List<ProductionPlan> getPlansByMainProdOrder(String refMainProdOrderUUID) {
+		return productionPlanRepository.findByRefMainProdOrderUUID(refMainProdOrderUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<BillOfMaterialTemplate> getAllBOMTemplates() {
-        return billOfMaterialTemplateRepository.findAll();
-    }
+	public ProductionPlan createProductionPlan(ProductionPlan plan, String userUUID, String orgUUID) {
+		plan.setStatus(ProductionPlan.STATUS_INITIAL);
+		return insertSENode(productionPlanRepository, plan, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<BillOfMaterialTemplate> getBOMTemplateByUuid(String uuid) {
-        return billOfMaterialTemplateRepository.findById(uuid);
-    }
+	public ProductionPlan updateProductionPlan(ProductionPlan plan, String userUUID, String orgUUID) {
+		return updateSENode(productionPlanRepository, plan, userUUID, orgUUID);
+	}
 
-    public BillOfMaterialTemplate createBOMTemplate(BillOfMaterialTemplate template) {
-        template.setUuid(UUID.randomUUID().toString());
-        template.setStatus(BillOfMaterialOrder.STATUS_INITIAL);
-        return billOfMaterialTemplateRepository.save(template);
-    }
+	public void deleteProductionPlan(String uuid) {
+		deleteSENode(productionPlanRepository, uuid);
+	}
 
-    public Optional<BillOfMaterialTemplate> updateBOMTemplate(String uuid, BillOfMaterialTemplate updated) {
-        return billOfMaterialTemplateRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return billOfMaterialTemplateRepository.save(updated);
-        });
-    }
+	// ── BillOfMaterialOrder ────────────────────────────────────────────────────
 
-    // ── ProdPickingOrder ───────────────────────────────────────────────────────
+	@Transactional(readOnly = true)
+	public List<BillOfMaterialOrder> getAllBOMs() {
+		return billOfMaterialOrderRepository.findAll();
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProdPickingOrder> getAllPickingOrders() {
-        return prodPickingOrderRepository.findAll();
-    }
+	@Transactional(readOnly = true)
+	public Optional<BillOfMaterialOrder> getBOMByUuid(String uuid) {
+		return billOfMaterialOrderRepository.findById(uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<ProdPickingOrder> getPickingOrderByUuid(String uuid) {
-        return prodPickingOrderRepository.findById(uuid);
-    }
+	@Transactional(readOnly = true)
+	public List<BillOfMaterialOrder> getBOMsByMaterialSKU(String refMaterialSKUUUID) {
+		return billOfMaterialOrderRepository.findByRefMaterialSKUUUID(refMaterialSKUUUID);
+	}
 
-    public ProdPickingOrder createPickingOrder(ProdPickingOrder order) {
-        order.setUuid(UUID.randomUUID().toString());
-        order.setStatus(ProdPickingOrder.STATUS_INITIAL);
-        return prodPickingOrderRepository.save(order);
-    }
+	public BillOfMaterialOrder createBOM(BillOfMaterialOrder bom, String userUUID, String orgUUID) {
+		bom.setStatus(BillOfMaterialOrder.STATUS_INITIAL);
+		return insertSENode(billOfMaterialOrderRepository, bom, userUUID, orgUUID);
+	}
 
-    public Optional<ProdPickingOrder> updatePickingOrder(String uuid, ProdPickingOrder updated) {
-        return prodPickingOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return prodPickingOrderRepository.save(updated);
-        });
-    }
+	public BillOfMaterialOrder updateBOM(BillOfMaterialOrder bom, String userUUID, String orgUUID) {
+		return updateSENode(billOfMaterialOrderRepository, bom, userUUID, orgUUID);
+	}
 
-    // ── ProdJobOrder ───────────────────────────────────────────────────────────
+	public void deleteBOM(String uuid) {
+		deleteSENode(billOfMaterialOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProdJobOrder> getJobOrdersByProductionOrder(String refProductionOrderUUID) {
-        return prodJobOrderRepository.findByRefProductionOrderUUID(refProductionOrderUUID);
-    }
+	// ── BillOfMaterialTemplate ─────────────────────────────────────────────────
 
-    @Transactional(readOnly = true)
-    public Optional<ProdJobOrder> getJobOrderByUuid(String uuid) {
-        return prodJobOrderRepository.findById(uuid);
-    }
+	@Transactional(readOnly = true)
+	public List<BillOfMaterialTemplate> getAllBOMTemplates() {
+		return billOfMaterialTemplateRepository.findAll();
+	}
 
-    public ProdJobOrder createJobOrder(ProdJobOrder jobOrder) {
-        jobOrder.setUuid(UUID.randomUUID().toString());
-        jobOrder.setStatus(ProdJobOrder.STATUS_INITIAL);
-        return prodJobOrderRepository.save(jobOrder);
-    }
+	@Transactional(readOnly = true)
+	public Optional<BillOfMaterialTemplate> getBOMTemplateByUuid(String uuid) {
+		return billOfMaterialTemplateRepository.findById(uuid);
+	}
 
-    public Optional<ProdJobOrder> updateJobOrder(String uuid, ProdJobOrder updated) {
-        return prodJobOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return prodJobOrderRepository.save(updated);
-        });
-    }
+	public BillOfMaterialTemplate createBOMTemplate(BillOfMaterialTemplate template, String userUUID, String orgUUID) {
+		template.setStatus(BillOfMaterialOrder.STATUS_INITIAL);
+		return insertSENode(billOfMaterialTemplateRepository, template, userUUID, orgUUID);
+	}
 
-    // ── ProcessRouteOrder ──────────────────────────────────────────────────────
+	public BillOfMaterialTemplate updateBOMTemplate(BillOfMaterialTemplate template, String userUUID, String orgUUID) {
+		return updateSENode(billOfMaterialTemplateRepository, template, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProcessRouteOrder> getAllProcessRoutes() {
-        return processRouteOrderRepository.findAll();
-    }
+	public void deleteBOMTemplate(String uuid) {
+		deleteSENode(billOfMaterialTemplateRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<ProcessRouteOrder> getProcessRouteByUuid(String uuid) {
-        return processRouteOrderRepository.findById(uuid);
-    }
+	// ── ProdPickingOrder ───────────────────────────────────────────────────────
 
-    public ProcessRouteOrder createProcessRoute(ProcessRouteOrder route) {
-        route.setUuid(UUID.randomUUID().toString());
-        route.setStatus(ProcessRouteOrder.STATUS_INITIAL);
-        return processRouteOrderRepository.save(route);
-    }
+	@Transactional(readOnly = true)
+	public List<ProdPickingOrder> getAllPickingOrders() {
+		return prodPickingOrderRepository.findAll();
+	}
 
-    public Optional<ProcessRouteOrder> updateProcessRoute(String uuid, ProcessRouteOrder updated) {
-        return processRouteOrderRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return processRouteOrderRepository.save(updated);
-        });
-    }
+	@Transactional(readOnly = true)
+	public Optional<ProdPickingOrder> getPickingOrderByUuid(String uuid) {
+		return prodPickingOrderRepository.findById(uuid);
+	}
 
-    // ── ProdWorkCenter ─────────────────────────────────────────────────────────
+	public ProdPickingOrder createPickingOrder(ProdPickingOrder order, String userUUID, String orgUUID) {
+		order.setStatus(ProdPickingOrder.STATUS_INITIAL);
+		return insertSENode(prodPickingOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProdWorkCenter> getAllWorkCenters() {
-        return prodWorkCenterRepository.findAll();
-    }
+	public ProdPickingOrder updatePickingOrder(ProdPickingOrder order, String userUUID, String orgUUID) {
+		return updateSENode(prodPickingOrderRepository, order, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public Optional<ProdWorkCenter> getWorkCenterByUuid(String uuid) {
-        return prodWorkCenterRepository.findById(uuid);
-    }
+	public void deletePickingOrder(String uuid) {
+		deleteSENode(prodPickingOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<ProdWorkCenter> getWorkCenterChildren(String parentNodeUUID) {
-        return prodWorkCenterRepository.findByParentNodeUUID(parentNodeUUID);
-    }
+	// ── ProdJobOrder ───────────────────────────────────────────────────────────
 
-    public ProdWorkCenter createWorkCenter(ProdWorkCenter workCenter) {
-        workCenter.setUuid(UUID.randomUUID().toString());
-        return prodWorkCenterRepository.save(workCenter);
-    }
+	@Transactional(readOnly = true)
+	public List<ProdJobOrder> getJobOrdersByProductionOrder(String refProductionOrderUUID) {
+		return prodJobOrderRepository.findByRefProductionOrderUUID(refProductionOrderUUID);
+	}
 
-    public Optional<ProdWorkCenter> updateWorkCenter(String uuid, ProdWorkCenter updated) {
-        return prodWorkCenterRepository.findById(uuid).map(e -> {
-            updated.setUuid(uuid);
-            return prodWorkCenterRepository.save(updated);
-        });
-    }
+	@Transactional(readOnly = true)
+	public Optional<ProdJobOrder> getJobOrderByUuid(String uuid) {
+		return prodJobOrderRepository.findById(uuid);
+	}
+
+	public ProdJobOrder createJobOrder(ProdJobOrder jobOrder, String userUUID, String orgUUID) {
+		jobOrder.setStatus(ProdJobOrder.STATUS_INITIAL);
+		return insertSENode(prodJobOrderRepository, jobOrder, userUUID, orgUUID);
+	}
+
+	public ProdJobOrder updateJobOrder(ProdJobOrder jobOrder, String userUUID, String orgUUID) {
+		return updateSENode(prodJobOrderRepository, jobOrder, userUUID, orgUUID);
+	}
+
+	public void deleteJobOrder(String uuid) {
+		deleteSENode(prodJobOrderRepository, uuid);
+	}
+
+	// ── ProcessRouteOrder ──────────────────────────────────────────────────────
+
+	@Transactional(readOnly = true)
+	public List<ProcessRouteOrder> getAllProcessRoutes() {
+		return processRouteOrderRepository.findAll();
+	}
+
+	@Transactional(readOnly = true)
+	public Optional<ProcessRouteOrder> getProcessRouteByUuid(String uuid) {
+		return processRouteOrderRepository.findById(uuid);
+	}
+
+	public ProcessRouteOrder createProcessRoute(ProcessRouteOrder route, String userUUID, String orgUUID) {
+		route.setStatus(ProcessRouteOrder.STATUS_INITIAL);
+		return insertSENode(processRouteOrderRepository, route, userUUID, orgUUID);
+	}
+
+	public ProcessRouteOrder updateProcessRoute(ProcessRouteOrder route, String userUUID, String orgUUID) {
+		return updateSENode(processRouteOrderRepository, route, userUUID, orgUUID);
+	}
+
+	public void deleteProcessRoute(String uuid) {
+		deleteSENode(processRouteOrderRepository, uuid);
+	}
+
+	// ── ProdWorkCenter ─────────────────────────────────────────────────────────
+
+	@Transactional(readOnly = true)
+	public List<ProdWorkCenter> getAllWorkCenters() {
+		return prodWorkCenterRepository.findAll();
+	}
+
+	@Transactional(readOnly = true)
+	public Optional<ProdWorkCenter> getWorkCenterByUuid(String uuid) {
+		return prodWorkCenterRepository.findById(uuid);
+	}
+
+	@Transactional(readOnly = true)
+	public List<ProdWorkCenter> getWorkCenterChildren(String parentNodeUUID) {
+		return prodWorkCenterRepository.findByParentNodeUUID(parentNodeUUID);
+	}
+
+	public ProdWorkCenter createWorkCenter(ProdWorkCenter workCenter, String userUUID, String orgUUID) {
+		return insertSENode(prodWorkCenterRepository, workCenter, userUUID, orgUUID);
+	}
+
+	public ProdWorkCenter updateWorkCenter(ProdWorkCenter workCenter, String userUUID, String orgUUID) {
+		return updateSENode(prodWorkCenterRepository, workCenter, userUUID, orgUUID);
+	}
+
+	public void deleteWorkCenter(String uuid) {
+		deleteSENode(prodWorkCenterRepository, uuid);
+	}
+
 }

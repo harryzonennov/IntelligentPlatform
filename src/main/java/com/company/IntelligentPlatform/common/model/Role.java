@@ -11,15 +11,29 @@ import jakarta.persistence.*;
 @Table(name = "Role", schema = "platform")
 public class Role extends ServiceEntityNode {
 
-    @Column(name = "enableFlag")
-    private boolean enableFlag;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.Role;
 
-    @Column(name = "defaultPageUrl")
-    private String defaultPageUrl;
+	@Column(name = "enableFlag")
+	protected boolean enableFlag;
 
-    public boolean isEnableFlag() { return enableFlag; }
-    public void setEnableFlag(boolean enableFlag) { this.enableFlag = enableFlag; }
+	@Column(name = "defaultPageUrl")
+	protected String defaultPageUrl;
 
-    public String getDefaultPageUrl() { return defaultPageUrl; }
-    public void setDefaultPageUrl(String defaultPageUrl) { this.defaultPageUrl = defaultPageUrl; }
+	public boolean isEnableFlag() {
+		return enableFlag;
+	}
+
+	public void setEnableFlag(boolean enableFlag) {
+		this.enableFlag = enableFlag;
+	}
+
+	public String getDefaultPageUrl() {
+		return defaultPageUrl;
+	}
+
+	public void setDefaultPageUrl(String defaultPageUrl) {
+		this.defaultPageUrl = defaultPageUrl;
+	}
+
 }

@@ -14,4 +14,5 @@ public interface WarehouseStoreItemRepository extends JpaRepository<WarehouseSto
     List<WarehouseStoreItem> findByDocumentUUIDAndItemStatus(String documentUUID, int itemStatus);
     List<WarehouseStoreItem> findByRefWarehouseUUID(String refWarehouseUUID);
     List<WarehouseStoreItem> findByRefWarehouseUUIDAndItemStatus(String refWarehouseUUID, int itemStatus);
+
 }

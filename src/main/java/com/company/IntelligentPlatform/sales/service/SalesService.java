@@ -1,5 +1,6 @@
 package com.company.IntelligentPlatform.sales.service;
 
+import com.company.IntelligentPlatform.common.service.ServiceEntityService;
 import com.company.IntelligentPlatform.sales.model.*;
 import com.company.IntelligentPlatform.sales.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Replaces: ThorsteinSalesDistribution - SalesContractManager, SalesAreaManager,
@@ -15,169 +15,194 @@ import java.util.UUID;
  */
 @Service
 @Transactional
-public class SalesService {
+public class SalesService extends ServiceEntityService {
 
-    @Autowired private SalesContractRepository salesContractRepository;
-    @Autowired private SalesAreaRepository salesAreaRepository;
-    @Autowired private SalesForcastRepository salesForcastRepository;
-    @Autowired private SalesReturnOrderRepository salesReturnOrderRepository;
-    @Autowired private SettleOrderRepository settleOrderRepository;
+	@Autowired
+	protected SalesContractRepository salesContractRepository;
 
-    // --- SalesContract ---
+	@Autowired
+	protected SalesAreaRepository salesAreaRepository;
 
-    public SalesContract createContract(SalesContract contract) {
-        contract.setUuid(UUID.randomUUID().toString());
-        contract.setStatus(SalesContract.STATUS_INITIAL);
-        return salesContractRepository.save(contract);
-    }
+	@Autowired
+	protected SalesForcastRepository salesForcastRepository;
 
-    @Transactional(readOnly = true)
-    public SalesContract getContractByUuid(String uuid) {
-        return salesContractRepository.findById(uuid).orElse(null);
-    }
+	@Autowired
+	protected SalesReturnOrderRepository salesReturnOrderRepository;
 
-    @Transactional(readOnly = true)
-    public List<SalesContract> getContractsByClient(String client) {
-        return salesContractRepository.findByClient(client);
-    }
+	@Autowired
+	protected SettleOrderRepository settleOrderRepository;
 
-    @Transactional(readOnly = true)
-    public List<SalesContract> getContractsByClientAndStatus(String client, int status) {
-        return salesContractRepository.findByClientAndStatus(client, status);
-    }
+	// --- SalesContract ---
 
-    public SalesContract updateContract(SalesContract contract) {
-        return salesContractRepository.save(contract);
-    }
+	public SalesContract createContract(SalesContract contract, String userUUID, String orgUUID) {
+		contract.setStatus(SalesContract.STATUS_INITIAL);
+		return insertSENode(salesContractRepository, contract, userUUID, orgUUID);
+	}
 
-    public void setContractStatus(String uuid, int status) {
-        SalesContract contract = salesContractRepository.findById(uuid).orElseThrow();
-        contract.setStatus(status);
-        salesContractRepository.save(contract);
-    }
+	@Transactional(readOnly = true)
+	public SalesContract getContractByUuid(String uuid) {
+		return getEntityNodeByUUID(salesContractRepository, uuid);
+	}
 
-    // --- SalesArea ---
+	@Transactional(readOnly = true)
+	public List<SalesContract> getContractsByClient(String client) {
+		return salesContractRepository.findByClient(client);
+	}
 
-    public SalesArea createArea(SalesArea area) {
-        area.setUuid(UUID.randomUUID().toString());
-        return salesAreaRepository.save(area);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesContract> getContractsByClientAndStatus(String client, int status) {
+		return salesContractRepository.findByClientAndStatus(client, status);
+	}
 
-    @Transactional(readOnly = true)
-    public SalesArea getAreaByUuid(String uuid) {
-        return salesAreaRepository.findById(uuid).orElse(null);
-    }
+	public SalesContract updateContract(SalesContract contract, String userUUID, String orgUUID) {
+		return updateSENode(salesContractRepository, contract, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesArea> getAreasByClient(String client) {
-        return salesAreaRepository.findByClient(client);
-    }
+	public void setContractStatus(String uuid, int status, String userUUID, String orgUUID) {
+		SalesContract contract = salesContractRepository.findById(uuid).orElseThrow();
+		contract.setStatus(status);
+		updateSENode(salesContractRepository, contract, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesArea> getAreaChildren(String parentAreaUUID) {
-        return salesAreaRepository.findByParentAreaUUID(parentAreaUUID);
-    }
+	public void deleteContract(String uuid) {
+		deleteSENode(salesContractRepository, uuid);
+	}
 
-    public SalesArea updateArea(SalesArea area) {
-        return salesAreaRepository.save(area);
-    }
+	// --- SalesArea ---
 
-    // --- SalesForcast ---
+	public SalesArea createArea(SalesArea area, String userUUID, String orgUUID) {
+		return insertSENode(salesAreaRepository, area, userUUID, orgUUID);
+	}
 
-    public SalesForcast createForcast(SalesForcast forcast) {
-        forcast.setUuid(UUID.randomUUID().toString());
-        forcast.setStatus(SalesForcast.STATUS_INITIAL);
-        return salesForcastRepository.save(forcast);
-    }
+	@Transactional(readOnly = true)
+	public SalesArea getAreaByUuid(String uuid) {
+		return getEntityNodeByUUID(salesAreaRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public SalesForcast getForcastByUuid(String uuid) {
-        return salesForcastRepository.findById(uuid).orElse(null);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesArea> getAreasByClient(String client) {
+		return salesAreaRepository.findByClient(client);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesForcast> getForcastsByClient(String client) {
-        return salesForcastRepository.findByClient(client);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesArea> getAreaChildren(String parentAreaUUID) {
+		return salesAreaRepository.findByParentAreaUUID(parentAreaUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesForcast> getForcastsByClientAndStatus(String client, int status) {
-        return salesForcastRepository.findByClientAndStatus(client, status);
-    }
+	public SalesArea updateArea(SalesArea area, String userUUID, String orgUUID) {
+		return updateSENode(salesAreaRepository, area, userUUID, orgUUID);
+	}
 
-    public SalesForcast updateForcast(SalesForcast forcast) {
-        return salesForcastRepository.save(forcast);
-    }
+	public void deleteArea(String uuid) {
+		deleteSENode(salesAreaRepository, uuid);
+	}
 
-    public void setForcastStatus(String uuid, int status) {
-        SalesForcast forcast = salesForcastRepository.findById(uuid).orElseThrow();
-        forcast.setStatus(status);
-        salesForcastRepository.save(forcast);
-    }
+	// --- SalesForcast ---
 
-    // --- SalesReturnOrder ---
+	public SalesForcast createForcast(SalesForcast forcast, String userUUID, String orgUUID) {
+		forcast.setStatus(SalesForcast.STATUS_INITIAL);
+		return insertSENode(salesForcastRepository, forcast, userUUID, orgUUID);
+	}
 
-    public SalesReturnOrder createReturnOrder(SalesReturnOrder returnOrder) {
-        returnOrder.setUuid(UUID.randomUUID().toString());
-        returnOrder.setStatus(SalesReturnOrder.STATUS_INITIAL);
-        return salesReturnOrderRepository.save(returnOrder);
-    }
+	@Transactional(readOnly = true)
+	public SalesForcast getForcastByUuid(String uuid) {
+		return getEntityNodeByUUID(salesForcastRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public SalesReturnOrder getReturnOrderByUuid(String uuid) {
-        return salesReturnOrderRepository.findById(uuid).orElse(null);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesForcast> getForcastsByClient(String client) {
+		return salesForcastRepository.findByClient(client);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesReturnOrder> getReturnOrdersByClient(String client) {
-        return salesReturnOrderRepository.findByClient(client);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesForcast> getForcastsByClientAndStatus(String client, int status) {
+		return salesForcastRepository.findByClientAndStatus(client, status);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SalesReturnOrder> getReturnOrdersByClientAndStatus(String client, int status) {
-        return salesReturnOrderRepository.findByClientAndStatus(client, status);
-    }
+	public SalesForcast updateForcast(SalesForcast forcast, String userUUID, String orgUUID) {
+		return updateSENode(salesForcastRepository, forcast, userUUID, orgUUID);
+	}
 
-    public SalesReturnOrder updateReturnOrder(SalesReturnOrder returnOrder) {
-        return salesReturnOrderRepository.save(returnOrder);
-    }
+	public void setForcastStatus(String uuid, int status, String userUUID, String orgUUID) {
+		SalesForcast forcast = salesForcastRepository.findById(uuid).orElseThrow();
+		forcast.setStatus(status);
+		updateSENode(salesForcastRepository, forcast, userUUID, orgUUID);
+	}
 
-    public void setReturnOrderStatus(String uuid, int status) {
-        SalesReturnOrder returnOrder = salesReturnOrderRepository.findById(uuid).orElseThrow();
-        returnOrder.setStatus(status);
-        salesReturnOrderRepository.save(returnOrder);
-    }
+	public void deleteForcast(String uuid) {
+		deleteSENode(salesForcastRepository, uuid);
+	}
 
-    // --- SettleOrder ---
+	// --- SalesReturnOrder ---
 
-    public SettleOrder createSettleOrder(SettleOrder settleOrder) {
-        settleOrder.setUuid(UUID.randomUUID().toString());
-        settleOrder.setStatus(SettleOrder.STATUS_INIT);
-        return settleOrderRepository.save(settleOrder);
-    }
+	public SalesReturnOrder createReturnOrder(SalesReturnOrder returnOrder, String userUUID, String orgUUID) {
+		returnOrder.setStatus(SalesReturnOrder.STATUS_INITIAL);
+		return insertSENode(salesReturnOrderRepository, returnOrder, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public SettleOrder getSettleOrderByUuid(String uuid) {
-        return settleOrderRepository.findById(uuid).orElse(null);
-    }
+	@Transactional(readOnly = true)
+	public SalesReturnOrder getReturnOrderByUuid(String uuid) {
+		return getEntityNodeByUUID(salesReturnOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SettleOrder> getSettleOrdersByClient(String client) {
-        return settleOrderRepository.findByClient(client);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesReturnOrder> getReturnOrdersByClient(String client) {
+		return salesReturnOrderRepository.findByClient(client);
+	}
 
-    @Transactional(readOnly = true)
-    public List<SettleOrder> getSettleOrdersByRefOrder(String refOrderUUID) {
-        return settleOrderRepository.findByRefOrderUUID(refOrderUUID);
-    }
+	@Transactional(readOnly = true)
+	public List<SalesReturnOrder> getReturnOrdersByClientAndStatus(String client, int status) {
+		return salesReturnOrderRepository.findByClientAndStatus(client, status);
+	}
 
-    public SettleOrder updateSettleOrder(SettleOrder settleOrder) {
-        return settleOrderRepository.save(settleOrder);
-    }
+	public SalesReturnOrder updateReturnOrder(SalesReturnOrder returnOrder, String userUUID, String orgUUID) {
+		return updateSENode(salesReturnOrderRepository, returnOrder, userUUID, orgUUID);
+	}
 
-    public void setSettleOrderStatus(String uuid, int status) {
-        SettleOrder settleOrder = settleOrderRepository.findById(uuid).orElseThrow();
-        settleOrder.setStatus(status);
-        settleOrderRepository.save(settleOrder);
-    }
+	public void setReturnOrderStatus(String uuid, int status, String userUUID, String orgUUID) {
+		SalesReturnOrder returnOrder = salesReturnOrderRepository.findById(uuid).orElseThrow();
+		returnOrder.setStatus(status);
+		updateSENode(salesReturnOrderRepository, returnOrder, userUUID, orgUUID);
+	}
+
+	public void deleteReturnOrder(String uuid) {
+		deleteSENode(salesReturnOrderRepository, uuid);
+	}
+
+	// --- SettleOrder ---
+
+	public SettleOrder createSettleOrder(SettleOrder settleOrder, String userUUID, String orgUUID) {
+		settleOrder.setStatus(SettleOrder.STATUS_INIT);
+		return insertSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
+	}
+
+	@Transactional(readOnly = true)
+	public SettleOrder getSettleOrderByUuid(String uuid) {
+		return getEntityNodeByUUID(settleOrderRepository, uuid);
+	}
+
+	@Transactional(readOnly = true)
+	public List<SettleOrder> getSettleOrdersByClient(String client) {
+		return settleOrderRepository.findByClient(client);
+	}
+
+	@Transactional(readOnly = true)
+	public List<SettleOrder> getSettleOrdersByRefOrder(String refOrderUUID) {
+		return settleOrderRepository.findByRefOrderUUID(refOrderUUID);
+	}
+
+	public SettleOrder updateSettleOrder(SettleOrder settleOrder, String userUUID, String orgUUID) {
+		return updateSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
+	}
+
+	public void setSettleOrderStatus(String uuid, int status, String userUUID, String orgUUID) {
+		SettleOrder settleOrder = settleOrderRepository.findById(uuid).orElseThrow();
+		settleOrder.setStatus(status);
+		updateSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
+	}
+
+	public void deleteSettleOrder(String uuid) {
+		deleteSENode(settleOrderRepository, uuid);
+	}
+
 }

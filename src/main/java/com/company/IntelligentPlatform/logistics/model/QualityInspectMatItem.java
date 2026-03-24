@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.logistics.model;
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - QualityInspectMatItem (extends DocMatItemNode)
@@ -12,87 +14,161 @@ import java.time.LocalDate;
 @Table(name = "QualityInspectMatItem", schema = "logistics")
 public class QualityInspectMatItem extends DocMatItemNode {
 
-    @Column(name = "itemInspectType")
-    private int itemInspectType;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.QualityInspectMatItem;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	@Column(name = "itemInspectType")
+	protected int itemInspectType;
 
-    @Column(name = "itemCheckStatus")
-    private int itemCheckStatus;
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
 
-    @Column(name = "checkDate")
-    private LocalDate checkDate;
+	@Column(name = "itemCheckStatus")
+	protected int itemCheckStatus;
 
-    @Column(name = "checkTimes")
-    private int checkTimes;
+	@Column(name = "checkDate")
+	protected LocalDate checkDate;
 
-    @Column(name = "itemCheckResult", length = 3000)
-    private String itemCheckResult;
+	@Column(name = "checkTimes")
+	protected int checkTimes;
 
-    @Column(name = "sampleRate")
-    private double sampleRate;
+	@Column(name = "itemCheckResult", length = 3000)
+	protected String itemCheckResult;
 
-    @Column(name = "sampleAmount")
-    private double sampleAmount;
+	@Column(name = "sampleRate")
+	protected double sampleRate;
 
-    @Column(name = "sampleUnitUUID")
-    private String sampleUnitUUID;
+	@Column(name = "sampleAmount")
+	protected double sampleAmount;
 
-    @Column(name = "refWarehouseAreaUUID")
-    private String refWarehouseAreaUUID;
+	@Column(name = "sampleUnitUUID")
+	protected String sampleUnitUUID;
 
-    @Column(name = "failAmount")
-    private double failAmount;
+	@Column(name = "refWarehouseAreaUUID")
+	protected String refWarehouseAreaUUID;
 
-    @Column(name = "failRefUnitUUID")
-    private String failRefUnitUUID;
+	@Column(name = "failAmount")
+	protected double failAmount;
 
-    @Column(name = "refWasteWarehouseUUID")
-    private String refWasteWarehouseUUID;
+	@Column(name = "failRefUnitUUID")
+	protected String failRefUnitUUID;
 
-    @Column(name = "refWasteWareAreaUUID")
-    private String refWasteWareAreaUUID;
+	@Column(name = "refWasteWarehouseUUID")
+	protected String refWasteWarehouseUUID;
 
-    public int getItemInspectType() { return itemInspectType; }
-    public void setItemInspectType(int itemInspectType) { this.itemInspectType = itemInspectType; }
+	@Column(name = "refWasteWareAreaUUID")
+	protected String refWasteWareAreaUUID;
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	public int getItemInspectType() {
+		return itemInspectType;
+	}
 
-    public int getItemCheckStatus() { return itemCheckStatus; }
-    public void setItemCheckStatus(int itemCheckStatus) { this.itemCheckStatus = itemCheckStatus; }
+	public void setItemInspectType(int itemInspectType) {
+		this.itemInspectType = itemInspectType;
+	}
 
-    public LocalDate getCheckDate() { return checkDate; }
-    public void setCheckDate(LocalDate checkDate) { this.checkDate = checkDate; }
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
 
-    public int getCheckTimes() { return checkTimes; }
-    public void setCheckTimes(int checkTimes) { this.checkTimes = checkTimes; }
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
 
-    public String getItemCheckResult() { return itemCheckResult; }
-    public void setItemCheckResult(String itemCheckResult) { this.itemCheckResult = itemCheckResult; }
+	public int getItemCheckStatus() {
+		return itemCheckStatus;
+	}
 
-    public double getSampleRate() { return sampleRate; }
-    public void setSampleRate(double sampleRate) { this.sampleRate = sampleRate; }
+	public void setItemCheckStatus(int itemCheckStatus) {
+		this.itemCheckStatus = itemCheckStatus;
+	}
 
-    public double getSampleAmount() { return sampleAmount; }
-    public void setSampleAmount(double sampleAmount) { this.sampleAmount = sampleAmount; }
+	public LocalDate getCheckDate() {
+		return checkDate;
+	}
 
-    public String getSampleUnitUUID() { return sampleUnitUUID; }
-    public void setSampleUnitUUID(String sampleUnitUUID) { this.sampleUnitUUID = sampleUnitUUID; }
+	public void setCheckDate(LocalDate checkDate) {
+		this.checkDate = checkDate;
+	}
 
-    public String getRefWarehouseAreaUUID() { return refWarehouseAreaUUID; }
-    public void setRefWarehouseAreaUUID(String refWarehouseAreaUUID) { this.refWarehouseAreaUUID = refWarehouseAreaUUID; }
+	public int getCheckTimes() {
+		return checkTimes;
+	}
 
-    public double getFailAmount() { return failAmount; }
-    public void setFailAmount(double failAmount) { this.failAmount = failAmount; }
+	public void setCheckTimes(int checkTimes) {
+		this.checkTimes = checkTimes;
+	}
 
-    public String getFailRefUnitUUID() { return failRefUnitUUID; }
-    public void setFailRefUnitUUID(String failRefUnitUUID) { this.failRefUnitUUID = failRefUnitUUID; }
+	public String getItemCheckResult() {
+		return itemCheckResult;
+	}
 
-    public String getRefWasteWarehouseUUID() { return refWasteWarehouseUUID; }
-    public void setRefWasteWarehouseUUID(String refWasteWarehouseUUID) { this.refWasteWarehouseUUID = refWasteWarehouseUUID; }
+	public void setItemCheckResult(String itemCheckResult) {
+		this.itemCheckResult = itemCheckResult;
+	}
 
-    public String getRefWasteWareAreaUUID() { return refWasteWareAreaUUID; }
-    public void setRefWasteWareAreaUUID(String refWasteWareAreaUUID) { this.refWasteWareAreaUUID = refWasteWareAreaUUID; }
+	public double getSampleRate() {
+		return sampleRate;
+	}
+
+	public void setSampleRate(double sampleRate) {
+		this.sampleRate = sampleRate;
+	}
+
+	public double getSampleAmount() {
+		return sampleAmount;
+	}
+
+	public void setSampleAmount(double sampleAmount) {
+		this.sampleAmount = sampleAmount;
+	}
+
+	public String getSampleUnitUUID() {
+		return sampleUnitUUID;
+	}
+
+	public void setSampleUnitUUID(String sampleUnitUUID) {
+		this.sampleUnitUUID = sampleUnitUUID;
+	}
+
+	public String getRefWarehouseAreaUUID() {
+		return refWarehouseAreaUUID;
+	}
+
+	public void setRefWarehouseAreaUUID(String refWarehouseAreaUUID) {
+		this.refWarehouseAreaUUID = refWarehouseAreaUUID;
+	}
+
+	public double getFailAmount() {
+		return failAmount;
+	}
+
+	public void setFailAmount(double failAmount) {
+		this.failAmount = failAmount;
+	}
+
+	public String getFailRefUnitUUID() {
+		return failRefUnitUUID;
+	}
+
+	public void setFailRefUnitUUID(String failRefUnitUUID) {
+		this.failRefUnitUUID = failRefUnitUUID;
+	}
+
+	public String getRefWasteWarehouseUUID() {
+		return refWasteWarehouseUUID;
+	}
+
+	public void setRefWasteWarehouseUUID(String refWasteWarehouseUUID) {
+		this.refWasteWarehouseUUID = refWasteWarehouseUUID;
+	}
+
+	public String getRefWasteWareAreaUUID() {
+		return refWasteWareAreaUUID;
+	}
+
+	public void setRefWasteWareAreaUUID(String refWasteWareAreaUUID) {
+		this.refWasteWareAreaUUID = refWasteWareAreaUUID;
+	}
+
 }

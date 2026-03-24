@@ -12,4 +12,5 @@ public interface OutboundDeliveryRepository extends JpaRepository<OutboundDelive
 
     List<OutboundDelivery> findByClient(String client);
     List<OutboundDelivery> findByClientAndStatus(String client, int status);
+
 }

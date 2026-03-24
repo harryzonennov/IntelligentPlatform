@@ -20,75 +20,76 @@ import java.util.List;
 @RequestMapping("/api/v1/logistics")
 public class QualityController {
 
-    @Autowired
-    private QualityService qualityService;
+	@Autowired
+	protected QualityService qualityService;
 
-    // --- QualityInspectOrder ---
+	// --- QualityInspectOrder ---
 
-    @GetMapping("/qualityInspectOrders/{uuid}")
-    public ApiResponse<QualityInspectOrder> getInspect(@PathVariable String uuid) {
-        return ApiResponse.success(qualityService.getInspectByUuid(uuid));
-    }
+	@GetMapping("/qualityInspectOrders/{uuid}")
+	public ApiResponse<QualityInspectOrder> getInspect(@PathVariable String uuid) {
+		return ApiResponse.success(qualityService.getInspectByUuid(uuid));
+	}
 
-    @GetMapping("/qualityInspectOrders")
-    public ApiResponse<List<QualityInspectOrder>> getInspectsByClient(@RequestParam String client) {
-        return ApiResponse.success(qualityService.getInspectsByClient(client));
-    }
+	@GetMapping("/qualityInspectOrders")
+	public ApiResponse<List<QualityInspectOrder>> getInspectsByClient(@RequestParam String client) {
+		return ApiResponse.success(qualityService.getInspectsByClient(client));
+	}
 
-    @PostMapping("/qualityInspectOrders")
-    public ApiResponse<QualityInspectOrder> createInspect(@RequestBody QualityInspectOrderDto dto) {
-        return ApiResponse.success(qualityService.createInspect(dto.toEntity()));
-    }
+	@PostMapping("/qualityInspectOrders")
+	public ApiResponse<QualityInspectOrder> createInspect(@RequestBody QualityInspectOrderDto dto) {
+		return ApiResponse.success(qualityService.createInspect(dto.toEntity(), "", ""));
+	}
 
-    @PutMapping("/qualityInspectOrders/{uuid}")
-    public ApiResponse<QualityInspectOrder> updateInspect(@PathVariable String uuid,
-                                                           @RequestBody QualityInspectOrderDto dto) {
-        QualityInspectOrder order = qualityService.getInspectByUuid(uuid);
-        dto.applyTo(order);
-        return ApiResponse.success(qualityService.updateInspect(order));
-    }
+	@PutMapping("/qualityInspectOrders/{uuid}")
+	public ApiResponse<QualityInspectOrder> updateInspect(@PathVariable String uuid,
+	                                                       @RequestBody QualityInspectOrderDto dto) {
+		QualityInspectOrder order = qualityService.getInspectByUuid(uuid);
+		dto.applyTo(order);
+		return ApiResponse.success(qualityService.updateInspect(order, "", ""));
+	}
 
-    @PutMapping("/qualityInspectOrders/{uuid}/status/{status}")
-    public ApiResponse<Void> setInspectStatus(@PathVariable String uuid, @PathVariable int status) {
-        qualityService.setInspectStatus(uuid, status);
-        return ApiResponse.success(null);
-    }
+	@PutMapping("/qualityInspectOrders/{uuid}/status/{status}")
+	public ApiResponse<Void> setInspectStatus(@PathVariable String uuid, @PathVariable int status) {
+		qualityService.setInspectStatus(uuid, status, "", "");
+		return ApiResponse.success(null);
+	}
 
-    @PutMapping("/qualityInspectOrders/{uuid}/checkStatus/{checkStatus}")
-    public ApiResponse<Void> setInspectCheckStatus(@PathVariable String uuid,
-                                                    @PathVariable int checkStatus) {
-        qualityService.setInspectCheckStatus(uuid, checkStatus);
-        return ApiResponse.success(null);
-    }
+	@PutMapping("/qualityInspectOrders/{uuid}/checkStatus/{checkStatus}")
+	public ApiResponse<Void> setInspectCheckStatus(@PathVariable String uuid,
+	                                                @PathVariable int checkStatus) {
+		qualityService.setInspectCheckStatus(uuid, checkStatus, "", "");
+		return ApiResponse.success(null);
+	}
 
-    // --- WasteProcessOrder ---
+	// --- WasteProcessOrder ---
 
-    @GetMapping("/wasteProcessOrders/{uuid}")
-    public ApiResponse<WasteProcessOrder> getWasteProcess(@PathVariable String uuid) {
-        return ApiResponse.success(qualityService.getWasteProcessByUuid(uuid));
-    }
+	@GetMapping("/wasteProcessOrders/{uuid}")
+	public ApiResponse<WasteProcessOrder> getWasteProcess(@PathVariable String uuid) {
+		return ApiResponse.success(qualityService.getWasteProcessByUuid(uuid));
+	}
 
-    @GetMapping("/wasteProcessOrders")
-    public ApiResponse<List<WasteProcessOrder>> getWasteProcessesByClient(@RequestParam String client) {
-        return ApiResponse.success(qualityService.getWasteProcessesByClient(client));
-    }
+	@GetMapping("/wasteProcessOrders")
+	public ApiResponse<List<WasteProcessOrder>> getWasteProcessesByClient(@RequestParam String client) {
+		return ApiResponse.success(qualityService.getWasteProcessesByClient(client));
+	}
 
-    @PostMapping("/wasteProcessOrders")
-    public ApiResponse<WasteProcessOrder> createWasteProcess(@RequestBody WasteProcessOrderDto dto) {
-        return ApiResponse.success(qualityService.createWasteProcess(dto.toEntity()));
-    }
+	@PostMapping("/wasteProcessOrders")
+	public ApiResponse<WasteProcessOrder> createWasteProcess(@RequestBody WasteProcessOrderDto dto) {
+		return ApiResponse.success(qualityService.createWasteProcess(dto.toEntity(), "", ""));
+	}
 
-    @PutMapping("/wasteProcessOrders/{uuid}")
-    public ApiResponse<WasteProcessOrder> updateWasteProcess(@PathVariable String uuid,
-                                                              @RequestBody WasteProcessOrderDto dto) {
-        WasteProcessOrder order = qualityService.getWasteProcessByUuid(uuid);
-        dto.applyTo(order);
-        return ApiResponse.success(qualityService.updateWasteProcess(order));
-    }
+	@PutMapping("/wasteProcessOrders/{uuid}")
+	public ApiResponse<WasteProcessOrder> updateWasteProcess(@PathVariable String uuid,
+	                                                          @RequestBody WasteProcessOrderDto dto) {
+		WasteProcessOrder order = qualityService.getWasteProcessByUuid(uuid);
+		dto.applyTo(order);
+		return ApiResponse.success(qualityService.updateWasteProcess(order, "", ""));
+	}
 
-    @PutMapping("/wasteProcessOrders/{uuid}/status/{status}")
-    public ApiResponse<Void> setWasteProcessStatus(@PathVariable String uuid, @PathVariable int status) {
-        qualityService.setWasteProcessStatus(uuid, status);
-        return ApiResponse.success(null);
-    }
+	@PutMapping("/wasteProcessOrders/{uuid}/status/{status}")
+	public ApiResponse<Void> setWasteProcessStatus(@PathVariable String uuid, @PathVariable int status) {
+		qualityService.setWasteProcessStatus(uuid, status, "", "");
+		return ApiResponse.success(null);
+	}
+
 }

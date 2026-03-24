@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductionPlanRepository extends JpaRepository<ProductionPlan, String>, JpaSpecificationExecutor<ProductionPlan> {
     List<ProductionPlan> findByRefMainProdOrderUUID(String refMainProdOrderUUID);
     List<ProductionPlan> findByStatus(int status);
+
 }

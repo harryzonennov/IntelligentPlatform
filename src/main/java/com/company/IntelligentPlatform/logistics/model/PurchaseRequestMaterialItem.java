@@ -2,6 +2,8 @@ package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - PurchaseRequestMaterialItem (extends DocMatItemNode)
@@ -11,9 +13,18 @@ import jakarta.persistence.*;
 @Table(name = "PurchaseRequestMaterialItem", schema = "logistics")
 public class PurchaseRequestMaterialItem extends DocMatItemNode {
 
-    @Column(name = "itemStatus")
-    private int itemStatus;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.PurchaseRequestMaterialItem;
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	@Column(name = "itemStatus")
+	protected int itemStatus;
+
+	public int getItemStatus() {
+		return itemStatus;
+	}
+
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
 }

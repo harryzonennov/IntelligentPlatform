@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProcessRouteOrderRepository extends JpaRepository<ProcessRouteOrder, String>, JpaSpecificationExecutor<ProcessRouteOrder> {
     List<ProcessRouteOrder> findByRefMaterialSKUUUID(String refMaterialSKUUUID);
     List<ProcessRouteOrder> findByStatus(int status);
+
 }

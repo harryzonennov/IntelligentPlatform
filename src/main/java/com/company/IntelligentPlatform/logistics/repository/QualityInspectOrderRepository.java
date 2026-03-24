@@ -13,4 +13,5 @@ public interface QualityInspectOrderRepository extends JpaRepository<QualityInsp
     List<QualityInspectOrder> findByClient(String client);
     List<QualityInspectOrder> findByClientAndStatus(String client, int status);
     List<QualityInspectOrder> findByClientAndCategory(String client, int category);
+
 }

@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.logistics.model;
 import com.company.IntelligentPlatform.common.model.ReferenceNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - PurchaseOrderItem (extends ReferenceNode)
@@ -16,87 +18,160 @@ import java.time.LocalDate;
 @Table(name = "PurchaseOrderItem", schema = "logistics")
 public class PurchaseOrderItem extends ReferenceNode {
 
-    public static final int STATUS_INITIAL         = 1;
-    public static final int STATUS_DONE            = 2;
-    public static final int AVAILABLE_CHECK_INITIAL = 1;
-    public static final int AVAILABLE_CHECK_OK     = 2;
-    public static final int AVAILABLE_CHECK_ERROR  = 3;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.PurchaseOrderItem;
 
-    @Column(name = "itemStatus")
-    private int itemStatus;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "refUnitUUID")
-    private String refUnitUUID;
+	public static final int STATUS_DONE = 2;
 
-    @Column(name = "amount")
-    private double amount;
+	public static final int AVAILABLE_CHECK_INITIAL = 1;
 
-    @Column(name = "netValue")
-    private double netValue;
+	public static final int AVAILABLE_CHECK_OK = 2;
 
-    @Column(name = "refInWarehouseUUID")
-    private String refInWarehouseUUID;
+	public static final int AVAILABLE_CHECK_ERROR = 3;
 
-    @Column(name = "refFinAccountUUID")
-    private String refFinAccountUUID;
+	@Column(name = "itemStatus")
+	protected int itemStatus;
 
-    @Column(name = "refInDeliveryItemUUID")
-    private String refInDeliveryItemUUID;
+	@Column(name = "refUnitUUID")
+	protected String refUnitUUID;
 
-    @Column(name = "availableCheckStatus")
-    private int availableCheckStatus;
+	@Column(name = "amount")
+	protected double amount;
 
-    @Column(name = "weight")
-    private double weight;
+	@Column(name = "netValue")
+	protected double netValue;
 
-    @Column(name = "volume")
-    private double volume;
+	@Column(name = "refInWarehouseUUID")
+	protected String refInWarehouseUUID;
 
-    @Column(name = "producerName")
-    private String producerName;
+	@Column(name = "refFinAccountUUID")
+	protected String refFinAccountUUID;
 
-    @Column(name = "productionBatchNumber")
-    private String productionBatchNumber;
+	@Column(name = "refInDeliveryItemUUID")
+	protected String refInDeliveryItemUUID;
 
-    @Column(name = "productionDate")
-    private LocalDate productionDate;
+	@Column(name = "availableCheckStatus")
+	protected int availableCheckStatus;
 
-    public int getItemStatus() { return itemStatus; }
-    public void setItemStatus(int itemStatus) { this.itemStatus = itemStatus; }
+	@Column(name = "weight")
+	protected double weight;
 
-    public String getRefUnitUUID() { return refUnitUUID; }
-    public void setRefUnitUUID(String refUnitUUID) { this.refUnitUUID = refUnitUUID; }
+	@Column(name = "volume")
+	protected double volume;
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+	@Column(name = "producerName")
+	protected String producerName;
 
-    public double getNetValue() { return netValue; }
-    public void setNetValue(double netValue) { this.netValue = netValue; }
+	@Column(name = "productionBatchNumber")
+	protected String productionBatchNumber;
 
-    public String getRefInWarehouseUUID() { return refInWarehouseUUID; }
-    public void setRefInWarehouseUUID(String refInWarehouseUUID) { this.refInWarehouseUUID = refInWarehouseUUID; }
+	@Column(name = "productionDate")
+	protected LocalDate productionDate;
 
-    public String getRefFinAccountUUID() { return refFinAccountUUID; }
-    public void setRefFinAccountUUID(String refFinAccountUUID) { this.refFinAccountUUID = refFinAccountUUID; }
+	public int getItemStatus() {
+		return itemStatus;
+	}
 
-    public String getRefInDeliveryItemUUID() { return refInDeliveryItemUUID; }
-    public void setRefInDeliveryItemUUID(String refInDeliveryItemUUID) { this.refInDeliveryItemUUID = refInDeliveryItemUUID; }
+	public void setItemStatus(int itemStatus) {
+		this.itemStatus = itemStatus;
+	}
 
-    public int getAvailableCheckStatus() { return availableCheckStatus; }
-    public void setAvailableCheckStatus(int availableCheckStatus) { this.availableCheckStatus = availableCheckStatus; }
+	public String getRefUnitUUID() {
+		return refUnitUUID;
+	}
 
-    public double getWeight() { return weight; }
-    public void setWeight(double weight) { this.weight = weight; }
+	public void setRefUnitUUID(String refUnitUUID) {
+		this.refUnitUUID = refUnitUUID;
+	}
 
-    public double getVolume() { return volume; }
-    public void setVolume(double volume) { this.volume = volume; }
+	public double getAmount() {
+		return amount;
+	}
 
-    public String getProducerName() { return producerName; }
-    public void setProducerName(String producerName) { this.producerName = producerName; }
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
 
-    public String getProductionBatchNumber() { return productionBatchNumber; }
-    public void setProductionBatchNumber(String productionBatchNumber) { this.productionBatchNumber = productionBatchNumber; }
+	public double getNetValue() {
+		return netValue;
+	}
 
-    public LocalDate getProductionDate() { return productionDate; }
-    public void setProductionDate(LocalDate productionDate) { this.productionDate = productionDate; }
+	public void setNetValue(double netValue) {
+		this.netValue = netValue;
+	}
+
+	public String getRefInWarehouseUUID() {
+		return refInWarehouseUUID;
+	}
+
+	public void setRefInWarehouseUUID(String refInWarehouseUUID) {
+		this.refInWarehouseUUID = refInWarehouseUUID;
+	}
+
+	public String getRefFinAccountUUID() {
+		return refFinAccountUUID;
+	}
+
+	public void setRefFinAccountUUID(String refFinAccountUUID) {
+		this.refFinAccountUUID = refFinAccountUUID;
+	}
+
+	public String getRefInDeliveryItemUUID() {
+		return refInDeliveryItemUUID;
+	}
+
+	public void setRefInDeliveryItemUUID(String refInDeliveryItemUUID) {
+		this.refInDeliveryItemUUID = refInDeliveryItemUUID;
+	}
+
+	public int getAvailableCheckStatus() {
+		return availableCheckStatus;
+	}
+
+	public void setAvailableCheckStatus(int availableCheckStatus) {
+		this.availableCheckStatus = availableCheckStatus;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public double getVolume() {
+		return volume;
+	}
+
+	public void setVolume(double volume) {
+		this.volume = volume;
+	}
+
+	public String getProducerName() {
+		return producerName;
+	}
+
+	public void setProducerName(String producerName) {
+		this.producerName = producerName;
+	}
+
+	public String getProductionBatchNumber() {
+		return productionBatchNumber;
+	}
+
+	public void setProductionBatchNumber(String productionBatchNumber) {
+		this.productionBatchNumber = productionBatchNumber;
+	}
+
+	public LocalDate getProductionDate() {
+		return productionDate;
+	}
+
+	public void setProductionDate(LocalDate productionDate) {
+		this.productionDate = productionDate;
+	}
+
 }

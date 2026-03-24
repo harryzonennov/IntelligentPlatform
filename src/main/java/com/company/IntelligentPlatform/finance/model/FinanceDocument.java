@@ -12,58 +12,104 @@ import jakarta.persistence.*;
 @Table(name = "FinanceDocument", schema = "finance")
 public class FinanceDocument extends ServiceEntityNode {
 
-    @Column(name = "documentType")
-    private int documentType;
+	@Column(name = "documentType")
+	protected int documentType;
 
-    @Column(name = "objectName")
-    private String objectName;
+	@Column(name = "objectName")
+	protected String objectName;
 
-    @Column(name = "accountTitleName")
-    private String accountTitleName;
+	@Column(name = "accountTitleName")
+	protected String accountTitleName;
 
-    @Column(name = "paymentsType")
-    private int paymentsType;
+	@Column(name = "paymentsType")
+	protected int paymentsType;
 
-    @Column(name = "amount")
-    private double amount;
+	@Column(name = "amount")
+	protected double amount;
 
-    @Column(name = "accountant")
-    private String accountant;
+	@Column(name = "accountant")
+	protected String accountant;
 
-    @Column(name = "cashier")
-    private String cashier;
+	@Column(name = "cashier")
+	protected String cashier;
 
-    // Cross-module ref — UUID only, no FK
-    @Column(name = "acountUUID")
-    private String acountUUID;
+	// Cross-module ref — UUID only, no FK
+	@Column(name = "acountUUID")
+	protected String acountUUID;
 
-    @Column(name = "accountTitleUUID")
-    private String accountTitleUUID;
+	@Column(name = "accountTitleUUID")
+	protected String accountTitleUUID;
 
-    public int getDocumentType() { return documentType; }
-    public void setDocumentType(int documentType) { this.documentType = documentType; }
+	public int getDocumentType() {
+		return documentType;
+	}
 
-    public String getObjectName() { return objectName; }
-    public void setObjectName(String objectName) { this.objectName = objectName; }
+	public void setDocumentType(int documentType) {
+		this.documentType = documentType;
+	}
 
-    public String getAccountTitleName() { return accountTitleName; }
-    public void setAccountTitleName(String accountTitleName) { this.accountTitleName = accountTitleName; }
+	public String getObjectName() {
+		return objectName;
+	}
 
-    public int getPaymentsType() { return paymentsType; }
-    public void setPaymentsType(int paymentsType) { this.paymentsType = paymentsType; }
+	public void setObjectName(String objectName) {
+		this.objectName = objectName;
+	}
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+	public String getAccountTitleName() {
+		return accountTitleName;
+	}
 
-    public String getAccountant() { return accountant; }
-    public void setAccountant(String accountant) { this.accountant = accountant; }
+	public void setAccountTitleName(String accountTitleName) {
+		this.accountTitleName = accountTitleName;
+	}
 
-    public String getCashier() { return cashier; }
-    public void setCashier(String cashier) { this.cashier = cashier; }
+	public int getPaymentsType() {
+		return paymentsType;
+	}
 
-    public String getAcountUUID() { return acountUUID; }
-    public void setAcountUUID(String acountUUID) { this.acountUUID = acountUUID; }
+	public void setPaymentsType(int paymentsType) {
+		this.paymentsType = paymentsType;
+	}
 
-    public String getAccountTitleUUID() { return accountTitleUUID; }
-    public void setAccountTitleUUID(String accountTitleUUID) { this.accountTitleUUID = accountTitleUUID; }
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public String getAccountant() {
+		return accountant;
+	}
+
+	public void setAccountant(String accountant) {
+		this.accountant = accountant;
+	}
+
+	public String getCashier() {
+		return cashier;
+	}
+
+	public void setCashier(String cashier) {
+		this.cashier = cashier;
+	}
+
+	public String getAcountUUID() {
+		return acountUUID;
+	}
+
+	public void setAcountUUID(String acountUUID) {
+		this.acountUUID = acountUUID;
+	}
+
+	public String getAccountTitleUUID() {
+		return accountTitleUUID;
+	}
+
+	public void setAccountTitleUUID(String accountTitleUUID) {
+		this.accountTitleUUID = accountTitleUUID;
+	}
+
 }

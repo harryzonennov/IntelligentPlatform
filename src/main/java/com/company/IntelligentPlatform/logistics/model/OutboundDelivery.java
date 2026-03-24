@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - OutboundDelivery (extends Delivery)
@@ -10,15 +12,29 @@ import jakarta.persistence.*;
 @Table(name = "OutboundDelivery", schema = "logistics")
 public class OutboundDelivery extends Delivery {
 
-    @Column(name = "grossOutboundFee")
-    private double grossOutboundFee;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.OutboundDelivery;
 
-    @Column(name = "grossStorageFee")
-    private double grossStorageFee;
+	@Column(name = "grossOutboundFee")
+	protected double grossOutboundFee;
 
-    public double getGrossOutboundFee() { return grossOutboundFee; }
-    public void setGrossOutboundFee(double grossOutboundFee) { this.grossOutboundFee = grossOutboundFee; }
+	@Column(name = "grossStorageFee")
+	protected double grossStorageFee;
 
-    public double getGrossStorageFee() { return grossStorageFee; }
-    public void setGrossStorageFee(double grossStorageFee) { this.grossStorageFee = grossStorageFee; }
+	public double getGrossOutboundFee() {
+		return grossOutboundFee;
+	}
+
+	public void setGrossOutboundFee(double grossOutboundFee) {
+		this.grossOutboundFee = grossOutboundFee;
+	}
+
+	public double getGrossStorageFee() {
+		return grossStorageFee;
+	}
+
+	public void setGrossStorageFee(double grossStorageFee) {
+		this.grossStorageFee = grossStorageFee;
+	}
+
 }

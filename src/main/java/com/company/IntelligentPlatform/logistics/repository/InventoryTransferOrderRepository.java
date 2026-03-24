@@ -12,4 +12,5 @@ public interface InventoryTransferOrderRepository extends JpaRepository<Inventor
 
     List<InventoryTransferOrder> findByClient(String client);
     List<InventoryTransferOrder> findByClientAndStatus(String client, int status);
+
 }

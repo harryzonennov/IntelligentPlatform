@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - RepairProdOrder (extends ProductionOrder)
@@ -10,6 +12,11 @@ import jakarta.persistence.*;
 @Table(name = "RepairProdOrder", schema = "production")
 public class RepairProdOrder extends ProductionOrder {
 
-    public static final int GENITEM_MODE_NO_NEED   = 1;
-    public static final int GENITEM_MODE_ADD_MANUAL = 2;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.RepairProdOrder;
+
+	public static final int GENITEM_MODE_NO_NEED   = 1;
+
+	public static final int GENITEM_MODE_ADD_MANUAL = 2;
+
 }

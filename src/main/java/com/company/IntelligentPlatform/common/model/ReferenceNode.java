@@ -13,27 +13,48 @@ import jakarta.persistence.*;
 @MappedSuperclass
 public abstract class ReferenceNode extends ServiceEntityNode {
 
-    @Column(name = "refUUID")
-    protected String refUUID;
+	@Column(name = "refUUID")
+	protected String refUUID;
 
-    @Column(name = "refSEName")
-    protected String refSEName;
+	@Column(name = "refSEName")
+	protected String refSEName;
 
-    @Column(name = "refNodeName")
-    protected String refNodeName;
+	@Column(name = "refNodeName")
+	protected String refNodeName;
 
-    @Column(name = "refPackageName")
-    protected String refPackageName;
+	@Column(name = "refPackageName")
+	protected String refPackageName;
 
-    public String getRefUUID() { return refUUID; }
-    public void setRefUUID(String refUUID) { this.refUUID = refUUID; }
+	public String getRefUUID() {
+		return refUUID;
+	}
 
-    public String getRefSEName() { return refSEName; }
-    public void setRefSEName(String refSEName) { this.refSEName = refSEName; }
+	public void setRefUUID(String refUUID) {
+		this.refUUID = refUUID;
+	}
 
-    public String getRefNodeName() { return refNodeName; }
-    public void setRefNodeName(String refNodeName) { this.refNodeName = refNodeName; }
+	public String getRefSEName() {
+		return refSEName;
+	}
 
-    public String getRefPackageName() { return refPackageName; }
-    public void setRefPackageName(String refPackageName) { this.refPackageName = refPackageName; }
+	public void setRefSEName(String refSEName) {
+		this.refSEName = refSEName;
+	}
+
+	public String getRefNodeName() {
+		return refNodeName;
+	}
+
+	public void setRefNodeName(String refNodeName) {
+		this.refNodeName = refNodeName;
+	}
+
+	public String getRefPackageName() {
+		return refPackageName;
+	}
+
+	public void setRefPackageName(String refPackageName) {
+		this.refPackageName = refPackageName;
+	}
+
 }

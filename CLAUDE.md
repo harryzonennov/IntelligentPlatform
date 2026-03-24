@@ -49,7 +49,10 @@ The most common mistakes to avoid:
 
 ## Layer pattern
 - `@RestController` → `@Service @Transactional` → `JpaRepository`
-- Constructor injection in Service (no `@Autowired` on fields in services)
+- All `***Service` classes MUST extend `ServiceEntityService` (common/service/ServiceEntityService.java)
+- Use `insertSENode(repo, entity, userUUID, orgUUID)` — never call `repo.save()` directly for create
+- Use `updateSENode(repo, entity, userUUID, orgUUID)` — never call `repo.save()` directly for update
+- Use `deleteSENode(repo, uuid)` for deletes
 - `@Transactional(readOnly = true)` on all read methods
 - `ResponseEntity<ApiResponse<T>>` return type on all controller methods
 - DTO: `toEntity()` for create, `applyTo(entity)` for update; null-check String/Object fields; always set primitives

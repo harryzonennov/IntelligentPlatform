@@ -12,119 +12,228 @@ import java.time.LocalDateTime;
  * Old class name in ThorsteinPlatform: ServiceEntityNode
  */
 @MappedSuperclass
-public abstract class ServiceEntityNode {
+public abstract class ServiceEntityNode implements Cloneable {
 
-    @Id
-    @Column(name = "uuid", nullable = false, updatable = false)
-    private String uuid;
+	public static final String NODENAME_ROOT = "ROOT";
 
-    @Column(name = "client")
-    private String client;
+	public static final int NODE_CATEGORY_SYS = 1;
+	public static final int NODE_CATEGORY_CONFIG = 2;
 
-    @Column(name = "id")
-    private String id;
+	public static final int NODELEVEL_ROOT = 0;
+	public static final int NODELEVEL_NODE = 1;
+	public static final int NODELEVEL_LEAVE = 2;
 
-    @Column(name = "name")
-    private String name;
+	public static final int NODESPECIFYTYPE_STANDARD   = 0;
+	public static final int NODESPECIFYTYPE_REFERENCE  = 1;
+	public static final int NODESPECIFYTYPE_PROJECTION = 2;
+	public static final int NODESPECIFYTYPE_DOCUMENT   = 3;
 
-    @Column(name = "parentNodeUUID")
-    private String parentNodeUUID;
+	@Id
+	@Column(name = "uuid", nullable = false, updatable = false)
+	protected String uuid;
 
-    @Column(name = "rootNodeUUID")
-    private String rootNodeUUID;
+	@Column(name = "client")
+	protected String client;
 
-    @Column(name = "nodeLevel")
-    private int nodeLevel;
+	@Column(name = "id")
+	protected String id;
 
-    @Column(name = "serviceEntityName")
-    private String serviceEntityName;
+	@Column(name = "name")
+	protected String name;
 
-    @Column(name = "nodeName")
-    private String nodeName;
+	@Column(name = "parentNodeUUID")
+	protected String parentNodeUUID;
 
-    @Column(name = "createdBy")
-    private String createdBy;
+	@Column(name = "rootNodeUUID")
+	protected String rootNodeUUID;
 
-    @Column(name = "createdTime")
-    private LocalDateTime createdTime;
+	@Column(name = "nodeLevel")
+	protected int nodeLevel;
 
-    @Column(name = "lastUpdateBy")
-    private String lastUpdateBy;
+	@Column(name = "serviceEntityName")
+	protected String serviceEntityName;
 
-    @Column(name = "lastUpdateTime")
-    private LocalDateTime lastUpdateTime;
+	@Column(name = "nodeName")
+	protected String nodeName;
 
-    @Column(name = "nodeSpecifyType")
-    private int nodeSpecifyType;
+	@Column(name = "createdBy")
+	protected String createdBy;
 
-    @Column(name = "note")
-    private String note;
+	@Column(name = "createdTime")
+	protected LocalDateTime createdTime;
 
-    @Column(name = "resEmployeeUUID")
-    private String resEmployeeUUID;
+	@Column(name = "lastUpdateBy")
+	protected String lastUpdateBy;
 
-    @Column(name = "resOrgUUID")
-    private String resOrgUUID;
+	@Column(name = "lastUpdateTime")
+	protected LocalDateTime lastUpdateTime;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdTime = LocalDateTime.now();
-        this.lastUpdateTime = LocalDateTime.now();
-    }
+	@Column(name = "nodeSpecifyType")
+	protected int nodeSpecifyType;
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.lastUpdateTime = LocalDateTime.now();
-    }
+	@Column(name = "note")
+	protected String note;
 
-    public String getUuid() { return uuid; }
-    public void setUuid(String uuid) { this.uuid = uuid; }
+	@Column(name = "resEmployeeUUID")
+	protected String resEmployeeUUID;
 
-    public String getClient() { return client; }
-    public void setClient(String client) { this.client = client; }
+	@Column(name = "resOrgUUID")
+	protected String resOrgUUID;
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+	@PrePersist
+	protected void onCreate() {
+		this.createdTime = LocalDateTime.now();
+		this.lastUpdateTime = LocalDateTime.now();
+	}
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+	@PreUpdate
+	protected void onUpdate() {
+		this.lastUpdateTime = LocalDateTime.now();
+	}
 
-    public String getParentNodeUUID() { return parentNodeUUID; }
-    public void setParentNodeUUID(String parentNodeUUID) { this.parentNodeUUID = parentNodeUUID; }
+	public String getUuid() {
+		return uuid;
+	}
 
-    public String getRootNodeUUID() { return rootNodeUUID; }
-    public void setRootNodeUUID(String rootNodeUUID) { this.rootNodeUUID = rootNodeUUID; }
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
-    public int getNodeLevel() { return nodeLevel; }
-    public void setNodeLevel(int nodeLevel) { this.nodeLevel = nodeLevel; }
+	public String getClient() {
+		return client;
+	}
 
-    public String getServiceEntityName() { return serviceEntityName; }
-    public void setServiceEntityName(String serviceEntityName) { this.serviceEntityName = serviceEntityName; }
+	public void setClient(String client) {
+		this.client = client;
+	}
 
-    public String getNodeName() { return nodeName; }
-    public void setNodeName(String nodeName) { this.nodeName = nodeName; }
+	public String getId() {
+		return id;
+	}
 
-    public String getCreatedBy() { return createdBy; }
-    public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public LocalDateTime getCreatedTime() { return createdTime; }
-    public void setCreatedTime(LocalDateTime createdTime) { this.createdTime = createdTime; }
+	public String getName() {
+		return name;
+	}
 
-    public String getLastUpdateBy() { return lastUpdateBy; }
-    public void setLastUpdateBy(String lastUpdateBy) { this.lastUpdateBy = lastUpdateBy; }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public LocalDateTime getLastUpdateTime() { return lastUpdateTime; }
-    public void setLastUpdateTime(LocalDateTime lastUpdateTime) { this.lastUpdateTime = lastUpdateTime; }
+	public String getParentNodeUUID() {
+		return parentNodeUUID;
+	}
 
-    public int getNodeSpecifyType() { return nodeSpecifyType; }
-    public void setNodeSpecifyType(int nodeSpecifyType) { this.nodeSpecifyType = nodeSpecifyType; }
+	public void setParentNodeUUID(String parentNodeUUID) {
+		this.parentNodeUUID = parentNodeUUID;
+	}
 
-    public String getNote() { return note; }
-    public void setNote(String note) { this.note = note; }
+	public String getRootNodeUUID() {
+		return rootNodeUUID;
+	}
 
-    public String getResEmployeeUUID() { return resEmployeeUUID; }
-    public void setResEmployeeUUID(String resEmployeeUUID) { this.resEmployeeUUID = resEmployeeUUID; }
+	public void setRootNodeUUID(String rootNodeUUID) {
+		this.rootNodeUUID = rootNodeUUID;
+	}
 
-    public String getResOrgUUID() { return resOrgUUID; }
-    public void setResOrgUUID(String resOrgUUID) { this.resOrgUUID = resOrgUUID; }
+	public int getNodeLevel() {
+		return nodeLevel;
+	}
+
+	public void setNodeLevel(int nodeLevel) {
+		this.nodeLevel = nodeLevel;
+	}
+
+	public String getServiceEntityName() {
+		return serviceEntityName;
+	}
+
+	public void setServiceEntityName(String serviceEntityName) {
+		this.serviceEntityName = serviceEntityName;
+	}
+
+	public String getNodeName() {
+		return nodeName;
+	}
+
+	public void setNodeName(String nodeName) {
+		this.nodeName = nodeName;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDateTime getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(LocalDateTime createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getLastUpdateBy() {
+		return lastUpdateBy;
+	}
+
+	public void setLastUpdateBy(String lastUpdateBy) {
+		this.lastUpdateBy = lastUpdateBy;
+	}
+
+	public LocalDateTime getLastUpdateTime() {
+		return lastUpdateTime;
+	}
+
+	public void setLastUpdateTime(LocalDateTime lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
+
+	public int getNodeSpecifyType() {
+		return nodeSpecifyType;
+	}
+
+	public void setNodeSpecifyType(int nodeSpecifyType) {
+		this.nodeSpecifyType = nodeSpecifyType;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getResEmployeeUUID() {
+		return resEmployeeUUID;
+	}
+
+	public void setResEmployeeUUID(String resEmployeeUUID) {
+		this.resEmployeeUUID = resEmployeeUUID;
+	}
+
+	public String getResOrgUUID() {
+		return resOrgUUID;
+	}
+
+	public void setResOrgUUID(String resOrgUUID) {
+		this.resOrgUUID = resOrgUUID;
+	}
+
+	@Override
+	public ServiceEntityNode clone() {
+		try {
+			return (ServiceEntityNode) super.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }

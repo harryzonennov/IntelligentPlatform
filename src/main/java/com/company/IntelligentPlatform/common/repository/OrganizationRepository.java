@@ -16,4 +16,5 @@ public interface OrganizationRepository extends JpaRepository<Organization, Stri
     List<Organization> findByParentOrganizationUUID(String parentOrganizationUUID);
 
     List<Organization> findByClient(String client);
+
 }

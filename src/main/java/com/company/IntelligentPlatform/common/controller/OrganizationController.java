@@ -17,34 +17,35 @@ import java.util.List;
 @RequestMapping("/api/v1/platform/organizations")
 public class OrganizationController {
 
-    @Autowired
-    private OrganizationService organizationService;
+	@Autowired
+	protected OrganizationService organizationService;
 
-    @GetMapping("/{uuid}")
-    public ApiResponse<Organization> get(@PathVariable String uuid) {
-        return ApiResponse.success(organizationService.getByUuid(uuid));
-    }
+	@GetMapping("/{uuid}")
+	public ApiResponse<Organization> get(@PathVariable String uuid) {
+		return ApiResponse.success(organizationService.getByUuid(uuid));
+	}
 
-    @GetMapping
-    public ApiResponse<List<Organization>> getByClient(@RequestParam String client) {
-        return ApiResponse.success(organizationService.getByClient(client));
-    }
+	@GetMapping
+	public ApiResponse<List<Organization>> getByClient(@RequestParam String client) {
+		return ApiResponse.success(organizationService.getByClient(client));
+	}
 
-    @GetMapping("/{uuid}/children")
-    public ApiResponse<List<Organization>> getChildren(@PathVariable String uuid) {
-        return ApiResponse.success(organizationService.getChildren(uuid));
-    }
+	@GetMapping("/{uuid}/children")
+	public ApiResponse<List<Organization>> getChildren(@PathVariable String uuid) {
+		return ApiResponse.success(organizationService.getChildren(uuid));
+	}
 
-    @PostMapping
-    public ApiResponse<Organization> create(@RequestBody OrganizationDto dto) {
-        Organization org = dto.toEntity();
-        return ApiResponse.success(organizationService.create(org));
-    }
+	@PostMapping
+	public ApiResponse<Organization> create(@RequestBody OrganizationDto dto) {
+		Organization org = dto.toEntity();
+		return ApiResponse.success(organizationService.create(org, "", ""));
+	}
 
-    @PutMapping("/{uuid}")
-    public ApiResponse<Organization> update(@PathVariable String uuid, @RequestBody OrganizationDto dto) {
-        Organization org = organizationService.getByUuid(uuid);
-        dto.applyTo(org);
-        return ApiResponse.success(organizationService.update(org));
-    }
+	@PutMapping("/{uuid}")
+	public ApiResponse<Organization> update(@PathVariable String uuid, @RequestBody OrganizationDto dto) {
+		Organization org = organizationService.getByUuid(uuid);
+		dto.applyTo(org);
+		return ApiResponse.success(organizationService.update(org, "", ""));
+	}
+
 }

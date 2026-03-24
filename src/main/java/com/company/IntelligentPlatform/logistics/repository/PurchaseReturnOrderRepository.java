@@ -12,4 +12,5 @@ public interface PurchaseReturnOrderRepository extends JpaRepository<PurchaseRet
 
     List<PurchaseReturnOrder> findByClient(String client);
     List<PurchaseReturnOrder> findByClientAndStatus(String client, int status);
+
 }

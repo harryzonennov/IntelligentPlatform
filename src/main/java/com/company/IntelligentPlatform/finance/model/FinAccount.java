@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.finance.model;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccount.java / FinAccount.hbm.xml
@@ -16,255 +18,457 @@ import java.time.LocalDateTime;
 @Table(name = "FinAccount", schema = "finance")
 public class FinAccount extends DocumentContent {
 
-    // --- tri-step approval status constants ---
-    public static final int AUDIT_UNDONE    = 1;
-    public static final int AUDIT_DONE      = 2;
-    public static final int AUDIT_REJECT    = 3;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.FinAccount;
 
-    public static final int VERIFIED_UNDONE = 1;
-    public static final int VERIFIED_DONE   = 2;
+	public static final String FIELD_ACCTITLE_UUID = "accountTitleUUID";
 
-    public static final int RECORDED_UNDONE = 1;
-    public static final int RECORDED_DONE   = 2;
+	// --- tri-step approval status constants ---
+	public static final int AUDIT_UNDONE    = 1;
 
-    // --- payment type ---
-    public static final int PAYMENT_CASH = 1;
-    public static final int PAYMENT_BANK = 2;
+	public static final int AUDIT_DONE      = 2;
 
-    // --- adjust direction ---
-    public static final int ADJUST_DISCOUNT = 1;
-    public static final int ADJUST_INCREASE = 2;
+	public static final int AUDIT_REJECT    = 3;
 
-    @Column(name = "documentType")
-    private int documentType;
+	public static final int VERIFIED_UNDONE = 1;
 
-    @Column(name = "amount")
-    private double amount;
+	public static final int VERIFIED_DONE   = 2;
 
-    @Column(name = "accountTitleUUID")
-    private String accountTitleUUID;
+	public static final int RECORDED_UNDONE = 1;
 
-    @Column(name = "accountObject")
-    private String accountObject;
+	public static final int RECORDED_DONE   = 2;
 
-    // Cross-module refs — UUID only, no FK
-    @Column(name = "accountantUUID")
-    private String accountantUUID;
+	// --- payment type ---
+	public static final int PAYMENT_CASH = 1;
 
-    @Column(name = "cashierUUID")
-    private String cashierUUID;
+	public static final int PAYMENT_BANK = 2;
 
-    @Column(name = "refDocumentUUID")
-    private String refDocumentUUID;
+	// --- adjust direction ---
+	public static final int ADJUST_DISCOUNT = 1;
 
-    @Column(name = "refAccountObjectUUID")
-    private String refAccountObjectUUID;
+	public static final int ADJUST_INCREASE = 2;
 
-    @Column(name = "execOrgUUID")
-    private String execOrgUUID;
+	@Column(name = "documentType")
+	protected int documentType;
 
-    @Column(name = "paymentType")
-    private int paymentType;
+	@Column(name = "amount")
+	protected double amount;
 
-    @Column(name = "financeTime")
-    private LocalDateTime financeTime;
+	@Column(name = "accountTitleUUID")
+	protected String accountTitleUUID;
 
-    // --- audit step ---
-    @Column(name = "auditStatus")
-    private int auditStatus;
+	@Column(name = "accountObject")
+	protected String accountObject;
 
-    @Column(name = "auditLock")
-    private boolean auditLock;
+	// Cross-module refs — UUID only, no FK
+	@Column(name = "accountantUUID")
+	protected String accountantUUID;
 
-    @Column(name = "auditBy")
-    private String auditBy;
+	@Column(name = "cashierUUID")
+	protected String cashierUUID;
 
-    @Column(name = "auditTime")
-    private LocalDateTime auditTime;
+	@Column(name = "refDocumentUUID")
+	protected String refDocumentUUID;
 
-    @Column(name = "auditNote")
-    private String auditNote;
+	@Column(name = "refAccountObjectUUID")
+	protected String refAccountObjectUUID;
 
-    @Column(name = "auditLockMSG")
-    private String auditLockMSG;
+	@Column(name = "execOrgUUID")
+	protected String execOrgUUID;
 
-    // --- record step ---
-    @Column(name = "recordStatus")
-    private int recordStatus;
+	@Column(name = "paymentType")
+	protected int paymentType;
 
-    @Column(name = "recordLock")
-    private boolean recordLock;
+	@Column(name = "financeTime")
+	protected LocalDateTime financeTime;
 
-    @Column(name = "recordBy")
-    private String recordBy;
+	// --- audit step ---
+	@Column(name = "auditStatus")
+	protected int auditStatus;
 
-    @Column(name = "recordTime")
-    private LocalDateTime recordTime;
+	@Column(name = "auditLock")
+	protected boolean auditLock;
 
-    @Column(name = "recordNote")
-    private String recordNote;
+	@Column(name = "auditBy")
+	protected String auditBy;
 
-    @Column(name = "recordLockMSG")
-    private String recordLockMSG;
+	@Column(name = "auditTime")
+	protected LocalDateTime auditTime;
 
-    @Column(name = "recordedAmount")
-    private double recordedAmount;
+	@Column(name = "auditNote")
+	protected String auditNote;
 
-    @Column(name = "toRecordAmount")
-    private double toRecordAmount;
+	@Column(name = "auditLockMSG")
+	protected String auditLockMSG;
 
-    // --- verify step ---
-    @Column(name = "verifyStatus")
-    private int verifyStatus;
+	// --- record step ---
+	@Column(name = "recordStatus")
+	protected int recordStatus;
 
-    @Column(name = "verifyLock")
-    private boolean verifyLock;
+	@Column(name = "recordLock")
+	protected boolean recordLock;
 
-    @Column(name = "verifyBy")
-    private String verifyBy;
+	@Column(name = "recordBy")
+	protected String recordBy;
 
-    @Column(name = "verifyTime")
-    private LocalDateTime verifyTime;
+	@Column(name = "recordTime")
+	protected LocalDateTime recordTime;
 
-    @Column(name = "verifyNote")
-    private String verifyNote;
+	@Column(name = "recordNote")
+	protected String recordNote;
 
-    @Column(name = "verifyLockMSG")
-    private String verifyLockMSG;
+	@Column(name = "recordLockMSG")
+	protected String recordLockMSG;
 
-    // --- currency / adjustment ---
-    @Column(name = "currencyCode")
-    private String currencyCode;
+	@Column(name = "recordedAmount")
+	protected double recordedAmount;
 
-    @Column(name = "exchangeRate")
-    private double exchangeRate;
+	@Column(name = "toRecordAmount")
+	protected double toRecordAmount;
 
-    @Column(name = "amountInSetCurrency")
-    private double amountInSetCurrency;
+	// --- verify step ---
+	@Column(name = "verifyStatus")
+	protected int verifyStatus;
 
-    @Column(name = "recordedAmountInSetCurrency")
-    private double recordedAmountInSetCurrency;
+	@Column(name = "verifyLock")
+	protected boolean verifyLock;
 
-    @Column(name = "toRecordAmountInSetCurrency")
-    private double toRecordAmountInSetCurrency;
+	@Column(name = "verifyBy")
+	protected String verifyBy;
 
-    @Column(name = "adjustDirection")
-    private int adjustDirection;
+	@Column(name = "verifyTime")
+	protected LocalDateTime verifyTime;
 
-    @Column(name = "adjustAmount")
-    private double adjustAmount;
+	@Column(name = "verifyNote")
+	protected String verifyNote;
 
-    public int getDocumentType() { return documentType; }
-    public void setDocumentType(int documentType) { this.documentType = documentType; }
+	@Column(name = "verifyLockMSG")
+	protected String verifyLockMSG;
 
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+	// --- currency / adjustment ---
+	@Column(name = "currencyCode")
+	protected String currencyCode;
 
-    public String getAccountTitleUUID() { return accountTitleUUID; }
-    public void setAccountTitleUUID(String accountTitleUUID) { this.accountTitleUUID = accountTitleUUID; }
+	@Column(name = "exchangeRate")
+	protected double exchangeRate;
 
-    public String getAccountObject() { return accountObject; }
-    public void setAccountObject(String accountObject) { this.accountObject = accountObject; }
+	@Column(name = "amountInSetCurrency")
+	protected double amountInSetCurrency;
 
-    public String getAccountantUUID() { return accountantUUID; }
-    public void setAccountantUUID(String accountantUUID) { this.accountantUUID = accountantUUID; }
+	@Column(name = "recordedAmountInSetCurrency")
+	protected double recordedAmountInSetCurrency;
 
-    public String getCashierUUID() { return cashierUUID; }
-    public void setCashierUUID(String cashierUUID) { this.cashierUUID = cashierUUID; }
+	@Column(name = "toRecordAmountInSetCurrency")
+	protected double toRecordAmountInSetCurrency;
 
-    public String getRefDocumentUUID() { return refDocumentUUID; }
-    public void setRefDocumentUUID(String refDocumentUUID) { this.refDocumentUUID = refDocumentUUID; }
+	@Column(name = "adjustDirection")
+	protected int adjustDirection;
 
-    public String getRefAccountObjectUUID() { return refAccountObjectUUID; }
-    public void setRefAccountObjectUUID(String refAccountObjectUUID) { this.refAccountObjectUUID = refAccountObjectUUID; }
+	@Column(name = "adjustAmount")
+	protected double adjustAmount;
 
-    public String getExecOrgUUID() { return execOrgUUID; }
-    public void setExecOrgUUID(String execOrgUUID) { this.execOrgUUID = execOrgUUID; }
+	public int getDocumentType() {
+		return documentType;
+	}
 
-    public int getPaymentType() { return paymentType; }
-    public void setPaymentType(int paymentType) { this.paymentType = paymentType; }
+	public void setDocumentType(int documentType) {
+		this.documentType = documentType;
+	}
 
-    public LocalDateTime getFinanceTime() { return financeTime; }
-    public void setFinanceTime(LocalDateTime financeTime) { this.financeTime = financeTime; }
+	public double getAmount() {
+		return amount;
+	}
 
-    public int getAuditStatus() { return auditStatus; }
-    public void setAuditStatus(int auditStatus) { this.auditStatus = auditStatus; }
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
 
-    public boolean getAuditLock() { return auditLock; }
-    public void setAuditLock(boolean auditLock) { this.auditLock = auditLock; }
+	public String getAccountTitleUUID() {
+		return accountTitleUUID;
+	}
 
-    public String getAuditBy() { return auditBy; }
-    public void setAuditBy(String auditBy) { this.auditBy = auditBy; }
+	public void setAccountTitleUUID(String accountTitleUUID) {
+		this.accountTitleUUID = accountTitleUUID;
+	}
 
-    public LocalDateTime getAuditTime() { return auditTime; }
-    public void setAuditTime(LocalDateTime auditTime) { this.auditTime = auditTime; }
+	public String getAccountObject() {
+		return accountObject;
+	}
 
-    public String getAuditNote() { return auditNote; }
-    public void setAuditNote(String auditNote) { this.auditNote = auditNote; }
+	public void setAccountObject(String accountObject) {
+		this.accountObject = accountObject;
+	}
 
-    public String getAuditLockMSG() { return auditLockMSG; }
-    public void setAuditLockMSG(String auditLockMSG) { this.auditLockMSG = auditLockMSG; }
+	public String getAccountantUUID() {
+		return accountantUUID;
+	}
 
-    public int getRecordStatus() { return recordStatus; }
-    public void setRecordStatus(int recordStatus) { this.recordStatus = recordStatus; }
+	public void setAccountantUUID(String accountantUUID) {
+		this.accountantUUID = accountantUUID;
+	}
 
-    public boolean getRecordLock() { return recordLock; }
-    public void setRecordLock(boolean recordLock) { this.recordLock = recordLock; }
+	public String getCashierUUID() {
+		return cashierUUID;
+	}
 
-    public String getRecordBy() { return recordBy; }
-    public void setRecordBy(String recordBy) { this.recordBy = recordBy; }
+	public void setCashierUUID(String cashierUUID) {
+		this.cashierUUID = cashierUUID;
+	}
 
-    public LocalDateTime getRecordTime() { return recordTime; }
-    public void setRecordTime(LocalDateTime recordTime) { this.recordTime = recordTime; }
+	public String getRefDocumentUUID() {
+		return refDocumentUUID;
+	}
 
-    public String getRecordNote() { return recordNote; }
-    public void setRecordNote(String recordNote) { this.recordNote = recordNote; }
+	public void setRefDocumentUUID(String refDocumentUUID) {
+		this.refDocumentUUID = refDocumentUUID;
+	}
 
-    public String getRecordLockMSG() { return recordLockMSG; }
-    public void setRecordLockMSG(String recordLockMSG) { this.recordLockMSG = recordLockMSG; }
+	public String getRefAccountObjectUUID() {
+		return refAccountObjectUUID;
+	}
 
-    public double getRecordedAmount() { return recordedAmount; }
-    public void setRecordedAmount(double recordedAmount) { this.recordedAmount = recordedAmount; }
+	public void setRefAccountObjectUUID(String refAccountObjectUUID) {
+		this.refAccountObjectUUID = refAccountObjectUUID;
+	}
 
-    public double getToRecordAmount() { return toRecordAmount; }
-    public void setToRecordAmount(double toRecordAmount) { this.toRecordAmount = toRecordAmount; }
+	public String getExecOrgUUID() {
+		return execOrgUUID;
+	}
 
-    public int getVerifyStatus() { return verifyStatus; }
-    public void setVerifyStatus(int verifyStatus) { this.verifyStatus = verifyStatus; }
+	public void setExecOrgUUID(String execOrgUUID) {
+		this.execOrgUUID = execOrgUUID;
+	}
 
-    public boolean getVerifyLock() { return verifyLock; }
-    public void setVerifyLock(boolean verifyLock) { this.verifyLock = verifyLock; }
+	public int getPaymentType() {
+		return paymentType;
+	}
 
-    public String getVerifyBy() { return verifyBy; }
-    public void setVerifyBy(String verifyBy) { this.verifyBy = verifyBy; }
+	public void setPaymentType(int paymentType) {
+		this.paymentType = paymentType;
+	}
 
-    public LocalDateTime getVerifyTime() { return verifyTime; }
-    public void setVerifyTime(LocalDateTime verifyTime) { this.verifyTime = verifyTime; }
+	public LocalDateTime getFinanceTime() {
+		return financeTime;
+	}
 
-    public String getVerifyNote() { return verifyNote; }
-    public void setVerifyNote(String verifyNote) { this.verifyNote = verifyNote; }
+	public void setFinanceTime(LocalDateTime financeTime) {
+		this.financeTime = financeTime;
+	}
 
-    public String getVerifyLockMSG() { return verifyLockMSG; }
-    public void setVerifyLockMSG(String verifyLockMSG) { this.verifyLockMSG = verifyLockMSG; }
+	public int getAuditStatus() {
+		return auditStatus;
+	}
 
-    public String getCurrencyCode() { return currencyCode; }
-    public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
+	public void setAuditStatus(int auditStatus) {
+		this.auditStatus = auditStatus;
+	}
 
-    public double getExchangeRate() { return exchangeRate; }
-    public void setExchangeRate(double exchangeRate) { this.exchangeRate = exchangeRate; }
+	public boolean getAuditLock() {
+		return auditLock;
+	}
 
-    public double getAmountInSetCurrency() { return amountInSetCurrency; }
-    public void setAmountInSetCurrency(double amountInSetCurrency) { this.amountInSetCurrency = amountInSetCurrency; }
+	public void setAuditLock(boolean auditLock) {
+		this.auditLock = auditLock;
+	}
 
-    public double getRecordedAmountInSetCurrency() { return recordedAmountInSetCurrency; }
-    public void setRecordedAmountInSetCurrency(double v) { this.recordedAmountInSetCurrency = v; }
+	public String getAuditBy() {
+		return auditBy;
+	}
 
-    public double getToRecordAmountInSetCurrency() { return toRecordAmountInSetCurrency; }
-    public void setToRecordAmountInSetCurrency(double v) { this.toRecordAmountInSetCurrency = v; }
+	public void setAuditBy(String auditBy) {
+		this.auditBy = auditBy;
+	}
 
-    public int getAdjustDirection() { return adjustDirection; }
-    public void setAdjustDirection(int adjustDirection) { this.adjustDirection = adjustDirection; }
+	public LocalDateTime getAuditTime() {
+		return auditTime;
+	}
 
-    public double getAdjustAmount() { return adjustAmount; }
-    public void setAdjustAmount(double adjustAmount) { this.adjustAmount = adjustAmount; }
+	public void setAuditTime(LocalDateTime auditTime) {
+		this.auditTime = auditTime;
+	}
+
+	public String getAuditNote() {
+		return auditNote;
+	}
+
+	public void setAuditNote(String auditNote) {
+		this.auditNote = auditNote;
+	}
+
+	public String getAuditLockMSG() {
+		return auditLockMSG;
+	}
+
+	public void setAuditLockMSG(String auditLockMSG) {
+		this.auditLockMSG = auditLockMSG;
+	}
+
+	public int getRecordStatus() {
+		return recordStatus;
+	}
+
+	public void setRecordStatus(int recordStatus) {
+		this.recordStatus = recordStatus;
+	}
+
+	public boolean getRecordLock() {
+		return recordLock;
+	}
+
+	public void setRecordLock(boolean recordLock) {
+		this.recordLock = recordLock;
+	}
+
+	public String getRecordBy() {
+		return recordBy;
+	}
+
+	public void setRecordBy(String recordBy) {
+		this.recordBy = recordBy;
+	}
+
+	public LocalDateTime getRecordTime() {
+		return recordTime;
+	}
+
+	public void setRecordTime(LocalDateTime recordTime) {
+		this.recordTime = recordTime;
+	}
+
+	public String getRecordNote() {
+		return recordNote;
+	}
+
+	public void setRecordNote(String recordNote) {
+		this.recordNote = recordNote;
+	}
+
+	public String getRecordLockMSG() {
+		return recordLockMSG;
+	}
+
+	public void setRecordLockMSG(String recordLockMSG) {
+		this.recordLockMSG = recordLockMSG;
+	}
+
+	public double getRecordedAmount() {
+		return recordedAmount;
+	}
+
+	public void setRecordedAmount(double recordedAmount) {
+		this.recordedAmount = recordedAmount;
+	}
+
+	public double getToRecordAmount() {
+		return toRecordAmount;
+	}
+
+	public void setToRecordAmount(double toRecordAmount) {
+		this.toRecordAmount = toRecordAmount;
+	}
+
+	public int getVerifyStatus() {
+		return verifyStatus;
+	}
+
+	public void setVerifyStatus(int verifyStatus) {
+		this.verifyStatus = verifyStatus;
+	}
+
+	public boolean getVerifyLock() {
+		return verifyLock;
+	}
+
+	public void setVerifyLock(boolean verifyLock) {
+		this.verifyLock = verifyLock;
+	}
+
+	public String getVerifyBy() {
+		return verifyBy;
+	}
+
+	public void setVerifyBy(String verifyBy) {
+		this.verifyBy = verifyBy;
+	}
+
+	public LocalDateTime getVerifyTime() {
+		return verifyTime;
+	}
+
+	public void setVerifyTime(LocalDateTime verifyTime) {
+		this.verifyTime = verifyTime;
+	}
+
+	public String getVerifyNote() {
+		return verifyNote;
+	}
+
+	public void setVerifyNote(String verifyNote) {
+		this.verifyNote = verifyNote;
+	}
+
+	public String getVerifyLockMSG() {
+		return verifyLockMSG;
+	}
+
+	public void setVerifyLockMSG(String verifyLockMSG) {
+		this.verifyLockMSG = verifyLockMSG;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
+	public double getExchangeRate() {
+		return exchangeRate;
+	}
+
+	public void setExchangeRate(double exchangeRate) {
+		this.exchangeRate = exchangeRate;
+	}
+
+	public double getAmountInSetCurrency() {
+		return amountInSetCurrency;
+	}
+
+	public void setAmountInSetCurrency(double amountInSetCurrency) {
+		this.amountInSetCurrency = amountInSetCurrency;
+	}
+
+	public double getRecordedAmountInSetCurrency() {
+		return recordedAmountInSetCurrency;
+	}
+
+	public void setRecordedAmountInSetCurrency(double v) {
+		this.recordedAmountInSetCurrency = v;
+	}
+
+	public double getToRecordAmountInSetCurrency() {
+		return toRecordAmountInSetCurrency;
+	}
+
+	public void setToRecordAmountInSetCurrency(double v) {
+		this.toRecordAmountInSetCurrency = v;
+	}
+
+	public int getAdjustDirection() {
+		return adjustDirection;
+	}
+
+	public void setAdjustDirection(int adjustDirection) {
+		this.adjustDirection = adjustDirection;
+	}
+
+	public double getAdjustAmount() {
+		return adjustAmount;
+	}
+
+	public void setAdjustAmount(double adjustAmount) {
+		this.adjustAmount = adjustAmount;
+	}
+
 }

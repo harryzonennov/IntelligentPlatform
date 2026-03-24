@@ -9,4 +9,5 @@ public class IntelligentPlatformApplication {
     public static void main(String[] args) {
         SpringApplication.run(IntelligentPlatformApplication.class, args);
     }
+
 }

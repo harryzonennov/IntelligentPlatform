@@ -18,4 +18,5 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class JpaConfig {
     // DataSource, EntityManagerFactory, TransactionManager
     // are all auto-configured by Spring Boot from application.yml
+
 }

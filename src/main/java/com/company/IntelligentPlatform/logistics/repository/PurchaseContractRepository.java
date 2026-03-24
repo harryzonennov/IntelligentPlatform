@@ -12,4 +12,5 @@ public interface PurchaseContractRepository extends JpaRepository<PurchaseContra
 
     List<PurchaseContract> findByClient(String client);
     List<PurchaseContract> findByClientAndStatus(String client, int status);
+
 }

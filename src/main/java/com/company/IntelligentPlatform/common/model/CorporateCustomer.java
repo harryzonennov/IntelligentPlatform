@@ -13,102 +13,187 @@ import java.time.LocalDate;
 @Table(name = "CorporateCustomer", schema = "platform")
 public class CorporateCustomer extends CorporateAccount {
 
-    public static final int STATUS_INITIAL  = 1;
-    public static final int STATUS_INUSE    = 305;
-    public static final int STATUS_ARCHIVED = 980;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
 
-    public static final int CUSTOMERTYPE_STANDARD    = 1;
-    public static final int CUSTOMERTYPE_DISTRIBUTOR = 2;
-    public static final int CUSTOMERTYPE_DEALER      = 3;
-    public static final int CUSTOMERTYPE_SUPPLIER    = 4;
-    public static final int CUSTOMERTYPE_OTHERS      = 5;
+	public static final String SENAME = IServiceModelConstants.CorporateCustomer;
 
-    public static final int SUB_DISTRTYPE_LEVE1 = 1;
-    public static final int SUB_DISTRTYPE_LEVE2 = 2;
-    public static final int SUB_DISTRTYPE_LEVE3 = 3;
+	public static final int STATUS_INITIAL = 1;
 
-    @Column(name = "status")
-    private int status;
+	public static final int STATUS_INUSE = 305;
 
-    @Column(name = "customerType")
-    private int customerType;
+	public static final int STATUS_ARCHIVED = 980;
 
-    @Column(name = "customerLevel")
-    private int customerLevel;
+	public static final int CUSTOMERTYPE_STANDARD = 1;
 
-    @Column(name = "subDistributorType")
-    private int subDistributorType;
+	public static final int CUSTOMERTYPE_DISTRIBUTOR = 2;
 
-    @Column(name = "baseCityUUID")
-    private String baseCityUUID;
+	public static final int CUSTOMERTYPE_DEALER = 3;
 
-    // Cross-module ref — UUID only, no FK
-    @Column(name = "refSalesAreaUUID")
-    private String refSalesAreaUUID;
+	public static final int CUSTOMERTYPE_SUPPLIER = 4;
 
-    @Column(name = "weiboID")
-    private String weiboID;
+	public static final int CUSTOMERTYPE_OTHERS = 5;
 
-    @Column(name = "weiXinID")
-    private String weiXinID;
+	public static final String ID_RESOURCE_SUPPLIER = "Supplier";
 
-    @Column(name = "faceBookID")
-    private String faceBookID;
+	public static final int SUB_DISTRTYPE_LEVE1 = 1;
 
-    @Column(name = "systemDefault")
-    private boolean systemDefault;
+	public static final int SUB_DISTRTYPE_LEVE2 = 2;
 
-    @Column(name = "retireReason")
-    private String retireReason;
+	public static final int SUB_DISTRTYPE_LEVE3 = 3;
 
-    @Column(name = "retireDate")
-    private LocalDate retireDate;
+	@Column(name = "status")
+	protected int status;
 
-    @Column(name = "launchReason")
-    private String launchReason;
+	@Column(name = "customerType")
+	protected int customerType;
 
-    @Column(name = "launchDate")
-    private LocalDate launchDate;
+	@Column(name = "customerLevel")
+	protected int customerLevel;
 
-    public int getStatus() { return status; }
-    public void setStatus(int status) { this.status = status; }
+	@Column(name = "subDistributorType")
+	protected int subDistributorType;
 
-    public int getCustomerType() { return customerType; }
-    public void setCustomerType(int customerType) { this.customerType = customerType; }
+	@Column(name = "baseCityUUID")
+	protected String baseCityUUID;
 
-    public int getCustomerLevel() { return customerLevel; }
-    public void setCustomerLevel(int customerLevel) { this.customerLevel = customerLevel; }
+	// Cross-module ref — UUID only, no FK
+	@Column(name = "refSalesAreaUUID")
+	protected String refSalesAreaUUID;
 
-    public int getSubDistributorType() { return subDistributorType; }
-    public void setSubDistributorType(int subDistributorType) { this.subDistributorType = subDistributorType; }
+	@Column(name = "weiboID")
+	protected String weiboID;
 
-    public String getBaseCityUUID() { return baseCityUUID; }
-    public void setBaseCityUUID(String baseCityUUID) { this.baseCityUUID = baseCityUUID; }
+	@Column(name = "weiXinID")
+	protected String weiXinID;
 
-    public String getRefSalesAreaUUID() { return refSalesAreaUUID; }
-    public void setRefSalesAreaUUID(String refSalesAreaUUID) { this.refSalesAreaUUID = refSalesAreaUUID; }
+	@Column(name = "faceBookID")
+	protected String faceBookID;
 
-    public String getWeiboID() { return weiboID; }
-    public void setWeiboID(String weiboID) { this.weiboID = weiboID; }
+	@Column(name = "systemDefault")
+	protected boolean systemDefault;
 
-    public String getWeiXinID() { return weiXinID; }
-    public void setWeiXinID(String weiXinID) { this.weiXinID = weiXinID; }
+	@Column(name = "retireReason")
+	protected String retireReason;
 
-    public String getFaceBookID() { return faceBookID; }
-    public void setFaceBookID(String faceBookID) { this.faceBookID = faceBookID; }
+	@Column(name = "retireDate")
+	protected LocalDate retireDate;
 
-    public boolean getSystemDefault() { return systemDefault; }
-    public void setSystemDefault(boolean systemDefault) { this.systemDefault = systemDefault; }
+	@Column(name = "launchReason")
+	protected String launchReason;
 
-    public String getRetireReason() { return retireReason; }
-    public void setRetireReason(String retireReason) { this.retireReason = retireReason; }
+	@Column(name = "launchDate")
+	protected LocalDate launchDate;
 
-    public LocalDate getRetireDate() { return retireDate; }
-    public void setRetireDate(LocalDate retireDate) { this.retireDate = retireDate; }
+	public int getStatus() {
+		return status;
+	}
 
-    public String getLaunchReason() { return launchReason; }
-    public void setLaunchReason(String launchReason) { this.launchReason = launchReason; }
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
-    public LocalDate getLaunchDate() { return launchDate; }
-    public void setLaunchDate(LocalDate launchDate) { this.launchDate = launchDate; }
+	public int getCustomerType() {
+		return customerType;
+	}
+
+	public void setCustomerType(int customerType) {
+		this.customerType = customerType;
+	}
+
+	public int getCustomerLevel() {
+		return customerLevel;
+	}
+
+	public void setCustomerLevel(int customerLevel) {
+		this.customerLevel = customerLevel;
+	}
+
+	public int getSubDistributorType() {
+		return subDistributorType;
+	}
+
+	public void setSubDistributorType(int subDistributorType) {
+		this.subDistributorType = subDistributorType;
+	}
+
+	public String getBaseCityUUID() {
+		return baseCityUUID;
+	}
+
+	public void setBaseCityUUID(String baseCityUUID) {
+		this.baseCityUUID = baseCityUUID;
+	}
+
+	public String getRefSalesAreaUUID() {
+		return refSalesAreaUUID;
+	}
+
+	public void setRefSalesAreaUUID(String refSalesAreaUUID) {
+		this.refSalesAreaUUID = refSalesAreaUUID;
+	}
+
+	public String getWeiboID() {
+		return weiboID;
+	}
+
+	public void setWeiboID(String weiboID) {
+		this.weiboID = weiboID;
+	}
+
+	public String getWeiXinID() {
+		return weiXinID;
+	}
+
+	public void setWeiXinID(String weiXinID) {
+		this.weiXinID = weiXinID;
+	}
+
+	public String getFaceBookID() {
+		return faceBookID;
+	}
+
+	public void setFaceBookID(String faceBookID) {
+		this.faceBookID = faceBookID;
+	}
+
+	public boolean getSystemDefault() {
+		return systemDefault;
+	}
+
+	public void setSystemDefault(boolean systemDefault) {
+		this.systemDefault = systemDefault;
+	}
+
+	public String getRetireReason() {
+		return retireReason;
+	}
+
+	public void setRetireReason(String retireReason) {
+		this.retireReason = retireReason;
+	}
+
+	public LocalDate getRetireDate() {
+		return retireDate;
+	}
+
+	public void setRetireDate(LocalDate retireDate) {
+		this.retireDate = retireDate;
+	}
+
+	public String getLaunchReason() {
+		return launchReason;
+	}
+
+	public void setLaunchReason(String launchReason) {
+		this.launchReason = launchReason;
+	}
+
+	public LocalDate getLaunchDate() {
+		return launchDate;
+	}
+
+	public void setLaunchDate(LocalDate launchDate) {
+		this.launchDate = launchDate;
+	}
+
 }

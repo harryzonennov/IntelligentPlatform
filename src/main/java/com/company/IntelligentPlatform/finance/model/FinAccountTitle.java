@@ -2,6 +2,7 @@ package com.company.IntelligentPlatform.finance.model;
 
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import jakarta.persistence.*;
+import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccountTitle.java
@@ -13,66 +14,122 @@ import jakarta.persistence.*;
 @Table(name = "FinAccountTitle", schema = "finance")
 public class FinAccountTitle extends ServiceEntityNode {
 
-    public static final int FIN_ACCOUNTTYPE_DEBIT  = 1;
-    public static final int FIN_ACCOUNTTYPE_CREDIT = 2;
+	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+	public static final String SENAME = IServiceModelConstants.FinAccountTitle;
 
-    public static final int CATEGORY_GENERAL    = 1;
-    public static final int CATEGORY_SECONDARY  = 2;
-    public static final int CATEGORY_SUBSIDIARY = 3;
-    public static final int CATEGORY_FOURTH     = 4;
-    public static final int CATEGORY_FIFTH      = 5;
+	public static final int FIN_ACCOUNTTYPE_DEBIT  = 1;
 
-    public static final int ORIGINALTYPE_STANDARD = 1;
-    public static final int ORIGINALTYPE_CUST     = 2;
+	public static final int FIN_ACCOUNTTYPE_CREDIT = 2;
 
-    public static final int SETTLETYPE_GENERAL = 1;
-    public static final int SETTLETYPE_MONTHLY = 2;
+	public static final int CATEGORY_GENERAL    = 1;
 
-    public static final int GENTYPE_NONE               = 1;
-    public static final int GENTYPE_VEHICLERUNORDER    = 2;
-    public static final int GENTYPE_VEHICLERUNCONTRACT = 3;
-    public static final int GENTYPE_BOOKINGNOTE        = 4;
-    public static final int GENTYPE_VOUCHER            = 5;
+	public static final int CATEGORY_SECONDARY  = 2;
 
-    @Column(name = "finAccountType")
-    private int finAccountType;
+	public static final int CATEGORY_SUBSIDIARY = 3;
 
-    @Column(name = "generateType")
-    private int generateType;
+	public static final int CATEGORY_FOURTH     = 4;
 
-    @Column(name = "category")
-    private int category;
+	public static final int CATEGORY_FIFTH      = 5;
 
-    @Column(name = "parentAccountTitleUUID")
-    private String parentAccountTitleUUID;
+	public static final int ORIGINALTYPE_STANDARD = 1;
 
-    @Column(name = "rootAccountTitleUUID")
-    private String rootAccountTitleUUID;
+	public static final int ORIGINALTYPE_CUST     = 2;
 
-    @Column(name = "originalType")
-    private int originalType;
+	public static final int SETTLETYPE_GENERAL = 1;
 
-    @Column(name = "settleType")
-    private int settleType;
+	public static final int SETTLETYPE_MONTHLY = 2;
 
-    public int getFinAccountType() { return finAccountType; }
-    public void setFinAccountType(int finAccountType) { this.finAccountType = finAccountType; }
+	public static final int GENTYPE_NONE               = 1;
 
-    public int getGenerateType() { return generateType; }
-    public void setGenerateType(int generateType) { this.generateType = generateType; }
+	public static final int GENTYPE_VEHICLERUNORDER    = 2;
 
-    public int getCategory() { return category; }
-    public void setCategory(int category) { this.category = category; }
+	public static final int GENTYPE_VEHICLERUNCONTRACT = 3;
 
-    public String getParentAccountTitleUUID() { return parentAccountTitleUUID; }
-    public void setParentAccountTitleUUID(String parentAccountTitleUUID) { this.parentAccountTitleUUID = parentAccountTitleUUID; }
+	public static final int GENTYPE_BOOKINGNOTE        = 4;
 
-    public String getRootAccountTitleUUID() { return rootAccountTitleUUID; }
-    public void setRootAccountTitleUUID(String rootAccountTitleUUID) { this.rootAccountTitleUUID = rootAccountTitleUUID; }
+	public static final int GENTYPE_VOUCHER            = 5;
 
-    public int getOriginalType() { return originalType; }
-    public void setOriginalType(int originalType) { this.originalType = originalType; }
+	public static final String FIELD_PARENTACCOUTTITLEUUID = "parentAccountTitleUUID";
 
-    public int getSettleType() { return settleType; }
-    public void setSettleType(int settleType) { this.settleType = settleType; }
+	public static final String FIELD_PARENTNODEUUID        = "parentNodeUUID";
+
+	public static final String FIELD_CATEGORY              = "category";
+
+	@Column(name = "finAccountType")
+	protected int finAccountType;
+
+	@Column(name = "generateType")
+	protected int generateType;
+
+	@Column(name = "category")
+	protected int category;
+
+	@Column(name = "parentAccountTitleUUID")
+	protected String parentAccountTitleUUID;
+
+	@Column(name = "rootAccountTitleUUID")
+	protected String rootAccountTitleUUID;
+
+	@Column(name = "originalType")
+	protected int originalType;
+
+	@Column(name = "settleType")
+	protected int settleType;
+
+	public int getFinAccountType() {
+		return finAccountType;
+	}
+
+	public void setFinAccountType(int finAccountType) {
+		this.finAccountType = finAccountType;
+	}
+
+	public int getGenerateType() {
+		return generateType;
+	}
+
+	public void setGenerateType(int generateType) {
+		this.generateType = generateType;
+	}
+
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
+	public String getParentAccountTitleUUID() {
+		return parentAccountTitleUUID;
+	}
+
+	public void setParentAccountTitleUUID(String parentAccountTitleUUID) {
+		this.parentAccountTitleUUID = parentAccountTitleUUID;
+	}
+
+	public String getRootAccountTitleUUID() {
+		return rootAccountTitleUUID;
+	}
+
+	public void setRootAccountTitleUUID(String rootAccountTitleUUID) {
+		this.rootAccountTitleUUID = rootAccountTitleUUID;
+	}
+
+	public int getOriginalType() {
+		return originalType;
+	}
+
+	public void setOriginalType(int originalType) {
+		this.originalType = originalType;
+	}
+
+	public int getSettleType() {
+		return settleType;
+	}
+
+	public void setSettleType(int settleType) {
+		this.settleType = settleType;
+	}
+
 }

@@ -11,16 +11,27 @@ import jakarta.persistence.*;
 @Table(name = "SettleOrderAttachment", schema = "sales")
 public class SettleOrderAttachment extends ServiceEntityNode {
 
-    @Lob
-    @Column(name = "content")
-    private byte[] content;
+	@Lob
+	@Column(name = "content")
+	protected byte[] content;
 
-    @Column(name = "fileType")
-    private String fileType;
+	@Column(name = "fileType")
+	protected String fileType;
 
-    public byte[] getContent() { return content; }
-    public void setContent(byte[] content) { this.content = content; }
+	public byte[] getContent() {
+		return content;
+	}
 
-    public String getFileType() { return fileType; }
-    public void setFileType(String fileType) { this.fileType = fileType; }
+	public void setContent(byte[] content) {
+		this.content = content;
+	}
+
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
 }

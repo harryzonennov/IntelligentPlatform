@@ -1,5 +1,6 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import com.company.IntelligentPlatform.common.service.ServiceEntityService;
 import com.company.IntelligentPlatform.logistics.model.*;
 import com.company.IntelligentPlatform.logistics.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Replaces: ThorsteinLogistics - InboundDeliveryManager, OutboundDeliveryManager,
@@ -15,132 +15,152 @@ import java.util.UUID;
  */
 @Service
 @Transactional
-public class DeliveryService {
+public class DeliveryService extends ServiceEntityService {
 
-    @Autowired private InboundDeliveryRepository inboundDeliveryRepository;
-    @Autowired private OutboundDeliveryRepository outboundDeliveryRepository;
-    @Autowired private InventoryCheckOrderRepository inventoryCheckOrderRepository;
-    @Autowired private InventoryTransferOrderRepository inventoryTransferOrderRepository;
+	@Autowired
+	protected InboundDeliveryRepository inboundDeliveryRepository;
 
-    // --- InboundDelivery ---
+	@Autowired
+	protected OutboundDeliveryRepository outboundDeliveryRepository;
 
-    public InboundDelivery createInbound(InboundDelivery delivery) {
-        delivery.setUuid(UUID.randomUUID().toString());
-        delivery.setStatus(InboundDelivery.STATUS_INITIAL);
-        return inboundDeliveryRepository.save(delivery);
-    }
+	@Autowired
+	protected InventoryCheckOrderRepository inventoryCheckOrderRepository;
 
-    @Transactional(readOnly = true)
-    public InboundDelivery getInboundByUuid(String uuid) {
-        return inboundDeliveryRepository.findById(uuid).orElse(null);
-    }
+	@Autowired
+	protected InventoryTransferOrderRepository inventoryTransferOrderRepository;
 
-    @Transactional(readOnly = true)
-    public List<InboundDelivery> getInboundByClient(String client) {
-        return inboundDeliveryRepository.findByClient(client);
-    }
+	// --- InboundDelivery ---
 
-    @Transactional(readOnly = true)
-    public List<InboundDelivery> getInboundByClientAndStatus(String client, int status) {
-        return inboundDeliveryRepository.findByClientAndStatus(client, status);
-    }
+	public InboundDelivery createInbound(InboundDelivery delivery, String userUUID, String orgUUID) {
+		delivery.setStatus(InboundDelivery.STATUS_INITIAL);
+		return insertSENode(inboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    public InboundDelivery updateInbound(InboundDelivery delivery) {
-        return inboundDeliveryRepository.save(delivery);
-    }
+	@Transactional(readOnly = true)
+	public InboundDelivery getInboundByUuid(String uuid) {
+		return getEntityNodeByUUID(inboundDeliveryRepository, uuid);
+	}
 
-    public void setInboundStatus(String uuid, int status) {
-        InboundDelivery delivery = inboundDeliveryRepository.findById(uuid).orElseThrow();
-        delivery.setStatus(status);
-        inboundDeliveryRepository.save(delivery);
-    }
+	@Transactional(readOnly = true)
+	public List<InboundDelivery> getInboundByClient(String client) {
+		return inboundDeliveryRepository.findByClient(client);
+	}
 
-    // --- OutboundDelivery ---
+	@Transactional(readOnly = true)
+	public List<InboundDelivery> getInboundByClientAndStatus(String client, int status) {
+		return inboundDeliveryRepository.findByClientAndStatus(client, status);
+	}
 
-    public OutboundDelivery createOutbound(OutboundDelivery delivery) {
-        delivery.setUuid(UUID.randomUUID().toString());
-        delivery.setStatus(OutboundDelivery.STATUS_INITIAL);
-        return outboundDeliveryRepository.save(delivery);
-    }
+	public InboundDelivery updateInbound(InboundDelivery delivery, String userUUID, String orgUUID) {
+		return updateSENode(inboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public OutboundDelivery getOutboundByUuid(String uuid) {
-        return outboundDeliveryRepository.findById(uuid).orElse(null);
-    }
+	public void setInboundStatus(String uuid, int status, String userUUID, String orgUUID) {
+		InboundDelivery delivery = inboundDeliveryRepository.findById(uuid).orElseThrow();
+		delivery.setStatus(status);
+		updateSENode(inboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<OutboundDelivery> getOutboundByClient(String client) {
-        return outboundDeliveryRepository.findByClient(client);
-    }
+	public void deleteInbound(String uuid) {
+		deleteSENode(inboundDeliveryRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public List<OutboundDelivery> getOutboundByClientAndStatus(String client, int status) {
-        return outboundDeliveryRepository.findByClientAndStatus(client, status);
-    }
+	// --- OutboundDelivery ---
 
-    public OutboundDelivery updateOutbound(OutboundDelivery delivery) {
-        return outboundDeliveryRepository.save(delivery);
-    }
+	public OutboundDelivery createOutbound(OutboundDelivery delivery, String userUUID, String orgUUID) {
+		delivery.setStatus(OutboundDelivery.STATUS_INITIAL);
+		return insertSENode(outboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    public void setOutboundStatus(String uuid, int status) {
-        OutboundDelivery delivery = outboundDeliveryRepository.findById(uuid).orElseThrow();
-        delivery.setStatus(status);
-        outboundDeliveryRepository.save(delivery);
-    }
+	@Transactional(readOnly = true)
+	public OutboundDelivery getOutboundByUuid(String uuid) {
+		return getEntityNodeByUUID(outboundDeliveryRepository, uuid);
+	}
 
-    // --- InventoryCheckOrder ---
+	@Transactional(readOnly = true)
+	public List<OutboundDelivery> getOutboundByClient(String client) {
+		return outboundDeliveryRepository.findByClient(client);
+	}
 
-    public InventoryCheckOrder createInventoryCheck(InventoryCheckOrder order) {
-        order.setUuid(UUID.randomUUID().toString());
-        order.setStatus(InventoryCheckOrder.STATUS_INITIAL);
-        return inventoryCheckOrderRepository.save(order);
-    }
+	@Transactional(readOnly = true)
+	public List<OutboundDelivery> getOutboundByClientAndStatus(String client, int status) {
+		return outboundDeliveryRepository.findByClientAndStatus(client, status);
+	}
 
-    @Transactional(readOnly = true)
-    public InventoryCheckOrder getInventoryCheckByUuid(String uuid) {
-        return inventoryCheckOrderRepository.findById(uuid).orElse(null);
-    }
+	public OutboundDelivery updateOutbound(OutboundDelivery delivery, String userUUID, String orgUUID) {
+		return updateSENode(outboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    @Transactional(readOnly = true)
-    public List<InventoryCheckOrder> getInventoryCheckByClient(String client) {
-        return inventoryCheckOrderRepository.findByClient(client);
-    }
+	public void setOutboundStatus(String uuid, int status, String userUUID, String orgUUID) {
+		OutboundDelivery delivery = outboundDeliveryRepository.findById(uuid).orElseThrow();
+		delivery.setStatus(status);
+		updateSENode(outboundDeliveryRepository, delivery, userUUID, orgUUID);
+	}
 
-    public InventoryCheckOrder updateInventoryCheck(InventoryCheckOrder order) {
-        return inventoryCheckOrderRepository.save(order);
-    }
+	public void deleteOutbound(String uuid) {
+		deleteSENode(outboundDeliveryRepository, uuid);
+	}
 
-    public void setInventoryCheckStatus(String uuid, int status) {
-        InventoryCheckOrder order = inventoryCheckOrderRepository.findById(uuid).orElseThrow();
-        order.setStatus(status);
-        inventoryCheckOrderRepository.save(order);
-    }
+	// --- InventoryCheckOrder ---
 
-    // --- InventoryTransferOrder ---
+	public InventoryCheckOrder createInventoryCheck(InventoryCheckOrder order, String userUUID, String orgUUID) {
+		order.setStatus(InventoryCheckOrder.STATUS_INITIAL);
+		return insertSENode(inventoryCheckOrderRepository, order, userUUID, orgUUID);
+	}
 
-    public InventoryTransferOrder createInventoryTransfer(InventoryTransferOrder order) {
-        order.setUuid(UUID.randomUUID().toString());
-        order.setStatus(InventoryTransferOrder.STATUS_INITIAL);
-        return inventoryTransferOrderRepository.save(order);
-    }
+	@Transactional(readOnly = true)
+	public InventoryCheckOrder getInventoryCheckByUuid(String uuid) {
+		return getEntityNodeByUUID(inventoryCheckOrderRepository, uuid);
+	}
 
-    @Transactional(readOnly = true)
-    public InventoryTransferOrder getInventoryTransferByUuid(String uuid) {
-        return inventoryTransferOrderRepository.findById(uuid).orElse(null);
-    }
+	@Transactional(readOnly = true)
+	public List<InventoryCheckOrder> getInventoryCheckByClient(String client) {
+		return inventoryCheckOrderRepository.findByClient(client);
+	}
 
-    @Transactional(readOnly = true)
-    public List<InventoryTransferOrder> getInventoryTransferByClient(String client) {
-        return inventoryTransferOrderRepository.findByClient(client);
-    }
+	public InventoryCheckOrder updateInventoryCheck(InventoryCheckOrder order, String userUUID, String orgUUID) {
+		return updateSENode(inventoryCheckOrderRepository, order, userUUID, orgUUID);
+	}
 
-    public InventoryTransferOrder updateInventoryTransfer(InventoryTransferOrder order) {
-        return inventoryTransferOrderRepository.save(order);
-    }
+	public void setInventoryCheckStatus(String uuid, int status, String userUUID, String orgUUID) {
+		InventoryCheckOrder order = inventoryCheckOrderRepository.findById(uuid).orElseThrow();
+		order.setStatus(status);
+		updateSENode(inventoryCheckOrderRepository, order, userUUID, orgUUID);
+	}
 
-    public void setInventoryTransferStatus(String uuid, int status) {
-        InventoryTransferOrder order = inventoryTransferOrderRepository.findById(uuid).orElseThrow();
-        order.setStatus(status);
-        inventoryTransferOrderRepository.save(order);
-    }
+	public void deleteInventoryCheck(String uuid) {
+		deleteSENode(inventoryCheckOrderRepository, uuid);
+	}
+
+	// --- InventoryTransferOrder ---
+
+	public InventoryTransferOrder createInventoryTransfer(InventoryTransferOrder order, String userUUID, String orgUUID) {
+		order.setStatus(InventoryTransferOrder.STATUS_INITIAL);
+		return insertSENode(inventoryTransferOrderRepository, order, userUUID, orgUUID);
+	}
+
+	@Transactional(readOnly = true)
+	public InventoryTransferOrder getInventoryTransferByUuid(String uuid) {
+		return getEntityNodeByUUID(inventoryTransferOrderRepository, uuid);
+	}
+
+	@Transactional(readOnly = true)
+	public List<InventoryTransferOrder> getInventoryTransferByClient(String client) {
+		return inventoryTransferOrderRepository.findByClient(client);
+	}
+
+	public InventoryTransferOrder updateInventoryTransfer(InventoryTransferOrder order, String userUUID, String orgUUID) {
+		return updateSENode(inventoryTransferOrderRepository, order, userUUID, orgUUID);
+	}
+
+	public void setInventoryTransferStatus(String uuid, int status, String userUUID, String orgUUID) {
+		InventoryTransferOrder order = inventoryTransferOrderRepository.findById(uuid).orElseThrow();
+		order.setStatus(status);
+		updateSENode(inventoryTransferOrderRepository, order, userUUID, orgUUID);
+	}
+
+	public void deleteInventoryTransfer(String uuid) {
+		deleteSENode(inventoryTransferOrderRepository, uuid);
+	}
+
 }
