@@ -18,31 +18,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.company.IntelligentPlatform.common.controller.SEListController;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
 import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.AuthorizationManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.ServiceJSONDataConstants;
-import com.company.IntelligentPlatform.common.service.ServiceJSONDataException;
-import com.company.IntelligentPlatform.common.service.ServiceJSONDataHelper;
-import com.company.IntelligentPlatform.common.service.ServiceJSONParser;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
-import com.company.IntelligentPlatform.common.model.ISystemActionCode;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.IMobileErrorCodeConstant;
 import com.company.IntelligentPlatform.common.model.IMobileJSONConstant;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
 @Scope("session")
 @Controller(value = "finAccountTitleTreeController")

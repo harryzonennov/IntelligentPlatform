@@ -17,15 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
 import com.company.IntelligentPlatform.common.controller.LogonActionController;
 import com.company.IntelligentPlatform.common.controller.SEListController;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
 import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;

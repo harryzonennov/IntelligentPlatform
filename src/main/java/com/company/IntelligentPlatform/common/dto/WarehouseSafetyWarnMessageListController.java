@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
 import com.company.IntelligentPlatform.common.service.WarehouseManager;
@@ -24,8 +23,6 @@ import com.company.IntelligentPlatform.common.controller.SEListController;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
-import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
 import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
 import com.company.IntelligentPlatform.common.service.BsearchService;
 import com.company.IntelligentPlatform.common.service.SearchConfigureException;
