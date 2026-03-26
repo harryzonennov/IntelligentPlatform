@@ -140,5 +140,4 @@ public class RoleSubAuthorizationUIModel extends SEUIComModel {
 		this.refNodeName = refNodeName;
 	}
 
-
 }

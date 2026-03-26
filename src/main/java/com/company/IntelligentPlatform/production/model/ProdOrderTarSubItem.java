@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class ProdOrderTarSubItem extends DocMatItemNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdOrderTarSubItem;
 
 	public final static String SENAME = ProductionOrder.SENAME;

@@ -64,5 +64,4 @@ public class ProdJobMaterialItemUIModel extends SEUIComModel {
 		this.amountLabel = amountLabel;
 	}
 
-
 }

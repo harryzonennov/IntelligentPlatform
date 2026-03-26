@@ -74,7 +74,6 @@ public class ResFinAccountFieldSettingListController extends SEListController {
 		}
 	}
 
-
 	protected List<ResFinAccountFieldSettingUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList)
 			throws ServiceEntityInstallationException,

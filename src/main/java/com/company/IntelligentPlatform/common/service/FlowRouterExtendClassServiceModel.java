@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.FlowRouterExtendClass;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class FlowRouterExtendClassServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = FlowRouterExtendClass.NODENAME, nodeInstId = FlowRouterExtendClass.NODENAME)

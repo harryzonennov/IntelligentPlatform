@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.model.InboundDeliveryActionNode;
 import com.company.IntelligentPlatform.logistics.model.InboundDeliveryParty;
 import org.springframework.stereotype.Component;

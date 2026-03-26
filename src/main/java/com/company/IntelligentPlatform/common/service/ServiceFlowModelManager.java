@@ -14,7 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.controller.ServiceFlowModelSearchModel;
 import com.company.IntelligentPlatform.common.controller.ServiceFlowModelUIModel;
-// TODO-DAO: import ...ServiceFlowModelDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceFlowModelRepository;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
@@ -35,7 +37,6 @@ import com.company.IntelligentPlatform.common.model.ServiceBasicKeyStructure;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 @Transactional
 public class ServiceFlowModelManager extends ServiceEntityManager {
@@ -46,9 +47,11 @@ public class ServiceFlowModelManager extends ServiceEntityManager {
 
     public static final String METHOD_ConvFlowRouterToUI = "convFlowRouterToUI";
 
-    // TODO-DAO: @Autowired
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO:     protected ServiceFlowModelDAO serviceFlowModelDAO;
+    @Autowired
+    protected ServiceFlowModelRepository serviceFlowModelDAO;
 
     @Autowired
     protected ServiceFlowCondGroupManager serviceFlowCondGroupManager;
@@ -166,7 +169,6 @@ public class ServiceFlowModelManager extends ServiceEntityManager {
         }
     }
 
-
     /**
      * [Internal method] Convert from UI model to se model:serviceFlowModel
      *
@@ -196,7 +198,7 @@ public class ServiceFlowModelManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(serviceFlowModelDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceFlowModelDAO));
     }
 
     @PostConstruct

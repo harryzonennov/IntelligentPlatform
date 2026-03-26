@@ -136,7 +136,6 @@ public class ServiceDocumentSettingConfigureProxy extends ServiceEntityConfigure
         crossCopyInvolvePartyConfigureMap.addNodeFieldMap("logonPartyFlag", int.class);
         seConfigureMapList.add(crossCopyInvolvePartyConfigureMap);
 
-
         ServiceEntityConfigureMap serviceDocDeletionSettingMap = new ServiceEntityConfigureMap();
         serviceDocDeletionSettingMap.setParentNodeName(ServiceDocumentSetting.NODENAME);
         serviceDocDeletionSettingMap.setNodeName(ServiceDocDeletionSetting.NODENAME);
@@ -174,6 +173,5 @@ public class ServiceDocumentSettingConfigureProxy extends ServiceEntityConfigure
         // End
         super.setSeConfigMapList(seConfigureMapList);
     }
-
 
 }

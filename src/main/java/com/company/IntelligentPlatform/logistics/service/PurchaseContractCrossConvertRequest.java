@@ -81,5 +81,4 @@ public class PurchaseContractCrossConvertRequest extends
         });
     }
 
-
 }

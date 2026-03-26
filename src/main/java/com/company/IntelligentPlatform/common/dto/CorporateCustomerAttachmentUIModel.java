@@ -4,5 +4,4 @@ import com.company.IntelligentPlatform.common.dto.DocAttachmentNodeUIModel;
 
 public class CorporateCustomerAttachmentUIModel extends DocAttachmentNodeUIModel {
 
-
 }

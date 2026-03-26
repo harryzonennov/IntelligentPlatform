@@ -2,6 +2,10 @@ package com.company.IntelligentPlatform.finance.service;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+
 import com.company.IntelligentPlatform.finance.repository.FinanceDocumentRepository;
 import com.company.IntelligentPlatform.finance.model.FinanceDocumentConfigureProxy;
 
@@ -24,9 +28,11 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 @Transactional
 public class FinanceDocumentManager extends ServiceEntityManager {
 
-	// TODO-LEGACY: @Autowired
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	// TODO-LEGACY: 	FinanceDocumentRepository financeDocumentDAO;
+	@Autowired
+	FinanceDocumentRepository financeDocumentDAO;
 
 	@Autowired
 	FinanceDocumentConfigureProxy financeDocumentConfigureProxy;
@@ -36,12 +42,11 @@ public class FinanceDocumentManager extends ServiceEntityManager {
 
 	public FinanceDocumentManager() {
 		super.seConfigureProxy = new FinanceDocumentConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new FinanceDocumentDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(financeDocumentDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, financeDocumentDAO));
 	}
 
 	@PostConstruct

@@ -41,7 +41,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class RepairProdOrderItemManager {
 
@@ -436,7 +435,6 @@ public class RepairProdOrderItemManager {
 		return productionOrderItemManager.getRefPickingMatItemList(itemUUID, client);
 	}
 
-
 	/**
 	 * Entrance Method to get all the available reserved stock list
 	 *
@@ -525,7 +523,6 @@ public class RepairProdOrderItemManager {
 				warehouseUUIDList);
 	}
 
-
 	/**
 	 * Merge and summary accountable amount from multiple doc mat item instances
 	 *
@@ -558,7 +555,6 @@ public class RepairProdOrderItemManager {
 			throws MaterialException, ServiceEntityConfigureException {
 		convRepairProdOrderToItemUI(productionOrder, repairProdOrderItemUIModel, null);
 	}
-
 
 	public void convDocumentToItemReqProposalUI(ServiceEntityNode documentContent,
 			RepairProdItemReqProposalUIModel repairProdItemReqProposalUIModel) {
@@ -612,7 +608,6 @@ public class RepairProdOrderItemManager {
 		}
 	}
 
-
 	public void convRepairProdOrderToProposalUI(RepairProdOrder productionOrder,
 			RepairProdItemReqProposalUIModel repairProdItemReqProposalUIModel, LogonInfo logonInfo)
 			throws ServiceEntityInstallationException, ServiceEntityConfigureException {
@@ -634,7 +629,6 @@ public class RepairProdOrderItemManager {
 			throws ServiceEntityInstallationException, ServiceEntityConfigureException {
 		repairProdItemReqProposalUIModel.setParentItemId(repairProdOrderItemUIModel.getId());
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -755,9 +749,6 @@ public class RepairProdOrderItemManager {
 				copyToProductionServiceModel(repairProdOrderItemServiceModel);
 		ProductionOrderItemManager.mergeProposalIntoItemServiceModel(productionOrderItemServiceModel, repairProdItemReqProposal);
 	}
-
-
-
 
 	public static List<RepairProdItemReqProposalServiceModel> optimizeProposalListByStore(
 			List<RepairProdItemReqProposalServiceModel> repairProdItemReqProposalServiceModelList) {

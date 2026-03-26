@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.model.CorporateCustomer;
  *       tool
  */
 
-
 @Component
 public class CorporateContactPersonSearchModel extends SEUIComModel {
 

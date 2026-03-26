@@ -29,7 +29,6 @@ public class ServiceChartDataSeries {
         this.objectUUID = objectUUID;
     }
 
-
     public String getChartType() {
         return chartType;
     }
@@ -45,6 +44,5 @@ public class ServiceChartDataSeries {
     public void setValueList(List<Double> valueList) {
         this.valueList = valueList;
     }
-
 
 }

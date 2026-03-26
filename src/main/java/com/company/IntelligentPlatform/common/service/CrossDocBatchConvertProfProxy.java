@@ -367,7 +367,6 @@ public class CrossDocBatchConvertProfProxy<SourceServiceModel extends ServiceMod
         return docMatItemCreateContext;
     }
 
-
     /**
      * Default Logic to new target item instance and basic data conversion,
      * return null, if data is not valid

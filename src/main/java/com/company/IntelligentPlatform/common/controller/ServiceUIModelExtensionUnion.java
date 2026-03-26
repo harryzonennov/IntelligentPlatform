@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ServiceUIModelExtensionUnion {
 	
 	protected String nodeInstId;

@@ -82,7 +82,6 @@ public class RepairProdOrderItemSearchProxy extends ServiceSearchProxy {
         return searchNodeConfigList;
     }
 
-
     @Override
     public List<BSearchNodeComConfigure> getBasicItemSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {
         // Search node Array :[ProductionOrderItem->Material]

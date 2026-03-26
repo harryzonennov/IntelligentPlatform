@@ -57,5 +57,4 @@ public class MaterialSKUUnitListController extends SEListController {
 				materialStockKeepUnitManager, materialSKUUnitServiceUIModelExtension);
 	}
 
-
 }

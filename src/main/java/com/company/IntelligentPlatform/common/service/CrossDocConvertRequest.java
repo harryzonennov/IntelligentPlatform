@@ -20,7 +20,6 @@ import java.util.List;
 public class CrossDocConvertRequest<TargetServiceModel extends ServiceModule, TargetItem extends ServiceEntityNode,
         TargetItemServiceModel extends ServiceModule> {
 
-
     public interface IGetTargetDocItemList {
 
         List<ServiceEntityNode> execute(DocumentMatItemRawSearchRequest searchRequest, LogonInfo logonInfo) throws
@@ -208,7 +207,6 @@ public class CrossDocConvertRequest<TargetServiceModel extends ServiceModule, Ta
         this.filterRootDocContext = null;
     }
 
-
     /**
      * [NOT used yet]: Sets the default callback logic in each child class.
      * The `generateTargetServiceModel` method acts as the custom callback for initializing and setting
@@ -217,7 +215,6 @@ public class CrossDocConvertRequest<TargetServiceModel extends ServiceModule, Ta
     protected void setDefGenerateTargetServiceModel() {
         this.generateTargetServiceModel = null;
     }
-
 
     /**
      *  Sets the default callback logic in each child class.
@@ -503,7 +500,6 @@ public class CrossDocConvertRequest<TargetServiceModel extends ServiceModule, Ta
             this.documentMatItemBatchGenRequest = documentMatItemBatchGenRequest;
         }
     }
-
 
     /**
      * Document Root node Conversion Context class: used for conversion cross-document after target document is created.

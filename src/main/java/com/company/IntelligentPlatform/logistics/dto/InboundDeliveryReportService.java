@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 public class InboundDeliveryReportService {
 
-
 	@Autowired
 	ServiceDropdownListHelper serviceDropdownListHelper;
 
@@ -53,7 +52,6 @@ public class InboundDeliveryReportService {
 				.getDropDownMap(path, resFileName, locale);
 		return itemPropMap;
 	}
-
 
 	/**
 	 * Logic to build compound default map for generate the site settlement map

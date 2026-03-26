@@ -13,5 +13,4 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
  */
 public class OrganizationFunctionUIModel extends SEUIComModel {	
 
-
 }

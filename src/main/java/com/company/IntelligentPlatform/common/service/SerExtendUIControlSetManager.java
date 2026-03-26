@@ -172,7 +172,6 @@ public class SerExtendUIControlSetManager {
 		return standardSwitchProxy.getSimpleSwitchMap(lanCode);
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *
@@ -440,7 +439,6 @@ public class SerExtendUIControlSetManager {
 		convSerExtendUIControlSetToUI(serExtendUIControlSet,
 				serExtendUIControlSetUIModel, null);
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -741,8 +739,6 @@ public class SerExtendUIControlSetManager {
 			}
 		}
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model

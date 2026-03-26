@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.logistics.dto;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import net.sf.json.JSONObject;
 import com.company.IntelligentPlatform.logistics.service.*;
 import com.company.IntelligentPlatform.logistics.model.InboundDelivery;
@@ -103,7 +102,6 @@ public class InboundItemEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

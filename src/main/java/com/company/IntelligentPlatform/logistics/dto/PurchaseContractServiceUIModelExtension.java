@@ -157,7 +157,6 @@ public class PurchaseContractServiceUIModelExtension extends
 		uiModelNodeMapList.addAll(docFlowProxy
 				.getDocDefCreateUpdateNodeMapConfigureList(PurchaseContract.SENAME));
 
-
 		purchaseContractExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(purchaseContractExtensionUnion);

@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class WarehouseStoreParty extends DocItemParty {
 
-
 	public final static String NODENAME = IServiceModelConstants.WarehouseStoreParty;
 
 	public final static String SENAME = WarehouseStore.SENAME;

@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.production.model;
 import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 public class BillOfMaterialTemplateActionNode extends BillOfMaterialOrderActionNode {
 
     public static final String NODENAME = IServiceModelConstants.BillOfMaterialTemplateActionNode;

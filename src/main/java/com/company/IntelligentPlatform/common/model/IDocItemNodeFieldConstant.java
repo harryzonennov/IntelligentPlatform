@@ -40,6 +40,4 @@ public interface IDocItemNodeFieldConstant {
 
 	String reserveTargetDocMatItemArrayUUID = "reserveTargetDocMatItemArrayUUID";
 
-
-
 }

@@ -212,7 +212,6 @@ public class SalesContractMaterialItemUIModel extends DocMatItemUIModel {
         this.refFinAccountUUID = refFinAccountUUID;
     }
 
-
     public String getDeliveryDoneTime() {
         return deliveryDoneTime;
     }

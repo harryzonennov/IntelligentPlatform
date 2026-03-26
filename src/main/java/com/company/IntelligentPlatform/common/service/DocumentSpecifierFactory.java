@@ -96,7 +96,6 @@ public class DocumentSpecifierFactory {
     @Autowired(required = false)
     protected DocumentContentSpecifier salesReturnOrderSpecifier;
 
-
     @Qualifier("warehouseStoreSpecifier")
     @Autowired(required = false)
     protected DocumentContentSpecifier warehouseStoreSpecifier;
@@ -104,7 +103,6 @@ public class DocumentSpecifierFactory {
     @Qualifier("warehouseStoreSpecifier")
     @Autowired(required = false)
     protected DocumentContentSpecifier wasteProcessOrderSpecifier;
-
 
     public DocumentContentSpecifier getDocumentSpecifier(String modelId){
         String localModelId = ServiceEntityStringHelper.headerToUpperCase(modelId);
@@ -176,6 +174,5 @@ public class DocumentSpecifierFactory {
         }
         return null;
     }
-
 
 }

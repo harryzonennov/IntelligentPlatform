@@ -32,6 +32,7 @@ import com.company.IntelligentPlatform.common.service.LockObjectFailureException
 import com.company.IntelligentPlatform.common.service.LockObjectManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
 import com.company.IntelligentPlatform.common.service.LogonInfoException;
 import com.company.IntelligentPlatform.common.service.ServiceJSONParser;
 import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
@@ -75,7 +76,6 @@ public class ProductionResourceUnionEditorController extends SEEditorController 
 	
 	@Autowired
 	protected ProductionResourceUnionServiceUIModelExtension productionResourceUnionServiceUIModelExtension;
-
 
 	@RequestMapping(value = "/getResourceTypeMap", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getResourceTypeMap() {
@@ -223,8 +223,6 @@ public class ProductionResourceUnionEditorController extends SEEditorController 
 				productionResourceUnionManager);
 	}
 
-
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.
@@ -314,7 +312,6 @@ public class ProductionResourceUnionEditorController extends SEEditorController 
 					.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

@@ -35,7 +35,6 @@ public class ServiceCrossActionHandler {
             throws ServiceEntityConfigureException, ServiceModuleProxyException, DocActionException,
             ServiceEntityInstallationException {
 
-
         /*
          * [Step 1] get doc configure from source doc
          */

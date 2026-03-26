@@ -62,7 +62,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "productionOrderItemEditorController")
 @RequestMapping(value = "/productionOrderItem")
@@ -219,7 +218,6 @@ public class ProductionOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String getPageHeaderModelList(@RequestBody SimpleSEJSONRequest request) {
@@ -241,7 +239,6 @@ public class ProductionOrderItemEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
 		}
 	}
-
 
 	public @RequestMapping(value = "/newOutboundBatchBackMode", produces = "text/html;" + "charset=UTF-8")
 	@ResponseBody
@@ -270,7 +267,6 @@ public class ProductionOrderItemEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
 		}
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
@@ -407,7 +403,6 @@ public class ProductionOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String checkDuplicateID(@RequestBody SimpleSEJSONRequest simpleRequest) {
@@ -415,7 +410,6 @@ public class ProductionOrderItemEditorController extends SEEditorController {
 		simpleRequest.setClient(logonUser.getClient());
 		return super.checkDuplicateIDCore(simpleRequest, productionOrderManager);
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

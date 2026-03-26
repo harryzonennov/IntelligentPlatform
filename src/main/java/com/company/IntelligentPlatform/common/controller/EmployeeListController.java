@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.controller;
 
 import java.util.List;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +48,6 @@ public class EmployeeListController extends SEListController {
 	@Autowired
 	protected LogonActionController logonActionController;
 
-
 	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_EMPLOYEE;
 	
 	@Autowired
@@ -59,7 +57,6 @@ public class EmployeeListController extends SEListController {
 	protected EmployeeListExcelHandler employeeListExcelHandler;
 	
 	protected Logger logger = LoggerFactory.getLogger(EmployeeListController.class);
-
 
 	@RequestMapping(value = "/downloadExcel")
 	public ResponseEntity<byte[]> downloadExcel(@RequestBody String request) throws ServiceComExecuteException,

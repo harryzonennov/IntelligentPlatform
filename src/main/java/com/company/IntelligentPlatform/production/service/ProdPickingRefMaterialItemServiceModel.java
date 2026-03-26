@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.production.model.ProdPickingRefMaterialIt
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class ProdPickingRefMaterialItemServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = ProdPickingRefMaterialItem.NODENAME, nodeInstId = ProdPickingRefMaterialItem.NODENAME)

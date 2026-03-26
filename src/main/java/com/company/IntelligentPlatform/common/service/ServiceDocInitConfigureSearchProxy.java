@@ -53,6 +53,4 @@ public class ServiceDocInitConfigureSearchProxy extends ServiceSearchProxy{
 		return searchNodeConfigList;
 	}
 
-
-
 }

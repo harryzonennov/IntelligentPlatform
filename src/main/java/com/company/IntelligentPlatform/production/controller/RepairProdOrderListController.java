@@ -42,7 +42,6 @@ public class RepairProdOrderListController extends SEListController {
 	@Autowired
 	protected RepairProdOrderServiceUIModelExtension repairProdOrderServiceUIModelExtension;
 
-
 	@RequestMapping(value = "/loadLeanModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadLeanModuleListService() {
 		return serviceBasicUtilityController.loadLeanModuleListWrapper(AOID_RESOURCE, ISystemActionCode.ACID_LIST, null,

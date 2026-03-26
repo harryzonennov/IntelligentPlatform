@@ -42,5 +42,4 @@ public class SelfUserData extends SysAODeterminer {
 				IServiceEntityNodeFieldConstant.RESPONSIBLE_EMPLOYEEUUID, ServiceBasicKeyStructure.OPERATOR_OR);
 	}
 
-
 }

@@ -36,5 +36,4 @@ public class SystemConfigureUIFieldUIModel extends SEUIComModel {
 		this.setI18NFlag = setI18NFlag;
 	}
 
-
 }

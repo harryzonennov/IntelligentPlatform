@@ -113,5 +113,4 @@ public class BillOfMaterialTemplateConfigureProxy extends ServiceEntityConfigure
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

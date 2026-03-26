@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
+@Entity
+@Table(name = "StandardMaterialUnit", schema = "platform")
 public class StandardMaterialUnit extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
@@ -108,6 +112,5 @@ public class StandardMaterialUnit extends ServiceEntityNode {
 	public void setSystemCategory(int systemCategory) {
 		this.systemCategory = systemCategory;
 	}
-
 
 }

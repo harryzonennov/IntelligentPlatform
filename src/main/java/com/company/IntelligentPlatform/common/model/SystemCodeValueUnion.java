@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.common.model;
 
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.common.model.*;
+import com.company.IntelligentPlatform.common.model.*;
+@Entity
+@Table(name = "SystemCodeValueUnion", schema = "platform")
 public class SystemCodeValueUnion  extends ServiceEntityNode {
 	
 	public static final String SENAME = IServiceModelConstants.SystemCodeValueCollection;

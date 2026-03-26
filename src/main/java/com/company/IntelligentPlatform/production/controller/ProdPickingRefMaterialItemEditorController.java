@@ -90,7 +90,6 @@ public class ProdPickingRefMaterialItemEditorController extends
 	@Autowired
 	protected ServiceDocumentComProxy serviceDocumentComProxy;
 
-
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getPageHeaderModelList(
 			@RequestBody SimpleSEJSONRequest request) {
@@ -536,7 +535,6 @@ public class ProdPickingRefMaterialItemEditorController extends
 					.getErrorMessage());
 		}
     }
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

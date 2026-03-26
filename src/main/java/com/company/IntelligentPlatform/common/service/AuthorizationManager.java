@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import com.company.IntelligentPlatform.common.service.OrganizationFactoryService;
 import com.company.IntelligentPlatform.common.service.OrganizationManager;
 // TODO-LEGACY: import platform.foundation.Administration.InstallService.AuthorizationRegisterService;
@@ -132,7 +131,6 @@ public class AuthorizationManager {
      * lower organization, with [list][view][edit] authorization, for data in
      */
     public static final int DEFCOM_AUTHTYPE_BOARD_MANAGER = 4;
-
 
     public boolean checkResourceAuthorization(LogonUser logonUser,
                                               String targetAOID, String actionCode, ServiceEntityNode target)
@@ -338,7 +336,6 @@ public class AuthorizationManager {
         return keyStructureList;
     }
 
-
     /**
      * Get all System Authorization object belongs to this logonUser
      *
@@ -398,7 +395,6 @@ public class AuthorizationManager {
         }
         return resultList;
     }
-
 
     public List<ServiceEntityNode> filterDataAccessByAuthorization(
             List<ServiceEntityNode> rawList, String aoId, String acid, LogonUser logonUser,
@@ -653,7 +649,6 @@ public class AuthorizationManager {
             authorizationActionCodeMap.put(ao, acList);
         }
     }
-
 
     public Map<AuthorizationObject, List<ActionCode>> calculateSubSystemAuthorMap(RoleAuthorization roleAuthorization
             , List<ServiceEntityNode> allAOList) throws ServiceEntityConfigureException {
@@ -1240,7 +1235,6 @@ public class AuthorizationManager {
         return resultList;
     }
 
-
 //	/**
 //	 * [Internal method] get all action code list belongs to this role
 //	 * authorization
@@ -1320,7 +1314,6 @@ public class AuthorizationManager {
             }
         }
     }
-
 
     /**
      * The logic of assign standard system authorization to role by different

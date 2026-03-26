@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.*;
 
@@ -37,7 +39,6 @@ import java.time.ZoneId;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 
-
 @Service
 @Transactional
 public class PurchaseContractManager extends ServiceEntityManager {
@@ -45,6 +46,9 @@ public class PurchaseContractManager extends ServiceEntityManager {
     public static final String METHOD_ConvPurchaseContractToUI = "convPurchaseContractToUI";
 
     public static final String METHOD_ConvUIToPurchaseContract = "convUIToPurchaseContract";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected PurchaseContractRepository purchaseContractDAO;
@@ -221,7 +225,6 @@ public class PurchaseContractManager extends ServiceEntityManager {
                         (PurchaseContractMaterialItem) docMatItemNode, offset), serialLogonInfo);
     }
 
-
     public void convPurchaseContractToUI(PurchaseContract purchaseContract,
                                          PurchaseContractUIModel purchaseContractUIModel)
             throws ServiceEntityInstallationException {
@@ -367,14 +370,13 @@ public class PurchaseContractManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(purchaseContractDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseContractDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(purchaseContractConfigureProxy);
     }
-
 
     /**
      * Logic to new instance of Purchase Contract Material Item, from baseUUID
@@ -526,7 +528,6 @@ public class PurchaseContractManager extends ServiceEntityManager {
         return purchaseContractSearchProxy;
     }
 
-
     public boolean checkBlockExecutionByDocflow(int actionCode, String uuid, ServiceJSONRequest serviceJSONRequest,
                                                 SerialLogonInfo serialLogonInfo) {
         if (actionCode == PurchaseContractActionNode.DOC_ACTION_APPROVE) {
@@ -555,7 +556,6 @@ public class PurchaseContractManager extends ServiceEntityManager {
                         PurchaseContractActionNode.DOC_ACTION_APPROVE, serialLogonInfo);
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
-
 
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode, ServiceJSONRequest serviceJSONRequest,

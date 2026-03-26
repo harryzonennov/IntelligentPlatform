@@ -14,5 +14,4 @@ public class InboundDeliveryAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

@@ -16,7 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.dto.SearchFieldConfigUIModel;
 import com.company.IntelligentPlatform.common.dto.SearchProxyConfigUIModel;
 import com.company.IntelligentPlatform.common.controller.SEUIModelFieldsHelper;
-// TODO-DAO: import ...SearchProxyConfigDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SearchProxyConfigRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
@@ -63,11 +66,11 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
 
     @Autowired
     protected SearchProxyConfigSearchProxy searchProxyConfigSearchProxy;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected SearchProxyConfigDAO searchProxyConfigDAO;
-
+    @Autowired
+    protected SearchProxyConfigRepository searchProxyConfigDAO;
     @Autowired
     protected SearchProxyConfigConfigureProxy searchProxyConfigConfigureProxy;
 
@@ -469,8 +472,7 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
                                 .get(searchProxyConfig
                                         .getConfigureSearchLogicFlag()));
             } catch (ServiceEntityInstallationException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                logger.error("Failed to load search proxy config", e);
             }
             searchProxyConfigUIModel.setProxyType(searchProxyConfig
                     .getProxyType());
@@ -552,7 +554,6 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
         }
         return this.categoryMap;
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -703,7 +704,6 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
         return rawSearchModelClsList;
     }
 
-
     /**
      * Logic to provide raw search fields list for special search model
      * @param searchProxyConfig
@@ -731,7 +731,6 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
         return searchFieldUnionList;
     }
 
-
     /**
      * Logic to provide raw search fields list for special search model
      * @param serviceSearchProxy
@@ -758,7 +757,6 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
         }
         return searchFieldUnionList;
     }
-
 
     /**
      * Logic to get search field list
@@ -928,7 +926,7 @@ public class SearchProxyConfigManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(searchProxyConfigDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, searchProxyConfigDAO));
     }
 
     @PostConstruct

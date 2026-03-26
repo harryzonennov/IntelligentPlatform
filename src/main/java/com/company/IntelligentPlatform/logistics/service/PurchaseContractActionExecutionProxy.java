@@ -260,7 +260,6 @@ public class PurchaseContractActionExecutionProxy extends DocActionExecutionProx
         return purchaseContractManager;
     }
 
-
     public void executeActionCore(
             PurchaseContractServiceModel purchaseContractServiceModel,
             int docActionCode,

@@ -50,5 +50,4 @@ public class SerialNumberSettingSearchProxy extends ServiceSearchProxy{
 		return searchNodeConfigList;
 	}
 
-
 }

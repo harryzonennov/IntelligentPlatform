@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 import com.company.IntelligentPlatform.common.model.ServiceCrossDocEventMonitor;
 
-
 public class ServiceCrossDocEventMonitorServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = ServiceCrossDocEventMonitor.NODENAME, nodeInstId = ServiceCrossDocEventMonitor.NODENAME)

@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class RepairProdItemReqProposal extends ProdOrderItemReqProposal{
 
-
 	public final static String NODENAME = IServiceModelConstants.RepairProdItemReqProposal;
 
 	public final static String SENAME = RepairProdOrderItem.SENAME;

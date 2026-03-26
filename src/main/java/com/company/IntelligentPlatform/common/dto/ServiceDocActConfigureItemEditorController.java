@@ -29,7 +29,6 @@ import com.company.IntelligentPlatform.common.model.ServiceDocActionConfigure;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "serviceDocActConfigureItemEditorController")
 @RequestMapping(value = "/serviceDocActConfigureItem")
@@ -149,6 +148,5 @@ public class ServiceDocActConfigureItemEditorController extends SEEditorControll
             @RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
         return exitEditorCore(serviceExitLockJSONModule);
     }
-
 
 }

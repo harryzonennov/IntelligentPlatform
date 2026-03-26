@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class ProdPlanTargetMatItem extends ProdOrderTargetMatItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdPlanTargetMatItem;
 
 	public final static String SENAME = ProductionPlan.SENAME;

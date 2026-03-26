@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class QualityInspectMatItemParty extends DocItemParty {
 
-
 	public final static String NODENAME = IServiceModelConstants.QualityInspectMatItemParty;
 
 	public final static String SENAME = QualityInspectOrder.SENAME;

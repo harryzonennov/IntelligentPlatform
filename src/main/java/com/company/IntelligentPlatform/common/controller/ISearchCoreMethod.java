@@ -10,7 +10,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @FunctionalInterface
 public interface ISearchCoreMethod<T extends SEUIComModel>{
 		 List<ServiceEntityNode> apply(T searchModel)

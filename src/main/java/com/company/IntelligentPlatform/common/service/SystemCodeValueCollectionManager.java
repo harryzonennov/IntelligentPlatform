@@ -14,7 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.SystemCodeValueCollectionUIModel;
 import com.company.IntelligentPlatform.common.dto.SystemCodeValueUnionUIModel;
-// TODO-DAO: import ...SystemCodeValueCollectionDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SystemCodeValueCollectionRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
@@ -45,11 +48,11 @@ public class SystemCodeValueCollectionManager extends ServiceEntityManager {
 	public static final String METHOD_ConvSystemCodeValueUnionToUI = "convSystemCodeValueUnionToUI";
 
 	public static final String METHOD_ConvUIToSystemCodeValueUnion = "convUIToSystemCodeValueUnion";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected SystemCodeValueCollectionDAO systemCodeValueCollectionDAO;
-
+    @Autowired
+    protected SystemCodeValueCollectionRepository systemCodeValueCollectionDAO;
 	@Autowired
 	protected SystemCodeValueCollectionConfigureProxy systemCodeValueCollectionConfigureProxy;
 
@@ -242,7 +245,7 @@ public class SystemCodeValueCollectionManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemCodeValueCollectionDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemCodeValueCollectionDAO));
 	}
 
 	@PostConstruct

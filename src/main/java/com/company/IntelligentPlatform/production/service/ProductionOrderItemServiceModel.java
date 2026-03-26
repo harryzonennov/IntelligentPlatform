@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.service;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

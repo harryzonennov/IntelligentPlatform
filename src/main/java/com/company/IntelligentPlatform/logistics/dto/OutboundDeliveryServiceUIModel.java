@@ -62,7 +62,6 @@ public class OutboundDeliveryServiceUIModel extends ServiceUIModule {
 		return rejectApprovedBy;
 	}
 
-
 	public void setRejectApprovedBy(OutboundDeliveryActionNodeUIModel rejectApprovedBy) {
 		this.rejectApprovedBy = rejectApprovedBy;
 	}

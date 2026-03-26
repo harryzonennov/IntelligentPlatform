@@ -16,7 +16,10 @@ import com.company.IntelligentPlatform.common.dto.MatConfigExtPropertySettingSea
 import com.company.IntelligentPlatform.common.dto.MatConfigExtPropertySettingUIModel;
 import com.company.IntelligentPlatform.common.dto.MaterialConfigureTemplateSearchModel;
 import com.company.IntelligentPlatform.common.dto.MaterialConfigureTemplateUIModel;
-// TODO-DAO: import ...MaterialConfigureTemplateDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.MaterialConfigureTemplateRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.MatConfigExtPropertySetting;
 import com.company.IntelligentPlatform.common.model.MatConfigHeaderCondition;
 import com.company.IntelligentPlatform.common.model.MatDecisionValueSetting;
@@ -59,11 +62,11 @@ public class MaterialConfigureTemplateManager extends ServiceEntityManager {
 
 	@Autowired
 	protected StandardSwitchProxy standardSwitchProxy;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected MaterialConfigureTemplateDAO materialConfigureTemplateDAO;
-
+    @Autowired
+    protected MaterialConfigureTemplateRepository materialConfigureTemplateDAO;
 	@Autowired
 	protected MaterialConfigureTemplateConfigureProxy materialConfigureTemplateConfigureProxy;
 
@@ -133,14 +136,13 @@ public class MaterialConfigureTemplateManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(materialConfigureTemplateDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, materialConfigureTemplateDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(materialConfigureTemplateConfigureProxy);
 	}
-
 
 	public Map<String, String> initFieldNameMap(Class<?> baseSEType)
 			throws ServiceEntityInstallationException {

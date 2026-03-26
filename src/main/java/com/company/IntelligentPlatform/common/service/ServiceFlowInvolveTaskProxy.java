@@ -1,13 +1,11 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 
 import java.util.Map;
-
 
 @Service
 public class ServiceFlowInvolveTaskProxy {

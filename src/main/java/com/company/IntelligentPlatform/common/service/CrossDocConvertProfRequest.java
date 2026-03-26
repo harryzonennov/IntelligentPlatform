@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class CrossDocConvertProfRequest<TargetServiceModel extends ServiceModule,
         TargetItem extends ServiceEntityNode,
         TargetItemServiceModel extends ServiceModule> extends CrossDocConvertRequest<TargetServiceModel, TargetItem,

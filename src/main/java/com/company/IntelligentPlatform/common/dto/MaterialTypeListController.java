@@ -131,5 +131,4 @@ public class MaterialTypeListController extends SEListController {
 						.getSearchProxy().searchDocList(searchContext));
 	}
 
-
 }

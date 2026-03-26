@@ -132,7 +132,6 @@ public class OrganizationEditorController extends SEEditorController {
                 getServiceUIModelRequest());
     }
 
-
     ServiceBasicUtilityController.IServiceUIModuleExecutor<OrganizationServiceUIModel> getServiceUIModuleExecutor() {
         return (organizationServiceUIModel, serviceModule) -> {
             organizationManager.postLoadServiceUIModel(organizationServiceUIModel, logonActionController.getLogonInfo());

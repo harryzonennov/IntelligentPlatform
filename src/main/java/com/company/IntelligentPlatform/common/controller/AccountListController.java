@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObj
 import com.company.IntelligentPlatform.common.model.ISystemActionCode;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Scope("session")
 @Controller(value = "accountListController")
 @RequestMapping(value = "/account")

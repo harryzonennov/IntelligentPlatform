@@ -15,7 +15,6 @@ import com.company.IntelligentPlatform.production.dto.*;
 import com.company.IntelligentPlatform.production.service.*;
 import com.company.IntelligentPlatform.production.model.*;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +53,6 @@ import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
 
 @Scope("session")
 @Controller(value = "productionOrderEditorController")
@@ -138,7 +136,6 @@ public class ProductionOrderEditorController extends SEEditorController {
                 classMap);
     }
 
-
     private ProductionOrderServiceModel parseToServiceModel(String request)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, ServiceUIModuleProxyException {
         ProductionOrderServiceUIModel productionOrderServiceUIModel = parseToServiceUIModel(request);
@@ -195,7 +192,6 @@ public class ProductionOrderEditorController extends SEEditorController {
         return productionOrderServiceUIModel;
     }
 
-
     @RequestMapping(value = "/saveModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String saveModuleService(@RequestBody String request) {
@@ -226,7 +222,6 @@ public class ProductionOrderEditorController extends SEEditorController {
                     }
                 });
     }
-
 
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<ProductionOrderServiceModel> iActionExecutor) {
@@ -281,19 +276,16 @@ public class ProductionOrderEditorController extends SEEditorController {
                 }, productionOrderServiceUIModelExtension);
     }
 
-
     @RequestMapping(value = "/getDocActionNodeList", produces = "text/html;charset=UTF-8")
     public @ResponseBody String getDocActionNodeList(String uuid, String actionCode) {
         return serviceBasicUtilityController.getDocActionNodeList(uuid, actionCode, getDocUIModelRequest());
     }
-
 
     private List<ProdPickingRefMaterialItemUIModel> getPickingMatItemListCore(List<ServiceEntityNode> rawList)
             throws ServiceModuleProxyException, ServiceEntityConfigureException {
         return serviceBasicUtilityController.convUIModuleList(ProdPickingRefMaterialItemUIModel.class, rawList,
                 prodPickingOrderManager, prodPickingRefMaterialItemServiceUIModelExtension);
     }
-
 
     @RequestMapping(value = "/getInStockItemList", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -657,8 +649,6 @@ public class ProductionOrderEditorController extends SEEditorController {
                 ISystemActionCode.ACID_EDIT);
     }
 
-
-
     /**
      * pre-check if the edit object list could be locked, whether the EX-lock
      * exist or not.
@@ -751,7 +741,6 @@ public class ProductionOrderEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/loadModuleWithPostUpdateService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String loadModuleWithPostUpdateService(String uuid) {
@@ -772,7 +761,6 @@ public class ProductionOrderEditorController extends SEEditorController {
             return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
         }
     }
-
 
     @RequestMapping(value = "/loadModuleEditService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -845,7 +833,6 @@ public class ProductionOrderEditorController extends SEEditorController {
         return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE, genDocAttachmentProcessPara());
     }
 
-
     /**
      * Upload the attachment content information.
      */
@@ -864,7 +851,6 @@ public class ProductionOrderEditorController extends SEEditorController {
         return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
                 genDocAttachmentProcessPara());
     }
-
 
     @RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
     public @ResponseBody

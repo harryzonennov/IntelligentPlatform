@@ -90,5 +90,4 @@ public class PurchaseReturnOrderConfigureProxy extends ServiceEntityConfigurePro
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

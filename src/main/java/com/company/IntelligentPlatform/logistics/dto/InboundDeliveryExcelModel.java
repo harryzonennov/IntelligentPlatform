@@ -123,7 +123,6 @@ public class InboundDeliveryExcelModel extends SEUIComModel {
 		this.recordStoreDate = recordStoreDate;
 	}
 
-
 	public String getProcessByName() {
 		return processByName;
 	}

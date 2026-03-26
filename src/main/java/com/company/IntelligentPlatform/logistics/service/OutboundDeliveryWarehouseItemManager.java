@@ -38,7 +38,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceBasicKeyStructure;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 /**
  * Implementation class for <code>WarehouseStoreItemManager</code>
  * 
@@ -333,7 +332,6 @@ public class OutboundDeliveryWarehouseItemManager extends
 		}
 	}
 
-
 	/**
 	 * Wrapper for checkout warehouse store item special for outbound delivery & purchase contact
 	 * @param storeItemUUID
@@ -385,7 +383,6 @@ public class OutboundDeliveryWarehouseItemManager extends
 		return checkWarehouseStoreItemAvailableCore(requestUpdateCoreUnit,
 				storeAvailableStoreItemRequest.getWarehouseStoreItem(), availableStoreCoreUnit);
 	}
-
 
 	/**
 	 * Core Method to calculate the available warehouse storage item amount by

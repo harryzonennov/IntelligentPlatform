@@ -101,8 +101,6 @@ public class AccountListController extends SEListController {
 						.getSearchProxy().searchDocList(searchContext),  this::getModuleListCore);
 	}
 
-
-
 	@RequestMapping(value = "/searchModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String searchModuleService(@RequestBody String request) {
 		try {

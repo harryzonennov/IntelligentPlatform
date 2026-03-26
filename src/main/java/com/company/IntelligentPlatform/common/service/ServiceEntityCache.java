@@ -121,7 +121,6 @@ public class ServiceEntityCache {
         return tempList.get(0);
     }
 
-
     /**
      * [Internal method] Core API to load service entity list, if can't hit in cache, then retrieve from DB
      *
@@ -153,7 +152,6 @@ public class ServiceEntityCache {
             return ServiceCollectionsHelper.filterListOnline(allSEList, filterCallback, fastSkip);
         }
     }
-
 
     /**
      * API to update serviceEntityNode into DB and cache

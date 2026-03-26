@@ -13,7 +13,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class ProcessBOMMaterialItem extends ReferenceNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProcessBOMMaterialItem;
 
 	public final static String SENAME = ProcessBOMOrder.SENAME;

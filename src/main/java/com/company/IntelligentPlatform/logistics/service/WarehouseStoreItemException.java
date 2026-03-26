@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationE
 import com.company.IntelligentPlatform.common.model.ServiceExceptionRecord;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 public class WarehouseStoreItemException extends ServiceEntityRuntimeException {
 
 	/**

@@ -787,7 +787,6 @@ public class UIModelNodeMapConfigure {
 		this.getSENodeListCallback = getSENodeListCallback;
 	}
 
-
 	/**
 	 * Executor for Doc root action
 	 */

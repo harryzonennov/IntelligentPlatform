@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class PurchaseReturnMaterialItemManager {
 
@@ -118,7 +117,6 @@ public class PurchaseReturnMaterialItemManager {
             }
         }
     }
-
 
     public void convUIToPurchaseReturnMaterialItem(PurchaseReturnMaterialItemUIModel purchaseReturnMaterialItemUIModel, PurchaseReturnMaterialItem rawEntity) {
         if(purchaseReturnMaterialItemUIModel != null && rawEntity != null){

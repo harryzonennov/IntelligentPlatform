@@ -15,7 +15,6 @@ public class ServiceDocDeletionSettingSearchModel extends SEUIComModel {
             nodeInstID = ServiceDocumentSetting.SENAME)
     protected String baseRefNodeName;
 
-
     @BSearchFieldConfig(fieldName = "refServiceEntityName", nodeName = ServiceDocDeletionSetting.NODENAME, seName = ServiceDocDeletionSetting.SENAME,
             nodeInstID = ServiceDocDeletionSetting.SENAME)
     protected String refServiceEntityName;
@@ -31,8 +30,6 @@ public class ServiceDocDeletionSettingSearchModel extends SEUIComModel {
     @BSearchFieldConfig(fieldName = "id", nodeName = ServiceDocDeletionSetting.NODENAME, seName = ServiceDocDeletionSetting.SENAME,
             nodeInstID = ServiceDocDeletionSetting.SENAME)
     protected String deleteSettingId;
-
-
 
     public String getRefServiceEntityName() {
         return refServiceEntityName;

@@ -1,11 +1,9 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceEntityException;
 import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-
 
 public class SplitMatItemException extends ServiceEntityException {
 
@@ -56,7 +54,6 @@ public class SplitMatItemException extends ServiceEntityException {
             this.errorMessage = ex.getMessage();
         }
     }
-
 
 }
 

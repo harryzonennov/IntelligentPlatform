@@ -64,5 +64,4 @@ public class CorporateCustomerException extends ServiceEntityException{
 		}
 	}
 
-
 }

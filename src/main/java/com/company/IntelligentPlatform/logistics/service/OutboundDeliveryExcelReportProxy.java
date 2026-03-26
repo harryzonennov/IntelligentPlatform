@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.logistics.model.OutboundDelivery;
 
 import org.springframework.stereotype.Service;
 
-
 import com.company.IntelligentPlatform.common.service.ServiceExcelReportProxy;
 
 @Service

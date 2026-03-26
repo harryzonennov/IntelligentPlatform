@@ -43,5 +43,4 @@ public class MaterialTypeActionNode extends DocActionNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

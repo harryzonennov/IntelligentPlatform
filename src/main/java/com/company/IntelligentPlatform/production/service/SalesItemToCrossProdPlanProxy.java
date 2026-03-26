@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
 @Service
 public class SalesItemToCrossProdPlanProxy {
 
@@ -249,7 +248,6 @@ public class SalesItemToCrossProdPlanProxy {
                 SalesContractActionNode.DOC_ACTION_INPLAN, serialLogonInfo);
     }
 
-
     private void inPlanSalesForcastWrapper(SalesForcast salesForcast,
                                            List<ServiceEntityNode> salesForcastMaterialItemList,
                                            SerialLogonInfo serialLogonInfo)
@@ -285,7 +283,6 @@ public class SalesItemToCrossProdPlanProxy {
 //				.getRefWarehouseUUID());
         return prodPlanTargetMatItem;
     }
-
 
     /**
      * Logic to initial convert and copy information from production targetmaterial item

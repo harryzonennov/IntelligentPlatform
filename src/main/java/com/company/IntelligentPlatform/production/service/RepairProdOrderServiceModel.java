@@ -70,7 +70,6 @@ public class RepairProdOrderServiceModel extends ServiceModule {
 	@IServiceModuleFieldConfig(nodeName = RepairProdTargetMatItem.NODENAME, nodeInstId = RepairProdTargetMatItem.NODENAME)
 	protected List<RepairProdTargetMatItemServiceModel> repairProdTargetMatItemList = new ArrayList<>();
 
-
 	public List<RepairProdOrderItemServiceModel> getRepairProdOrderItemList() {
 		return this.repairProdOrderItemList;
 	}
@@ -105,7 +104,6 @@ public class RepairProdOrderServiceModel extends ServiceModule {
 			List<ServiceEntityNode> prodOrderAttachmentList) {
 		this.prodOrderAttachmentList = prodOrderAttachmentList;
 	}
-
 
 	public List<RepairProdTargetMatItemServiceModel> getRepairProdTargetMatItemList() {
 		return repairProdTargetMatItemList;

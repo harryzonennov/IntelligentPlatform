@@ -85,5 +85,4 @@ public class CalendarTemplateItem extends ServiceEntityNode{
 		this.vocationType = vocationType;
 	}
 
-
 }

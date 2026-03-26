@@ -5,7 +5,10 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import platform.foundation.DAO.ProvinceDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ProvinceRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.ProvinceConfigureProxy;
@@ -22,22 +25,21 @@ import com.company.IntelligentPlatform.common.model.ProvinceConfigureProxy;
 @Service
 @Transactional
 public class ProvinceManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     ProvinceDAO provinceDAO;
-
+    @Autowired
+    protected ProvinceRepository provinceDAO;
     @Autowired
     ProvinceConfigureProxy provinceConfigureProxy;
 
     public ProvinceManager() {
         super.seConfigureProxy = new ProvinceConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new ProvinceDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(provinceDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, provinceDAO));
     }
 
     @PostConstruct

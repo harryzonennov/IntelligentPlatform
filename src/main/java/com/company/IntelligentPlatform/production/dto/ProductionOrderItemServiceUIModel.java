@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.dto;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +18,6 @@ public class ProductionOrderItemServiceUIModel extends ServiceUIModule {
 
 	@IServiceUIModuleFieldConfig(nodeName = ProdOrderItemReqProposal.NODENAME, nodeInstId = ProdOrderItemReqProposal.NODENAME)
 	protected List<ProdOrderItemReqProposalServiceUIModel> prodOrderItemReqProposalUIModelList = new ArrayList<>();
-
 
 	@IServiceUIModuleFieldConfig(nodeName = ProductionOrderItemParty.NODENAME, nodeInstId = ProductionOrderItemParty.PARTY_NODEINST_PUR_ORG)
 	protected ProductionOrderItemPartyUIModel purchaseOrgParty;

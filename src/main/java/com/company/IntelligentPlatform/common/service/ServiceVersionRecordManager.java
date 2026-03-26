@@ -5,7 +5,10 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import ...ServiceVersionRecordDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceVersionRecordRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
@@ -25,22 +28,21 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 @Service
 @Transactional
 public class ServiceVersionRecordManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     ServiceVersionRecordDAO serviceVersionRecordDAO;
-
+    @Autowired
+    protected ServiceVersionRecordRepository serviceVersionRecordDAO;
     @Autowired
     ServiceVersionRecordConfigureProxy serviceVersionRecordConfigureProxy;
 
     public ServiceVersionRecordManager() {
         super.seConfigureProxy = new ServiceVersionRecordConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new ServiceVersionRecordDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(serviceVersionRecordDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceVersionRecordDAO));
     }
 
     @PostConstruct

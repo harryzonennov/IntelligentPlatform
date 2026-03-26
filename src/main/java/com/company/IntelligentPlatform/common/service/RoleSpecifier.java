@@ -123,5 +123,4 @@ public class RoleSpecifier extends DocumentContentSpecifier<RoleServiceModel, Ro
 
     }
 
-
 }

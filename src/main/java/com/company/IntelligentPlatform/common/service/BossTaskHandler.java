@@ -1,13 +1,16 @@
 package com.company.IntelligentPlatform.common.service;
 
-// TODO-LEGACY: import org.flowable.engine.delegate.TaskListener;
-// TODO-LEGACY: import org.flowable.task.service.delegate.DelegateTask;
+import org.flowable.task.service.delegate.TaskListener;
+import org.flowable.task.service.delegate.DelegateTask;
 
 /**
  * @author puhaiyang
  * @date 2018/12/19
  */
-// TODO-LEGACY: Flowable BPM not yet migrated - implements TaskListener
-public class BossTaskHandler {
-    // public void notify(DelegateTask delegateTask) { delegateTask.setAssignee("i00102"); }
+public class BossTaskHandler implements TaskListener {
+
+    @Override
+    public void notify(DelegateTask delegateTask) {
+        delegateTask.setAssignee("i00102");
+    }
 }

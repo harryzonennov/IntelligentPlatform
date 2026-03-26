@@ -11,12 +11,10 @@ import com.company.IntelligentPlatform.common.model.ServiceModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ServiceFlowCondGroupServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = ServiceFlowCondGroup.NODENAME, nodeInstId = ServiceFlowCondGroup.NODENAME)
     protected ServiceFlowCondGroup serviceFlowCondGroup;
-
 
     @IServiceModuleFieldConfig(nodeName = ServiceFlowCondField.NODENAME, nodeInstId = ServiceFlowCondField.NODENAME)
     protected List<ServiceFlowCondFieldServiceModel> serviceFlowCondFieldList = new ArrayList<>();

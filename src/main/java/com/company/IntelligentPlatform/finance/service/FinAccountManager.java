@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.finance.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -151,6 +154,9 @@ public class FinAccountManager extends FinAccountManagerProxy {
 	public static final String METHOD_ConvFinAccountToItemUI = "convFinAccountToItemUI";
 
 	public static final String METHOD_ConvFinAccountMatItemAttachmentToUI = "convFinAccountMatItemAttachmentToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected FinAccountRepository finAccountDAO;
@@ -239,12 +245,11 @@ public class FinAccountManager extends FinAccountManagerProxy {
 
 	public FinAccountManager() {
 		super.seConfigureProxy = new FinAccountConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new FinAccountDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(finAccountDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountDAO));
 	}
 
 	@PostConstruct

@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.*;
 @Deprecated
 public class RoleAuthorizationActionCode extends ReferenceNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.RoleAuthorizationActionCode;
 
 	public final static String SENAME = Role.SENAME;

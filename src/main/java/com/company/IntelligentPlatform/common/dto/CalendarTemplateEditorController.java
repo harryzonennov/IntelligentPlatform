@@ -65,7 +65,6 @@ public class CalendarTemplateEditorController extends SEEditorController {
 	@Autowired
 	protected CalendarTemplateManager calendarTemplateManager;
 
-
 	private CalendarTemplateServiceUIModel parseToServiceUIModel(String request){
 		JSONObject jsonObject = JSONObject.fromObject(request);
 		@SuppressWarnings("rawtypes")
@@ -308,7 +307,6 @@ public class CalendarTemplateEditorController extends SEEditorController {
 					.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

@@ -125,7 +125,6 @@ public class ProductionOrderUIModel extends DocumentUIModel {
 
 	} 
 
-
 	public int getCategory() {
 		return category;
 	}
@@ -157,7 +156,6 @@ public class ProductionOrderUIModel extends DocumentUIModel {
 	public void setDoneStatusValue(String doneStatusValue) {
 		this.doneStatusValue = doneStatusValue;
 	}
-
 
 	public String getRefMaterialSKUUUID() {
 		return refMaterialSKUUUID;

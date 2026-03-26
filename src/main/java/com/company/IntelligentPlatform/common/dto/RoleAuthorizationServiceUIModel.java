@@ -18,7 +18,6 @@ public class RoleAuthorizationServiceUIModel extends ServiceUIModule {
 	@IServiceUIModuleFieldConfig(nodeName = RoleSubAuthorization.NODENAME, nodeInstId = RoleSubAuthorization.NODENAME)
 	protected List<RoleSubAuthorizationServiceUIModel> roleSubAuthorizationUIModelList = new ArrayList<>();
 
-
 	public RoleAuthorizationUIModel getRoleAuthorizationUIModel() {
 		return roleAuthorizationUIModel;
 	}

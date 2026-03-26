@@ -13,7 +13,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationE
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Service
 public class ServiceCalendarHelper {
 
@@ -47,6 +46,5 @@ public class ServiceCalendarHelper {
         unitMap.put(0, ServiceEntityStringHelper.EMPTYSTRING);
         return unitMap;
     }
-
 
 }

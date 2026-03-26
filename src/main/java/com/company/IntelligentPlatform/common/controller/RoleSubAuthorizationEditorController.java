@@ -24,7 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "roleSubAuthorizationEditorController")
 @RequestMapping(value = "/roleSubAuthorization")
@@ -139,7 +138,5 @@ public class RoleSubAuthorizationEditorController extends SEEditorController {
 			@RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
-
-
 
 }

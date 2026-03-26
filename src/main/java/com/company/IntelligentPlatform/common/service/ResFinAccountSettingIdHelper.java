@@ -14,7 +14,6 @@ public class ResFinAccountSettingIdHelper extends
 
 	public static final int INDEX_LENGTH = 4;
 
-
 	@Override
 	public String getMainTableName() {
 		return TABLE_NAME;

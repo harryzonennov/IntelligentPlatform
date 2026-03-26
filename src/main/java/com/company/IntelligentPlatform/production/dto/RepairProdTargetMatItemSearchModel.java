@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.service.BSearchGroupConfig;
 
 import java.util.Date;
 
-
 @Component
 public class RepairProdTargetMatItemSearchModel extends SEUIComModel {
 

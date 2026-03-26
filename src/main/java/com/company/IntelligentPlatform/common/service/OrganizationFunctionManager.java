@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.OrganizationFunctionUIModel;
-// TODO-DAO: import ...OrganizationFunctionDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.OrganizationFunctionRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -37,11 +40,11 @@ public class OrganizationFunctionManager extends ServiceEntityManager {
 	public static final String METHOD_ConvOrganizationFunctionToUI = "convOrganizationFunctionToUI";
 
 	public static final String METHOD_ConvUIToOrganizationFunction = "convUIToOrganizationFunction";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected OrganizationFunctionDAO organizationFunctionDAO;
-
+    @Autowired
+    protected OrganizationFunctionRepository organizationFunctionDAO;
 	@Autowired
 	protected OrganizationFunctionSearchProxy organizationFunctionSearchProxy;
 
@@ -52,7 +55,6 @@ public class OrganizationFunctionManager extends ServiceEntityManager {
 
 	public OrganizationFunctionManager() {
 		super.seConfigureProxy = new OrganizationFunctionConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new OrganizationFunctionDAO();
 	}
 
 	public Map<String, String> getOrganizationFunctionMap(String client) throws ServiceEntityConfigureException {
@@ -83,7 +85,7 @@ public class OrganizationFunctionManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(organizationFunctionDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, organizationFunctionDAO));
 	}
 
 	@PostConstruct

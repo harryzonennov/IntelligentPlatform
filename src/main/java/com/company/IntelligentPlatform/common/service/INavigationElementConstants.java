@@ -1,10 +1,8 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.CorporateCustomer;
 import com.company.IntelligentPlatform.common.model.ISystemAuthorizationObject;
-
 
 public class INavigationElementConstants {
 	
@@ -164,11 +162,7 @@ public class INavigationElementConstants {
 	
 	public static final String ID_SystemResource = "SystemResource";
 	
-	public static final String ID_SystemConfigureResource = "SystemConfigureResource";   
-	
-	public static final String ID_ServiceDocConfigure = IServiceModelConstants.ServiceDocConfigure;
-	
-	public static final String ID_ServiceDocConsumerUnion = IServiceModelConstants.ServiceDocConsumerUnion;
+	public static final String ID_SystemConfigureResource = "SystemConfigureResource";
 
 	public static final String ID_LanguageCommandTarget = "LanguageCommandTarget";
 	
@@ -317,10 +311,6 @@ public class INavigationElementConstants {
 	public static final String LINK_SystemResource = "../systemResource/loadModuleList.html";
 	
 	public static final String LINK_SystemConfigureResourceList = "../systemConfigureCategory/loadModuleList.html";
-	
-	public static final String LINK_SystemDocConfigure = "../serviceDocConfigure/loadModuleList.html";
-	
-	public static final String LINK_SystemDocConsumerUnion = "../systemDocConsumerUnion/loadModuleList.html";
 	
 	public static final String LINK_SystemConfigureResourceTree = "../systemConfigureCategory/systemConfigureTreeList.html";
 

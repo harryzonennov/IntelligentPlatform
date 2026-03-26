@@ -66,8 +66,6 @@ public class ServiceEntityManagerFactoryInContext {
 
 	public static final String salesForcastManager = "salesForcastManager";
 
-	public static final String bidInvitationOrderManager = "bidInvitationOrderManager";
-	
 	public static final String inquiryManager = "inquiryManager";
 
 	public static final String purchaseSettleManager = "purchaseSettleManager";
@@ -205,10 +203,6 @@ public class ServiceEntityManagerFactoryInContext {
 	@Qualifier(salesContractManager)
 	@Autowired(required=false)
 	protected ServiceEntityManager salesContractManagerImp;
-
-	@Qualifier(bidInvitationOrderManager)
-	@Autowired(required=false)
-	protected ServiceEntityManager bidInvitationOrderManagerImp;
 
 	@Qualifier(inquiryManager)
 	@Autowired(required=false)
@@ -390,9 +384,6 @@ public class ServiceEntityManagerFactoryInContext {
 		if(seManagerName.equals(salesAreaManager)){
 			return this.salesAreaManagerImp;
 		}
-		if(seManagerName.equals(bidInvitationOrderManager)){
-			return this.bidInvitationOrderManagerImp;
-		}
 		if(seManagerName.equals(inquiryManager)){
 			return this.inquiryManagerImp;
 		}
@@ -544,10 +535,6 @@ public class ServiceEntityManagerFactoryInContext {
 		if(serviceEntityName.equals(IServiceModelConstants.SalesArea)){
 			return this.salesAreaManagerImp;
 			// return (ServiceEntityManager)springContextBeanService.getBean(salesAreaManager);
-		}
-		if(serviceEntityName.equals(IServiceModelConstants.BidInvitationOrder)){
-			return this.bidInvitationOrderManagerImp;
-			// return (ServiceEntityManager)springContextBeanService.getBean(bidInvitationOrderManager);
 		}
 		if(serviceEntityName.equals(IServiceModelConstants.Inquiry)){
 			return this.inquiryManagerImp;

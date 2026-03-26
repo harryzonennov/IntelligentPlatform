@@ -43,7 +43,6 @@ public class ServiceReflectiveHelper {
 
 	public final static int BASIC_TYPE_OBJ = 5;
 
-
 	/**
 	 * Utility method to get one field name in reflective way
 	 * 
@@ -236,7 +235,6 @@ public class ServiceReflectiveHelper {
 		}
 		return BASIC_TYPE_OBJ;
 	}
-
 
 	public static int getEquatorType(Class<?> seClass, String fieldName)
 			throws IllegalArgumentException, IllegalAccessException,

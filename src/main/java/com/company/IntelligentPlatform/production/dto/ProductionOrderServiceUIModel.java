@@ -89,7 +89,6 @@ public class ProductionOrderServiceUIModel extends ServiceUIModule {
 		this.productionOrderAttachmentList = productionOrderAttachmentList;
 	}
 
-
 	public List<ProdOrderTargetMatItemServiceUIModel> getProdOrderTargetMatItemList() {
 		return prodOrderTargetMatItemList;
 	}

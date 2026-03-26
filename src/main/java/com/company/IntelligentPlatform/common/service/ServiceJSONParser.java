@@ -138,7 +138,6 @@ public class ServiceJSONParser {
         return content;
     }
 
-
     /**
      * Generate the default JSON union with single SE entity instance:
      * <code>Format:</code> [SE name]:{[inner each field value pair]}
@@ -379,7 +378,6 @@ public class ServiceJSONParser {
                 + "\":\"" + HttpStatus.SC_NO_CONTENT + "\"" + "}";
         return content;
     }
-
 
     public static String genSimpleErrorCodeResponse(int errorCode) {
         String content = "{\"" + ServiceJSONDataConstants.ELE_ERROR_CODE

@@ -348,8 +348,6 @@ public class BsearchService {
 		return genSearchResponse(resultList, 0);
 	}
 
-
-
 	private List<ServiceEntityNode> filterOnlineListByConfigureListCore(List<ServiceEntityNode> rawSEList,
 																		List<SEFieldSearchConfig> fieldConfigList) {
 		if(ServiceCollectionsHelper.checkNullList(rawSEList)){
@@ -440,7 +438,6 @@ public class BsearchService {
 		startSearchComConfigure.setPreConditions(preConditionList);
 		return startSearchComConfigure;
 	}
-
 
 	@Deprecated
 	/**
@@ -586,8 +583,6 @@ public class BsearchService {
         return this.generateFinalSQLStatement(
 				refreshedTraceList, searchNodeConfigList);
 	}
-
-
 
 	/**
 	 * [Internal method] return the inner join result list from 2 SE list
@@ -821,7 +816,6 @@ public class BsearchService {
 			}
 		}
 	}
-
 
 	/**
 	 * [Internal method] the 1st sub step of dynamic search:</P>generate the
@@ -2007,7 +2001,6 @@ public class BsearchService {
 			this.logicOperator = logicOperator;
 		}
 	}
-
 
 	public static String generateEachPreCondition(
 			SearchConfigPreCondition preCondition, String varName, boolean strictFlag) {

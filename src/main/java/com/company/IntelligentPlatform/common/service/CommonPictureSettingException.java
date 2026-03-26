@@ -54,5 +54,4 @@ public class CommonPictureSettingException extends ServiceEntityException{
 		}
 	}
 
-
 }

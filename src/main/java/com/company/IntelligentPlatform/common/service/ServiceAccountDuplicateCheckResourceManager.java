@@ -1,13 +1,15 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// TODO-DAO: import ...ServiceAccountDuplicateCheckResourceDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceAccountDuplicateCheckResourceRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.ServiceAccountDuplicateCheckResource;
 import com.company.IntelligentPlatform.common.model.ServiceAccountDuplicateCheckResourceConfigureProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -28,11 +30,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 @Transactional
 public class ServiceAccountDuplicateCheckResourceManager extends
 		ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	ServiceAccountDuplicateCheckResourceDAO serviceAccountDuplicateCheckResourceDAO;
-
+    @Autowired
+    protected ServiceAccountDuplicateCheckResourceRepository serviceAccountDuplicateCheckResourceDAO;
 	@Autowired
 	ServiceAccountDuplicateCheckResourceConfigureProxy serviceAccountDuplicateCheckResourceConfigureProxy;
 
@@ -44,12 +46,11 @@ public class ServiceAccountDuplicateCheckResourceManager extends
 
 	public ServiceAccountDuplicateCheckResourceManager() {
 		super.seConfigureProxy = new ServiceAccountDuplicateCheckResourceConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ServiceAccountDuplicateCheckResourceDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(serviceAccountDuplicateCheckResourceDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceAccountDuplicateCheckResourceDAO));
 	}
 
 	@PostConstruct

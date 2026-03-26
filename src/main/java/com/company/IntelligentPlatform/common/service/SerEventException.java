@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.service;
 import com.company.IntelligentPlatform.common.service.ServiceEntityException;
 import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
 
-
 public class SerEventException extends ServiceEntityException {
 
     /**
@@ -19,7 +18,6 @@ public class SerEventException extends ServiceEntityException {
      */
     public static final int PARA_SYSTEM_WRONG = 2;
 
-
     private ServiceEntityException sourceException;
 
     public SerEventException(int errorCode) {
@@ -32,7 +30,6 @@ public class SerEventException extends ServiceEntityException {
             this.errorMessage = ex.getMessage();
         }
     }
-
 
     public SerEventException(int errorCode, ServiceEntityException sourceException) {
         super(errorCode);
@@ -50,6 +47,5 @@ public class SerEventException extends ServiceEntityException {
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
-
 
 }

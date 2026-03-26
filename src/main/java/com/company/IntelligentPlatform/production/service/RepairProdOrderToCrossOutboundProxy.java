@@ -31,7 +31,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class RepairProdOrderToCrossOutboundProxy {
 
@@ -128,7 +127,6 @@ public class RepairProdOrderToCrossOutboundProxy {
 		return resultList;
 	}
 
-
 	/**
 	 * Logic to get the Existed & Proper OutboundDelivery Item instance list for
 	 * batch in-bound delivery creation.
@@ -176,6 +174,5 @@ public class RepairProdOrderToCrossOutboundProxy {
 		}
 		return outboundItemList;
 	}
-
 
 }

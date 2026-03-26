@@ -14,7 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// TODO-DAO: import platform.coreFunction.DAO.WarehouseDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.WarehouseRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.WarehouseManager;
 import com.company.IntelligentPlatform.common.model.WarehouseConfigureProxy;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
@@ -29,10 +32,11 @@ public class WarehouseLogisticsManager extends WarehouseManager {
 
 	// TODO-DAO: @Autowired
 	protected BsearchService bsearchService;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-// TODO-DAO: WarehouseDAO warehouseDAO;
-
+    @Autowired
+    protected WarehouseRepository warehouseDAO;
 	// TODO-DAO: @Autowired
 	protected WarehouseConfigureProxy warehouseConfigureProxy;
 
@@ -73,17 +77,12 @@ public class WarehouseLogisticsManager extends WarehouseManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(warehouseDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, warehouseDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(warehouseConfigureProxy);
 	}
-
-
-
-
-
 
 }

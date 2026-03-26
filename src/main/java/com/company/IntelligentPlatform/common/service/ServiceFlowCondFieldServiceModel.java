@@ -9,7 +9,6 @@ import com.company.IntelligentPlatform.common.model.ServiceModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ServiceFlowCondFieldServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = ServiceFlowCondField.NODENAME, nodeInstId = ServiceFlowCondField.NODENAME)

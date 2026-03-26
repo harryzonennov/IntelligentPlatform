@@ -44,7 +44,6 @@ import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
 
 import static com.company.IntelligentPlatform.common.service.StandardDocFlowDirectionProxy.*;
 
-
 /**
  * General Proxy class for Document flow Management
  *
@@ -206,7 +205,6 @@ public class DocFlowProxy {
 				docMatItemNode.getClient());
 	}
 
-
 	public static <T extends BasicDocItemInitModel> T parseToDocItemInitModel(String request, Class<?> T) {
 		JSONObject jsonObject = JSONObject.fromObject(request);
 		@SuppressWarnings("rawtypes") Map<String, Class> classMap = new HashMap<>();
@@ -280,7 +278,6 @@ public class DocFlowProxy {
 		}
 		refDocumentManager.updateSENode(docMatItemNode, resUserUUID, organizationUUID);
 	}
-
 
 	public Map<Integer, String> getStatusMap(int documentType, String lauanageCode)
 			throws ServiceEntityInstallationException, DocActionException {
@@ -940,7 +937,6 @@ public class DocFlowProxy {
 		return uiModelNodeMapList;
 	}
 
-
 	public List<UIModelNodeMapConfigure> getDefPrevProfNodeMapConfigureList(String baseNodeId) {
 		return getDefMaterialNodeMapConfigureList(baseNodeId, null, null, null);
 	}
@@ -951,7 +947,6 @@ public class DocFlowProxy {
 		return getDefPrevProfNodeMapConfigureListFrame(baseNodeId, null, convToUIMethod, null, logicManager, null,
 				convToUIMethodParas);
 	}
-
 
 	public List<UIModelNodeMapConfigure> getDefPrevProfNodeMapConfigureListFrame(String baseNodeId,
 																				 String convToItemUIMethod,
@@ -2020,7 +2015,6 @@ public class DocFlowProxy {
                 materialStatus == MaterialStockKeepUnit.TRACESTATUS_INSERVICE;
     }
 
-
 	public static class CrossCreateContextDocOption {
 
 		private int copyModel;
@@ -2117,7 +2111,6 @@ public class DocFlowProxy {
 														   SerialLogonInfo serialLogonInfo) throws DocActionException {
 		return buildItemPrevNextRelationship(prevDocMatItemNode, nextDocMatItemNode, genRequest, serialLogonInfo, new CrossCreateContextDocOption());
 	}
-
 
 		/**
          * Establishes a previous–next relationship between two document material items.
@@ -2356,7 +2349,6 @@ public class DocFlowProxy {
 		targetDocMatItemUIModel.setMaterialStatusValue(sourceDocMatItemUIModel.getMaterialStatusValue());
 	}
 
-
 	public DocMatItemNode findEndDocMatItemTillNext(DocMatItemNode homeMatItemNode) throws DocActionException {
 		List<ServiceEntityNode> allNextMatItemList = findEndDocMatItemListTillNext(homeMatItemNode, false);
 		if (ServiceCollectionsHelper.checkNullList(allNextMatItemList)) {
@@ -2364,8 +2356,6 @@ public class DocFlowProxy {
 		}
 		return (DocMatItemNode) allNextMatItemList.get(0);
 	}
-
-
 
 	/**
 	 * Try to find the next doc mat item recursively until the next node name
@@ -2487,7 +2477,6 @@ public class DocFlowProxy {
 		});
 		return resultList;
 	}
-
 
 	public DocMatItemNode findTargetDocMatItemTillPrev(DocMatItemNode homeMatItemNode, List<String> targetModelNameList) throws DocActionException {
 		List<ServiceEntityNode> allPrevMatItemList =
@@ -2664,7 +2653,6 @@ public class DocFlowProxy {
 		}
 		return false;
 	}
-
 
 	public int getDocumentType(ServiceEntityNode serviceEntityNode) {
 		String modelName = ServiceDocumentComProxy.getServiceEntityModelName(serviceEntityNode);
@@ -2846,7 +2834,6 @@ public class DocFlowProxy {
 		}
 		return ServiceJSONParser.genSimpleOKResponse();
 	}
-
 
 	/**
 	 * The requested amount in the current document item should not exceeds the amount in the previous document item.
@@ -3207,7 +3194,6 @@ public class DocFlowProxy {
 		return resultList;
 	}
 
-
 	/**
 	 * Batch clean doc mat item next relationship
 	 *
@@ -3230,7 +3216,6 @@ public class DocFlowProxy {
 		}
 		updateBatchDocItemList(docMatItemList, serviceEntityManager, logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Utility method to batch update docMatItem List

@@ -167,7 +167,6 @@ public class RegisteredProductEditorController extends SEEditorController {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
 
-
 	private DocAttachmentProxy.DocAttachmentProcessPara genDocAttachmentProcessPara() {
 		return new DocAttachmentProxy.DocAttachmentProcessPara(registeredProductManager,
 				RegisteredProductAttachment.NODENAME, RegisteredProductAttachment.NODENAME, null, null, null);
@@ -193,7 +192,6 @@ public class RegisteredProductEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -203,7 +201,6 @@ public class RegisteredProductEditorController extends SEEditorController {
 		return serviceBasicUtilityController.uploadAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment text information.

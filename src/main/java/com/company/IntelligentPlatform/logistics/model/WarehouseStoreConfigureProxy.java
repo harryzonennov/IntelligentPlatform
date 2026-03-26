@@ -58,7 +58,6 @@ public class WarehouseStoreConfigureProxy extends ServiceEntityConfigureProxy {
 				.getBasicInvolvePartyMap());
 		seConfigureMapList.add(warehouseStorePartyConfigureMap);
 
-
 		// Init configuration of Warehouse [WarehouseStoreItem] node
 		ServiceEntityConfigureMap warehouseStoreItemConfigureMap = new ServiceEntityConfigureMap();
 		warehouseStoreItemConfigureMap.setParentNodeName(WarehouseStore.NODENAME);
@@ -186,7 +185,6 @@ public class WarehouseStoreConfigureProxy extends ServiceEntityConfigureProxy {
 		warehouseStoreItemPartyConfigureMap.setFieldList(super
 				.getBasicInvolvePartyMap());
 		seConfigureMapList.add(warehouseStoreItemPartyConfigureMap);
-
 
 		// End
 		super.setSeConfigMapList(seConfigureMapList);

@@ -16,28 +16,23 @@ import com.company.IntelligentPlatform.common.model.FlowRouter;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 
-
 @Service
 public class ServiceFlowModelServiceUIModelExtension extends ServiceUIModelExtension {
 
     @Autowired
     protected ServiceFlowCondGroupServiceUIModelExtension serviceFlowCondGroupServiceUIModelExtension;
 
-
     @Autowired
     protected ServiceFlowModelManager serviceFlowModelManager;
 
-
     @Autowired
     protected FlowRouterManager flowRouterManager;
-
 
     public List<ServiceUIModelExtension> getChildUIModelExtensions() {
         List<ServiceUIModelExtension> resultList = new ArrayList<>();
         resultList.add(serviceFlowCondGroupServiceUIModelExtension);
         return resultList;
     }
-
 
     @Override
     public List<ServiceUIModelExtensionUnion> genUIModelExtensionUnion() {
@@ -83,6 +78,5 @@ public class ServiceFlowModelServiceUIModelExtension extends ServiceUIModelExten
         resultList.add(serviceFlowModelExtensionUnion);
         return resultList;
     }
-
 
 }

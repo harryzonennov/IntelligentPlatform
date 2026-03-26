@@ -20,7 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.dto.WorkCalendarDayItemUIModel;
 import com.company.IntelligentPlatform.common.dto.WorkCalendarSearchModel;
 import com.company.IntelligentPlatform.common.dto.WorkCalendarUIModel;
-// TODO-DAO: import ...WorkCalendarDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.WorkCalendarRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.CalendarTemplate;
 import com.company.IntelligentPlatform.common.model.CalendarTemplateItem;
 import com.company.IntelligentPlatform.common.model.WorkCalendar;
@@ -64,11 +67,11 @@ public class WorkCalendarManager extends ServiceEntityManager {
 
 	@Autowired
 	protected BsearchService bsearchService;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected WorkCalendarDAO workCalendarDAO;
-
+    @Autowired
+    protected WorkCalendarRepository workCalendarDAO;
 	@Autowired
 	protected CalendarTemplateManager calendarTemplateManager;
 
@@ -622,7 +625,7 @@ public class WorkCalendarManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(workCalendarDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, workCalendarDAO));
 	}
 
 	@PostConstruct

@@ -117,8 +117,6 @@ public class RegisteredProductSpecifier extends
         return uiModelClassMap;
     }
 
-
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();
@@ -135,6 +133,5 @@ public class RegisteredProductSpecifier extends
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

@@ -57,7 +57,6 @@ public class FinAccountSearchProxy extends ServiceSearchProxy {
 		return finAccountManager.getAuthorizationResource();
 	}
 
-
 	@Override
 	public Map<Integer, String> getStatusMap(String languageCode) throws ServiceEntityInstallationException {
 		return finAccountManager.initStatusMap(languageCode);
@@ -157,6 +156,5 @@ public class FinAccountSearchProxy extends ServiceSearchProxy {
 		searchNodeConfigList.add(searchNodeConfig9);
 		return searchNodeConfigList;
 	}
-
 
 }

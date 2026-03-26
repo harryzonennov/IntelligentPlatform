@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
 /**
  * Internal and Dummy unit, only used for chart calculation
  * @author Zhang,Hang

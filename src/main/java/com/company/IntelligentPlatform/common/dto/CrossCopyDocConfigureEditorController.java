@@ -119,7 +119,6 @@ public class CrossCopyDocConfigureEditorController extends SEEditorController {
                 crossCopyDocConfigureServiceUIModel.getCrossCopyDocConfigureUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
 
-
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String newModuleService(

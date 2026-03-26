@@ -7,7 +7,10 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import ...ServiceExceptionRecordDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceExceptionRecordRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
@@ -27,22 +30,21 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 @Service
 @Transactional
 public class ServiceExceptionRecordManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     ServiceExceptionRecordDAO serviceExceptionRecordDAO;
-
+    @Autowired
+    protected ServiceExceptionRecordRepository serviceExceptionRecordDAO;
     @Autowired
     ServiceExceptionRecordConfigureProxy serviceExceptionRecordConfigureProxy;
 
     public ServiceExceptionRecordManager() {
         super.seConfigureProxy = new ServiceExceptionRecordConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new ServiceExceptionRecordDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(serviceExceptionRecordDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceExceptionRecordDAO));
     }
 
     @PostConstruct

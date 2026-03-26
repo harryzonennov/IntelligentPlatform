@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,6 +62,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
  */
 @Service
 public class BillOfMaterialOrderManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected BillOfMaterialOrderRepository billOfMaterialOrderDAO;
@@ -141,12 +147,11 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 
 	public BillOfMaterialOrderManager() {
 		super.seConfigureProxy = new BillOfMaterialOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new BillOfMaterialOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(billOfMaterialOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, billOfMaterialOrderDAO));
 	}
 
 	@PostConstruct
@@ -266,7 +271,6 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 		updateSENode(billOfMaterialOrder, billOfMaterialOrderBack,
 				logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Core Logic to approve billOfMaterialOrder and update to DB
@@ -390,7 +394,6 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 				billOfMaterialOrderServiceUIModelExtension);
 	}
 
-
 	/**
 	 * Core Logic to Initialize BOM Order: set status to 'Initial'.
 	 * 
@@ -406,7 +409,6 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 		updateSENode(billOfMaterialOrder, billOfMaterialOrderBack,
 				logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Get all relative sub BOM Order from one specified template
@@ -765,7 +767,6 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 		}
 		return resultList;
 	}
-
 
 	/**
 	 * Recursively to generate sub productive BOM model
@@ -1504,7 +1505,6 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 		serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
 	}
 
-
 	@Override
 	public void exeFlowActionEnd(int documentType, String uuid, int actionCode, ServiceJSONRequest serviceJSONRequest
 			,  SerialLogonInfo serialLogonInfo){
@@ -1523,7 +1523,7 @@ public class BillOfMaterialOrderManager extends ServiceEntityManager {
 						serialLogonInfo.getHomeOrganizationUUID());
 			}
 		} catch (ServiceEntityConfigureException | ServiceModuleProxyException e) {
-			e.printStackTrace();
+			logger.error("Failed during bill of material order processing", e);
 		}
 	}
 }

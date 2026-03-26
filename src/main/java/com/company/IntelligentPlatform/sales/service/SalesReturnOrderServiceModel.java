@@ -32,7 +32,6 @@ public class SalesReturnOrderServiceModel extends ServiceModule {
 			IServiceModuleFieldConfig.DOCNODE_CATE_ACTNODE)
 	protected SalesReturnOrderActionNode deliveryDoneBy;
 
-
 	@IServiceModuleFieldConfig(nodeName = SalesReturnOrderActionNode.NODENAME, nodeInstId =
 			SalesReturnOrderActionNode.NODEINST_ACTION_SUBMIT, blockUpdate = true, docNodeCategory =
 			IServiceModuleFieldConfig.DOCNODE_CATE_ACTNODE)

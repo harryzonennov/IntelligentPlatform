@@ -93,7 +93,6 @@ public class ProdProcessEditorController extends SEEditorController {
 		return preWarnMap;
 	}
 
-
 	protected void saveInternal(ProdProcessUIModel prodProcessUIModel)
 			throws ServiceEntityConfigureException, LogonInfoException {
 		String baseUUID = prodProcessUIModel.getUuid();
@@ -267,7 +266,6 @@ public class ProdProcessEditorController extends SEEditorController {
 		}
 	}
 
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.
@@ -309,7 +307,6 @@ public class ProdProcessEditorController extends SEEditorController {
 			@RequestBody SimpleSEJSONRequest request) {
 		return preLock(request.getUuid());
 	}
-
 
 	@RequestMapping(value = "/chooseWorkCenterToProcess", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String chooseWorkCenterToProcess(

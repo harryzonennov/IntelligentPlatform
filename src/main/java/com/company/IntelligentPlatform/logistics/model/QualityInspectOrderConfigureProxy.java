@@ -129,7 +129,6 @@ public class QualityInspectOrderConfigureProxy extends
 				"refWasteWareAreaUUID", java.lang.String.class);
 		seConfigureMapList.add(qualityInspectMatItemConfigureMap);
 
-
 		ServiceEntityConfigureMap qualityInspectMatItemPartyConfigureMap = new ServiceEntityConfigureMap();
 		qualityInspectMatItemPartyConfigureMap.setParentNodeName(QualityInspectMatItem.NODENAME);
 		qualityInspectMatItemPartyConfigureMap.setNodeName(QualityInspectMatItemParty.NODENAME);

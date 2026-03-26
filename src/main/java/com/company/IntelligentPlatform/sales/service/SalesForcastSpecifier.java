@@ -80,7 +80,6 @@ public class SalesForcastSpecifier extends DocumentContentSpecifier<SalesForcast
         return salesForcastIdHelper;
     }
 
-
     @Override
     public DocUIModelExtensionBuilder getDocUIModelExtensionBuilder() {
         // Doc root node: `SalesForcast`
@@ -115,7 +114,6 @@ public class SalesForcastSpecifier extends DocumentContentSpecifier<SalesForcast
                 convItemToUIMethod(SalesForcastMaterialItemManager.METHOD_ConvSalesForcastMaterialItemToUI).itemLogicManager(salesForcastMaterialItemManager);
         return docUIModelExtensionBuilder;
     }
-
 
     @Override
     public DocInvolveParty getDocInvolveParty(int partyRole, SalesForcastServiceModel salesForcastServiceModel) {

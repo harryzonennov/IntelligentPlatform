@@ -14,5 +14,4 @@ public class BillOfMaterialAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

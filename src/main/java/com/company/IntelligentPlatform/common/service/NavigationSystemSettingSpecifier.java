@@ -122,7 +122,6 @@ public class NavigationSystemSettingSpecifier extends
         return uiModelClassMap;
     }
 
-
     //TODO check usage
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
@@ -151,6 +150,5 @@ public class NavigationSystemSettingSpecifier extends
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

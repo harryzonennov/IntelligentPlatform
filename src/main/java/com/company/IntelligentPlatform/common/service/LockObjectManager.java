@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// TODO-DAO: import ...LockObjectDAO;
-// TODO-DAO: import platform.foundation.DAO.LogonUserDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
 import com.company.IntelligentPlatform.common.service.LogonInfoException;
@@ -40,9 +38,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Transactional
 public class LockObjectManager extends ServiceEntityManager {
 
-    // TODO-DAO: @Autowired
     @Autowired
-    LockObjectDAO lockObjectDAO; // TODO-DAO: stub
+    LockObjectDAO lockObjectDAO;
 
     @Autowired
     LockObjectConfigureProxy lockObjectConfigureProxy;
@@ -53,18 +50,19 @@ public class LockObjectManager extends ServiceEntityManager {
 
     public static final int LOCK_CHECK_OTHERISSUE = 3;
 
-    // TODO-DAO: @Autowired
     @Autowired
-    LogonUserDAO logonUserDAO; // TODO-DAO: stub
+    LogonUserDAO logonUserDAO;
 
     public LockObjectManager() {
         super.seConfigureProxy = new LockObjectConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new LockObjectDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(lockObjectDAO);
+        // LockObjectManager uses lockObjectDAO directly for all lock operations.
+        // The base ServiceEntityManager.serviceEntityDAO is NOT wired here because
+        // LockObject lock/unlock is handled entirely by the explicit lockObjectDAO
+        // calls in this class — there is no generic SE CRUD path for LockObject.
     }
 
     @PostConstruct
@@ -221,7 +219,6 @@ public class LockObjectManager extends ServiceEntityManager {
             }
         }
     }
-
 
     @Transactional
     public void unLockServiceEntityList(List<ServiceEntityNode> seList)

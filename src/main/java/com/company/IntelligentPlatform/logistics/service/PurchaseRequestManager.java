@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.logistics.dto.*;
 import com.company.IntelligentPlatform.logistics.repository.PurchaseRequestRepository;
 import com.company.IntelligentPlatform.logistics.model.*;
@@ -50,6 +52,9 @@ public class PurchaseRequestManager extends ServiceEntityManager {
     public static final String METHOD_ConvPurchaseRequestToUI = "convPurchaseRequestToUI";
 
     public static final String METHOD_ConvUIToPurchaseRequest = "convUIToPurchaseRequest";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected PurchaseRequestRepository purchaseRequestDAO;
@@ -110,19 +115,17 @@ public class PurchaseRequestManager extends ServiceEntityManager {
 
     public PurchaseRequestManager() {
         super.seConfigureProxy = new PurchaseRequestConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new PurchaseRequestDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(purchaseRequestDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseRequestDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(purchaseRequestConfigureProxy);
     }
-
 
     @Override
     public ServiceEntityNode newRootEntityNode(String client)

@@ -130,5 +130,4 @@ public class LogonUserSpecifier extends DocumentContentSpecifier<LogonUserServic
 
     }
 
-
 }

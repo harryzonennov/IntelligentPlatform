@@ -123,7 +123,6 @@ public class SalesForcastActionExecutionProxy extends DocActionExecutionProxy<Sa
         return null;
     }
 
-
     @Override
     public DocumentContentSpecifier<SalesForcastServiceModel, SalesForcast, SalesForcastMaterialItem> getDocumentContentSpecifier() {
         return salesForcastSpecifier;
@@ -143,7 +142,6 @@ public class SalesForcastActionExecutionProxy extends DocActionExecutionProxy<Sa
     public ServiceEntityManager getServiceEntityManager() {
         return salesForcastManager;
     }
-
 
     public void executeActionCore(
             SalesForcastServiceModel salesForcastServiceModel,

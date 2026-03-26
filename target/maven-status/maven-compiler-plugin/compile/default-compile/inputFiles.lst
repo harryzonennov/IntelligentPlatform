@@ -38,7 +38,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerExtendUIControlSetServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/repository/InboundDeliveryRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InquiryActionNode.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceDocConfigureResourceConstants.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarSettingUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InquiryMaterialItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseStoreSettingServiceModel.java
@@ -51,6 +50,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/PricingSettingSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/CorporateAccount.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderPartyUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/AuthController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferMatItemBatchGenRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ProductionDeptManagerPartyHandler.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdPickingOrderEditorController.java
@@ -60,13 +60,11 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ISQLSepcifyAttribute.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdOrderToCrossOutboundProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseReturnOrderSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigOutputParaModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DelegateTask.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdOrderActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/model/FinAccDocRef.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialStockKeepUnitSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseStoreItemLogConfigParaProxy.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/RegisteredProductRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InitInventoryCheckModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnOrderAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/IFinanceActionCode.java
@@ -103,7 +101,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceBasicKeyStructure.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AccountSearchSubModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnMaterialItemServiceUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinanceReportController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/Code39Encoder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BootStrapTreeModelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderAttachmentUIModel.java
@@ -111,7 +108,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/BasicDocItemInitModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CorporateCustomerDuplicateCheckLogic.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/DeliveryMatItemBatchGenRequest.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SystemConfigureElementEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdPickingRefMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocInitConfigureUIModel.java
@@ -187,13 +183,11 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/RepairProdOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProcessRouteOrderServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/LogonUser.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/repository/SettleOrderRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/StandardErrorTypeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServicePackageConstant.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ResFinAccountSettingIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialConfigureTemplateServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesReturnOrderActionNode.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityLogModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPickingOrderActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderTargetMatItemServiceUIModelExtension.java
@@ -209,10 +203,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocInitConfigureServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemCodeValueUnionServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CompanyManagerPartyHandler.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/WarehouseRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractMaterialItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityIDException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderReportSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdJobOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialConfigureTemplateServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/LogonUserOrgReference.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/StandardMaterialUnit.java
@@ -231,6 +225,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastPartyUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/QualityInspectMatItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryReportService.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/RoleRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceModuleCloneService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/WarehouseStoreItem.java
@@ -256,6 +251,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanTargetMatItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliveryServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemCodeValueCollectionSearchProxy.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SystemAuthorizationObjectRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/OutboundItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ISystemConfigureSwitch.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/IndividualCustomerConfigureProxy.java
@@ -269,7 +265,9 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectPropertyItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderHeaderProposalExcelProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionPlanSearchProxy.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtUtil.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/IDocumentNodeFieldConstant.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/ProductionResourceUnionRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderTargetMatItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesReturnOrderSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/HostCompanyManager.java
@@ -309,23 +307,20 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemExecutorSettingServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/EmployeeServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastServiceUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityLogItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryDto.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExcelReportController.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceExtensionSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceExtendFieldI18nSettingEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityDAO.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesForcastConfigureProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/BillOfMaterialOrderRepository.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtPrincipal.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProcessBOMMaterialItemManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/LogonUserListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceSelect2ModelProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemEditorController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinanceAccountChartController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FlowRouterSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RunTimeSERegisterEntity.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LogonUserManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DocBatchConvertProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ResFinAccountFieldSetting.java
@@ -354,7 +349,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseOrderDto.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/QualityInsOrderAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialExcelReportProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/Role.java
@@ -376,7 +370,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/NavigationItemSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesForcastException.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigParaUnion.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/SecurityConfig.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdJobOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderItemProposalExcelProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CorporateContactPersonServiceModel.java
@@ -402,9 +396,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceBasicRequestHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/Country.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServicePieChartDataUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DocActionNodeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemExecutorLogServiceModel.java
@@ -421,8 +413,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WorkCalendarException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleSubAuthorizationServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountTitleServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureException.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConfigureParaGroup.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/DeliveryService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CorporateCustomerIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SerExtendPageI18nEditorController.java
@@ -431,8 +421,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ISystemExecutorAttr.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RuntimeService.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMMaterialItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocumentExtendUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RegisteredProductException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialOrderSearchModel.java
@@ -465,12 +453,9 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceUIModuleProxyException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceExtensionSettingManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceAccountDuplicateCheckResourceConfigureProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ProcessInstanceQuery.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialSKUUnitAttachment.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConfigureConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseContractServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/OutboundDelivery.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BSearchResponse.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectMatItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/IndividualCustomerToFinSearchProxy.java
@@ -489,7 +474,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryTransferOrderServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseRequestMatItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdOrderSpecifier.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/AccessKeyInterceptor.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseReturnOrderIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LogonUserSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/OrganLogonUserRole.java
@@ -509,7 +493,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialTypeException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/WarehouseSafetyWarn.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocExcelUploadTemplate.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderReportServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderItemSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ActionCodeJSONModel.java
@@ -529,6 +512,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceExceptionRecordConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerDefEvent.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/ProdProcessRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerExtendUIControlSetServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/AuthorizationObjectListController.java
@@ -585,12 +569,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseReturnOrderAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/OutboundDeliveryIncomeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/PageSplitHelper.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigParaProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocumentReportTemplateUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ISearchDataMethodResponse.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseRequestMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProductionPlanEditorController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/ResFinAccountFieldSettingUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WarehouseStoreItemLogServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinAccountController.java
@@ -627,6 +609,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProductiveBOMOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/Cargo.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/FlowRouter.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/JpaServiceEntityDAO.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesReturnOrderActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessRouteProcessItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceExcelConfigException.java
@@ -661,7 +644,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnOrderDto.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocumentSettingSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseSafetyWarnMessageListController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdPickingOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionResourceUnionServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanSupplyWarehouseUIModel.java
@@ -677,7 +659,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/RoleListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/BillOfMaterialOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionPlanDto.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CalendarSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemCodeValueUnionConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/StandardKeyFlagProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/AccountManager.java
@@ -718,11 +699,13 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/ResFinAccountFieldSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectMatItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/PricingCurrencyConfigure.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/HostCompanyRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/OrganizationServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialTypeServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RandomStringUtils.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceCrossDocConfigureUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CorporateDistributorSearchModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SerialNumberSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/NavigationItemSettingManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/OrganizationDto.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductiveBOMItemServiceModel.java
@@ -776,7 +759,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdWorkCenterUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/EmployeeServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPickingOrderPartyUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocParaConsumerValueModeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/BillOfMaterialTemplateItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MatConfigHeaderCondition.java
@@ -788,7 +770,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesAreaConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionDocRequestUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinAccountTitleEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProcessBOMMaterialItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialTypeSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SimpleDocConfigurePara.java
@@ -805,6 +786,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdOrderItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/FinAccountManager.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/CityRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocDeletionSettingSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderTargetMatItemManager.java
@@ -833,6 +815,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPickingRefOrderItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdJobMaterialItemUIModelMapConfigure.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseRequestException.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceAccountDuplicateCheckResourceRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPickingOrderSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatConfigHeaderConditionUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SerialNumberSettingListController.java
@@ -858,7 +841,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MessageTemplateHandler.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LocationManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CrossOrgData.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SettleOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/ResourceAuthorizationUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/PrevNextProfDocItemProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPickingRefMaterialItemServiceUIModelExtension.java
@@ -875,7 +857,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ExternalDriverDuplicateCheckLogic.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdTargetItemToCrossQuaInspectProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MessageTempSearchConditionUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityLogModelManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderTimeComsumeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleSearchModel.java
@@ -897,10 +878,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdProcess.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/StandardSwitchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastMaterialItemServiceUIModelExtension.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SystemCodeValueCollectionRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractMaterialItemSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RegisteredProductAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialTypeConfigureProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityLogModelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesContractCrossConvertRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/controller/SalesForcastMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderServiceUIModel.java
@@ -915,7 +896,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/RepairProdTarSubItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/ResFinSystemResourceListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CorporateCustomerEditorController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceUILabelRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CrossDocConvertProfRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseRequestParty.java
@@ -931,7 +911,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionDocRequestService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SubSystemConfigureElementServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundScanBarcodeResponseModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceDocConfigConstants.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarWorkTimeSettingUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/WarehouseStoreItemLog.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderCrossConvertRequest.java
@@ -980,16 +959,16 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseRequestActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerialNumberSettingSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CrossDocConvertReservedRequest.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/JavaDelegate.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemConfigureElementManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPickingOrderActionNodeUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtAuthContextCache.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialActionLog.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdWorkCenterResItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundItemListController.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/GenericServiceEntityNodeRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BarcodeSaveToFile.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/BillOfMaterialTemplate.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/TaskListener.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InquiryPartyUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BarcodeConsumer.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WarehouseStoreCrossConvertRequest.java
@@ -1009,9 +988,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MessageTemplateHandlerRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemDefDocActionCodeProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/repository/SalesContractRepository.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/AccountConstantForBookingNote.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdReturnOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProcessRouteOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseReturnMaterialItemUIModel.java
@@ -1024,12 +1001,12 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderAttachmentUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocActiveMessageItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityFieldsHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesContractMaterialItemAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ActionCodeEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/OrganizationService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/DocActionNode.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/OrganizationFunctionRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceCrossDocConfigureManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesReturnOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialItemUpdateLogServiceUIModel.java
@@ -1045,7 +1022,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdWorkCenterConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityConfigureMap.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnOrderServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdJobOrderListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/RoleAuthorizationEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryTransferOrderManager.java
@@ -1054,7 +1030,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SearchProxyConfig.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemResource.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseReturnMaterialItemSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FlowableTask.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliverySearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleUIModel.java
@@ -1096,6 +1071,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CorporateContactPersonEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarTemplateUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/AuthorizationGroupRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdItemReqProposalServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SEFieldSearchConfig.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/EmployeeToFinSearchProxy.java
@@ -1124,6 +1100,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/BillOfMaterialTemplateRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/PackageRegisterationEntityManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/AuthorizationObjectRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityConfigureProxyService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceExtendFieldSettingServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceComChartUIModel.java
@@ -1139,14 +1116,13 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectOrderPartyUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanItemReqProposalServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdWorkCenterIdHelper.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtAuthFilter.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/DocMatItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPickingRefMaterialItemManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WarehouseStoreItemExcelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialOrderServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseReturnOrderCrossConvertProfRequest.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocConfigureServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarSettingSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RoleMessageCategoryManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdWorkCenterSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesReturnOrderParty.java
@@ -1159,11 +1135,11 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseContractCrossConvertProfRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/OrganizationFunctionSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/ProdJobOrderRepository.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CalendarTemplateServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdOrderSupplyWarehouse.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InventoryCheckItemAttachment.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/MaterialRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InquiryAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CorporateCustomerException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceMessageHelper.java
@@ -1171,7 +1147,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocActConfigureItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RoleMessageCategory.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdWorkCenterResItemServiceModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocConfigureParaServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/FlowRouterServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialUnitReference.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialCategorySelect.java
@@ -1196,7 +1171,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/UserRoleServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/WarehouseArea.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderException.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinanceAccountEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractMaterialItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/NavigationSystemSettingServiceModel.java
@@ -1210,7 +1184,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MessageTemplateServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleMessageCategoryServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/RepairProdOrderListController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdProcessUIModelMapConfigure.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/Organization.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ISearchCoreMethod.java
@@ -1221,9 +1194,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundScanBarcodeResponseModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CityUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemPartyUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocActiveMessageItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractPartyUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocMaterialTemplateParaProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliveryActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ISEReadOnlyMapping.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SerExtendUIControlSet.java
@@ -1240,6 +1211,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderDataCleanHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdPlanItemReqProposal.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/NavigationSystemSettingServiceUIModelExtension.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SearchProxyConfigRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FlowTaskPartyHandlerRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialSKUUnitServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPlanItemReqProposalServiceModel.java
@@ -1276,6 +1248,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdReturnOrderListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/LogonUserOrgSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/IndividualCustomer.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtAuthEntryPoint.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ReferenceNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/RepairProdTargetItemAttachmentUIModel.java
@@ -1331,15 +1304,16 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/OutboundDeliveryConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SystemConfigureResourceListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialTypeExcelHandler.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SystemExecutorSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanItemReqProposalUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProductionOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountAttachmentUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/MaterialStockKeepUnitRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliveryMessageHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdReturnRefMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceItemUpdateModelProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExtendFieldI18nSettingServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/IndividualCustomerToFinSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/MessageCategoryListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/BillOfMaterialTemplateItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesContractConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarTemplateServiceUIModel.java
@@ -1370,7 +1344,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/OutboundDeliveryExcelReportProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDropdownListHelper.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IndividualCustomerSearchProxy.java
@@ -1401,7 +1374,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InquiryMaterialItemManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/EmployeeEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/FinanceTransactionException.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigParaFactory.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdPickingOrderParty.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WasteProcessOrderSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceExcelHandlerProxyFactory.java
@@ -1414,10 +1386,12 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/RepairProdOrderRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RegisteredProductInvolveParty.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/StandardMaterialUnitRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderInitModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/UIResourceGenerator.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/QualityInspectOrderSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/AccountConfigureProxy.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceVersionRecordRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/AccountListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/EAN13Encoder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LogonUserMessageCategory.java
@@ -1428,7 +1402,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AuthorizationObjectServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RegisteredProductExtendProperty.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/BillOfMaterialTemplateConfigureProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConsumerUnionConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FlowRouterExtendClassManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/RepairProdOrderActionNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/InvalidAtributeException.java
@@ -1446,7 +1419,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/LogonUserSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProductionOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderDto.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/OutboundDeliveryConfigParaProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryTransferOrderException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MessageTempPrioritySettingManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityNodeCreateTimeCompare.java
@@ -1454,7 +1426,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/OrganizationFunctionConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderPickingToPickingHandler.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesReturnMaterialItemManager.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocConfigureServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/LogonInfoConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceBarcodeGeneratorFactory.java
@@ -1465,7 +1436,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/NavigationItemSettingServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WorkCalendarListController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConsumerUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DefaultDateFormatSwitchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InquiryMaterialItemExcelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CorporateCustomerDto.java
@@ -1521,7 +1491,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceAccountDuplicateCheckResourceSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerExtendPageSectionSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseRequestListController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CalendarSettingEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastMaterialItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPlanTargetItemManager.java
@@ -1529,7 +1498,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanSupplyWarehouseServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WarehouseLogisticsManager.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliveryConfigParaProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/OrganizationFunctionSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreCheckProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/RepairProdOrder.java
@@ -1538,6 +1506,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/EmployeeOrgServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/NavigationGroupSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/CrossCopyDocConfigure.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ActionCodeRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceViewControlInstallPiece.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SEUIModelFieldsHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseRequestServiceModel.java
@@ -1565,7 +1534,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemResourceDAO.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceSimpleDataProviderException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseAreaServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/RepairProdSupplyWarehouse.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/RepairProdOrderItemManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdJobMaterialItem.java
@@ -1573,10 +1541,8 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesContractActionNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessRouteOrderEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocInitInvolvePartyServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/EAN13TextPainter.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConsumerFieldUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MessageTempSearchConditionManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialItemUpdateLogServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/repository/FinanceDocumentRepository.java
@@ -1602,7 +1568,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CorporateCustomerSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarTemplateEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RegisteredProductServiceModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConfigure.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/RepairProdTarSubItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CalendarWorkTimeSettingEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/OutboundItemManager.java
@@ -1652,8 +1617,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocTypeSysCategoryMapUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CorporateCustomerSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/WasteProcessOrder.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SettleOrderDto.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityLogModelServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AccountObjectJSONModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SearchConfigConnectCondition.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryFinControllerRes.java
@@ -1690,7 +1653,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundItemExcelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialSKUUnitUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdJobOrder.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConsumerFieldUnionUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CrossCopyInvolvePartyServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceRegisterEntityModelTypeCompare.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SearchContextBuilder.java
@@ -1703,6 +1665,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemConfigureCategoryServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/IConvertSearchDataMethod.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IUserMessageProcessHandler.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/LockObjectRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceFlowModelManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemSerialParallelProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateItemUpdateLogUIModel.java
@@ -1730,13 +1693,11 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityDateHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BarcodeKeyboardListener.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LogonUserMessageException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/DeliveryMatItemGenRequestHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemConfigureResourceServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceFlowRuntimeException.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaInitModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/DocumentMatItemRawSearchRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/EmployeeToFinSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderReportItemServiceUIModelExtension.java
@@ -1748,14 +1709,12 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/FlowRouterEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountObjectJSONModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ResFinAccountSetting.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DeploymentBuilder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialTypeEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/repository/PurchaseOrderRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InquiryCrossConvertRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceEntityException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProcessRouteOrderManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/DocInvolvePartySearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExcelReportContextProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowCondFieldEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/PricingSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/QualityInspectException.java
@@ -1781,7 +1740,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocInitConfigureServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdWorkCenterResItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/ILogisticsMobileJSONConstant.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdProcessListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemCodeValueCollectionServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectMatItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CorporateCustomerServiceUIModel.java
@@ -1797,7 +1755,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/OutboundDeliveryActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LogonUserException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseReturnMaterialItemServiceModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ISimpleDataProviderConstants.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CodabarEncoder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseReturnMaterialItemManager.java
@@ -1819,7 +1776,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdOrderItemReqProposal.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleAuthorizationUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundDeliveryIncomeProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/Deployment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialOrderReportProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/FinAccountService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseRequestCrossConvertRequest.java
@@ -1856,7 +1812,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryCheckOrderIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ScanBarcodeListener.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/ServiceJSONLocalRecorder.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesReturnMaterialItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/OrganizationFunctionListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/controller/DeliveryController.java
@@ -1911,7 +1866,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemConfigureResourceProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProcessBOMItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleMessageCategoryServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocDeletionSettingManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundItemBatchRequest.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderItemSearchProxy.java
@@ -1920,8 +1874,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundItemRequestJSONModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ActionCodeUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceDocumentSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CorporateSupplierEditorController.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/MaterialTypeRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MatDecisionValueSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BarcodeProducter.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliverySearchModel.java
@@ -1974,7 +1930,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectPropertyItemServiceUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityLogModelDAO.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SerialNumberSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocFlowSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/UIModelFieldInfo.java
@@ -1984,7 +1939,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionPlanSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/IntelligentPlatformApplication.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowCondFieldServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ProcessInstance.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnOrderServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/QualityInspectOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/PricingCurrencyConfigureListController.java
@@ -2017,7 +1971,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DefDocumentApproveExecution.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/CalendarWorkTimeSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseAreaListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractValueProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialConfigureTemplateSearchModel.java
@@ -2033,6 +1986,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/CityConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerExtendPageSectionServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemListController.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/CountryRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProcessBOMOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SpringContextDestroyListener.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/NodeNotFoundException.java
@@ -2055,17 +2009,18 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DocAttachmentProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemCodeValueCollectionManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/IndividualCustomerRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AuthorizationObjectUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesContractManager.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceFlowModelRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SearchConfigPreCondition.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderHeaderExcelProposal.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/LogisticsCommonController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPickingRefOrderltemManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/NavigationGroupSettingManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessRouteOrderUIModelMapConfigure.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IndCustomerDupCheckByEmailLogic.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseAreaSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocumentReportTemplate.java
@@ -2096,6 +2051,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarTempWorkScheduleEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowCondGroupServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionDocRequestItemSearchModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceEntityRegisterEntityRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/NavigationSystemSettingUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ActionCodeManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/controller/SalesForcastListController.java
@@ -2103,13 +2059,12 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/PricingCurrencyConfigureEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExtendFieldSettingUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceExcelConfigureConstants.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseSafetyWarnMessageUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesForcastAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatDecisionValueSettingServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AccountTypeSelect.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SystemCodeValueUnionRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/model/FinAccountMatItemAttachment.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseStoreSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/AuthorizationGroupEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/OrganizationBarcodeBasicSettingException.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityStringHelper.java
@@ -2133,10 +2088,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/ResFinAccountSettingListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/repository/SalesReturnOrderRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/RepairProdItemReqProposal.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocConfigurePara.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceItemIdGenerator.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/AccountToFinanceSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessMaterialItemSearchModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/repository/SystemResourceRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialUnitAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/LogonUserOrgListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionPlanItemUIModel.java
@@ -2144,7 +2099,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/WasteProcessOrderActionNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseContractMaterialItem.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocActiveMessageHeadUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryCheckOrderManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatConfigHeaderConditionServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/DocMatItemIdCompareProxy.java
@@ -2163,7 +2117,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPickingRefOrderItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowRuntimeEngineController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/IndividualCustomerEditController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesReturnOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocExcelUploadTemplateUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderItemPartyUIModel.java
@@ -2182,6 +2135,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocumentComProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WorkCalendarDayItemUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/ProcessBOMOrderRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/repository/SalesAreaRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowModelServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceCrossDocEventMonitor.java
@@ -2194,7 +2148,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdWorkCenterCalendarItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryCheckOrderServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/NavigationElementResource.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceHighChartXTimeSlotParaProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceResourceConstants.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceCrossDocConfigureEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionPlanItemServiceUIModel.java
@@ -2229,6 +2182,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/DocMatItemNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ChartModelJSONHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/service/FinAccountException.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/FlowRouterRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocActConfigureItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/EmployeeRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InventoryCheckOrderConfigureProxy.java
@@ -2257,8 +2211,8 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemAttachmentUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountMaterialItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceModuleProxyException.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/SystemConfigureCategoryRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerialNumberSettingServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessRouteOrderListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinanceAccountListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InboundDeliveryEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/UIModelNodeConfigPreCondition.java
@@ -2273,7 +2227,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceDocDeletionSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InboundItemExcelReportProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialIdHelper.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialTypeIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemAuthorizationObjectConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/controller/SalesContractMaterialItemListController.java
@@ -2307,6 +2260,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderItemReqProposalServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/SystemConfigureCategoryListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/AccountDuplicateCheckCoreTool.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/CalendarTemplateRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/MaterialConfigureTemplateConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceExceptionRecord.java
@@ -2315,11 +2269,10 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialStockKeepUnitServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesContractSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/LogonUserActionNode.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/LogonInfoRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialConfigureTemplateManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesForcastServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DocInvolvePartyProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProductionResourceUnionListController.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SettleOrderAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InventoryCheckOrderActionNode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerExtendPageSettingActionExecutionProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMOrderUIModelMapConfigure.java
@@ -2353,6 +2306,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseContractEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdJobOrderSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductiveBOMOrderServiceModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/config/JwtRestContext.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderItemReqProposalServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProductionOrderActionExecutionProxy.java
@@ -2363,7 +2317,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/controller/ServiceWordTemplateHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProdPickingOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CalendarTempItemPeriodTypeCompare.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServicePDFReportHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/EmployeeActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProductionResourceUnionConfigureProxy.java
@@ -2373,7 +2326,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/WarehouseStoreSearchProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SerialNumberSettingSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderPartyUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RepositoryService.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/dto/SalesAreaUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SerialNumberSettingConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemLogChartHelper.java
@@ -2384,7 +2336,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowCondFieldUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/LogonUserConfigureProxy.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ReferenceProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InventoryCheckOrder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemCodeValueCollection.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IndividualCustomerIdHelper.java
@@ -2434,6 +2385,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/HostCompany.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/SalesItemToCrossProdPlanProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MaterialSearchModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/CargoRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdWorkCenterCalendarItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InquiryEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/CalendarTemplateListController.java
@@ -2446,6 +2398,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceFieldUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdPlanTarSubItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/WarehouseStoreSettingServiceUIModel.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/CalendarSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerExtendPageMetadataServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemConfigureResource.java
@@ -2483,6 +2436,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WidthCodedPainter.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WasteProcessMaterialItemServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdWorkCenterEditorController.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/OrganizationBarcodeBasicSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialItemIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerExtendPageSettingSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseReturnOrder.java
@@ -2495,7 +2449,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdReturnOrderSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/MessageTemplateServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceFlowModelSearchModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConsumerUnionManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/service/SalesReturnOrderServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SearchProxyConfigServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerExtendUIControlSetServiceModel.java
@@ -2551,10 +2504,8 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/BillOfMaterialItemUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RunTimePackageRegEntity.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/repository/InquiryRepository.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionOrderPartyUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProductionOrder.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceEntityLogModelConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SelectMapModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialStockKeepUnitSpecifier.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessRouteProcessItemEditorController.java
@@ -2599,8 +2550,8 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SearchModelConfigHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/RepairProdOrderItemServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/LockObjectFailureException.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/WorkCalendarRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityRegisterEntityDAO.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProcessBOMItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductOrderGanttProposalUnion.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AuthorizationGroupSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceInputValidator.java
@@ -2617,8 +2568,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/dto/FinAccountDto.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/RoleMessageCategoryUIModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/TaskService.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdJobMaterialItemListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdOrderTargetMatItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExtendFieldSettingServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/RegisteredProductActionExecutionProxy.java
@@ -2632,6 +2581,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceCrossDocEventMonitorUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreListController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceCrossDocConfigure.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ProvinceRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/CalendarSettingIdHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocActConfigureItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/InvolvePartyTemplate.java
@@ -2645,6 +2595,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceExtendUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/DocUIModelExtensionFactory.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FinanceDeptManagerPartyHandler.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/ServiceExceptionRecordRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceEntityManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/FlowableProcessManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/repository/ProductionPlanRepository.java
@@ -2654,7 +2605,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdPickingRefMaterialItemServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/PurchaseReturnOrderUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemAuthorizationObjectManager.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceDocConfigureResourceManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InventoryTransferItemExcelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SerialIdInputBatchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/BSearchSettings.java
@@ -2674,6 +2624,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/InboundDeliveryParty.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/SystemConfigureCategoryManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SalesArea.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/PricingSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/AuthorizationObjectServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/SystemExecutorLog.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceComChartArrayModel.java
@@ -2687,7 +2638,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityRegisterEntitySearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialStockKeepUnitManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemConfigureElementServiceUIModelExtension.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/sales/model/SettleMaterialItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocDeletionSettingServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceFlowModelServiceModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/CrossCopyInvolveParty.java
@@ -2709,6 +2659,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/MaterialTypeManager.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/NavigationItemSettingServiceUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/ProdProcessManager.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/NavigationSystemSettingRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/IFinanceControllerResource.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceFlowCondGroup.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IPackageDefI18n.java
@@ -2718,6 +2669,7 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/INavigationElementConstants.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProdReturnRefOrderItemEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceModuleFieldConfig.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/MaterialConfigureTemplateRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ResFinAccountProcessCode.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IServiceBarcodeGenerator.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/dto/WarehouseStoreUIModel.java
@@ -2737,7 +2689,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderReportItemSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/FlowRouterExtendClassUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/IndividualCustomerServiceModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/Task.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/PurchaseReturnMaterialItemExcelHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/finance/controller/FinAccountLogEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/DefaultDateFormatConstant.java
@@ -2775,7 +2726,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocDeletionSettingEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProcessRouteOrderSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/service/InquiryMaterialItemServiceModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelSearchModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/controller/ProductionController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/AuthorizationObjectEditorController.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/WarehouseConfigureProxy.java
@@ -2797,7 +2747,6 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/ServiceExcelXMLConfigureHelper.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/UIModelNodeMapConfigureBuilder.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/model/ProductionPlanActionNode.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/DelegateExecution.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/RegisteredProductConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProductionPlanActionNodeUIModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/SystemExecutorSettingEditorController.java
@@ -2814,10 +2763,9 @@
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/OutboundItemAttachment.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/PurchaseReturnOrderConfigureProxy.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/DataTableRequestData.java
+/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/repository/MessageTemplateRepository.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/model/ServiceExtendFieldSetting.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/logistics/model/QualityInspectPropertyItem.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/dto/ProdOrderItemInitModel.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/dto/ServiceDocConfigureParaGroupServiceUIModelExtension.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/service/WarehouseManager.java
-/Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupInitModel.java
 /Users/I043125/work2/IntelligentPlatform/src/main/java/com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateItemManager.java

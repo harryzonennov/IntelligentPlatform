@@ -44,7 +44,6 @@ public class ServiceExceptionRecordEditorController extends SEEditorController {
 	public ServiceExceptionRecordEditorController() {
 	}
 
-
 	protected void saveInternal(
 			ServiceExceptionRecordUIModel serviceExceptionRecordUIModel)
 			throws ServiceEntityConfigureException, LogonInfoException {

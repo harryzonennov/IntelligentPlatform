@@ -152,7 +152,6 @@ public class PurchaseRequestMaterialItemEditorController extends SEEditorControl
                 genDocAttachmentProcessPara());
     }
 
-
     /**
      * Upload the attachment content information.
      */

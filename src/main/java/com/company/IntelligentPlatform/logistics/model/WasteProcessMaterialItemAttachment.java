@@ -14,5 +14,4 @@ public class WasteProcessMaterialItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

@@ -20,7 +20,6 @@ public class RoleServiceModel extends ServiceModule {
 	@IServiceModuleFieldConfig(nodeName = RoleMessageCategory.NODENAME, nodeInstId = RoleMessageCategory.NODENAME)
 	protected List<RoleMessageCategoryServiceModel> roleMessageCategoryList = new ArrayList<>();
 
-
 	public List<RoleAuthorizationServiceModel> getRoleAuthorizationList() {
 		return this.roleAuthorizationList;
 	}

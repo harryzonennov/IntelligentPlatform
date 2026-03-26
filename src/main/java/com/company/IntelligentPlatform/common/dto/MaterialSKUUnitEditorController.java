@@ -113,7 +113,6 @@ public class MaterialSKUUnitEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	@RequestMapping(value = "deleteModule", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String deleteModule(
 			@RequestBody SimpleSEJSONRequest request) {

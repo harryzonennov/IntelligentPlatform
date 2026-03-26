@@ -96,7 +96,6 @@ public class AccountSearchSubModel extends SEUIComModel {
 	@BSearchFieldConfig(fieldName = "qqNumber", subNodeInstId = NODE_INST_PARTYCONTACT)
 	protected String qqNumber;
 
-
 	public String getId() {
 		return id;
 	}

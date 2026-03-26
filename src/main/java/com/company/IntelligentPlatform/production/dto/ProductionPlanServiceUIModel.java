@@ -54,7 +54,6 @@ public class ProductionPlanServiceUIModel extends ServiceUIModule {
 	@IServiceUIModuleFieldConfig(nodeName = ProductionPlan.NODENAME, nodeInstId = ProductionPlan.SENAME, convToUIMethod = ProductionPlanManager.METHOD_ConvProductionPlanToUI, convUIToMethod = ProductionPlanManager.METHOD_ConvUIToProductionPlan)
 	protected ProductionPlanUIModel productionPlanUIModel;
 
-
 	@IServiceUIModuleFieldConfig(nodeName = ProductionPlanParty.NODENAME, nodeInstId = ProductionPlanParty.PARTY_NODEINST_PUR_ORG)
 	protected ProductionPlanPartyUIModel purchaseOrgParty;
 

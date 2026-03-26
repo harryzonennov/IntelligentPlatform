@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.common.model;
 
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.common.model.*;
+import com.company.IntelligentPlatform.common.model.*;
+@Entity
+@Table(name = "ActionCode", schema = "platform")
 public class ActionCode extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

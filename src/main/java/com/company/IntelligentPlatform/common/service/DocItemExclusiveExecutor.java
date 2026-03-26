@@ -67,7 +67,6 @@ public class DocItemExclusiveExecutor<R extends ServiceModule, T extends Service
 	 *
 	 */
 
-
 	/**
 	 * 1. Find Better Item Callback interface.
 	 * 2. Finish all the logic.
@@ -78,13 +77,11 @@ public class DocItemExclusiveExecutor<R extends ServiceModule, T extends Service
 	 *
 	 */
 
-
 	//TODO find proper callback method
 	public void leanExecuteItemList(List<ServiceEntityNode> selectedItemList, List<ServiceEntityNode> allDocMatItemList,
 								   DocActionExecutionProxy.DocItemActionExecution<Item> selectedItemActionCallback,
 								   DocActionExecutionProxy.DocItemActionExecution<Item> otherItemActionCallback) {
 		// Get the others items by filter from seleted item
-
 
 	}
 
@@ -98,6 +95,5 @@ public class DocItemExclusiveExecutor<R extends ServiceModule, T extends Service
 			throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage());
 		}
 	}
-
 
 }

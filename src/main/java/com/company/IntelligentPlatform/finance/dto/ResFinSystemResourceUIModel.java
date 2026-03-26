@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
 import com.company.IntelligentPlatform.common.model.AuthorizationObject;
 import com.company.IntelligentPlatform.common.model.SystemResource;
 
-
 public class ResFinSystemResourceUIModel extends SEUIComModel{
 
 	@ISEUIModelMapping(fieldName = "url",seName = SystemResource.SENAME,  nodeName = SystemResource.NODENAME,  nodeInstID = SystemResource.SENAME, secId = SystemResource.SENAME, tabId = TABID_BASIC)
@@ -88,56 +87,45 @@ public class ResFinSystemResourceUIModel extends SEUIComModel{
 		return viewType;
 	}
 
-
 	public void setViewType(int viewType) {
 		this.viewType = viewType;
 	}
-
 
 	public String getViewTypeValue() {
 		return viewTypeValue;
 	}
 
-
 	public void setViewTypeValue(String viewTypeValue) {
 		this.viewTypeValue = viewTypeValue;
 	}
-
 
 	public String getUiModelClassName() {
 		return uiModelClassName;
 	}
 
-
 	public void setUiModelClassName(String uiModelClassName) {
 		this.uiModelClassName = uiModelClassName;
 	}
-
 
 	public String getRefSimAuthorObjectUUID() {
 		return refSimAuthorObjectUUID;
 	}
 
-
 	public void setRefSimAuthorObjectUUID(String refSimAuthorObjectUUID) {
 		this.refSimAuthorObjectUUID = refSimAuthorObjectUUID;
 	}
-
 
 	public int getAuthorizationObjectType() {
 		return authorizationObjectType;
 	}
 
-
 	public void setAuthorizationObjectType(int authorizationObjectType) {
 		this.authorizationObjectType = authorizationObjectType;
 	}
 
-
 	public String getAuthorizationObjectTypeValue() {
 		return authorizationObjectTypeValue;
 	}
-
 
 	public void setAuthorizationObjectTypeValue(String authorizationObjectTypeValue) {
 		this.authorizationObjectTypeValue = authorizationObjectTypeValue;
@@ -147,36 +135,29 @@ public class ResFinSystemResourceUIModel extends SEUIComModel{
 		return authorizationObjectId;
 	}
 
-
 	public void setAuthorizationObjectId(String authorizationObjectId) {
 		this.authorizationObjectId = authorizationObjectId;
 	}
-
 
 	public String getAuthorizationObjectUuid() {
 		return authorizationObjectUuid;
 	}
 
-
 	public void setAuthorizationObjectUuid(String authorizationObjectUuid) {
 		this.authorizationObjectUuid = authorizationObjectUuid;
 	}
-
 
 	public String getAuthorizationObjectName() {
 		return authorizationObjectName;
 	}
 
-
 	public void setAuthorizationObjectName(String authorizationObjectName) {
 		this.authorizationObjectName = authorizationObjectName;
 	}
 
-
 	public String getControllerClassName() {
 		return controllerClassName;
 	}
-
 
 	public void setControllerClassName(String controllerClassName) {
 		this.controllerClassName = controllerClassName;

@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 import com.company.IntelligentPlatform.common.model.SystemCodeValueUnion;
 
-
 @Component
 public class SystemCodeValueUnionServiceUIModel extends ServiceUIModule {
 

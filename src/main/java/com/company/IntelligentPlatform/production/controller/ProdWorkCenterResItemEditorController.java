@@ -49,7 +49,6 @@ public class ProdWorkCenterResItemEditorController extends SEEditorController {
 	@Autowired
 	protected ProdWorkCenterSpecifier prodWorkCenterSpecifier;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				ProdWorkCenterResItemServiceUIModel.class,

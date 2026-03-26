@@ -196,7 +196,6 @@ public class InventoryTransferOrderServiceUIModelExtension extends
 				.setConvUIToMethod(InventoryTransferOrderManager.METHOD_ConvUIToInventoryTransferOrder);
 		uiModelNodeMapList.add(inventoryTransferOrderMap);
 
-
 		Class<?>[] warehouseConvToUIParas = { Warehouse.class,
 				InventoryCheckOrderUIModel.class };
 		Class<?>[] warehouseAreaConvToUIParas = { WarehouseArea.class,
@@ -269,7 +268,6 @@ public class InventoryTransferOrderServiceUIModelExtension extends
 		inboundDeliveryMap
 				.setConvToUIMethod(InventoryTransferOrderManager.METHOD_ConvInboundDeliveryToUI);
 		uiModelNodeMapList.add(inboundDeliveryMap);
-
 
 		inventoryTransferOrderExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);

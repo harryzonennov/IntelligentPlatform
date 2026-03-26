@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.service.WidthCodedPainter;
 
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Service
 public class DocumentBarCodeService {
 

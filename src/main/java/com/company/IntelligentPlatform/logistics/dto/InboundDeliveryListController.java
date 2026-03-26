@@ -85,5 +85,4 @@ public class InboundDeliveryListController extends SEListController {
 		return response;
 	}
 
-
 }

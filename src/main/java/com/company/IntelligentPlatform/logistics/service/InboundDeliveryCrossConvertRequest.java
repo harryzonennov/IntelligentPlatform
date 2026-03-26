@@ -62,7 +62,6 @@ public class InboundDeliveryCrossConvertRequest extends
         this.setTargetDocType(IDefDocumentResource.DOCUMENT_TYPE_INBOUNDDELIVERY);
     }
 
-
     /**
      * Set Default Callback: Logic to filter target doc for reused
      */

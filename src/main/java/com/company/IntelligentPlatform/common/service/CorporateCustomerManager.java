@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.common.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,7 +58,6 @@ import java.time.LocalDate;
 @Transactional
 public class CorporateCustomerManager extends ServiceEntityManager {
 
-
 	public static final String METHOD_ConvCorporateContactPersonToUI = "convCorporateContactPersonToUI";
 
 	public static final String METHOD_ConvUIToCorporateContactPerson = "convUIToCorporateContactPerson";
@@ -75,6 +77,9 @@ public class CorporateCustomerManager extends ServiceEntityManager {
 	public static final String METHOD_ConvCorporateCustomerToContactUI = "convCorporateCustomerToContactUI";
 
 	public static final String METHOD_ConvContactPersonUIToIndividualCustomer = "convContactPersonUIToIndividualCustomer";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected CorporateCustomerRepository corporateCustomerDAO;
@@ -138,12 +143,11 @@ public class CorporateCustomerManager extends ServiceEntityManager {
 
 	public CorporateCustomerManager() {
 		super.seConfigureProxy = new CorporateCustomerConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new CorporateCustomerDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(corporateCustomerDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, corporateCustomerDAO));
 	}
 
 	@PostConstruct
@@ -186,8 +190,6 @@ public class CorporateCustomerManager extends ServiceEntityManager {
 				keyList, CorporateContactPerson.NODENAME, null);
 		return corporateContactPerson;
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from UI model to se model:corporateCustomer
@@ -302,8 +304,6 @@ public class CorporateCustomerManager extends ServiceEntityManager {
 					.getDepositBank());
 		}
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from UI model to se
@@ -427,7 +427,6 @@ public class CorporateCustomerManager extends ServiceEntityManager {
 		}
 		return systemDefaultCustomer;
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model individual to UI model

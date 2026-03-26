@@ -70,7 +70,6 @@ public class InventoryCheckItemManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
 
-
     public void convInventoryCheckItemToUI(
             InventoryCheckItem inventoryCheckItem,
             InventoryCheckItemUIModel inventoryCheckItemUIModel)
@@ -270,6 +269,5 @@ public class InventoryCheckItemManager {
 
         }
     }
-
 
 }

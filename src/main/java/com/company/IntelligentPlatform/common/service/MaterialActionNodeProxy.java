@@ -47,7 +47,6 @@ public class MaterialActionNodeProxy {
 
     protected Logger logger = LoggerFactory.getLogger(MaterialActionNodeProxy.class);
 
-
     public ServiceUIModelExtension genDefServiceUIModelExtension(DocActionNodeProxy.DocActionNodeInputPara docActionNodeInputPara)
             throws ServiceEntityConfigureException {
         ServiceUIModelExtension serviceUIModelExtension = new ServiceUIModelExtension();
@@ -94,7 +93,6 @@ public class MaterialActionNodeProxy {
         return resultList;
     }
 
-
     public List<ServiceUIModelExtensionUnion> genDefUIModelExtensionUnion(DocActionNodeProxy.DocActionNodeInputPara docActionNodeInputPara)
             throws ServiceEntityConfigureException {
         // UI Model Configure of node:[ActionCodeUnion]
@@ -139,6 +137,5 @@ public class MaterialActionNodeProxy {
             }
         }
     }
-
 
 }

@@ -13,7 +13,6 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 
-
 /**
  * Configure Proxy CLASS FOR Service Entity [NavigationSystemSetting]
  *

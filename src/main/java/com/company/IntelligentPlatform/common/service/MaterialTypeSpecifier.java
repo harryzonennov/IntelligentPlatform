@@ -90,7 +90,6 @@ public class MaterialTypeSpecifier extends DocumentContentSpecifier<MaterialType
         return null;
     }
 
-
     @Override
     public Map<Integer, String> getInvolvePartyMap(String lanCode) throws ServiceEntityInstallationException {
         return null;
@@ -121,7 +120,6 @@ public class MaterialTypeSpecifier extends DocumentContentSpecifier<MaterialType
         return uiModelClassMap;
     }
 
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();
@@ -129,6 +127,5 @@ public class MaterialTypeSpecifier extends DocumentContentSpecifier<MaterialType
         propertyMapList.add(new PropertyMap(MaterialType.SENAME, basePath + "MaterialType"));
         return propertyMapList;
     }
-
 
 }

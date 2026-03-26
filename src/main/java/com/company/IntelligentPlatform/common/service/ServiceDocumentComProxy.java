@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -42,6 +44,8 @@ import com.company.IntelligentPlatform.common.model.SystemConfigureCategory;
  */
 @Service
 public class ServiceDocumentComProxy {
+
+	private static final Logger logger = LoggerFactory.getLogger(ServiceDocumentComProxy.class);
 
     @Autowired
     protected ServiceDropdownListHelper serviceDropdownListHelper;
@@ -120,9 +124,6 @@ public class ServiceDocumentComProxy {
             documentTypeKeyMap.put(
                     IDefDocumentResource.DOCUMENT_TYPE_PURCHASECONTRACT,
                     IServiceModelConstants.PurchaseContract);
-            documentTypeKeyMap.put(
-                    IDefDocumentResource.DOCUMENT_TYPE_BIDDINGINVITATIONORDER,
-                    IServiceModelConstants.BidInvitationOrder);
             documentTypeKeyMap.put(IDefDocumentResource.DOCUMENT_TYPE_INQUIRY,
                     IServiceModelConstants.Inquiry);
             documentTypeKeyMap.put(
@@ -222,9 +223,6 @@ public class ServiceDocumentComProxy {
             this.documentTypeItemMap.put(
                     IDefDocumentResource.DOCUMENT_TYPE_PURCHASECONTRACT,
                     IServiceModelConstants.PurchaseContractMaterialItem);
-            this.documentTypeItemMap.put(
-                    IDefDocumentResource.DOCUMENT_TYPE_BIDDINGINVITATIONORDER,
-                    IServiceModelConstants.BidMaterialItem);
             this.documentTypeItemMap.put(
                     IDefDocumentResource.DOCUMENT_TYPE_INQUIRY,
                     IServiceModelConstants.InquiryMaterialItem);
@@ -394,7 +392,6 @@ public class ServiceDocumentComProxy {
         }
         return ServiceEntityNode.NODENAME_ROOT;
     }
-
 
     @Deprecated
     public ServiceEntityNode getDocumentByItemNode(ServiceEntityNode itemNode,
@@ -683,7 +680,6 @@ public class ServiceDocumentComProxy {
                 languageCode);
         return documentTypeMap.get(key);
     }
-
 
     /**
      * Get Document instance by reference material SKU UUID
@@ -1077,8 +1073,7 @@ public class ServiceDocumentComProxy {
                     resultList.add(serviceDocumentExtendUIModel);
                 }
             } catch (LogonInfoException | ServiceEntityConfigureException e) {
-                // log error and continue
-                e.printStackTrace();
+                logger.error("Failed during document composite processing", e);
             }
         }
         return resultList;
@@ -1142,8 +1137,7 @@ public class ServiceDocumentComProxy {
                     resultList.add(serviceDocumentExtendUIModel);
                 }
             } catch (LogonInfoException | ServiceEntityConfigureException e) {
-                // log error and continue
-                e.printStackTrace();
+                logger.error("Failed during document composite processing", e);
             }
         }
         return resultList;

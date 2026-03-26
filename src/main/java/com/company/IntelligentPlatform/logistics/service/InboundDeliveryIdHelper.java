@@ -4,10 +4,6 @@ import com.company.IntelligentPlatform.logistics.model.InboundDelivery;
 
 import org.springframework.stereotype.Service;
 
-
-
-
-
 import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceBarcodeException;

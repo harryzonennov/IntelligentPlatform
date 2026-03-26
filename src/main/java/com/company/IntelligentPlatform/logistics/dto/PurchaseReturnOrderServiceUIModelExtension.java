@@ -24,7 +24,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class PurchaseReturnOrderServiceUIModelExtension extends
 		ServiceUIModelExtension {
@@ -130,7 +129,6 @@ public class PurchaseReturnOrderServiceUIModelExtension extends
 				.setConvUIToMethod(PurchaseReturnOrderManager.METHOD_ConvUIToPurchaseReturnOrder);
 		uiModelNodeMapList.add(purchaseReturnOrderMap);
 
-
 		uiModelNodeMapList.addAll(docFlowProxy
 				.getDefPrevProfDocMapConfigureList(PurchaseReturnOrder.SENAME));
 		uiModelNodeMapList.addAll(docFlowProxy
@@ -142,8 +140,6 @@ public class PurchaseReturnOrderServiceUIModelExtension extends
 
 		uiModelNodeMapList.addAll(docFlowProxy
 				.getDocDefCreateUpdateNodeMapConfigureList(PurchaseReturnOrder.SENAME));
-
-
 
 		purchaseReturnOrderExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);

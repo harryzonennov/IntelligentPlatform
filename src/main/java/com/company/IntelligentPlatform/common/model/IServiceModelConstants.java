@@ -77,14 +77,6 @@ public interface IServiceModelConstants {
 
 	String IndividualCustomerAttachment = "IndividualCustomerAttachment";
 
-	String BidInvitationOrder = "BidInvitationOrder";
-
-	String BidMaterialItem = "BidMaterialItem";
-
-	String BidInvitationOrderAttachment = "BidInvitationOrderAttachment";
-
-	String BidMaterialItemAttachment = "BidMaterialItemAttachment";
-
 	String SalesContract = "SalesContract";
 
 	String SalesContractActionNode = "SalesContractActionNode";
@@ -121,12 +113,6 @@ public interface IServiceModelConstants {
 
 	String SalesForcastMaterialItemAttachment = "SalesForcastMaterialItemAttachment";
 
-	String SettleOrder = "SettleOrder";
-
-	String SettleOrderAttachment = "SettleOrderAttachment";
-
-	String SettleMaterialItem = "SettleMaterialItem";
-
 	String PurchaseContract = "PurchaseContract";
 
 	String PurchaseContractActionNode = "PurchaseContractActionNode";
@@ -150,7 +136,6 @@ public interface IServiceModelConstants {
 	String PurchaseRequestMaterialItem = "PurchaseRequestMaterialItem";
 
 	String PurchaseRequestMaterialItemAttachment = "PurchaseRequestMaterialItemAttachment";
-
 
 	String PurchaseReturnOrder = "PurchaseReturnOrder";
 
@@ -250,7 +235,6 @@ public interface IServiceModelConstants {
 	// Model Define for HostCompany
     String HostCompany = "HostCompany";
 
-
 	// Model Define for LanguageCommandTarget
     String LanguageCommandTarget = "LanguageCommandTarget";
 
@@ -315,10 +299,6 @@ public interface IServiceModelConstants {
 	// Model Define for SerialNumberSetting
     String SerialNumberSetting = "SerialNumberSetting";
 
-	// Model Define for ServiceEntityLogModel
-    String ServiceEntityLogModel = "ServiceEntityLogModel";
-
-	String ServiceEntityLogItem = "ServiceEntityLogItem";
 	// Model Define for MessageTemplate
     String MessageTemplate = "MessageTemplate";
 	
@@ -416,7 +396,6 @@ public interface IServiceModelConstants {
 
 	String SerExtendIntField = "SerExtendIntField";
 
-
 	// Model Define for SystemResource
     String SystemExecutorSetting = "SystemExecutorSetting";
 
@@ -489,7 +468,6 @@ public interface IServiceModelConstants {
 	// Model Define for MaterialType
     String MaterialType = "MaterialType";
 
-
 	String MaterialTypeAttachment = "MaterialTypeAttachment";
 
 	String MaterialTypeActionNode = "MaterialTypeActionNode";
@@ -499,18 +477,6 @@ public interface IServiceModelConstants {
 
 	// Model Define for WebPageSectionContent
     String WebPageSectionContent = "WebPageSectionContent";
-
-	// Model Define for ServiceDocConfigure
-    String ServiceDocConfigure = "ServiceDocConfigure";
-
-	String ServiceDocConfigurePara = "ServiceDocConfigurePara";
-
-	String ServiceDocConfigureParaGroup = "ServiceDocConfigureParaGroup";
-
-	// Model Define for ServiceDocConsumerUnion
-    String ServiceDocConsumerUnion = "ServiceDocConsumerUnion";
-
-	String ServiceDocConsumerFieldUnion = "ServiceDocConsumerFieldUnion";
 
 	// Model Constants for package:<finance>
 	// Model Define for FinAccount
@@ -705,7 +671,6 @@ public interface IServiceModelConstants {
 	String RepairProdTargetMatItem = "RepairProdTargetMatItem";
 
 	String RepairProdTarSubItem = "RepairProdTarSubItem";
-
 
 	// Model Define for ProductionOrder
     String ProductionOrder = "ProductionOrder";

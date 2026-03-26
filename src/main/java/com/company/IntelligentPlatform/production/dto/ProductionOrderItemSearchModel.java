@@ -58,7 +58,6 @@ public class ProductionOrderItemSearchModel extends SEUIComModel {
 	@BSearchGroupConfig(groupInstId = MaterialStockKeepUnit.SENAME)
 	protected DocEmbedMaterialSKUSearchModel itemMaterialSKU;
 
-
 	/**
 	 * Dummy search field, only be used for page split function on UI
 	 * [Important], should be reset as 0 before real search

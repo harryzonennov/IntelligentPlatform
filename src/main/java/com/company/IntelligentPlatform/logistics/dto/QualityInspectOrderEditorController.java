@@ -90,7 +90,6 @@ public class QualityInspectOrderEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -178,7 +177,6 @@ public class QualityInspectOrderEditorController extends SEEditorController {
 				}, getDocUIModelRequest());
 	}
 
-
 	public @RequestMapping(value = "/generateNextDocBatch", produces = "text/html;"
 			+ "charset=UTF-8") @ResponseBody String generateNextDocBatch(
 			@RequestBody String request) {
@@ -186,7 +184,6 @@ public class QualityInspectOrderEditorController extends SEEditorController {
 				IDefDocumentResource.DOCUMENT_TYPE_QUALITYINSPECTORDER, AOID_RESOURCE, DeliveryMatItemBatchGenRequest.class,
 				null);
 	}
-
 
 	@RequestMapping(value = "/preCheckSetComplete", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String preCheckSetComplete(@RequestBody String request) {

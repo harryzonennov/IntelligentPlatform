@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class InvolvePartySearchConfigTemplateBuilder extends SearchConfigureTemplateBuilder{
 
-
     public static class InvolvePartySearchConfigTemplate extends SearchConfigureTemplateNode {
 
         Class<? extends ServiceEntityNode> targetPartyClass;
@@ -43,7 +42,6 @@ public class InvolvePartySearchConfigTemplateBuilder extends SearchConfigureTemp
             this.targetContactClass = targetContactClass;
         }
     }
-
 
     Class<? extends ServiceEntityNode> targetPartyClass;
 

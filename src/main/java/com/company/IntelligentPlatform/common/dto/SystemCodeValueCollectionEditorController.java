@@ -52,7 +52,6 @@ public class SystemCodeValueCollectionEditorController extends
 	@Autowired
 	protected SystemCodeValueCollectionManager systemCodeValueCollectionManager;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				SystemCodeValueCollectionServiceUIModel.class,

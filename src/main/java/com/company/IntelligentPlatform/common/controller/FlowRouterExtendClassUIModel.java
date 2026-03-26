@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.controller;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.SystemCheckResultProxy;
 
-
 public class FlowRouterExtendClassUIModel extends SEUIComModel {
 
     protected int processIndex;
@@ -34,21 +33,17 @@ public class FlowRouterExtendClassUIModel extends SEUIComModel {
         this.checkResult = SystemCheckResultProxy.CHECKRESULT_INIT;
     }
 
-
     public int getProcessIndex() {
         return this.processIndex;
     }
-
 
     public void setProcessIndex(int processIndex) {
         this.processIndex = processIndex;
     }
 
-
     public String getExtendClassId() {
         return this.extendClassId;
     }
-
 
     public void setExtendClassId(String extendClassId) {
         this.extendClassId = extendClassId;

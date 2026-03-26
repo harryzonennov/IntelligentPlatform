@@ -113,7 +113,6 @@ public class MaterialListExcelHandler extends ServiceExcelHandlerProxy {
                 weightFieldMeta.getFieldMetaModelList(), IServiceEntityNodeFieldConstant.UUID, "refWeightUnit"));
         standardUnitFieldMetaList.add(weightFieldMeta);
 
-
         FieldMeta<MaterialUIModel> volumeFieldMeta = new FieldMeta<>("refVolumeUnitValue", "refVolumeUnit");
         // this callback will be invoked for parsing each UI model
         volumeFieldMeta.setUpdateUIModelHook(seUIModel -> MaterialListExcelHandler.super.setValueToUIModelByFieldKey(seUIModel,
@@ -143,7 +142,6 @@ public class MaterialListExcelHandler extends ServiceExcelHandlerProxy {
 
         return ServiceCollectionsHelper.asList(standardUnitModelConfigure, materialTypeModelConfigure);
     }
-
 
     @Override
     public List<FieldMeta<MaterialUIModel>> getFieldMetaList(SerialLogonInfo serialLogonInfo) throws ServiceEntityInstallationException {

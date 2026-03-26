@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.dto.IndividualCustomerAttachmentUIModel;
 import com.company.IntelligentPlatform.common.dto.IndividualCustomerUIModel;
-// TODO-DAO: import ...IndividualCustomerDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.IndividualCustomerRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.AccountManager;
@@ -48,11 +51,11 @@ public class IndividualCustomerManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToIndividualCustomer = "convUIToIndividualCustomer";
 	
 	public static final String METHOD_ConvIndividualCustomerAttachmentToUI = "convIndividualCustomerAttachmentToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected IndividualCustomerDAO individualCustomerDAO;
-
+    @Autowired
+    protected IndividualCustomerRepository individualCustomerDAO;
 	@Autowired
 	protected IndividualCustomerConfigureProxy individualCustomerConfigureProxy;
 
@@ -79,12 +82,11 @@ public class IndividualCustomerManager extends ServiceEntityManager {
 
 	public IndividualCustomerManager() {
 		super.seConfigureProxy = new IndividualCustomerConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new IndividualCustomerDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(individualCustomerDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, individualCustomerDAO));
 	}
 
 	@PostConstruct
@@ -212,7 +214,6 @@ public class IndividualCustomerManager extends ServiceEntityManager {
 		rawEntity.setPostcode(individualCustomerUIModel.getPostcode());
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *
@@ -304,6 +305,5 @@ public class IndividualCustomerManager extends ServiceEntityManager {
 	public ServiceSearchProxy getSearchProxy() {
 		return individualCustomerSearchProxy;
 	}
-
 
 }

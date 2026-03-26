@@ -98,7 +98,6 @@ public class MatConfigExtPropertySettingListController extends SEListController 
 		}
 	}
 
-
 	@RequestMapping(value = "/loadModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleListService() {
 		try {

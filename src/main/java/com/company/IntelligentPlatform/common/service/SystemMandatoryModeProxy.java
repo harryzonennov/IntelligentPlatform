@@ -1,11 +1,9 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 
 import java.util.Map;
-
 
 @Service
 public class SystemMandatoryModeProxy {
@@ -23,6 +21,5 @@ public class SystemMandatoryModeProxy {
 		return ServiceLanHelper.initDefLanguageMapResource(languageCode,
 				this.mandatoryModelMapLan, this.getClass().getResource("").getPath() + PROPERTIES_RESOURCE);
 	}
-
 
 }

@@ -104,5 +104,4 @@ seConfigureMapList.add(prodWorkCenterResItemConfigureMap);
 super.setSeConfigMapList(seConfigureMapList);
 }
 
-
 }

@@ -148,7 +148,6 @@ public class PurchaseRequestActionExecutionProxy extends DocActionExecutionProxy
         return purchaseRequestManager;
     }
 
-
     public void executeActionCore(
             PurchaseRequestServiceModel purchaseRequestServiceModel,
             int docActionCode,

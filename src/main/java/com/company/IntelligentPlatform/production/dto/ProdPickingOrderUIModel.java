@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.dto;
 
-
 import com.company.IntelligentPlatform.production.model.ProdPickingOrder;
 import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
 import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;

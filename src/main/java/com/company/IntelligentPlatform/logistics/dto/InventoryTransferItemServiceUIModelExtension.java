@@ -319,7 +319,6 @@ public class InventoryTransferItemServiceUIModelExtension extends
 				InventoryTransferItemManager.METHOD_ConvOutboundWarehouseAreaToItemUI, warehouseAreaConvToUIParas
 		)));
 
-
 		inventoryTransferItemExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(inventoryTransferItemExtensionUnion);

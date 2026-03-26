@@ -1,10 +1,17 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
-
+@Entity
+@Table(name = "AuthorizationObject", schema = "platform")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class AuthorizationObject extends ServiceEntityNode {
 
 	public static final String DEFAULT_PREFIX = "Author";

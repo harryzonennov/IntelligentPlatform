@@ -13,7 +13,6 @@ import com.company.IntelligentPlatform.common.dto.ServiceDocSearchHeaderModel;
 import com.company.IntelligentPlatform.common.dto.DocActionNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
 
-
 @Component
 public class RegisteredProductSearchModel extends SEUIComModel {
 	
@@ -115,7 +114,6 @@ public class RegisteredProductSearchModel extends SEUIComModel {
 	// compound search field
 	@BSearchGroupConfig(groupInstId = RegisteredProductInvolveParty.PARTY_NODEINST_PUR_ORG)
 	protected DocInvolvePartySearchModel purchaseParty;
-
 
 	@BSearchGroupConfig(groupInstId = RegisteredProductInvolveParty.PARTY_NODEINST_PUR_ORG)
 	protected DocInvolvePartySearchModel purchaseOrganization;

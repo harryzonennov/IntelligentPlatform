@@ -11,6 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 @Entity
 @Table(name = "BillOfMaterialOrder", schema = "production")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class BillOfMaterialOrder extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

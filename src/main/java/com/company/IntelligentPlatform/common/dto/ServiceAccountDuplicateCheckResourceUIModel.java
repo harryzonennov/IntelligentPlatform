@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
 
 public class ServiceAccountDuplicateCheckResourceUIModel extends SEUIComModel {
 
-
 	@ISEUIModelMapping(fieldName = "refAccountType", seName = ServiceAccountDuplicateCheckResource.SENAME, nodeName = ServiceAccountDuplicateCheckResource.NODENAME, nodeInstID = ServiceAccountDuplicateCheckResource.SENAME, showOnList = false, secId = ServiceAccountDuplicateCheckResource.SENAME, tabId = TABID_BASIC)
 	@ISEDropDownResourceMapping(resouceMapping = "ServiceAccountDuplicateCheckResource_refAccountType", valueFieldName = "refAccountTypeValue")
 	protected int refAccountType;
@@ -41,7 +40,6 @@ public class ServiceAccountDuplicateCheckResourceUIModel extends SEUIComModel {
 
 	@ISEUIModelMapping(seName = ServiceAccountDuplicateCheckResource.SENAME, nodeName = ServiceAccountDuplicateCheckResource.NODENAME, nodeInstID = ServiceAccountDuplicateCheckResource.SENAME, showOnEditor = false, secId = ServiceAccountDuplicateCheckResource.SENAME, tabId = TABID_BASIC)
 	protected String logicRelationshipValue;
-
 
 	public int getRefAccountType() {
 		return refAccountType;

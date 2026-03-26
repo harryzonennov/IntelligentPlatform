@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;

@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.controller;
 
-
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 

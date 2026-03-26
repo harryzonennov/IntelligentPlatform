@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.service;
 
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 public interface IServiceResourceConstants {
 	
 	public static final String ID_PurchaseOrder = IServiceModelConstants.PurchaseOrder;

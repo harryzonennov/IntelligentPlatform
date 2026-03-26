@@ -24,5 +24,4 @@ public class FinAccountManagerProxy extends ServiceEntityManager {
         return null;
     }
 
-
 }

@@ -44,7 +44,6 @@ public class PurchaseContractMaterialItemExcelHelper extends DocMatItemExcelHand
         return false;
     }
 
-
     @Override
     public Class<?> getExcelModelClass() {
         return PurchaseContractMaterialItemUIModel.class;

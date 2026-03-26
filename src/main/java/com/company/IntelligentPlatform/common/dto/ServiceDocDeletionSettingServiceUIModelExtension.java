@@ -61,7 +61,6 @@ public class ServiceDocDeletionSettingServiceUIModelExtension extends
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(serviceDocDeletionSettingExtensionUnion);
 
-
 		serviceDocDeletionSettingExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(serviceDocDeletionSettingExtensionUnion);

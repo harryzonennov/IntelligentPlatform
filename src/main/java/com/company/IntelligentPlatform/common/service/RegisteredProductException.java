@@ -69,5 +69,4 @@ public class RegisteredProductException extends MaterialException{
 		this.errorMessageList =  ServiceExceptionHelper.handleErrorMessageMap(errorMessageMap, RegisteredProductException.class, errorCode);
 	}
 
-
 }

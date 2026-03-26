@@ -38,5 +38,4 @@ public class ProdPlanTargetMatItemServiceUIModel extends ServiceUIModule {
 		this.prodPlanTarSubItemUIModelList = prodPlanTarSubItemUIModelList;
 	}
 
-
 }

@@ -48,8 +48,6 @@ public class ServiceDocActionConfigureManager {
     @Autowired
     protected StandardSwitchProxy standardSwitchProxy;
 
-
-
     protected Logger logger = LoggerFactory.getLogger(ServiceDocActionConfigureManager.class);
 
     public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, SerialLogonInfo serialLogonInfo)
@@ -88,7 +86,6 @@ public class ServiceDocActionConfigureManager {
         return standardSwitchProxy.getSwitchMap(languageCode);
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -114,7 +111,6 @@ public class ServiceDocActionConfigureManager {
             }
         }
     }
-
 
     public void convUIToServiceDocActionConfigure(ServiceDocActionConfigureUIModel serviceDocActionConfigureUIModel, ServiceDocActionConfigure rawEntity) {
         if(serviceDocActionConfigureUIModel != null && rawEntity != null){
@@ -148,6 +144,5 @@ public class ServiceDocActionConfigureManager {
             }
         }
     }
-
 
 }

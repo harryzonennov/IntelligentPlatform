@@ -4,6 +4,4 @@ import com.company.IntelligentPlatform.common.dto.DocAttachmentNodeUIModel;
 
 public class OutboundDeliveryAttachmentUIModel extends DocAttachmentNodeUIModel {
 
-
-
 }

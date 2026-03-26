@@ -58,7 +58,6 @@ public class ProductionPlanSearchProxy extends ServiceSearchProxy {
         return productionPlanManager.initStatusMap(languageCode);
     }
 
-
     @Override
     public List<BSearchNodeComConfigure> getBasicSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {
         List<BSearchNodeComConfigure> searchNodeConfigList = new ArrayList<>();

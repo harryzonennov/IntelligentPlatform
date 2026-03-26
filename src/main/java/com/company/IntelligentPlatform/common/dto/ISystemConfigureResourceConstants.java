@@ -6,8 +6,6 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.CorporateCustomer;
 import com.company.IntelligentPlatform.common.model.SystemConfigureResource;
 
-
-
 public interface ISystemConfigureResourceConstants {
 	
 	/**

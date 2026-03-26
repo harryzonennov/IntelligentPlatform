@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.annotation.PostConstruct;
 
 import com.company.IntelligentPlatform.finance.service.SystemResourceFinanceAccountProxy;
@@ -41,6 +43,9 @@ public class PurchaseReturnOrderManager extends ServiceEntityManager {
     public static final String METHOD_ConvPurchaseReturnOrderToUI = "convPurchaseReturnOrderToUI";
 
     public static final String METHOD_ConvUIToPurchaseReturnOrder = "convUIToPurchaseReturnOrder";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected PurchaseReturnOrderRepository purchaseReturnOrderDAO;
@@ -107,12 +112,11 @@ public class PurchaseReturnOrderManager extends ServiceEntityManager {
 
     public PurchaseReturnOrderManager() {
         super.seConfigureProxy = new PurchaseReturnOrderConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new PurchaseReturnOrderDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(purchaseReturnOrderDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseReturnOrderDAO));
     }
 
     @PostConstruct

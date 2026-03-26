@@ -41,7 +41,6 @@ public class InventoryTransferItemExcelHelper extends DocMatItemExcelHandler {
         return false;
     }
 
-
     @Override
     public Class<?> getExcelModelClass() {
         return InventoryTransferItemUIModel.class;

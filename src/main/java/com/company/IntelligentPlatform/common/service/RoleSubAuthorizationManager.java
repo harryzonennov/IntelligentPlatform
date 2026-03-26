@@ -53,7 +53,6 @@ public class RoleSubAuthorizationManager {
 
     protected Logger logger = LoggerFactory.getLogger(RoleAuthorizationManager.class);
 
-
     public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
             throws ServiceEntityConfigureException {
         DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
@@ -210,7 +209,5 @@ public class RoleSubAuthorizationManager {
             }
         }
     }
-
-
 
 }

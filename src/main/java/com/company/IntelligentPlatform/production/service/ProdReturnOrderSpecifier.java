@@ -123,7 +123,6 @@ public class ProdReturnOrderSpecifier extends DocumentContentSpecifier<ProdPicki
         return prodPickingRefMaterialtemList;
     }
 
-
     @Override
     public Map<Integer, String> getStatusMap(String lanCode) throws ServiceEntityInstallationException {
         return prodPickingOrderManager.initStatusMap(lanCode);

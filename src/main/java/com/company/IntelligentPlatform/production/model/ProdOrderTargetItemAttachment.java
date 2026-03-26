@@ -14,5 +14,4 @@ public class ProdOrderTargetItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

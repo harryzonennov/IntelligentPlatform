@@ -1,10 +1,14 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import java.util.Date;
 
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
+@Entity
+@Table(name = "RegisteredProduct", schema = "platform")
 public class RegisteredProduct extends MaterialStockKeepUnit{
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

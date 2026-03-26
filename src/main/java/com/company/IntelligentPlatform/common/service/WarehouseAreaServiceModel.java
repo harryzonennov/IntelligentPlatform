@@ -1,10 +1,8 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import com.company.IntelligentPlatform.common.model.WarehouseArea;
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
-
 
 public class WarehouseAreaServiceModel extends ServiceModule {
 
@@ -18,6 +16,5 @@ public class WarehouseAreaServiceModel extends ServiceModule {
     public void setWarehouseArea(WarehouseArea warehouseArea) {
         this.warehouseArea = warehouseArea;
     }
-
 
 }

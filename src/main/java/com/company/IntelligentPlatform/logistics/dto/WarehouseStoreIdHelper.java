@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
 
-
 @Service
 public class WarehouseStoreIdHelper extends ServiceDefaultIdGenerateHelper {
 

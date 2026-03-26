@@ -67,7 +67,6 @@ public class ServiceDocInitConfigureServiceUIModelExtension extends
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(serviceDocInitConfigureExtensionUnion);
 
-
 		UIModelNodeMapConfigure serviceDocumentSettingMap = new UIModelNodeMapConfigure();
 		serviceDocumentSettingMap
 				.setSeName(ServiceDocumentSetting.SENAME);

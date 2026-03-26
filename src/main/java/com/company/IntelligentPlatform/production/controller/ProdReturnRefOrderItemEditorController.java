@@ -119,8 +119,6 @@ public class ProdReturnRefOrderItemEditorController extends SEEditorController {
 				.toBean(jsonObject, ProdPickingRefOrderItemServiceUIModel.class, classMap);
 	}
 
-
-
 	@RequestMapping(value = "/saveModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String saveModuleService(@RequestBody String request) {
 		ProdPickingRefOrderItemServiceUIModel prodPickingRefOrderItemServiceUIModel = parseToServiceUIModel(request);

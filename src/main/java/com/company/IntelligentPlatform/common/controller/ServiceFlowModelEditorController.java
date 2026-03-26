@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceFlowException;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 @Scope("session")
 @Controller(value = "serviceFlowModelEditorController")
 @RequestMapping(value = "/serviceFlowModel")
@@ -157,6 +156,5 @@ public class ServiceFlowModelEditorController extends SEEditorController {
         return serviceBasicUtilityController.getMapMeta(
                 lanCode -> serviceFlowModelManager.initDocumentTypeMap(lanCode));
     }
-
 
 }

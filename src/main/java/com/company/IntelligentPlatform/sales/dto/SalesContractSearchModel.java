@@ -222,7 +222,6 @@ public class SalesContractSearchModel extends SEUIComModel {
         this.requireExecutionDateHigh = requireExecutionDateHigh;
     }
 
-
     public Date getPlanExecutionDateLow() {
         return planExecutionDateLow;
     }

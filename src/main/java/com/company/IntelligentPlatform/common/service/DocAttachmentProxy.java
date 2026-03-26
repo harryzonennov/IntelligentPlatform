@@ -287,7 +287,7 @@ public class DocAttachmentProxy {
                     docAttachmentNode,
                     logonUserUUID, organizationUUID);
         } catch (IllegalStateException | IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to save document attachment", e);
         }
     }
 

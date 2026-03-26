@@ -9,7 +9,6 @@ import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.FlowRouter;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 
-
 public class FlowRouterSearchModel extends SEUIComModel {
 
     @BSearchGroupConfig(groupInstId = ServiceFlowModel.SENAME)
@@ -30,11 +29,9 @@ public class FlowRouterSearchModel extends SEUIComModel {
             LogonUser.SENAME)
     protected String refDirectAssigneeName;
 
-
     @BSearchFieldConfig(fieldName = "id", nodeName = LogonUser.NODENAME, seName = LogonUser.SENAME, nodeInstID =
             LogonUser.SENAME)
     protected String refDirectAssigneeId;
-
 
     public int getSerialFlag() {
         return serialFlag;

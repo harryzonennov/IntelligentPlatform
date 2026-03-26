@@ -7,7 +7,6 @@ import java.util.function.ToDoubleFunction;
 import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
-
 public class WarehouseStoreItemCompare
 implements Comparator<WarehouseStoreItem> {
 

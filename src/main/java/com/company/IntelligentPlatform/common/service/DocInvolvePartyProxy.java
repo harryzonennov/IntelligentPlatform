@@ -221,7 +221,6 @@ public class DocInvolvePartyProxy {
         return resultList;
     }
 
-
     public List<ServiceEntityNode> getDocInvolvePartyListWrapper(int partyRole, String nodeName,
                                                                  ServiceEntityManager serviceEntityManager,
                                                                  String parentNodeUUID, String client)
@@ -233,7 +232,6 @@ public class DocInvolvePartyProxy {
         return serviceEntityManager.getEntityNodeListByKeyList(keyList, nodeName, client, null);
     }
 
-
     public DocInvolveParty getDocInvolvePartyWrapper(int partyRole, String nodeName,
                                                      ServiceEntityManager serviceEntityManager, String parentNodeUUID,
                                                      String client) throws ServiceEntityConfigureException {
@@ -244,7 +242,6 @@ public class DocInvolvePartyProxy {
         }
         return (DocInvolveParty) allDocInvolvePartyList.get(0);
     }
-
 
     public static void copyAccountToInvolveParty(Account corporateAccount, DocInvolveParty docInvolveParty) {
         docInvolveParty.setRefUUID(corporateAccount.getUuid());
@@ -451,7 +448,6 @@ public class DocInvolvePartyProxy {
         target.setRefDocumentType(source.getRefDocumentType());
         target.setRefDocMatItemUUID(source.getRefDocMatItemUUID());
     }
-
 
     /**
      * Utility Method to Convert
@@ -872,7 +868,6 @@ public class DocInvolvePartyProxy {
         return uiModelNodeMapList;
     }
 
-
     public void convRefDocumentToInvolvePartyUI(DocumentContent documentContent,
                                                 MaterialInvolvePartyUIModel materialInvolvePartyUIModel,
                                                 LogonInfo logonInfo) {
@@ -1094,7 +1089,6 @@ public class DocInvolvePartyProxy {
                 client);
     }
 
-
     public void genConvertCrossDocItemParty(DocumentContentSpecifier sourceContentSpecifier,
                                          ServiceModule sourceDocServiceModule,
                                          DocumentContentSpecifier targetContentSpecifier,
@@ -1182,8 +1176,5 @@ public class DocInvolvePartyProxy {
          */
         return curDocInvolveParty.getRefUUID().equals(requestTargetParty.getRefPartyUUID());
     }
-
-
-
 
 }

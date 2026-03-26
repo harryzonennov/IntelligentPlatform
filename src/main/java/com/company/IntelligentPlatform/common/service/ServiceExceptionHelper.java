@@ -14,7 +14,6 @@ import com.company.IntelligentPlatform.common.model.SimpleSEMessageResponse;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 public class ServiceExceptionHelper {
 
 	public static Map<Integer, String> getExceptionClassDropDownMap(

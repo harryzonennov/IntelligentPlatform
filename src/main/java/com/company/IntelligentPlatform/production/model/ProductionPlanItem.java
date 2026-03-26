@@ -1,12 +1,10 @@
 package com.company.IntelligentPlatform.production.model;
 
-
 import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProductionPlanItem extends ProductionOrderItem {
-
 
 	public final static String NODENAME = IServiceModelConstants.ProductionPlanItem;
 

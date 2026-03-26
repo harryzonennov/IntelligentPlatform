@@ -284,5 +284,4 @@ public class ProductionOrderExcelReportView { // TODO-LEGACY: was extends Abstra
 		}
 	}
 
-
 }

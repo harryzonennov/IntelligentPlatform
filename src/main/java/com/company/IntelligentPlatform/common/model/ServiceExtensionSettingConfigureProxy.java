@@ -139,7 +139,6 @@ public class ServiceExtensionSettingConfigureProxy extends
 				int.class);
 		seConfigureMapList.add(serExtendPageMetadataConfigureMap);
 
-
 		// Init configuration of Material [SerExtendPageSettingActionNode] node
 		ServiceEntityConfigureMap serExtendPageSettingActionNodeConfigureMap = new ServiceEntityConfigureMap();
 		serExtendPageSettingActionNodeConfigureMap.setParentNodeName(SerExtendPageMetadata.NODENAME);

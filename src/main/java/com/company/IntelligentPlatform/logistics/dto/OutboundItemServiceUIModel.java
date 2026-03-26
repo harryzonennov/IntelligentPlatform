@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.model.OutboundItem;
 import com.company.IntelligentPlatform.logistics.model.OutboundItemParty;
 import com.company.IntelligentPlatform.logistics.model.OutboundItemAttachment;

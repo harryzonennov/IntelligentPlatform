@@ -49,5 +49,4 @@ public class WasteProcessOrderCrossConvertRequest extends
         this.setTargetDocType(IDefDocumentResource.DOCUMENT_TYPE_WASTEPROCESSORDER);
     }
 
-
 }

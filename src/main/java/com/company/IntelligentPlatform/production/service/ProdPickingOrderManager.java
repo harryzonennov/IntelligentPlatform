@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.production.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -19,7 +21,6 @@ import com.company.IntelligentPlatform.logistics.model.OutboundDelivery;
 import com.company.IntelligentPlatform.production.dto.*;
 import com.company.IntelligentPlatform.production.repository.ProdPickingOrderRepository;
 import com.company.IntelligentPlatform.production.model.*;
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +55,6 @@ import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-
 
 @Service
 @Transactional
@@ -101,6 +101,9 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
 
     @Autowired
     protected BsearchService bsearchService;
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected ProdPickingOrderRepository prodPickingOrderDAO;
@@ -244,7 +247,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
                 }, logonInfo.getRefUserUUID(),
                 logonInfo.getResOrgUUID());
     }
-
 
     /**
      * Logic for approve approve PickingOrder
@@ -465,7 +467,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
                 organizationUUID);
     }
 
-
     public List<ServiceEntityNode> batchSetItemFinishList(DeliveryMatItemBatchGenRequest genRequest, String client,
                                                           LogonInfo logonInfo)
             throws ServiceEntityConfigureException,
@@ -646,7 +647,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
                 prodPickingOrderServiceModel, logonUserUUID, organizationUUID, ProdPickingOrder.SENAME,
                 prodPickingOrderServiceUIModelExtension);
     }
-
 
     public ProductionOrder getRefProductionOrder(ProdPickingRefOrderItem prodPickingRefOrderItem)
             throws ServiceEntityConfigureException {
@@ -836,7 +836,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
         }
         return null;
     }
-
 
     /**
      * Logic to check if current picking order could be regarded as 'COMPLETE'
@@ -1464,20 +1463,17 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
         return prodPickingRefMaterialItemManager.getToPickMaterialItemList(prodPickingMatItemList);
     }
 
-
     public List<ServiceEntityNode> searchProdPickingOrder(ProdPickingOrderSearchModel searchModel,
                                                           String client) throws SearchConfigureException, ServiceEntityConfigureException, NodeNotFoundException,
             ServiceEntityInstallationException {
         return prodPickingOrderSearchProxy.searchPickingOrderList(searchModel, client);
     }
 
-
     public List<ServiceEntityNode> searchProdReturnOrder(ProdPickingOrderSearchModel searchModel,
                                                          String client) throws SearchConfigureException, ServiceEntityConfigureException, NodeNotFoundException,
             ServiceEntityInstallationException {
         return prodPickingOrderSearchProxy.searchReturnOrderList(searchModel, client);
     }
-
 
     public List<ServiceEntityNode> searchPickingItemList(ProdPickingRefMaterialItemSearchModel searchModel,
                                                          String client)
@@ -1495,7 +1491,7 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(prodPickingOrderDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodPickingOrderDAO));
     }
 
     @PostConstruct
@@ -1553,7 +1549,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
     public Map<Integer, String> initDocumentTypeMap(String languageCode) throws ServiceEntityInstallationException {
         return serviceDocumentComProxy.getDocumentTypeMap(false, languageCode);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -1626,7 +1621,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
         rawEntity.setAmount(prodPickingRefOrderItemUIModel.getAmount());
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -1638,7 +1632,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
             prodPickingRefOrderItemUIModel.setOrderMaterialSKUId(orderMaterialStockKeepUnit.getId());
         }
     }
-
 
     public void convProductionOrderToUI(ProductionOrder productionOrder,
                                         ProdPickingOrderUIModel prodPickingOrderUIModel) {
@@ -1661,7 +1654,6 @@ public class ProdPickingOrderManager extends ServiceEntityManager {
             prodPickingRefOrderItemUIModel.setOrderMaterialSKUUUID(productionOrder.getRefMaterialSKUUUID());
         }
     }
-
 
     @Override
     public ServiceSearchProxy getSearchProxy() {

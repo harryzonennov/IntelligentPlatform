@@ -42,7 +42,6 @@ public class StandardMaterialUnitEditorController extends SEEditorController {
 	@Autowired
 	protected StandardMaterialUnitServiceUIModelExtension standardMaterialUnitServiceUIModelExtension;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				StandardMaterialUnitServiceUIModel.class,
@@ -118,7 +117,6 @@ public class StandardMaterialUnitEditorController extends SEEditorController {
 				ISystemActionCode.ACID_EDIT);
 	}
 
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.
@@ -137,7 +135,6 @@ public class StandardMaterialUnitEditorController extends SEEditorController {
 	public @ResponseBody String preLock(String uuid) {
 		return serviceBasicUtilityController.preLock(uuid, ISystemActionCode.ACID_EDIT, getServiceUIModelRequest());
 	}
-
 
 	@RequestMapping(value = "/loadModule", produces = "text/html;charset=UTF-8")
 	public @ResponseBody

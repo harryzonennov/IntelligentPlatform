@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.CargoUIModel;
-// TODO-DAO: import platform.coreFunction.DAO.CargoDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.CargoRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.Cargo;
 import com.company.IntelligentPlatform.common.model.CargoConfigureProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -17,7 +20,6 @@ import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-
 
 /**
  * Logic Manager CLASS FOR Service Entity [Cargo]
@@ -31,11 +33,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 @Service
 @Transactional
 public class CargoManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected CargoDAO cargoDAO;
-
+    @Autowired
+    protected CargoRepository cargoDAO;
 	@Autowired
 	protected CargoConfigureProxy cargoConfigureProxy;
 	
@@ -44,12 +46,11 @@ public class CargoManager extends ServiceEntityManager {
 
 	public CargoManager() {
 		super.seConfigureProxy = new CargoConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new CargoDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(cargoDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, cargoDAO));
 	}
 
 	@PostConstruct

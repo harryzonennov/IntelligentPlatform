@@ -40,7 +40,6 @@ public class InquiryMaterialItemExcelHelper extends DocMatItemExcelHandler {
         return false;
     }
 
-
     @Override
     public Class<?> getExcelModelClass() {
         return InquiryMaterialItemUIModel.class;

@@ -17,7 +17,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
  *       tool
  */
 
-
 @Component
 public class WarehouseAreaSearchModel extends SEUIComModel {
 

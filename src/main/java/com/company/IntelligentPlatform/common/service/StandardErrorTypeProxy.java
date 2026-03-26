@@ -27,7 +27,6 @@ public class StandardErrorTypeProxy {
                 this.errorTypeMapLan, this.getClass().getResource("").getPath() + PROPERTIES_RESOURCE);
     }
 
-
     public String getErrorTypeValue(int key, String languageCode) throws ServiceEntityInstallationException {
         Map<Integer, String> errorTypeMap = getErrorTypeMap(languageCode);
         return errorTypeMap.get(key);

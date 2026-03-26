@@ -48,7 +48,6 @@ public class ServiceExtendUIModel extends SEUIComModel {
 		this.fieldValue = fieldValue;
 	}
 
-
 	public String getRefUUID() {
 		return refUUID;
 	}

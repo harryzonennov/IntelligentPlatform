@@ -9,14 +9,12 @@ import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountObjectRef;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 
-
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.model.IReferenceNodeFieldConstant;
 import com.company.IntelligentPlatform.common.model.Account;
 import com.company.IntelligentPlatform.common.model.LogonUser;
-
 
 @Component
 public class FinAccountSearchModel extends SEUIComModel {
@@ -312,7 +310,6 @@ public class FinAccountSearchModel extends SEUIComModel {
 		this.refObjUUID = refObjUUID;
 	}
 
-
 	public String getRefDocumentUUID() {
 		return refDocumentUUID;
 	}
@@ -404,6 +401,5 @@ public class FinAccountSearchModel extends SEUIComModel {
 	public int getVerifyStatus() {
 		return verifyStatus;
 	}
-
 
 }

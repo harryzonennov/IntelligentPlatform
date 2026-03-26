@@ -101,7 +101,6 @@ public class RoleMessageCategoryManager {
         }
     }
 
-
     public void convMessageTemplateToUI(MessageTemplate messageTemplate,
                                         RoleMessageCategoryUIModel roleMessageCategoryUIModel) {
         convMessageTemplateToUI(messageTemplate, roleMessageCategoryUIModel, null);

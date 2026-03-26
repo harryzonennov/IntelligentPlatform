@@ -89,5 +89,4 @@ public class WasteProcessOrderConfigureProxy extends ServiceEntityConfigureProxy
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

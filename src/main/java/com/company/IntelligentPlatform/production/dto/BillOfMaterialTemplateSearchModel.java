@@ -11,8 +11,6 @@ import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 
 import java.util.Date;
 
-
-
 @Component
 public class BillOfMaterialTemplateSearchModel extends SEUIComModel {
 	
@@ -46,7 +44,6 @@ public class BillOfMaterialTemplateSearchModel extends SEUIComModel {
 	protected String createdTimeLowStr;
 
 	protected String createdTimeHighStr;
-
 
 	@BSearchFieldConfig(fieldName = "refMaterialSKUUUID", nodeName = BillOfMaterialTemplate.NODENAME, seName = BillOfMaterialTemplate.SENAME, nodeInstID = BillOfMaterialTemplate.SENAME, showOnUI = false)
 	protected String refMaterialSKUUUID;

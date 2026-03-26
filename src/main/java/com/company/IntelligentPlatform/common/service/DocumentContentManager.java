@@ -2,10 +2,12 @@ package com.company.IntelligentPlatform.common.service;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import platform.foundation.DAO.DocumentContentDAO;
+import com.company.IntelligentPlatform.common.repository.GenericServiceEntityNodeRepository;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.DocumentContentConfigureProxy;
@@ -23,21 +25,22 @@ import com.company.IntelligentPlatform.common.model.DocumentContentConfigureProx
 @Transactional
 public class DocumentContentManager extends ServiceEntityManager {
 
-	// TODO-DAO: @Autowired
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	// TODO-DAO: 	DocumentContentDAO documentContentDAO;
+	@Autowired
+	GenericServiceEntityNodeRepository documentContentDAO;
 
 	@Autowired
 	DocumentContentConfigureProxy documentContentConfigureProxy;
 
 	public DocumentContentManager() {
 		super.seConfigureProxy = new DocumentContentConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new DocumentContentDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(documentContentDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, documentContentDAO));
 	}
 
 	@PostConstruct

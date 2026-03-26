@@ -68,7 +68,6 @@ public class ProcessBOMOrderInitController extends SEEditorController {
 	@Autowired
 	protected ProcessRouteOrderManager processRouteOrderManager;
 
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.

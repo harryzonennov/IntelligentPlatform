@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.production.dto.ProductionResourceUnionUIModel;
-// TODO-DAO: import net.thorstein.production.DAO.ProductionResourceUnionDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.production.repository.ProductionResourceUnionRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.OrganizationManager;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
@@ -34,11 +37,11 @@ import com.company.IntelligentPlatform.production.model.ProductionResourceUnionC
 @Service
 @Transactional
 public class ProductionResourceUnionManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected ProductionResourceUnionDAO productionResourceUnionDAO;
-
+    @Autowired
+    protected ProductionResourceUnionRepository productionResourceUnionDAO;
 	@Autowired
 	protected ProductionResourceUnionConfigureProxy productionResourceUnionConfigureProxy;
 
@@ -66,7 +69,6 @@ public class ProductionResourceUnionManager extends ServiceEntityManager {
 
 	public ProductionResourceUnionManager() {
 		super.seConfigureProxy = new ProductionResourceUnionConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProductionResourceUnionDAO();
 	}
 	
 	public Map<Integer, String> initResourceTypeMap()
@@ -89,7 +91,7 @@ public class ProductionResourceUnionManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(productionResourceUnionDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionResourceUnionDAO));
 	}
 
 	@PostConstruct
@@ -196,6 +198,5 @@ public class ProductionResourceUnionManager extends ServiceEntityManager {
 					.getName());
 		}
 	}
-
 
 }

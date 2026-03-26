@@ -1,12 +1,16 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.DocumentBarCodeService;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.service.StandardSystemCategoryProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
-
+@Entity
+@Table(name = "SerialNumberSetting", schema = "platform")
 public class SerialNumberSetting extends ServiceEntityNode {
 	
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

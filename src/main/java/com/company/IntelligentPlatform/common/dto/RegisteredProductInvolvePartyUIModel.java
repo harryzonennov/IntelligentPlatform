@@ -4,6 +4,4 @@ import com.company.IntelligentPlatform.common.controller.DocInvolvePartyUIModel;
 
 public class RegisteredProductInvolvePartyUIModel extends DocInvolvePartyUIModel {
 
-
-
 }

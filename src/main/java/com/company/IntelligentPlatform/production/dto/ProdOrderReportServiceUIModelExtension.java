@@ -60,8 +60,6 @@ public class ProdOrderReportServiceUIModelExtension extends
 		prodOrderReportExtensionUnion.setNodeInstId(ProdOrderReport.NODENAME);
 		prodOrderReportExtensionUnion.setNodeName(ProdOrderReport.NODENAME);
 
-
-
 		// UI Model Configure of node:[ReportBy]
 		UIModelNodeMapConfigure reportByMap = new UIModelNodeMapConfigure();
 		reportByMap.setSeName(LogonUser.SENAME);

@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 import com.company.IntelligentPlatform.common.model.SystemCodeValueUnion;
 
-
 public class SystemCodeValueUnionServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = SystemCodeValueUnion.NODENAME, nodeInstId = SystemCodeValueUnion.NODENAME)

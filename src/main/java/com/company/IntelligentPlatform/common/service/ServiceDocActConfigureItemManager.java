@@ -134,7 +134,6 @@ public class ServiceDocActConfigureItemManager {
         return docActionExecutionProxyFactory.getDocActionMapByDocType(documentType, languageCode);
     }
 
-
     public void convServiceDocActionConfigureToItemUI(ServiceDocActionConfigure serviceDocActionConfigure,
                                                        ServiceDocActConfigureItemUIModel serviceDocActConfigureItemUIModel,
                                                        LogonInfo logonInfo) {
@@ -160,7 +159,6 @@ public class ServiceDocActConfigureItemManager {
                     ServiceCollectionsHelper.convertStringToArray(serviceDocActConfigureItem.getPreStatus()));
         }
     }
-
 
     public void convUIToServiceDocActConfigureItem(ServiceDocActConfigureItemUIModel serviceDocActConfigureItemUIModel,
                                                    ServiceDocActConfigureItem rawEntity) {
@@ -231,6 +229,5 @@ public class ServiceDocActConfigureItemManager {
             }
         }
     }
-
 
 }

@@ -20,5 +20,4 @@ public interface IMobileJSONConstant {
 
 	String ELE_VERSION = "version";
 
-
 }

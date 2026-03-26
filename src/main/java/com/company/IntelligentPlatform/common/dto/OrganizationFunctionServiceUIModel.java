@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.OrganizationFunction;
 
 public class OrganizationFunctionServiceUIModel extends ServiceUIModule {
 
-
     @IServiceUIModuleFieldConfig(nodeName = OrganizationFunction.NODENAME, nodeInstId = OrganizationFunction.SENAME)
     protected OrganizationFunctionUIModel organizationFunctionUIModel;
 

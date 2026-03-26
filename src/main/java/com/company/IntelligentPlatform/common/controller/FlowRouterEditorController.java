@@ -31,7 +31,6 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Scope("session")
 @Controller(value = "flowRouterEditorController")
 @RequestMapping(value = "/flowRouter")

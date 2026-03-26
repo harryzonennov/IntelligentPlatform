@@ -121,7 +121,6 @@ public class InventoryCheckOrderEditorController extends SEEditorController {
 		}, ISystemActionCode.ACID_EDIT);
 	}
 
-
 	private DocAttachmentProxy.DocAttachmentProcessPara genDocAttachmentProcessPara() {
 		return new DocAttachmentProxy.DocAttachmentProcessPara(inventoryCheckOrderManager,
 				InventoryCheckAttachment.NODENAME, InventoryCheckOrder.NODENAME, null, null, null);
@@ -146,7 +145,6 @@ public class InventoryCheckOrderEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

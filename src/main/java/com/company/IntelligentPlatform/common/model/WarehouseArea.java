@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class WarehouseArea extends ServiceEntityNode{
 
-
 	public final static String NODENAME = IServiceModelConstants.WarehouseArea;
 
 	public final static String SENAME = Warehouse.SENAME;

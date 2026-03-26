@@ -15,7 +15,6 @@ public class ProdOrderItemReqProposalServiceModel extends ServiceModule {
 	@IServiceModuleFieldConfig(nodeName = ProdOrderItemReqProposal.NODENAME, nodeInstId = ProdOrderItemReqProposal.NODENAME)
 	protected ProdOrderItemReqProposal prodOrderItemReqProposal;
 
-
 	public List<ProductionOrderItemServiceModel> getProductionOrderItemList() {
 		return productionOrderItemList;
 	}
@@ -33,6 +32,5 @@ public class ProdOrderItemReqProposalServiceModel extends ServiceModule {
 			ProdOrderItemReqProposal prodOrderItemReqProposal) {
 		this.prodOrderItemReqProposal = prodOrderItemReqProposal;
 	}
-
 
 }

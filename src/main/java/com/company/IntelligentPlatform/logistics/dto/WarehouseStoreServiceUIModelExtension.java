@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.service.InboundDeliveryManager;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreManager;
 import com.company.IntelligentPlatform.logistics.model.InboundDelivery;
@@ -27,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Service
 public class WarehouseStoreServiceUIModelExtension extends

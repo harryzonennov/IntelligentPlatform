@@ -56,7 +56,6 @@ public class WarehouseAreaServiceUIModelExtension extends
 		uiModelNodeMapList.add(warehouseAreaMap);
 		warehouseAreaExtensionUnion.setUiModelNodeMapList(uiModelNodeMapList);
 
-
 		// -->[Warehouse]
 		UIModelNodeMapConfigure warehouseUIModelMap = new UIModelNodeMapConfigure();
 		warehouseUIModelMap.setSeName(Warehouse.SENAME);

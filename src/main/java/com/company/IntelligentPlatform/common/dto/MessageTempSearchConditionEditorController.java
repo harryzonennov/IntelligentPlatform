@@ -101,7 +101,6 @@ public class MessageTempSearchConditionEditorController extends
                 .checkDuplicateIDCore(simpleRequest, messageTemplateManager);
     }
 
-
     @RequestMapping(value = "/loadModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String loadModule(String uuid) {

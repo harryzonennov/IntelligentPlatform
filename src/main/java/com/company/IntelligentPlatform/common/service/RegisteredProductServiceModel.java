@@ -59,7 +59,6 @@ public class RegisteredProductServiceModel extends ServiceModule {
 			RegisteredProductInvolveParty.NODEINST_SUPPORTBY)
 	protected RegisteredProductInvolveParty supportBy;
 
-
 	public RegisteredProduct getRegisteredProduct() {
 		return this.registeredProduct;
 	}

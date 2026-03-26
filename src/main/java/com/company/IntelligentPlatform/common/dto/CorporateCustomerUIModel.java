@@ -153,7 +153,6 @@ public class CorporateCustomerUIModel extends AccountUIModel {
 		this.customerLevelValue = customerLevelValue;
 	}
 
-
 	public int getStatus() {
 		return status;
 	}

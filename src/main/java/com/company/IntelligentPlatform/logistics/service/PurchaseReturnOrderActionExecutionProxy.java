@@ -122,7 +122,6 @@ public class PurchaseReturnOrderActionExecutionProxy extends DocActionExecutionP
         return null;
     }
 
-
     @Override
     public DocumentContentSpecifier<PurchaseReturnOrderServiceModel,
             PurchaseReturnOrder, PurchaseReturnMaterialItem> getDocumentContentSpecifier() {
@@ -143,7 +142,6 @@ public class PurchaseReturnOrderActionExecutionProxy extends DocActionExecutionP
     public ServiceEntityManager getServiceEntityManager() {
         return purchaseReturnOrderManager;
     }
-
 
     public void executeActionCore(
             PurchaseReturnOrderServiceModel purchaseReturnOrderServiceModel,

@@ -129,7 +129,6 @@ public class InquiryMaterialItemServiceUIModelExtension extends
 				.setConvUIToMethod(InquiryMaterialItemManager.METHOD_ConvUIToInquiryMaterialItem);
 		uiModelNodeMapList.add(inquiryMaterialItemMap);
 
-
 		Class<?>[] convParentDocToUIMethodParas = {Inquiry.class, InquiryMaterialItemUIModel.class};
 		uiModelNodeMapList.addAll(docFlowProxy.getDefParentDocMapConfigureList(InquiryMaterialItem.NODENAME,
 				InquiryMaterialItemManager.METHOD_ConvParentDocToItemUI, inquiryMaterialItemManager,

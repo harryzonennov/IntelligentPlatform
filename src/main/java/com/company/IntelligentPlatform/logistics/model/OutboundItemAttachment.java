@@ -14,5 +14,4 @@ public class OutboundItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

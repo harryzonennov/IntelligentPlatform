@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
@@ -10,6 +13,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * @date 2013-1-16
  *
  */
+@Entity
+@Table(name = "Cargo", schema = "platform")
 public class Cargo extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

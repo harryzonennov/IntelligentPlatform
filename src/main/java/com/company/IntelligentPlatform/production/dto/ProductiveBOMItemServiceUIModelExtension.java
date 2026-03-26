@@ -76,7 +76,6 @@ public class ProductiveBOMItemServiceUIModelExtension extends
 		productiveBOMItemMap.setLogicManager(productiveBOMItemManager);
 		uiModelNodeMapList.add(productiveBOMItemMap);
 
-
 		Class<?>[] itemMaterialSKUConvToUIParas = {
 				MaterialStockKeepUnit.class, ProductiveBOMItemUIModel.class };
 
@@ -84,7 +83,6 @@ public class ProductiveBOMItemServiceUIModelExtension extends
 				.getDefMaterialNodeMapConfigureList(
 						ProductiveBOMItem.NODENAME,
 						ProductiveBOMItemManager.METHOD_ConvMaterialStockKeepUnitToUI,  productiveBOMItemManager,itemMaterialSKUConvToUIParas));
-
 
 		// UI Model Configure of node:[ProcessRouteProcessItem]
 		UIModelNodeMapConfigure processRouteProcessItemMap = new UIModelNodeMapConfigure();

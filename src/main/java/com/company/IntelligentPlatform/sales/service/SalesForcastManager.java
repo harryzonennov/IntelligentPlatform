@@ -2,6 +2,9 @@ package com.company.IntelligentPlatform.sales.service;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 import com.company.IntelligentPlatform.sales.dto.*;
 import com.company.IntelligentPlatform.sales.model.*;
 import com.company.IntelligentPlatform.sales.model.SalesForcast;
@@ -13,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.sales.repository.SalesForcastRepository;
 
 import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
@@ -51,6 +55,9 @@ public class SalesForcastManager extends ServiceEntityManager {
     public static final String METHOD_ConvSalesForcastToUI = "convSalesForcastToUI";
 
     public static final String METHOD_ConvUIToSalesForcast = "convUIToSalesForcast";
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     protected SalesForcastRepository salesForcastDAO;
@@ -114,20 +121,17 @@ public class SalesForcastManager extends ServiceEntityManager {
 
     public SalesForcastManager() {
         super.seConfigureProxy = new SalesForcastConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new SalesForcastDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(salesForcastDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, salesForcastDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(salesForcastConfigureProxy);
     }
-
-
 
     @Override
     public ServiceEntityNode newRootEntityNode(String client)
@@ -161,7 +165,6 @@ public class SalesForcastManager extends ServiceEntityManager {
                 .setSalesForcastMaterialItemList(salesForcastMaterialItemServiceModelList);
         return salesForcastrServiceModel;
     }
-
 
     public void convSalesForcastToUI(SalesForcast salesForcast,
                                          SalesForcastUIModel salesForcastUIModel)
@@ -365,7 +368,6 @@ public class SalesForcastManager extends ServiceEntityManager {
                         SalesForcastActionNode.DOC_ACTION_APPROVE, serialLogonInfo);
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
-
 
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode,

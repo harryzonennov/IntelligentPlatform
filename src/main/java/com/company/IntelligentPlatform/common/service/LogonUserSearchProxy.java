@@ -83,5 +83,4 @@ public class LogonUserSearchProxy extends ServiceSearchProxy{
 		return searchNodeConfigList;
 	}
 
-
 }

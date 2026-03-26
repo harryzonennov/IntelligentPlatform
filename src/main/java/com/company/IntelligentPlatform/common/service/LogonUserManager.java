@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.dto.LogonUserUIModel;
 import com.company.IntelligentPlatform.common.dto.RoleMessageHelper;
-// TODO-DAO: import platform.foundation.DAO.LogonUserDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.LogonUserRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.RoleManager;
 import com.company.IntelligentPlatform.common.service.ServiceEncodeException;
@@ -48,11 +51,11 @@ public class LogonUserManager extends ServiceEntityManager {
 	public static final String METHOD_convRoleToUI = "convRoleToUI";
 
 	public static final String METHOD_convOrganizationToUI = "convOrganizationToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected LogonUserDAO logonUserDAO;
-
+    @Autowired
+    protected LogonUserRepository logonUserDAO;
 	@Autowired
 	protected LogonUserConfigureProxy logonUserConfigureProxy;
 
@@ -128,7 +131,7 @@ public class LogonUserManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(logonUserDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, logonUserDAO));
 	}
 
 	@PostConstruct
@@ -259,7 +262,6 @@ public class LogonUserManager extends ServiceEntityManager {
 					.setRoleNote(roleMessageHelper.getNote(role.getId()));
 		}
 	}
-
 
 	public void convOrganizationToUI(Organization organization,
 			LogonUserUIModel logonUserUIModel) {

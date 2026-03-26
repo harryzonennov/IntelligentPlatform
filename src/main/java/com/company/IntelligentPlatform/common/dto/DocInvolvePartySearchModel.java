@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.model.IndividualCustomer;
 
-
 public class DocInvolvePartySearchModel extends SEUIComModel {
 
 	public static final String NODE_INST_TARGETPARTY = "targetParty";

@@ -228,8 +228,6 @@ public class ResFinAccountFieldSettingEditorController extends
 		}
 	}
 
-
-
 	@RequestMapping(value = "/checkSaveModule", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String checkSaveModule(
@@ -296,7 +294,6 @@ public class ResFinAccountFieldSettingEditorController extends
 		simpleRequest.setClient(logonUser.getClient());
 		return super.checkDuplicateIDCore(simpleRequest, systemResourceManager);
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

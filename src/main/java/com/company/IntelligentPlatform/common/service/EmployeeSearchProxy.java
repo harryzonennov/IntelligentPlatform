@@ -79,5 +79,4 @@ public class EmployeeSearchProxy extends ServiceSearchProxy{
 		return searchNodeConfigList;
 	}
 
-
 }

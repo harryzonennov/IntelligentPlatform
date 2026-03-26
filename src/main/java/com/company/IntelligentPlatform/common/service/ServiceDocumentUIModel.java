@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.service;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
 
-
 /**
  * Dummy UI model class to manage the document type field
  *

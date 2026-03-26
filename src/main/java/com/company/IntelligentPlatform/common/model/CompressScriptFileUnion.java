@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.model;
 
-
 public class CompressScriptFileUnion {
 	
 	public CompressScriptFileUnion(String fileName) {

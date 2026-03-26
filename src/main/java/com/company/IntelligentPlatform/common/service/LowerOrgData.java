@@ -62,5 +62,4 @@ public class LowerOrgData extends SysAODeterminer {
 				IServiceEntityNodeFieldConstant.RESORG_UUID, ServiceBasicKeyStructure.OPERATOR_OR);
 	}
 
-
 }

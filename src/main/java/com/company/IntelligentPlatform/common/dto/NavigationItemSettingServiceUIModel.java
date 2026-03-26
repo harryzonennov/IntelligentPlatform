@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.dto;
 import org.springframework.stereotype.Component;
 import com.company.IntelligentPlatform.common.model.NavigationItemSetting;
 
-
 @Component
 public class NavigationItemSettingServiceUIModel extends ServiceUIModule {
 

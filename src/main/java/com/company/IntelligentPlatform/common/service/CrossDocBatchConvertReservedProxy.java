@@ -108,7 +108,6 @@ public class CrossDocBatchConvertReservedProxy<SourceServiceModel extends Servic
         return docContentCreateContextList;
     }
 
-
     /**
      * Retrieves a list of `sourceDocMatItem` from a given list of `reservedDocMatItem`.
      *
@@ -546,7 +545,6 @@ public class CrossDocBatchConvertReservedProxy<SourceServiceModel extends Servic
         }
         return targetMatItemNode;
     }
-
 
     /**
      * Default Logic to New Target Item Service Module, including the default data conversion

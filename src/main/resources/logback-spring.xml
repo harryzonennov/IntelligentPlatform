@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Read the active Spring profile so we can switch appenders per environment -->
+    <springProfile name="prod">
+        <property name="LOG_LEVEL_ROOT" value="WARN"/>
+        <property name="LOG_LEVEL_APP"  value="INFO"/>
+    </springProfile>
+    <springProfile name="!prod">
+        <property name="LOG_LEVEL_ROOT" value="INFO"/>
+        <property name="LOG_LEVEL_APP"  value="DEBUG"/>
+    </springProfile>
+
+    <!-- Console appender (all environments) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Rolling file appender (production and dev) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/intelligentplatform.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Roll over daily; keep 30 days of history -->
+            <fileNamePattern>logs/intelligentplatform.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Reduce noise from framework internals -->
+    <logger name="org.hibernate.SQL"              level="WARN"/>
+    <logger name="org.hibernate.type"             level="WARN"/>
+    <logger name="org.springframework.web"        level="WARN"/>
+    <logger name="org.springframework.security"   level="WARN"/>
+    <logger name="org.flowable"                   level="WARN"/>
+    <logger name="com.zaxxer.hikari"              level="WARN"/>
+
+    <!-- Application code -->
+    <logger name="com.company.IntelligentPlatform" level="${LOG_LEVEL_APP}"/>
+
+    <root level="${LOG_LEVEL_ROOT}">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

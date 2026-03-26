@@ -61,7 +61,6 @@ public class FinAccountTitleUIModel extends SEUIComModel {
 	
 	protected int containsDataFlag;
 
-
 	public int getFinAccountType() {
 		return finAccountType;
 	}

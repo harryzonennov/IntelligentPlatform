@@ -57,5 +57,4 @@ public class ProdOrderReportItem extends DocMatItemNode {
 		this.refInboundUUID = refInboundUUID;
 	}
 
-
 }

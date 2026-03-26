@@ -18,7 +18,6 @@ import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class SalesReturnMaterialItemServiceUIModelExtension extends
 		ServiceUIModelExtension {
@@ -107,7 +106,6 @@ public class SalesReturnMaterialItemServiceUIModelExtension extends
 				.setUiModelNodeMapList(uiModelNodeMapList);
 
 		uiModelNodeMapList.addAll(docFlowProxy.getDefParentDocMapConfigureList(SalesReturnMaterialItem.NODENAME));
-
 
 		resultList.add(salesReturnMaterialItemExtensionUnion);
 		return resultList;

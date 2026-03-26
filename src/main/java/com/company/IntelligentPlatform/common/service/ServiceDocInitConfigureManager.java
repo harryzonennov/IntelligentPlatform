@@ -199,7 +199,6 @@ public class ServiceDocInitConfigureManager {
             this.inputFieldValue = inputFieldValue;
         }
 
-
         public String getFieldName() {
             return fieldName;
         }
@@ -361,7 +360,6 @@ public class ServiceDocInitConfigureManager {
         }
     }
 
-
     /**
      * Initializes a Core Service Entity instance using a list of metadata configurations <code>ServiceDocInitConfigureMeta</code>.
      * During this process, each field in the Service Entity is configured based on the metadata <code>ServiceDocInitConfigureMeta</code> provided.
@@ -473,7 +471,6 @@ public class ServiceDocInitConfigureManager {
         }
     }
 
-
     /**
      * Initializes the Service Module instance with metadata in Map format. This provides configuration for
      * initializing each module and each field within those modules in the service module. It is used in scenarios
@@ -565,7 +562,6 @@ public class ServiceDocInitConfigureManager {
         }
     }
 
-
     public void convUIToServiceDocInitConfigure(ServiceDocInitConfigureUIModel serviceDocInitConfigureUIModel, ServiceDocInitConfigure rawEntity) {
         if(serviceDocInitConfigureUIModel != null && rawEntity != null) {
             DocFlowProxy.convUIToServiceEntityNode(serviceDocInitConfigureUIModel, rawEntity);
@@ -591,6 +587,5 @@ public class ServiceDocInitConfigureManager {
 
         }
     }
-
 
 }

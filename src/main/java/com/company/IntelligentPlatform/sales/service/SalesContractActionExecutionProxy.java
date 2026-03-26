@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.sales.service;
 
-
 import com.company.IntelligentPlatform.logistics.model.*;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreParty;
 import com.company.IntelligentPlatform.sales.dto.SalesContractServiceUIModelExtension;

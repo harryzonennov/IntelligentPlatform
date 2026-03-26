@@ -1,5 +1,9 @@
 package com.company.IntelligentPlatform.finance.service;
 
+import com.company.IntelligentPlatform.finance.repository.SystemResourceRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -80,11 +84,11 @@ public class SystemResourceManager extends ServiceEntityManager {
 	public static final String METHOD_ConvFinAccountTitleToFieldSettingUI = "convFinAccountTitleToFieldSettingUI";
 
 	public static final String METHOD_ConvFinAccountTitleToSettingUI = "convFinAccountTitleToSettingUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected SystemResourceDAO systemResourceDAO;
-
+    @Autowired
+    protected SystemResourceRepository systemResourceDAO;
 	@Autowired
 	protected SystemResourceConfigureProxy systemResourceConfigureProxy;
 
@@ -114,7 +118,7 @@ public class SystemResourceManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemResourceDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemResourceDAO));
 	}
 
 	@PostConstruct

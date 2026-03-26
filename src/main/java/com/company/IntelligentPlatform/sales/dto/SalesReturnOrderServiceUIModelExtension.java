@@ -27,7 +27,6 @@ import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
 import com.company.IntelligentPlatform.common.model.Organization;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class SalesReturnOrderServiceUIModelExtension extends
 		ServiceUIModelExtension {

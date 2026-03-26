@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -79,6 +81,9 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 	private Map<String, Map<Integer, String>> inspectTypeMapLan = new HashMap<>();
 
 	private Map<String, Map<Integer, String>> statusMapLan = new HashMap<>();
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected QualityInspectOrderRepository qualityInspectOrderDAO;
@@ -135,7 +140,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 		return qualityInspectOrder;
 	}
 
-
 	/**
 	 * Calculate differential amount by all sample amount and failed amount
 	 * 
@@ -173,7 +177,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 		}
 		return resultUnit;
 	}
-
 
 	public void postUpdateServiceUIModel(QualityInspectOrderServiceUIModel qualityInspectOrderServiceUIModel,
 										 QualityInspectOrderServiceModel qualityInspectOrderServiceModel) throws ServiceEntityConfigureException {
@@ -276,7 +279,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 		return QualityInspectOrder.CHECKSTATUS_INITIAL;
 	}
 
-
 	public void startInspectProcess(
 			QualityInspectOrderServiceModel qualityInspectOrderServiceModel)
 			throws ServiceModuleProxyException, ServiceEntityConfigureException, QualityInspectException {
@@ -348,8 +350,7 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 				}
 			} catch (RegisteredProductException
 					| ServiceEntityInstallationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Failed to process registered product or installation", e);
 			}
 		}
 	}
@@ -403,7 +404,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 				.setQualityInspectMatItemList(qualityInspectMatItemServiceModelList);
 		return qualityInspectOrderServiceModel;
 	}
-
 
 	public List<SimpleSEMessageResponse> preCheckSetComplete(QualityInspectOrderServiceModel qualityInspectOrderServiceModel)
 			throws ServiceModuleProxyException, ServiceEntityConfigureException, QualityInspectException,
@@ -523,7 +523,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 				SimpleSEMessageResponse.MESSAGELEVEL_INFO);
 		return resultMap;
 	}
-
 
 	public void convQualityInspectOrderToUI(
 			QualityInspectOrder qualityInspectOrder,
@@ -717,7 +716,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 				.getDocumentTypeMap(false, languageCode);
 	}
 
-
 	public Map<Integer, String> initCategoryMap(String languageCode)
 			throws ServiceEntityInstallationException {
 		return ServiceLanHelper.initDefLanguageMapUIModel(languageCode,
@@ -745,15 +743,13 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(qualityInspectOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, qualityInspectOrderDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(qualityInspectOrderConfigureProxy);
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -821,7 +817,6 @@ public class QualityInspectOrderManager extends ServiceEntityManager {
 					.getId());
 		}
 	}
-
 
 	public ServiceDocumentExtendUIModel convInspectOrderToDocExtUIModel(
 			QualityInspectOrderUIModel qualityInspectOrderUIModel, LogonInfo logonInfo)

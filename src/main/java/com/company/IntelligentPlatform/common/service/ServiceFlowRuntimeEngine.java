@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.common.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-// TODO-LEGACY: import org.flowable.engine.TaskService;
-// TODO-LEGACY: import org.flowable.task.api.Task;
+import org.flowable.engine.TaskService;
+import org.flowable.task.api.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
@@ -49,9 +49,7 @@ public class ServiceFlowRuntimeEngine {
     protected FlowableProcessManager flowableProcessManager;
 
     @Autowired
-
-
-        protected TaskService taskService;
+    protected TaskService taskService;
 
     public static final String BPMN_RUNPRC_ACTIONCODE = "actionCode";
 

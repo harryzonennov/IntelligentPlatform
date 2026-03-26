@@ -177,7 +177,6 @@ public class ProcessRouteProcessItemEditorController extends SEEditorController 
 		}
 	}
 
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.
@@ -262,8 +261,6 @@ public class ProcessRouteProcessItemEditorController extends SEEditorController 
 					.getErrorMessage());
 		}
 	}
-
-
 
 	protected void saveInternal(
 			ProcessRouteProcessItemUIModel processRouteProcessItemUIModel)
@@ -409,7 +406,6 @@ public class ProcessRouteProcessItemEditorController extends SEEditorController 
 					.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

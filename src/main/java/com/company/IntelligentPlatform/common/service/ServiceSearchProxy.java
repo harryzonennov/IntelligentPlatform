@@ -370,12 +370,10 @@ public abstract class ServiceSearchProxy {
         });
     }
 
-
     public BSearchResponse searchOnline(SearchContext searchContext)
             throws SearchConfigureException {
         return null;
     }
-
 
     public static Map<String, List<?>> mergeToMultipleValueMap(List<ServiceBasicKeyStructure> keyStructureList,
                                                                Map<String,
@@ -399,7 +397,6 @@ public abstract class ServiceSearchProxy {
         }
         return multiValueMap;
     }
-
 
     public static List<SearchConfigPreCondition> mergeIntoPreConditionList(List<ServiceBasicKeyStructure> keyStructureList,
                                                                            List<SearchConfigPreCondition> preConditionList) {

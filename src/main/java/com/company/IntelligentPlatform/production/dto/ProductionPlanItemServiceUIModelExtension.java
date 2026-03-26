@@ -198,7 +198,6 @@ public class ProductionPlanItemServiceUIModelExtension extends
 						ProductionPlanItem.NODENAME,
 						ProductionPlanItemManager.METHOD_ConvItemMaterialSKUToUI,  productionPlanItemManager,itemMaterialSKUConvToUIParas));
 
-
 		// UI Model Configure of node:[ItemBillOfMaterialItem]
 		UIModelNodeMapConfigure itemBillOfMaterialItemMap = new UIModelNodeMapConfigure();
 		itemBillOfMaterialItemMap.setSeName(BillOfMaterialItem.SENAME);

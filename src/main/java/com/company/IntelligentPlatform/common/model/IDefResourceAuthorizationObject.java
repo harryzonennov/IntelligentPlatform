@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.model;
 
 import com.company.IntelligentPlatform.common.model.*;
 
-
 public interface IDefResourceAuthorizationObject {
 	
 	String AOID_SALESORDER = IServiceModelConstants.SalesOrder;

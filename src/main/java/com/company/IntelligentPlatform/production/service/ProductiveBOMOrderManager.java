@@ -257,7 +257,6 @@ public class ProductiveBOMOrderManager extends ServiceEntityManager {
 		}
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *

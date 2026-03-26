@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.dto;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -81,7 +80,6 @@ public class StandardMaterialUnitListController extends SEListController {
 				StandardMaterialUnitSearchModel.class, searchContext -> standardMaterialUnitManager
 						.getSearchProxy().searchDocList(searchContext),  this::getModuleListCore);
 	}
-
 
 	@RequestMapping(value = "/loadLeanModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadLeanModuleListService() {

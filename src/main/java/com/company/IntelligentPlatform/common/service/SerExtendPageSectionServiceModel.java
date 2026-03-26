@@ -17,5 +17,4 @@ public class SerExtendPageSectionServiceModel extends ServiceModule {
 		this.serExtendPageSection = serExtendPageSection;
 	}
 
-
 }

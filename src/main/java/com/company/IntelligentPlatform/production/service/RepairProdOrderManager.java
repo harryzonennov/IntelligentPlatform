@@ -1,4 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.production.service.ProdPickingExtendAmountModel;
 
 import com.company.IntelligentPlatform.finance.service.FinanceAccountValueProxyException;
@@ -44,7 +46,6 @@ import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-
 
 /**
  * Logic Manager CLASS FOR Service Entity [RepairProdOrder]
@@ -129,6 +130,9 @@ public class RepairProdOrderManager extends ServiceEntityManager {
     private Map<String, Map<Integer, String>> reportCategoryMapLan = new HashMap<>();
 
     private Map<String, RepairProdOrder> repairProdOrderMap = new HashMap<>();
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected RepairProdOrderRepository repairProdOrderDAO;
@@ -537,7 +541,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         return repairProdOrderServiceModel;
     }
 
-
     private List<ProductiveBOMItemServiceModel> genSubProdBOMItemSerModel(ProductiveBOMItem parentProdBOMItem, List<ServiceEntityNode> productiveBOMList) {
         List<ServiceEntityNode> subBOMItemList = productiveBOMOrderManager.filterSubBOMItemList(parentProdBOMItem.getUuid(), productiveBOMList);
         if (ServiceCollectionsHelper.checkNullList(subBOMItemList)) {
@@ -570,7 +573,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
     public void rejectApproveService(RepairProdOrderServiceModel repairProdOrderServiceModel, String logonUserUUID, String organizationUUID) throws ServiceModuleProxyException, ServiceEntityConfigureException {
         this.executeActionCore(repairProdOrderServiceModel, ServiceCollectionsHelper.asList(RepairProdOrder.STATUS_APPROVED), ProductionPlan.STATUS_REJECT_APPROVAL, ProductionPlanActionNode.DOC_ACTION_REJECT_APPROVE, logonUserUUID, organizationUUID);
     }
-
 
     /**
      * Core Logic to approve repairProdOrder and update to DB
@@ -616,7 +618,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
     public void revokeSubmitService(RepairProdOrderServiceModel repairProdOrderServiceModel, String logonUserUUID, String organizationUUID) throws ServiceModuleProxyException, ServiceEntityConfigureException {
         this.executeActionCore(repairProdOrderServiceModel, ServiceCollectionsHelper.asList(RepairProdOrder.STATUS_SUBMITTED), RepairProdOrder.STATUS_INITIAL, RepairProdOrderActionNode.DOC_ACTION_REVOKE_SUBMIT, logonUserUUID, organizationUUID);
     }
-
 
     /**
      * Very Core Logic to approve production order
@@ -725,7 +726,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         }
     }
 
-
     /**
      * Core Logic to count-approve production order and update to DB
      *
@@ -785,12 +785,10 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         updateServiceModuleWithDelete(RepairProdOrderServiceModel.class, repairProdOrderServiceModel, logonUserUUID, organizationUUID, RepairProdOrder.SENAME, repairProdOrderServiceUIModelExtension);
     }
 
-
     public Map<Integer, String> initActionCodeMap(String languageCode) throws ServiceEntityInstallationException {
         String path = this.getClass().getResource("").getPath();
         return systemDefDocActionCodeProxy.getActionCodeMergeWithPrivateMap(languageCode, path + PROPERTIES_RES_ACTIONCODE, this.privateActionCodeMapLan);
     }
-
 
     /**
      * Core Logic to pre-check the validate if could set to complete
@@ -934,7 +932,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
 
     }
 
-
     private void updateRecentBOMOrderToRepairProdOrder(RepairProdOrder repairProdOrder) throws BillOfMaterialException, ServiceEntityConfigureException {
         BillOfMaterialOrder billOfMaterialOrder = billOfMaterialOrderManager.switchToRecentActiveBOMOrder(repairProdOrder.getRefBillOfMaterialUUID(), repairProdOrder.getClient(), false);
         if (billOfMaterialOrder.getUuid().equals(repairProdOrder.getRefBillOfMaterialUUID())) {
@@ -968,7 +965,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         //			this.deleteSENode(rawOrderTargetMatItemList, logonUserUUID, organizationUUID);
         //		}
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -1035,17 +1031,15 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         return serviceDocumentComProxy.getDocumentTypeMap(false, languageCode);
     }
 
-
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(repairProdOrderDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, repairProdOrderDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(repairProdOrderConfigureProxy);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -1184,7 +1178,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
 
     public RepairProdOrderManager() {
         super.seConfigureProxy = new RepairProdOrderConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new RepairProdOrderDAO();
     }
 
     @Override
@@ -1217,7 +1210,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
          */
         systemResourceFinanceAccountProxy.updateFinAccByResourceID(repairProdOrder, resourceID, repairProdOrder.getUuid(), DefFinanceControllerResource.PROCESS_CODE_SAVE, logonUser.getUuid(), organization.getRefFinOrgUUID(), organization.getUuid(), logonUser.getClient());
     }
-
 
     private ServiceModule convertToRepairProdOrderServiceModel(RepairProdOrderServiceModel repairProdOrderServiceModel, List<ServiceEntityNode> rawProdOrderItemList) {
         RepairProdOrder repairProdOrder = repairProdOrderServiceModel.getRepairProdOrder();
@@ -1456,7 +1448,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         return repairProdProposalItemList;
     }
 
-
     /**
      * Core Logic to generate production proposal list for specified production
      * order item
@@ -1577,7 +1568,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         return ProductionOrderManager.needFurtherBOMPlan(prodReqProposal);
     }
 
-
     protected List<ServiceEntityNode> filterItemProposalListByItemUUID(List<ServiceEntityNode> productionProposalItemList, String itemUUID) {
         if (ServiceCollectionsHelper.checkNullList(productionProposalItemList)) {
             return null;
@@ -1615,7 +1605,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         }
         return resultList;
     }
-
 
     public List<ServiceEntityNode> filterProductionItemList(List<ServiceEntityNode> rawList) {
         if (rawList == null || rawList.size() == 0) {
@@ -1700,7 +1689,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         return repairProdOrderSearchProxy;
     }
 
-
     public boolean checkBlockExecutionByDocflow(int actionCode, String uuid, ServiceJSONRequest serviceJSONRequest, SerialLogonInfo serialLogonInfo) {
         if (actionCode == RepairProdOrderActionNode.DOC_ACTION_APPROVE) {
             return serviceFlowRuntimeEngine.defCheckBlockAndDoneTask(IDefDocumentResource.DOCUMENT_TYPE_PRODUCTIONORDER, uuid, serviceJSONRequest, serialLogonInfo, actionCode);
@@ -1720,7 +1708,6 @@ public class RepairProdOrderManager extends ServiceEntityManager {
         ServiceFlowRuntimeEngine.ServiceFlowInputPara serviceFlowInputPara = new ServiceFlowRuntimeEngine.ServiceFlowInputPara(repairProdOrderServiceUIModel, IDefDocumentResource.DOCUMENT_TYPE_PRODUCTIONORDER, uuid, RepairProdOrderActionNode.DOC_ACTION_APPROVE, serialLogonInfo);
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
-
 
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode, ServiceJSONRequest serviceJSONRequest, SerialLogonInfo serialLogonInfo) {
@@ -1745,7 +1732,7 @@ public class RepairProdOrderManager extends ServiceEntityManager {
                 this.rejectApproveService(repairProdOrderServiceModel, serialLogonInfo.getRefUserUUID(), serialLogonInfo.getHomeOrganizationUUID());
             }
         } catch (ServiceEntityConfigureException | ServiceModuleProxyException e) {
-            e.printStackTrace();
+            logger.error("Failed during repair production order processing", e);
         }
     }
 

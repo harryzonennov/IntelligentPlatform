@@ -137,7 +137,6 @@ public class ProdPickingOrderServiceUIModelExtension extends
 				.setConvToUIMethod(ProdPickingOrderManager.METHOD_ConvProductionOrderToUI);
 		uiModelNodeMapList.add(productionOrderMap);
 
-
 		// UI Model Configure of node:[ApproveBy]
 		UIModelNodeMapConfigure approveByMap = new UIModelNodeMapConfigure();
 		approveByMap.setSeName(LogonUser.SENAME);

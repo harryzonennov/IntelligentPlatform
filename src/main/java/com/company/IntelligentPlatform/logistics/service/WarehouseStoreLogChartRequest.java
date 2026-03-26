@@ -148,5 +148,4 @@ public class WarehouseStoreLogChartRequest extends SEUIComModel{
 		this.chartType = chartType;
 	}
 
-
 }

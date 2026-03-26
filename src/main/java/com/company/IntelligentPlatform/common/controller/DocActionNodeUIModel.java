@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.controller;
 
-
 public class DocActionNodeUIModel extends SEUIComModel {
 
 	public static final String FIELD_executedByUserName = "executedByUserName";

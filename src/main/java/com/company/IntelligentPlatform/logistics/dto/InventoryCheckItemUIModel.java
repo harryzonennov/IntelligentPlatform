@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.model.InventoryCheckItem;
 import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.common.model.StandardMaterialUnit;

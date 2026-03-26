@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProcessBOMItem extends ServiceEntityNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProcessBOMItem;
 
 	public final static String SENAME = ProcessBOMOrder.SENAME;

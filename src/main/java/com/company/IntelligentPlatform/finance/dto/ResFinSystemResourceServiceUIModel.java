@@ -33,7 +33,6 @@ public class ResFinSystemResourceServiceUIModel extends ServiceUIModule {
 		this.resFinSystemResourceUIModel = resFinSystemResourceUIModel;
 	}
 
-
 	public List<ResFinAccountSettingServiceUIModel> getResFinAccountSettingUIModelList() {
 		return resFinAccountSettingUIModelList;
 	}

@@ -110,7 +110,6 @@ public class LogonUser extends ServiceEntityNode {
 		this.initPassword = initPassword;
 	}
 
-
 	@Column(name = "checkSystemMessageFlag")
 	protected boolean checkSystemMessageFlag;
 
@@ -121,7 +120,6 @@ public class LogonUser extends ServiceEntityNode {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-
 
 	public boolean isCheckSystemMessageFlag() {
 		return checkSystemMessageFlag;

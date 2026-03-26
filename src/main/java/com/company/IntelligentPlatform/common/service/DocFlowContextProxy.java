@@ -106,8 +106,6 @@ public class DocFlowContextProxy {
         }
     }
 
-
-
     /**
      * Clean/Remove the relative document information from current home document item instance.
      *

@@ -48,5 +48,4 @@ public class SystemAuthorizationObjectSearchProxy extends ServiceSearchProxy {
 		return null;
 	}
 
-
 }

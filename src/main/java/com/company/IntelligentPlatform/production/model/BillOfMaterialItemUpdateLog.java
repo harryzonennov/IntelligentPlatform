@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class BillOfMaterialItemUpdateLog extends ServiceEntityNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.BillOfMaterialItemUpdateLog;
 
 	public final static String SENAME = BillOfMaterialOrder.SENAME;

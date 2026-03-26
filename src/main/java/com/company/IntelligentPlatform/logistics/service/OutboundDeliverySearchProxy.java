@@ -46,7 +46,6 @@ public class OutboundDeliverySearchProxy extends ServiceSearchProxy {
 		return outboundDeliveryManager.initStatusMap(languageCode);
 	}
 
-
 	@Override
 	public List<SearchConfigureTemplateBuilder.SearchConfigureTemplateNode> getDocSearchConfigureListTemplate() throws SearchConfigureException {
 		List<SearchConfigureTemplateBuilder.SearchConfigureTemplateNode> searchConfigureTemplateNodeList = new ArrayList<>();
@@ -85,7 +84,6 @@ public class OutboundDeliverySearchProxy extends ServiceSearchProxy {
 		return searchConfigureTemplateNodeList;
 	}
 
-
 	@Override
 	public List<BSearchNodeComConfigure> getBasicSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {
 		List<BSearchNodeComConfigure> searchNodeConfigList = super.getBasicSearchNodeConfigureList(searchContext);
@@ -93,7 +91,6 @@ public class OutboundDeliverySearchProxy extends ServiceSearchProxy {
 		SearchDocConfigHelper.genWarehouseSearchNodeConfigureList(searchNodeConfigList, OutboundDelivery.SENAME);
 		return searchNodeConfigList;
 	}
-
 
 	@Override
 	public List<BSearchNodeComConfigure> getBasicItemSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {

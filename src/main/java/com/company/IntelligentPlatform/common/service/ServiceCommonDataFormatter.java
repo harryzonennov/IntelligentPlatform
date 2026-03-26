@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.service;
 
 import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
 
-
 /**
  * Formatter class for format some common data
  * 

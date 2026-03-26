@@ -37,7 +37,6 @@ import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class ProdOrderWithPickingOrderProxy {
 

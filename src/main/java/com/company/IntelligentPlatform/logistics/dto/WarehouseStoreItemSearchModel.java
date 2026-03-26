@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.model.WarehouseStore;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItemParty;

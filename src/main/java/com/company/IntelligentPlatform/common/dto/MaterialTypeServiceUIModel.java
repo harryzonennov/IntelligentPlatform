@@ -10,7 +10,6 @@ import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Component
 public class MaterialTypeServiceUIModel extends ServiceUIModule {
 

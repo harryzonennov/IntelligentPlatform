@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.*;
 
 public class EmpLogonUserReference extends ReferenceNode {
 
-
 	public final static String NODENAME = "EmpLogonUserReference";
 
 	public final static String SENAME = Employee.SENAME;

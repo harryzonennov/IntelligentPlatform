@@ -12,7 +12,6 @@ public class BillOfMaterialItemTreeUIModel extends SEUIComModel{
 	
 	protected String nodeLabel;
 
-
 	public String getSkuName() {
 		return skuName;
 	}

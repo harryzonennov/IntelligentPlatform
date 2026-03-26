@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 
@@ -10,6 +13,8 @@ import com.company.IntelligentPlatform.common.model.*;
  * @author Zhang,Hang
  *
  */
+@Entity
+@Table(name = "OrganizationBarcodeBasicSetting", schema = "platform")
 public class OrganizationBarcodeBasicSetting extends ServiceEntityNode {
 
 	public static final int EAN13_COUNTRYHEAD_690 = 690;

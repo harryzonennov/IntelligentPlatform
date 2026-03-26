@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath"
+             targetNamespace="http://www.flowable.org/processdef">
+    <process id="DefDocApprove" name="Default Document Approve Process" isExecutable="true">
+        <documentation>Default Document Approve Process</documentation>
+        <startEvent id="submit" name="Submit to approve"></startEvent>
+        <sequenceFlow id="toJudgeSerial" sourceRef="submit" targetRef="judgeSerial"></sequenceFlow>
+        <exclusiveGateway id="judgeSerial"></exclusiveGateway>
+        <sequenceFlow id="toSerial" name="To Serial" sourceRef="judgeSerial" targetRef="sequentialProcess">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${serialFlag==1}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask id="sequentialProcess" name="Serial Process" flowable:assignee="${sequential}">
+            <documentation>Serial multi-instance, after the value is assigned to multiple users, it must be completed one by one before entering the next node</documentation>
+            <extensionElements>
+                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.common.service.DocMultiApproveTaskListener">
+                </flowable:taskListener>
+                <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+            </extensionElements>
+            <multiInstanceLoopCharacteristics isSequential="true" flowable:collection="sequentialList"  flowable:elementVariable="sequential">
+                <completionCondition>${sequentialInstanceCompleteTask.accessCondition(execution)}</completionCondition>
+            </multiInstanceLoopCharacteristics>
+        </userTask>
+
+        <sequenceFlow id="sequentialToApprove" name="Serial To Approve" sourceRef="sequentialProcess"
+                      targetRef="approveExecution">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${actionCode==2}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="sequentialToReject" name="Serial To Reject" sourceRef="sequentialProcess"
+                      targetRef="rejectExecution">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${actionCode!=2}]]></conditionExpression>
+        </sequenceFlow>
+
+        <sequenceFlow id="toParallel" name="To Serial" sourceRef="judgeSerial" targetRef="parallelProcess">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${serialFlag==2}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask id="parallelProcess" name="Parallel Process" flowable:assignee="${parallel}">
+            <documentation>Parallel multi-instance test means that after being assigned to multiple users, as long as one of the users completes the next step</documentation>
+            <extensionElements>
+                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.common.service.DocMultiApproveTaskListener">
+                </flowable:taskListener>
+                <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
+            </extensionElements>
+            <multiInstanceLoopCharacteristics isSequential="false" flowable:collection="parallelList" flowable:elementVariable="parallel">
+                <completionCondition>${nrOfCompletedInstances == 1}</completionCondition>
+            </multiInstanceLoopCharacteristics>
+        </userTask>
+
+        <sequenceFlow id="parallelToApprove" name="Parallel To Approve" sourceRef="parallelProcess"
+                      targetRef="approveExecution">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${actionCode==2}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="parallelToReject" name="Parallel To Reject" sourceRef="parallelProcess"
+                      targetRef="rejectExecution">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${actionCode!=2}]]></conditionExpression>
+        </sequenceFlow>
+        <serviceTask id="approveExecution" name="Approve System process"
+                     flowable:delegateExpression="${defDocumentApproveExecution}"></serviceTask>
+        <sequenceFlow sourceRef="approveExecution" targetRef="end"/>
+
+        <serviceTask id="rejectExecution" name="Reject System process"
+                     flowable:delegateExpression="${defDocumentRejectApproveExecution}"></serviceTask>
+        <sequenceFlow sourceRef="approveExecution" targetRef="end"/>
+        <sequenceFlow sourceRef="rejectExecution" targetRef="end"/>
+        <endEvent id="end"/>
+
+    </process>
+</definitions>

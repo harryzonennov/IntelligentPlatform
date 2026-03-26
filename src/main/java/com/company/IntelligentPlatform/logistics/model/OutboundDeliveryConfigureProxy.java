@@ -63,7 +63,6 @@ public class OutboundDeliveryConfigureProxy extends ServiceEntityConfigureProxy 
 				String.class);
 		seConfigureMapList.add(outboundDeliveryConfigureMap);
 
-
 		// Init configuration of Warehouse [outboundDeliveryParty] node
 		ServiceEntityConfigureMap outboundDeliveryPartyConfigureMap = new ServiceEntityConfigureMap();
 		outboundDeliveryPartyConfigureMap

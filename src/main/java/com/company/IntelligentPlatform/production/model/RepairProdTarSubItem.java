@@ -12,17 +12,14 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class RepairProdTarSubItem extends ProdOrderTarSubItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.RepairProdTarSubItem;
 
 	public final static String SENAME = RepairProdOrder.SENAME;
-
 
 	public RepairProdTarSubItem() {
 		this.nodeName = NODENAME;
 		this.serviceEntityName = SENAME;
 		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_REPAIRPRODORDER;
 	}
-
 
 }

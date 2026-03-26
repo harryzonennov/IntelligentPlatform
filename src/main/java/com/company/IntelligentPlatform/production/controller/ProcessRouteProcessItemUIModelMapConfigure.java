@@ -7,8 +7,6 @@ import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
 import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
 import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
 
-
-
 @ISEUIConfigureMapping(uiModelName = "com.company.IntelligentPlatform.production.dto.ProcessRouteProcessItemUIModel")
 public class ProcessRouteProcessItemUIModelMapConfigure extends
 		SEUIModelMapConfigure {

@@ -77,7 +77,6 @@ public class SerExtendPageI18nEditorController extends
 				serExtendPageI18nServiceUIModel.getSerExtendPageI18nUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
 	}
 
-
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String getPageHeaderModelList(@RequestBody SimpleSEJSONRequest request) {
@@ -112,7 +111,6 @@ public class SerExtendPageI18nEditorController extends
 		return serviceBasicUtilityController.loadModuleViewService(uuid, ISystemActionCode.ACID_EDIT,
 				getServiceUIModelRequest());
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

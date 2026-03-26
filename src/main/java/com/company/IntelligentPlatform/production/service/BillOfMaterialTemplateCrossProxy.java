@@ -234,7 +234,6 @@ public class BillOfMaterialTemplateCrossProxy {
         return billOfMaterialTemplateActionNode;
     }
 
-
     private BillOfMaterialOrder cloneToBOMOrder(BillOfMaterialTemplate billOfMaterialTemplate) throws ServiceEntityConfigureException {
         if (billOfMaterialTemplate == null) {
             return null;
@@ -272,7 +271,6 @@ public class BillOfMaterialTemplateCrossProxy {
             billOfMaterialItemList.add(billOfMaterialItemServiceModel);
         }
     }
-
 
     private void cloneToBOMTemplateItemServiceModel(BillOfMaterialItemServiceModel billOfMaterialItemServiceModel,
                                                     List<BillOfMaterialTemplateItemServiceModel> billOfMaterialTemplateItemList,
@@ -312,7 +310,6 @@ public class BillOfMaterialTemplateCrossProxy {
         billOfMaterialTemplateAttachmentList.add(billOfMaterialTemplateAttachment);
         return billOfMaterialTemplateAttachment;
     }
-
 
     public BillOfMaterialAttachment copyOrderAttachmentToTemplateAttachment(
             BillOfMaterialTemplateAttachment billOfMaterialTemplateAttachment, BillOfMaterialOrder billOfMaterialOrder,

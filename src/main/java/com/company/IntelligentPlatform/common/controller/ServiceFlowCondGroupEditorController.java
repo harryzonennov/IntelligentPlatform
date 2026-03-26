@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceFlowCondGroup;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 @Scope("session")
 @Controller(value = "serviceFlowCondGroupEditorController")
 @RequestMapping(value = "/serviceFlowCondGroup")

@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.StandardMaterialUnit;
 import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 
-
 @Component
 public class StandardMaterialUnitServiceUIModel extends ServiceUIModule {
 

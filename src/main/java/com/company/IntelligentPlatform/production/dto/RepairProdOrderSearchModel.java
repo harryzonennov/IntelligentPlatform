@@ -375,7 +375,6 @@ public class RepairProdOrderSearchModel extends SEUIComModel {
 		this.refWocName = refWocName;
 	}
 
-
 	public String getRefMaterialTypeId() {
 		return refMaterialTypeId;
 	}

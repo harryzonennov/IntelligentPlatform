@@ -43,7 +43,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "materialSKUExtendPropertyEditorController")
 @RequestMapping(value = "/materialSKUExtendProperty")
@@ -81,8 +80,6 @@ public class MaterialSKUExtendPropertyEditorController extends
 
 	@Autowired
 	protected IndividualCustomerManager individualCustomerManager;
-
-
 
 	@RequestMapping(value = "/getMeasureFlagMap", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getMeasureFlagMap(String lanCode) {

@@ -10,7 +10,6 @@ import com.company.IntelligentPlatform.common.model.ServiceModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MaterialTypeServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = MaterialType.NODENAME, nodeInstId = MaterialType.SENAME)

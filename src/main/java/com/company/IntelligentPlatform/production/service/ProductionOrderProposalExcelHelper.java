@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.company.IntelligentPlatform.production.dto.ProdOrderHeaderExcelProposal;
 import com.company.IntelligentPlatform.production.dto.ProdOrderItemExcelProposal;
 import com.company.IntelligentPlatform.production.dto.ProductionOrderItemUIModel;
@@ -50,6 +53,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
  */
 @Service
 public class ProductionOrderProposalExcelHelper {
+
+	private static final Logger logger = LoggerFactory.getLogger(ProductionOrderProposalExcelHelper.class);
 
 	@Autowired
 	protected ProdOrderItemProposalExcelProxy prodOrderItemProposalExcelProxy;
@@ -532,7 +537,7 @@ public class ProductionOrderProposalExcelHelper {
 				+ materialUnitMap.get(productionOrderItem.getRefUnitUUID())
 				+ " Actual amount:" + productionOrderItem.getActualAmount()
 				+ materialUnitMap.get(productionOrderItem.getRefUnitUUID()));
-		System.out.println(" Status:[" + productionOrderItem.getItemStatus() + "]");
+		logger.debug(" Status:[{}]", productionOrderItem.getItemStatus());
 	}
 
 	protected void printProdOrderItemReq(
@@ -584,7 +589,7 @@ public class ProductionOrderProposalExcelHelper {
 						+ materialUnitMap.get(prodOrderItemReqProposal
 								.getStoreUnitUUID()) + "]";
 			}
-			System.out.println(outputContent);
+			logger.debug("{}", outputContent);
 
 		} else {
 			// In case purchase or production order
@@ -600,7 +605,7 @@ public class ProductionOrderProposalExcelHelper {
 					+ prodOrderItemReqProposal.getAmount()
 					+ materialUnitMap.get(prodOrderItemReqProposal
 							.getRefUnitUUID());
-			System.out.println(outputContent);
+			logger.debug("{}", outputContent);
 
 		}
 	}

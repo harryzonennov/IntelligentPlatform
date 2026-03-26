@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.model;
 
-
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 

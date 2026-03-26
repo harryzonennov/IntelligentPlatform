@@ -15,7 +15,6 @@ import java.util.List;
  *   /api/v1/sales/salesAreas
  *   /api/v1/sales/salesForcasts
  *   /api/v1/sales/salesReturnOrders
- *   /api/v1/sales/settleOrders
  */
 @RestController
 @RequestMapping("/api/v1/sales")
@@ -144,41 +143,6 @@ public class SalesController {
 	@PutMapping("/salesReturnOrders/{uuid}/status/{status}")
 	public ApiResponse<Void> setReturnOrderStatus(@PathVariable String uuid, @PathVariable int status) {
 		salesService.setReturnOrderStatus(uuid, status, "", "");
-		return ApiResponse.success(null);
-	}
-
-	// --- SettleOrder ---
-
-	@GetMapping("/settleOrders/{uuid}")
-	public ApiResponse<SettleOrder> getSettleOrder(@PathVariable String uuid) {
-		return ApiResponse.success(salesService.getSettleOrderByUuid(uuid));
-	}
-
-	@GetMapping("/settleOrders")
-	public ApiResponse<List<SettleOrder>> getSettleOrdersByClient(@RequestParam String client,
-	                                                               @RequestParam(required = false) String refOrderUUID) {
-		if (refOrderUUID != null) {
-			return ApiResponse.success(salesService.getSettleOrdersByRefOrder(refOrderUUID));
-		}
-		return ApiResponse.success(salesService.getSettleOrdersByClient(client));
-	}
-
-	@PostMapping("/settleOrders")
-	public ApiResponse<SettleOrder> createSettleOrder(@RequestBody SettleOrderDto dto) {
-		return ApiResponse.success(salesService.createSettleOrder(dto.toEntity(), "", ""));
-	}
-
-	@PutMapping("/settleOrders/{uuid}")
-	public ApiResponse<SettleOrder> updateSettleOrder(@PathVariable String uuid,
-	                                                   @RequestBody SettleOrderDto dto) {
-		SettleOrder settleOrder = salesService.getSettleOrderByUuid(uuid);
-		dto.applyTo(settleOrder);
-		return ApiResponse.success(salesService.updateSettleOrder(settleOrder, "", ""));
-	}
-
-	@PutMapping("/settleOrders/{uuid}/status/{status}")
-	public ApiResponse<Void> setSettleOrderStatus(@PathVariable String uuid, @PathVariable int status) {
-		salesService.setSettleOrderStatus(uuid, status, "", "");
 		return ApiResponse.success(null);
 	}
 

@@ -9,7 +9,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.common.model.AuthorizationObject;
 import com.company.IntelligentPlatform.common.model.LogonUser;
 
-
 public interface IUserMessageProcessHandler {
 
 	public List<LogonUserMessageCategory> generateCategoryList(

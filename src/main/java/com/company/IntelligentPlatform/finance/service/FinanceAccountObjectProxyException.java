@@ -50,5 +50,4 @@ public class FinanceAccountObjectProxyException extends ServiceEntityException{
 		}
 	}
 
-
 }

@@ -19,7 +19,6 @@ import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel
 import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
 
-
 /**
  * SalesForcast Search Model
  * *

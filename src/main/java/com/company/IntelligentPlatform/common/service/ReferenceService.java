@@ -1,7 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-import java.util.List;
-
 import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,48 +21,9 @@ public class ReferenceService {
 	@Autowired
 	ServiceEntityRegisterEntityDAO serviceEntityRegisterEntityDAO; // TODO-DAO: stub
 
-	@Autowired
-	SpringContextBeanService springContextBeanService;
-
 	@PostConstruct
 	public void initApplication() {
 
-	}
-
-	/**
-	 * Get reference target service entity node instance by source reference
-	 * node
-	 * 
-	 * @param source
-	 * @return
-	 * @throws ServiceEntityConfigureException
-	 */
-	public ServiceEntityNode getRefTarget(ReferenceNode source)
-			throws ServiceEntityConfigureException {
-		// Check input parameters firstly
-		if (source == null)
-			return null;
-		if (source.getRefUUID() == null)
-			return null;
-		if (source.getRefNodeName() == null)
-			return null;
-		if (source.getRefSEName() == null)
-			return null;
-		ServiceEntityRegisterEntity seRegisterEntity = this.serviceEntityRegisterEntityDAO
-				.getSERegEntity(source.getRefSEName());
-		String daoName = seRegisterEntity.getSeDAOName();
-		// Fetch the relative DAO type from Spring context
-		HibernateDefaultImpDAO seDAO = (HibernateDefaultImpDAO) springContextBeanService
-				.getBean(ServiceEntityStringHelper.headerToLowerCase(daoName));
-		// register SE DAO to buffer
-		List<ServiceEntityNode> tempList = seDAO.getEntityNodeListByKey(
-				source.getRefUUID(), IServiceEntityNodeFieldConstant.UUID,
-				source.getRefNodeName());
-		if (tempList != null && tempList.size() > 0) {
-			return tempList.get(0);
-		} else {
-			return null;
-		}
 	}
 
 	/**

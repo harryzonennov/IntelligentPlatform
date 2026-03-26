@@ -67,7 +67,6 @@ public class MatConfigExtPropertySettingEditorController extends
 		return pageHeaderModelList;
 	}
 
-
 	public MatConfigExtPropertySettingServiceUIModel parseToServiceUIModel(
 			String request) {
 		JSONObject jsonObject = JSONObject.fromObject(request);

@@ -39,7 +39,6 @@ public class CorporateCustomerActionExecutionProxy
 
     protected Logger logger = LoggerFactory.getLogger(CorporateCustomerActionExecutionProxy.class);
 
-
     @Override
     public Map<Integer, String> getActionCodeMap(String lanCode) throws ServiceEntityInstallationException {
         String path = CorporateCustomerUIModel.class.getResource("").getPath();

@@ -120,13 +120,11 @@ public class MaterialConfigureTemplateEditorController extends
 				getServiceUIModelRequest());
 	}
 
-
 	@RequestMapping(value = "/loadModuleViewService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleViewService(String uuid) {
 		return serviceBasicUtilityController.loadModuleViewService(uuid, ISystemActionCode.ACID_EDIT,
 				getServiceUIModelRequest());
 	}
-
 
 	@RequestMapping(value = "/loadModuleEditService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleEditService(String uuid) {

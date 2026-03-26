@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-// TODO-DAO: import ...SystemCodeValueUnionDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SystemCodeValueUnionRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.DocPageHeaderModelProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -30,11 +33,11 @@ import java.util.List;
 @Service
 @Transactional
 public class SystemCodeValueUnionManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	SystemCodeValueUnionDAO systemCodeValueUnionDAO;
-
+    @Autowired
+    protected SystemCodeValueUnionRepository systemCodeValueUnionDAO;
 	@Autowired
 	SystemCodeValueUnionConfigureProxy systemCodeValueUnionConfigureProxy;
 
@@ -62,15 +65,13 @@ public class SystemCodeValueUnionManager extends ServiceEntityManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
 
-
 	public SystemCodeValueUnionManager() {
 		super.seConfigureProxy = new SystemCodeValueUnionConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new SystemCodeValueUnionDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemCodeValueUnionDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemCodeValueUnionDAO));
 	}
 
 	@PostConstruct

@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.dto;
 
 import java.util.Map;
 
-
 public interface ISystemConfigureSwitch {
 	
 	/**

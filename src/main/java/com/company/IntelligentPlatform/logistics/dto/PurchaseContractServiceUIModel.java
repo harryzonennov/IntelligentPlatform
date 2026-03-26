@@ -59,7 +59,6 @@ public class PurchaseContractServiceUIModel extends ServiceUIModule {
 		return this.purchaseContractAttachmentUIModelList;
 	}
 
-
 	public PurchaseContractActionNodeUIModel getApprovedBy() {
 		return approvedBy;
 	}

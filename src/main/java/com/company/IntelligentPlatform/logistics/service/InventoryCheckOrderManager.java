@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,6 +78,8 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 	private Map<String, Map<Integer, String>> statusMapLan = new HashMap<>();
 
 	private Map<String, Map<Integer, String>> inventoryCheckResultMapLan = new HashMap<>();
+    @PersistenceContext
+    private EntityManager entityManager;
 
 
 	@Autowired
@@ -121,12 +125,11 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 
 	public InventoryCheckOrderManager() {
 		super.seConfigureProxy = new InventoryCheckOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new InventoryCheckOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(inventoryCheckOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inventoryCheckOrderDAO));
 	}
 
 	@PostConstruct
@@ -177,7 +180,6 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 		inventoryCheckItemServiceModel.setInventoryCheckItem(inventoryCheckItem);
 		return inventoryCheckItemServiceModel;
 	}
-
 
 	public Map<Integer, String> initInventoryCheckResultMap(String languageCode)
 			throws ServiceEntityInstallationException {
@@ -476,8 +478,6 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 				InventoryCheckOrder.NODENAME, null);
 	}
 
-
-
 	/**
 	 * Core Logic of adjust each check item check status
 	 *
@@ -558,8 +558,6 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 		}
 	}
 
-
-
 	/**
 	 * [Internal method] Convert from UI model to se model:inventoryCheckOrder
 	 *
@@ -624,7 +622,6 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 		warehouseStoreManager.updateSENode(warehouseStoreItemLog, logonUserUUID,
 				organizationUUID);
 	}
-
 
 	public void initConvWarehouseStoreToCheckItem(
 			WarehouseStoreItem warehouseStoreItem,
@@ -713,7 +710,6 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 					.getGrossCheckResult());
 		}
 	}
-
 
 	@Override
 	public ServiceSearchProxy getSearchProxy() {

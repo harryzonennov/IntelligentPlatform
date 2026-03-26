@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.AuthorizationGroupUIModel;
-// TODO-DAO: import ...AuthorizationGroupDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.AuthorizationGroupRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.SystemMandatoryModeProxy;
 import com.company.IntelligentPlatform.common.service.SystemSerialParallelProxy;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
@@ -41,11 +44,11 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 @Service
 @Transactional
 public class AuthorizationGroupManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	AuthorizationGroupDAO authorizationGroupDAO;
-
+    @Autowired
+    protected AuthorizationGroupRepository authorizationGroupDAO;
 	@Autowired
 	AuthorizationGroupConfigureProxy authorizationGroupConfigureProxy;
 
@@ -67,12 +70,11 @@ public class AuthorizationGroupManager extends ServiceEntityManager {
 
 	public AuthorizationGroupManager() {
 		super.seConfigureProxy = new AuthorizationGroupConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new AuthorizationGroupDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(authorizationGroupDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, authorizationGroupDAO));
 	}
 
 	@PostConstruct
@@ -191,6 +193,5 @@ public class AuthorizationGroupManager extends ServiceEntityManager {
 	public ServiceSearchProxy getSearchProxy() {
 		return authorizationGroupSearchProxy;
 	}
-
 
 }

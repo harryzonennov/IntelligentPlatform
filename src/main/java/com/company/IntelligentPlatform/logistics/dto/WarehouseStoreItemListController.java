@@ -63,7 +63,6 @@ public class WarehouseStoreItemListController extends SEListController {
     @Autowired
     protected WarehouseStoreItemServiceUIModelExtension warehouseStoreItemServiceUIModelExtension;
 
-
     @RequestMapping(value = "/getBatchModeMap", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String getBatchModeMap() {
@@ -129,7 +128,6 @@ public class WarehouseStoreItemListController extends SEListController {
                 WarehouseStoreItemSearchModel.class, searchContext -> warehouseStoreManager
                         .getSearchProxy().searchItemList(searchContext), this::getServiceModuleListCore);
     }
-
 
     @RequestMapping(value = "/searchModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody String searchModuleService(@RequestBody String request) {

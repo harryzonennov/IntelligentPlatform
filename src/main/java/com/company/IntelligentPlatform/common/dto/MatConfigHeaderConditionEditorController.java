@@ -27,7 +27,6 @@ import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 @Scope("session")
 @Controller(value = "matConfigHeaderConditionEditorController")
 @RequestMapping(value = "/matConfigHeaderCondition")

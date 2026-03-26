@@ -23,7 +23,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class SalesReturnMaterialItemManager {
 
@@ -76,7 +75,6 @@ public class SalesReturnMaterialItemManager {
             throws ServiceEntityInstallationException, ServiceEntityConfigureException {
         convSalesReturnMaterialItemToUI(salesReturnMaterialItem, salesReturnMaterialItemUIModel, null);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -158,7 +156,6 @@ public class SalesReturnMaterialItemManager {
             }
         }
     }
-
 
     public void convUIToSalesReturnMaterialItem(SalesReturnMaterialItemUIModel salesReturnMaterialItemUIModel, SalesReturnMaterialItem rawEntity) {
         if(salesReturnMaterialItemUIModel != null && rawEntity != null){

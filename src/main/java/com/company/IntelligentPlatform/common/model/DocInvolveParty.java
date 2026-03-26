@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.model;
 
-
 import java.util.Date;
 
 /**

@@ -8,7 +8,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 import java.util.List;
 
-
 @FunctionalInterface
 public interface IConvertSearchDataWrapper {
 		List apply(SearchContext searchContext)

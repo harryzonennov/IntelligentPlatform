@@ -1,4 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.production.service.ProdPickingExtendAmountModel;
 
 import java.text.ParseException;
@@ -62,7 +64,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 
-
 /**
  * Logic Manager CLASS FOR Service Entity [ProductionOrder]
  *
@@ -122,6 +123,9 @@ public class ProductionOrderManager extends ServiceEntityManager {
 	private Map<String, Map<Integer, String>> reportCategoryMapLan = new HashMap<>();
 
 	private Map<String, ProductionOrder> productionOrderMap = new HashMap<>();
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected ProductionOrderRepository productionOrderDAO;
@@ -360,8 +364,6 @@ public class ProductionOrderManager extends ServiceEntityManager {
 			this.productionOrderMap.put(productionOrder.getUuid(), productionOrder);
 		}
 	}
-
-
 
 	/**
 	 * Entrance method to post update production order service model
@@ -708,7 +710,6 @@ public class ProductionOrderManager extends ServiceEntityManager {
 		this.updateSENode(productionOrder, logonUserUUID, organizationUUID);
 	}
 
-
 	public String genSerialNumber(MatDecisionValueSetting matDecisionSerialFormat, ProductionOrder productionOrder,
 			MaterialStockKeepUnit templateMaterialSKU, int offset) throws ServiceEntityConfigureException {
 		if (matDecisionSerialFormat != null) {
@@ -819,7 +820,6 @@ ServiceEntityConfigureException {
 
 	}
 
-
 	private void updateRecentBOMOrderToProductionOrder(ProductionOrder productionOrder) throws BillOfMaterialException,
 ServiceEntityConfigureException {
 		BillOfMaterialOrder billOfMaterialOrder =
@@ -861,7 +861,6 @@ ServiceEntityConfigureException {
 			this.deleteSENode(rawOrderTargetMatItemList, logonUserUUID, organizationUUID);
 		}
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -1057,14 +1056,13 @@ ServiceEntityConfigureException {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(productionOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionOrderDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(productionOrderConfigureProxy);
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -1196,7 +1194,6 @@ ServiceEntityConfigureException {
 
 	public ProductionOrderManager() {
 		super.seConfigureProxy = new ProductionOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProductionOrderDAO();
 	}
 
 	@Override
@@ -1968,7 +1965,6 @@ ServiceEntityConfigureException {
 		return productionOrderItemList;
 	}
 
-
 	/**
 	 * Generate the out-bound delivery proposal from each warehouse
 	 *
@@ -2199,7 +2195,6 @@ ServiceEntityConfigureException {
 		}
 	}
 
-
 	public void convProductionOrderToUI(ProductionOrder productionOrder, ProductionOrderUIModel productionOrderUIModel)
 			throws ServiceEntityInstallationException {
 		convProductionOrderToUI(productionOrder, productionOrderUIModel, null);
@@ -2368,7 +2363,6 @@ ServiceEntityConfigureException {
 		return productionOrderSearchProxy;
 	}
 
-
 	public boolean checkBlockExecutionByDocflow(int actionCode, String uuid, ServiceJSONRequest serviceJSONRequest,
 												SerialLogonInfo serialLogonInfo){
 		if(actionCode == ProductionOrderActionNode.DOC_ACTION_APPROVE){
@@ -2399,7 +2393,6 @@ ServiceEntityConfigureException {
 		serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
 	}
 
-
 	@Override
 	public void exeFlowActionEnd(int documentType, String uuid, int actionCode,
 								 ServiceJSONRequest serviceJSONRequest, SerialLogonInfo serialLogonInfo){
@@ -2414,7 +2407,7 @@ ServiceEntityConfigureException {
 						actionCode, serialLogonInfo);
 			}
 		} catch (ServiceEntityConfigureException | ServiceModuleProxyException | DocActionException e) {
-			e.printStackTrace();
+			logger.error("Failed during production order processing", e);
 		}
 	}
 

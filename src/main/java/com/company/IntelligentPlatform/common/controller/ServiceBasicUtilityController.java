@@ -487,7 +487,6 @@ public class ServiceBasicUtilityController {
         }
     }
 
-
     public interface ExcelUploadExecutor {
 
         /**
@@ -640,7 +639,6 @@ public class ServiceBasicUtilityController {
         return convServiceUIModuleList(serviceUIModelClass, serviceModelClass, rawList, serviceEntityManager, serviceUIModelExtension, null, logonInfo);
     }
 
-
     /**
      * Provide default convertion to Service UI Model list for List view
      *
@@ -674,7 +672,7 @@ public class ServiceBasicUtilityController {
                         serviceUIModelExtension.genUIModelExtensionUnion().get(0));
                 resultServiceUIModelList.add(targetServiceUIModel);
             } catch (ServiceModuleProxyException | ServiceUIModuleProxyException e) {
-                e.printStackTrace();
+                logger.error("Failed to build service UI model", e);
                 throw new ServiceEntityConfigureException(ServiceEntityConfigureException.PARA_SYSTEM_WRONG, e.getErrorMessage());
             }
         }
@@ -743,7 +741,6 @@ public class ServiceBasicUtilityController {
             return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
         }
     }
-
 
     public String searchModuleTemplate(String targetAOId, String acId,
                                        SEUIComModel searchModelInstance, ISearchDataMethod
@@ -1037,7 +1034,6 @@ public class ServiceBasicUtilityController {
                     .getErrorMessage());
         }
     }
-
 
     //TODO to merge this this deleteModule method
     public String deleteModuleTemplate(DeleteServiceEntityRequest deleteServiceEntityRequest, ServiceUIModelRequest serviceUIModelRequest) {
@@ -1806,7 +1802,6 @@ public class ServiceBasicUtilityController {
         return authorizationManager.filterDataAccessBySystemAuthor(rawList, acId, logonUser, homeOrganization, organizationList);
     }
 
-
     public List<ServiceEntityNode> filterDataAccessByAuthorization(
             List<ServiceEntityNode> rawList, String aoId, String acId)
             throws LogonInfoException, ServiceEntityConfigureException {
@@ -1822,7 +1817,6 @@ public class ServiceBasicUtilityController {
         return authorizationManager.filterDataAccessByAuthorization(rawList, aoId,
                 acId, logonUser, homeOrganization, organizationList, authorizationACUnionList);
     }
-
 
     public ResponseEntity<byte[]> loadAttachment(String uuid, String resourceId,
                                                  DocAttachmentProxy.DocAttachmentProcessPara docAttachmentProcessPara) {
@@ -2320,7 +2314,6 @@ public class ServiceBasicUtilityController {
         }
     }
 
-
     public static class InitServiceEntityRequest {
 
         protected String parentNodeName;
@@ -2347,7 +2340,6 @@ public class ServiceBasicUtilityController {
 
         public InitServiceEntityRequest() {
         }
-
 
         public InitServiceEntityRequest(String serviceEntityName, String nodeName,
                                         DocumentContentSpecifier<?, ?, ?> documentContentSpecifier) {
@@ -2400,7 +2392,6 @@ public class ServiceBasicUtilityController {
             this.inputRequest = inputRequest;
             this.processServiceEntityNode = processServiceEntityNode;
         }
-
 
         public InitServiceEntityRequest(String serviceEntityName, String nodeName, String nodeInstId, String parentNodeName,
                                         String parentNodeUUID,
@@ -2525,9 +2516,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
-
     public static class InitDocMatItemRequest extends InitServiceEntityRequest {
-
 
         /**
          * Only used for doc mat item
@@ -2866,7 +2855,6 @@ public class ServiceBasicUtilityController {
 
     }
 
-
     /**
      * Framework method to do some pre-checking items jobs before setting status, will raise exception when [Error]
      * Type message get and return message list when [Warning]
@@ -2993,7 +2981,6 @@ public class ServiceBasicUtilityController {
         return docFlowProxy.getDefDocItemNodeList(documentType, genRequest.getUuidList(),
                 this.logonActionController.getSerialLogonInfo().getClient());
     }
-
 
     /**
      * Identifies and retrieves the appropriate list of target document roots that can potentially contain the newly batch-created target document material item list.

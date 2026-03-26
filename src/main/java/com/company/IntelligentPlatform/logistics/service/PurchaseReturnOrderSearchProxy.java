@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
 @Service
 public class PurchaseReturnOrderSearchProxy extends ServiceSearchProxy {
 
@@ -72,6 +71,5 @@ public class PurchaseReturnOrderSearchProxy extends ServiceSearchProxy {
 				.nodeInstId(PurchaseReturnOrderParty.PARTY_NODEINST_PUR_SUPPLIER).nodeInstCode(PurchaseReturnOrderParty.ROLE_PARTYB).build());
 		return searchConfigureTemplateNodeList;
 	}
-
 
 }

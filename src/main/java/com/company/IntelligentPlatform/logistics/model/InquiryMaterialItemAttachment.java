@@ -14,5 +14,4 @@ public class InquiryMaterialItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

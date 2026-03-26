@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationE
 
 import java.util.Map;
 
-
 @Service
 public class ServiceItemUpdateModelProxy {
     
@@ -35,7 +34,5 @@ public class ServiceItemUpdateModelProxy {
 		Map<Integer, String> switchMap = getUpdateModeMap(languageCode);
 		return switchMap.get(key);		
 	}
-
-
 
 }

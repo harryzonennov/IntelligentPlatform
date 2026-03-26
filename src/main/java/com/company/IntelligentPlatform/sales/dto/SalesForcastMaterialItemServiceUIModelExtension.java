@@ -15,7 +15,6 @@ import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class SalesForcastMaterialItemServiceUIModelExtension extends
 		ServiceUIModelExtension {

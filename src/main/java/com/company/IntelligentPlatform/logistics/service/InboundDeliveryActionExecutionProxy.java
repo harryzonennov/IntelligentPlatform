@@ -130,7 +130,6 @@ public class InboundDeliveryActionExecutionProxy
         return null;
     }
 
-
     @Override
     public CrossDocConvertRequest<InboundDeliveryServiceModel, InboundItem, ?> getCrossDocCovertRequest() {
         return inboundDeliveryCrossConvertRequest;
@@ -190,7 +189,6 @@ public class InboundDeliveryActionExecutionProxy
         }
         return docContentCreateContextList;
     }
-
 
     @Override
     public ServiceEntityManager getServiceEntityManager() {

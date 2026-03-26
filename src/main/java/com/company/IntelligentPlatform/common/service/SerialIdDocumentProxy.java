@@ -34,7 +34,6 @@ public class SerialIdDocumentProxy {
     
     protected Logger logger = LoggerFactory.getLogger(SerialIdDocumentProxy.class);
 
-
     /**
      * Core Logic to create registered product instance & new purchase item
      * mapping to new registered product.
@@ -688,7 +687,5 @@ public class SerialIdDocumentProxy {
         serialIdList.removeAll(keepSerialIdList);
         return new UpdateDocItemMaterialMatrix(keepList, toDeleteList, emptyList, serialIdList);
     }
-
-
 
 }

@@ -64,7 +64,6 @@ public class MatConfigExtPropertyManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -157,7 +156,6 @@ public class MatConfigExtPropertyManager {
         rawEntity.setNote(matConfigExtPropertySettingUIModel.getNote());
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -172,7 +170,5 @@ public class MatConfigExtPropertyManager {
         matConfigExtPropertySettingUIModel
                 .setTemplateName(materialConfigureTemplate.getName());
     }
-
-
 
 }

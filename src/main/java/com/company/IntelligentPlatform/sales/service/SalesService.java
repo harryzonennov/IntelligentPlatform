@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Replaces: ThorsteinSalesDistribution - SalesContractManager, SalesAreaManager,
- *           SalesForcastManager, SalesReturnOrderManager, SettleOrderManager
+ *           SalesForcastManager, SalesReturnOrderManager
  */
 @Service
 @Transactional
@@ -28,9 +28,6 @@ public class SalesService extends ServiceEntityService {
 
 	@Autowired
 	protected SalesReturnOrderRepository salesReturnOrderRepository;
-
-	@Autowired
-	protected SettleOrderRepository settleOrderRepository;
 
 	// --- SalesContract ---
 
@@ -167,42 +164,6 @@ public class SalesService extends ServiceEntityService {
 
 	public void deleteReturnOrder(String uuid) {
 		deleteSENode(salesReturnOrderRepository, uuid);
-	}
-
-	// --- SettleOrder ---
-
-	public SettleOrder createSettleOrder(SettleOrder settleOrder, String userUUID, String orgUUID) {
-		settleOrder.setStatus(SettleOrder.STATUS_INIT);
-		return insertSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
-	}
-
-	@Transactional(readOnly = true)
-	public SettleOrder getSettleOrderByUuid(String uuid) {
-		return getEntityNodeByUUID(settleOrderRepository, uuid);
-	}
-
-	@Transactional(readOnly = true)
-	public List<SettleOrder> getSettleOrdersByClient(String client) {
-		return settleOrderRepository.findByClient(client);
-	}
-
-	@Transactional(readOnly = true)
-	public List<SettleOrder> getSettleOrdersByRefOrder(String refOrderUUID) {
-		return settleOrderRepository.findByRefOrderUUID(refOrderUUID);
-	}
-
-	public SettleOrder updateSettleOrder(SettleOrder settleOrder, String userUUID, String orgUUID) {
-		return updateSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
-	}
-
-	public void setSettleOrderStatus(String uuid, int status, String userUUID, String orgUUID) {
-		SettleOrder settleOrder = settleOrderRepository.findById(uuid).orElseThrow();
-		settleOrder.setStatus(status);
-		updateSENode(settleOrderRepository, settleOrder, userUUID, orgUUID);
-	}
-
-	public void deleteSettleOrder(String uuid) {
-		deleteSENode(settleOrderRepository, uuid);
 	}
 
 }

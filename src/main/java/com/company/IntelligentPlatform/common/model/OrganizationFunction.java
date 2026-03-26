@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
@@ -11,6 +14,8 @@ import com.company.IntelligentPlatform.common.model.*;
  * @date Nov 25, 2016
  * 
  */
+@Entity
+@Table(name = "OrganizationFunction", schema = "platform")
 public class OrganizationFunction extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;	

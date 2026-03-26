@@ -70,7 +70,6 @@ public class SalesContractConfigureProxy extends ServiceEntityConfigureProxy {
 				java.util.Date.class);
 		seConfigureMapList.add(salesContractConfigureMap);
 
-
 		// Init configuration of SalesContract [SalesContractMaterialItem] node
 		ServiceEntityConfigureMap salesContractMaterialItemConfigureMap = new ServiceEntityConfigureMap();
 		salesContractMaterialItemConfigureMap

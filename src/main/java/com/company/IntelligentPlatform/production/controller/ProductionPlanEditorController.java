@@ -62,7 +62,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "productionPlanEditorController")
 @RequestMapping(value = "/productionPlan")
@@ -140,7 +139,6 @@ public class ProductionPlanEditorController extends SEEditorController {
                 ProductionPlanServiceModel.class, ProductionPlanServiceUIModel.class, productionPlanServiceUIModel,
                 productionPlanServiceUIModelExtension);
     }
-
 
     protected ProductionPlanServiceUIModel refreshLoadServiceUIModel(ProductionPlan productionPlan, String acId,
                                                                      LogonInfo logonInfo, boolean postUpdateFlag)
@@ -252,7 +250,7 @@ public class ProductionPlanEditorController extends SEEditorController {
                         productionPlanManager.mergeOutboundProposal(existProposal, prodPlanItemReqProposal);
                         removeOutboundProposalUUIDList.add(prodPlanItemReqProposal.getUuid());
                     } catch (MaterialException | ServiceEntityConfigureException e) {
-                        e.printStackTrace();
+                        logger.error("Failed to merge outbound proposal during production plan processing", e);
                     }
                 }
             }
@@ -306,7 +304,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         return serviceBasicUtilityController.getDocActionConfigureListCore(productionPlanActionExecutionProxy);
     }
 
-
     @RequestMapping(value = "/newModuleSerInit", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String newModuleSerInit(@RequestBody String request) {
@@ -359,7 +356,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/deleteModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String deleteModule(@RequestBody String request) {
@@ -396,7 +392,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         return preLock(request.getUuid());
     }
 
-
     private ProductionPlan loadDataByCheckAccess(String uuid, boolean lockFlag, String acId)
             throws AuthorizationException, ServiceEntityConfigureException, LogonInfoException,
             ProductionPlanException {
@@ -409,7 +404,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         }
         return productionPlan;
     }
-
 
     @RequestMapping(value = "/loadModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -425,7 +419,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/executeDocAction", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String executeDocAction(@RequestBody String request) {
@@ -439,7 +432,6 @@ public class ProductionPlanEditorController extends SEEditorController {
             }
         });
     }
-
 
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<ProductionPlanServiceModel> iActionExecutor) {
@@ -489,7 +481,6 @@ public class ProductionPlanEditorController extends SEEditorController {
 
                 }, productionPlanServiceUIModelExtension);
     }
-
 
     @RequestMapping(value = "/genProductionPlanProposal", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -660,7 +651,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE, genDocAttachmentProcessPara());
     }
 
-
     /**
      * Upload the attachment content information.
      */
@@ -679,7 +669,6 @@ public class ProductionPlanEditorController extends SEEditorController {
         return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
                 genDocAttachmentProcessPara());
     }
-
 
     @RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
     public @ResponseBody

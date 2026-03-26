@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProdWorkCenterResItem extends ReferenceNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdWorkCenterResItem;
 
 	public final static String SENAME = ProdWorkCenter.SENAME;
@@ -27,6 +26,5 @@ public class ProdWorkCenterResItem extends ReferenceNode {
 	public void setKeyResourceFlag(int keyResourceFlag) {
 		this.keyResourceFlag = keyResourceFlag;
 	}
-
 
 }

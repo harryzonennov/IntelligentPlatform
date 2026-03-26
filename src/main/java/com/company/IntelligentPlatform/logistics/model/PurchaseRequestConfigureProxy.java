@@ -87,5 +87,4 @@ public class PurchaseRequestConfigureProxy extends ServiceEntityConfigureProxy {
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

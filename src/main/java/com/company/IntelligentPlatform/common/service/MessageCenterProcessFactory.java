@@ -32,7 +32,6 @@ public class MessageCenterProcessFactory {
 	@Autowired
 	protected SpringContextBeanService springContextBeanService;
 
-
 	/**
 	 * Generate message process handler
 	 * 

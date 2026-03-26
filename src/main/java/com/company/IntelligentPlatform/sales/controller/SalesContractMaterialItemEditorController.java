@@ -86,7 +86,6 @@ public class SalesContractMaterialItemEditorController extends
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */

@@ -289,6 +289,4 @@ public class ServiceExtendFieldI18nSettingEditorController extends
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
 
-
-
 }

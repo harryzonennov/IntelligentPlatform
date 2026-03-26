@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProcessRouteProcessItem extends ReferenceNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProcessRouteProcessItem;
 
 	public final static String SENAME = ProcessRouteOrder.SENAME;
@@ -77,7 +76,6 @@ public class ProcessRouteProcessItem extends ReferenceNode {
 	public void setProductionBatchSize(double productionBatchSize) {
 		this.productionBatchSize = productionBatchSize;
 	}
-
 
 	public double getPrepareTime() {
 		return prepareTime;

@@ -80,7 +80,6 @@ public class ProductionDocRequestService {
     @Autowired
     protected DocFlowProxy docFlowProxy;
 
-
     public List<ServiceEntityNode> searchDocMatItemList(ProductionDocRequestItemSearchModel productionDocRequestItemSearchModel, LogonInfo logonInfo)
             throws SearchConfigureException, ServiceEntityInstallationException, ServiceEntityConfigureException, AuthorizationException, LogonInfoException {
         int documentType = productionDocRequestItemSearchModel.getParentDocType();
@@ -237,7 +236,6 @@ public class ProductionDocRequestService {
         }
         return productionPlanInitModelList;
     }
-
 
     /**
      * Get all possible prev doc mat item list from current plan
@@ -413,7 +411,6 @@ public class ProductionDocRequestService {
         return productionDocRequestUIModel;
     }
 
-
     public ProductionDocRequestUIModel convToProductionDocRequestUIModel(SalesContractMaterialItemUIModel salesContractMaterialItemUIModel) {
         ProductionDocRequestUIModel productionDocRequestUIModel = new ProductionDocRequestUIModel();
         DocFlowProxy.copyDocMatItemUIModelMutual(salesContractMaterialItemUIModel, productionDocRequestUIModel, true);
@@ -435,6 +432,5 @@ public class ProductionDocRequestService {
                 languageCode);
         productionDocRequestUIModel.setParentDocTypeValue(documentTypeMap.get(productionDocRequestUIModel.getParentDocType()));
     }
-
 
 }

@@ -154,7 +154,6 @@ public class NavigationItemSettingManager extends ServiceEntityManager {
         }), client);
     }
 
-
     /**
      * Get all item list could be used as parent item in one special navigation system
      *

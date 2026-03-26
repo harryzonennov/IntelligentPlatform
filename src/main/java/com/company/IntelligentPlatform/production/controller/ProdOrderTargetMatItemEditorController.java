@@ -53,7 +53,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-
 @Scope("session")
 @Controller(value = "prodOrderTargetMatItemEditorController")
 @RequestMapping(value = "/prodOrderTargetMatItem")
@@ -332,7 +331,6 @@ public class ProdOrderTargetMatItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	/**
 	 * API to load proper existed inbound delivery
 	 * // Should be replaced by loadProperTargetDocListBatchGen
@@ -434,7 +432,6 @@ public class ProdOrderTargetMatItemEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
 		}
     }
-
 
 	public @RequestMapping(value = "/loadProperTargetDocListBatchGen", produces = "text/html;"
 			+ "charset=UTF-8") @ResponseBody String loadProperTargetDocListBatchGen(
@@ -564,7 +561,6 @@ public class ProdOrderTargetMatItemEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

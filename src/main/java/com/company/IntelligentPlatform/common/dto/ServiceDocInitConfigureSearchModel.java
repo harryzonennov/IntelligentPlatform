@@ -16,7 +16,6 @@ public class ServiceDocInitConfigureSearchModel extends SEUIComModel {
             nodeInstID = ServiceDocumentSetting.SENAME)
     protected String baseRefNodeName;
 
-
     @BSearchFieldConfig(fieldName = "refServiceEntityName", nodeName = ServiceDocInitConfigure.NODENAME, seName = ServiceDocInitConfigure.SENAME,
             nodeInstID = ServiceDocInitConfigure.SENAME)
     protected String refServiceEntityName;

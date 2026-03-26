@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class RepairProdOrderActionNode extends ProductionOrderActionNode{
 
-
     public final static String NODENAME = IServiceModelConstants.RepairProdOrderActionNode;
 
     public final static String SENAME = RepairProdOrder.SENAME;

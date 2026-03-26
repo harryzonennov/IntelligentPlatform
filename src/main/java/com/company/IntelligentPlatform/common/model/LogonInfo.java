@@ -1,5 +1,9 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +15,8 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
-
+@Entity
+@Table(name = "LogonInfo", schema = "platform")
 public class LogonInfo extends ServiceEntityNode implements Serializable {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
@@ -56,16 +61,22 @@ public class LogonInfo extends ServiceEntityNode implements Serializable {
 
 	protected int logonTryTimes;
 	
+	@Transient
 	protected ExtendedSettings extendedSettings;
-	
+
+	@Transient
 	protected LogonUser logonUser;
-	
+
+	@Transient
 	protected Organization homeOrganization;
-	
+
+	@Transient
 	protected List<ServiceEntityNode> organizationList;
-	
+
+	@Transient
 	protected Map<AuthorizationObject, List<ActionCode>> authorizationActionCodeMap;
 
+	@Transient
 	protected List<AuthorizationManager.AuthorizationACUnion> authorizationACUnionList;
 
 	public String getRefUserUUID() {

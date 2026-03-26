@@ -72,7 +72,6 @@ public class RepairProdOrderConfigureProxy extends ServiceEntityConfigureProxy {
         repairProdOrderAttachmentConfigureMap.addNodeFieldMap("fileType", java.lang.String.class);
         seConfigureMapList.add(repairProdOrderAttachmentConfigureMap);
 
-
         // Init configuration of Warehouse [repairProdOrderParty] node
         ServiceEntityConfigureMap repairProdOrderPartyConfigureMap = new ServiceEntityConfigureMap();
         repairProdOrderPartyConfigureMap
@@ -195,7 +194,6 @@ public class RepairProdOrderConfigureProxy extends ServiceEntityConfigureProxy {
         repairProdTarSubItemConfigureMap.addNodeFieldMap("refSerialId", java.lang.String.class);
         seConfigureMapList.add(repairProdTarSubItemConfigureMap);
 
-
         ServiceEntityConfigureMap productionOrderActionNodeConfigureMap = new ServiceEntityConfigureMap();
         productionOrderActionNodeConfigureMap.setParentNodeName(RepairProdOrder.NODENAME);
         productionOrderActionNodeConfigureMap.setNodeName(RepairProdOrderActionNode.NODENAME);
@@ -211,6 +209,5 @@ public class RepairProdOrderConfigureProxy extends ServiceEntityConfigureProxy {
 // End
         super.setSeConfigMapList(seConfigureMapList);
     }
-
 
 }

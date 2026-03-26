@@ -6,6 +6,10 @@ import java.util.Map;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+
 import com.company.IntelligentPlatform.finance.dto.FinAccountTitleSearchModel;
 import com.company.IntelligentPlatform.finance.dto.FinAccountTitleUIModel;
 import com.company.IntelligentPlatform.finance.repository.FinAccountTitleRepository;
@@ -48,6 +52,9 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 @Transactional
 public class FinAccountTitleManager extends ServiceEntityManager {
 
+	@PersistenceContext
+	private EntityManager entityManager;
+
 	@Autowired
 	FinAccountTitleRepository finAccountTitleDAO;
 
@@ -88,12 +95,11 @@ public class FinAccountTitleManager extends ServiceEntityManager {
 
 	public FinAccountTitleManager() {
 		super.seConfigureProxy = new FinAccountTitleConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new FinAccountTitleDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(finAccountTitleDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountTitleDAO));
 	}
 
 	@PostConstruct

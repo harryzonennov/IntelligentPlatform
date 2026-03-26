@@ -1,10 +1,13 @@
 package com.company.IntelligentPlatform.production.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
+@Entity
+@Table(name = "ProcessBOMOrder", schema = "production")
 public class ProcessBOMOrder extends ServiceEntityNode {
-
 
 	public final static String NODENAME = ServiceEntityNode.NODENAME_ROOT;
 

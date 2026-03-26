@@ -104,7 +104,6 @@ public class InventoryCheckItemEditorController extends SEEditorController {
 				inventoryCheckItemServiceUIModel.getInventoryCheckItemUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
 	}
 
-
 	private InventoryCheckItemServiceUIModel parseToServiceUIModel(String request) {
 		JSONObject jsonObject = JSONObject.fromObject(request);
 		@SuppressWarnings("rawtypes") Map<String, Class> classMap = new HashMap<>();
@@ -130,7 +129,6 @@ public class InventoryCheckItemEditorController extends SEEditorController {
 						request.getBaseUUID(),
 						null), ISystemActionCode.ACID_EDIT);
 	}
-
 
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody

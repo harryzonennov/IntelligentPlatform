@@ -1,11 +1,9 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 
 import java.util.Map;
-
 
 @Service
 public class SystemSerialParallelProxy {
@@ -23,6 +21,5 @@ public class SystemSerialParallelProxy {
 		return ServiceLanHelper.initDefLanguageMapResource(languageCode,
 				this.serialParallelMapLan, this.getClass().getResource("").getPath() + PROPERTIES_RESOURCE);
 	}
-
 
 }

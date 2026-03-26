@@ -14,7 +14,6 @@ import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
  */
 public class CityUIModel extends SEUIComModel {
 
-
 	@ISEUIModelMapping(fieldName = "teleAreaCode", seName = "City", nodeName = "ROOT")
 	protected String teleAreaCode;
 

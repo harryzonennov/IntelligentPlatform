@@ -12,6 +12,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 @Entity
 @Table(name = "ProductionOrder", schema = "production")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class ProductionOrder extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

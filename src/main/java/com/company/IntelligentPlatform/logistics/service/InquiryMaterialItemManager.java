@@ -66,7 +66,6 @@ public class InquiryMaterialItemManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
 
-
     public void convInquiryMaterialItemToUI(
             InquiryMaterialItem inquiryMaterialItem,
             InquiryMaterialItemUIModel inquiryMaterialItemUIModel)

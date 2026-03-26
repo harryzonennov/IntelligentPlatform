@@ -15,5 +15,4 @@ public class OrganizationAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;	
 	}
 
-
 }

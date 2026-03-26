@@ -13,7 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 // TODO-LEGACY: import platform.foundation.Administration.InstallService.ServicePackageProxy;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityRegisterEntitySearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityRegisterEntityUIModel;
-// TODO-DAO: import platform.foundation.DAO.ServiceEntityRegisterEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceEntityRegisterEntityRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
@@ -38,11 +41,11 @@ public class ServiceEntityRegisterEntityManager extends ServiceEntityManager {
     public static final String METHOD_ConvServiceEntityRegisterEntityToUI = "convServiceEntityRegisterEntityToUI";
 
     public static final String METHOD_ConvUIToServiceEntityRegisterEntity = "convUIToServiceEntityRegisterEntity";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     ServiceEntityRegisterEntityDAO serviceEntityRegisterEntityDAO;
-
+    @Autowired
+    protected ServiceEntityRegisterEntityRepository serviceEntityRegisterEntityDAO;
     @Autowired
     ServiceEntityRegisterEntityConfigureProxy serviceEntityRegisterEntityConfigureProxy;
 
@@ -59,7 +62,7 @@ public class ServiceEntityRegisterEntityManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(serviceEntityRegisterEntityDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceEntityRegisterEntityDAO));
     }
 
     @PostConstruct

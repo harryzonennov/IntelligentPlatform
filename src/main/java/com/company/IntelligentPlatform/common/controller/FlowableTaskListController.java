@@ -1,14 +1,15 @@
 package com.company.IntelligentPlatform.common.controller;
 
-// TODO-LEGACY: import org.flowable.engine.RuntimeService;
-// TODO-LEGACY: import org.flowable.engine.TaskService;
-// TODO-LEGACY: import org.flowable.task.api.Task;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
+import org.flowable.task.api.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.common.controller.FlowableTaskUIModel;
 import com.company.IntelligentPlatform.common.controller.LogonActionController;
 import com.company.IntelligentPlatform.common.controller.SEListController;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
@@ -48,13 +49,11 @@ public class FlowableTaskListController extends SEListController {
     @Autowired
     protected ServiceFlowRuntimeEngine serviceFlowRuntimeEngine;
 
-    // TODO-LEGACY: @Autowired
+    @Autowired
+    protected TaskService taskService;
 
-    // TODO-LEGACY:     protected TaskService taskService;
-
-    // TODO-LEGACY: @Autowired
-
-    // TODO-LEGACY:     protected RuntimeService runtimeService;
+    @Autowired
+    protected RuntimeService runtimeService;
 
     @Autowired
     protected FlowableTaskManager flowableTaskManager;
@@ -65,10 +64,28 @@ public class FlowableTaskListController extends SEListController {
     @RequestMapping(value = "/loadModuleListService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String loadModuleListService() {
-        // TODO-LEGACY: Flowable BPM not yet migrated
-        return ServiceJSONParser.genDefOKJSONObject(new ArrayList());
+        try {
+            serviceBasicUtilityController.preCheckResourceAccessCore(AOID_RESOURCE, ISystemActionCode.ACID_LIST);
+            LogonUser logonUser = logonActionController.getLogonUser();
+            if (logonUser == null) {
+                throw new LogonInfoException(
+                        LogonInfoException.TYPE_NO_LOGON_USER);
+            }
+            List<Task> activeTaskList = taskService.createTaskQuery().active().list();
+            if(ServiceCollectionsHelper.checkNullList(activeTaskList)){
+                return ServiceJSONParser.genDefOKJSONObject(new ArrayList());
+            }
+            List<FlowableTaskUIModel> flowableTaskUIModelList = flowableTaskManager.getModuleListCore(activeTaskList,
+                    logonActionController.getLogonInfo());
+            return ServiceJSONParser.genDefOKJSONArray(flowableTaskUIModelList);
+        } catch (ServiceModuleProxyException e) {
+            return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
+        } catch (AuthorizationException | LogonInfoException e) {
+            return e.generateSimpleErrorJSON();
+        } catch (ServiceEntityConfigureException | ServiceEntityInstallationException e) {
+            return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
+        }
     }
-
 
     @RequestMapping(value = "/deleteProcessInstance", produces = "text/html;charset=UTF-8")
     public @ResponseBody

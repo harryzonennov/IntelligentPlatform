@@ -7,55 +7,41 @@ import com.company.IntelligentPlatform.common.model.WorkCalendar;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 
-
-
 @Component
 public class WorkCalendarSearchModel extends SEUIComModel{
-
 
 @BSearchFieldConfig(fieldName = "id", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String id;
 
-
 @BSearchFieldConfig(fieldName = "defaultFlag", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected int defaultFlag;
-
 
 @BSearchFieldConfig(fieldName = "year", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected int year;
 
-
 @BSearchFieldConfig(fieldName = "note", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String note;
-
 
 @BSearchFieldConfig(fieldName = "name", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String name;
 
-
 @BSearchFieldConfig(fieldName = "refTemplateUUID", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String refTemplateUUID;
-
 
 @BSearchFieldConfig(fieldName = "uuid", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String uuid;
 
-
 @BSearchFieldConfig(fieldName = "client", nodeName = WorkCalendar.NODENAME, seName = WorkCalendar.SENAME, nodeInstID = WorkCalendar.SENAME,  showOnUI = true)
 protected String client;
-
 
 @BSearchFieldConfig(fieldName = "name", nodeName = CalendarTemplate.NODENAME, seName = CalendarTemplate.SENAME, nodeInstID = CalendarTemplate.SENAME,  showOnUI = true)
 protected String calendarTemplateName;
 
-
 @BSearchFieldConfig(fieldName = "note", nodeName = CalendarTemplate.NODENAME, seName = CalendarTemplate.SENAME, nodeInstID = CalendarTemplate.SENAME,  showOnUI = true)
 protected String calendarTemplateNote;
 
-
 @BSearchFieldConfig(fieldName = "id", nodeName = CalendarTemplate.NODENAME, seName = CalendarTemplate.SENAME, nodeInstID = CalendarTemplate.SENAME,  showOnUI = true)
 protected String calendarTemplateId;
-
 
 @BSearchFieldConfig(fieldName = "year", nodeName = CalendarTemplate.NODENAME, seName = CalendarTemplate.SENAME, nodeInstID = CalendarTemplate.SENAME,  showOnUI = true)
 protected int calendarTemplateYear;
@@ -155,6 +141,5 @@ return this.calendarTemplateYear;
 public void setCalendarTemplateYear(int calendarTemplateYear){
 this.calendarTemplateYear = calendarTemplateYear;
 }
-
 
 }

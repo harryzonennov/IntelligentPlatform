@@ -94,13 +94,11 @@ public class CrossCopyInvolvePartyEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/deleteModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String deleteModule(String uuid) {
         return serviceBasicUtilityController.deleteModule(uuid, AOID_RESOURCE, getServiceUIModelRequest());
     }
-
 
     @RequestMapping(value = "/getLogonPartyFlagMap", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -108,7 +106,6 @@ public class CrossCopyInvolvePartyEditorController extends SEEditorController {
         return serviceBasicUtilityController.getMapMeta(
                 lanCode -> crossCopyInvolvePartyManager.getLogonPartyFlagMap(lanCode));
     }
-
 
     private CrossCopyInvolvePartyServiceUIModel parseToServiceUIModel(
             String request) {
@@ -129,7 +126,6 @@ public class CrossCopyInvolvePartyEditorController extends SEEditorController {
                 crossCopyInvolvePartyServiceUIModel,
                 crossCopyInvolvePartyServiceUIModel.getCrossCopyInvolvePartyUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
-
 
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody

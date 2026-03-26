@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.model;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 
-
 public class ServiceCrossDocEventMonitor extends ServiceEntityNode {
 
 	public static final String NODENAME = IServiceModelConstants.ServiceCrossDocEventMonitor;

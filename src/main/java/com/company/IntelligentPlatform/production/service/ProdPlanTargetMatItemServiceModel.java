@@ -34,5 +34,4 @@ public class ProdPlanTargetMatItemServiceModel extends ServiceModule {
 		this.prodPlanTarSubItemList = prodPlanTarSubItemList;
 	}
 
-
 }

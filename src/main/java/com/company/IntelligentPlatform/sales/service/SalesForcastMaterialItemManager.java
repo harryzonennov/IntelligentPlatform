@@ -102,7 +102,6 @@ public class SalesForcastMaterialItemManager {
         }
     }
 
-
     public void convUIToSalesForcastMaterialItem(SalesForcastMaterialItemUIModel salesForcastMaterialItemUIModel, SalesForcastMaterialItem rawEntity) {
         if(salesForcastMaterialItemUIModel != null && rawEntity != null){
             docFlowProxy.convUIToDocMatItem(salesForcastMaterialItemUIModel, rawEntity);

@@ -44,7 +44,6 @@ import com.company.IntelligentPlatform.common.model.AttachmentConstantHelper;
 import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
 import com.company.IntelligentPlatform.common.model.SelectMapModel;
 import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityLogModel;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureMap;
@@ -66,9 +65,6 @@ public class ServiceEntityManager {
     protected ServiceEntityDAO serviceEntityDAO; // TODO-DAO: was HibernateDefaultImpDAO
 
     protected ServiceEntityConfigureProxy seConfigureProxy;
-
-    @Autowired
-    protected ServiceEntityLogModelHelper serviceEntityLogModelHelper;
 
     @Autowired
     protected ServiceModuleProxy serviceModuleProxy;
@@ -330,19 +326,6 @@ public class ServiceEntityManager {
                 deleteList.add(seBind.getSeNode());
             }
         }
-        if (seBindListRefined != null && seBindListRefined.size() > 0) {
-            for (ServiceEntityBindModel seBind : seBindListRefined) {
-                // Write log
-                if (serviceEntityLogModelHelper == null) {
-                    // should raise exception for non injection
-                } else {
-                    serviceEntityLogModelHelper.logAction(seBind.getSeNode(),
-                            logonUserUUID, organizationUUID,
-                            seBind.getProcessMode(),
-                            ServiceEntityLogModel.MESSAGE_TYPE_INFO);
-                }
-            }
-        }
         if (createList.size() > 0) {
             this.serviceEntityDAO.insertEntity(createList);
         }
@@ -459,12 +442,6 @@ public class ServiceEntityManager {
         // logonUserUUID, organizationUUID);
         List<ServiceEntityNode> deleteList = new ArrayList<>();
         deleteList.add(seNode);
-        try {
-            serviceEntityLogModelHelper.logDeleteAction(seNode, logonUserUUID,
-                    organizationUUID, ServiceEntityLogModel.MESSAGE_TYPE_INFO);
-        } catch (ServiceEntityConfigureException e) {
-            // Just skip exception
-        }
         this.serviceEntityDAO.deleteEntityNodeList(deleteList);
     }
 
@@ -477,13 +454,6 @@ public class ServiceEntityManager {
      */
     public void deleteSENode(List<ServiceEntityNode> deleteList,
                              String logonUserUUID, String organizationUUID) {
-        try {
-            serviceEntityLogModelHelper.logDeleteAction(deleteList,
-                    logonUserUUID, organizationUUID,
-                    ServiceEntityLogModel.MESSAGE_TYPE_INFO);
-        } catch (ServiceEntityConfigureException e) {
-            // Just skip exception
-        }
         this.serviceEntityDAO.deleteEntityNodeList(deleteList);
     }
 
@@ -514,20 +484,6 @@ public class ServiceEntityManager {
             }
             if (seBind.getProcessMode() == ServiceEntityBindModel.PROCESSMODE_DELETE) {
                 deleteList.add(seBind.getSeNode());
-            }
-        }
-        if (seBindListRefined != null && seBindListRefined.size() > 0) {
-            for (ServiceEntityBindModel seBind : seBindListRefined) {
-                // Write log
-                if (serviceEntityLogModelHelper == null) {
-                    // should raise exception for non injection
-                } else {
-                    serviceEntityLogModelHelper.logAction(seBind.getSeNode(),
-                            seBind.getSeNode().getResEmployeeUUID(), seBind
-                                    .getSeNode().getResOrgUUID(), seBind
-                                    .getProcessMode(),
-                            ServiceEntityLogModel.MESSAGE_TYPE_INFO);
-                }
             }
         }
         if (createList.size() > 0) {
@@ -966,7 +922,6 @@ public class ServiceEntityManager {
         });
     }
 
-
     public void archiveModule(Object keyValue, String keyName,
                                 String nodeName, SerialLogonInfo serialLogonInfo) throws DocActionException, ServiceEntityConfigureException {
         traverseNodeListRecursive(keyValue, keyName, nodeName, item -> {
@@ -981,7 +936,6 @@ public class ServiceEntityManager {
             return true;
         });
     }
-
 
     public void restoreArchiveModule(Object keyValue, String keyName,
                               String nodeName) throws DocActionException, ServiceEntityConfigureException {
@@ -1389,7 +1343,6 @@ public class ServiceEntityManager {
                 nodeName, client, null, false);
     }
 
-
     /**
      * Retrieves a service entity node instance by its UUID from the database,
      * bypassing the Hibernate cache to ensure fresh data is loaded.
@@ -1632,7 +1585,6 @@ public class ServiceEntityManager {
         }
     }
 
-
     public ServiceEntityNode getEntityNodeByKeyList(
             List<ServiceBasicKeyStructure> keyList, String nodeName,
             String client, List<ServiceEntityNode> rawSEList)
@@ -1678,22 +1630,6 @@ public class ServiceEntityManager {
             throws ServiceEntityConfigureException {
         referenceService.buildReferenceNode(target, refNode, refPackageName);
     }
-
-    /**
-     * Get reference target service entity node instance by source reference
-     * node
-     *
-     * @param source
-     * @return
-     * @throws ServiceModuleProxyException
-     * @throws ServiceEntityConfigureException
-     */
-
-    // public ServiceEntityNode getRefTarget(ReferenceNode source)
-    // throws ServiceEntityConfigureException {
-    // return referenceService.getRefTarget(source);
-    // }
-
 
     /**
      * Main entrance to load necessary data from persistence and convert into
@@ -1769,7 +1705,6 @@ public class ServiceEntityManager {
         return serviceModuleProxy.loadServiceModule(serviceModuleType, this,
                 serviceEntityNode, serviceUIModelExtension, nodeInstId);
     }
-
 
     /**
      * Main entrance to update/insert service module data into persistence
@@ -1951,7 +1886,7 @@ public class ServiceEntityManager {
                         this.postUpdateServiceModel(tmpServiceModel,
                                 logonUserUUID, organizationUUID);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        managerLogger.error("Failed during post-update service model processing", e);
                     }
                     return tmpServiceModel;
                 }, setLogIdNameCallBack, logonUserUUID, organizationUUID,
@@ -2086,7 +2021,6 @@ public class ServiceEntityManager {
                         null, new ArrayList<>());
         return serviceUIModule;
     }
-
 
     /**
      * Generate the UIModel dynamically from UI Model Extension
@@ -2279,14 +2213,11 @@ public class ServiceEntityManager {
                 } catch (NoSuchFieldException e) {
                     // Do nothing, just continue;
                 } catch (SecurityException e) {
-                    // Do nothing, just continue;
-                    e.printStackTrace();
+                    managerLogger.warn("Security exception during field access, skipping field", e);
                 } catch (IllegalArgumentException e) {
-                    // Do nothing, just continue;
-                    e.printStackTrace();
+                    managerLogger.warn("Illegal argument during field access, skipping field", e);
                 } catch (IllegalAccessException e) {
-                    // Do nothing, just continue;
-                    e.printStackTrace();
+                    managerLogger.warn("Illegal access during field access, skipping field", e);
                 }
             }
         }

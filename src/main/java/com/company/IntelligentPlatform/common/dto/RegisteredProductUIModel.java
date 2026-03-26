@@ -106,7 +106,6 @@ public class RegisteredProductUIModel extends SEUIComModel {
 
     protected String purchaseOrgContactUUID;
 
-
     protected String refSalesOrgUUID;
 
     protected String salesOrganizationName;
@@ -142,7 +141,6 @@ public class RegisteredProductUIModel extends SEUIComModel {
     protected String refCustomerUUID;
 
     protected String corporateCustomerName;
-
 
     protected String corporateCustomerId;
 

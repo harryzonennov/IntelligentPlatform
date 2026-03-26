@@ -1,10 +1,14 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
+@Entity
+@Table(name = "Material", schema = "platform")
 public class Material extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

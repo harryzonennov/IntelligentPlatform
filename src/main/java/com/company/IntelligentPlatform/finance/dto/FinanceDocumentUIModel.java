@@ -31,7 +31,6 @@ public class FinanceDocumentUIModel extends SEUIComModel {
 	@ISEUIModelMapping(fieldName = "rootNodeUUID;", seName = "AccountTitle;", nodeName = "ROOT")
 	protected String accountTitleUUID;
 
-
 	public String getAccountType() {
 		return accountType;
 	}

@@ -113,7 +113,6 @@ public class EmployeeSpecifier extends DocumentContentSpecifier<EmployeeServiceM
         return uiModelClassMap;
     }
 
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();
@@ -129,6 +128,5 @@ public class EmployeeSpecifier extends DocumentContentSpecifier<EmployeeServiceM
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

@@ -79,8 +79,6 @@ public class PurchaseReturnMaterialItemSearchModel extends SEUIComModel {
 
 	protected String signDateStrHigh;
 
-
-
 	public int getItemStatus() {
 		return itemStatus;
 	}
@@ -88,7 +86,6 @@ public class PurchaseReturnMaterialItemSearchModel extends SEUIComModel {
 	public void setItemStatus(final int itemStatus) {
 		this.itemStatus = itemStatus;
 	}
-
 
 	public DocEmbedMaterialSKUSearchModel getItemMaterialSKU() {
 		return itemMaterialSKU;

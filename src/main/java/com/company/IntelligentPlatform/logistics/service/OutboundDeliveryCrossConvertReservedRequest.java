@@ -20,7 +20,6 @@ import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Service
 public class OutboundDeliveryCrossConvertReservedRequest extends
         CrossDocConvertReservedRequest<OutboundDeliveryServiceModel, OutboundItem, OutboundItemServiceModel> {

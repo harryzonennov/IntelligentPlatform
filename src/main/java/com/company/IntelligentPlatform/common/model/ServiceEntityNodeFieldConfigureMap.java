@@ -24,7 +24,6 @@ public class ServiceEntityNodeFieldConfigureMap {
 		super();
 	}
 
-
 	public String getFieldName() {
 		return fieldName;
 	}

@@ -14,7 +14,6 @@ import com.company.IntelligentPlatform.common.model.ServiceFlowCondField;
 import com.company.IntelligentPlatform.common.model.ServiceFlowCondGroup;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 
-
 @Service
 public class ServiceFlowCondFieldServiceUIModelExtension extends ServiceUIModelExtension {
 
@@ -25,7 +24,6 @@ public class ServiceFlowCondFieldServiceUIModelExtension extends ServiceUIModelE
         List<ServiceUIModelExtension> resultList = new ArrayList<>();
         return resultList;
     }
-
 
     @Override
     public List<ServiceUIModelExtensionUnion> genUIModelExtensionUnion() {
@@ -62,7 +60,6 @@ public class ServiceFlowCondFieldServiceUIModelExtension extends ServiceUIModelE
         serviceFlowCondGroupMap.setConvToUIMethodParas(serviceFlowCondGroupConvToUIParas);
         serviceFlowCondGroupMap.setConvToUIMethod(ServiceFlowCondFieldManager.METHOD_ConvServiceFlowCondGroupToFieldUI);
 
-
         UIModelNodeMapConfigure serviceFlowModelMap = new UIModelNodeMapConfigure();
         serviceFlowModelMap.setSeName(ServiceFlowModel.SENAME);
         serviceFlowModelMap.setNodeName(ServiceFlowModel.NODENAME);
@@ -81,6 +78,5 @@ public class ServiceFlowCondFieldServiceUIModelExtension extends ServiceUIModelE
         resultList.add(serviceFlowCondFieldExtensionUnion);
         return resultList;
     }
-
 
 }

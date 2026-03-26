@@ -24,7 +24,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Service
 public class SalesReturnOrderCrossConvertProfRequest extends
         CrossDocConvertProfRequest<SalesReturnOrderServiceModel, SalesReturnMaterialItem, SalesReturnMaterialItemServiceModel> {
@@ -124,6 +123,5 @@ public class SalesReturnOrderCrossConvertProfRequest extends
             return null;
         });
     }
-
 
 }

@@ -15,11 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.company.IntelligentPlatform.common.dto.SystemExecutorLogUIModel;
 import com.company.IntelligentPlatform.common.dto.SystemExecutorSettingUIModel;
 import com.company.IntelligentPlatform.common.dto.SystemExecutorSettingSearchModel;
-// TODO-DAO: import ...SystemExecutorSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SystemExecutorSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.AuthorizationObjectManager;
 import com.company.IntelligentPlatform.common.service.DocActionException;
@@ -50,7 +52,6 @@ import com.company.IntelligentPlatform.common.model.SystemExecutorSetting;
 import com.company.IntelligentPlatform.common.model.SystemExecutorSettingConfigureProxy;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 /**
  * Logic Manager CLASS FOR Service Entity [SystemExecutorSetting]
  *
@@ -78,11 +79,11 @@ public class SystemExecutorSettingManager extends ServiceEntityManager {
 
 	@Autowired
 	protected BsearchService bsearchService;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected SystemExecutorSettingDAO systemExecutorSettingDAO;
-
+    @Autowired
+    protected SystemExecutorSettingRepository systemExecutorSettingDAO;
 	@Autowired
 	protected AuthorizationObjectManager authorizationObjectManager;
 
@@ -263,7 +264,7 @@ public class SystemExecutorSettingManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemExecutorSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemExecutorSettingDAO));
 	}
 
 	@PostConstruct

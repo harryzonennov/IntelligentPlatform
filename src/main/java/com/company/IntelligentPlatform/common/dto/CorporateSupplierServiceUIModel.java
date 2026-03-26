@@ -42,7 +42,6 @@ public class CorporateSupplierServiceUIModel extends ServiceUIModule {
 			CorporateCustomerActionNode.NODEINST_ACTION_ARCHIVE)
 	protected CorporateCustomerActionNodeUIModel archivedBy;
 
-
 	public CorporateSupplierUIModel getCorporateSupplierUIModel() {
 		return corporateSupplierUIModel;
 	}
@@ -85,7 +84,6 @@ public class CorporateSupplierServiceUIModel extends ServiceUIModule {
 	public void setApprovedBy(CorporateCustomerActionNodeUIModel approvedBy) {
 		this.approvedBy = approvedBy;
 	}
-
 
 	public CorporateCustomerActionNodeUIModel getSubmittedBy() {
 		return submittedBy;

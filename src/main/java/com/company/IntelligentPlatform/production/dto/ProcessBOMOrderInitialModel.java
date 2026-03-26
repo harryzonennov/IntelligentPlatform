@@ -90,7 +90,6 @@ public class ProcessBOMOrderInitialModel extends SEUIComModel {
 		this.routeType = routeType;
 	}
 
-
 	public int getRouteStatus() {
 		return routeStatus;
 	}

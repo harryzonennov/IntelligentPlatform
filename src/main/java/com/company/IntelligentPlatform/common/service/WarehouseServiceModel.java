@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class WarehouseServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = Warehouse.NODENAME, nodeInstId = Warehouse.SENAME)

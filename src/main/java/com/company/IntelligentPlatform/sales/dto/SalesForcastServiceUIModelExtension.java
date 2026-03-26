@@ -21,7 +21,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class SalesForcastServiceUIModelExtension extends
 		ServiceUIModelExtension {

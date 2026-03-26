@@ -5,7 +5,10 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import ...SystemAuthorizationObjectDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SystemAuthorizationObjectRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.SystemAuthorizationObjectConfigureProxy;
@@ -22,22 +25,21 @@ import com.company.IntelligentPlatform.common.model.SystemAuthorizationObjectCon
 @Service
 @Transactional
 public class SystemAuthorizationObjectManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	SystemAuthorizationObjectDAO systemAuthorizationObjectDAO;
-
+    @Autowired
+    protected SystemAuthorizationObjectRepository systemAuthorizationObjectDAO;
 	@Autowired
 	SystemAuthorizationObjectConfigureProxy systemAuthorizationObjectConfigureProxy;
 
 	public SystemAuthorizationObjectManager() {
 		super.seConfigureProxy = new SystemAuthorizationObjectConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new SystemAuthorizationObjectDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemAuthorizationObjectDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemAuthorizationObjectDAO));
 	}
 
 	@PostConstruct

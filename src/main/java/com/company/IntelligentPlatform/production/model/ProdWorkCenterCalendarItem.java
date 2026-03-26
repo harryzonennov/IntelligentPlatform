@@ -8,7 +8,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProdWorkCenterCalendarItem extends ReferenceNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdWorkCenterCalendarItem;
 
 	public final static String SENAME = ProdWorkCenter.SENAME;

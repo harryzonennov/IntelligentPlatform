@@ -38,7 +38,6 @@ public class LogonUserOrgListController extends SEListController {
 
     public static final String AOID_RESOURCE = OrganizationEditorController.AOID_RESOURCE;
 
-
     protected List<LogonUserOrganizationUIModel> getModuleListCore(
             List<ServiceEntityNode> rawList)
             throws ServiceEntityInstallationException,

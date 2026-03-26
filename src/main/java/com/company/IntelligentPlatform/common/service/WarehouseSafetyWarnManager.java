@@ -11,20 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.WarehouseSafetyWarnMessageUIModel;
 import com.company.IntelligentPlatform.common.dto.WarehouseStoreSettingUIModel;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.common.model.MaterialSKUUnitReference;
 import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.common.model.Warehouse;
 import com.company.IntelligentPlatform.common.model.WarehouseSafetyWarn;
 import com.company.IntelligentPlatform.common.model.WarehouseStoreSetting;
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceDocConfigureException;
-import com.company.IntelligentPlatform.common.service.ServiceDocConfigureResourceManager;
-import com.company.IntelligentPlatform.common.service.ServiceSimpleDataProviderException;
 import com.company.IntelligentPlatform.common.model.LogonInfo;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
@@ -48,9 +39,6 @@ public class WarehouseSafetyWarnManager {
 	@Autowired
 	protected MaterialStockKeepUnitManager materialStockKeepUnitManager;
 	
-	@Autowired
-	protected ServiceDocConfigureResourceManager serviceDocConfigureResourceManager;
-	
 	/**
 	 * Get the Warehouse safety warn message UI Model list by raw safety warn message list.
 	 * @param rawList
@@ -58,14 +46,14 @@ public class WarehouseSafetyWarnManager {
 	 * @throws ServiceEntityInstallationException
 	 * @throws ServiceEntityConfigureException
 	 * @throws MaterialException
-	 * @throws ServiceDocConfigureException
 	 * @throws ServiceSimpleDataProviderException
 	 * @throws IOException
 	 */
+	// TODO deprecated
 	public List<WarehouseSafetyWarnMessageUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList, LogonInfo logonInfo)
 			throws ServiceEntityInstallationException,
-			ServiceEntityConfigureException, MaterialException, ServiceDocConfigureException, ServiceSimpleDataProviderException, IOException {
+			ServiceEntityConfigureException, MaterialException, ServiceSimpleDataProviderException, IOException {
 		List<WarehouseSafetyWarnMessageUIModel> warehouseStoreSettingList = new ArrayList<WarehouseSafetyWarnMessageUIModel>();
 		for (ServiceEntityNode rawNode : rawList) {
 			WarehouseSafetyWarnMessageUIModel warehouseSafetyWarnMessageUIModel = new WarehouseSafetyWarnMessageUIModel();
@@ -125,11 +113,11 @@ public class WarehouseSafetyWarnManager {
 						WarehouseStoreSettingUIModel warehouseStoreSettingUIModel = new WarehouseStoreSettingUIModel();
 						warehouseManager.convWarehouseStoreSettingToUI(warehouseSafetyWarn,
 								warehouseStoreSettingUIModel);
-						serviceDocConfigureResourceManager.enterProcessForDocMaterial(
-								warehouseStoreSettingUIModel,
-								warehouseSafetyWarn.getRefUUID(),
-								logonInfo,
-								warehouseStoreSettingUIModel.getRefMaterialSKUUUID());
+//						serviceDocConfigureResourceManager.enterProcessForDocMaterial(
+//								warehouseStoreSettingUIModel,
+//								warehouseSafetyWarn.getRefUUID(),
+//								logonInfo,
+//								warehouseStoreSettingUIModel.getRefMaterialSKUUUID());
 						double amount = warehouseStoreSettingUIModel
 								.getTargetAverageStoreAmount();
 						double maxSafeStoreAmount = warehouseSafetyWarn
@@ -182,7 +170,6 @@ public class WarehouseSafetyWarnManager {
 		}
 		return warehouseStoreSettingList;
 	}
-
 
 	public void convSafetyWarnToMessageUI(
 			WarehouseSafetyWarn warehouseSafetyWarn,

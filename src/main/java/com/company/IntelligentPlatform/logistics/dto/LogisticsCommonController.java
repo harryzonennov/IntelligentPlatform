@@ -17,5 +17,4 @@ public class LogisticsCommonController extends SEEditorController {
 	@Autowired
 	protected LogonActionController logonActionController;
 
-
 }

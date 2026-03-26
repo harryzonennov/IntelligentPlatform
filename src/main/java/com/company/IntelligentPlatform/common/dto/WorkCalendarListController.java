@@ -68,7 +68,6 @@ public class WorkCalendarListController extends SEListController {
 				workCalendarManager, workCalendarServiceUIModelExtension);
 	}
 
-
 	@RequestMapping(value = "/loadModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleListService() {
 		try {
@@ -125,8 +124,6 @@ public class WorkCalendarListController extends SEListController {
 		}
 	}
 
-
-
 	@RequestMapping(value = "/searchTableService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String searchTableService(@RequestBody String request) {
 		try {
@@ -168,7 +165,6 @@ public class WorkCalendarListController extends SEListController {
             throw new RuntimeException(e);
         }
     }
-
 
 	@RequestMapping(value = "/loadCalendarTemplateSelectList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadCalendarTemplateSelectList() {

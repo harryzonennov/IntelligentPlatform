@@ -57,7 +57,6 @@ import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Service
 public class ProdOrderTargetMatItemManager {
 
@@ -409,7 +408,6 @@ public class ProdOrderTargetMatItemManager {
 		}
 		productionOrderManager.updateSENodeList(prodOrderTargetMatItemList, logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Core Logic to set target item status to [Cancel]
@@ -795,7 +793,6 @@ public class ProdOrderTargetMatItemManager {
 		return prodOrderTargetMatItemList;
 	}
 
-
 	/**
 	 * Utility method: Logic to binding the newly generated target mat item list
 	 * to picking material item
@@ -1153,7 +1150,6 @@ public class ProdOrderTargetMatItemManager {
 		resultList.add(prodOrderTargetMatItemServiceModel);
 		return resultList;
 	}
-
 
 	/**
 	 * [Internal method] init & copy information from production order to report

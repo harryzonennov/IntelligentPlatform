@@ -111,7 +111,6 @@ public class ProductionPlanSpecifier extends DocumentContentSpecifier<Production
         return productionPlanServiceModel.getProdPlanTargetMatItemList();
     }
 
-
     @Override
     public Map<Integer, String> getStatusMap(String lanCode) throws ServiceEntityInstallationException {
         return productionPlanManager.initStatusMap(lanCode);

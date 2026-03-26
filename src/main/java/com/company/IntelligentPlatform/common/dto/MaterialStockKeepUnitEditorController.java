@@ -152,7 +152,6 @@ public class MaterialStockKeepUnitEditorController extends SEEditorController {
         });
     }
 
-
     @RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String checkDuplicateID(@RequestBody SimpleSEJSONRequest simpleRequest) {
@@ -190,7 +189,6 @@ public class MaterialStockKeepUnitEditorController extends SEEditorController {
             }
         }, ISystemActionCode.ACID_EDIT);
     }
-
 
     /**
      * Get Material SKU Unit List by base UUID

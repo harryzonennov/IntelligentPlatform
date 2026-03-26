@@ -5,8 +5,12 @@ import java.util.List;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.sales.dto.SalesAreaUIModel;
 import com.company.IntelligentPlatform.sales.repository.SalesAreaRepository;
@@ -35,6 +39,9 @@ import com.company.IntelligentPlatform.sales.model.SalesAreaConfigureProxy;
 @Service
 public class SalesAreaManager extends SalesAreaManagerProxy {
 
+	@PersistenceContext
+	private EntityManager entityManager;
+
 	@Autowired
 	SalesAreaRepository salesAreaDAO;
 
@@ -46,12 +53,11 @@ public class SalesAreaManager extends SalesAreaManagerProxy {
 
 	public SalesAreaManager() {
 		super.seConfigureProxy = new SalesAreaConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new SalesAreaDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(salesAreaDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, salesAreaDAO));
 	}
 
 	@PostConstruct

@@ -56,7 +56,6 @@ public class RegisteredProductSearchProxy extends ServiceSearchProxy {
         return null;
     }
 
-
     @Override
     public BSearchResponse searchDocList(SearchContext searchContext) throws SearchConfigureException,
             ServiceEntityConfigureException, ServiceEntityInstallationException, AuthorizationException,
@@ -160,7 +159,6 @@ public class RegisteredProductSearchProxy extends ServiceSearchProxy {
             throw new SearchConfigureException(SearchConfigureException.PARA_SYSTEM_ERROR, e.getErrorMessage());
         }
     }
-
 
 }
 

@@ -62,5 +62,4 @@ public class MaterialException extends ServiceEntityException{
 		}
 	}
 
-
 }

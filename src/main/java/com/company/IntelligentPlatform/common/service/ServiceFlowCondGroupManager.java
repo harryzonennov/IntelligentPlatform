@@ -64,7 +64,6 @@ public class ServiceFlowCondGroupManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
 
-
     public Map<Integer, String> initLogicOperatorMap(String languageCode)
             throws ServiceEntityInstallationException {
         return standardLogicOperatorProxy.getLogicOperatorMap(languageCode);
@@ -74,7 +73,6 @@ public class ServiceFlowCondGroupManager {
             throws ServiceEntityInstallationException {
         return standardLogicOperatorProxy.getLogicOperatorExpressMap(languageCode);
     }
-
 
     public ServiceFlowCondGroupServiceModel initServiceFlowCondGroup(ServiceFlowModel serviceFlowModel) throws ServiceEntityConfigureException {
         ServiceFlowCondGroup serviceFlowCondGroup =
@@ -130,7 +128,6 @@ public class ServiceFlowCondGroupManager {
         }
     }
 
-
     /**
      * [Internal method] Convert from UI model to se model:serviceFlowCondGroup
      *
@@ -157,7 +154,6 @@ public class ServiceFlowCondGroupManager {
         rawEntity.setInnerLogicOperator(serviceFlowCondGroupUIModel.getInnerLogicOperator());
     }
 
-
     public void convRootDocToFieldUI(ServiceFlowModel serviceFlowModel,
                                      ServiceFlowCondGroupUIModel serviceFlowCondGroupUIModel) {
         if (serviceFlowModel != null) {
@@ -165,7 +161,5 @@ public class ServiceFlowCondGroupManager {
             serviceFlowCondGroupUIModel.setRootDocName(serviceFlowModel.getName());
         }
     }
-
-
 
 }

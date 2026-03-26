@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;

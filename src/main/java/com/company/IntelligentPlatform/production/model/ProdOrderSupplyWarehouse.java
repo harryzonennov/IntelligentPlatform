@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProdOrderSupplyWarehouse extends ReferenceNode{
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdOrderSupplyWarehouse;
 
 	public final static String SENAME = ProductionOrder.SENAME;

@@ -38,7 +38,6 @@ public class UserRoleManager {
         }
     }
 
-
     public void convUserRoleUIToUserRole(UserRoleUIModel userRoleUIModel,
                                          UserRole rawEntity) throws ServiceEntityInstallationException,
             IOException {
@@ -83,6 +82,5 @@ public class UserRoleManager {
                     .setRoleNote(roleMessageHelper.getNote(role.getId()));
         }
     }
-
 
 }

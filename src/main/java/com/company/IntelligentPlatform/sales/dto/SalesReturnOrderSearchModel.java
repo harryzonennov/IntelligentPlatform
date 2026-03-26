@@ -18,7 +18,6 @@ import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel
 import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
 
-
 /**
  * SalesReturnOrder UI Model
  * *
@@ -104,7 +103,6 @@ public class SalesReturnOrderSearchModel extends SEUIComModel {
 		this.itemMaterialSKU = itemMaterialSKU;
 	}
 
-
 	public Date getSignDateLow() {
 		return signDateLow;
 	}
@@ -128,7 +126,6 @@ public class SalesReturnOrderSearchModel extends SEUIComModel {
 	public void setApprovedBy(DocActionNodeSearchModel approvedBy) {
 		this.approvedBy = approvedBy;
 	}
-
 
 	public String getRefDocumentId() {
 		return refDocumentId;

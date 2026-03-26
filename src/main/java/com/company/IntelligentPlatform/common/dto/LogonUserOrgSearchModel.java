@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.model.Organization;
  *       tool
  */
 
-
 @Component
 public class LogonUserOrgSearchModel extends SEUIComModel {
 

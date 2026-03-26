@@ -239,5 +239,4 @@ public class SystemConfigureCategoryListController extends SEListController {
 		return resultList;
 	}
 
-
 }

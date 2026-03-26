@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,6 @@ import com.company.IntelligentPlatform.common.dto.DocActionNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel;
 import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
-
 
 @Component
 public class InquiryMaterialItemSearchModel extends SEUIComModel {

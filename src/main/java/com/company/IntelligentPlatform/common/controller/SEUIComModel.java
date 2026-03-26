@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.controller;
 
-
 /**
  * The Basic Service Entity Compound UI model, could be used for display in
  * Editor view or list view

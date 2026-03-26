@@ -13,9 +13,6 @@ import com.company.IntelligentPlatform.finance.service.SystemResourceException;
 import com.company.IntelligentPlatform.finance.service.SystemResourceManager;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;

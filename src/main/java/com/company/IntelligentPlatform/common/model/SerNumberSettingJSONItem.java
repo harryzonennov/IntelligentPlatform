@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.model;
 
-
 public class SerNumberSettingJSONItem {
 
 	protected String fieldName;

@@ -61,7 +61,6 @@ public class RoleAuthorizationManager {
 
     protected Logger logger = LoggerFactory.getLogger(RoleAuthorizationManager.class);
 
-
     public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
             throws ServiceEntityConfigureException {
         DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
@@ -189,7 +188,6 @@ public class RoleAuthorizationManager {
         convRoleAuthorizationToUI(roleAuthorization, roleAuthorizationUIModel, null, logonInfo);
     }
 
-
     public void convRoleAuthorizationToUI(RoleAuthorization roleAuthorization,
                                           RoleAuthorizationUIModel roleAuthorizationUIModel,
                                           List<ServiceEntityNode> actionCodeList, LogonInfo logonInfo) {
@@ -236,7 +234,6 @@ public class RoleAuthorizationManager {
         }
     }
 
-
     public void convUIToRoleAuthorization(
             RoleAuthorizationUIModel roleAuthorizationUIModel,
             RoleAuthorization roleAuthorization) {
@@ -264,8 +261,6 @@ public class RoleAuthorizationManager {
             }
         }
     }
-
-
 
     public void convAuthorizationObjectToUI(
             AuthorizationObject authorizationObject,

@@ -92,7 +92,6 @@ public class ServiceCrossDocConfigureEditorController extends SEEditorController
                 serviceCrossDocConfigureServiceUIModel.getServiceCrossDocConfigureUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
 
-
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody String newModuleService(
             @RequestBody SimpleSEJSONRequest request) {
@@ -133,6 +132,5 @@ public class ServiceCrossDocConfigureEditorController extends SEEditorController
             @RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
         return exitEditorCore(serviceExitLockJSONModule);
     }
-
 
 }

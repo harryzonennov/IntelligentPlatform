@@ -32,7 +32,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Service
 public class ProductionOrderToCrossOutboundProxy {
 
@@ -133,7 +132,6 @@ public class ProductionOrderToCrossOutboundProxy {
 		return resultList;
 	}
 
-
 	/**
 	 * Logic to get the Existed & Proper OutboundDelivery Item instance list for
 	 * batch in-bound delivery creation.
@@ -181,6 +179,5 @@ public class ProductionOrderToCrossOutboundProxy {
 		}
 		return outboundItemList;
 	}
-
 
 }

@@ -19,7 +19,6 @@ public class OrganizationServiceUIModel extends ServiceUIModule {
 
 	protected List<LogonUserOrgServiceUIModel> logonUserOrganizationUIModelList = new ArrayList<>();
 
-
 	public OrganizationUIModel getOrganizationUIModel() {
 		return this.organizationUIModel;
 	}

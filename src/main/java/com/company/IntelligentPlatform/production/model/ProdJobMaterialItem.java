@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProdJobMaterialItem extends ServiceEntityNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdJobMaterialItem;
 
 	public final static String SENAME = ProdJobOrder.SENAME;

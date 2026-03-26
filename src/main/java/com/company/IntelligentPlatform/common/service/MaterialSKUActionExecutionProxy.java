@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,6 @@ public class MaterialSKUActionExecutionProxy
     public static final String PROPERTY_ACTIONCODE_FILE = "MaterialSKU_actionCode";
 
     protected Logger logger = LoggerFactory.getLogger(MaterialSKUActionExecutionProxy.class);
-
 
     @Override
     public Map<Integer, String> getActionCodeMap(String lanCode) throws ServiceEntityInstallationException {

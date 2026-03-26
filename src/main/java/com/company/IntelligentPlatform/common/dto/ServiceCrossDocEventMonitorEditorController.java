@@ -47,7 +47,6 @@ public class ServiceCrossDocEventMonitorEditorController extends SEEditorControl
     @Autowired
     protected ServiceDocumentSettingManager serviceDocumentSettingManager;
 
-
     public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
         return new ServiceBasicUtilityController.ServiceUIModelRequest(
                 ServiceCrossDocEventMonitorServiceUIModel.class,

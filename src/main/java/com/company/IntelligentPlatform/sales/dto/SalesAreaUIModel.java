@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
 import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
 
-
 public class SalesAreaUIModel extends SEUIComModel {
 
 	public static final String SEC_PARENTAREA = "parentArea";

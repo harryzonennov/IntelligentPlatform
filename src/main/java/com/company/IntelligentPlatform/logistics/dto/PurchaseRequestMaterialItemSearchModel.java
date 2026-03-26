@@ -80,7 +80,6 @@ public class PurchaseRequestMaterialItemSearchModel extends SEUIComModel {
 
 	protected String planExecutionDateStrHigh;
 
-
 	public ServiceDocSearchHeaderModel getParentDocHeaderModel() {
 		return parentDocHeaderModel;
 	}

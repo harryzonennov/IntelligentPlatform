@@ -59,8 +59,6 @@ public class BillOfMaterialTemplateSearchProxy extends ServiceSearchProxy {
         return billOfMaterialTemplateManager.initStatusMap(languageCode);
     }
 
-
-
     @Override
     public List<BSearchNodeComConfigure> getBasicSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {
         List<BSearchNodeComConfigure> searchNodeConfigList = new ArrayList<>();
@@ -95,7 +93,6 @@ public class BillOfMaterialTemplateSearchProxy extends ServiceSearchProxy {
         searchNodeConfigList.add(searchNodeConfig3);
         return searchNodeConfigList;
     }
-
 
     public List<BSearchNodeComConfigure> getBasicItemSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {
         List<BSearchNodeComConfigure> searchNodeConfigList = new ArrayList<>();
@@ -157,6 +154,5 @@ public class BillOfMaterialTemplateSearchProxy extends ServiceSearchProxy {
 
         return searchNodeConfigList;
     }
-
 
 }

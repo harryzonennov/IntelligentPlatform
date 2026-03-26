@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.common.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-// TODO-LEGACY: import org.flowable.engine.RuntimeService;
-// TODO-LEGACY: import org.flowable.engine.runtime.ProcessInstance;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
@@ -46,9 +46,7 @@ public class DefDocApproveFlowProxy implements IDocFlowProxy {
     protected ServiceFlowRuntimeEngine serviceFlowRuntimeEngine;
 
     @Autowired
-
-
-        protected RuntimeService runtimeService;
+    protected RuntimeService runtimeService;
 
     protected Logger logger = LoggerFactory.getLogger(DefDocApproveFlowProxy.class);
 

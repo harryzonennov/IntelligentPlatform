@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.dto.MaterialServiceUIModelExtension;
@@ -126,7 +125,6 @@ public class MaterialSpecifier extends
         return uiModelClassMap;
     }
 
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();
@@ -158,6 +156,5 @@ public class MaterialSpecifier extends
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

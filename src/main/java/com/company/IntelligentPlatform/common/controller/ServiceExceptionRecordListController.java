@@ -51,7 +51,6 @@ public class ServiceExceptionRecordListController extends SEListController {
 	@Autowired
 	protected LogonActionController logonActionController;
 
-
 	protected List<ServiceEntityNode> searchInternal(
 			ServiceExceptionRecordSearchModel searchModel)
 			throws SearchConfigureException, ServiceEntityConfigureException,

@@ -157,7 +157,6 @@ public class ProdPlanItemReqProposalServiceUIModelExtension extends
 				.addAll(docFlowProxy
 						.getDefMaterialNodeMapConfigureList(ProdPlanItemReqProposal.NODENAME));
 
-
 		Class<?>[] warehouseConvToUIParas = { Warehouse.class,
 				ProdPlanItemReqProposalUIModel.class };
 		uiModelNodeMapList.addAll(logisticsFlowProxy.getDefWarehouseMapConfigureList(new LogisticsFlowProxy.WarehouseNodeMapRequest(
@@ -166,7 +165,6 @@ public class ProdPlanItemReqProposalServiceUIModelExtension extends
 				warehouseConvToUIParas,
 				null, null
 		)));
-
 
 		// TODO replace this method implementation in framework as well as production order manager
 		// UI Model Configure of node:[refDocumentMap]

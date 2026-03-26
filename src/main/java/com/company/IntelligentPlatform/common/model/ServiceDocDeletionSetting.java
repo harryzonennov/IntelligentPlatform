@@ -33,7 +33,6 @@ public class ServiceDocDeletionSetting extends ServiceEntityNode {
 		this.deletionStrategy = DELETESTG_BUS_DELETE;
 	}
 
-
 	public String getRefServiceEntityName() {
 		return refServiceEntityName;
 	}

@@ -11,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.dto.AuthorizationObjectUIModel;
-// TODO-DAO: import ...AuthorizationObjectDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.AuthorizationObjectRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
@@ -48,11 +51,11 @@ public class AuthorizationObjectManager extends ServiceEntityManager {
 	public static final String Method_ConvUIToAuthorizationObject = "convUIToAuthorizationObject";
 
 	public static final String Method_ConvAuthorizationGroupToUI = "convAuthorizationGroupToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected AuthorizationObjectDAO authorizationObjectDAO;
-
+    @Autowired
+    protected AuthorizationObjectRepository authorizationObjectDAO;
 	@Autowired
 	protected AuthorizationObjectConfigureProxy authorizationObjectConfigureProxy;
 
@@ -66,7 +69,7 @@ public class AuthorizationObjectManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(authorizationObjectDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, authorizationObjectDAO));
 	}
 
 	@PostConstruct

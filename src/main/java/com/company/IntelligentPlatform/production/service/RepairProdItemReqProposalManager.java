@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class RepairProdItemReqProposalManager {
 
@@ -186,7 +185,6 @@ public class RepairProdItemReqProposalManager {
 		prodOrderItemReqProposalManager.refreshItemStatus(repairProdItemReqProposal, rawPickingExtendAmountModelList);
 	}
 
-
 	/**
 	 * Logic to calculate not in-plan amount, this method should be invoked
 	 * after the availableAmount and in-process amount is calculated
@@ -197,6 +195,5 @@ public class RepairProdItemReqProposalManager {
 	public static void updateItemStatus(RepairProdItemReqProposal repairProdItemReqProposal) {
 		ProdOrderItemReqProposalManager.updateItemStatus(repairProdItemReqProposal);
 	}
-
 
 }

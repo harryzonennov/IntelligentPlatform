@@ -52,7 +52,6 @@ public class ProdWorkCenterListController extends SEListController {
 	@Autowired
 	protected StandardKeyFlagProxy standardKeyFlagProxy;
 
-
 	protected List<ProdWorkCenterUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList)
             throws ServiceEntityInstallationException,

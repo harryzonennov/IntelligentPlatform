@@ -56,7 +56,6 @@ public class ProdJobMaterialItemEditorController extends SEEditorController {
 	@Autowired
 	protected MaterialStockKeepUnitManager materialStockKeepUnitManager;
 
-
 	protected String getPreWarnMsg(String key, Map<String, String> preWarnMap) {
 		return preWarnMap.get(key);
 	}
@@ -78,7 +77,6 @@ public class ProdJobMaterialItemEditorController extends SEEditorController {
 		simpleRequest.setClient(logonUser.getClient());
 		return super.checkDuplicateIDCore(simpleRequest, prodJobOrderManager);
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

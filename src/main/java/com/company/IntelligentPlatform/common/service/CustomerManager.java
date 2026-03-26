@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.model.CorporateCustomer;
 import com.company.IntelligentPlatform.common.model.IndividualCustomer;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class CustomerManager {
 	

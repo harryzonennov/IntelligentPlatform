@@ -75,7 +75,6 @@ public class MatDecisionValueSettingManager {
 
 	private Map<String, Map<Integer, String>> valueUsageMapLan = new HashMap<>();
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
@@ -809,7 +808,5 @@ public class MatDecisionValueSettingManager {
 		matDecisionValueSettingUIModel
 				.setTemplateName(materialConfigureTemplate.getName());
 	}
-
-
 
 }

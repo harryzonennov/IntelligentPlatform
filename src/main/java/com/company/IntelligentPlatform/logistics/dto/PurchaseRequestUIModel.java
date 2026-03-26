@@ -31,7 +31,6 @@ public class PurchaseRequestUIModel extends DocumentUIModel {
 		this.taxRate = taxRate;
 	}
 
-
 	public double getGrossPrice() {
 		return grossPrice;
 	}

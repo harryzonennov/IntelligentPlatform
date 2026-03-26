@@ -60,7 +60,6 @@ public class SerExtendPageSettingListController extends SEListController {
 				SerExtendPageSettingSearchModel.class, searchContext -> serviceExtensionSettingSearchProxy.searchPageSettingList(searchContext), null);
 	}
 
-
 	@RequestMapping(value = "/searchTableService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String searchTableService(@RequestBody String request) {
 		return serviceBasicUtilityController.searchTableServiceWrapper(AOID_RESOURCE, ISystemActionCode.ACID_LIST, request,

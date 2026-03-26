@@ -2,11 +2,18 @@ package com.company.IntelligentPlatform.common.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "MaterialStockKeepUnit", schema = "platform")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class MaterialStockKeepUnit extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
@@ -136,7 +143,6 @@ public class MaterialStockKeepUnit extends ServiceEntityNode {
 	 * 2-compound operation mode.
 	 */
 	protected int operationMode;
-
 
 	/**
 	 * Indicate how to trace the instance of SKU

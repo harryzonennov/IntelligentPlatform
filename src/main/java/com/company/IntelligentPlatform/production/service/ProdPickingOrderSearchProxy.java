@@ -56,7 +56,6 @@ public class ProdPickingOrderSearchProxy extends ServiceSearchProxy {
         return prodPickingOrderManager.initItemStatusMap(languageCode);
     }
 
-
     public List<ServiceEntityNode> searchDocListCore(
             SEUIComModel searchModel, Map<String, List<?>> processTypeMap, String client)
             throws SearchConfigureException, ServiceEntityConfigureException,
@@ -196,8 +195,6 @@ public class ProdPickingOrderSearchProxy extends ServiceSearchProxy {
         return searchNodeConfigList;
     }
 
-
-
     public List<ServiceEntityNode> searchPickingItemList(
             SEUIComModel searchModel, String client)
             throws SearchConfigureException, ServiceEntityConfigureException,
@@ -207,7 +204,6 @@ public class ProdPickingOrderSearchProxy extends ServiceSearchProxy {
                         .getProcessType());
         return searchItemListCore(searchModel, processTypeMap, client);
     }
-
 
     public List<ServiceEntityNode> searchReturnItemList(
             SEUIComModel searchModel, String client)

@@ -94,7 +94,6 @@ public class InventoryCheckOrderSpecifier extends DocumentContentSpecifier<Inven
         return inventoryCheckOrderServiceModel.getInventoryCheckItemList();
     }
 
-
     @Override
     public Map<Integer, String> getStatusMap(String lanCode) throws ServiceEntityInstallationException {
         return inventoryCheckOrderManager.initStatusMap(lanCode);

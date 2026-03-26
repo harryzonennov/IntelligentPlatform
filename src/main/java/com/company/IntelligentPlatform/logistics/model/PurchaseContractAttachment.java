@@ -14,5 +14,4 @@ public class PurchaseContractAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

@@ -197,7 +197,6 @@ public class ProductionPlanItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	private ProductionPlanItem loadDataByCheckAccess(String uuid, String acId)
 			throws AuthorizationException, ServiceEntityConfigureException, LogonInfoException{
 		return (ProductionPlanItem) serviceBasicUtilityController.loadDataByCheckAccess(uuid, productionPlanManager,
@@ -227,7 +226,6 @@ public class ProductionPlanItemEditorController extends SEEditorController {
 						null);
 		return refreshLoadServiceUIModel(productionPlanItem, acId, logonInfo);
 	}
-
 
 	private ProductionPlanItemServiceUIModel refreshLoadServiceUIModel(
 			ProductionPlanItem productionPlanItem, String acId, LogonInfo logonInfo)
@@ -304,7 +302,6 @@ public class ProductionPlanItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/getStatus", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getStatus() {
 		try {
@@ -324,7 +321,6 @@ public class ProductionPlanItemEditorController extends SEEditorController {
 		simpleRequest.setClient(logonUser.getClient());
 		return super.checkDuplicateIDCore(simpleRequest, productionPlanManager);
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(

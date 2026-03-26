@@ -13,5 +13,4 @@ public class RegisteredProductExtendProperty extends MaterialSKUExtendProperty{
 		super.nodeName = NODENAME;
 	}
 
-
 }

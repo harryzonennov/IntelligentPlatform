@@ -13,7 +13,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.service.BSearchGroupConfig;
 
-
 @Component
 public class ProdOrderTargetMatItemSearchModel extends SEUIComModel {
 

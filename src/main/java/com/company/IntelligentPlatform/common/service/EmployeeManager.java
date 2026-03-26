@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -61,6 +63,9 @@ public class EmployeeManager extends ServiceEntityManager {
 	private List<ServiceEntityNode> rawWorkRoleMap;
 
 	private List<ServiceEntityNode> rawJobLevelMap;
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected EmployeeRepository employeeDAO;
@@ -101,12 +106,11 @@ public class EmployeeManager extends ServiceEntityManager {
 
 	public EmployeeManager() {
 		super.seConfigureProxy = new EmployeeConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new EmployeeDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(employeeDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, employeeDAO));
 	}
 
 	@PostConstruct
@@ -286,7 +290,6 @@ public class EmployeeManager extends ServiceEntityManager {
 			employeeUIModel.setStreetName(employee.getStreetName());
 		}
 	}
-
 
 	public void convLogonUserToUI(LogonUser logonUser,
 			EmployeeUIModel employeeUIModel) {

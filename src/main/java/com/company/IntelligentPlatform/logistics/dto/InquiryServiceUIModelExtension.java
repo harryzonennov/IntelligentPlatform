@@ -55,7 +55,6 @@ public class InquiryServiceUIModelExtension extends ServiceUIModelExtension {
 	@Autowired
 	protected DocFlowProxy docFlowProxy;
 
-
 	public List<ServiceUIModelExtension> getChildUIModelExtensions() throws ServiceEntityConfigureException {
 		List<ServiceUIModelExtension> resultList = new ArrayList<>();
 		resultList.add(inquiryMaterialItemServiceUIModelExtension);

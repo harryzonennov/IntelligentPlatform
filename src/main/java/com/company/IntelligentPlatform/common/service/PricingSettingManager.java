@@ -13,7 +13,10 @@ import com.company.IntelligentPlatform.common.dto.PricingCurrencyConfigureSearch
 import com.company.IntelligentPlatform.common.dto.PricingCurrencyConfigureUIModel;
 import com.company.IntelligentPlatform.common.dto.PricingSettingSearchModel;
 import com.company.IntelligentPlatform.common.dto.PricingSettingUIModel;
-// TODO-DAO: import ...PricingSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.PricingSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
@@ -43,11 +46,11 @@ public class PricingSettingManager extends ServiceEntityManager {
 	public static final String METHOD_ConvPricingSettingToUI = "convPricingSettingToUI";
 
 	public static final String METHOD_ConvUIToPricingSetting = "convUIToPricingSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected PricingSettingDAO pricingSettingDAO;
-
+    @Autowired
+    protected PricingSettingRepository pricingSettingDAO;
 	@Autowired
 	protected PricingSettingConfigureProxy pricingSettingConfigureProxy;
 
@@ -161,7 +164,7 @@ public class PricingSettingManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(pricingSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, pricingSettingDAO));
 	}
 
 	@PostConstruct

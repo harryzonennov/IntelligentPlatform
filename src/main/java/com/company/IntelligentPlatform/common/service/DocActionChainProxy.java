@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.common.service;
 
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
 import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
 import com.company.IntelligentPlatform.common.model.DocumentContent;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Service
 public class DocActionChainProxy {
+
+	private static final Logger logger = LoggerFactory.getLogger(DocActionChainProxy.class);
 
     public <R extends ServiceModule> void executeDocActionChainToTargetStatus(R serviceModule, DocActionExecutionProxy<R, ?, ?> docActionExecutionProxy, int targetStatus, SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, DocActionException {
@@ -64,11 +68,11 @@ public class DocActionChainProxy {
                 List<DocActionConfigureContext> docActionConfigureContextList = newDocActionConfigureContextList(tmpTargetStatus, targetDocActionConfigure, inputActionConfigureContextList);
                 try {
                     if (checkDocActionDeadEnd(tmpTargetStatus, docActionConfigureContextList, docActionExecutionProxy, client)) {
-                        System.out.println("Detected loop in duplicate history, target status:" + tmpTargetStatus + " action code:" + targetDocActionConfigure.getActionCode());
+                        logger.warn("Detected loop in duplicate history, target status:{} action code:{}", tmpTargetStatus, targetDocActionConfigure.getActionCode());
                         return true;
                     }
                     if (checkDocActionConfigureMatches(targetDocActionConfigure, currenStatus)) {
-                        System.out.println("matches the currentStatus" + currenStatus + " in the DocAction code: " + targetDocActionConfigure.getActionCode());
+                        logger.debug("Matches currentStatus:{} in DocAction code:{}", currenStatus, targetDocActionConfigure.getActionCode());
                         resultConfigureContextArray.add(docActionConfigureContextList);
                         return true;
                     }

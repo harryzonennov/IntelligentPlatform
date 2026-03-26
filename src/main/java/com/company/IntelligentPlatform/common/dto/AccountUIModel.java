@@ -176,5 +176,4 @@ public class AccountUIModel extends SEUIComModel {
 		this.regularType = regularType;
 	}
 
-
 }

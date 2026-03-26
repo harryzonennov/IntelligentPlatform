@@ -59,7 +59,6 @@ public class SalesForcastMaterialItemEditorController extends SEEditorController
     @Autowired
     protected DocAttachmentProxy docAttachmentProxy;
 
-
     private SalesForcastMaterialItemServiceUIModel parseToServiceUIModel(
             String request) {
         JSONObject jsonObject = JSONObject.fromObject(request);

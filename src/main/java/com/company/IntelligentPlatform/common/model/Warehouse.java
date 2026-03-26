@@ -1,13 +1,16 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
 import com.company.IntelligentPlatform.common.model.Organization;
 import com.company.IntelligentPlatform.common.model.ISQLSepcifyAttribute;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-
+@Entity
+@Table(name = "Warehouse", schema = "platform")
 public class Warehouse extends Organization {
-
 
 	public final static String NODENAME = ServiceEntityNode.NODENAME_ROOT;
 

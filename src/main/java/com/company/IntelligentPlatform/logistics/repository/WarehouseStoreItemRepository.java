@@ -10,8 +10,8 @@ import java.util.List;
 public interface WarehouseStoreItemRepository extends JpaRepository<WarehouseStoreItem, String>,
         JpaSpecificationExecutor<WarehouseStoreItem> {
 
-    List<WarehouseStoreItem> findByDocumentUUID(String documentUUID);
-    List<WarehouseStoreItem> findByDocumentUUIDAndItemStatus(String documentUUID, int itemStatus);
+    List<WarehouseStoreItem> findByParentNodeUUID(String parentNodeUUID);
+    List<WarehouseStoreItem> findByParentNodeUUIDAndItemStatus(String parentNodeUUID, int itemStatus);
     List<WarehouseStoreItem> findByRefWarehouseUUID(String refWarehouseUUID);
     List<WarehouseStoreItem> findByRefWarehouseUUIDAndItemStatus(String refWarehouseUUID, int itemStatus);
 

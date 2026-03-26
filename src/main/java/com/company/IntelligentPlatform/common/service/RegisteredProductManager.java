@@ -13,7 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.*;
-// TODO-DAO: import ...RegisteredProductDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.RegisteredProductRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
@@ -111,11 +114,11 @@ public class RegisteredProductManager extends ServiceEntityManager {
 
 	@Autowired
 	protected BsearchService bsearchService;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected RegisteredProductDAO registeredProductDAO;
-
+    @Autowired
+    protected RegisteredProductRepository registeredProductDAO;
 	@Autowired
 	protected RegisteredProductConfigureProxy registeredProductConfigureProxy;
 
@@ -226,7 +229,6 @@ public class RegisteredProductManager extends ServiceEntityManager {
 			}
 		}
 	}
-
 
 	public void registerActionLog(RegisteredProduct registeredProduct,
 			int actionCode, int documentType, String refDocMatItemUUID,
@@ -494,7 +496,6 @@ public class RegisteredProductManager extends ServiceEntityManager {
 		}
 	}
 
-
 	public List<ServiceEntityNode> createRegisteredProductWrapper(
 			MaterialStockKeepUnit tempMaterialSKU, String serialId,
 			DocMatItemNode docMatItemNode,
@@ -516,7 +517,6 @@ public class RegisteredProductManager extends ServiceEntityManager {
 		// Should raise exception here.
 		return null;
 	}
-
 
 	/**
 	 * Core Logic to create register product after self production
@@ -755,7 +755,6 @@ public class RegisteredProductManager extends ServiceEntityManager {
 		}
 		return resultList;
 	}
-
 
 	public void initRegisteredProductFromMaterialSKU(
 			RegisteredProduct registeredProduct,
@@ -1576,10 +1575,9 @@ public class RegisteredProductManager extends ServiceEntityManager {
 		return resultList;
 	}
 
-
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(registeredProductDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, registeredProductDAO));
 	}
 
 	@PostConstruct

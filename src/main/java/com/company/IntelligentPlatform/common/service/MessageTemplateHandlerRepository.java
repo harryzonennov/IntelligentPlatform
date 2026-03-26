@@ -14,7 +14,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * Repository to manage all the instance of Message Template Handler Classes
  */

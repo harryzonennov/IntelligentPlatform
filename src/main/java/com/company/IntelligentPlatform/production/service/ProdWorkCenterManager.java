@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +77,9 @@ public class ProdWorkCenterManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToProdWorkCenterCalendarItem = "convUIToProdWorkCenterCalendarItem";
 	
 	public static final String METHOD_ConvParentOrganizationToUI = "convParentOrganizationToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected ProdWorkCenterRepository prodWorkCenterDAO;
@@ -107,12 +113,11 @@ public class ProdWorkCenterManager extends ServiceEntityManager {
 
 	public ProdWorkCenterManager() {
 		super.seConfigureProxy = new ProdWorkCenterConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProdWorkCenterDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(prodWorkCenterDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodWorkCenterDAO));
 	}
 
 	@PostConstruct

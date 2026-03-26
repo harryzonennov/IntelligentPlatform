@@ -15,7 +15,6 @@ public class RepairProdItemReqProposalServiceModel extends ServiceModule {
 	@IServiceModuleFieldConfig(nodeName = RepairProdItemReqProposal.NODENAME, nodeInstId = RepairProdItemReqProposal.NODENAME)
 	protected RepairProdItemReqProposal repairProdItemReqProposal;
 
-
 	public List<RepairProdOrderItemServiceModel> getRepairProdOrderItemList() {
 		return repairProdOrderItemList;
 	}
@@ -33,6 +32,5 @@ public class RepairProdItemReqProposalServiceModel extends ServiceModule {
 			RepairProdItemReqProposal repairProdItemReqProposal) {
 		this.repairProdItemReqProposal = repairProdItemReqProposal;
 	}
-
 
 }

@@ -256,7 +256,6 @@ public class ProductiveBOMOrderUIModel extends SEUIComModel {
 		return refRouteOrderId;
 	}
 
-
 	public String getRefRouteOrderName() {
 		return refRouteOrderName;
 	}
@@ -268,6 +267,5 @@ public class ProductiveBOMOrderUIModel extends SEUIComModel {
 	public void setRefRouteOrderId(String refRouteOrderId) {
 		this.refRouteOrderId = refRouteOrderId;
 	}
-
 
 }

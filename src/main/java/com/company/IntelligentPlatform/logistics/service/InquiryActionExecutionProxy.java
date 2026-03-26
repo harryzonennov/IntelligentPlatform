@@ -107,7 +107,6 @@ public class InquiryActionExecutionProxy extends DocActionExecutionProxy<Inquiry
         return null;
     }
 
-
     @Override
     public DocumentContentSpecifier<InquiryServiceModel, Inquiry, InquiryMaterialItem> getDocumentContentSpecifier() {
         return inquirySpecifier;
@@ -123,12 +122,10 @@ public class InquiryActionExecutionProxy extends DocActionExecutionProxy<Inquiry
         return inquiryCrossConvertRequest;
     }
 
-
     @Override
     public ServiceEntityManager getServiceEntityManager() {
         return inquiryManager;
     }
-
 
     public void executeActionCore(
             InquiryServiceModel inquiryServiceModel,

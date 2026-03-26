@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.production.dto;
 
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 public class ProdOrderReportAttachmentUIModel extends SEUIComModel {
 
 	protected String attachmentTitle;

@@ -46,7 +46,6 @@ public class ServiceEntityInstallationException extends ServiceEntityException {
 
     public static final String MSG_MESSAGE_CONFIG = "message configure is wrongly configured ";
 
-
     public ServiceEntityInstallationException(int type) {
         super(type);
         try {

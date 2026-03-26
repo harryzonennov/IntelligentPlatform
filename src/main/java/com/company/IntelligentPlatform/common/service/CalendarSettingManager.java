@@ -13,7 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.CalendarSettingUIModel;
 import com.company.IntelligentPlatform.common.dto.CalendarWorkTimeSettingUIModel;
-// TODO-DAO: import ...CalendarSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.CalendarSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
@@ -41,11 +44,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 @Transactional
 public class CalendarSettingManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected CalendarSettingDAO calendarSettingDAO;
-
+    @Autowired
+    protected CalendarSettingRepository calendarSettingDAO;
     @Autowired
     protected CalendarSettingConfigureProxy calendarSettingConfigureProxy;
 
@@ -54,12 +57,11 @@ public class CalendarSettingManager extends ServiceEntityManager {
 
     public CalendarSettingManager() {
         super.seConfigureProxy = new CalendarSettingConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new CalendarSettingDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(calendarSettingDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, calendarSettingDAO));
     }
 
     @PostConstruct

@@ -126,7 +126,6 @@ public class RepairProdTargetMatItemServiceUIModelExtension extends
 						RepairProdTargetMatItemManager.METHOD_ConvMaterialSKUToTargetItemUI, repairProdTargetMatItemManager,
 						materialStockKeepUnitConvToUIParas));
 
-
 		repairProdTargetMatItemExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(repairProdTargetMatItemExtensionUnion);

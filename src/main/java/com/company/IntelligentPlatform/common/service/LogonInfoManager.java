@@ -19,7 +19,10 @@ import com.company.IntelligentPlatform.common.service.OrganizationManager;
 import com.company.IntelligentPlatform.common.controller.LoginComModel;
 import com.company.IntelligentPlatform.common.dto.LogonInfoUIModel;
 import com.company.IntelligentPlatform.common.dto.LogonUIModel;
-// TODO-DAO: import ...LogonInfoDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.LogonInfoRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.AuthorizationManager;
 import com.company.IntelligentPlatform.common.service.IServiceEncodeProxy;
@@ -50,11 +53,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 @Transactional
 public class LogonInfoManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     LogonInfoDAO logonInfoDAO;
-
+    @Autowired
+    protected LogonInfoRepository logonInfoDAO;
     @Autowired
     LogonInfoConfigureProxy logonInfoConfigureProxy;
 
@@ -94,12 +97,11 @@ public class LogonInfoManager extends ServiceEntityManager {
 
     public LogonInfoManager() {
         super.seConfigureProxy = new LogonInfoConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new LogonInfoDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(logonInfoDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, logonInfoDAO));
     }
 
     @PostConstruct
@@ -182,6 +184,10 @@ public class LogonInfoManager extends ServiceEntityManager {
                 .getEntityNodeByKey(logonUserUUID,
                         IServiceEntityNodeFieldConstant.ROOTNODEUUID,
                         LogonUserOrgReference.NODENAME, null);
+        if (logonOrg == null) {
+            logger.warn("No LogonUserOrgReference found for user UUID: {}", logonUserUUID);
+            return null;
+        }
         Organization organization = organizationFactoryService
                 .getRefOrganization(logonOrg);
         return organization;
@@ -392,7 +398,6 @@ public class LogonInfoManager extends ServiceEntityManager {
         return resultStr;
     }
 
-
     public static SerialLogonInfo cloneToSerialLogonInfo(LogonInfo logonInfo){
         SerialLogonInfo serialLogonInfo = new SerialLogonInfo();
         serialLogonInfo.setLogonType(logonInfo.getLogonType());
@@ -437,7 +442,6 @@ public class LogonInfoManager extends ServiceEntityManager {
         logonInfo.setResOrgUUID(serialLogonInfo.getResOrgUUID());
         return logonInfo;
     }
-
 
     public void convLogonInfoToUI(LogonInfo logonInfo,
                                   LogonInfoUIModel logonInfoUIModel) {

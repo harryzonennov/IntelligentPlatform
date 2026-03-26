@@ -41,7 +41,6 @@ public class QualityInspectMatItemServiceUIModel extends ServiceUIModule {
 			QualityInspectMatItemParty.PARTY_NODEINST_SOLD_ORG)
 	protected QualityInspectMatItemPartyUIModel salesOrganizationParty;
 
-
 	public QualityInspectMatItemUIModel getQualityInspectMatItemUIModel() {
 		return this.qualityInspectMatItemUIModel;
 	}

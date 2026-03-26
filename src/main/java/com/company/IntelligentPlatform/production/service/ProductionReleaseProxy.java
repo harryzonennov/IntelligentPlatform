@@ -504,8 +504,6 @@ public class ProductionReleaseProxy {
 
     }
 
-
-
     /**
      * [Internal method] Generate Purchase Contract Service Model from Plan
      * proposal
@@ -650,7 +648,6 @@ public class ProductionReleaseProxy {
 
         purchaseContract.setName(materialStockKeepUnit.getName());
 
-
         // Set previous doc for this purchase contract
         if (productionOrderUUID != null) {
             purchaseContract.setPrevProfDocUUID(productionOrderUUID);
@@ -776,13 +773,12 @@ public class ProductionReleaseProxy {
                             updateServiceModuleWrapper(serviceModule,
                                     logonInfo.getRefUserUUID(), logonInfo.getResOrgUUID());
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            logger.error("Failed to update service module during production release", e);
                         }
                         return serviceModule;
                     });
         }
     }
-
 
     private void postProcessServiceModelList(List<ServiceModule> resultList,
                                              Function<ServiceModule, ServiceModule> updateCallBack) {
@@ -901,7 +897,6 @@ public class ProductionReleaseProxy {
                 updateCallBack);
 
     }
-
 
     /**
      * Logic to merge outbound delivery service model

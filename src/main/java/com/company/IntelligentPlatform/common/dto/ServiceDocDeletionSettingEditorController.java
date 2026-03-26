@@ -104,7 +104,6 @@ public class ServiceDocDeletionSettingEditorController extends SEEditorControlle
                 serviceDocDeletionSettingServiceUIModel.getServiceDocDeletionSettingUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
 
-
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String newModuleService(
@@ -125,7 +124,6 @@ public class ServiceDocDeletionSettingEditorController extends SEEditorControlle
         return super.checkDuplicateIDCore(simpleRequest,
                 serviceDocumentSettingManager);
     }
-
 
     @RequestMapping(value = "/loadModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody

@@ -128,7 +128,6 @@ public class ProdPlanSupplyWarehouseEditorController extends
 						prodPlanSupplyWarehouse, logonActionController.getLogonInfo(),null);
 	}
 
-
 	@RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String newModuleService(
 			@RequestBody SimpleSEJSONRequest request) {
@@ -246,7 +245,6 @@ public class ProdPlanSupplyWarehouseEditorController extends
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/loadModuleEditService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleEditService(String uuid) {

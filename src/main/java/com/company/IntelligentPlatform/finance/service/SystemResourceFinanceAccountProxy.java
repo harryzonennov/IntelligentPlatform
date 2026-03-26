@@ -316,7 +316,6 @@ public class SystemResourceFinanceAccountProxy {
 		}
 	}
 
-
 	/**
 	 * Logic to get the finance account object
 	 * 

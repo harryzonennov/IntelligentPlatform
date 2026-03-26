@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +22,8 @@ import com.company.IntelligentPlatform.common.model.*;
  * 
  */
 public class ServiceEntityFieldsHelper {
+
+	private static final Logger logger = LoggerFactory.getLogger(ServiceEntityFieldsHelper.class);
 
 	public static final int PROPERTY_SETTER = 1;
 
@@ -285,8 +289,7 @@ public class ServiceEntityFieldsHelper {
 					fieldList.add(field);
 				}
 			} catch (SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.warn("Security exception accessing fields via reflection, skipping", e);
 			}
 		}
 		return fieldList;
@@ -331,7 +334,6 @@ public class ServiceEntityFieldsHelper {
         return rawValue.getClass().getSimpleName().equals(List.class.getSimpleName());
     }
 
-
 	public static ServiceBasicFieldValueUnion getObjectFieldValueUnion(Object object, String fieldName)
 			throws NoSuchFieldException, SecurityException,
 			IllegalArgumentException, IllegalAccessException {
@@ -344,7 +346,6 @@ public class ServiceEntityFieldsHelper {
 		field.setAccessible(true);
 		return new ServiceBasicFieldValueUnion(field, field.get(object));
 	}
-
 
 	public static Object getClsConstantValue(Class<?> constantClass, String fieldName)
 			throws NoSuchFieldException, SecurityException,
@@ -437,8 +438,6 @@ public class ServiceEntityFieldsHelper {
 		}
 		return false;
 	}
-
-
 
 	/**
 	 * Get Service Entity Node Inheritance class list until the specified basic
@@ -572,7 +571,6 @@ public class ServiceEntityFieldsHelper {
 		Class<?> subClass = (Class<?>) paraListType.getActualTypeArguments()[0];
 		return subClass;
 	}
-
 
 	/**
 	 * Get Service field by field name
@@ -785,7 +783,6 @@ public class ServiceEntityFieldsHelper {
 		}
 		return rawValue.toString();
 	}
-
 
 	/**
 	 * Get relective field value from Object Node by field name & SE instance

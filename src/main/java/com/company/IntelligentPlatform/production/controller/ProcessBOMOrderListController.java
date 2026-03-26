@@ -158,5 +158,4 @@ public class ProcessBOMOrderListController extends SEListController {
 		return resultList;
 	}
 
-
 }

@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.dto.WarehouseAreaUIModel;
@@ -160,6 +159,5 @@ public class WarehouseSpecifier extends
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

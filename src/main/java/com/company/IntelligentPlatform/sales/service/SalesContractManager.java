@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.sales.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,6 +47,9 @@ public class SalesContractManager extends ServiceEntityManager {
 
     @Autowired
     protected WarehouseStoreItemManager warehouseStoreItemManager;
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected SalesContractRepository salesContractDAO;
@@ -160,7 +165,6 @@ public class SalesContractManager extends ServiceEntityManager {
         return salesContractServiceModel;
     }
 
-
     /**
      * Logic to get all possible warehouse store item list from sales contract
      *
@@ -257,7 +261,6 @@ public class SalesContractManager extends ServiceEntityManager {
             throws ServiceEntityInstallationException {
         convSalesContractToUI(salesContract, salesContractUIModel, null);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -357,7 +360,7 @@ public class SalesContractManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(salesContractDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, salesContractDAO));
     }
 
     @PostConstruct
@@ -509,7 +512,6 @@ public class SalesContractManager extends ServiceEntityManager {
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
 
-
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode, ServiceJSONRequest serviceJSONRequest
             ,  SerialLogonInfo serialLogonInfo){
@@ -528,7 +530,7 @@ public class SalesContractManager extends ServiceEntityManager {
                         actionCode, serialLogonInfo);
             }
         } catch (ServiceEntityConfigureException | ServiceModuleProxyException | DocActionException e) {
-            e.printStackTrace();
+            logger.error("Failed during sales contract processing", e);
         }
     }
 

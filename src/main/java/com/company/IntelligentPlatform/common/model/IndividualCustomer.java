@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.common.model;
 
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.common.model.*;
+import com.company.IntelligentPlatform.common.model.*;
+@Entity
+@Table(name = "IndividualCustomer", schema = "platform")
 public class IndividualCustomer extends IndividualAccount {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

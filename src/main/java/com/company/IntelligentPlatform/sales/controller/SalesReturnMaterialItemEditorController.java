@@ -109,7 +109,6 @@ public class SalesReturnMaterialItemEditorController extends SEEditorController 
 				salesReturnMaterialItemServiceUIModel.getSalesReturnMaterialItemUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
 	}
 
-
 	@RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String newModuleService(
 			@RequestBody SimpleSEJSONRequest request) {
@@ -152,13 +151,11 @@ public class SalesReturnMaterialItemEditorController extends SEEditorController 
 				getServiceUIModelRequest());
 	}
 
-
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String exitEditor(
 			@RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
-
 
 	@RequestMapping(value = "/checkReturnAmountRequest", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String checkReturnAmountRequest(
@@ -208,7 +205,6 @@ public class SalesReturnMaterialItemEditorController extends SEEditorController 
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

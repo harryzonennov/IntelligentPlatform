@@ -78,7 +78,6 @@ public class ProdWorkCenterEditorController extends SEEditorController {
 	@Autowired
 	protected ProdWorkCenterServiceUIModelExtension prodWorkCenterServiceUIModelExtension;
 
-
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String checkDuplicateID(
 			@RequestBody SimpleSEJSONRequest simpleRequest) {

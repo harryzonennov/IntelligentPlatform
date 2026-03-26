@@ -76,7 +76,6 @@ public class BillOfMaterialItemManager {
 	
 	protected Logger logger = LoggerFactory.getLogger(BillOfMaterialItemManager.class);
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
@@ -93,8 +92,6 @@ public class BillOfMaterialItemManager {
 				docPageHeaderModelProxy.getDefDocMaterialItemPageHeaderModel(billOfMaterialItem, pageHeaderModel));
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
-
-
 
 	public BillOfMaterialItem newBOMTemplateItemFromParent(String baseUUID, String client) throws ServiceEntityConfigureException, DocActionException {
 		return billOfMaterialOrderSpecifier.newEntityNodeFromBaseUUID(new DocumentContentSpecifier.
@@ -215,7 +212,6 @@ public class BillOfMaterialItemManager {
 		return lossRate;
 	}
 
-
 	public void convParentItemToUI(BillOfMaterialItem parentItem,
 			BillOfMaterialItemUIModel billOfMaterialItemUIModel,
 			Map<String, String> materialUnitMap) {
@@ -300,7 +296,6 @@ public class BillOfMaterialItemManager {
 
 	}
 
-
 	public void convParentBOMOrderToUI(BillOfMaterialOrder billOfMaterialOrder,
 			BillOfMaterialItemUIModel billOfMaterialItemUIModel, LogonInfo logonInfo) {
 		if (billOfMaterialOrder != null) {
@@ -358,7 +353,6 @@ public class BillOfMaterialItemManager {
 			}
 		}
 	}
-
 
 	public void convProdWorkCenterToItemUI(ProdWorkCenter prodWorkCenter,
 										   BillOfMaterialItemUIModel billOfMaterialItemUIModel) {

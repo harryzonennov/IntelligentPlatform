@@ -90,7 +90,6 @@ public class NavigationItemSettingUIModel extends SEUIComModel {
 		this.lastUpdateBy = lastUpdateBy;
 	}
 
-
 	public int getDisplayIndex() {
 		return displayIndex;
 	}
@@ -147,7 +146,6 @@ public class NavigationItemSettingUIModel extends SEUIComModel {
 		this.refSimAuthorObjectUUID = refSimAuthorObjectUUID;
 	}
 
-
 	public String getElementIcon() {
 		return elementIcon;
 	}
@@ -195,7 +193,6 @@ public class NavigationItemSettingUIModel extends SEUIComModel {
 	public void setRefSourceUUID(String refSourceUUID) {
 		this.refSourceUUID = refSourceUUID;
 	}
-
 
 	public String getDefaultChildItemSettingName() {
 		return defaultChildItemSettingName;

@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationE
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.ServiceMessageHelper;
 
-
 @Service
 public class ServiceModelMessageHelper extends ServiceMessageHelper {
 

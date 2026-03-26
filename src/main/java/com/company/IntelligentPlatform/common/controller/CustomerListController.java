@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.controller;
 import java.io.IOException;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -34,7 +33,6 @@ import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Scope("session")
 @Controller(value = "customerListController")
 @RequestMapping(value = "/customer")
@@ -58,8 +56,6 @@ public class CustomerListController extends AccountListController {
 	public static final String REQ_FIELD_ROLE = "role";
 
 	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_COR_CUSTOMER;
-
-
 
 	protected String getAccountTypeMessage(String key) throws IOException {
 		String path = AccountTypeSelect.class.getResource("").getPath();

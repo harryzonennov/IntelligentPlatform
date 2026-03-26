@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.logistics.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.company.IntelligentPlatform.logistics.model.InquiryMaterialItem;
 import com.company.IntelligentPlatform.logistics.model.InquiryMaterialItemAttachment;
 import org.springframework.stereotype.Component;

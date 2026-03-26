@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "prodOrderTargetMatItemListController")
 @RequestMapping(value = "/prodOrderTargetMatItem")
@@ -54,7 +53,6 @@ public class ProdOrderTargetMatItemListController extends SEListController {
 		return serviceBasicUtilityController.convUIModuleList(ProdOrderTargetMatItemUIModel.class, rawList,
 				productionOrderManager, prodOrderTargetMatItemServiceUIModelExtension);
 	}
-
 
 	@RequestMapping(value = "/loadLeanModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadLeanModuleListService() {
@@ -84,6 +82,5 @@ public class ProdOrderTargetMatItemListController extends SEListController {
 				this, ProdOrderTargetMatItemSearchModel.class, searchContext -> productionOrderManager
 						.getSearchProxy().searchDocList(searchContext),  this::getModuleListCore);
 	}
-
 
 }

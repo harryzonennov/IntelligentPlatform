@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +52,6 @@ public class ResFinAccountSettingListController extends SEListController {
 	
 	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_ROLE;
 
-
 	protected List<ResFinAccountSettingUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList, SystemResource systemResource)
 			throws ServiceEntityInstallationException,
@@ -76,7 +74,6 @@ public class ResFinAccountSettingListController extends SEListController {
 		}
 		return resFinAccountSettingList;
 	}
-
 
 	protected void convResFinAccountSettingToUI(
 			ResFinAccountSetting resFinAccountSetting,

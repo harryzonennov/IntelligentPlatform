@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.*;
-// TODO-DAO: import ...MaterialDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.MaterialRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.CorporateCustomerException;
 import com.company.IntelligentPlatform.common.service.CorporateCustomerManager;
 import com.company.IntelligentPlatform.common.model.MatDecisionValueSetting;
@@ -71,11 +74,11 @@ public class MaterialManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToMaterial = "convUIToMaterial";
 
 	public static final String METHOD_ConvMaterialTypeToUI = "convMaterialTypeToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected MaterialDAO materialDAO;
-
+    @Autowired
+    protected MaterialRepository materialDAO;
 	@Autowired
 	protected MaterialConfigureProxy materialConfigureProxy;
 
@@ -127,7 +130,6 @@ public class MaterialManager extends ServiceEntityManager {
 	private Map<String, Map<Integer, String>> statusMapLan = new HashMap<>();
 
 	private Map<String, Map<Integer, String>> operationModeMapLan = new HashMap<>();
-
 
 	protected Map<Integer, String> outPackageMaterialTypeMap;
 
@@ -272,7 +274,6 @@ public class MaterialManager extends ServiceEntityManager {
 		this.materialMap.put(uuid, material);
 		return material;
 	}
-
 
 	public void convMaterialToUI(Material material,
 			MaterialUIModel materialUIModel) {
@@ -523,7 +524,7 @@ public class MaterialManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(materialDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, materialDAO));
 	}
 
 	@PostConstruct
@@ -611,7 +612,6 @@ public class MaterialManager extends ServiceEntityManager {
 			rawEntity.setSupplyType(supplyType);
 		}
 	}
-
 
 	public List<ServiceEntityNode> getMaterialTypeList(String client)
 			throws ServiceEntityConfigureException {
@@ -817,8 +817,6 @@ public class MaterialManager extends ServiceEntityManager {
 				updateMaterialSKUCallBack, serialLogonInfo);
 	}
 
-
-
 	/**
 	 * In case can not find material type, then assign a default one firstly.
 	 *
@@ -920,7 +918,6 @@ public class MaterialManager extends ServiceEntityManager {
 		}
 		return material;
 	}
-
 
 	/**
 	 * Core method for insert corporate distributor excel model

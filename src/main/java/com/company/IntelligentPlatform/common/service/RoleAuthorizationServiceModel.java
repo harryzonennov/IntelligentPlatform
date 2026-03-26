@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.RoleAuthorization;
 import com.company.IntelligentPlatform.common.model.RoleSubAuthorization;

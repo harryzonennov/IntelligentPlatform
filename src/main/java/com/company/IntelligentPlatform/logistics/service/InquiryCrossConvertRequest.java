@@ -46,7 +46,6 @@ public class InquiryCrossConvertRequest extends
         this.setTargetDocType(IDefDocumentResource.DOCUMENT_TYPE_INQUIRY);
     }
 
-
     /**
      * Set Default Callback: Logic to filter target doc for reused
      */
@@ -60,6 +59,5 @@ public class InquiryCrossConvertRequest extends
             return true;
         });
     }
-
 
 }

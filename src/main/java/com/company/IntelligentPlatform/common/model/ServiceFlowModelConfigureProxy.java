@@ -66,5 +66,4 @@ public class ServiceFlowModelConfigureProxy extends ServiceEntityConfigureProxy 
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

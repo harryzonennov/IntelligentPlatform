@@ -21,7 +21,6 @@ import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel
 import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
 
-
 @Component
 public class PurchaseContractSearchModel extends SEUIComModel {
 
@@ -152,7 +151,6 @@ public class PurchaseContractSearchModel extends SEUIComModel {
 	public void setSignDateHigh(Date signDateHigh) {
 		this.signDateHigh = signDateHigh;
 	}
-
 
 	public Date getRequireExecutionDateLow() {
 		return requireExecutionDateLow;

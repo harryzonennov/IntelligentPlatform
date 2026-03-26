@@ -21,7 +21,6 @@ import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 @Service
 public class SalesContractCrossConvertProfRequest extends
         CrossDocConvertProfRequest<SalesContractServiceModel, SalesContractMaterialItem, SalesContractMaterialItemServiceModel> {

@@ -37,7 +37,6 @@ public class SystemConfigureExtensionUnion extends ReferenceNode {
 		SystemConfigureExtensionUnion.nodeCategory = nodeCategory;
 	}
 
-
 	public String getConfigureValueName() {
 		return configureValueName;
 	}

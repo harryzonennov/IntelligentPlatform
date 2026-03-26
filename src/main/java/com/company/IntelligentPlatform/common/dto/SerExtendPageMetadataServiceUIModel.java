@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 import com.company.IntelligentPlatform.common.model.SerExtendPageMetadata;
 
-
 @Component
 public class SerExtendPageMetadataServiceUIModel extends ServiceUIModule {
 

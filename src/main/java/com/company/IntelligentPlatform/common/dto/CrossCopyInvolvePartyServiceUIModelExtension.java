@@ -81,7 +81,6 @@ public class CrossCopyInvolvePartyServiceUIModelExtension extends
 				.setConvToUIMethod(CrossCopyInvolvePartyManager.METHOD_ConvCrossCopyDocConfigureToEventUI);
 		uiModelNodeMapList.add(crossCopyDocConfigureMap);
 
-
 		UIModelNodeMapConfigure serviceDocumentSettingMap = new UIModelNodeMapConfigure();
 		serviceDocumentSettingMap
 				.setSeName(ServiceDocumentSetting.SENAME);

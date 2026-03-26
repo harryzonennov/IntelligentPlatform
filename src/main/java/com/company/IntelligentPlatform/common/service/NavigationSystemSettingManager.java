@@ -20,7 +20,10 @@ import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
 import com.company.IntelligentPlatform.common.dto.NavigationGroupSettingUIModel;
 import com.company.IntelligentPlatform.common.dto.NavigationSystemSettingSearchModel;
 import com.company.IntelligentPlatform.common.dto.NavigationSystemSettingUIModel;
-// TODO-DAO: import ...NavigationSystemSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.NavigationSystemSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -60,11 +63,11 @@ public class NavigationSystemSettingManager extends ServiceEntityManager {
 	public static final String METHOD_ConvNavigationSystemSettingToUI = "convNavigationSystemSettingToUI";
 
 	public static final String METHOD_ConvUIToNavigationSystemSetting = "convUIToNavigationSystemSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected NavigationSystemSettingDAO navigationSystemSettingDAO;
-
+    @Autowired
+    protected NavigationSystemSettingRepository navigationSystemSettingDAO;
 	@Autowired
 	protected NavigationSystemSettingConfigureProxy navigationSystemSettingConfigureProxy;
 
@@ -89,12 +92,11 @@ public class NavigationSystemSettingManager extends ServiceEntityManager {
 
 	public NavigationSystemSettingManager() {
 		super.seConfigureProxy = new NavigationSystemSettingConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new NavigationSystemSettingDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(navigationSystemSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, navigationSystemSettingDAO));
 	}
 
 	@PostConstruct
@@ -194,8 +196,6 @@ public class NavigationSystemSettingManager extends ServiceEntityManager {
 		updateSENode(navigationSystemSetting, navigationSystemSettingBack,
 				serialLogonInfo.getRefUserUUID(), serialLogonInfo.getResOrgUUID());
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model
@@ -357,8 +357,6 @@ public class NavigationSystemSettingManager extends ServiceEntityManager {
 				searchModel, searchNodeConfigList, client, true);
 		return resultList;
 	}
-
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model

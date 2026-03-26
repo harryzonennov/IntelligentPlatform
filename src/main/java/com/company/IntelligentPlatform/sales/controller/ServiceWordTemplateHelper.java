@@ -17,6 +17,8 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
@@ -26,6 +28,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
 @Service
 public class ServiceWordTemplateHelper {
+
+	private static final Logger logger = LoggerFactory.getLogger(ServiceWordTemplateHelper.class);
 
 	public void replaceInPara(XWPFDocument doc, Map<String, Object> params) {
 		Iterator<XWPFParagraph> iterator = doc.getParagraphsIterator();
@@ -85,7 +89,7 @@ public class ServiceWordTemplateHelper {
 			for (int i = 0; i < runs.size(); i++) {
 				XWPFRun run = runs.get(i);
 				String runText = run.toString();
-				System.out.println("------>>>>>>>>>" + runText);
+				logger.debug("------>>>>>>>>>{}", runText);
 				if ('$' == runText.charAt(0) && '{' == runText.charAt(1)) {
 					start = i;
 				}
@@ -99,14 +103,14 @@ public class ServiceWordTemplateHelper {
 					}
 				}
 			}
-			System.out.println("start--->" + start);
-			System.out.println("end--->" + end);
-			System.out.println("str---->>>" + str);
+			logger.debug("start--->{}", start);
+			logger.debug("end--->{}", end);
+			logger.debug("str---->>>{}", str);
 			for (int i = start; i <= end; i++) {
 				para.removeRun(i);
 				i--;
 				end--;
-				System.out.println("remove i=" + i);
+				logger.debug("remove i={}", i);
 			}
 			for (String key : params.keySet()) {
 				if (str.equals(key)) {
@@ -272,7 +276,7 @@ public class ServiceWordTemplateHelper {
 								} catch (IllegalArgumentException
 										| IllegalAccessException e) {
 									// do nothing
-									e.printStackTrace();
+									logger.debug("Field not accessible", e);
 								} catch (NoSuchFieldException e) {
 									return null;
 								}
@@ -295,7 +299,7 @@ public class ServiceWordTemplateHelper {
 			try {
 				is.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.warn("Failed to close InputStream", e);
 			}
 		}
 	}
@@ -305,7 +309,7 @@ public class ServiceWordTemplateHelper {
 			try {
 				os.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.warn("Failed to close OutputStream", e);
 			}
 		}
 	}

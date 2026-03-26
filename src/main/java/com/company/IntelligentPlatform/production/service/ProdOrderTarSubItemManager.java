@@ -39,7 +39,6 @@ public class ProdOrderTarSubItemManager {
 
 	protected Logger logger = LoggerFactory.getLogger(ProdOrderTarSubItemManager.class);
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =

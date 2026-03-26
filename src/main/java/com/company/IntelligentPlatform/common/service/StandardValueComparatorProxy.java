@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +12,6 @@ import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityFieldsHelper;
 import com.company.IntelligentPlatform.common.model.SEFieldSearchConfig;
-
 
 @Service
 public class StandardValueComparatorProxy {

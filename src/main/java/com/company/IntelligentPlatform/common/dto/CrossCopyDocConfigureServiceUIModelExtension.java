@@ -67,7 +67,6 @@ public class CrossCopyDocConfigureServiceUIModelExtension extends
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(crossCopyDocConfigureExtensionUnion);
 
-
 		UIModelNodeMapConfigure serviceDocumentSettingMap = new UIModelNodeMapConfigure();
 		serviceDocumentSettingMap
 				.setSeName(ServiceDocumentSetting.SENAME);

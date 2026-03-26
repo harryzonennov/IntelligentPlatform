@@ -96,7 +96,6 @@ public class DocActionExecutionProxyFactory {
     @Autowired(required = false)
     protected DocActionExecutionProxy prodReturnOrderActionExecutionProxy;
 
-
     public Map<Integer, String> getDocActionMapByDocType(int documentType, String languageCode)
             throws DocActionException, ServiceEntityInstallationException {
         DocActionExecutionProxy docActionExecutionProxy = this.getDocActionExecutionProxyByDocType(documentType);
@@ -168,7 +167,6 @@ public class DocActionExecutionProxyFactory {
             return prodReturnOrderActionExecutionProxy;
         }
 
-
         return null;
     }
 
@@ -216,7 +214,6 @@ public class DocActionExecutionProxyFactory {
         return null;
     }
 
-
     public DocumentContentSpecifier getSpecifierByDocType(int documentType)
             throws DocActionException {
        DocActionExecutionProxy docActionExecutionProxy =
@@ -227,7 +224,5 @@ public class DocActionExecutionProxyFactory {
         return null;
 
     }
-
-
 
 }

@@ -24,7 +24,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class SalesContractMaterialItemManager {
 

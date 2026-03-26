@@ -46,7 +46,6 @@ public class CorporateCustomerToFinSearchProxy extends ServiceSearchProxy {
 		return corporateCustomerManager.getAuthorizationResource();
 	}
 
-
 	@Override
 	public Map<Integer, String> getStatusMap(String languageCode) throws ServiceEntityInstallationException {
 		return null;

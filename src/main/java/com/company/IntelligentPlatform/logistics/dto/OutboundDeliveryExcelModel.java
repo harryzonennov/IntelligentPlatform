@@ -124,7 +124,6 @@ public class OutboundDeliveryExcelModel extends SEUIComModel {
 		this.recoredOutboundDate = recoredOutboundDate;
 	}
 
-
 	public String getProcessByName() {
 		return processByName;
 	}

@@ -35,6 +35,4 @@ public class StandardLogicOperatorProxy {
 				this.logicOperatorExpressMapLan, this.getClass().getResource("").getPath() + PROPERTIES_EXPRESS_RESOURCE);
 	}
 
-
-
 }

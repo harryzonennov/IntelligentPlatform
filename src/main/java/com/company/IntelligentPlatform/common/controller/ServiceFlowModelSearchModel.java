@@ -10,7 +10,6 @@ import com.company.IntelligentPlatform.common.model.FlowRouter;
 import com.company.IntelligentPlatform.common.model.ServiceFlowCondField;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 
-
 public class ServiceFlowModelSearchModel extends SEUIComModel {
 
     @BSearchGroupConfig(groupInstId = ServiceFlowModel.SENAME)
@@ -26,7 +25,6 @@ public class ServiceFlowModelSearchModel extends SEUIComModel {
     @BSearchFieldConfig(fieldName = "refRouterUUID", nodeName = ServiceFlowModel.NODENAME, seName =
             ServiceFlowModel.SENAME, nodeInstID = ServiceFlowModel.SENAME)
     protected String refRouterUUID;
-
 
     @BSearchFieldConfig(fieldName = "serviceUIModelId", nodeName = ServiceFlowModel.NODENAME, seName =
             ServiceFlowModel.SENAME, nodeInstID = ServiceFlowModel.SENAME)
@@ -47,7 +45,6 @@ public class ServiceFlowModelSearchModel extends SEUIComModel {
     @BSearchFieldConfig(fieldName = "name", nodeName = FlowRouter.NODENAME, seName = FlowRouter.SENAME, nodeInstID =
             FlowRouter.SENAME)
     protected String refRouterName;
-
 
     @BSearchFieldConfig(fieldName = "id", nodeName = FlowRouter.NODENAME, seName = FlowRouter.SENAME, nodeInstID =
             FlowRouter.SENAME)

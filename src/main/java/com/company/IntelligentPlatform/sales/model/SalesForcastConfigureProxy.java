@@ -86,6 +86,5 @@ public class SalesForcastConfigureProxy extends ServiceEntityConfigureProxy {
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }
 

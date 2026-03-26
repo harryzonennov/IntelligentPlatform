@@ -134,7 +134,6 @@ public class ServiceDocDeletionSettingManager {
         return admDeleteStatusList;
     }
 
-
     public Map<Integer, String> initDeletionStrategy(String languageCode)
             throws ServiceEntityInstallationException {
         return ServiceLanHelper.initDefLanguageMapUIModel(languageCode,
@@ -160,7 +159,6 @@ public class ServiceDocDeletionSettingManager {
         }
     }
 
-
     public void convUIToServiceDocDeletionSetting(ServiceDocDeletionSettingUIModel serviceDocDeletionSettingUIModel, ServiceDocDeletionSetting rawEntity) {
         if(serviceDocDeletionSettingUIModel != null && rawEntity != null){
             DocFlowProxy.convUIToServiceEntityNode(serviceDocDeletionSettingUIModel, rawEntity);
@@ -171,6 +169,5 @@ public class ServiceDocDeletionSettingManager {
             rawEntity.setAdmDeleteStatus(serviceDocDeletionSettingUIModel.getAdmDeleteStatus());
         }
     }
-
 
 }

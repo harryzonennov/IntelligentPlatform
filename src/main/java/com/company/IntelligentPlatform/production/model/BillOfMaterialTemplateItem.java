@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class BillOfMaterialTemplateItem extends BillOfMaterialItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.BillOfMaterialTemplateItem;
 
 	public final static String SENAME = BillOfMaterialTemplate.SENAME;

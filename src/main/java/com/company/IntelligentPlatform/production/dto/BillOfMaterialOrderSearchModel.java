@@ -55,7 +55,6 @@ public class BillOfMaterialOrderSearchModel extends SEUIComModel {
 
 	protected String createdTimeHighStr;
 
-
 	@BSearchFieldConfig(fieldName = "refMaterialSKUUUID", nodeName = BillOfMaterialOrder.NODENAME, seName = BillOfMaterialOrder.SENAME, nodeInstID = BillOfMaterialOrder.SENAME, showOnUI = false)
 	protected String refMaterialSKUUUID;
 

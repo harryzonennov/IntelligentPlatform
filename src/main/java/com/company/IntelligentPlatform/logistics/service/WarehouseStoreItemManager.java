@@ -45,7 +45,6 @@ import java.time.ZoneId;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 
-
 /**
  * Super class for handling warehouse store item.
  *
@@ -170,7 +169,6 @@ public class WarehouseStoreItemManager {
         return resultMap;
     }
 
-
     /**
      * Core algorithm to check weather it is possible to update warehouse store
      * item amount, if not meet the update request,
@@ -269,7 +267,6 @@ public class WarehouseStoreItemManager {
         warehouseStoreItem.setRefUnitUUID(result.getRefUnitUUID());
     }
 
-
     /**
      * Core logic to check weather it is possible to update warehouse store item
      * amount and update the refreshed amount and unit into warehouseStoreItem
@@ -288,7 +285,6 @@ public class WarehouseStoreItemManager {
         }
         return storageCoreUnit;
     }
-
 
     /**
      * Logic to get all the [In Stock] status store item list
@@ -360,7 +356,6 @@ public class WarehouseStoreItemManager {
         convWarehouseStoreItemToUI(warehouseStoreItem, warehouseStoreItemUIModel, null, null);
     }
 
-
     /**
      * Utlity method to batch convert list of warehouse store list into UIModel list
      * @param rawList
@@ -409,7 +404,6 @@ public class WarehouseStoreItemManager {
                                            WarehouseStoreItemUIModel warehouseStoreItemUIModel){
         warehouseStoreItemUIModel.setRefWarehouseUUID(warehouseStore.getRefWarehouseUUID());
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -575,7 +569,6 @@ public class WarehouseStoreItemManager {
         }
     }
 
-
     /**
      * Logic to calculate warehouse store item storeDay
      *
@@ -595,7 +588,6 @@ public class WarehouseStoreItemManager {
                     .getId());
         }
     }
-
 
     public void convUIToWarehouseStoreItem(
             WarehouseStoreItemUIModel warehouseStoreItemUIModel,
@@ -647,7 +639,6 @@ public class WarehouseStoreItemManager {
                 .getProductionPlace());
     }
 
-
     public void convWarehouseToStoreItemUI(Warehouse warehouse,
                                            WarehouseStoreItemUIModel warehouseStoreItemUIModel) {
         if (warehouse != null) {
@@ -678,7 +669,6 @@ public class WarehouseStoreItemManager {
             warehouseStoreItemUIModel.setOutboundItemPriceNoTax(outboundItem.getItemPriceNoTax());
         }
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -753,7 +743,5 @@ public class WarehouseStoreItemManager {
                     .getRefUnitUUID());
         }
     }
-
-
 
 }

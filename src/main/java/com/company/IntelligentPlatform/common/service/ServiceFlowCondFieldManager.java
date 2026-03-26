@@ -63,27 +63,16 @@ public class ServiceFlowCondFieldManager {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
     public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
             throws ServiceEntityConfigureException {
         DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
                 new DocPageHeaderModelProxy.DocPageHeaderInputPara(request.getBaseUUID(), ServiceFlowCondGroup.NODENAME,
                         request.getUuid(), ServiceFlowCondField.NODENAME, serviceFlowModelManager);
-        docPageHeaderInputPara.setGenBaseModelList(new DocPageHeaderModelProxy.GenBaseModelList<ServiceFlowCondGroup>() {
-            @Override
-            public List<PageHeaderModel> execute(ServiceFlowCondGroup serviceFlowCondGroup) throws ServiceEntityConfigureException {
-
-                return serviceFlowCondGroupManager.getPageHeaderModelList(DocPageHeaderModelProxy.getDefRequest(serviceFlowCondGroup),
-                        client);
-            }
-        });
-        docPageHeaderInputPara.setGenHomePageModel(new DocPageHeaderModelProxy.GenHomePageModel<ServiceFlowCondField>() {
-            @Override
-            public PageHeaderModel execute(ServiceFlowCondField serviceFlowCondField,
-                                           PageHeaderModel pageHeaderModel) throws ServiceEntityConfigureException {
-                pageHeaderModel.setHeaderName(serviceFlowCondField.getFieldName());
-                return pageHeaderModel;
-            }
+        docPageHeaderInputPara.setGenBaseModelList((DocPageHeaderModelProxy.GenBaseModelList<ServiceFlowCondGroup>) serviceFlowCondGroup -> serviceFlowCondGroupManager.getPageHeaderModelList(DocPageHeaderModelProxy.getDefRequest(serviceFlowCondGroup),
+                client));
+        docPageHeaderInputPara.setGenHomePageModel((DocPageHeaderModelProxy.GenHomePageModel<ServiceFlowCondField>) (serviceFlowCondField, pageHeaderModel) -> {
+            pageHeaderModel.setHeaderName(serviceFlowCondField.getFieldName());
+            return pageHeaderModel;
         });
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
@@ -181,7 +170,6 @@ public class ServiceFlowCondFieldManager {
         return standardValueComparatorProxy.getValueComparatorMap(languageCode);
     }
 
-
     public Map<String, String> getNodeInstMap(String serviceUIModelId, String anguageCode) throws ServiceFlowException {
         List<ServiceUIModuleProxy.ServiceModelNodeMeta> serviceModelNodeMetaList =
                 getServiceModelNodeFieldsMetaList(serviceUIModelId);
@@ -233,7 +221,6 @@ public class ServiceFlowCondFieldManager {
         }
         return fieldNameMap;
     }
-
 
     public ServiceFieldMeta getFieldMeta(String fieldName, String nodeInstId, String serviceUIModelId,
                                             String languageCode) throws ServiceFlowException {

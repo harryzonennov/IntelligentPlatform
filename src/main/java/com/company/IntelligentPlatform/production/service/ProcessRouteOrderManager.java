@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +73,9 @@ public class ProcessRouteOrderManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToProcessRouteOrder = "convUIToProcessRouteOrder";
 
 	public static final String METHOD_ConvMaterialStockKeepUnitToUI = "convMaterialStockKeepUnitToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected ProcessRouteOrderRepository processRouteOrderDAO;
@@ -100,12 +106,11 @@ public class ProcessRouteOrderManager extends ServiceEntityManager {
 
 	public ProcessRouteOrderManager() {
 		super.seConfigureProxy = new ProcessRouteOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProcessRouteOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(processRouteOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processRouteOrderDAO));
 	}
 
 	@PostConstruct

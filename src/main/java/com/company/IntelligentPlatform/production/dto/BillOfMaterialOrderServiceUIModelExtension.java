@@ -203,7 +203,6 @@ public class BillOfMaterialOrderServiceUIModelExtension extends
                 .setConvToUIMethod(BillOfMaterialOrderManager.METHOD_ConvBillOfMaterialTemplateToUI);
         uiModelNodeMapList.add(bomTemplateMap);
 
-
         // UI Model Configure of node:[Prod Process order]
         UIModelNodeMapConfigure processRouteOrderMap = new UIModelNodeMapConfigure();
         processRouteOrderMap.setSeName(ProcessRouteOrder.SENAME);
@@ -230,7 +229,6 @@ public class BillOfMaterialOrderServiceUIModelExtension extends
 
         uiModelNodeMapList.addAll(docFlowProxy
                 .getDocDefCreateUpdateNodeMapConfigureList(BillOfMaterialOrder.SENAME));
-
 
         billOfMaterialOrderExtensionUnion
                 .setUiModelNodeMapList(uiModelNodeMapList);

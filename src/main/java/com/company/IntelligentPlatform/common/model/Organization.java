@@ -10,6 +10,7 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "Organization", schema = "platform")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Organization extends CorporateAccount {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -19,7 +19,6 @@ public class ServicePieChartDataSeriesUIModel {
         this.name = name;
     }
 
-
     public String getType() {
         return type;
     }

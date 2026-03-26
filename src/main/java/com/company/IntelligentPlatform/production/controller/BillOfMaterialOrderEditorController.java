@@ -102,7 +102,6 @@ public class BillOfMaterialOrderEditorController extends SEEditorController {
                 });
     }
 
-
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<BillOfMaterialOrderServiceModel> iActionExecutor) {
         return serviceBasicUtilityController.defaultActionServiceWrapper(request, AOID_RESOURCE,
@@ -145,7 +144,6 @@ public class BillOfMaterialOrderEditorController extends SEEditorController {
 
                 }, billOfMaterialOrderServiceUIModelExtension);
     }
-
 
     @RequestMapping(value = "/getStatusMap", produces = "text/html;charset=UTF-8")
     public @ResponseBody String getStatusMap() {

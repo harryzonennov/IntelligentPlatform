@@ -56,7 +56,6 @@ public class InventoryTransferItemManager {
 
 	public static final String METHOD_ConvParentDocToItemUI = "convParentDocToItemUI";
 
-
 	@Autowired
 	protected InboundDeliveryManager inboundDeliveryManager;
 
@@ -98,8 +97,6 @@ public class InventoryTransferItemManager {
 						docPageHeaderModelProxy.getDefDocMaterialItemPageHeaderModel(inventoryTransferItem, pageHeaderModel));
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
-
-
 
 	public void convOutWarehouseToItemUI(Warehouse warehouse,
 			InventoryTransferItemUIModel inventoryTransferItemUIModel) {
@@ -241,7 +238,6 @@ public class InventoryTransferItemManager {
 		}
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *
@@ -357,7 +353,6 @@ public class InventoryTransferItemManager {
 		}
 	}
 
-
 	public void convInboundDeliveryToItemUI(InboundDelivery inboundDelivery,
 											 InventoryTransferItemUIModel inventoryTransferItemUIModel) {
 		if (inboundDelivery != null) {
@@ -367,7 +362,5 @@ public class InventoryTransferItemManager {
 					.setRefInboundDeliveryStatus(inboundDelivery.getStatus());
 		}
 	}
-
-
 
 }

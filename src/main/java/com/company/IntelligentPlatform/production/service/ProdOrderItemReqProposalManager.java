@@ -34,7 +34,6 @@ import com.company.IntelligentPlatform.common.model.LogonInfo;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class ProdOrderItemReqProposalManager {
 
@@ -131,7 +130,6 @@ public class ProdOrderItemReqProposalManager {
 		prodOrderItemReqProposal.setDocumentType(documentType);
 	}
 
-
 	public List<ServiceEntityNode> getInprocessDocMatItemList(ProdOrderItemReqProposal prodOrderItemReqProposal)
             throws MaterialException, ServiceEntityConfigureException, DocActionException {
 		if (IDefDocumentResource.DOCUMENT_TYPE_PRODPICKINGORDER != prodOrderItemReqProposal.getNextDocType()) {
@@ -172,8 +170,6 @@ public class ProdOrderItemReqProposalManager {
 		}
 		return endDocumentExtendUIModelList;
 	}
-
-
 
 	/**
 	 * Logic to Set Finish to next picking ref Material item instance
@@ -440,6 +436,5 @@ public class ProdOrderItemReqProposalManager {
 			}
 		}
 	}
-
 
 }

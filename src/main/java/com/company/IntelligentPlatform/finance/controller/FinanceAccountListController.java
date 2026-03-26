@@ -122,7 +122,6 @@ public class FinanceAccountListController extends SEListController {
 						.getSearchProxy().searchDocList(searchContext),  this::getModuleListCore);
 	}
 
-
 	@RequestMapping(value = "/loadFinAccountObjectSelectList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadFinAccountObjectSelectList() {
 		try {

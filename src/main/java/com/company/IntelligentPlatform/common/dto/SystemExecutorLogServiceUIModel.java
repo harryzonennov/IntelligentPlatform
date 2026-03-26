@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.dto;
 
-
 import com.company.IntelligentPlatform.common.model.SystemExecutorLog;
 
 public class SystemExecutorLogServiceUIModel extends ServiceUIModule {

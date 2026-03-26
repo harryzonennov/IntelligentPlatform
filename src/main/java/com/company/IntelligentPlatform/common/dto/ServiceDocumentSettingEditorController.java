@@ -93,7 +93,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 				genAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Delete attachment
 	 */
@@ -104,7 +103,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.
@@ -126,7 +124,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 		return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
 				genAttachmentProcessPara());
 	}
-
 
 	private DocAttachmentProxy.DocAttachmentProcessPara genExcelUploadTemplateProcessPara() {
 		return new DocAttachmentProxy.DocAttachmentProcessPara(serviceDocumentSettingManager,
@@ -152,7 +149,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genExcelUploadTemplateProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.
@@ -200,7 +196,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 				genExcelDownloadTemplateProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -221,7 +216,6 @@ public class ServiceDocumentSettingEditorController extends SEEditorController {
 		return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
 				genExcelDownloadTemplateProcessPara());
 	}
-
 
 	private ServiceDocumentSettingServiceUIModel parseToServiceUIModel(
 			String request) {

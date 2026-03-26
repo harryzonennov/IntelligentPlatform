@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.service;
 import net.sf.json.JSONObject;
 import com.company.IntelligentPlatform.common.service.ServiceJSONDataException;
 
-
 /**
  * JSON parser helper class to process Service Chart compound model
  *
@@ -24,6 +23,5 @@ public class ChartModelJSONHelper {
         JSONObject json = JSONObject.fromObject(charModel);
         return json.toString();
     }
-
 
 }

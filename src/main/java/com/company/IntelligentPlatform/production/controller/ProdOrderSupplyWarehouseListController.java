@@ -66,7 +66,6 @@ public class ProdOrderSupplyWarehouseListController extends SEListController {
 		}
 	}
 
-
 	protected List<ProdOrderSupplyWarehouseUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList)
 			throws ServiceEntityInstallationException,

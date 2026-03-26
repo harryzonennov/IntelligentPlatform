@@ -167,7 +167,6 @@ public class InventoryTransferOrderEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -188,7 +187,6 @@ public class InventoryTransferOrderEditorController extends SEEditorController {
 		return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 @Transactional
 public class QualityInspectPropertyItemManager{
 
-
 	public static final String METHOD_ConvRefRegisteredProductToPropertyItemUI = "convRefRegisteredProductToPropertyItemUI";
 
 	public static final String METHOD_ConvRegisteredProductPropertyItemToUI = "convRegisteredProductPropertyItemToUI";

@@ -66,7 +66,7 @@ public ProductionPlan() {
 - The opening brace `{` is on the **same line** as the method declaration.
 - The method body is on a **new line**, indented with a tab.
 - The closing brace `}` is on its **own new line**, at the same indent level as the method declaration.
-- **One blank line between every getter/setter method** (including between the getter and its paired setter).
+- **One blank line between every getter/setter method** (including between the getter and its paired setter) — exactly one, never two or more.
 - Getters use `return fieldName;` — NOT `return this.fieldName;` (no `this.` prefix in returns).
 - Setters use `this.fieldName = fieldName;`.
 
@@ -142,7 +142,8 @@ public void setFinAccountMaterialItemList(
 - Class-level `@Service` annotation.
 - Dependencies injected with `@Autowired` on a **separate line above the field**.
 - One blank line between each `@Autowired` field.
-- Public methods have one blank line between them.
+- Public methods have **exactly one** blank line between them — never zero, never two or more.
+- Method name and opening parenthesis are separated by **one space**: `public void myMethod (String arg)` — never `myMethod(arg)`.
 - Constants (METHOD_* strings) declared at the top of the class, each on its own line with a blank line between them.
 - All methods: opening brace `{` on the same line as the declaration; body on a new line indented with a tab; closing brace `}` on its own new line.
 
@@ -221,7 +222,8 @@ public @ResponseBody String preLock(String uuid) {
 - **No Lombok** (`@Data`, `@Getter`, `@Setter`, `@Builder`, etc.) — all getters/setters written manually.
 - **No single-line getter/setter methods** — always multi-line.
 - **No blank line omissions between fields** — every field separated by one blank line.
-- **No blank line omissions between methods** — every method separated by one blank line.
+- **No blank line omissions between methods, and no double blank lines** — every method separated by **exactly one** blank line.
+- **No missing space before `(`** — always `methodName (args)`, never `methodName(args)`.
 - **No `private` fields** on entity classes — use `protected`.
 - **No `this.` prefix in getter return statements** — `return fieldName;` not `return this.fieldName;`.
 - **No constructor injection in entities** — entities use no-arg constructors with field defaults.

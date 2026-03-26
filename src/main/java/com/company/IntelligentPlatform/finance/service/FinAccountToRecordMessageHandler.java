@@ -12,10 +12,6 @@ import com.company.IntelligentPlatform.finance.model.FinAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
-
 import com.company.IntelligentPlatform.common.service.LogonUserManager;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
@@ -154,7 +150,6 @@ public class FinAccountToRecordMessageHandler extends
 		logonUserMessageCategory.setListURL(genListURL());
 		return logonUserMessageCategory;
 	}
-
 
 	@Override
 	public LogonUserMessageCategory generateCategory(LogonInfo logonInfo)

@@ -10,11 +10,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 import java.util.List;
 
-
 @FunctionalInterface
 public interface ISearchDataMethodResponse {
 	BSearchResponse apply(DataTableRequestData dataTableRequestData) throws SearchConfigureException,
             ServiceEntityInstallationException, AuthorizationException, LogonInfoException;
 }
-
 

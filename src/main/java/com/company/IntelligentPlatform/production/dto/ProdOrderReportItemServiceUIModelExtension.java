@@ -51,7 +51,6 @@ public class ProdOrderReportItemServiceUIModelExtension extends
 		prodOrderReportItemExtensionUnion
 				.setNodeName(ProdOrderReportItem.NODENAME);
 
-
 		// UI Model Configure of node:[reserved Order MatItem]
 		UIModelNodeMapConfigure reservedMatItemMap = new UIModelNodeMapConfigure();
 		reservedMatItemMap.setBaseNodeInstID(ProdOrderReportItem.NODENAME);
@@ -86,7 +85,6 @@ public class ProdOrderReportItemServiceUIModelExtension extends
 				});
 		uiModelNodeMapList.add(reservedMatItemMap);
 
-
 		// UI Model Configure of node:[Prev Order MatItem]
 		UIModelNodeMapConfigure prevMatItemMap = new UIModelNodeMapConfigure();
 		prevMatItemMap.setBaseNodeInstID(ProdOrderReportItem.NODENAME);
@@ -120,7 +118,6 @@ public class ProdOrderReportItemServiceUIModelExtension extends
 				});
 		uiModelNodeMapList.add(prevMatItemMap);
 
-
 		// UI Model Configure of node:[ref Next MatItem]
 		UIModelNodeMapConfigure nextMatItemMap = new UIModelNodeMapConfigure();
 		nextMatItemMap.setBaseNodeInstID(ProdOrderReportItem.NODENAME);
@@ -153,8 +150,6 @@ public class ProdOrderReportItemServiceUIModelExtension extends
 					}
 				});
 		uiModelNodeMapList.add(nextMatItemMap);
-
-
 
 		prodOrderReportItemExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);

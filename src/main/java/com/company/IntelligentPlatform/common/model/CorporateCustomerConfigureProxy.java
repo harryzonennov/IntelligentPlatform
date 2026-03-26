@@ -148,7 +148,6 @@ public class CorporateCustomerConfigureProxy extends
 				.getBasicReferenceFieldMap());
 		seConfigureMapList.add(customerParentOrgReferenceConfigureMap);
 
-
 		// Init configuration of CorporateCustomer [customerCustomerAttachment] node
 		ServiceEntityConfigureMap customerCustomerAttachmentConfigureMap = new ServiceEntityConfigureMap();
 		customerCustomerAttachmentConfigureMap

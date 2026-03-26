@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.service;
 
-
 import com.company.IntelligentPlatform.logistics.service.QualityInspectCrossConvertRequest;
 import com.company.IntelligentPlatform.production.dto.ProductionPlanServiceUIModelExtension;
 import com.company.IntelligentPlatform.production.dto.ProductionPlanUIModel;
@@ -135,7 +134,6 @@ public class ProductionPlanActionExecutionProxy
     public DocSplitMergeRequest<ProductionPlan, ProdPlanTargetMatItem> getDocMergeRequest() {
         return null;
     }
-
 
     @Override
     public CrossDocConvertRequest<ProductionPlanServiceModel, ProdPlanTargetMatItem, ?> getCrossDocCovertRequest() {

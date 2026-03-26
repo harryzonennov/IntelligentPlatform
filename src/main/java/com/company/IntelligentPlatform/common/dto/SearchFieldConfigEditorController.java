@@ -43,7 +43,6 @@ public class SearchFieldConfigEditorController extends SEEditorController {
 	@Autowired
 	protected SearchProxyConfigManager searchProxyConfigManager;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				SearchFieldConfigServiceUIModel.class,
@@ -53,7 +52,6 @@ public class SearchFieldConfigEditorController extends SEEditorController {
 				searchProxyConfigManager
 		);
 	}
-
 
 	private SearchFieldConfigServiceUIModel parseToServiceUIModel(@RequestBody String request) {
 		JSONObject jsonObject = JSONObject.fromObject(request);

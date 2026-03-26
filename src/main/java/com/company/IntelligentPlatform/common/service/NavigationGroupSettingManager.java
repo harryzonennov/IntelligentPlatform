@@ -65,7 +65,6 @@ public class NavigationGroupSettingManager extends ServiceEntityManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *
@@ -162,7 +161,6 @@ public class NavigationGroupSettingManager extends ServiceEntityManager {
 					.setRefSystemId(navigationSystemSetting.getId());
 		}
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model

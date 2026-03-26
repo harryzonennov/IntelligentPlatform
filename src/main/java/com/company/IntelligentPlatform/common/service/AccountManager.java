@@ -30,6 +30,9 @@ import com.company.IntelligentPlatform.common.dto.AccountSearchModel;
 import com.company.IntelligentPlatform.common.dto.AccountTypeSelect;
 import com.company.IntelligentPlatform.common.dto.AccountUIModel;
 // TODO-DAO: import platform.foundation.DAO.AccountDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.GenericServiceEntityNodeRepository;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.LogonInfoException;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
@@ -73,9 +76,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Transactional
 public class AccountManager extends ServiceEntityManager {
 
-	// TODO-DAO: @Autowired
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	// TODO-DAO: 	protected AccountDAO accountDAO;
+	@Autowired
+	protected GenericServiceEntityNodeRepository accountDAO;
 
 	@Autowired
 	protected AccountConfigureProxy accountConfigureProxy;
@@ -115,12 +120,11 @@ public class AccountManager extends ServiceEntityManager {
 
 	public AccountManager() {
 		super.seConfigureProxy = new AccountConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new AccountDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(accountDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, accountDAO));
 	}
 
 	@PostConstruct
@@ -355,7 +359,6 @@ public class AccountManager extends ServiceEntityManager {
 				searchContext);
 	}
 
-
 	public AccountSearchModel genImpAccountSearchModel(
 			AccountSearchModel accountSearchModel, Class<?> impClass,
 			Class<?> baseClass) {
@@ -485,8 +488,6 @@ public class AccountManager extends ServiceEntityManager {
 		}
 		return null;
 	}
-
-
 
 	/**
 	 * The logic to define Account Object type

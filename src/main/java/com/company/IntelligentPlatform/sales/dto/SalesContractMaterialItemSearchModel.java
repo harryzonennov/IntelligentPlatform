@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.sales.dto;
 
-
 import com.company.IntelligentPlatform.sales.model.SalesContractActionNode;
 import com.company.IntelligentPlatform.sales.model.SalesContractParty;
 import org.springframework.stereotype.Component;

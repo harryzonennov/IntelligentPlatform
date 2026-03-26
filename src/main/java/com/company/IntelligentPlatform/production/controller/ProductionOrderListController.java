@@ -62,7 +62,6 @@ public class ProductionOrderListController extends SEListController {
 	@Autowired
 	protected ProductionOrderServiceUIModelExtension productionOrderServiceUIModelExtension;
 
-
 	@RequestMapping(value = "/loadLeanModuleListService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadLeanModuleListService() {
 		return serviceBasicUtilityController.loadLeanModuleListWrapper(AOID_RESOURCE, ISystemActionCode.ACID_LIST, null,
@@ -99,6 +98,5 @@ public class ProductionOrderListController extends SEListController {
 		return serviceBasicUtilityController.convUIModuleList(ProductionOrderUIModel.class, rawList,
 				productionOrderManager, productionOrderServiceUIModelExtension);
 	}
-
 
 }

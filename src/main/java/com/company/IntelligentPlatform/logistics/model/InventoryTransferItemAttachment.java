@@ -14,5 +14,4 @@ public class InventoryTransferItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

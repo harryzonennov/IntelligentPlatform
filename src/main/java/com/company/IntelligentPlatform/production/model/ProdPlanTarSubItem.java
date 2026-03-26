@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class ProdPlanTarSubItem extends ProdOrderTarSubItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdPlanTarSubItem;
 
 	public final static String SENAME = ProductionPlan.SENAME;

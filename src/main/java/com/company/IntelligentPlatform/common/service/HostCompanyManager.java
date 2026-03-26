@@ -10,7 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.service.HostCompanySearchProxy;
 import com.company.IntelligentPlatform.common.dto.HostCompanyUIModel;
-// TODO-DAO: import ...HostCompanyDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.HostCompanyRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -37,11 +40,11 @@ public class HostCompanyManager extends ServiceEntityManager {
     public static final String METHOD_ConvHostCompanyToUI = "convHostCompanyToUI";
 
     public static final String METHOD_ConvUIToHostCompany = "convUIToHostCompany";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     HostCompanyDAO hostCompanyDAO;
-
+    @Autowired
+    protected HostCompanyRepository hostCompanyDAO;
     @Autowired
     HostCompanyConfigureProxy hostCompanyConfigureProxy;
 
@@ -50,12 +53,11 @@ public class HostCompanyManager extends ServiceEntityManager {
 
     public HostCompanyManager() {
         super.seConfigureProxy = new HostCompanyConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new HostCompanyDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(hostCompanyDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, hostCompanyDAO));
     }
 
     @PostConstruct

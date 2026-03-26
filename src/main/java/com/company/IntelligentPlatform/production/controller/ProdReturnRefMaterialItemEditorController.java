@@ -88,7 +88,6 @@ public class ProdReturnRefMaterialItemEditorController extends
 	@Autowired
 	protected ServiceDocumentComProxy serviceDocumentComProxy;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				ProdPickingRefMaterialItemServiceUIModel.class,
@@ -339,8 +338,6 @@ public class ProdReturnRefMaterialItemEditorController extends
 		return prodPickingRefMaterialItemUIModel;
 	}
 
-
-
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String checkDuplicateID(
 			@RequestBody SimpleSEJSONRequest simpleRequest) {
@@ -454,7 +451,6 @@ public class ProdReturnRefMaterialItemEditorController extends
 					.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/loadModuleViewService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleViewService(String uuid) {

@@ -31,7 +31,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import java.time.ZoneId;
 import java.time.LocalDate;
 
-
 @Service
 @Transactional
 public class QualityInspectMatItemManager{
@@ -267,7 +266,6 @@ public class QualityInspectMatItemManager{
 				.getItemInspectType());
 	}
 
-
 	public void convParentDocToItemUI(
 			QualityInspectOrder qualityInspectOrder,
 			QualityInspectMatItemUIModel qualityInspectMatItemUIModel)
@@ -289,6 +287,5 @@ public class QualityInspectMatItemManager{
 							.getRefWarehouseUUID());
 		}
 	}
-
 
 }

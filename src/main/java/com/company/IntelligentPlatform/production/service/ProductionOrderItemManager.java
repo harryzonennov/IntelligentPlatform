@@ -58,7 +58,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class ProductionOrderItemManager {
 
@@ -521,7 +520,6 @@ public class ProductionOrderItemManager {
         return ProdPickingOrder.STATUS_APPROVED;
     }
 
-
     /**
      * Get all relative picking material item list by item UUID
      *
@@ -553,7 +551,6 @@ public class ProductionOrderItemManager {
         return resultStoreItemList;
     }
 
-
     /**
      * Entrance Method to get all the available reserved stock list
      *
@@ -579,7 +576,6 @@ public class ProductionOrderItemManager {
         List<ServiceEntityNode> prodPickingMatItemList = productionOrderManager.getAllRelativePickingMatItemList(baseUUID, client);
         return prodPickingRefMaterialItemManager.getToPickMaterialItemList(prodPickingMatItemList);
     }
-
 
     /**
      * Core Logic to refresh / update key information for production order item or req item models by calculating the sub picking material item
@@ -898,7 +894,6 @@ public class ProductionOrderItemManager {
         }
     }
 
-
     /**
      * Refresh Production order item amount & information status by calculate sub proposal list
      *
@@ -1187,7 +1182,6 @@ public class ProductionOrderItemManager {
         convProductionOrderToItemUI(productionOrder, productionOrderItemUIModel, null);
     }
 
-
     public void convDocumentToItemReqProposalUI(ServiceEntityNode documentContent, ProdOrderItemReqProposalUIModel prodOrderItemReqProposalUIModel) {
         if (documentContent != null) {
             prodOrderItemReqProposalUIModel.setRefDocumentId(documentContent.getId());
@@ -1240,7 +1234,6 @@ public class ProductionOrderItemManager {
         }
     }
 
-
     public void convProductionOrderToProposalUI(ProductionOrder productionOrder, ProdOrderItemReqProposalUIModel prodOrderItemReqProposalUIModel, LogonInfo logonInfo) throws ServiceEntityInstallationException, ServiceEntityConfigureException {
         prodOrderItemReqProposalUIModel.setOrderId(productionOrder.getId());
         prodOrderItemReqProposalUIModel.setOrderStatus(productionOrder.getStatus());
@@ -1258,7 +1251,6 @@ public class ProductionOrderItemManager {
     public void convProductionOrderItemToProposalUI(ProductionOrderItem productionOrderItem, ProdOrderItemReqProposalUIModel prodOrderItemReqProposalUIModel) throws ServiceEntityInstallationException, ServiceEntityConfigureException {
         prodOrderItemReqProposalUIModel.setParentItemId(productionOrderItem.getId());
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model

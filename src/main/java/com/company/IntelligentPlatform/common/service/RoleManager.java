@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 import jakarta.annotation.PostConstruct;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,10 @@ import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
 import com.company.IntelligentPlatform.common.dto.*;
 import com.company.IntelligentPlatform.common.controller.ActionCodeJSONModel;
 import com.company.IntelligentPlatform.common.controller.ActionCodeUUIDUnion;
-// TODO-DAO: import platform.foundation.DAO.RoleDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.RoleRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocActionException;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
@@ -64,11 +66,11 @@ public class RoleManager extends ServiceEntityManager {
     public static final String METHOD_ConvRoleToUI = "convRoleToUI";
 
     public static final String METHOD_ConvUIToRole = "convUIToRole";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected RoleDAO roleDAO;
-
+    @Autowired
+    protected RoleRepository roleDAO;
     @Autowired
     protected RoleConfigureProxy roleConfigureProxy;
 
@@ -111,14 +113,13 @@ public class RoleManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(roleDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, roleDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(roleConfigureProxy);
     }
-
 
     public List<PageHeaderModel> getPageHeaderModelList(Role role, String client)
             throws ServiceEntityConfigureException {
@@ -154,7 +155,6 @@ public class RoleManager extends ServiceEntityManager {
         return getEntityNodeListByKey(null, null, RoleAuthorization.NODENAME,
                 client, null);
     }
-
 
     /**
      * Get the overall Authorization Group contains Authorization object
@@ -221,7 +221,6 @@ public class RoleManager extends ServiceEntityManager {
         return result;
     }
 
-
     /**
      * Get all Non duplicate role authorization list by role list
      *
@@ -272,7 +271,6 @@ public class RoleManager extends ServiceEntityManager {
         }
         return resultList;
     }
-
 
     public void preClearRoleAO(String roleUUID, String client) throws ServiceEntityConfigureException {
         admDeleteEntityByKey(roleUUID, IServiceEntityNodeFieldConstant.ROOTNODEUUID, RoleAuthorization.NODENAME);
@@ -392,7 +390,6 @@ public class RoleManager extends ServiceEntityManager {
         return result;
     }
 
-
     /**
      * This method will be invoked by system installation program, by generating
      * the system role message category instance
@@ -431,7 +428,6 @@ public class RoleManager extends ServiceEntityManager {
         }
     }
 
-
     //TODO to be replaced by the
     public void deleteAuthorizationObject(String baseUUID, String uuid,
                                           String logonUserUUID, String organizationUUID, String client)
@@ -465,14 +461,12 @@ public class RoleManager extends ServiceEntityManager {
         this.deleteSENode(roleAuthorization, logonUserUUID, organizationUUID);
     }
 
-
     public boolean containsActionCode(RoleAuthorization roleAuthorization, String actionCodeUUID) {
         if (ServiceEntityStringHelper.checkNullString(roleAuthorization.getActionCodeArray())) {
             return false;
         }
         return roleAuthorization.getActionCodeArray().contains(actionCodeUUID);
     }
-
 
     /**
      * Insert or update action code key to RoleAuthorization code array with duplicate key check.
@@ -493,8 +487,6 @@ public class RoleManager extends ServiceEntityManager {
         roleAuthorization.setActionCodeArray(actionCodeArray);
 
     }
-
-
 
     public void convRoleToUI(Role role, RoleUIModel roleUIModel) {
         convRoleToUI(role, roleUIModel, null);
@@ -552,8 +544,7 @@ public class RoleManager extends ServiceEntityManager {
                         return true;
             });
         } catch (DocActionException e) {
-            // do nothing
-            e.printStackTrace();
+            logger.warn("DocActionException during role processing, skipping", e);
         }
         return roleServiceUIModel;
     }

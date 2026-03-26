@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 // TODO-LEGACY: import org.apache.commons.httpclient.HttpStatus; // replaced by local HttpStatus stub
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityException;

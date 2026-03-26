@@ -14,7 +14,6 @@ public class PackageRegisterationEntityManager extends ServiceEntityManager {
 
 	public PackageRegisterationEntityManager() {
 		super.seConfigureProxy = new PackageRegisterationEntityConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new PackageRegisterationEntityDAO();
 	}
 
 	@SuppressWarnings({"rawtypes","unchecked"})

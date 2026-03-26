@@ -40,5 +40,4 @@ public class ProdPickingRefOrderItemServiceUIModel extends ServiceUIModule {
 		this.prodPickingRefOrderItemUIModel = prodPickingRefOrderItemUIModel;
 	}
 
-
 }

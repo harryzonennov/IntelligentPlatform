@@ -16,7 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.dto.WarehouseSearchModel;
 import com.company.IntelligentPlatform.common.dto.WarehouseStoreSettingUIModel;
 import com.company.IntelligentPlatform.common.dto.WarehouseUIModel;
-// TODO-DAO: import ...WarehouseDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.WarehouseRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
@@ -62,11 +65,11 @@ public class WarehouseManager extends ServiceEntityManager {
     public static final String METHOD_ConvUIToWarehouseStoreSetting = "convUIToWarehouseStoreSetting";
 
     public static final String METHOD_ConvParentOrganizationToUI = "convParentOrganizationToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected WarehouseDAO warehouseDAO;
-
+    @Autowired
+    protected WarehouseRepository warehouseDAO;
     @Autowired
     protected WarehouseConfigureProxy warehouseConfigureProxy;
 
@@ -134,22 +137,19 @@ public class WarehouseManager extends ServiceEntityManager {
                 "dataSourceType");
     }
 
-
     public WarehouseManager() {
         super.seConfigureProxy = new WarehouseConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new WarehouseDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(warehouseDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, warehouseDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(warehouseConfigureProxy);
     }
-
 
     @Override
     public ServiceEntityNode newRootEntityNode(String client)
@@ -369,12 +369,10 @@ public class WarehouseManager extends ServiceEntityManager {
         rawEntity.setRefUUID(warehouseStoreSettingUIModel.getRefUUID());
     }
 
-
     @Override
     public String getAuthorizationResource() {
         return IServiceModelConstants.Warehouse;
     }
-
 
     public void convParentOrganizationToUI(
             ServiceEntityNode parentOrganization,
@@ -388,7 +386,6 @@ public class WarehouseManager extends ServiceEntityManager {
                     .getUuid());
         }
     }
-
 
     public void convWarehouseToUI(Warehouse warehouse,
                                   WarehouseUIModel warehouseUIModel)
@@ -465,7 +462,6 @@ public class WarehouseManager extends ServiceEntityManager {
         }
     }
 
-
     public void convUIToWarehouse(WarehouseUIModel warehouseUIModel,
                                   Warehouse rawEntity) {
         DocFlowProxy.convUIToServiceEntityNode(warehouseUIModel, rawEntity);
@@ -499,7 +495,6 @@ public class WarehouseManager extends ServiceEntityManager {
         }
         rawEntity.setOperationMode(warehouseUIModel.getOperationMode());
     }
-
 
     public void initSetAreaFromWarehouse(Warehouse warehouse,
                                          WarehouseArea warehouseArea) {

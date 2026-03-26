@@ -51,5 +51,4 @@ public class FlowRouterConfigureProxy extends ServiceEntityConfigureProxy {
         super.setSeConfigMapList(seConfigureMapList);
     }
 
-
 }

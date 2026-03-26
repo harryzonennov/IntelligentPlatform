@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 
 import com.company.IntelligentPlatform.logistics.service.*;
@@ -145,7 +144,6 @@ public class OutboundDeliveryEditorController extends SEEditorController {
 					}
 				}, getDocUIModelRequest());
 	}
-
 
 	private DocAttachmentProxy.DocAttachmentProcessPara genDocAttachmentProcessPara() {
 		return new DocAttachmentProxy.DocAttachmentProcessPara(outboundDeliveryManager,

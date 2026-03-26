@@ -118,7 +118,6 @@ public class ServiceExtendFieldSettingManager {
 		return standardSwitchProxy.getSwitchMap(languageCode);
 	}
 
-
 	public Map<String, String> initFieldTypeMap(String languageCode)
 			throws ServiceEntityInstallationException {
 		return ServiceLanHelper.initDefLanguageStrMapUIModel(languageCode,
@@ -268,7 +267,6 @@ public class ServiceExtendFieldSettingManager {
 		return serviceExtendFieldSettingServiceModel;
 	}
 
-
 	public void convParentToFieldSettingUI(
 			ServiceExtensionSetting serviceExtensionSetting,
 			ServiceExtendFieldSettingUIModel serviceExtendFieldSettingUIModel) {
@@ -348,7 +346,6 @@ public class ServiceExtendFieldSettingManager {
 		}
 
 	}
-
 
 	/**
 	 * Logic to calculate default field name, based on field type, and previous
@@ -742,7 +739,6 @@ public class ServiceExtendFieldSettingManager {
 					.setParentNodeId(serviceExtendFieldSetting.getFieldName());
 		}
 	}
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model

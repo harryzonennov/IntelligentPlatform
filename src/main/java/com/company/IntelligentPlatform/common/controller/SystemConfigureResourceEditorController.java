@@ -48,7 +48,6 @@ import com.company.IntelligentPlatform.common.model.SystemConfigureElement;
 import com.company.IntelligentPlatform.common.model.SystemConfigureResource;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "systemConfigureResourceEditorController")
 @RequestMapping(value = "/systemConfigureResource")
@@ -82,7 +81,6 @@ public class SystemConfigureResourceEditorController extends SEEditorController 
 
 	@Autowired
 	protected SystemConfigureResourceServiceUIModelExtension systemConfigureResourceServiceUIModelExtension;
-
 
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
@@ -278,7 +276,6 @@ public class SystemConfigureResourceEditorController extends SEEditorController 
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/loadModuleViewService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody

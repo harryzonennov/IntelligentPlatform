@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.controller.*;
-// TODO-DAO: import ...FlowRouterDAO;
-
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.FlowRouterRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.SystemSerialParallelProxy;
@@ -46,11 +48,11 @@ public class FlowRouterManager extends ServiceEntityManager {
     public static final String METHOD_ConvFlowRouterToUI = "convFlowRouterToUI";
 
     public static final String METHOD_ConvUIToFlowRouter = "convUIToFlowRouter";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected FlowRouterDAO flowRouterDAO;
-
+    @Autowired
+    protected FlowRouterRepository flowRouterDAO;
     @Autowired
     protected FlowRouterConfigureProxy flowRouterConfigureProxy;
 
@@ -65,7 +67,6 @@ public class FlowRouterManager extends ServiceEntityManager {
 
     @Autowired
     protected FlowRouterSearchProxy flowRouterSearchProxy;
-
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -159,7 +160,7 @@ public class FlowRouterManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(flowRouterDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, flowRouterDAO));
     }
 
     @PostConstruct

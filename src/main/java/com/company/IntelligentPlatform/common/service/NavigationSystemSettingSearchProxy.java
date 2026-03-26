@@ -105,5 +105,4 @@ public class NavigationSystemSettingSearchProxy extends ServiceSearchProxy{
 		return BsearchService.genSearchResponse(resultList, 0);
 	}
 
-
 }

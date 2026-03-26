@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.model.ServiceModule;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ServiceFlowModelServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = ServiceFlowModel.NODENAME, nodeInstId = ServiceFlowModel.SENAME)

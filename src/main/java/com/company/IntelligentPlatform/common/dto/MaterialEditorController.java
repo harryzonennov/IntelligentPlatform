@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.dto;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -196,7 +195,6 @@ public class MaterialEditorController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

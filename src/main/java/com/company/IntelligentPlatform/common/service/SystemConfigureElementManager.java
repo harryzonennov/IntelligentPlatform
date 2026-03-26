@@ -74,7 +74,6 @@ public class SystemConfigureElementManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
 
-
 	public Map<Integer, String> getElementScenarioModeMap(
 			SystemConfigureElement systemConfigureElement)
 			throws ServiceEntityInstallationException {
@@ -123,7 +122,6 @@ public class SystemConfigureElementManager {
 			}
 		}
 	}
-
 
 	public void convSystemConfigureElementToUI(
 			SystemConfigureElement systemConfigureElement,

@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplateIt
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class BillOfMaterialTemplateItemServiceModel extends ServiceModule {
 
     @IServiceModuleFieldConfig(nodeName = BillOfMaterialTemplateItem.NODENAME, nodeInstId = BillOfMaterialTemplateItem.NODENAME,

@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
 public class ProductiveBOMOrder extends ServiceEntityNode {
 
-
 	public final static String NODENAME = ServiceEntityNode.NODENAME_ROOT;
 
 	public final static String SENAME = "BillOfMaterialOrder";

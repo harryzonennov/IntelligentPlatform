@@ -49,7 +49,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "prodPickingRefOrderItemEditorController")
 @RequestMapping(value = "/prodPickingRefOrderItem")
@@ -116,7 +115,6 @@ public class ProdPickingRefOrderItemEditorController extends SEEditorController 
 		return (ProdPickingRefOrderItemServiceUIModel) JSONObject
 				.toBean(jsonObject, ProdPickingRefOrderItemServiceUIModel.class, classMap);
 	}
-
 
 	@RequestMapping(value = "/getInStockItemList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
@@ -403,7 +401,6 @@ public class ProdPickingRefOrderItemEditorController extends SEEditorController 
 		}
 	}
 
-
 	@RequestMapping(value = "/loadModuleWithPostUpdateService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String loadModuleWithPostUpdateService(String uuid) {
@@ -455,7 +452,6 @@ public class ProdPickingRefOrderItemEditorController extends SEEditorController 
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/exitEditor", produces = "text/html;charset=UTF-8")
 	public @ResponseBody

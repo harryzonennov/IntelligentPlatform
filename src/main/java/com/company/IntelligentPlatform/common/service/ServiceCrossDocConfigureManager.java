@@ -73,8 +73,6 @@ public class ServiceCrossDocConfigureManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, serialLogonInfo.getClient());
     }
 
-
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -125,7 +123,6 @@ public class ServiceCrossDocConfigureManager {
             }
         }
     }
-
 
     public void convUIToServiceCrossDocConfigure(ServiceCrossDocConfigureUIModel serviceCrossDocConfigureUIModel, ServiceCrossDocConfigure rawEntity) {
         if(serviceCrossDocConfigureUIModel != null && rawEntity != null){
@@ -180,6 +177,5 @@ public class ServiceCrossDocConfigureManager {
             }
         }
     }
-
 
 }

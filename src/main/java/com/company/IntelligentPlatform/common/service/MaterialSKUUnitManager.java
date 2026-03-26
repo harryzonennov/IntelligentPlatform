@@ -20,7 +20,6 @@ import java.util.Map;
 @Service
 public class MaterialSKUUnitManager {
 
-
     public static final String METHOD_ConvMaterialSKUUnitToUI = "convMaterialSKUUnitToUI";
 
     public static final String METHOD_ConvUIToMaterialSKUUnit = "convUIToMaterialSKUUnit";
@@ -202,7 +201,5 @@ public class MaterialSKUUnitManager {
                     .getRefWeightUnit());
         }
     }
-
-
 
 }

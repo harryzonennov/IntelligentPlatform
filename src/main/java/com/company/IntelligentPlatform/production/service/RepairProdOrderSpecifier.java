@@ -84,7 +84,6 @@ public class RepairProdOrderSpecifier extends DocumentContentSpecifier<RepairPro
         return null;
     }
 
-
     @Override
     public void setDocInvolveParty(RepairProdOrderServiceModel repairProdOrderServiceModel,
                                    DocInvolveParty docInvolveParty) {

@@ -11,7 +11,6 @@ public class CalendarTempWorkSchedule extends ServiceEntityNode{
 
 	public static final String NODENAME = IServiceModelConstants.CalendarTempWorkSchedule;
 
-
 	public CalendarTempWorkSchedule(){
 		super.nodeName = NODENAME;
 		super.serviceEntityName = SENAME;

@@ -63,7 +63,6 @@ public class MaterialUnitManager {
         return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
     }
 
-
     public void convMaterialUnitToUI(
             MaterialUnitReference materialUnitReference,
             MaterialUnitUIModel materialUnitUIModel)

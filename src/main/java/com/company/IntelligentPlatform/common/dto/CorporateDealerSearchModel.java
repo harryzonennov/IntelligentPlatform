@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.model.CorporateCustomer;
 
-
 /**
  * corporateCustomer UI Model
  ** 

@@ -8,7 +8,6 @@ import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 import com.company.IntelligentPlatform.common.model.ServiceFlowCondGroup;
 import com.company.IntelligentPlatform.common.model.ServiceFlowModel;
 
-
 public class ServiceFlowModelServiceUIModel extends ServiceUIModule {
 
     @IServiceUIModuleFieldConfig(nodeName = ServiceFlowModel.NODENAME, nodeInstId = ServiceFlowModel.SENAME)

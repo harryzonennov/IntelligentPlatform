@@ -448,5 +448,4 @@ public class ServiceEntityConfigureProxy {
 		return seFieldConfigList;
 	}
 
-
 }

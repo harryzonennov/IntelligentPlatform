@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.common.model;
 
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.common.model.*;
+import com.company.IntelligentPlatform.common.model.*;
+@Entity
+@Table(name = "HostCompany", schema = "platform")
 public class HostCompany extends Organization{	
 	
 	protected byte[] comLogo;

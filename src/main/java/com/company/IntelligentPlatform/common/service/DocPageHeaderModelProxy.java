@@ -96,7 +96,6 @@ public class DocPageHeaderModelProxy {
             this.serviceEntityManager = serviceEntityManager;
         }
 
-
         public String getBaseUUID() {
             return baseUUID;
         }
@@ -264,6 +263,5 @@ public class DocPageHeaderModelProxy {
         request.setNodeName(serviceEntityNode.getNodeName());
         return request;
     }
-
 
 }

@@ -96,7 +96,6 @@ public class CrossDocConvertReservedRequest <TargetServiceModel extends ServiceM
      */
     private IConvertToTargetItemReserved convertToTargetItemReserved;
 
-
     private ILoadSourceItemReserved loadSourceItemReserved;
 
     private IGenerateTargetItemServiceModelReserved<TargetServiceModel, TargetItemServiceModel> generateTargetItemServiceModelReserved;

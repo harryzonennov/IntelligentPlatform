@@ -46,12 +46,10 @@ public class OrganizationToFinSearchProxy extends ServiceSearchProxy {
 		return organizationManager.getAuthorizationResource();
 	}
 
-
 	@Override
 	public Map<Integer, String> getStatusMap(String languageCode) throws ServiceEntityInstallationException {
 		return null;
 	}
-
 
 	public List<BSearchNodeComConfigure> getBasicItemSearchNodeConfigureList() throws SearchConfigureException {
 		List<BSearchNodeComConfigure> searchNodeConfigList = new ArrayList<BSearchNodeComConfigure>();

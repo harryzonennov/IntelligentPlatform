@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreManager;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreServiceModel;
 import org.slf4j.Logger;

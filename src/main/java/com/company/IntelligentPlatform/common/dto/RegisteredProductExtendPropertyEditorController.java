@@ -23,7 +23,6 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "registeredProductExtendPropertyEditorController")
 @RequestMapping(value = "/registeredProductExtendProperty")
@@ -46,7 +45,6 @@ public class RegisteredProductExtendPropertyEditorController extends
 
     @Autowired
     private RegisteredProductSpecifier registeredProductSpecifier;
-
 
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
@@ -76,7 +74,6 @@ public class RegisteredProductExtendPropertyEditorController extends
 		return serviceBasicUtilityController.getMapMeta(
 				lanCode -> registeredProductExtendPropertyManager.initQualityInspectMap(lanCode));
 	}
-
 
 	private RegisteredProductExtendPropertyServiceUIModel parseToServiceUIModel(
 			String request) {

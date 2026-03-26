@@ -91,7 +91,6 @@ public class StandardSystemVariableProxy {
 		return (T) systemVariableConverter.getValue(logonInfo);
 	}
 
-
 	/**
 	 * Retrieves the appropriate `system variable` converter class based on the provided input key.
 	 *
@@ -141,7 +140,6 @@ public class StandardSystemVariableProxy {
 				new CurrentSystemTimeConverter());
 	}
 
-
 	public interface ISystemVariableConverter<T> {
 
 		int VALUE_CAT_SIM_FIELD = 1;
@@ -179,7 +177,6 @@ public class StandardSystemVariableProxy {
 
 	public class LogonUserUUIDVariableConverter extends DefaultVariableConverter<String> {
 
-
 		@Override
 		public String getKey() {
 			return StandardSystemVariableProxy.LogonUserUUID;
@@ -198,7 +195,6 @@ public class StandardSystemVariableProxy {
 	}
 
 	public class LogonOrgUUIDVariableConverter extends DefaultVariableConverter<String> {
-
 
 		@Override
 		public String getKey() {
@@ -247,7 +243,6 @@ public class StandardSystemVariableProxy {
 
 	public class CurrentSystemTimeConverter extends DefaultVariableConverter<Date> {
 
-
 		@Override
 		public String getKey() {
 			return StandardSystemVariableProxy.CurrentSystemTime;
@@ -263,6 +258,5 @@ public class StandardSystemVariableProxy {
 			return new Date();
 		}
 	}
-
 
 }

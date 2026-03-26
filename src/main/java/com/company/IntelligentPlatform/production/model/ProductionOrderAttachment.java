@@ -14,5 +14,4 @@ public class ProductionOrderAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

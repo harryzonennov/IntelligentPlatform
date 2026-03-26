@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.OrganizationFunction;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class OrganizationFunctionServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = OrganizationFunction.NODENAME, nodeInstId = OrganizationFunction.SENAME)

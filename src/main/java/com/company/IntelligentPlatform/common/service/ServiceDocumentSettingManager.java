@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.ServiceDocumentSettingUIModel;
-// TODO-DAO: import ...ServiceDocumentSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceDocumentSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
@@ -38,11 +41,11 @@ public class ServiceDocumentSettingManager extends ServiceEntityManager {
 	public static final String METHOD_ConvServiceDocumentSettingToUI = "convServiceDocumentSettingToUI";
 
 	public static final String METHOD_ConvUIToServiceDocumentSetting = "convUIToServiceDocumentSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected ServiceDocumentSettingDAO serviceDocumentSettingDAO;
-
+    @Autowired
+    protected ServiceDocumentSettingRepository serviceDocumentSettingDAO;
 	@Autowired
 	protected ServiceDocumentSettingConfigureProxy serviceDocumentSettingConfigureProxy;
 
@@ -54,7 +57,7 @@ public class ServiceDocumentSettingManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(serviceDocumentSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceDocumentSettingDAO));
 	}
 
 	@PostConstruct
@@ -279,8 +282,6 @@ public class ServiceDocumentSettingManager extends ServiceEntityManager {
 		}
 		return true;
 	}
-
-
 
 	public void convServiceDocumentSettingToUI(
 			ServiceDocumentSetting serviceDocumentSetting,

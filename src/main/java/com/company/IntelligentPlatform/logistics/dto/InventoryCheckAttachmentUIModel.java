@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.logistics.dto;
 
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 public class InventoryCheckAttachmentUIModel extends SEUIComModel {
 
 	protected String attachmentTitle;

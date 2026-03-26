@@ -32,7 +32,6 @@ public class ProdOrderSupplyWarehouseManager {
 
 	protected Logger logger = LoggerFactory.getLogger(ProdOrderSupplyWarehouseManager.class);
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =

@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 public class ServicePieChartDataUnion {
 
     protected String name;

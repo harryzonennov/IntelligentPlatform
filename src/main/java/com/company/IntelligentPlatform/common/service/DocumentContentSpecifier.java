@@ -288,7 +288,6 @@ public abstract class DocumentContentSpecifier<R extends ServiceModule, T extend
         return subEntityNode;
     }
 
-
     public static class InitSubServiceEntityRequest<T extends ServiceEntityNode> {
 
         protected String parentNodeName;
@@ -369,14 +368,12 @@ public abstract class DocumentContentSpecifier<R extends ServiceModule, T extend
         }
     }
 
-
     public interface IProcessInitSubServiceEntityNode<T extends ServiceEntityNode> {
 
         T execute(ServiceEntityNode parentNode, T parentItem, T newItem)
                 throws DocActionException, ServiceEntityConfigureException;
 
     }
-
 
     /**
      * Processes and splits a list of document material items based on their associated material SKUs.
@@ -413,7 +410,6 @@ public abstract class DocumentContentSpecifier<R extends ServiceModule, T extend
         }
         return renewDocumentMatItemList;
     }
-
 
     /**
      * Recursively deletes a list of sub-service entity items, from the current node down to the leaf nodes,
@@ -979,7 +975,6 @@ public abstract class DocumentContentSpecifier<R extends ServiceModule, T extend
         }
 
     }
-
 
     public static class DocMetadata {
 

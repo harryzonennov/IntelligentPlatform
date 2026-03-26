@@ -3,7 +3,6 @@ package com.company.IntelligentPlatform.common.service;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ServiceComChartModel {
 
     protected List<ServiceChartDataSeries> dataSeries = new ArrayList<ServiceChartDataSeries>();

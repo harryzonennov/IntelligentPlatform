@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
 @Service
 public class RepairProdOrderSearchProxy extends ServiceSearchProxy{
 
@@ -177,7 +176,5 @@ public class RepairProdOrderSearchProxy extends ServiceSearchProxy{
 
 		return searchNodeConfigList;
 	}
-
-
 
 }

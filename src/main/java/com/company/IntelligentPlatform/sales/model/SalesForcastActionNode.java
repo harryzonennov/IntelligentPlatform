@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProx
 import com.company.IntelligentPlatform.common.model.DocActionNode;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 public class SalesForcastActionNode extends DocActionNode {
 
     public static final String NODENAME = IServiceModelConstants.SalesForcastActionNode;
@@ -50,9 +49,6 @@ public class SalesForcastActionNode extends DocActionNode {
 
     public static final String NODEINST_ACTION_CANCEL =
             SystemDefDocActionCodeProxy.NODEINST_ACTION_CANCEL;
-
-
-
 
     public SalesForcastActionNode() {
         this.nodeName = NODENAME;

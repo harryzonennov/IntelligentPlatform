@@ -197,5 +197,4 @@ public class LogonUserUIModel extends SEUIComModel {
 		this.statusValue = statusValue;
 	}
 
-
 }

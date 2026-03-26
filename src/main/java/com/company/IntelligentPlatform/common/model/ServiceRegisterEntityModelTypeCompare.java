@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.model;
 
 import java.util.Comparator;
 
-
 public class ServiceRegisterEntityModelTypeCompare implements Comparator<ServiceEntityRegisterEntity>{
 
 	@Override

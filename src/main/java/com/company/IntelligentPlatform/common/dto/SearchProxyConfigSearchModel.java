@@ -54,7 +54,6 @@ public class SearchProxyConfigSearchModel extends SEUIComModel {
 		this.searchProxyName = searchProxyName;
 	}
 
-
 	public String getId() {
 		return this.id;
 	}

@@ -165,7 +165,6 @@ public class ServiceLanHelper {
                         });
     }
 
-
     /**
      * Utility method to initial and return the default Map with language key
      *
@@ -232,7 +231,6 @@ public class ServiceLanHelper {
                             }
                         });
     }
-
 
     /**
      * Get standard String format key for Locale

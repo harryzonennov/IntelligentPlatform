@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class PurchaseContractValueProxy implements IFinanceAccountValueProxy{
 	

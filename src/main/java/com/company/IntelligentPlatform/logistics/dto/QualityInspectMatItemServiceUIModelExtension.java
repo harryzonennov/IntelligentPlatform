@@ -81,7 +81,6 @@ public class QualityInspectMatItemServiceUIModelExtension extends
 				QualityInsMatItemAttachment.NODENAME
 		)));
 
-
 		resultList.add(docInvolvePartyProxy.genDefServiceUIModelExtension(new DocInvolvePartyProxy.DocInvolvePartyInputPara(
 				QualityInspectMatItemParty.SENAME,
 				QualityInspectMatItemParty.NODENAME,
@@ -178,7 +177,6 @@ public class QualityInspectMatItemServiceUIModelExtension extends
 		qualityInspectOrderMap.setLogicManager(qualityInspectMatItemManager);
 		qualityInspectOrderMap
 				.setConvToUIMethod(QualityInspectMatItemManager.METHOD_ConvParentDocToItemUI);
-
 
 		// UI Model Configure of node:[QualityInspectOrder]
 		uiModelNodeMapList.addAll(docFlowProxy.getDefParentDocMapConfigureList(QualityInspectMatItem.NODENAME));
@@ -279,7 +277,6 @@ public class QualityInspectMatItemServiceUIModelExtension extends
 				.addAll(docFlowProxy
 						.getDefMaterialNodeMapConfigureList(
 								QualityInspectMatItem.NODENAME));
-
 
 		qualityInspectMatItemExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);

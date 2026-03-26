@@ -135,7 +135,6 @@ public class ProductionOrderActionExecutionProxy
         return productionOrderManager;
     }
 
-
     public void executeActionCore(ProductionOrderServiceModel productionOrderServiceModel, int docActionCode,
                                   SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException {

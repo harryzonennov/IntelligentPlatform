@@ -22,17 +22,12 @@ import com.company.IntelligentPlatform.common.model.WarehouseStoreSetting;
 import com.company.IntelligentPlatform.common.model.WarehouseStoreSetting;
 import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
 import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.ServiceDocConfigureListController;
 import com.company.IntelligentPlatform.common.controller.SEEditorController;
 import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.LockObjectManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.ServiceJSONParser;
-import com.company.IntelligentPlatform.common.service.ServiceDocConfigureManager;
-import com.company.IntelligentPlatform.common.service.ServiceDocConfigureResourceManager;
 import com.company.IntelligentPlatform.common.model.ISystemActionCode;
 import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonUser;
@@ -70,15 +65,6 @@ public class WarehouseStoreSettingEditorController extends SEEditorController {
 
 	@Autowired
 	protected MaterialStockKeepUnitManager materialStockKeepUnitManager;
-
-	@Autowired
-	protected ServiceDocConfigureManager serviceDocConfigureManager;
-
-	@Autowired
-	protected ServiceDocConfigureListController serviceDocConfigureListController;
-
-	@Autowired
-	protected ServiceDocConfigureResourceManager serviceDocConfigureResourceManager;
 
 	@Autowired
 	protected WarehouseStoreSettingUIModelExtension warehouseStoreSettingUIModelExtension;

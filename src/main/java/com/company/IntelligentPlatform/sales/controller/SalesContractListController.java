@@ -73,5 +73,4 @@ public class SalesContractListController extends SEListController {
                         .getSearchProxy().searchDocList(searchContext),  this::getServiceModuleListCore);
     }
 
-
 }

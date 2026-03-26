@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,6 +73,9 @@ public class InventoryTransferOrderManager extends ServiceEntityManager {
 	public static final String METHOD_ConvInboundWarehouseToUI = "convInboundWarehouseToUI";
 
 	public static final String METHOD_ConvInboundDeliveryToUI = "convInboundDeliveryToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected InventoryTransferOrderRepository inventoryTransferOrderDAO;
@@ -130,19 +135,17 @@ public class InventoryTransferOrderManager extends ServiceEntityManager {
 
 	public InventoryTransferOrderManager() {
 		super.seConfigureProxy = new InventoryTransferOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new InventoryTransferOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(inventoryTransferOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inventoryTransferOrderDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(inventoryTransferOrderConfigureProxy);
 	}
-
 
 	public Map<Integer, String> initStatusMap(String languageCode)
 			throws ServiceEntityInstallationException {
@@ -174,7 +177,6 @@ public class InventoryTransferOrderManager extends ServiceEntityManager {
 		}
 		return true;
 	}
-
 
 	/**
 	 * Logic to get all document type might be suitable for inventory transfer
@@ -268,7 +270,6 @@ public class InventoryTransferOrderManager extends ServiceEntityManager {
 					warehouseStoreDocActionProxy.crossCreateDocumentBatch(null,
 							warehouseStoreMatItemList, genOutboundRequest, new CrossDocConvertRequest.InputOption(true), logonInfo);
 
-
 			// Step3 Build the prev-next relationship from outbound delivery to current inventory
 			ServiceCollectionsHelper.traverseListInterrupt(docContentCreateContextList.get(0).getDocMatItemCreateContextList(), docMatItemCreateContext -> {
 				OutboundItem outboundItem = (OutboundItem) docMatItemCreateContext.getTargetDocMatItemNode();
@@ -306,7 +307,6 @@ public class InventoryTransferOrderManager extends ServiceEntityManager {
             throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getErrorMessage());
         }
     }
-
 
 	/**
 	 * [Internal method] Convert from SE model to UI model

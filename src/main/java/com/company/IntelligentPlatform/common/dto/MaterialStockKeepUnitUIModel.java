@@ -63,7 +63,6 @@ public class MaterialStockKeepUnitUIModel extends SEUIComModel implements
 
     protected String mainMaterialUnitName;
 
-
     @ISEUIModelMapping(fieldName = "inboundDeliveryPrice", seName = MaterialStockKeepUnit.SENAME, nodeName =
             MaterialStockKeepUnit.NODENAME, nodeInstID = MaterialStockKeepUnit.SENAME, showOnList = false, secId =
             MaterialStockKeepUnit.SENAME, tabId = TABID_BASIC)

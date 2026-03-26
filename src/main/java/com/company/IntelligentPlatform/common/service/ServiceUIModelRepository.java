@@ -108,7 +108,6 @@ public class ServiceUIModelRepository {
 				this.serviceUIModelMapLan, resourcePath);
 	}
 
-
 	/**
 	 * Logic to get search proxy instance by registereed id
 	 * @param serviceUIModelId
@@ -220,6 +219,5 @@ public class ServiceUIModelRepository {
 		return resultFieldList;
 
 	}
-
 
 }

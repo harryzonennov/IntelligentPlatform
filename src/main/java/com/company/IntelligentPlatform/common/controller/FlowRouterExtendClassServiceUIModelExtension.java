@@ -18,7 +18,6 @@ import com.company.IntelligentPlatform.common.model.FlowRouter;
 import com.company.IntelligentPlatform.common.model.FlowRouterExtendClass;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 
-
 @Service
 public class FlowRouterExtendClassServiceUIModelExtension extends ServiceUIModelExtension {
 
@@ -32,7 +31,6 @@ public class FlowRouterExtendClassServiceUIModelExtension extends ServiceUIModel
         List<ServiceUIModelExtension> resultList = new ArrayList<>();
         return resultList;
     }
-
 
     @Override
     public List<ServiceUIModelExtensionUnion> genUIModelExtensionUnion() {
@@ -96,6 +94,5 @@ public class FlowRouterExtendClassServiceUIModelExtension extends ServiceUIModel
         resultList.add(flowRouterExtendClassExtensionUnion);
         return resultList;
     }
-
 
 }

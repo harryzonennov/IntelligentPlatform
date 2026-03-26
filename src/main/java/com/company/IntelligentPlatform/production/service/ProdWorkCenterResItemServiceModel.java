@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.production.model.ProdWorkCenterResItem;
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class ProdWorkCenterResItemServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = ProdWorkCenterResItem.NODENAME, nodeInstId = ProdWorkCenterResItem.NODENAME)

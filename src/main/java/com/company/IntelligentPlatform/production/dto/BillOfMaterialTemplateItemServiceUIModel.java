@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplateIt
 import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 
-
 public class BillOfMaterialTemplateItemServiceUIModel extends ServiceUIModule {
 
     @IServiceUIModuleFieldConfig(nodeName = BillOfMaterialTemplateItem.NODENAME, nodeInstId = BillOfMaterialTemplateItem.NODENAME)

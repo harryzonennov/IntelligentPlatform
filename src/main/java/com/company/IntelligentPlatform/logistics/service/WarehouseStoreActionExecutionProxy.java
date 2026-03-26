@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-
 import com.company.IntelligentPlatform.logistics.dto.WarehouseStoreServiceUIModelExtension;
 import com.company.IntelligentPlatform.logistics.model.InventoryTransferOrderParty;
 import com.company.IntelligentPlatform.logistics.model.OutboundDeliveryParty;

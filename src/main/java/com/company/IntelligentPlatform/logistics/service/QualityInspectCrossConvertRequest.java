@@ -211,5 +211,4 @@ public class QualityInspectCrossConvertRequest extends
         return qualityInspectMatItemServiceModel;
     }
 
-
 }

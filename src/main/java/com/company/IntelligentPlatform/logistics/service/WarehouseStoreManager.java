@@ -1,9 +1,10 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.logistics.dto.*;
 import com.company.IntelligentPlatform.logistics.repository.WarehouseStoreRepository;
-import com.company.IntelligentPlatform.logistics.service.OutboundDeliveryManager;
-import com.company.IntelligentPlatform.logistics.service.OutboundDeliveryWarehouseItemManager;
 import com.company.IntelligentPlatform.logistics.model.InboundDelivery;
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.slf4j.Logger;
@@ -26,7 +27,6 @@ import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.SearchConfigureException;
 import com.company.IntelligentPlatform.common.service.SearchContextBuilder;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.service.ServiceDocConfigureResourceManager;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
 import com.company.IntelligentPlatform.common.model.*;
@@ -43,7 +43,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
 @Service
 public class WarehouseStoreManager extends ServiceEntityManager{
@@ -82,9 +81,9 @@ public class WarehouseStoreManager extends ServiceEntityManager{
 
     @Autowired
     protected ServiceDropdownListHelper serviceDropdownListHelper;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    @Autowired
-    protected ServiceDocConfigureResourceManager serviceDocConfigureResourceManager;
 
     @Autowired
     protected WarehouseStoreRepository warehouseStoreDAO;
@@ -103,7 +102,7 @@ public class WarehouseStoreManager extends ServiceEntityManager{
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(warehouseStoreDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, warehouseStoreDAO));
     }
 
     @PostConstruct
@@ -185,7 +184,6 @@ public class WarehouseStoreManager extends ServiceEntityManager{
         return storeItemList;
     }
 
-
     /**
      * Logic to get all possible warehouse store item list from sales contract
      *
@@ -218,8 +216,6 @@ public class WarehouseStoreManager extends ServiceEntityManager{
             throw new WarehouseStoreItemException(WarehouseStoreItemException.PARA_SYSTEM_WRONG, e.getMessage());
         }
     }
-
-
 
     /**
      * Core Method to calculate the available warehouse storage item amount by
@@ -259,7 +255,6 @@ public class WarehouseStoreManager extends ServiceEntityManager{
         }
         return storageCoreUnit1;
     }
-
 
     protected StorageCoreUnit getMergedStoreItem(
             WarehouseStoreSetting warehouseStoreSetting)
@@ -385,8 +380,6 @@ public class WarehouseStoreManager extends ServiceEntityManager{
         rawEntity.setNote(warehouseStoreUIModel.getNote());
     }
 
-
-
     /**
      * Method to get the unique warehouse store item log from persistence.
      *
@@ -493,7 +486,6 @@ public class WarehouseStoreManager extends ServiceEntityManager{
                 .getDeclaredValue());
         return warehouseStoreItemLog;
     }
-
 
     /**
      * Short way to get store item list by template SKU UUID and refWarehouse

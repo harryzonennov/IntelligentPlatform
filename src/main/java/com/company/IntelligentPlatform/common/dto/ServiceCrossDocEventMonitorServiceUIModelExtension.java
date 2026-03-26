@@ -81,7 +81,6 @@ public class ServiceCrossDocEventMonitorServiceUIModelExtension extends
 				.setConvToUIMethod(ServiceCrossDocEventMonitorManager.METHOD_ConvServiceCrossDocConfigureToEventUI);
 		uiModelNodeMapList.add(serviceCrossDocConfigureMap);
 
-
 		UIModelNodeMapConfigure serviceDocumentSettingMap = new UIModelNodeMapConfigure();
 		serviceDocumentSettingMap
 				.setSeName(ServiceDocumentSetting.SENAME);

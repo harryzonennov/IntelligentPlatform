@@ -39,7 +39,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "calendarTempWorkScheduleEditorController")
 @RequestMapping(value = "/calendarTempWorkSchedule")

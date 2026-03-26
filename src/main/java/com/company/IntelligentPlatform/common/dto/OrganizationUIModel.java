@@ -103,7 +103,6 @@ public class OrganizationUIModel extends AccountUIModel {
 		this.organizationFunctionValue = organizationFunctionValue;
 	}
 
-
 	public String getContactMobileNumber() {
 		return contactMobileNumber;
 	}

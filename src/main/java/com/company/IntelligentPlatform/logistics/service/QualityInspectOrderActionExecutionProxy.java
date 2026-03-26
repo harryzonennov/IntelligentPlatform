@@ -271,7 +271,6 @@ public class QualityInspectOrderActionExecutionProxy
         }
     }
 
-
     /**
      * Core Logic to calculate document type when conversion quality to inbound
      * @param qualityInspectMatItemList
@@ -289,7 +288,6 @@ public class QualityInspectOrderActionExecutionProxy
         }
         return IDefDocumentResource.DOCUMENT_TYPE_QUALITYINSPECTORDER;
     }
-
 
     private Map<String, List<ServiceEntityNode>> processWasteInboundRequestMap(
             List<ServiceEntityNode> qualityInspectMatItemList, String client)
@@ -419,12 +417,10 @@ public class QualityInspectOrderActionExecutionProxy
         return QualityInspectOrder.CATEGORY_INBOUND;
     }
 
-
     @Override
     public ServiceEntityManager getServiceEntityManager() {
         return qualityInspectOrderManager;
     }
-
 
     public void executeActionCore(
             QualityInspectOrderServiceModel qualityInspectOrderServiceModel,

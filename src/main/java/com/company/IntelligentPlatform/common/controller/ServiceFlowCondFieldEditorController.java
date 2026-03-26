@@ -25,7 +25,6 @@ import com.company.IntelligentPlatform.common.model.ServiceFieldMeta;
 
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "serviceFlowCondFieldEditorController")
 @RequestMapping(value = "/serviceFlowCondField")
@@ -71,7 +70,6 @@ public class ServiceFlowCondFieldEditorController extends SEEditorController {
         return serviceBasicUtilityController.getMapMeta(
                 lanCode -> serviceFlowCondFieldManager.initValueOperatorMap(lanCode));
     }
-
 
     @RequestMapping(value = "/getFieldType", produces = "text/html;charset=UTF-8")
     public @ResponseBody

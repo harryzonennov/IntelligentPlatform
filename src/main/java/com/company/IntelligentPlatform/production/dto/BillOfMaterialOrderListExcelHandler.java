@@ -25,7 +25,6 @@ public class BillOfMaterialOrderListExcelHandler extends ServiceExcelHandlerProx
     @Autowired
     protected BillOfMaterialOrderSpecifier billOfMaterialOrderSpecifier;
 
-
     //TODO find old logic from this old class
     @Autowired
     protected BillOfMaterialOrderReportProxy billOfMaterialOrderReportProxy;

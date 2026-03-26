@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.*;
 
 public class EmployeeOrgReference extends ReferenceNode {
 
-
 	public final static String NODENAME = "EmployeeOrgReference";
 
 	public final static String SENAME = Employee.SENAME;

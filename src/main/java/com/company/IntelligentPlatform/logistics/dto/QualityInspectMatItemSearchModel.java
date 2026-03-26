@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.service.BSearchGroupConfig;
 import com.company.IntelligentPlatform.common.service.SearchDocConfigHelper;
 
-
 @Component
 public class QualityInspectMatItemSearchModel extends SEUIComModel {
 

@@ -68,9 +68,6 @@ public class SalesForcastCrossConvertRequest extends
         });
     }
 
-
-
-
     /**
      * Set Default Callback: Logic to parse information from genRequest to
      */
@@ -82,6 +79,5 @@ public class SalesForcastCrossConvertRequest extends
             SalesForcast salesForcast = targetServiceModule.getSalesForcast();
         });
     }
-
 
 }

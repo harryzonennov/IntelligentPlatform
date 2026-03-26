@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class RepairProdOrderItem extends ProductionOrderItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.RepairProdOrderItem;
 
 	public final static String SENAME = RepairProdOrder.SENAME;
@@ -17,6 +16,5 @@ public class RepairProdOrderItem extends ProductionOrderItem {
 		this.itemStatus = STATUS_INITIAL;
 		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_REPAIRPRODORDERITEM;
 	}
-
 
 }

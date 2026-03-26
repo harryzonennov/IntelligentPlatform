@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
 
-
 @Component
 public class ProdPickingRefMaterialItemServiceUIModel extends ServiceUIModule {
 

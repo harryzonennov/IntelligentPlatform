@@ -29,7 +29,6 @@ public class StandardFieldTypeProxy {
         return this.fieldTypeMap;
     }
 
-
     public Map<String, String> getFormatFieldTypeMap(){
         if (this.fieldTypeMap == null) {
             this.fieldTypeMap = new HashMap<>();

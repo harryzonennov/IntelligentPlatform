@@ -15,7 +15,6 @@ import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension
 import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
 import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
 import com.company.IntelligentPlatform.common.service.ServiceEntityConfigureProxyService;
-import com.company.IntelligentPlatform.common.service.ServiceEntityLogModelManager;
 import com.company.IntelligentPlatform.common.service.ServiceModelExtensionHelper;
 import com.company.IntelligentPlatform.common.service.ServiceModelExtensionHelper.ExtensionUnionResponse;
 import com.company.IntelligentPlatform.common.service.ServiceExtensionManager;
@@ -27,9 +26,6 @@ import com.company.IntelligentPlatform.common.model.ServiceModule;
 
 @Service
 public class ServiceModuleProxy {
-
-	@Autowired
-	protected ServiceEntityLogModelManager serviceEntityLogModelManager;
 
 	@Autowired
 	protected ServiceExtensionManager serviceExtensionManager;
@@ -258,7 +254,6 @@ public class ServiceModuleProxy {
 		return seNodeInstance;
 	}
 
-
 	public Class<?> getNodeTypeByConfigureProxy(
 			ServiceEntityManager serviceEntityManager, String nodeName)
 			throws ServiceEntityConfigureException {
@@ -288,7 +283,6 @@ public class ServiceModuleProxy {
 		}
 		return null;
 	}
-
 
 	/**
 	 * Core Logic to update service module
@@ -589,7 +583,6 @@ public class ServiceModuleProxy {
 		}
 		this.updateAdminParentNodeRecursive(parentEntityNode, serviceEntityManager, logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Core Logic to update/insert SE instance into DB, as well as register
@@ -1886,7 +1879,6 @@ public class ServiceModuleProxy {
 		coreModuleField.set(serviceModule, seNodeValue);
 	}
 
-
 	public <T extends ServiceModule> T quickCreateServiceModel(Class<T> serviceModuleType,
 															   ServiceEntityNode coreSENode,
 															   List<ServiceEntityNode> docMatItemList,
@@ -2027,6 +2019,5 @@ public class ServiceModuleProxy {
 		}
 		return resultList;
 	}
-
 
 }

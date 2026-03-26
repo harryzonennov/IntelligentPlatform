@@ -57,7 +57,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "repairProdOrderEditorController")
 @RequestMapping(value = "/repairProdOrder")
@@ -160,7 +159,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
                 .toBean(jsonObject, RepairProdOrderServiceUIModel.class, classMap);
     }
 
-
     private RepairProdOrderServiceModel parseToServiceModel(String request)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, ServiceUIModuleProxyException {
         RepairProdOrderServiceUIModel repairProdOrderServiceUIModel = parseToServiceUIModel(request);
@@ -256,7 +254,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/approveOrderService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String approveOrderService(@RequestBody String request) {
@@ -316,7 +313,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
         }
     }
 
-
     @RequestMapping(value = "/rejectApproveService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String rejectApproveService(@RequestBody String request) {
@@ -332,7 +328,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
         return this.executeActionCore(request, ISystemActionCode.ACID_EDIT, RepairProdOrderActionNode.DOC_ACTION_SUBMIT,
                 (repairProdOrderServiceModel, logonInfo) -> repairProdOrderManager.submitService(repairProdOrderServiceModel, logonInfo.getRefUserUUID(), logonInfo.getResOrgUUID()));
     }
-
 
     @RequestMapping(value = "/revokeSubmitService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -425,7 +420,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
 
                 }, repairProdOrderServiceUIModelExtension);
     }
-
 
     String executeActionCore(@RequestBody String request, String acId, int actionCode,
                              DocActionNodeProxy.IActionExecute<RepairProdOrderServiceModel> iActionExecute) {
@@ -527,8 +521,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
             return ServiceJSONParser.generateSimpleErrorJSON(ex.getMessage());
         }
     }
-
-
 
     @RequestMapping(value = "/getInStockItemList", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -1357,7 +1349,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
                 genDocAttachmentProcessPara());
     }
 
-
     /**
      * Upload the attachment content information.
      */
@@ -1382,7 +1373,6 @@ public class RepairProdOrderEditorController extends SEEditorController {
     }
 
     ;
-
 
     @RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
     public @ResponseBody

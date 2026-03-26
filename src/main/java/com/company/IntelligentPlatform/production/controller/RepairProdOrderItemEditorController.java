@@ -53,7 +53,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "repairProdOrderItemEditorController")
 @RequestMapping(value = "/repairProdOrderItem")
@@ -171,7 +170,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/initNewModule", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String initNewModule(@RequestBody SimpleSEJSONRequest request) {
@@ -257,7 +255,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/getItemStatus", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String getItemStatus() {
@@ -298,7 +295,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String getPageHeaderModelList(@RequestBody SimpleSEJSONRequest request) {
@@ -320,7 +316,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
 		}
 	}
-
 
 	public @RequestMapping(value = "/newOutboundBatchBackMode", produces = "text/html;" + "charset=UTF-8")
 	@ResponseBody
@@ -491,7 +486,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 		}
 	}
 
-
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String checkDuplicateID(@RequestBody SimpleSEJSONRequest simpleRequest) {
@@ -499,7 +493,6 @@ public class RepairProdOrderItemEditorController extends SEEditorController {
 		simpleRequest.setClient(logonUser.getClient());
 		return super.checkDuplicateIDCore(simpleRequest, repairProdOrderManager);
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

@@ -67,6 +67,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Flowable BPM (document approval workflow engine) -->
+        <dependency>
+            <groupId>org.flowable</groupId>
+            <artifactId>flowable-spring-boot-starter</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
         <!-- Apache POI (Excel processing) -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -92,6 +99,25 @@
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
             <classifier>jdk13</classifier>
+        </dependency>
+
+        <!-- JWT token library -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

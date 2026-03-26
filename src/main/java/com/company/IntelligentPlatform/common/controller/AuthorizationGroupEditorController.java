@@ -24,7 +24,6 @@ import com.company.IntelligentPlatform.common.model.ISystemActionCode;
 import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonUser;
 
-
 @Scope("session")
 @Controller(value = "authorizationGroupEditorController")
 @RequestMapping(value = "/authorizationGroup")
@@ -65,7 +64,6 @@ public class AuthorizationGroupEditorController extends SEEditorController {
 		return serviceBasicUtilityController.getMapMeta(
 				lanCode -> authorizationGroupManager.initInnerProcessTypeMap(lanCode));
 	}
-
 
 	@RequestMapping(value = "/checkDuplicateID", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String checkDuplicateID(

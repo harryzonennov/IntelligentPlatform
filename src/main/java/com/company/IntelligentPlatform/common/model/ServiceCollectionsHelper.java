@@ -301,7 +301,6 @@ public class ServiceCollectionsHelper {
         return null;
     }
 
-
     public static <T, U extends SEUIComModel> List<U> parseToUINodeList(List<T> rawList,
                                                                         Function<T, U> callback) {
         if (ServiceCollectionsHelper.checkNullList(rawList)) {
@@ -448,7 +447,6 @@ public class ServiceCollectionsHelper {
             return resultList.get(0);
         }
     }
-
 
     /**
      * Filter SENode List by dynamic field name
@@ -1064,7 +1062,6 @@ public class ServiceCollectionsHelper {
             rawList.add(tempNode);
         }
     }
-
 
     /**
      * Compared with 2 se node list, new list and old list, get the list to be

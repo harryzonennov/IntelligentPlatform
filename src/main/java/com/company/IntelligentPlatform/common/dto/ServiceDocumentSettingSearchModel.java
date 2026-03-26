@@ -9,7 +9,6 @@ import com.company.IntelligentPlatform.common.model.ServiceDocumentSetting;
 @Component
 public class ServiceDocumentSettingSearchModel extends SEUIComModel {
 
-
     @BSearchFieldConfig(fieldName = "id", nodeName = ServiceDocumentSetting.NODENAME, seName = ServiceDocumentSetting.SENAME, nodeInstID = ServiceDocumentSetting.SENAME, showOnUI = true)
     protected String id;
 
@@ -22,14 +21,11 @@ public class ServiceDocumentSettingSearchModel extends SEUIComModel {
     @BSearchFieldConfig(fieldName = "name", nodeName = ServiceDocumentSetting.NODENAME, seName = ServiceDocumentSetting.SENAME, nodeInstID = ServiceDocumentSetting.SENAME, showOnUI = true)
     protected String name;
 
-
     @BSearchFieldConfig(fieldName = "documentType", nodeName = ServiceDocumentSetting.NODENAME, seName = ServiceDocumentSetting.SENAME, nodeInstID = ServiceDocumentSetting.SENAME, showOnUI = true)
     protected int documentType;
 
-
     @BSearchFieldConfig(fieldName = "uuid", nodeName = ServiceDocumentSetting.NODENAME, seName = ServiceDocumentSetting.SENAME, nodeInstID = ServiceDocumentSetting.SENAME, showOnUI = true)
     protected String uuid;
-
 
     public String getId() {
         return this.id;
@@ -39,7 +35,6 @@ public class ServiceDocumentSettingSearchModel extends SEUIComModel {
         this.id = id;
     }
 
-
     public String getClient() {
         return this.client;
     }
@@ -47,7 +42,6 @@ public class ServiceDocumentSettingSearchModel extends SEUIComModel {
     public void setClient(String client) {
         this.client = client;
     }
-
 
     public String getName() {
         return this.name;
@@ -88,6 +82,5 @@ public class ServiceDocumentSettingSearchModel extends SEUIComModel {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-
 
 }

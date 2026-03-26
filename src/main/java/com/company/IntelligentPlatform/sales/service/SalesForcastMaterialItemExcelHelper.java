@@ -40,7 +40,6 @@ public class SalesForcastMaterialItemExcelHelper extends DocMatItemExcelHandler 
         return false;
     }
 
-
     @Override
     public Class<?> getExcelModelClass() {
         return SalesForcastMaterialItemUIModel.class;

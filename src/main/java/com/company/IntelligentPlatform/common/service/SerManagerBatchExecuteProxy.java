@@ -48,7 +48,6 @@ public class SerManagerBatchExecuteProxy {
 		List<String> result = new ArrayList<String>();
 
 		// Sales area
-		result.add(ServiceEntityManagerFactoryInContext.bidInvitationOrderManager);
 		result.add(ServiceEntityManagerFactoryInContext.salesContractManager);
 
 		// SCM area
@@ -165,7 +164,7 @@ public class SerManagerBatchExecuteProxy {
 		}
 		if(METHOD_admDeleteEntityByKey.equals(methodName)){
 			for(ServiceEntityManager seManagerInstance:seManagerList){
-				System.out.println("admDeleteEntityByKey:" + seManagerInstance.getClass().getSimpleName());
+				logger.debug("admDeleteEntityByKey: {}", seManagerInstance.getClass().getSimpleName());
 				try {
 					seManagerInstance.admDeleteEntityByKey(client, IServiceEntityNodeFieldConstant.CLIENT, ServiceEntityNode.NODENAME_ROOT);
 				} catch (ServiceEntityConfigureException e) {

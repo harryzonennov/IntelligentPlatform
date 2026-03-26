@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.service.DocumentBarCodeService;
 
-
 @Service
 public class ServiceBarcodeGeneratorFactory {
 	

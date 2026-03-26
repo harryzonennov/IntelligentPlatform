@@ -1,10 +1,8 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 import com.company.IntelligentPlatform.common.service.ServiceEntityException;
 import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-
 
 public class DocActionException extends ServiceEntityException {
 
@@ -69,7 +67,6 @@ public class DocActionException extends ServiceEntityException {
             this.errorMessage = ex.getMessage();
         }
     }
-
 
 }
 

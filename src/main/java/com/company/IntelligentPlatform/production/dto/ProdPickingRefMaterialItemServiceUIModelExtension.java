@@ -177,7 +177,6 @@ public class ProdPickingRefMaterialItemServiceUIModelExtension extends
 				.addAll(docFlowProxy
 						.getDefMaterialNodeMapConfigureList(ProdPickingRefMaterialItem.NODENAME));
 
-
 		// UI Model Configure of node:[OutboundItem]
 		UIModelNodeMapConfigure outboundItemMap = new UIModelNodeMapConfigure();
 		outboundItemMap.setBaseNodeInstID(ProdPickingRefMaterialItem.NODENAME);

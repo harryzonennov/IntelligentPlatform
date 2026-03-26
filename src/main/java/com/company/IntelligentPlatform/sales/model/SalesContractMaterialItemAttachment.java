@@ -15,5 +15,4 @@ public class SalesContractMaterialItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
@@ -62,6 +64,9 @@ public class InboundDeliveryManager extends ServiceEntityManager {
     public static final String METHOD_ConvWarehouseToUI = "convWarehouseToUI";
 
     public static final String METHOD_ConvWarehouseAreaToUI = "convWarehouseAreaToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected InboundDeliveryRepository inboundDeliveryDAO;
@@ -117,19 +122,17 @@ public class InboundDeliveryManager extends ServiceEntityManager {
 
     public InboundDeliveryManager() {
         super.seConfigureProxy = new InboundDeliveryConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new InboundDeliveryDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(inboundDeliveryDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inboundDeliveryDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(inboundDeliveryConfigureProxy);
     }
-
 
     public Map<Integer, String> initFreightChargeType(String languageCode)
             throws ServiceEntityInstallationException {
@@ -430,7 +433,6 @@ public class InboundDeliveryManager extends ServiceEntityManager {
         rawEntity.setFreightChargeType(inboundDeliveryUIModel
                 .getFreightChargeType());
     }
-
 
     public ServiceDocumentExtendUIModel convInboundDeliveryToDocExtUIModel(
             InboundDeliveryUIModel inboundDeliveryUIModel, LogonInfo logonInfo)

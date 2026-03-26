@@ -330,8 +330,6 @@ public class ResFinSystemResourceEditorController extends SEEditorController {
 		}
 	}
 
-
-
 	@RequestMapping(value = "/checkSaveModule", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String checkSaveModule(
 			@RequestBody ResFinSystemResourceUIModel systemResourceUIModel) {
@@ -434,6 +432,5 @@ public class ResFinSystemResourceEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
 		}
 	}
-
 
 }

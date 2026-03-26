@@ -83,7 +83,6 @@ public class OutboundDeliveryServiceUIModelExtension extends
 				outboundDeliveryManager, OutboundDeliveryActionNode.DOC_ACTION_RECORD_DONE
 		)));
 
-
 		resultList.add(docInvolvePartyProxy.genDefServiceUIModelExtension(new DocInvolvePartyProxy.DocInvolvePartyInputPara(
 				OutboundDeliveryParty.SENAME,
 				OutboundDeliveryParty.NODENAME,

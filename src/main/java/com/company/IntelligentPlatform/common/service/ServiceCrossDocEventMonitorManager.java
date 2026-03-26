@@ -158,7 +158,6 @@ public class ServiceCrossDocEventMonitorManager {
         return docActionExecutionProxyFactory.getDocActionMapByDocType(documentType, languageCode);
     }
 
-
     public void convServiceCrossDocConfigureToEventUI(
             ServiceCrossDocConfigure serviceCrossDocConfigure,
             ServiceCrossDocEventMonitorUIModel serviceCrossDocEventMonitorUIModel, LogonInfo logonInfo) {
@@ -239,7 +238,6 @@ public class ServiceCrossDocEventMonitorManager {
         }
     }
 
-
     public void convUIToServiceCrossDocEventMonitor(ServiceCrossDocEventMonitorUIModel serviceCrossDocEventMonitorUIModel, ServiceCrossDocEventMonitor rawEntity) {
         if (serviceCrossDocEventMonitorUIModel != null && rawEntity != null) {
             if (!ServiceEntityStringHelper
@@ -299,6 +297,5 @@ public class ServiceCrossDocEventMonitorManager {
             }
         }
     }
-
 
 }

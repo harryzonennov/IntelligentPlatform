@@ -76,7 +76,6 @@ public class ProductionPlanUIModel extends DocumentUIModel {
 		
 	} 
 
-
 	public int getCategory() {
 		return category;
 	}

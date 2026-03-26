@@ -49,7 +49,6 @@ public class WarehouseStoreItemLogListController extends SEListController {
 	@Autowired
 	protected WarehouseStoreItemLogServiceUIModelExtension warehouseStoreItemLogServiceUIModelExtension;
 
-
 	protected List<WarehouseStoreItemLogUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList)
 			throws ServiceEntityInstallationException,

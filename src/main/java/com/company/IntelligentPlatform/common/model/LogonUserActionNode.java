@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProx
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 
-
 public class LogonUserActionNode extends DocActionNode {
 
     public static final String NODENAME = IServiceModelConstants.LogonUserActionNode;

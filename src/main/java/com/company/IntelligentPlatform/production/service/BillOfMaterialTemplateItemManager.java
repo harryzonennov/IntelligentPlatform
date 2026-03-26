@@ -197,7 +197,6 @@ public class BillOfMaterialTemplateItemManager {
 		return lossRate;
 	}
 
-
 	public void convSubBOMToItemUI(BillOfMaterialTemplate subBOM,
 			BillOfMaterialTemplateItemUIModel billOfMaterialTemplateItemUIModel) {
 		if (subBOM != null) {
@@ -264,7 +263,6 @@ public class BillOfMaterialTemplateItemManager {
 									   BillOfMaterialTemplateItemUIModel billOfMaterialTemplateItemUIModel) {
 		convParentBOMTemplateToUI(billOfMaterialTemplate, billOfMaterialTemplateItemUIModel, null);
 	}
-
 
 	public void convParentBOMTemplateToUI(BillOfMaterialTemplate billOfMaterialTemplate,
 			BillOfMaterialTemplateItemUIModel billOfMaterialTemplateItemUIModel, LogonInfo logonInfo) {

@@ -112,7 +112,6 @@ public class PurchaseReturnOrderServiceUIModel extends ServiceUIModule {
 		this.approvedBy = approvedBy;
 	}
 
-
 	public PurchaseReturnOrderActionNodeUIModel getSubmittedBy() {
 		return submittedBy;
 	}

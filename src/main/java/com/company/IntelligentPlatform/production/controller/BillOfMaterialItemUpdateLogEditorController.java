@@ -51,7 +51,6 @@ public class BillOfMaterialItemUpdateLogEditorController extends SEEditorControl
 		);
 	}
 
-
 	private BillOfMaterialItemUpdateLogServiceUIModel parseToServiceUIModel(
 			String request) {
 		JSONObject jsonObject = JSONObject.fromObject(request);
@@ -121,6 +120,5 @@ public class BillOfMaterialItemUpdateLogEditorController extends SEEditorControl
 			@RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
-
 
 }

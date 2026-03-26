@@ -33,7 +33,6 @@ public class SalesForcastServiceUIModel extends ServiceUIModule {
 	@IServiceUIModuleFieldConfig(nodeName = SalesForcastAttachment.NODENAME, nodeInstId = SalesForcastAttachment.NODENAME)
 	protected List<SalesForcastAttachmentUIModel> salesForcastAttachmentUIModelList = new ArrayList<>();
 
-
 	public List<SalesForcastMaterialItemServiceUIModel> getSalesForcastMaterialItemUIModelList() {
 		return salesForcastMaterialItemUIModelList;
 	}

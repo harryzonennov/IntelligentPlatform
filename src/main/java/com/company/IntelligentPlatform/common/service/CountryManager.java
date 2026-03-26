@@ -5,7 +5,10 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-// TODO-DAO: import platform.foundation.DAO.CountryDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.CountryRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.CountryConfigureProxy;
@@ -22,22 +25,21 @@ import com.company.IntelligentPlatform.common.model.CountryConfigureProxy;
 @Service
 @Transactional
 public class CountryManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     CountryDAO countryDAO;
-
+    @Autowired
+    protected CountryRepository countryDAO;
     @Autowired
     CountryConfigureProxy countryConfigureProxy;
 
     public CountryManager() {
         super.seConfigureProxy = new CountryConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new CountryDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(countryDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, countryDAO));
     }
 
     @PostConstruct

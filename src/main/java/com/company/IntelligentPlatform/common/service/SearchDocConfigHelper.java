@@ -389,8 +389,6 @@ public class SearchDocConfigHelper {
         return searchNodeConfigList;
     }
 
-
-
     /**
      * Generate Default Search Node Configure List to contain party node, target Party Node and Contact Node
      *
@@ -590,7 +588,6 @@ public class SearchDocConfigHelper {
         }
     }
 
-
     /**
      * Generate Default Search Node Configure List to contain Doc Mat Item, Material and Registered Product
      *
@@ -641,7 +638,6 @@ public class SearchDocConfigHelper {
         searchNodeConfigList.addAll(genMatSearchNodeConfigureList(localDocMatItemInstId));
         return searchNodeConfigList;
     }
-
 
     /**
      * Generate Default Search Node Configure List to contain MaterialItem
@@ -745,7 +741,6 @@ public class SearchDocConfigHelper {
         return new String[]{"refMaterialSKUName", "refMaterialSKUId", "refMaterialSKUUUID",
                 "serialId", "packageStandard", "uuid", "status"};
     }
-
 
     public static String[] genDefDocMatItemFieldNameArray() {
         return new String[]{"refMaterialSKUName", "refMaterialSKUId", "refMaterialSKUUUID",

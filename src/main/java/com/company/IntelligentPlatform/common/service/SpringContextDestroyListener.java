@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.service;
 
-
 // TODO-LEGACY: import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 
 import java.sql.Driver;
@@ -11,9 +10,13 @@ import java.util.Enumeration;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @WebListener
 public class SpringContextDestroyListener implements ServletContextListener {
+
+	private static final Logger logger = LoggerFactory.getLogger(SpringContextDestroyListener.class);
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
@@ -28,9 +31,9 @@ public class SpringContextDestroyListener implements ServletContextListener {
             try {
                 d = drivers.nextElement();
                 DriverManager.deregisterDriver(d);
-                System.out.printf("ContextFinalizer:Driver %s deregistered%n", d);
+                logger.info("ContextFinalizer: Driver {} deregistered", d);
             } catch (SQLException ex) {
-                System.out.println(String.format("ContextFinalizer:Error deregistering driver %s", d) + ":" + ex);
+                logger.warn("ContextFinalizer: Error deregistering driver {}: {}", d, ex.getMessage());
             }
         }
         // TODO-LEGACY: AbandonedConnectionCleanupThread.shutdown();

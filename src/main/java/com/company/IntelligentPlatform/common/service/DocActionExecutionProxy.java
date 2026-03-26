@@ -442,8 +442,6 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         return docContentCreateContextList;
     }
 
-
-
     /**
      * [Internal method] Try to trigger source doc action, after cross creation task done on target doc side.
      * @param targetDocType target doc type
@@ -1110,7 +1108,6 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                         selectedSourceDocMatItemList, docActionCode, docActionCallback, docItemActionCallback), serialLogonInfo);
     }
 
-
     @Transactional
     public void execItemExclusiveHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList, int docActionCode, int secondaryActionCode,
                                         SerialLogonInfo serialLogonInfo)
@@ -1262,7 +1259,6 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         T execute(T serviceEntityNode, SerialLogonInfo serialLogonInfo) throws DocActionException;
     }
 
-
     /**
      * Executor for Doc Mat item action
      */
@@ -1308,7 +1304,6 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         boolean execute(Item serviceEntityNode) throws DocActionException;
     }
 
-
     /**
      * Execution Framework for getting message list by each item
      *
@@ -1320,7 +1315,6 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         List<SimpleSEMessageResponse> executeService(Item docMatItem)
                 throws DocActionException, EX, ServiceModuleProxyException, ServiceEntityConfigureException;
     }
-
 
     /**
      * Framework methods to execute precheck jobs and generate messages if [Error] or [Warning]

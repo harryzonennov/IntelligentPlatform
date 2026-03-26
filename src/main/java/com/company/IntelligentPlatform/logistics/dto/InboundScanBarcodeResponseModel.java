@@ -44,5 +44,4 @@ public class InboundScanBarcodeResponseModel extends ScanBarcodeResponseModel{
 		this.inboundId = inboundId;
 	}
 
-
 }

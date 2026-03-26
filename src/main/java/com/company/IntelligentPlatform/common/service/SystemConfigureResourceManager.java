@@ -93,7 +93,6 @@ public class SystemConfigureResourceManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
 
-
 	public void convSystemConfigureResourceToUI(
 			SystemConfigureResource systemConfigureResource,
 			SystemConfigureResourceUIModel systemConfigureResourceUIModel)
@@ -193,7 +192,6 @@ public class SystemConfigureResourceManager {
 				.getStandardSystemCategory());
 	}
 
-
 	public void convCategoryToResourceUI(
 			SystemConfigureCategory systemConfigureCategory,
 			SystemConfigureResourceUIModel systemConfigureResourceUIModel)
@@ -203,6 +201,5 @@ public class SystemConfigureResourceManager {
 					.setParentNodeId(systemConfigureCategory.getId());
 		}
 	}
-
 
 }

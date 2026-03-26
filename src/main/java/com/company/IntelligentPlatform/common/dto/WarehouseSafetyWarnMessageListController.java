@@ -67,8 +67,6 @@ public class WarehouseSafetyWarnMessageListController extends SEListController {
 	
 	protected List<ServiceEntityNode> warehouseSafetyWarnMessageList = new ArrayList<>();
 
-
-
 	protected String getPreWarnMsg(String key) throws IOException {
 		Locale locale = ServiceLanHelper.getDefault();
 		String path = WarehouseSafetyWarnMessageUIModel.class.getResource("")
@@ -106,8 +104,6 @@ public class WarehouseSafetyWarnMessageListController extends SEListController {
 	public void registerWarehouseSafetyMessage(List<ServiceEntityNode> rawList){
 		setWarehouseSafetyWarnMessageList(rawList);
 	}
-
-
 
 	protected List<ServiceEntityNode> searchInternal(
 			WarehouseSafetyWarnMessageSearchModel searchModel, String client)
@@ -158,6 +154,5 @@ public class WarehouseSafetyWarnMessageListController extends SEListController {
 				searchModel, searchNodeConfigList, client, true);
 		return resultList;
 	}
-
 
 }

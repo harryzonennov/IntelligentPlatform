@@ -65,5 +65,4 @@ public class OrganizationInitModel extends SEUIComModel {
 		this.parentOrganizationFunctionValue = parentOrganizationFunctionValue;
 	}
 
-
 }

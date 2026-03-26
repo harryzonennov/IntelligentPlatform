@@ -37,7 +37,6 @@ public class CrossCopyDocConversionConfig {
      */
     protected int cleanReserveOnSrc = StandardSwitchProxy.SWITCH_ON;
 
-
     public CrossCopyDocConversionConfig() {
     }
 
@@ -51,7 +50,6 @@ public class CrossCopyDocConversionConfig {
         this.triggerSourceActionCode = triggerSourceActionCode;
         this.copyPartyToItemParty = copyPartyToItemParty;
     }
-
 
     public CrossCopyDocConversionConfig(int sourceDocType, int targetDocType,
                                         List<CrossCopyPartyConversionConfig> crossCopyPartyConversionConfigList,

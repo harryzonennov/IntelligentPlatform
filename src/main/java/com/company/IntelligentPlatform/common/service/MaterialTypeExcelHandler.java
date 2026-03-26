@@ -105,7 +105,6 @@ public class MaterialTypeExcelHandler extends ServiceExcelHandlerProxy {
         }
     }
 
-
     private List<MaterialTypeUIModel> filterTopLevelTypeUIModelList(
             List<MaterialTypeUIModel> rawMaterialTypeUIModelList) {
         List<MaterialTypeUIModel> resultList = new ArrayList<>();
@@ -278,6 +277,5 @@ public class MaterialTypeExcelHandler extends ServiceExcelHandlerProxy {
             throws ServiceEntityInstallationException {
         return null;
     }
-
 
 }

@@ -3,7 +3,11 @@ package com.company.IntelligentPlatform.common.model;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "MessageTemplate", schema = "platform")
 public class MessageTemplate extends ServiceEntityNode {
 
     public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

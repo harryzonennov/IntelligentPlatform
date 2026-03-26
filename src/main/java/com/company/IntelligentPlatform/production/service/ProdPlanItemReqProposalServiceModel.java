@@ -33,5 +33,4 @@ public class ProdPlanItemReqProposalServiceModel extends ServiceModule {
 		this.prodPlanItemReqProposal = prodPlanItemReqProposal;
 	}
 
-
 }

@@ -2,8 +2,6 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.time.LocalDateTime;
 
-
-
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
 
 public class ProdItemReqProposalTemplate extends DocMatItemNode implements

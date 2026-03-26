@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreManager;
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +59,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 public class ProductionOrderDataCleanHelper {
 
+	private static final Logger logger = LoggerFactory.getLogger(ProductionOrderDataCleanHelper.class);
+
 	@Autowired
 	protected ProductionOrderManager productionOrderManager;
 
@@ -95,8 +100,6 @@ public class ProductionOrderDataCleanHelper {
 	@Autowired
 	protected ServiceEntityManagerFactoryInContext serviceEntityManagerFactoryInContext;
 
-
-
 	
 	public void clearProdPickingOrder(List<String> idList, String client) throws ServiceEntityConfigureException{
 		if(!ServiceCollectionsHelper.checkNullList(idList)){
@@ -107,7 +110,6 @@ public class ProductionOrderDataCleanHelper {
 			}
 		}
 	}
-
 
 	protected void printProdPickingOrderWrapper(
 			List<ServiceEntityNode> prodPickingRefOrderItemList, String client)
@@ -292,7 +294,6 @@ public class ProductionOrderDataCleanHelper {
 
 	}
 
-
 	protected void traceProdPickingMatItem(
 			List<ServiceEntityNode> prodPickingMatItemList,
 			Function<List<ServiceEntityNode>, List<ServiceEntityNode>> precheckFunc,
@@ -327,11 +328,10 @@ public class ProductionOrderDataCleanHelper {
 				}
 			}
 		} catch (ServiceEntityConfigureException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Failed during production order data clean", e);
 		}
 	}
-	
+
 	protected void tracePurchaseContractMatItem(
 			List<ServiceEntityNode> purchaseContractMatItemList,
 			Function<List<ServiceEntityNode>, List<ServiceEntityNode>> precheckFunc,
@@ -615,8 +615,7 @@ public class ProductionOrderDataCleanHelper {
 						}
 					}
 				} catch (ServiceEntityConfigureException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					logger.error("Failed during production order data clean processing", e);
 				}
 
 			}
@@ -678,7 +677,7 @@ public class ProductionOrderDataCleanHelper {
 				setenceBuffer.append("-amount:" + amount);
 			}
 		}
-		System.out.println(setenceBuffer.toString());
+		logger.debug("{}", setenceBuffer.toString());
 	}
 
 	protected void printDocument(ServiceEntityNode document)
@@ -692,7 +691,7 @@ public class ProductionOrderDataCleanHelper {
 			nodeInstId = document.getNodeName();
 		}
 		setenceBuffer.append("**-" + nodeInstId + "--ID:" + document.getId());
-		System.out.println(setenceBuffer.toString());
+		logger.debug("{}", setenceBuffer.toString());
 
 	}
 

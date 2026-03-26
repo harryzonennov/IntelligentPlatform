@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.finance.dto;
 
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 public class FinAccountAttachmentUIModel extends SEUIComModel {
 
 	protected String attachmentTitle;

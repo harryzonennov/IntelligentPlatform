@@ -16,7 +16,10 @@ import com.company.IntelligentPlatform.common.dto.SystemConfigureCategoryUIModel
 import com.company.IntelligentPlatform.common.dto.SystemConfigureElementSearchModel;
 import com.company.IntelligentPlatform.common.dto.SystemConfigureElementUIModel;
 import com.company.IntelligentPlatform.common.dto.SystemConfigureUIFieldUIModel;
-// TODO-DAO: import ...SystemConfigureCategoryDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SystemConfigureCategoryRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
@@ -53,11 +56,11 @@ public class SystemConfigureCategoryManager extends ServiceEntityManager {
 	public static final String METHOD_ConvSystemConfigureUIFieldToUI = "convSystemConfigureUIFieldToUI";
 
 	public static final String METHOD_ConvUIToSystemConfigureUIField = "convUIToSystemConfigureUIField";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected SystemConfigureCategoryDAO systemConfigureCategoryDAO;
-
+    @Autowired
+    protected SystemConfigureCategoryRepository systemConfigureCategoryDAO;
 	@Autowired
 	protected SystemConfigureCategoryConfigureProxy systemConfigureCategoryConfigureProxy;
 
@@ -75,7 +78,6 @@ public class SystemConfigureCategoryManager extends ServiceEntityManager {
 	private Map<String, Map<Integer, String>> subScenarioModeMapLan = new HashMap<String, Map<Integer, String>>();
 
 	private Map<String, Map<Integer, String>> elementTypeMapLan = new HashMap<String, Map<Integer, String>>();
-
 
 	public Map<Integer, String> initSystemStandardCategoryMap(String languageCode)
 			throws ServiceEntityInstallationException {
@@ -221,9 +223,6 @@ public class SystemConfigureCategoryManager extends ServiceEntityManager {
 		}
 		return null;
 	}
-
-
-
 
 	/**
 	 * Get all [switch-on] navigation element type configure element
@@ -497,7 +496,7 @@ public class SystemConfigureCategoryManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(systemConfigureCategoryDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemConfigureCategoryDAO));
 	}
 
 	@PostConstruct
@@ -571,6 +570,5 @@ public class SystemConfigureCategoryManager extends ServiceEntityManager {
 				searchModel, searchNodeConfigList, client, true);
 		return resultList;
 	}
-
 
 }

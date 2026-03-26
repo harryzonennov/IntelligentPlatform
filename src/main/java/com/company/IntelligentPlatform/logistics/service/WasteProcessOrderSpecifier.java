@@ -64,7 +64,6 @@ public class WasteProcessOrderSpecifier extends DocumentContentSpecifier<WastePr
         return wasteProcessOrderIdHelper;
     }
 
-
     @Override
     public DocInvolveParty getDocInvolveParty(int partyRole,
                                               WasteProcessOrderServiceModel wasteProcessOrderServiceModel) {

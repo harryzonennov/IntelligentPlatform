@@ -45,7 +45,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class ProductionPlanItemManager {
 
@@ -154,7 +153,6 @@ public class ProductionPlanItemManager {
 				});
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
-
 
 //	public List<PageHeaderModel> getPageHeaderModelList(ProductionPlanItem productionPlanItem, String client)
 //			throws ServiceEntityConfigureException {
@@ -434,7 +432,6 @@ public class ProductionPlanItemManager {
 			}
 		}
 	}
-
 
 	public void convPlanMaterialSKUToItemUI(MaterialStockKeepUnit materialStockKeepUnit,
 			ProductionPlanItemUIModel productionPlanItemUIModel) {
@@ -877,7 +874,6 @@ public class ProductionPlanItemManager {
 		if (freeStorageCoreUnit != null) {
 			productionPlanItem.setAvailableAmount(freeStorageCoreUnit.getAmount());
 		}
-
 
 		/*
 		 * [Step4] Try to check and set not-in-plan amount and status

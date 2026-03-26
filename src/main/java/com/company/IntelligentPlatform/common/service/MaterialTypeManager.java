@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.MaterialTypeUIModel;
-// TODO-DAO: import ...MaterialTypeDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.MaterialTypeRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.MaterialType;
 import com.company.IntelligentPlatform.common.model.MaterialTypeConfigureProxy;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
@@ -56,11 +59,11 @@ public class MaterialTypeManager extends ServiceEntityManager {
 	public static final String METHOD_ConvParentMaterialTypeToUI = "convParentTypeToUI";
 
 	public static final String METHOD_ConvRootMaterialTypeToUI = "convRootTypeToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected MaterialTypeDAO materialTypeDAO;
-
+    @Autowired
+    protected MaterialTypeRepository materialTypeDAO;
 	@Autowired
 	protected MaterialTypeConfigureProxy materialTypeConfigureProxy;
 
@@ -230,7 +233,7 @@ public class MaterialTypeManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(materialTypeDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, materialTypeDAO));
 	}
 
 	@PostConstruct
@@ -330,7 +333,6 @@ public class MaterialTypeManager extends ServiceEntityManager {
 		}
 	}
 
-
 	/**
 	 * Logic to get all sub material type list from current material type
 	 * 
@@ -405,7 +407,6 @@ public class MaterialTypeManager extends ServiceEntityManager {
 				});
         return BsearchService.genSearchResponse(resultList, 0);
 	}
-
 
 	/**
 	 * [Internal method] Convert from UI model to se model:materialType

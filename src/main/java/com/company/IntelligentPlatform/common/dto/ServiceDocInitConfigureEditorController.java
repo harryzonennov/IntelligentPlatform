@@ -118,7 +118,6 @@ public class ServiceDocInitConfigureEditorController extends SEEditorController 
                 serviceDocInitConfigureServiceUIModel.getServiceDocInitConfigureUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
 
-
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String newModuleService(
@@ -139,7 +138,6 @@ public class ServiceDocInitConfigureEditorController extends SEEditorController 
         return super.checkDuplicateIDCore(simpleRequest,
                 serviceDocumentSettingManager);
     }
-
 
     @RequestMapping(value = "/loadModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody

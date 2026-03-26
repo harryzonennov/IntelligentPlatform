@@ -55,7 +55,6 @@ public class SystemConfigureExtensionUnionManager {
 
 	protected Logger logger = LoggerFactory.getLogger(SystemConfigureExtensionUnionManager.class);
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =
@@ -200,8 +199,6 @@ public class SystemConfigureExtensionUnionManager {
 		}
 	}
 
-
-
 	public void convResourceToExtensionUnionUI(
 			SystemConfigureResource systemConfigureResource,
 			SystemConfigureExtensionUnionUIModel systemConfigureExtensionUnionUIModel)
@@ -221,7 +218,5 @@ public class SystemConfigureExtensionUnionManager {
 					.setParentNodeId(systemConfigureElement.getId());
 		}
 	}
-
-
 
 }

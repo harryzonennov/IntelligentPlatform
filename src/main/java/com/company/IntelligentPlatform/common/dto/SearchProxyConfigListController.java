@@ -73,5 +73,4 @@ public class SearchProxyConfigListController extends SEListController {
 						.getSearchProxy().searchDocList(searchContext));
 	}
 
-
 }

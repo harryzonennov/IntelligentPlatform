@@ -64,7 +64,6 @@ public class OutboundDeliveryUIModel extends DocumentUIModel {
 	
 	protected String planExecuteDate;
 
-
 	public String getProductionBatchNumber() {
 		return productionBatchNumber;
 	}

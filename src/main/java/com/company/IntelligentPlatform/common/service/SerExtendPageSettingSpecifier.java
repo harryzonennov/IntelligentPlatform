@@ -119,7 +119,6 @@ public class SerExtendPageSettingSpecifier extends
         return uiModelClassMap;
     }
 
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();
@@ -136,6 +135,5 @@ public class SerExtendPageSettingSpecifier extends
                                             SerialLogonInfo serialLogonInfo) throws DocActionException {
 
     }
-
 
 }

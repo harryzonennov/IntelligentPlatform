@@ -90,13 +90,11 @@ public class ServiceDocInitInvolvePartyEditorController extends SEEditorControll
         }
     }
 
-
     @RequestMapping(value = "/deleteModule", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String deleteModule(String uuid) {
         return serviceBasicUtilityController.deleteModule(uuid, AOID_RESOURCE, getServiceUIModelRequest());
     }
-
 
     @RequestMapping(value = "/getLogonPartyFlagMap", produces = "text/html;charset=UTF-8")
     public @ResponseBody
@@ -104,7 +102,6 @@ public class ServiceDocInitInvolvePartyEditorController extends SEEditorControll
         return serviceBasicUtilityController.getMapMeta(
                 lanCode -> serviceDocServiceDocInitInvolvePartyManager.getLogonPartyFlagMap(lanCode));
     }
-
 
     private ServiceDocInitInvolvePartyServiceUIModel parseToServiceUIModel(
             String request) {
@@ -126,7 +123,6 @@ public class ServiceDocInitInvolvePartyEditorController extends SEEditorControll
                 serviceDocServiceDocInitInvolvePartyServiceUIModel.getServiceDocInitInvolvePartyUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
 
     }
-
 
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody

@@ -319,7 +319,6 @@ public class SystemConfigureCategoryEditorController extends SEEditorController 
 		return systemConfigureCategoryServiceUIModel;
 	}
 
-
 	@RequestMapping(value = "/loadModuleViewService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleViewService(String uuid) {
 		try {

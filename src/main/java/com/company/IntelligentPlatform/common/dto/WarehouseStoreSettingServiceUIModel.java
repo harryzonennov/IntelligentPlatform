@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.common.dto;
 
-
 import org.springframework.stereotype.Component;
 import com.company.IntelligentPlatform.common.model.WarehouseStoreSetting;
 import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;

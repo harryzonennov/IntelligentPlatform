@@ -370,7 +370,6 @@ public class ProcessRouteOrderEditorController extends SEEditorController {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
 
-
 	protected String getPreWarnMsg(String key, Map<String, String> preWarnMap) {
 		return preWarnMap.get(key);
 	}
@@ -383,7 +382,6 @@ public class ProcessRouteOrderEditorController extends SEEditorController {
 				.getDropDownMap(path, resFileName, locale);
 		return preWarnMap;
 	}
-
 
 	protected void saveInternal(
 			ProcessRouteOrderUIModel processRouteOrderUIModel)
@@ -411,8 +409,6 @@ public class ProcessRouteOrderEditorController extends SEEditorController {
 		return super.checkDuplicateIDCore(simpleRequest,
 				processRouteOrderManager);
 	}
-
-
 
 	@RequestMapping(value = "getProcessRouteOrder", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getProcessRouteOrder(

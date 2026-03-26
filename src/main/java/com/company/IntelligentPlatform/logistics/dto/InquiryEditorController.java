@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 
 import com.company.IntelligentPlatform.logistics.dto.DeliveryMatItemBatchGenRequest;

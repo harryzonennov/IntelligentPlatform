@@ -26,7 +26,6 @@ import java.util.Map;
 @Service
 public class BillOfMaterialItemUpdateLogManager {
 
-
     public static final String METHOD_ConvProdWorkCenterToItemUI = "convProdWorkCenterToItemUI";
 
     public static final String METHOD_ConvBillOfMaterialItemUpdateLogToUI = "convBillOfMaterialItemUpdateLogToUI";
@@ -54,7 +53,6 @@ public class BillOfMaterialItemUpdateLogManager {
     protected BillOfMaterialOrderManager billOfMaterialOrderManager;
 
     protected Logger logger = LoggerFactory.getLogger(BillOfMaterialItemUpdateLogManager.class);
-
 
     public void convBillOfMaterialItemUpdateLogToUI(
             BillOfMaterialItemUpdateLog billOfMaterialItemUpdateLog,
@@ -144,8 +142,6 @@ public class BillOfMaterialItemUpdateLogManager {
         }
     }
 
-
-
     public void convItemMaterialToUI(
             MaterialStockKeepUnit materialStockKeepUnit,
             BillOfMaterialItemUpdateLogUIModel billOfMaterialItemUpdateLogUIModel) {
@@ -176,7 +172,6 @@ public class BillOfMaterialItemUpdateLogManager {
 
         }
     }
-
 
     public void convSubBOMToItemUI(BillOfMaterialOrder subBOM,
                                    BillOfMaterialItemUpdateLogUIModel billOfMaterialItemUpdateLogUIModel) {

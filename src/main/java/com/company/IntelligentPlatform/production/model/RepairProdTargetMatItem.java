@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class RepairProdTargetMatItem extends ProdOrderTargetMatItem {
 
-
 	public final static String NODENAME = IServiceModelConstants.RepairProdTargetMatItem;
 
 	public final static String SENAME = RepairProdOrder.SENAME;
@@ -23,6 +22,5 @@ public class RepairProdTargetMatItem extends ProdOrderTargetMatItem {
 		this.itemStatus = STATUS_INIT;
 		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_REPAIRPRODORDER;
 	}
-
 
 }

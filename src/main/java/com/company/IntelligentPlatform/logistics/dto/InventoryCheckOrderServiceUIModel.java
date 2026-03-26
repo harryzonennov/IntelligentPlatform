@@ -55,7 +55,6 @@ public class InventoryCheckOrderServiceUIModel extends ServiceUIModule {
 		this.inventoryCheckOrderUIModel = inventoryCheckOrderUIModel;
 	}
 
-
 	public List<InventoryCheckAttachmentUIModel> getInventoryCheckAttachmentUIModelList() {
 		return inventoryCheckAttachmentUIModelList;
 	}

@@ -1,11 +1,9 @@
 package com.company.IntelligentPlatform.common.model;
 
-
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ReferenceNode;
 
 public class WarehouseStoreSetting extends ReferenceNode {
-
 
 	public final static String NODENAME = IServiceModelConstants.WarehouseStoreSetting;
 

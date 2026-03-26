@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProx
 import com.company.IntelligentPlatform.common.model.DocActionNode;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 public class PurchaseContractActionNode extends DocActionNode {
 
     public static final String NODENAME = IServiceModelConstants.PurchaseContractActionNode;

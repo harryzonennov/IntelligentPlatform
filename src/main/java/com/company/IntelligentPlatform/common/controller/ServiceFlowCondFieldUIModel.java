@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.controller;
 
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 public class ServiceFlowCondFieldUIModel extends SEUIComModel {
 
     protected String nodeInstId;

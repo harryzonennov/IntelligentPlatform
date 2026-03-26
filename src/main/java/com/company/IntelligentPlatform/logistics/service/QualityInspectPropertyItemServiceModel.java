@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.logistics.model.QualityInspectPropertyIte
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;
 
-
 public class QualityInspectPropertyItemServiceModel extends ServiceModule {
 
 	@IServiceModuleFieldConfig(nodeName = QualityInspectPropertyItem.NODENAME, nodeInstId = QualityInspectPropertyItem.NODENAME,docNodeCategory =

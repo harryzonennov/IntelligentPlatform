@@ -129,13 +129,11 @@ public class RepairProdOrderActionExecutionProxy
         return repairProdOrderManager;
     }
 
-
     @Override
     public Map<Integer, String> getActionCodeMap(String lanCode) throws ServiceEntityInstallationException {
         String path = ProductionOrderUIModel.class.getResource("").getPath();
         return systemDefDocActionCodeProxy.getActionCodeMapCustom(lanCode, path, PROPERTY_ACTIONCODE_FILE);
     }
-
 
     public void executeActionCore(RepairProdOrderServiceModel repairProdOrderServiceModel, int docActionCode,
                                   SerialLogonInfo serialLogonInfo)

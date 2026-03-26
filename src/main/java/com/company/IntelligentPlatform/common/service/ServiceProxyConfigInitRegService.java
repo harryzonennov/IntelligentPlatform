@@ -32,7 +32,6 @@ public class ServiceProxyConfigInitRegService {
 
     protected Logger logger = LoggerFactory.getLogger(ServiceProxyConfigInitRegService.class);
 
-
     public void execute(LogonInfo logonInfo) throws SearchProxyConfigureException {
         List<ServiceSearchProxy> allSearchProxyList = serviceSearchProxyRepository.getAllSearchProxyList();
         try {
@@ -99,10 +98,9 @@ public class ServiceProxyConfigInitRegService {
                 }
             }
         } catch (ServiceEntityInstallationException e) {
-            e.printStackTrace();
+            logger.error("Failed to initialize service proxy config registration", e);
         }
     }
-
 
     /**
      * Filter logic to return only part of service proxy

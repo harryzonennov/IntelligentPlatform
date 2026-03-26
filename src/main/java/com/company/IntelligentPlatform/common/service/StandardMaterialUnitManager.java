@@ -14,7 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.common.dto.MaterialUIModel;
 import com.company.IntelligentPlatform.common.dto.StandardMaterialUnitSearchModel;
 import com.company.IntelligentPlatform.common.dto.StandardMaterialUnitUIModel;
-// TODO-DAO: import ...StandardMaterialUnitDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.StandardMaterialUnitRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.model.StandardMaterialUnit;
 import com.company.IntelligentPlatform.common.model.StandardMaterialUnitConfigureProxy;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
@@ -49,11 +52,11 @@ public class StandardMaterialUnitManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToStandardMaterialUnit = "convUIToStandardMaterialUnit";
 
 	public static final String METHOD_ConvRefMaterialUnitToUI = "convRefMaterialUnitToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected StandardMaterialUnitDAO standardMaterialUnitDAO;
-
+    @Autowired
+    protected StandardMaterialUnitRepository standardMaterialUnitDAO;
 	@Autowired
 	protected StandardMaterialUnitConfigureProxy standardMaterialUnitConfigureProxy;
 
@@ -73,7 +76,6 @@ public class StandardMaterialUnitManager extends ServiceEntityManager {
 
 	public StandardMaterialUnitManager() {
 		super.seConfigureProxy = new StandardMaterialUnitConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new StandardMaterialUnitDAO();
 	}
 
 	public Map<Integer, String> initUnitTypeMap(String languageCode)
@@ -96,7 +98,6 @@ public class StandardMaterialUnitManager extends ServiceEntityManager {
 				this.unitCategoryMapLan, StandardMaterialUnitUIModel.class,
 				"unitCategory");
 	}
-
 
 	public Map<String, String> getStandardUnitMap(String client)
 			throws ServiceEntityConfigureException {
@@ -217,14 +218,13 @@ public class StandardMaterialUnitManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(standardMaterialUnitDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, standardMaterialUnitDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(standardMaterialUnitConfigureProxy);
 	}
-
 
 	@Override
 	public ServiceSearchProxy getSearchProxy() {

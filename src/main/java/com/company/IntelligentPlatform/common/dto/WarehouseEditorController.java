@@ -88,7 +88,6 @@ public class WarehouseEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -110,7 +109,6 @@ public class WarehouseEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	@RequestMapping(value = "/getOperationModeMap", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getOperationModeMap() {
 		return serviceBasicUtilityController.getMapMeta(
@@ -128,7 +126,6 @@ public class WarehouseEditorController extends SEEditorController {
 		return serviceBasicUtilityController.getMapMeta(
 				lanCode -> warehouseManager.initSystemDefaultMap(lanCode));
 	}
-
 
 	@RequestMapping(value = "/getRefMaterialCategoryMap", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String getRefMaterialCategoryMap() {

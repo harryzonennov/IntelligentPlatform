@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.common.controller;
 
 import net.sf.json.JSONObject;
-// TODO-LEGACY: import org.flowable.task.api.Task;
+import org.flowable.task.api.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.company.IntelligentPlatform.common.controller.LogonActionController;
 import com.company.IntelligentPlatform.common.controller.SEEditorController;
+import com.company.IntelligentPlatform.common.controller.FlowableTaskUIModel;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.LogonInfoException;
 import com.company.IntelligentPlatform.common.service.ServiceJSONParser;
@@ -68,8 +69,27 @@ public class ServiceFlowRuntimeEngineController  extends SEEditorController {
     @RequestMapping(value = "/getInvolveTaskList", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String getInvolveTaskList(@RequestBody String request) {
-        // TODO-LEGACY: Flowable BPM not yet migrated — Task/taskService unavailable
-        return ServiceJSONParser.genDefOKJSONArray(java.util.Collections.emptyList());
+        ServiceFlowRuntimeEngine.FlowBusinessKey businessKeyModel = parseToBusinessKeyModel(request);
+        try {
+            LogonUser logonUser = logonActionController.getLogonUser();
+            if (logonUser == null) {
+                throw new LogonInfoException(
+                        LogonInfoException.TYPE_NO_LOGON_USER);
+            }
+            String businessKey = ServiceFlowRuntimeEngine.encodeBusinessKey(businessKeyModel.getDocumentType(),
+                    businessKeyModel.getUuid());
+            List<Task> taskList = serviceFlowRuntimeEngine.getInvolveTaskList(businessKey);
+            List<FlowableTaskUIModel> flowableTaskUIModelList =
+                    flowableTaskManager.getModuleListCore(taskList,
+                    logonActionController.getLogonInfo());
+            return ServiceJSONParser.genDefOKJSONArray(flowableTaskUIModelList);
+        } catch (LogonInfoException e) {
+            return e.generateSimpleErrorJSON();
+        } catch (ServiceEntityInstallationException | ServiceEntityConfigureException e) {
+            return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
+        } catch (ServiceModuleProxyException e) {
+            return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
+        }
     }
 
 }

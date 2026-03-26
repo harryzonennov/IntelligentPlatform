@@ -54,6 +54,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
@@ -64,6 +66,8 @@ import java.util.*;
 @Controller(value = "finAccountMaterialItemEditorController")
 @RequestMapping(value = "/finAccountMaterialItem")
 public class FinAccountMaterialItemEditorController extends SEEditorController {
+
+	private static final Logger logger = LoggerFactory.getLogger(FinAccountMaterialItemEditorController.class);
 
 	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_MATERIAL;
 
@@ -127,13 +131,11 @@ public class FinAccountMaterialItemEditorController extends SEEditorController {
 						HttpStatus.CREATED);
 			}
 		} catch (ServiceEntityConfigureException e) {
-			e.printStackTrace();
+			logger.error("Failed to load attachment", e);
 		} catch (LogonInfoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Logon error loading attachment", e);
 		} catch (AuthorizationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Authorization error loading attachment", e);
 		}
 		return null;
 	}
@@ -249,7 +251,7 @@ public class FinAccountMaterialItemEditorController extends SEEditorController {
 								finAccountMatItemAttachment,
 								logonUser.getUuid(), organizationUUID);
 					} catch (IllegalStateException | IOException e) {
-						e.printStackTrace();
+						logger.error("Failed to read uploaded file bytes", e);
 					}
 				}
 			}
@@ -615,7 +617,6 @@ public class FinAccountMaterialItemEditorController extends SEEditorController {
 			return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
 		}
 	}
-
 
 	@RequestMapping(value = "/loadModuleViewService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String loadModuleViewService(String uuid) {

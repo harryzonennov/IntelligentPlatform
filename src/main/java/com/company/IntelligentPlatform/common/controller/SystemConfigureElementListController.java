@@ -51,7 +51,6 @@ public class SystemConfigureElementListController extends SEListController {
 	@Autowired
 	protected SystemConfigureElementManager systemConfigureElementManager;
 
-
 	protected List<SystemConfigureElementUIModel> getModuleListCore(
 			List<ServiceEntityNode> rawList)
 			throws ServiceEntityInstallationException,
@@ -83,6 +82,5 @@ public class SystemConfigureElementListController extends SEListController {
 				searchModel, searchNodeConfigList, client, true);
 		return resultList;
 	}
-
 
 }

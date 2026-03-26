@@ -1,0 +1,51 @@
+# Production profile — activate with: --spring.profiles.active=prod
+# (or set environment variable SPRING_PROFILES_ACTIVE=prod)
+#
+# All sensitive values MUST be supplied as environment variables.
+# This file sets production-safe defaults and disables dev-only behavior.
+# Do NOT put real credentials here — this file is committed to source control.
+#
+# Required environment variables:
+#   DB_HOST         — MySQL host (e.g. prod-db.internal)
+#   DB_PORT         — MySQL port (default 3306)
+#   DB_NAME         — database/schema name (default platform)
+#   DB_USERNAME     — database user
+#   DB_PASSWORD     — database password
+#   JWT_SECRET      — JWT signing secret (min 32 chars, cryptographically random)
+#
+# Optional overrides:
+#   SERVER_PORT         — HTTP port (default 8080)
+#   JWT_EXPIRATION_MS   — token lifetime in ms (default 86400000 = 24h)
+
+spring:
+  datasource:
+    # Production: enforce SSL and disable public-key retrieval for security.
+    # Ensure your MySQL server has SSL enabled and a valid certificate.
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:platform}?useSSL=true&requireSSL=true&allowPublicKeyRetrieval=false&serverTimezone=UTC
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false   # disable in prod — reduce log noise
+
+  flyway:
+    # Re-enable Flyway once migration scripts are in place under src/main/resources/db/migration/.
+    # Until then, keep disabled and manage schema manually.
+    enabled: false
+
+  flowable:
+    # MUST be false in production — schema must be pre-created via official Flowable SQL scripts.
+    # Setting this to 'true' in production risks schema corruption on version upgrades.
+    database-schema-update: false
+
+# In production, JWT_SECRET must always be set as an env variable.
+# The fallback localDev value in application.yml must NEVER reach a prod deployment.
+# Verify: if JWT_SECRET is absent, Spring will fail to start with a clear error.
+jwt:
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}   # 24h default; adjust per security policy
+
+# In production, set CORS_ALLOWED_ORIGINS to the actual front-end origin(s).
+# Example: CORS_ALLOWED_ORIGINS=https://app.example.com,https://admin.example.com
+# Never use wildcard (*) in production — always specify exact origins.
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:https://localhost}

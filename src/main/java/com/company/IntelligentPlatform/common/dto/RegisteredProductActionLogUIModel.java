@@ -16,7 +16,6 @@ public class RegisteredProductActionLogUIModel extends DocActionNodeUIModel {
 	
 	protected String updateFieldsArray;
 
-
 	public int getActionCode() {
 		return actionCode;
 	}
@@ -40,6 +39,5 @@ public class RegisteredProductActionLogUIModel extends DocActionNodeUIModel {
 	public void setUpdateFieldsArray(String updateFieldsArray) {
 		this.updateFieldsArray = updateFieldsArray;
 	}
-
 
 }

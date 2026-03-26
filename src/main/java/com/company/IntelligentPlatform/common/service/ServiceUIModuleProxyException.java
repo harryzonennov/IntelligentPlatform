@@ -2,7 +2,6 @@ package com.company.IntelligentPlatform.common.service;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 
-
 public class ServiceUIModuleProxyException extends ServiceEntityException{
 	
 	/**

@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.ActionCodeUIModel;
-// TODO-DAO: import ...ActionCodeDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ActionCodeRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
@@ -35,11 +38,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 @Transactional
 public class ActionCodeManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	ActionCodeDAO actionCodeDAO;
-
+    @Autowired
+    protected ActionCodeRepository actionCodeDAO;
 	@Autowired
 	ActionCodeConfigureProxy actionCodeConfigureProxy;
 
@@ -48,12 +51,11 @@ public class ActionCodeManager extends ServiceEntityManager {
 
 	public ActionCodeManager() {
 		super.seConfigureProxy = new ActionCodeConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ActionCodeDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(actionCodeDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, actionCodeDAO));
 	}
 
 	@PostConstruct

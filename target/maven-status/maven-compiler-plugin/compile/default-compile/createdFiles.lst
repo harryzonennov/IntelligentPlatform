@@ -1,4 +1,3 @@
-com/company/IntelligentPlatform/logistics/service/InboundDeliveryConfigParaProxy.class
 com/company/IntelligentPlatform/common/service/ServiceExcelHandlerProxy$FieldMeta.class
 com/company/IntelligentPlatform/sales/dto/SalesReturnOrderDto.class
 com/company/IntelligentPlatform/common/service/PrevNextProfDocItemProxy.class
@@ -18,13 +17,13 @@ com/company/IntelligentPlatform/common/dto/SystemCodeValueCollectionUIModel.clas
 com/company/IntelligentPlatform/common/model/DocumentMatItemBatchGenRequest$InvolvePartyGenRequest.class
 com/company/IntelligentPlatform/common/service/SerExtendPageMetadataManager.class
 com/company/IntelligentPlatform/production/service/ProductionOrderItemManager.class
+com/company/IntelligentPlatform/common/repository/SystemExecutorSettingRepository.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$ICreateServiceModule.class
 com/company/IntelligentPlatform/common/service/CargoManager.class
 com/company/IntelligentPlatform/common/dto/ServiceExcelReportErrorLogUnion.class
 com/company/IntelligentPlatform/common/service/ServiceExcelXMLConfigureHelper.class
 com/company/IntelligentPlatform/common/model/ServiceJSONRequest.class
 com/company/IntelligentPlatform/common/service/DocActionExecutorCase$DocItemBatchExecutionRequest.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaInitModel.class
 com/company/IntelligentPlatform/common/dto/ServiceComJSONRequest.class
 com/company/IntelligentPlatform/common/dto/BootStrapTreeComModel.class
 com/company/IntelligentPlatform/common/service/BarcodeSaveService.class
@@ -50,13 +49,13 @@ com/company/IntelligentPlatform/common/dto/IndividualCustomerSearchModel.class
 com/company/IntelligentPlatform/logistics/repository/InventoryCheckOrderRepository.class
 com/company/IntelligentPlatform/common/dto/LogonUserOrgServiceUIModel.class
 com/company/IntelligentPlatform/finance/model/FinAccDocRef.class
-com/company/IntelligentPlatform/common/model/ServiceDocConfigureParaGroup.class
 com/company/IntelligentPlatform/logistics/dto/DeliveryCargoUIModel.class
 com/company/IntelligentPlatform/common/service/EmployeeOrgServiceModel.class
 com/company/IntelligentPlatform/production/service/ProdOrderSupplyWarehouseServiceModel.class
 com/company/IntelligentPlatform/logistics/model/OutboundDeliveryActionNode.class
 com/company/IntelligentPlatform/common/dto/ServiceDocInitInvolvePartyServiceUIModel.class
 com/company/IntelligentPlatform/production/dto/ProductionPlanAttachmentUIModel.class
+com/company/IntelligentPlatform/production/repository/ProductionResourceUnionRepository.class
 com/company/IntelligentPlatform/common/dto/AuthorizationGroupServiceUIModel.class
 com/company/IntelligentPlatform/common/service/FlowRouterServiceModel.class
 com/company/IntelligentPlatform/production/model/ProdPlanSupplyWarehouse.class
@@ -71,13 +70,11 @@ com/company/IntelligentPlatform/logistics/service/WarehouseStoreSpecifier.class
 com/company/IntelligentPlatform/common/model/LogonUser.class
 com/company/IntelligentPlatform/common/model/PricingSetting.class
 com/company/IntelligentPlatform/common/controller/UIModelNodeMapConfigure$IGetSENode.class
-com/company/IntelligentPlatform/production/controller/ProcessBOMMaterialItemListController.class
 com/company/IntelligentPlatform/common/dto/MaterialSKUUnitEditorController.class
 com/company/IntelligentPlatform/common/controller/ISEReadOnlyMapping.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseRequestAttachmentUIModel.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseReturnMaterialItemListController.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialOrderUIModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaUIModel.class
 com/company/IntelligentPlatform/common/controller/SerExtendPageSectionEditorController.class
 com/company/IntelligentPlatform/sales/service/SalesContractSpecifier.class
 com/company/IntelligentPlatform/sales/controller/SalesForcastMaterialItemEditorController.class
@@ -163,7 +160,6 @@ com/company/IntelligentPlatform/logistics/service/InquiryIdHelper.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreCheckProxy.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialItemManager.class
 com/company/IntelligentPlatform/sales/model/SalesReturnOrder.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupEditorController.class
 com/company/IntelligentPlatform/production/controller/ProdOrderTargetMatItemListController.class
 com/company/IntelligentPlatform/common/service/CalendarTemplateSearchProxy.class
 com/company/IntelligentPlatform/common/dto/MaterialTypeEditorController.class
@@ -205,6 +201,7 @@ com/company/IntelligentPlatform/common/model/LogonUserOrgReference.class
 com/company/IntelligentPlatform/common/service/DocActionNodeProxy$IActionNodeConvertExecutor.class
 com/company/IntelligentPlatform/common/model/FlowRouterConfigureProxy.class
 com/company/IntelligentPlatform/sales/service/SalesContractMaterialItemManager.class
+com/company/IntelligentPlatform/common/repository/GenericServiceEntityNodeRepository.class
 com/company/IntelligentPlatform/common/service/NavigationGroupSettingServiceModel.class
 com/company/IntelligentPlatform/common/service/SystemConfigureResourceException.class
 com/company/IntelligentPlatform/common/service/ServiceDocumentSettingManager.class
@@ -215,7 +212,6 @@ com/company/IntelligentPlatform/common/dto/SubSystemConfigureElementServiceUIMod
 com/company/IntelligentPlatform/production/service/ProdOrderTargetMatItemManager$3.class
 com/company/IntelligentPlatform/common/dto/ServiceDocInitConfigureServiceUIModel.class
 com/company/IntelligentPlatform/finance/dto/FinAccDocRefSearchModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigParaFactory.class
 com/company/IntelligentPlatform/common/service/DocSplitMergeRequest$IFilterDocToMerge.class
 com/company/IntelligentPlatform/common/service/CorporateDealerExcelReportProxy.class
 com/company/IntelligentPlatform/production/model/ProdOrderSupplyWarehouse.class
@@ -293,7 +289,6 @@ com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderActionNodeUIMod
 com/company/IntelligentPlatform/production/dto/ProdOrderHeaderExcelProposal.class
 com/company/IntelligentPlatform/common/service/ServiceJSONResponseObject.class
 com/company/IntelligentPlatform/production/service/ProdWorkCenterSpecifier.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureResourceManager.class
 com/company/IntelligentPlatform/common/service/CalendarSettingIdHelper.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseReturnOrderPartyUIModel.class
 com/company/IntelligentPlatform/common/service/NavigationGroupSettingManager.class
@@ -336,7 +331,6 @@ com/company/IntelligentPlatform/common/dto/SerialNumberSettingUIModel.class
 com/company/IntelligentPlatform/common/model/MatDecisionValueSetting.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractMaterialItemServiceModel.class
 com/company/IntelligentPlatform/common/model/ServiceFlowCondField.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureServiceModel.class
 com/company/IntelligentPlatform/production/service/ProdPlanItemReqProposalServiceModel.class
 com/company/IntelligentPlatform/finance/dto/FinAccountObjectTypeSelect.class
 com/company/IntelligentPlatform/logistics/service/ISupplyI18nPackage.class
@@ -346,7 +340,6 @@ com/company/IntelligentPlatform/logistics/dto/InboundDeliveryServiceUIModel.clas
 com/company/IntelligentPlatform/common/service/SearchProxyConfigManager$SearchModelProxyUnion.class
 com/company/IntelligentPlatform/production/service/ProductiveBOMItemServiceModel.class
 com/company/IntelligentPlatform/logistics/model/OutboundItemAttachment.class
-com/company/IntelligentPlatform/common/dto/WarehouseStoreSettingListController.class
 com/company/IntelligentPlatform/common/controller/FlowRouterServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/IndividualCustomerIdHelper.class
 com/company/IntelligentPlatform/production/dto/ProductiveBOMItemServiceUIModel.class
@@ -369,12 +362,10 @@ com/company/IntelligentPlatform/logistics/model/InventoryTransferOrderAttachment
 com/company/IntelligentPlatform/logistics/service/OutboundDeliverySpecifier.class
 com/company/IntelligentPlatform/common/dto/MaterialServiceUIModelExtension.class
 com/company/IntelligentPlatform/sales/controller/SalesContractEditorController.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureSearchModel.class
 com/company/IntelligentPlatform/production/model/ProdProcess.class
 com/company/IntelligentPlatform/logistics/service/InboundDeliverySpecifier.class
 com/company/IntelligentPlatform/logistics/service/PurchaseReturnMaterialItemServiceModel.class
 com/company/IntelligentPlatform/common/controller/SystemConfigureCategoryEditorController.class
-com/company/IntelligentPlatform/common/controller/CalendarSettingListController.class
 com/company/IntelligentPlatform/logistics/service/InboundItemServiceModel.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureResourceUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceSearchProxy.class
@@ -402,7 +393,6 @@ com/company/IntelligentPlatform/common/dto/MaterialSKUUnitUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceModelMessageHelper.class
 com/company/IntelligentPlatform/logistics/service/OutboundDeliveryCrossConvertRequest.class
 com/company/IntelligentPlatform/common/controller/IFinanceControllerResource.class
-com/company/IntelligentPlatform/common/service/ServiceEntityLogModelHelper.class
 com/company/IntelligentPlatform/common/dto/RoleSearchModel.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageSettingUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceBasicPerformHelper.class
@@ -420,7 +410,6 @@ com/company/IntelligentPlatform/common/dto/ServiceUIMeta.class
 com/company/IntelligentPlatform/common/controller/FlowableTaskUIModel.class
 com/company/IntelligentPlatform/common/model/EmployeeAttachment.class
 com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryListController.class
-com/company/IntelligentPlatform/common/service/AccessKeyInterceptor.class
 com/company/IntelligentPlatform/logistics/model/PurchaseRequestActionNode.class
 com/company/IntelligentPlatform/common/service/ServiceFieldUnion.class
 com/company/IntelligentPlatform/logistics/model/PurchaseOrderParty.class
@@ -491,8 +480,6 @@ com/company/IntelligentPlatform/common/service/StandardCheckStatusProxy.class
 com/company/IntelligentPlatform/common/service/SystemConfigureElementManager.class
 com/company/IntelligentPlatform/production/controller/ProdJobOrderUIModelMapConfigure.class
 com/company/IntelligentPlatform/common/model/RoleAuthorization.class
-com/company/IntelligentPlatform/common/service/JavaDelegate.class
-com/company/IntelligentPlatform/common/model/ServiceEntityLogModel.class
 com/company/IntelligentPlatform/common/service/ServiceExcelHandlerProxy.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractActionNodeUIModel.class
 com/company/IntelligentPlatform/common/dto/UserRoleServiceUIModelExtension.class
@@ -556,8 +543,6 @@ com/company/IntelligentPlatform/common/service/DocMatItemExcelHandler$IConvertDo
 com/company/IntelligentPlatform/common/service/DocActionNodeProxy$IActionCodeServiceExecutor.class
 com/company/IntelligentPlatform/common/model/AuthorizationObjectConfigureProxy.class
 com/company/IntelligentPlatform/common/service/RegisteredProductSpecifier.class
-com/company/IntelligentPlatform/sales/model/SettleOrderAttachment.class
-com/company/IntelligentPlatform/sales/model/SettleOrder.class
 com/company/IntelligentPlatform/common/controller/FlowRouterListController.class
 com/company/IntelligentPlatform/production/dto/ProductionOrderServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/RegisteredProductServiceUIModelExtension.class
@@ -572,7 +557,6 @@ com/company/IntelligentPlatform/common/controller/CorporateContactPersonListCont
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderListController.class
 com/company/IntelligentPlatform/common/service/MatConfigHeaderConditionManager.class
 com/company/IntelligentPlatform/production/controller/BillOfMaterialTemplateEditorController.class
-com/company/IntelligentPlatform/common/dto/ServiceDocConfigureParaGroupServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/SearchConfigPreCondition.class
 com/company/IntelligentPlatform/logistics/model/OutboundItemParty.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageSettingActionNodeUIModel.class
@@ -596,7 +580,6 @@ com/company/IntelligentPlatform/logistics/service/PurchaseReturnOrderIdHelper.cl
 com/company/IntelligentPlatform/common/service/OrganizationFunctionServiceModel.class
 com/company/IntelligentPlatform/common/controller/DoubleEditor.class
 com/company/IntelligentPlatform/common/service/ExternalOrgData.class
-com/company/IntelligentPlatform/production/controller/ProdJobOrderListController.class
 com/company/IntelligentPlatform/sales/service/SalesContractMaterialItemServiceModel.class
 com/company/IntelligentPlatform/common/dto/DataTableRequestData.class
 com/company/IntelligentPlatform/logistics/dto/InboundItemServiceUIModel.class
@@ -605,6 +588,7 @@ com/company/IntelligentPlatform/common/model/ReferenceNode.class
 com/company/IntelligentPlatform/production/service/ProcessRouteOrderServiceModel.class
 com/company/IntelligentPlatform/common/service/LogonUserActionExecutionProxy.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$1.class
+com/company/IntelligentPlatform/common/repository/CalendarSettingRepository.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$IGetListExecutor.class
 com/company/IntelligentPlatform/common/service/PrevNextDocItemProxy.class
 com/company/IntelligentPlatform/common/service/RandomStringUtils.class
@@ -621,6 +605,7 @@ com/company/IntelligentPlatform/logistics/service/InventoryCheckItemServiceModel
 com/company/IntelligentPlatform/logistics/service/InventoryTransferOrderSearchProxy.class
 com/company/IntelligentPlatform/common/dto/MatDecisionValueSettingServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/dto/NavigationItemSettingSearchModel.class
+com/company/IntelligentPlatform/common/repository/ServiceAccountDuplicateCheckResourceRepository.class
 com/company/IntelligentPlatform/common/service/CorporateCustomerSearchHelpProxy.class
 com/company/IntelligentPlatform/common/controller/NavigationItemSettingListController.class
 com/company/IntelligentPlatform/production/service/ProdPickingRefOrderItemServiceModel.class
@@ -644,8 +629,8 @@ com/company/IntelligentPlatform/production/model/ProductionPlanAttachment.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceDocumentExtendUIModel.class
 com/company/IntelligentPlatform/finance/dto/FinanceDocumentUIModel.class
+com/company/IntelligentPlatform/common/repository/HostCompanyRepository.class
 com/company/IntelligentPlatform/common/controller/LogonUserListController.class
-com/company/IntelligentPlatform/common/service/Task.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateItemServiceUIModelExtension.class
 com/company/IntelligentPlatform/production/dto/ProdProcessServiceUIModelExtension.class
 com/company/IntelligentPlatform/production/dto/ProductionPlanItemUIModel.class
@@ -654,6 +639,7 @@ com/company/IntelligentPlatform/common/service/MessageTemplateManager$FieldUnion
 com/company/IntelligentPlatform/production/service/RepairProdTargetItemToCrossInboundProxy.class
 com/company/IntelligentPlatform/common/service/CompanyBoardChairmanPartyHandler.class
 com/company/IntelligentPlatform/common/service/DocActionExecutionProxy$ServiceDocExecutionRequest.class
+com/company/IntelligentPlatform/common/repository/MaterialRepository.class
 com/company/IntelligentPlatform/common/dto/CalendarTemplateSearchModel.class
 com/company/IntelligentPlatform/production/dto/ProdPlanTargetMatItemServiceUIModelExtension.class
 com/company/IntelligentPlatform/logistics/service/PurchaseRequestIdHelper.class
@@ -677,6 +663,7 @@ com/company/IntelligentPlatform/common/controller/ServiceFlowModelUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceFlowModelServiceUIModel.class
 com/company/IntelligentPlatform/common/service/MatConfigExtPropertyManager.class
 com/company/IntelligentPlatform/common/service/ServiceModuleCloneService.class
+com/company/IntelligentPlatform/common/repository/AuthorizationObjectRepository.class
 com/company/IntelligentPlatform/common/model/SearchProxyConfig.class
 com/company/IntelligentPlatform/common/service/DocActionExecutionProxy$DocItemCheck.class
 com/company/IntelligentPlatform/common/dto/EmployeeDto.class
@@ -685,8 +672,8 @@ com/company/IntelligentPlatform/common/controller/SystemWebSocketController.clas
 com/company/IntelligentPlatform/production/controller/ProdReturnOrderListController.class
 com/company/IntelligentPlatform/common/service/DocFlowContextUnit.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialItemServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/dto/ServiceDocConfigureServiceUIModel.class
 com/company/IntelligentPlatform/logistics/model/DeliveryItem.class
+com/company/IntelligentPlatform/common/repository/WarehouseRepository.class
 com/company/IntelligentPlatform/common/service/ScanBarcodeService.class
 com/company/IntelligentPlatform/common/service/AuthorizationException.class
 com/company/IntelligentPlatform/production/service/ProductionDocRequestService.class
@@ -703,15 +690,16 @@ com/company/IntelligentPlatform/logistics/model/PurchaseContractParty.class
 com/company/IntelligentPlatform/common/service/LogonUserMessageException.class
 com/company/IntelligentPlatform/logistics/dto/QualityInspectMatItemServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/MaterialStockKeepUnitServiceUIModel.class
+com/company/IntelligentPlatform/common/repository/RegisteredProductRepository.class
 com/company/IntelligentPlatform/common/service/ServiceModuleProxy.class
 com/company/IntelligentPlatform/logistics/dto/QualityInsOrderAttachmentUIModel.class
 com/company/IntelligentPlatform/common/dto/SystemExecutorLogUIModel.class
 com/company/IntelligentPlatform/common/service/SystemConfigureResourceManager$2.class
-com/company/IntelligentPlatform/finance/controller/FinanceAccountEditorController.class
 com/company/IntelligentPlatform/common/dto/SystemExecutorLogEditorController.class
 com/company/IntelligentPlatform/common/controller/IConvertSearchDataMethod.class
 com/company/IntelligentPlatform/common/service/BSearchResponse.class
 com/company/IntelligentPlatform/production/controller/ProdWorkCenterCalendarItemEditorController.class
+com/company/IntelligentPlatform/common/repository/CargoRepository.class
 com/company/IntelligentPlatform/common/service/MaterialStockKeepUnitExcelReportProxy.class
 com/company/IntelligentPlatform/production/model/ProdWorkCenterConfigureProxy.class
 com/company/IntelligentPlatform/production/service/ProductionOrderItemServiceModel.class
@@ -739,7 +727,6 @@ com/company/IntelligentPlatform/production/repository/ProdPickingOrderRepository
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreEditorController.class
 com/company/IntelligentPlatform/common/dto/WorkCalendarServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/UserRoleUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureSearchProxy.class
 com/company/IntelligentPlatform/common/dto/SystemExecutorLogServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/BSearchSettings.class
 com/company/IntelligentPlatform/production/controller/ProdPickingOrderListController.class
@@ -769,8 +756,6 @@ com/company/IntelligentPlatform/logistics/service/OutboundDeliveryExcelReportPro
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemKeyUnion.class
 com/company/IntelligentPlatform/common/model/ServiceBasicKeyStructure.class
 com/company/IntelligentPlatform/logistics/model/PurchaseReturnOrder.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionListController.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceSearchModelConfigure.class
 com/company/IntelligentPlatform/logistics/service/ServiceJSONLocalRecorder.class
 com/company/IntelligentPlatform/common/service/MaterialIdHelper.class
@@ -790,7 +775,6 @@ com/company/IntelligentPlatform/common/service/SystemCheckResultProxy.class
 com/company/IntelligentPlatform/common/dto/AuthorizationObjectServiceUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceUIModelExtensionUnion.class
 com/company/IntelligentPlatform/common/model/NavigationGroupSetting.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemUIModel.class
 com/company/IntelligentPlatform/finance/controller/FinAccountTitleListController.class
 com/company/IntelligentPlatform/common/service/CompanyViceManagerPartyHandler.class
 com/company/IntelligentPlatform/common/dto/DocFlowNodeSearchModel.class
@@ -827,6 +811,7 @@ com/company/IntelligentPlatform/production/controller/BillOfMaterialOrderListCon
 com/company/IntelligentPlatform/logistics/service/InventoryTransferItemExcelHelper.class
 com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryPartyUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceBasicPerformHelper$RecordPointTime.class
+com/company/IntelligentPlatform/common/repository/ServiceFlowModelRepository.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertProfRequest$IGetPrevProfMatItemBySource.class
 com/company/IntelligentPlatform/production/dto/ProductiveBOMOrderServiceUIModel.class
 com/company/IntelligentPlatform/sales/model/SalesReturnMaterialItem.class
@@ -860,14 +845,12 @@ com/company/IntelligentPlatform/sales/controller/SalesContractMaterialItemAttach
 com/company/IntelligentPlatform/sales/model/SalesReturnMatItemAttachment.class
 com/company/IntelligentPlatform/common/dto/AuthorizationObjectServiceModel.class
 com/company/IntelligentPlatform/common/model/RegisteredProductActionLog.class
-com/company/IntelligentPlatform/common/service/TaskListener.class
 com/company/IntelligentPlatform/logistics/model/QualityInspectPropertyItem.class
 com/company/IntelligentPlatform/common/dto/CrossCopyInvolvePartyServiceUIModel.class
 com/company/IntelligentPlatform/production/service/ProdPickingRefMaterialItemServiceModel.class
 com/company/IntelligentPlatform/common/service/FlowTaskPartyHandlerRepository.class
 com/company/IntelligentPlatform/production/dto/ProductionOrderPartyUIModel.class
 com/company/IntelligentPlatform/logistics/service/QualityInspectOrderSearchProxy.class
-com/company/IntelligentPlatform/common/service/ServiceEntityLogModelManager.class
 com/company/IntelligentPlatform/common/service/SearchHeaderContext.class
 com/company/IntelligentPlatform/common/service/SystemCodeValueUnionServiceModel.class
 com/company/IntelligentPlatform/common/dto/WarehouseAreaUIModel.class
@@ -878,6 +861,7 @@ com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemPartyUIModel.
 com/company/IntelligentPlatform/common/service/CorporateDistributorExcelReportProxy.class
 com/company/IntelligentPlatform/common/dto/OrganizationServiceUIModelExtension.class
 com/company/IntelligentPlatform/production/service/ProductionOrderServiceModel.class
+com/company/IntelligentPlatform/common/repository/SystemCodeValueCollectionRepository.class
 com/company/IntelligentPlatform/common/dto/RegisteredProductExtendPropertyServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/LogonInfoException.class
 com/company/IntelligentPlatform/production/dto/ProductionPlanServiceUIModel.class
@@ -895,6 +879,7 @@ com/company/IntelligentPlatform/logistics/service/WasteProcessOrderException.cla
 com/company/IntelligentPlatform/common/dto/ServiceDocSearchHeaderModel.class
 com/company/IntelligentPlatform/sales/dto/SalesContractMaterialItemServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/SerialIdDocumentProxy$UpdateDocItemMaterialMatrix.class
+com/company/IntelligentPlatform/common/repository/ServiceExceptionRecordRepository.class
 com/company/IntelligentPlatform/common/service/BSearchNodeComConfigure.class
 com/company/IntelligentPlatform/common/service/DocActionExecutionProxy$SourceTargetDocTypeConfig.class
 com/company/IntelligentPlatform/common/service/RoleManager.class
@@ -914,7 +899,6 @@ com/company/IntelligentPlatform/common/dto/EmployeeUIModel.class
 com/company/IntelligentPlatform/production/dto/ProcessRouteOrderSearchModel.class
 com/company/IntelligentPlatform/finance/service/FinAccountSearchProxy.class
 com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderInitModel.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelSearchModel.class
 com/company/IntelligentPlatform/common/service/CrossCopyPartyConversionConfig.class
 com/company/IntelligentPlatform/sales/service/SalesForcastActionExecutionProxy.class
 com/company/IntelligentPlatform/common/dto/SearchProxyConfigUIModel.class
@@ -928,9 +912,7 @@ com/company/IntelligentPlatform/logistics/service/WarehouseStoreSearchProxy.clas
 com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateReportProxy.class
 com/company/IntelligentPlatform/logistics/model/PurchaseReturnOrderConfigureProxy.class
 com/company/IntelligentPlatform/common/service/DocFlowProxy$CrossCreateContextDocOption.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureListController.class
 com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingListController.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionUIModel.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureCategoryServiceUIModelExtension.class
 com/company/IntelligentPlatform/production/dto/ProductionOrderAttachmentUIModel.class
 com/company/IntelligentPlatform/sales/service/SalesContractIdHelper.class
@@ -991,7 +973,6 @@ com/company/IntelligentPlatform/common/dto/RoleAuthorizationServiceUIModel.class
 com/company/IntelligentPlatform/sales/controller/SalesReturnMaterialItemEditorController.class
 com/company/IntelligentPlatform/common/service/ServiceConcurrentLockUnit.class
 com/company/IntelligentPlatform/logistics/dto/InboundDeliveryAttachmentUIModel.class
-com/company/IntelligentPlatform/production/controller/ProcessBOMItemEditorController.class
 com/company/IntelligentPlatform/common/model/EmployeeOrgReference.class
 com/company/IntelligentPlatform/production/dto/ProdPickingOrderUIModel.class
 com/company/IntelligentPlatform/common/dto/SystemCodeValueUnionServiceUIModel.class
@@ -999,7 +980,6 @@ com/company/IntelligentPlatform/common/dto/SystemConfigureUIFieldUIModel.class
 com/company/IntelligentPlatform/logistics/service/OutboundItemExcelHelper.class
 com/company/IntelligentPlatform/finance/service/IndividualCustomerToFinSearchProxy.class
 com/company/IntelligentPlatform/logistics/dto/QualityInspectMatItemPartyUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceEntityLogModelDAO.class
 com/company/IntelligentPlatform/common/service/BSearchNodeComConfigureBuilder.class
 com/company/IntelligentPlatform/common/service/BarcodeBuffer.class
 com/company/IntelligentPlatform/production/controller/ProdReturnOrderEditorController$2.class
@@ -1020,11 +1000,11 @@ com/company/IntelligentPlatform/common/controller/CalendarWorkTimeSettingEditorC
 com/company/IntelligentPlatform/common/service/CrossDocBatchConvertProxy$DocContentCreateContext.class
 com/company/IntelligentPlatform/common/controller/HostCompanyEditorController.class
 com/company/IntelligentPlatform/logistics/service/InboundItemBatchRequest.class
+com/company/IntelligentPlatform/common/repository/ActionCodeRepository.class
 com/company/IntelligentPlatform/common/model/MaterialUnitReference.class
 com/company/IntelligentPlatform/common/service/AuthorizationObjectSearchProxy.class
 com/company/IntelligentPlatform/common/dto/LogonUserPasswordSetUIModel.class
 com/company/IntelligentPlatform/finance/dto/ResFinAccountSettingListController.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelServiceUIModel.class
 com/company/IntelligentPlatform/logistics/service/IDeliveryI18nPackage.class
 com/company/IntelligentPlatform/common/service/LogonUserDAO.class
 com/company/IntelligentPlatform/sales/dto/SalesReturnOrderServiceUIModel.class
@@ -1039,7 +1019,6 @@ com/company/IntelligentPlatform/common/service/OrganizationBarcodeBasicSettingEx
 com/company/IntelligentPlatform/common/service/NavigationSystemSettingActionExecutionProxy.class
 com/company/IntelligentPlatform/common/dto/RoleSubAuthorizationServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertRequest$IFilterSelectedMatItem.class
-com/company/IntelligentPlatform/production/controller/ProdJobOrderEditorController.class
 com/company/IntelligentPlatform/common/model/SearchFieldConfig.class
 com/company/IntelligentPlatform/common/service/SelfUserData.class
 com/company/IntelligentPlatform/common/service/CorporateCustomerService.class
@@ -1049,20 +1028,18 @@ com/company/IntelligentPlatform/common/model/ServiceExceptionRecord.class
 com/company/IntelligentPlatform/common/service/DocItemExclusiveExecutor.class
 com/company/IntelligentPlatform/common/dto/ServiceDocumentSettingServiceUIModel.class
 com/company/IntelligentPlatform/common/service/OrganizationServiceModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaEditorController.class
 com/company/IntelligentPlatform/common/service/ServiceEntityService.class
-com/company/IntelligentPlatform/common/service/DelegateTask.class
 com/company/IntelligentPlatform/common/service/CurrentLogonUserManager.class
 com/company/IntelligentPlatform/production/controller/ProdOrderSupplyWarehouseEditorController.class
 com/company/IntelligentPlatform/logistics/service/QualityInspectPropertyItemServiceModel.class
 com/company/IntelligentPlatform/common/model/CalendarTemplateConfigureProxy.class
 com/company/IntelligentPlatform/common/service/ServiceEntityException.class
 com/company/IntelligentPlatform/sales/service/SalesReturnOrderManager.class
+com/company/IntelligentPlatform/common/config/JwtAuthContextCache$CacheEntry.class
 com/company/IntelligentPlatform/production/dto/ProdOrderReportAttachmentUIModel.class
 com/company/IntelligentPlatform/common/dto/ServiceExtendFieldI18nSettingServiceUIModelExtension.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemSearchModel.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertProfRequest.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemEditorController.class
 com/company/IntelligentPlatform/common/controller/LoginComModel.class
 com/company/IntelligentPlatform/production/dto/RepairProdTargetItemAttachmentUIModel.class
 com/company/IntelligentPlatform/common/dto/MaterialSKUUnitAttachmentUIModel.class
@@ -1070,7 +1047,6 @@ com/company/IntelligentPlatform/logistics/service/QualityInspectOrderIdHelper.cl
 com/company/IntelligentPlatform/common/dto/SerExtendUIControlQueryRequest.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractMergeRequest$1.class
 com/company/IntelligentPlatform/production/dto/ProdJobOrderSearchModel.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/model/Role.class
 com/company/IntelligentPlatform/common/service/PackageRegisterationEntityManager.class
 com/company/IntelligentPlatform/logistics/dto/InboundDeliveryReportService.class
@@ -1170,7 +1146,6 @@ com/company/IntelligentPlatform/common/controller/ISEUIModelMapping.class
 com/company/IntelligentPlatform/common/dto/EmployeeExcelModel.class
 com/company/IntelligentPlatform/common/dto/ScanBarcodeResponseModel.class
 com/company/IntelligentPlatform/common/service/SearchProxyConfigManager$SearchFieldUnion.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupListController.class
 com/company/IntelligentPlatform/common/service/SerialIdInputModel.class
 com/company/IntelligentPlatform/common/service/IFoundAccountI18nPackage.class
 com/company/IntelligentPlatform/production/service/ProductionOrderIdHelper.class
@@ -1186,7 +1161,6 @@ com/company/IntelligentPlatform/common/dto/MessageTemplateServiceUIModelExtensio
 com/company/IntelligentPlatform/production/service/ProductionPlanManager.class
 com/company/IntelligentPlatform/production/dto/ProdPickingRefOrderItemServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/dto/ServiceDocInitInvolvePartyUIModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaListController.class
 com/company/IntelligentPlatform/logistics/service/OutboundItemManager.class
 com/company/IntelligentPlatform/common/dto/MessageTempSearchConditionServiceUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceFlowCondGroupUIModel.class
@@ -1195,11 +1169,11 @@ com/company/IntelligentPlatform/common/dto/MatDecisionValueSettingEditorControll
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$IGetObjectExecutor.class
 com/company/IntelligentPlatform/production/service/RepairProdTargetMatItemManager$2.class
 com/company/IntelligentPlatform/common/model/NavigationSystemSettingActionNode.class
+com/company/IntelligentPlatform/common/repository/MaterialConfigureTemplateRepository.class
 com/company/IntelligentPlatform/production/controller/BillOfMaterialTemplateEditorController$1.class
 com/company/IntelligentPlatform/common/service/DocFlowProxy$GrossPricePair.class
 com/company/IntelligentPlatform/common/dto/RegisteredProductSearchModel.class
 com/company/IntelligentPlatform/common/dto/SystemExecutorSettingEditorController.class
-com/company/IntelligentPlatform/production/controller/ProcessRouteOrderListController.class
 com/company/IntelligentPlatform/common/service/SerExtendPageI18nServiceModel.class
 com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemUIModel.class
 com/company/IntelligentPlatform/sales/service/SalesReturnOrderServiceModel.class
@@ -1218,7 +1192,6 @@ com/company/IntelligentPlatform/common/service/ServiceSelect2ModelProxy.class
 com/company/IntelligentPlatform/common/service/IServiceResourceConstants.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$IDeleteStrategy.class
 com/company/IntelligentPlatform/common/service/SystemExecutorSettingManager.class
-com/company/IntelligentPlatform/common/service/TaskService$TaskQuery.class
 com/company/IntelligentPlatform/production/model/ProdPickingRefOrderItem.class
 com/company/IntelligentPlatform/common/service/EmployeeManager.class
 com/company/IntelligentPlatform/production/service/ProdOrderTarSubItemServiceModel.class
@@ -1242,7 +1215,6 @@ com/company/IntelligentPlatform/production/dto/ProductionPlanDto.class
 com/company/IntelligentPlatform/common/model/PricingCurrencyConfigure.class
 com/company/IntelligentPlatform/common/service/MessageTempPrioritySettingManager.class
 com/company/IntelligentPlatform/logistics/model/InboundItem.class
-com/company/IntelligentPlatform/sales/model/SettleMaterialItem.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$ICheckMessageExecutor.class
 com/company/IntelligentPlatform/common/model/ServiceDocumentSetting.class
 com/company/IntelligentPlatform/common/service/ServiceUIModuleProxy$ServiceModelNodeMeta.class
@@ -1267,6 +1239,7 @@ com/company/IntelligentPlatform/production/service/ProdJobOrderManager.class
 com/company/IntelligentPlatform/logistics/model/PurchaseContractConfigureProxy.class
 com/company/IntelligentPlatform/common/controller/CommonErrorMessageHelper.class
 com/company/IntelligentPlatform/production/service/ProductionPlanTimeComsumeProxy.class
+com/company/IntelligentPlatform/common/config/JwtRestContext.class
 com/company/IntelligentPlatform/common/controller/CorporateContactPersonEditorController.class
 com/company/IntelligentPlatform/production/service/RepairProdTargetMatItemManager.class
 com/company/IntelligentPlatform/logistics/service/OutboundDeliveryIncomeProxy.class
@@ -1278,7 +1251,6 @@ com/company/IntelligentPlatform/common/model/AttachmentConstantHelper.class
 com/company/IntelligentPlatform/logistics/dto/QualityInspectPropertyItemServiceUIModel.class
 com/company/IntelligentPlatform/common/controller/DocUIModelExtensionFactory.class
 com/company/IntelligentPlatform/common/dto/LogonUserServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/service/ServiceHighChartXTimeSlotParaProxy.class
 com/company/IntelligentPlatform/common/dto/MaterialTypeServiceUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceExcelHandlerProxyFactory.class
 com/company/IntelligentPlatform/sales/repository/SalesForcastRepository.class
@@ -1307,10 +1279,8 @@ com/company/IntelligentPlatform/common/dto/IndividualCustomerUIModel.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseReturnOrderAttachmentUIModel.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractAttachmentUIModel.class
 com/company/IntelligentPlatform/common/dto/ServiceDocumentSettingUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceFlowCondFieldManager$1.class
 com/company/IntelligentPlatform/production/service/ProdOrderTargetItemException.class
 com/company/IntelligentPlatform/common/dto/ServiceEntityRegisterEntityListController.class
-com/company/IntelligentPlatform/common/service/ServiceEntityLogModelServiceModel.class
 com/company/IntelligentPlatform/finance/dto/FinAccountServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/dto/ServiceEntityCreateUpdateSearchModel.class
 com/company/IntelligentPlatform/production/service/ProductionPlanActionExecutionProxy.class
@@ -1328,11 +1298,11 @@ com/company/IntelligentPlatform/logistics/dto/InboundDeliveryListController.clas
 com/company/IntelligentPlatform/sales/dto/SalesContractMaterialItemServiceUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceDocTypeSysCategoryMapUnion.class
 com/company/IntelligentPlatform/sales/model/SalesContract.class
-com/company/IntelligentPlatform/common/service/ServiceFlowCondFieldManager$2.class
 com/company/IntelligentPlatform/common/service/ServiceDocDeletionSettingSearchProxy.class
 com/company/IntelligentPlatform/common/model/ProjectionNode.class
 com/company/IntelligentPlatform/common/repository/OrganizationRepository.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertRequest$IGetTargetDocItemList.class
+com/company/IntelligentPlatform/common/config/JwtAuthEntryPoint.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreActionNodeUIModel.class
 com/company/IntelligentPlatform/logistics/dto/OutboundItemSearchModel.class
 com/company/IntelligentPlatform/common/service/ServiceExcelConfigException.class
@@ -1364,6 +1334,7 @@ com/company/IntelligentPlatform/production/dto/BillOfMaterialOrderListExcelHandl
 com/company/IntelligentPlatform/production/model/ProcessRouteProcessItem.class
 com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemSearchModel.class
 com/company/IntelligentPlatform/common/dto/StandardMaterialUnitListController.class
+com/company/IntelligentPlatform/finance/repository/SystemResourceRepository.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractMaterialItemUIModel.class
 com/company/IntelligentPlatform/logistics/service/WasteProcessMaterialItemServiceModel.class
 com/company/IntelligentPlatform/common/service/EmployeeIdHelper.class
@@ -1387,8 +1358,10 @@ com/company/IntelligentPlatform/production/model/ProdOrderTargetMatItem.class
 com/company/IntelligentPlatform/common/dto/MaterialUnitEditorController.class
 com/company/IntelligentPlatform/common/service/CorporateContactPersonServiceModel.class
 com/company/IntelligentPlatform/sales/service/SalesContractServiceModel.class
+com/company/IntelligentPlatform/common/repository/IndividualCustomerRepository.class
 com/company/IntelligentPlatform/common/dto/CorporateContactPersonSearchModel.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateItemManager.class
+com/company/IntelligentPlatform/common/service/JpaServiceEntityDAO.class
 com/company/IntelligentPlatform/common/service/ServiceExcelHandlerProxy$FieldNameUnit.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemListController.class
 com/company/IntelligentPlatform/common/dto/MaterialUnitUIModel.class
@@ -1409,7 +1382,6 @@ com/company/IntelligentPlatform/production/dto/ProductionDocRequestUIModel.class
 com/company/IntelligentPlatform/production/controller/ProductionOrderListController.class
 com/company/IntelligentPlatform/production/dto/ProductionPlanItemServiceUIModel.class
 com/company/IntelligentPlatform/common/service/ServiceExceptionRecordManager.class
-com/company/IntelligentPlatform/production/controller/ProdProcessListController.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialItemIdHelper.class
 com/company/IntelligentPlatform/common/service/LockObjectFailureException.class
 com/company/IntelligentPlatform/production/dto/RepairProdOrderItemServiceUIModel.class
@@ -1443,13 +1415,11 @@ com/company/IntelligentPlatform/common/dto/CalendarTemplateListController.class
 com/company/IntelligentPlatform/common/model/SimpleSEJSONRequest.class
 com/company/IntelligentPlatform/common/model/IndividualCustomerAttachment.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseRequestMaterialItemEditorController.class
-com/company/IntelligentPlatform/common/controller/MessageCategoryListController.class
 com/company/IntelligentPlatform/common/service/AuthorizationGroupManager.class
 com/company/IntelligentPlatform/common/model/ServiceEntityRegisterEntity.class
 com/company/IntelligentPlatform/common/controller/ISearchDataMethod.class
 com/company/IntelligentPlatform/common/model/NavigationItemSetting.class
 com/company/IntelligentPlatform/common/dto/NavigationItemSettingServiceUIModel.class
-com/company/IntelligentPlatform/common/service/WarehouseStoreItemLogConfigParaProxy.class
 com/company/IntelligentPlatform/common/model/CrossCopyDocConfigure.class
 com/company/IntelligentPlatform/common/service/CrossDocActConfigure.class
 com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemEditorController.class
@@ -1497,6 +1467,7 @@ com/company/IntelligentPlatform/common/dto/ServiceDocumentSettingSearchModel.cla
 com/company/IntelligentPlatform/common/controller/FlowRouterServiceUIModel.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractMaterialItemManager.class
 com/company/IntelligentPlatform/logistics/service/WasteProcessOrderActionExecutionProxy.class
+com/company/IntelligentPlatform/common/repository/CityRepository.class
 com/company/IntelligentPlatform/common/dto/MaterialSKUExtendPropertyServiceUIModel.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemLogListController.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertReservedRequest.class
@@ -1509,10 +1480,11 @@ com/company/IntelligentPlatform/production/model/BillOfMaterialOrder.class
 com/company/IntelligentPlatform/production/model/ProdPickingOrderParty.class
 com/company/IntelligentPlatform/common/dto/OrganizationInitModel.class
 com/company/IntelligentPlatform/common/controller/UIModelMapInfo.class
-com/company/IntelligentPlatform/common/dto/ServiceDocConfigureServiceUIModelExtension.class
+com/company/IntelligentPlatform/common/config/JwtUtil.class
 com/company/IntelligentPlatform/common/service/DocSplitMergeProxy.class
 com/company/IntelligentPlatform/common/service/SpringContextDestroyListener.class
 com/company/IntelligentPlatform/logistics/controller/QualityController.class
+com/company/IntelligentPlatform/common/repository/LockObjectRepository.class
 com/company/IntelligentPlatform/common/controller/ActionCodeEditorController.class
 com/company/IntelligentPlatform/sales/service/SalesContractException.class
 com/company/IntelligentPlatform/common/dto/ServiceEntityRegisterEntityServiceUIModelExtension.class
@@ -1534,6 +1506,7 @@ com/company/IntelligentPlatform/common/controller/ActionCodeJSONModel.class
 com/company/IntelligentPlatform/common/model/RoleSubAuthorization.class
 com/company/IntelligentPlatform/common/service/MaterialSearchProxy.class
 com/company/IntelligentPlatform/logistics/service/PurchaseRequestException.class
+com/company/IntelligentPlatform/common/repository/ServiceDocumentSettingRepository.class
 com/company/IntelligentPlatform/common/model/SystemConfigureCategoryConfigureProxy.class
 com/company/IntelligentPlatform/common/service/ServiceMessageResponseHelper.class
 com/company/IntelligentPlatform/common/service/ServiceCommonDataFormatter.class
@@ -1577,11 +1550,9 @@ com/company/IntelligentPlatform/logistics/dto/InboundDeliveryServiceUIModelExten
 com/company/IntelligentPlatform/common/service/MessageTempPrioritySettingManager$1.class
 com/company/IntelligentPlatform/production/controller/ProductionDocBatchRequest.class
 com/company/IntelligentPlatform/common/dto/WarehouseAttachmentUIModel.class
-com/company/IntelligentPlatform/common/dto/ServiceExcelReportController.class
 com/company/IntelligentPlatform/sales/dto/SalesReturnOrderActionNodeUIModel.class
 com/company/IntelligentPlatform/common/service/SystemConfigureElementServiceModel.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckJSONModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocParaConsumerValueModeProxy.class
 com/company/IntelligentPlatform/common/service/EmpLogonUserServiceModel.class
 com/company/IntelligentPlatform/common/controller/SystemConfigureElementListController.class
 com/company/IntelligentPlatform/common/service/DocMatItemToParentExecutorCase.class
@@ -1595,18 +1566,18 @@ com/company/IntelligentPlatform/common/service/SystemConfigureExtensionUnionMana
 com/company/IntelligentPlatform/finance/service/FinAccountSystemResourceProxy.class
 com/company/IntelligentPlatform/common/model/ServiceEntityConfigureException.class
 com/company/IntelligentPlatform/sales/dto/SalesReturnMaterialItemServiceUIModel.class
+com/company/IntelligentPlatform/common/repository/RoleRepository.class
 com/company/IntelligentPlatform/common/service/ServiceExcelReportProxy$ExcelUpdateExecutor.class
 com/company/IntelligentPlatform/production/controller/ProdWorkCenterEditorController.class
+com/company/IntelligentPlatform/common/repository/ProvinceRepository.class
 com/company/IntelligentPlatform/common/service/BsearchService.class
 com/company/IntelligentPlatform/logistics/model/InventoryTransferItemParty.class
 com/company/IntelligentPlatform/common/model/SerialLogonInfo.class
 com/company/IntelligentPlatform/logistics/dto/InventoryTransferItemServiceUIModel.class
 com/company/IntelligentPlatform/common/model/ServiceEntityStringHelper.class
 com/company/IntelligentPlatform/common/service/SearchNodeMapping.class
-com/company/IntelligentPlatform/common/service/ServiceDocConsumerUnionManager.class
 com/company/IntelligentPlatform/common/service/SerEventException.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemJSONModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConsumerFieldUnionUIModel.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialItemServiceModel.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialTemplateExecutionProxy.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageSectionServiceUIModelExtension.class
@@ -1629,12 +1600,12 @@ com/company/IntelligentPlatform/finance/dto/FinAccountExcelModel.class
 com/company/IntelligentPlatform/finance/service/FinAccountService.class
 com/company/IntelligentPlatform/production/model/RepairProdSupplyWarehouse.class
 com/company/IntelligentPlatform/sales/service/SalesForcastMaterialItemExcelHelper.class
-com/company/IntelligentPlatform/common/dto/ServiceDocConfigureParaServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/MaterialStockKeepUnitIdHelper.class
 com/company/IntelligentPlatform/common/dto/IBootStrapTreeModelConstants.class
 com/company/IntelligentPlatform/common/dto/CalendarSettingSearchModel.class
 com/company/IntelligentPlatform/production/controller/RepairProdOrderEditorController$1.class
 com/company/IntelligentPlatform/logistics/controller/DeliveryController.class
+com/company/IntelligentPlatform/common/repository/FlowRouterRepository.class
 com/company/IntelligentPlatform/production/dto/ProdWorkCenterServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/SerExtendUIControlSetServiceUIModelExtension.class
 com/company/IntelligentPlatform/IntelligentPlatformApplication.class
@@ -1674,7 +1645,6 @@ com/company/IntelligentPlatform/common/service/WarehouseSafetyWarnManager.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialItemUpdateLogServiceModel.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseReturnOrderSearchModel.class
 com/company/IntelligentPlatform/common/dto/ServiceExtendFieldSettingServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/model/ServiceDocConsumerUnion.class
 com/company/IntelligentPlatform/production/repository/BillOfMaterialTemplateRepository.class
 com/company/IntelligentPlatform/common/model/MatConfigHeaderCondition.class
 com/company/IntelligentPlatform/common/model/ServiceAccountDuplicateCheckResource.class
@@ -1701,10 +1671,8 @@ com/company/IntelligentPlatform/production/dto/ProdOrderTargetMatItemServiceUIMo
 com/company/IntelligentPlatform/production/service/ProdOrderItemReqProposalManager.class
 com/company/IntelligentPlatform/common/model/MessageTemplateConfigureProxy.class
 com/company/IntelligentPlatform/common/model/CargoConfigureProxy.class
-com/company/IntelligentPlatform/production/controller/ProcessBOMItemListController.class
 com/company/IntelligentPlatform/common/model/DocumentContentConfigureProxy.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageMetadataUIModel.class
-com/company/IntelligentPlatform/common/model/ServiceDocConfigureConfigureProxy.class
 com/company/IntelligentPlatform/common/dto/WarehouseStoreSettingServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/WorkCalendarEditorController.class
 com/company/IntelligentPlatform/common/service/ServiceUIModelRepository.class
@@ -1717,6 +1685,7 @@ com/company/IntelligentPlatform/production/service/ProdOrderTarSubItemManager$1.
 com/company/IntelligentPlatform/common/service/MatDecisionValueSettingManager$4.class
 com/company/IntelligentPlatform/common/dto/CustomerJSONModel.class
 com/company/IntelligentPlatform/common/service/MaterialUnitManager.class
+com/company/IntelligentPlatform/common/repository/NavigationSystemSettingRepository.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractDto.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseReturnMatItemAttachmentUIModel.class
 com/company/IntelligentPlatform/common/service/CodabarEncoder.class
@@ -1729,8 +1698,8 @@ com/company/IntelligentPlatform/logistics/dto/WasteProcessOrderAttachmentUIModel
 com/company/IntelligentPlatform/common/model/WorkCalendarConfigureProxy.class
 com/company/IntelligentPlatform/common/service/WorkCalendarManager.class
 com/company/IntelligentPlatform/common/service/SystemConfigureResourceManager.class
+com/company/IntelligentPlatform/common/repository/MessageTemplateRepository.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureResourceServiceUIModel.class
-com/company/IntelligentPlatform/common/model/ServiceEntityLogModelConfigureProxy.class
 com/company/IntelligentPlatform/sales/dto/SalesForcastMaterialItemServiceUIModel.class
 com/company/IntelligentPlatform/production/model/ProductionPlanConfigureProxy.class
 com/company/IntelligentPlatform/production/service/RepairProdTargetMatItemServiceModel.class
@@ -1743,14 +1712,11 @@ com/company/IntelligentPlatform/logistics/service/LogisticsMobileJSONHelper.clas
 com/company/IntelligentPlatform/common/service/IFlowTaskPartyHandler.class
 com/company/IntelligentPlatform/common/dto/SystemCodeValueCollectionEditorController.class
 com/company/IntelligentPlatform/common/controller/SerUIControlGenRequest.class
-com/company/IntelligentPlatform/common/model/ServiceDocConfigurePara.class
 com/company/IntelligentPlatform/common/model/ServiceEntityFieldsHelper.class
-com/company/IntelligentPlatform/common/service/TaskService.class
 com/company/IntelligentPlatform/logistics/service/PurchaseReturnMaterialItemExcelHelper.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemLogChartHelper.class
 com/company/IntelligentPlatform/logistics/dto/WasteProcessMaterialItemEditorController.class
 com/company/IntelligentPlatform/common/dto/SystemCodeValueUnionUIModel.class
-com/company/IntelligentPlatform/common/model/ServiceDocConsumerUnionConfigureProxy.class
 com/company/IntelligentPlatform/common/service/SystemDefExtServiceActionCode.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderEditorController.class
 com/company/IntelligentPlatform/production/controller/ProdProcessUIModelMapConfigure.class
@@ -1761,8 +1727,6 @@ com/company/IntelligentPlatform/common/service/ServiceChartDataSeriesUIModel.cla
 com/company/IntelligentPlatform/production/model/ProdItemRequestUnionTemplate.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$ExecuteActionRequest.class
 com/company/IntelligentPlatform/logistics/model/InventoryTransferOrderConfigureProxy.class
-com/company/IntelligentPlatform/common/service/ProcessInstanceQuery.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionEditorController.class
 com/company/IntelligentPlatform/production/controller/ProdPickingRefMaterialItemEditorController.class
 com/company/IntelligentPlatform/production/model/ProcessRouteOrder.class
 com/company/IntelligentPlatform/sales/service/SalesForcastMaterialItemServiceModel.class
@@ -1806,6 +1770,7 @@ com/company/IntelligentPlatform/common/controller/ServiceExtensionSettingListCon
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$CreateDocInput.class
 com/company/IntelligentPlatform/common/model/IDefDocumentResource.class
 com/company/IntelligentPlatform/common/service/EmployeeSearchProxy.class
+com/company/IntelligentPlatform/common/repository/ServiceExtensionSettingRepository.class
 com/company/IntelligentPlatform/finance/service/SystemResourceException.class
 com/company/IntelligentPlatform/production/service/ProdPickingRefMaterialItemManager$EndDocMatItemPair.class
 com/company/IntelligentPlatform/finance/model/FinAccountAttachment.class
@@ -1816,7 +1781,6 @@ com/company/IntelligentPlatform/production/service/i18n/IProductionI18nPackage.c
 com/company/IntelligentPlatform/common/dto/MessageTemplateEditorController.class
 com/company/IntelligentPlatform/common/service/ServiceJSONParser.class
 com/company/IntelligentPlatform/production/dto/ProdWorkCenterCalendarItemServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupUIModel.class
 com/company/IntelligentPlatform/finance/dto/ResFinAccountFieldSettingServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/model/EmpLogonUserReference.class
 com/company/IntelligentPlatform/logistics/service/WasteProcessMaterialItemManager.class
@@ -1830,7 +1794,6 @@ com/company/IntelligentPlatform/common/service/AuthorizationRegisterService.clas
 com/company/IntelligentPlatform/common/service/SplitMatItemProxy$SplitResult.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractValueProxy.class
 com/company/IntelligentPlatform/common/service/PageSplitModel.class
-com/company/IntelligentPlatform/finance/controller/FinanceAccountChartController.class
 com/company/IntelligentPlatform/sales/model/SalesForcast.class
 com/company/IntelligentPlatform/common/dto/CalendarTempWorkScheduleEditorController.class
 com/company/IntelligentPlatform/common/service/RoleMessageCategoryManager.class
@@ -1902,12 +1865,10 @@ com/company/IntelligentPlatform/production/model/ProdItemReqProposalTemplate.cla
 com/company/IntelligentPlatform/common/controller/UserRoleEditorController.class
 com/company/IntelligentPlatform/common/model/SearchProxyConfigConfigureProxy.class
 com/company/IntelligentPlatform/production/dto/ProdWorkCenterCalendarItemUIModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocActiveMessageItemUIModel.class
 com/company/IntelligentPlatform/common/service/SystemSerialParallelProxy.class
 com/company/IntelligentPlatform/sales/dto/SalesForcastServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/controller/PageHeaderModel.class
 com/company/IntelligentPlatform/logistics/dto/InquiryMaterialItemListController.class
-com/company/IntelligentPlatform/logistics/service/OutboundDeliveryConfigParaProxy.class
 com/company/IntelligentPlatform/sales/service/SalesForcastManager.class
 com/company/IntelligentPlatform/production/service/ProdOrderPickingToPickingHandler.class
 com/company/IntelligentPlatform/production/dto/ProcessRouteProcessItemServiceUIModelExtension.class
@@ -1941,6 +1902,7 @@ com/company/IntelligentPlatform/sales/service/SalesReturnOrderSearchProxy.class
 com/company/IntelligentPlatform/common/service/ServiceAccountDuplicateCheckResourceManager.class
 com/company/IntelligentPlatform/common/service/ServiceFlowModelServiceModel.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckItemAttachmentUIModel.class
+com/company/IntelligentPlatform/common/repository/LogonInfoRepository.class
 com/company/IntelligentPlatform/production/service/ProdPlanTarSubItemManager.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemServiceUIModel.class
 com/company/IntelligentPlatform/common/model/DocInvolveParty.class
@@ -1960,9 +1922,11 @@ com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateAttachmentU
 com/company/IntelligentPlatform/production/model/ProdOrderReport.class
 com/company/IntelligentPlatform/common/service/ManagerTaskHandler.class
 com/company/IntelligentPlatform/sales/controller/SalesReturnOrderEditorController.class
+com/company/IntelligentPlatform/common/repository/OrganizationBarcodeBasicSettingRepository.class
 com/company/IntelligentPlatform/logistics/dto/WasteProcessMaterialItemServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/RegisteredProductExtendPropertyServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/ServiceUIModule.class
+com/company/IntelligentPlatform/common/controller/AuthController.class
 com/company/IntelligentPlatform/common/service/DocActionExecutionProxy$IGetMessageExecutor.class
 com/company/IntelligentPlatform/finance/dto/ResFinAccountSettingUIModel.class
 com/company/IntelligentPlatform/finance/model/FinAccountConfigureProxy.class
@@ -1993,7 +1957,6 @@ com/company/IntelligentPlatform/common/controller/FlowRouterExtendClassServiceUI
 com/company/IntelligentPlatform/common/dto/ServiceAccountDuplicateCheckResourceUIModel.class
 com/company/IntelligentPlatform/common/service/DocActionConfigure.class
 com/company/IntelligentPlatform/common/dto/WarehouseStoreSettingEditorController.class
-com/company/IntelligentPlatform/common/controller/CalendarWorkTimeSettingListController.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureResourceSearchModel.class
 com/company/IntelligentPlatform/common/dto/CorporateContactPersonUIModel.class
 com/company/IntelligentPlatform/common/controller/FlowableProcessInsUIModel.class
@@ -2029,6 +1992,7 @@ com/company/IntelligentPlatform/common/service/PricingSettingSearchProxy.class
 com/company/IntelligentPlatform/logistics/service/InventoryTransferOrderException.class
 com/company/IntelligentPlatform/logistics/service/DeliveryDocumentManager.class
 com/company/IntelligentPlatform/logistics/service/InboundDeliveryIdHelper.class
+com/company/IntelligentPlatform/production/repository/ProdProcessRepository.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreAttachmentUIModel.class
 com/company/IntelligentPlatform/common/controller/SerExtendUIControlSetEditorController.class
 com/company/IntelligentPlatform/common/model/MaterialUnitAttachment.class
@@ -2039,6 +2003,7 @@ com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemLogServiceUIMode
 com/company/IntelligentPlatform/common/model/ISystemAuthorizationObject.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$IGenNextDocBatchRequest.class
 com/company/IntelligentPlatform/common/service/IndividualCustomerManager.class
+com/company/IntelligentPlatform/common/repository/PricingSettingRepository.class
 com/company/IntelligentPlatform/common/dto/PricingCurrencyConfigureUIModel.class
 com/company/IntelligentPlatform/common/model/IMobileJSONConstant.class
 com/company/IntelligentPlatform/common/model/ServiceExceptionRecordConfigureProxy.class
@@ -2050,7 +2015,6 @@ com/company/IntelligentPlatform/common/service/SearchContext.class
 com/company/IntelligentPlatform/production/dto/RepairProdOrderServiceUIModel.class
 com/company/IntelligentPlatform/common/service/CrossCopyDocConversionConfig.class
 com/company/IntelligentPlatform/finance/service/ResFinSystemResourceServiceModel.class
-com/company/IntelligentPlatform/common/model/ServiceEntityLogItem.class
 com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryFinControllerRes.class
 com/company/IntelligentPlatform/common/dto/MessageTemplateSearchModel.class
 com/company/IntelligentPlatform/common/service/BarcodeProducter$2.class
@@ -2058,7 +2022,6 @@ com/company/IntelligentPlatform/common/dto/PricingCurrencyConfigureSearchModel.c
 com/company/IntelligentPlatform/common/service/EmployeeListExcelHandler.class
 com/company/IntelligentPlatform/common/model/IndividualAccount.class
 com/company/IntelligentPlatform/common/controller/FlowRouterUIModel.class
-com/company/IntelligentPlatform/common/service/ReferenceProxy.class
 com/company/IntelligentPlatform/common/service/ProductionDeptManagerPartyHandler.class
 com/company/IntelligentPlatform/logistics/service/WarehouseStoreItemManager.class
 com/company/IntelligentPlatform/common/dto/MatConfigHeaderConditionEditorController.class
@@ -2086,11 +2049,9 @@ com/company/IntelligentPlatform/logistics/service/PurchaseRequestMaterialItemSer
 com/company/IntelligentPlatform/common/service/StandardSystemVariableProxy$CurrentSystemTimeConverter.class
 com/company/IntelligentPlatform/common/model/Location.class
 com/company/IntelligentPlatform/common/service/ServiceItemIdGenerator.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureException.class
 com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryEditorController.class
 com/company/IntelligentPlatform/logistics/service/OutboundDeliveryWarehouseItemManager.class
 com/company/IntelligentPlatform/common/dto/ServiceDocDeletionSettingServiceUIModel.class
-com/company/IntelligentPlatform/finance/controller/FinAccountTitleEditorController.class
 com/company/IntelligentPlatform/common/dto/RegisteredProductExtendPropertyEditorController.class
 com/company/IntelligentPlatform/common/dto/MaterialUnitAttachmentUIModel.class
 com/company/IntelligentPlatform/common/dto/AccountUIModel.class
@@ -2112,7 +2073,6 @@ com/company/IntelligentPlatform/common/service/DocFlowContextProxy.class
 com/company/IntelligentPlatform/common/service/FlowableTaskManager.class
 com/company/IntelligentPlatform/common/service/RegisteredProductActionExecutionProxy.class
 com/company/IntelligentPlatform/production/dto/RepairProdOrderActionNodeUIModel.class
-com/company/IntelligentPlatform/common/service/RepositoryService.class
 com/company/IntelligentPlatform/common/service/Interleaved2of5Encoder.class
 com/company/IntelligentPlatform/common/service/ClientDBConnectPropertyManager.class
 com/company/IntelligentPlatform/common/controller/SEListController.class
@@ -2130,7 +2090,6 @@ com/company/IntelligentPlatform/production/dto/ProductionOrderActionNodeUIModel.
 com/company/IntelligentPlatform/production/service/ProcessBOMItemManager.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertRequest.class
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreItemSearchModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocActiveMessageItem.class
 com/company/IntelligentPlatform/common/service/SystemLogicValueCalculator$InputField.class
 com/company/IntelligentPlatform/logistics/service/LogisticsFinanceProxyException.class
 com/company/IntelligentPlatform/common/dto/CorporateContactPersonServiceUIModel.class
@@ -2144,8 +2103,10 @@ com/company/IntelligentPlatform/common/dto/SystemCodeValueCollectionListControll
 com/company/IntelligentPlatform/common/dto/WarehouseAverageChartRequest.class
 com/company/IntelligentPlatform/common/controller/SerExtendPageSettingListController.class
 com/company/IntelligentPlatform/common/dto/WarehouseServiceUIModel.class
+com/company/IntelligentPlatform/common/repository/SystemConfigureCategoryRepository.class
 com/company/IntelligentPlatform/common/service/LockObjectDAO.class
 com/company/IntelligentPlatform/common/service/WorkCalendarException.class
+com/company/IntelligentPlatform/common/repository/ServiceEntityRegisterEntityRepository.class
 com/company/IntelligentPlatform/common/service/LogonUserMessageCategory.class
 com/company/IntelligentPlatform/production/service/RepairProdOrderItemManager.class
 com/company/IntelligentPlatform/common/service/BossTaskHandler.class
@@ -2164,7 +2125,6 @@ com/company/IntelligentPlatform/common/service/ServiceInstallUtilityService.clas
 com/company/IntelligentPlatform/logistics/service/InboundItemExcelReportProxy.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractIdHelper.class
 com/company/IntelligentPlatform/common/service/NavigationSystemSettingSearchProxy.class
-com/company/IntelligentPlatform/sales/dto/SettleOrderDto.class
 com/company/IntelligentPlatform/common/model/AccountConfigureProxy.class
 com/company/IntelligentPlatform/finance/service/IFinanceAccountValueProxy.class
 com/company/IntelligentPlatform/common/dto/CorContactPersonServiceUIModelExtension.class
@@ -2172,14 +2132,12 @@ com/company/IntelligentPlatform/production/model/ProcessBOMOrderConfigureProxy.c
 com/company/IntelligentPlatform/logistics/service/WarehouseStoreItemServiceModel.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialException.class
 com/company/IntelligentPlatform/common/service/ServiceSearchModelComProxy.class
-com/company/IntelligentPlatform/common/service/ServiceDocMaterialTemplateParaProxy.class
 com/company/IntelligentPlatform/logistics/model/QualityInsMatItemAttachment.class
 com/company/IntelligentPlatform/production/service/RepairProdItemReqProposalServiceModel.class
 com/company/IntelligentPlatform/finance/dto/FinAccountMatItemAttachmentUIModel.class
 com/company/IntelligentPlatform/common/repository/CorporateCustomerRepository.class
 com/company/IntelligentPlatform/common/service/ServiceDefaultIdGenerateHelper.class
 com/company/IntelligentPlatform/logistics/dto/QualityInspectPropertyItemServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelEditorController.class
 com/company/IntelligentPlatform/finance/dto/ResFinAccountProcessCodeServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/StandardSystemVariableProxy$LogonOrgUUIDVariableConverter.class
 com/company/IntelligentPlatform/logistics/model/InboundDeliveryActionNode.class
@@ -2200,6 +2158,7 @@ com/company/IntelligentPlatform/production/service/ProductionOrderActionExecutio
 com/company/IntelligentPlatform/logistics/dto/WarehouseStoreServiceUIModel.class
 com/company/IntelligentPlatform/production/dto/ProductionOrderItemUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$IGetListSearchExecutor.class
+com/company/IntelligentPlatform/common/repository/OrganizationFunctionRepository.class
 com/company/IntelligentPlatform/common/service/MaterialSKUUnitServiceModel.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureResourceServiceUIModelExtension.class
 com/company/IntelligentPlatform/finance/model/GMainBusinessIncome.class
@@ -2221,11 +2180,8 @@ com/company/IntelligentPlatform/common/dto/ServiceEntityRegisterEntityUIModel.cl
 com/company/IntelligentPlatform/logistics/dto/InventoryTransferOrderServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/IMaterialI18nPackage.class
 com/company/IntelligentPlatform/common/model/NavigationElementResourceConfigureProxy.class
-com/company/IntelligentPlatform/sales/repository/SettleOrderRepository.class
-com/company/IntelligentPlatform/common/service/IServiceDocConfigConstants.class
 com/company/IntelligentPlatform/common/service/IPackageDefI18n.class
 com/company/IntelligentPlatform/common/service/SerialNumberSettingManager.class
-com/company/IntelligentPlatform/production/controller/ProdJobMaterialItemListController.class
 com/company/IntelligentPlatform/common/controller/ServiceFlowModelEditorController.class
 com/company/IntelligentPlatform/common/model/RegisteredProductExtendProperty.class
 com/company/IntelligentPlatform/production/dto/ProcessRouteProcessItemUIModel.class
@@ -2266,6 +2222,7 @@ com/company/IntelligentPlatform/production/model/ProdOrderTargetItemAttachment.c
 com/company/IntelligentPlatform/logistics/service/PurchaseReturnOrderException.class
 com/company/IntelligentPlatform/common/model/SystemCodeValueCollection.class
 com/company/IntelligentPlatform/common/service/FlowRouterSearchProxy.class
+com/company/IntelligentPlatform/common/repository/ServiceVersionRecordRepository.class
 com/company/IntelligentPlatform/common/service/SerialIdDocumentProxy$IPostProcessDocMatItem.class
 com/company/IntelligentPlatform/common/controller/CorporateCustomerController.class
 com/company/IntelligentPlatform/common/dto/PricingSettingEditorController.class
@@ -2296,6 +2253,7 @@ com/company/IntelligentPlatform/common/controller/ServiceBasicUtilityController$
 com/company/IntelligentPlatform/common/service/SerialIdDocumentProxy.class
 com/company/IntelligentPlatform/common/service/ServiceChartHelper.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractManager.class
+com/company/IntelligentPlatform/common/repository/StandardMaterialUnitRepository.class
 com/company/IntelligentPlatform/common/controller/EmployeeListController.class
 com/company/IntelligentPlatform/common/dto/CityUIModel.class
 com/company/IntelligentPlatform/production/service/ProdPickingExtendAmountModel.class
@@ -2309,8 +2267,10 @@ com/company/IntelligentPlatform/production/dto/ProdPickingRefMaterialItemService
 com/company/IntelligentPlatform/common/dto/MaterialUIModel.class
 com/company/IntelligentPlatform/common/service/DocFlowContextProxy$FieldNameUnit.class
 com/company/IntelligentPlatform/finance/service/FinAccountManager.class
+com/company/IntelligentPlatform/common/repository/WorkCalendarRepository.class
 com/company/IntelligentPlatform/common/dto/ServiceCrossDocConfigureEditorController.class
 com/company/IntelligentPlatform/common/model/ServiceCrossDocConfigure.class
+com/company/IntelligentPlatform/common/repository/SystemAuthorizationObjectRepository.class
 com/company/IntelligentPlatform/production/dto/ProdPickingOrderSearchModel.class
 com/company/IntelligentPlatform/common/service/ISerEventSource.class
 com/company/IntelligentPlatform/finance/service/OrganizationToFinSearchProxy.class
@@ -2318,7 +2278,6 @@ com/company/IntelligentPlatform/common/service/CorporateCustomerDuplicateCheckLo
 com/company/IntelligentPlatform/finance/dto/ResFinAccountProcessCodeUIModel.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractSearchModel.class
 com/company/IntelligentPlatform/common/dto/MaterialConfigureTemplateServiceUIModelExtension.class
-com/company/IntelligentPlatform/common/service/FlowableTask.class
 com/company/IntelligentPlatform/production/service/ProdOrderWithPickingOrderProxy.class
 com/company/IntelligentPlatform/common/controller/IndividualCustomerListController.class
 com/company/IntelligentPlatform/common/model/ServiceModule.class
@@ -2334,14 +2293,14 @@ com/company/IntelligentPlatform/common/dto/NavigationGroupSettingServiceUIModelE
 com/company/IntelligentPlatform/production/model/ProductionOrderItem.class
 com/company/IntelligentPlatform/production/service/ProdPickingOrderServiceModel.class
 com/company/IntelligentPlatform/common/dto/ActionCodeUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigOutputParaModel.class
 com/company/IntelligentPlatform/production/dto/ProdPlanSupplyWarehouseServiceUIModelExtension.class
+com/company/IntelligentPlatform/common/repository/AuthorizationGroupRepository.class
 com/company/IntelligentPlatform/finance/model/FinAccount.class
 com/company/IntelligentPlatform/common/service/PurchaseDeptManagerPartyHandler.class
 com/company/IntelligentPlatform/production/service/ProductionReleaseProxy.class
 com/company/IntelligentPlatform/common/model/ServiceExtensionSettingConfigureProxy.class
 com/company/IntelligentPlatform/production/service/BillOfMaterialOrderIdHelper.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigParaProxy.class
+com/company/IntelligentPlatform/common/repository/CalendarTemplateRepository.class
 com/company/IntelligentPlatform/common/dto/MaterialUnitServiceUIModel.class
 com/company/IntelligentPlatform/common/service/ScanBarcodeListener.class
 com/company/IntelligentPlatform/finance/dto/FinAccountAttachmentUIModel.class
@@ -2399,7 +2358,6 @@ com/company/IntelligentPlatform/finance/service/FinAccountTitleManager.class
 com/company/IntelligentPlatform/common/dto/CalendarSettingUIModel.class
 com/company/IntelligentPlatform/common/service/MessageTemplateException.class
 com/company/IntelligentPlatform/common/service/RegisteredProductExtendPropertyServiceModel.class
-com/company/IntelligentPlatform/common/model/ServiceDocConsumerFieldUnion.class
 com/company/IntelligentPlatform/common/service/StorageUnitCompare.class
 com/company/IntelligentPlatform/production/service/ProdPickingOrderManager$ProdPickingRefMaterialItemExecuteUnion.class
 com/company/IntelligentPlatform/logistics/dto/OutboundItemPartyUIModel.class
@@ -2433,7 +2391,6 @@ com/company/IntelligentPlatform/common/dto/MaterialConfigureTemplateListControll
 com/company/IntelligentPlatform/common/model/SimpleSEMessageResponse.class
 com/company/IntelligentPlatform/common/model/CalendarTemplate.class
 com/company/IntelligentPlatform/common/service/HostCompanyServiceModel.class
-com/company/IntelligentPlatform/production/controller/ProcessBOMMaterialItemEditorController.class
 com/company/IntelligentPlatform/production/controller/ProcessRouteOrderUIModelMapConfigure.class
 com/company/IntelligentPlatform/production/service/ProductionPlanException.class
 com/company/IntelligentPlatform/logistics/service/IDeliverableDocumentProxy.class
@@ -2454,7 +2411,6 @@ com/company/IntelligentPlatform/common/controller/ServiceFlowCondFieldServiceUIM
 com/company/IntelligentPlatform/common/service/StandardSystemDefaultProxy.class
 com/company/IntelligentPlatform/common/dto/ServiceExtendFieldSettingUIModel.class
 com/company/IntelligentPlatform/common/model/CalendarWorkTimeSetting.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelUIModel.class
 com/company/IntelligentPlatform/production/model/ProductionOrderConfigureProxy.class
 com/company/IntelligentPlatform/common/dto/MaterialTypeActionNodeUIModel.class
 com/company/IntelligentPlatform/common/model/CityConfigureProxy.class
@@ -2471,10 +2427,12 @@ com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderUIModel.class
 com/company/IntelligentPlatform/common/dto/MaterialSKUExtendPropertyServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/model/ServiceCollectionsHelper$ContainsSEList.class
 com/company/IntelligentPlatform/common/service/ServiceEntityRegisterEntityManager.class
+com/company/IntelligentPlatform/common/repository/SerialNumberSettingRepository.class
 com/company/IntelligentPlatform/common/dto/DefaultListTreeViewSwitch.class
 com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingUIModel.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateItemInitModel.class
 com/company/IntelligentPlatform/common/model/WarehouseSafetyWarn.class
+com/company/IntelligentPlatform/common/repository/SystemCodeValueUnionRepository.class
 com/company/IntelligentPlatform/production/model/RepairProdOrderParty.class
 com/company/IntelligentPlatform/common/service/ServiceExtensionSettingSearchProxy.class
 com/company/IntelligentPlatform/common/model/ServiceFlowModel.class
@@ -2482,7 +2440,6 @@ com/company/IntelligentPlatform/common/service/ServiceExcelReportConfig.class
 com/company/IntelligentPlatform/sales/service/SalesForcastException.class
 com/company/IntelligentPlatform/common/service/TransitPartnerDuplicateCheckLogic.class
 com/company/IntelligentPlatform/logistics/model/QualityInsOrderAttachment.class
-com/company/IntelligentPlatform/common/service/Deployment.class
 com/company/IntelligentPlatform/common/dto/WorkCalendarDayItemUIModel.class
 com/company/IntelligentPlatform/common/service/MaterialUnitServiceModel.class
 com/company/IntelligentPlatform/common/service/ServiceJSONDataHelper.class
@@ -2502,6 +2459,7 @@ com/company/IntelligentPlatform/common/dto/EmployeeOrgServiceUIModel.class
 com/company/IntelligentPlatform/finance/model/AppAccountField.class
 com/company/IntelligentPlatform/common/service/OrganizationService.class
 com/company/IntelligentPlatform/common/controller/LogonUserController.class
+com/company/IntelligentPlatform/production/repository/ProcessBOMOrderRepository.class
 com/company/IntelligentPlatform/common/service/ServiceCrossDocConfigureManager.class
 com/company/IntelligentPlatform/common/service/ServiceComChartUIModel.class
 com/company/IntelligentPlatform/common/service/StandardDocFlowDirectionProxy.class
@@ -2526,7 +2484,6 @@ com/company/IntelligentPlatform/logistics/dto/InquiryActionNodeUIModel.class
 com/company/IntelligentPlatform/logistics/model/StoreAvailableStoreItemRequest.class
 com/company/IntelligentPlatform/common/controller/SystemConfigureCategoryListController.class
 com/company/IntelligentPlatform/common/model/CountryConfigureProxy.class
-com/company/IntelligentPlatform/common/controller/CalendarSettingEditorController.class
 com/company/IntelligentPlatform/logistics/model/WasteProcessOrder.class
 com/company/IntelligentPlatform/logistics/dto/InboundDeliverySearchModel.class
 com/company/IntelligentPlatform/logistics/dto/InquiryAttachmentUIModel.class
@@ -2559,7 +2516,6 @@ com/company/IntelligentPlatform/common/dto/NavigationSystemSettingSearchModel.cl
 com/company/IntelligentPlatform/finance/dto/AccountToFinanceSearchModel.class
 com/company/IntelligentPlatform/common/model/SerExtendIntField.class
 com/company/IntelligentPlatform/common/dto/PricingCurrencyConfigureListController.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureIdHelper.class
 com/company/IntelligentPlatform/logistics/service/PurchaseContractSearchProxy.class
 com/company/IntelligentPlatform/common/controller/ServiceFlowRuntimeEngineController.class
 com/company/IntelligentPlatform/production/repository/RepairProdOrderRepository.class
@@ -2573,7 +2529,6 @@ com/company/IntelligentPlatform/common/dto/IndividualCustomerServiceUIModel.clas
 com/company/IntelligentPlatform/common/dto/ServiceExcelReportResponseModel.class
 com/company/IntelligentPlatform/production/dto/RepairProdOrderUIModel.class
 com/company/IntelligentPlatform/sales/service/SalesForcastSpecifier.class
-com/company/IntelligentPlatform/common/service/ProcessInstance.class
 com/company/IntelligentPlatform/logistics/dto/PurchaseContractMaterialItemListController.class
 com/company/IntelligentPlatform/common/dto/RoleMessageCategoryServiceUIModel.class
 com/company/IntelligentPlatform/common/model/MaterialTypeActionNode.class
@@ -2593,7 +2548,6 @@ com/company/IntelligentPlatform/common/model/ServiceCollectionsHelper$IExecutorI
 com/company/IntelligentPlatform/finance/dto/ResFinAccountProcessCodeEditorController.class
 com/company/IntelligentPlatform/common/service/IEvent.class
 com/company/IntelligentPlatform/common/service/LowerOrgData.class
-com/company/IntelligentPlatform/production/controller/ProductionResourceUnionListController.class
 com/company/IntelligentPlatform/logistics/dto/InboundItemAttachmentUIModel.class
 com/company/IntelligentPlatform/logistics/service/PurchaseRequestManager.class
 com/company/IntelligentPlatform/common/controller/AuthorizationGroupEditorController.class
@@ -2603,7 +2557,6 @@ com/company/IntelligentPlatform/common/service/CrossDocConvertProfRequest$IGetSo
 com/company/IntelligentPlatform/finance/model/FinanceDocument.class
 com/company/IntelligentPlatform/common/service/SystemMandatoryModeProxy.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureElementSearchModel.class
-com/company/IntelligentPlatform/common/service/IServiceDocConfigureResourceConstants.class
 com/company/IntelligentPlatform/common/model/NavigationGroupResource.class
 com/company/IntelligentPlatform/common/service/CrossDocConvertReservedRequest$IGenerateTargetItemServiceModelReserved.class
 com/company/IntelligentPlatform/sales/service/SalesAreaManager.class
@@ -2617,12 +2570,11 @@ com/company/IntelligentPlatform/common/controller/RoleSubAuthorizationEditorCont
 com/company/IntelligentPlatform/finance/service/FinAccountIdHelper.class
 com/company/IntelligentPlatform/common/service/ServiceFlowRuntimeEngine$FlowBusinessKey.class
 com/company/IntelligentPlatform/common/dto/RoleServiceUIModel.class
-com/company/IntelligentPlatform/common/model/ServiceDocConfigure.class
 com/company/IntelligentPlatform/common/model/CalendarSetting.class
 com/company/IntelligentPlatform/common/service/RoleAuthorizationManager$1.class
 com/company/IntelligentPlatform/finance/dto/AccountObjectFinUIModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureEditorController.class
 com/company/IntelligentPlatform/sales/service/SalesReturnMaterialItemServiceModel.class
+com/company/IntelligentPlatform/common/repository/SearchProxyConfigRepository.class
 com/company/IntelligentPlatform/production/service/RepairProdOrderItemSearchProxy.class
 com/company/IntelligentPlatform/common/service/MaterialTypeExcelHandler.class
 com/company/IntelligentPlatform/common/dto/RoleAuthorizationObjectSearchModel.class
@@ -2644,7 +2596,6 @@ com/company/IntelligentPlatform/common/dto/MatConfigExtPropertySettingServiceUIM
 com/company/IntelligentPlatform/common/controller/SerialNumberSettingEditorController.class
 com/company/IntelligentPlatform/common/model/IAccountTypeConstants.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageSettingServiceUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigureManager.class
 com/company/IntelligentPlatform/common/service/MessageTemplateHandlerRepository.class
 com/company/IntelligentPlatform/production/dto/ProdOrderSupplyWarehouseUIModel.class
 com/company/IntelligentPlatform/common/controller/DocInvolvePartyUIModel.class
@@ -2700,7 +2651,6 @@ com/company/IntelligentPlatform/production/model/RepairProdTargetMatItem.class
 com/company/IntelligentPlatform/production/service/ProdWorkCenterServiceModel.class
 com/company/IntelligentPlatform/common/service/ServiceEntityCache.class
 com/company/IntelligentPlatform/common/service/InvalidAtributeException.class
-com/company/IntelligentPlatform/common/controller/ServiceDocActiveMessageHeadUIModel.class
 com/company/IntelligentPlatform/production/service/ProdPickingOrderSearchProxy.class
 com/company/IntelligentPlatform/common/dto/ServiceEntityRegisterEntitySearchModel.class
 com/company/IntelligentPlatform/common/service/MatConfigExtPropertySettingServiceModel.class
@@ -2756,7 +2706,6 @@ com/company/IntelligentPlatform/common/service/IServiceModuleFieldConfig.class
 com/company/IntelligentPlatform/common/model/IDefResourceAuthorizationObject.class
 com/company/IntelligentPlatform/finance/dto/ResFinSystemResourceUIModel.class
 com/company/IntelligentPlatform/logistics/model/OutboundDeliveryParty.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogModelListController.class
 com/company/IntelligentPlatform/common/service/CorporateSupplierActionExecutionProxy.class
 com/company/IntelligentPlatform/common/service/DocumentSpecifierFactory.class
 com/company/IntelligentPlatform/common/model/Material.class
@@ -2775,6 +2724,7 @@ com/company/IntelligentPlatform/common/model/IDocumentNodeFieldConstant.class
 com/company/IntelligentPlatform/sales/repository/SalesReturnOrderRepository.class
 com/company/IntelligentPlatform/common/service/SplitMatItemException.class
 com/company/IntelligentPlatform/logistics/dto/InventoryCheckOrderServiceUIModel.class
+com/company/IntelligentPlatform/common/config/JwtPrincipal.class
 com/company/IntelligentPlatform/production/controller/BillOfMaterialOrderEditorController$1.class
 com/company/IntelligentPlatform/common/dto/EmployeeSearchModel.class
 com/company/IntelligentPlatform/common/dto/ServiceDocFlowSearchModel.class
@@ -2782,12 +2732,10 @@ com/company/IntelligentPlatform/common/controller/FlowRouterExtendClassUIModel.c
 com/company/IntelligentPlatform/common/service/SerExtendUIControlSetManager.class
 com/company/IntelligentPlatform/logistics/dto/InboundScanBarcodeResponseModel.class
 com/company/IntelligentPlatform/common/model/SystemExecutorSettingConfigureProxy.class
-com/company/IntelligentPlatform/common/dto/ServiceExcelReportContextProxy.class
 com/company/IntelligentPlatform/common/model/CrossCopyInvolveParty.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialOrderActionNodeUIModel.class
 com/company/IntelligentPlatform/logistics/dto/OutboundItemListController.class
 com/company/IntelligentPlatform/common/model/ServiceVersionRecordConfigureProxy.class
-com/company/IntelligentPlatform/common/service/DeploymentBuilder.class
 com/company/IntelligentPlatform/common/dto/AccountServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/ServiceModelExtensionHelper$ExtensionUnionResponse.class
 com/company/IntelligentPlatform/production/repository/ProductionPlanRepository.class
@@ -2800,8 +2748,8 @@ com/company/IntelligentPlatform/logistics/dto/InboundDeliveryEditorController.cl
 com/company/IntelligentPlatform/finance/controller/FinanceAccountMessageHelper.class
 com/company/IntelligentPlatform/common/dto/WorkCalendarServiceUIModelExtension.class
 com/company/IntelligentPlatform/sales/dto/SalesContractActionNodeUIModel.class
-com/company/IntelligentPlatform/common/service/ServiceDocConfigParaUnion.class
 com/company/IntelligentPlatform/common/service/StandardSystemCategoryProxy.class
+com/company/IntelligentPlatform/common/config/JwtAuthContextCache.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialItemUIModel.class
 com/company/IntelligentPlatform/common/model/EmployeeActionNode.class
 com/company/IntelligentPlatform/common/controller/PageConfigure.class
@@ -2852,7 +2800,6 @@ com/company/IntelligentPlatform/logistics/service/QualityInspectOrderSpecifier.c
 com/company/IntelligentPlatform/sales/dto/SalesReturnOrderUIModel.class
 com/company/IntelligentPlatform/common/dto/CargoUIModel.class
 com/company/IntelligentPlatform/common/controller/FlowableTaskListController.class
-com/company/IntelligentPlatform/common/service/RuntimeService.class
 com/company/IntelligentPlatform/production/model/ProdOrderReportItem.class
 com/company/IntelligentPlatform/common/controller/ISEDropDownResourceMapping.class
 com/company/IntelligentPlatform/common/service/CorporateCustomerException.class
@@ -2875,6 +2822,7 @@ com/company/IntelligentPlatform/common/dto/ServiceDocumentSettingListController.
 com/company/IntelligentPlatform/common/service/ServiceFlowModelSearchProxy.class
 com/company/IntelligentPlatform/common/service/CalendarTemplateManager.class
 com/company/IntelligentPlatform/logistics/model/InquiryMaterialItemAttachment.class
+com/company/IntelligentPlatform/common/repository/MaterialStockKeepUnitRepository.class
 com/company/IntelligentPlatform/common/dto/ServiceExtensionSettingUIModel.class
 com/company/IntelligentPlatform/common/dto/SearchFieldConfigServiceUIModel.class
 com/company/IntelligentPlatform/common/controller/ServiceControllerMethodInstallPiece.class
@@ -2911,7 +2859,7 @@ com/company/IntelligentPlatform/logistics/dto/PurchaseRequestListController.clas
 com/company/IntelligentPlatform/common/service/SelectItemToParentExecutorCase$ItemExecutionMetadata.class
 com/company/IntelligentPlatform/common/model/ServiceAccountDuplicateCheckResourceConfigureProxy.class
 com/company/IntelligentPlatform/common/service/MaterialTypeServiceModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConsumerUnionSearchModel.class
+com/company/IntelligentPlatform/common/config/JwtAuthFilter.class
 com/company/IntelligentPlatform/common/model/IStandardMaterialUnitList.class
 com/company/IntelligentPlatform/common/dto/CorporateSupplierServiceUIModel.class
 com/company/IntelligentPlatform/production/model/ProdPickingOrder.class
@@ -2932,6 +2880,7 @@ com/company/IntelligentPlatform/common/model/SerExtendPageSettingActionNode.clas
 com/company/IntelligentPlatform/logistics/model/OutboundDeliveryAttachment.class
 com/company/IntelligentPlatform/common/controller/LogonUserEditorController.class
 com/company/IntelligentPlatform/common/service/Code11Encoder.class
+com/company/IntelligentPlatform/common/config/SecurityConfig.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialItemSearchModel.class
 com/company/IntelligentPlatform/common/dto/ServiceDocExcelUploadTemplateUIModel.class
 com/company/IntelligentPlatform/common/controller/DocUIModelExtensionFactory$WarehouseMapConfigureUnion.class
@@ -2960,12 +2909,11 @@ com/company/IntelligentPlatform/logistics/dto/PurchaseRequestMaterialItemService
 com/company/IntelligentPlatform/production/service/ProdOrderHeaderProposalExcelProxy.class
 com/company/IntelligentPlatform/logistics/dto/InboundItemListController.class
 com/company/IntelligentPlatform/logistics/dto/InboundDeliveryUIModel.class
-com/company/IntelligentPlatform/production/controller/ProcessBOMOrderEditorController.class
 com/company/IntelligentPlatform/common/dto/ServiceDocInitConfigureUIModel.class
+com/company/IntelligentPlatform/common/repository/CountryRepository.class
 com/company/IntelligentPlatform/common/dto/EmpLogonUserUIModel.class
 com/company/IntelligentPlatform/finance/dto/EmployeeToFinSearchModel.class
 com/company/IntelligentPlatform/common/dto/SerExtendPageI18nServiceUIModel.class
-com/company/IntelligentPlatform/common/controller/ServiceDocConfigureParaGroupInitModel.class
 com/company/IntelligentPlatform/common/service/MessageTemplateServiceModel.class
 com/company/IntelligentPlatform/production/dto/RepairProdTargetMatItemServiceUIModel.class
 com/company/IntelligentPlatform/common/dto/NavigationSystemSettingActionNodeUIModel.class
@@ -2999,7 +2947,6 @@ com/company/IntelligentPlatform/logistics/dto/PurchaseRequestMaterialItemAttachm
 com/company/IntelligentPlatform/finance/service/FinAccountToAuditMessageHandler.class
 com/company/IntelligentPlatform/common/dto/SystemConfigureElementUIModel.class
 com/company/IntelligentPlatform/common/controller/RoleEditorController.class
-com/company/IntelligentPlatform/common/service/DelegateExecution.class
 com/company/IntelligentPlatform/common/service/ReserveDocItemProxy.class
 com/company/IntelligentPlatform/common/service/SerExtendPageSettingActionExecutionProxy.class
 com/company/IntelligentPlatform/common/controller/IndividualCustomerEditController.class
@@ -3015,10 +2962,10 @@ com/company/IntelligentPlatform/common/service/ServiceDocInitInvolvePartyManager
 com/company/IntelligentPlatform/common/service/LogonUserSearchProxy.class
 com/company/IntelligentPlatform/common/service/MaterialTypeActionExecutionProxy.class
 com/company/IntelligentPlatform/production/service/ProdPickingOrderSpecifier.class
+com/company/IntelligentPlatform/common/repository/MaterialTypeRepository.class
 com/company/IntelligentPlatform/common/service/BaseLineTextPainter.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateActionNodeUIModel.class
 com/company/IntelligentPlatform/common/controller/EmployeeController.class
-com/company/IntelligentPlatform/finance/controller/FinanceReportController.class
 com/company/IntelligentPlatform/common/model/SENodeFieldSearchInfo.class
 com/company/IntelligentPlatform/logistics/model/PurchaseOrder.class
 com/company/IntelligentPlatform/common/service/SerialIdDocumentProxy$EditSerialIdUnion.class
@@ -3030,7 +2977,6 @@ com/company/IntelligentPlatform/common/service/ProvinceManager.class
 com/company/IntelligentPlatform/logistics/model/WasteProcessOrderParty.class
 com/company/IntelligentPlatform/common/service/SerialNumberSettingServiceModel.class
 com/company/IntelligentPlatform/production/service/ProdWorkCenterResItemServiceModel.class
-com/company/IntelligentPlatform/common/dto/ServiceEntityLogItemServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/controller/ServiceFlowCondGroupEditorController.class
 com/company/IntelligentPlatform/production/dto/ProdPickingRefOrderItemUIModel.class
 com/company/IntelligentPlatform/common/service/RegisteredProductIdHelper.class

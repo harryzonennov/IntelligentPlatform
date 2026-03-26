@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class InventoryTransferItemParty extends DocItemParty {
 
-
 	public final static String NODENAME = IServiceModelConstants.InventoryTransferItemParty;
 
 	public final static String SENAME = InventoryTransferOrder.SENAME;

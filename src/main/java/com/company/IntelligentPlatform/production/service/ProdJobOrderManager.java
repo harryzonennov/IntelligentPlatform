@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +49,9 @@ import com.company.IntelligentPlatform.production.model.ProductionOrder;
 @Service
 @Transactional
 public class ProdJobOrderManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected ProdJobOrderRepository prodJobOrderDAO;
@@ -73,12 +79,11 @@ public class ProdJobOrderManager extends ServiceEntityManager {
 
 	public ProdJobOrderManager() {
 		super.seConfigureProxy = new ProdJobOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProdJobOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(prodJobOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodJobOrderDAO));
 	}
 
 	@PostConstruct

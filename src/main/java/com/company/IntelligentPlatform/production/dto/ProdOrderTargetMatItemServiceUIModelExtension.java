@@ -128,7 +128,6 @@ public class ProdOrderTargetMatItemServiceUIModelExtension extends
 						ProdOrderTargetMatItemManager.METHOD_ConvMaterialSKUToTargetItemUI, prodOrderTargetMatItemManager,
 						materialStockKeepUnitConvToUIParas));
 
-
 		prodOrderTargetMatItemExtensionUnion
 				.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(prodOrderTargetMatItemExtensionUnion);

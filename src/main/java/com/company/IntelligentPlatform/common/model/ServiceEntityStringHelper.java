@@ -12,7 +12,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityException;
 import com.company.IntelligentPlatform.common.service.ServiceEntityRuntimeException;
 import com.company.IntelligentPlatform.common.model.*;
 
-
 public class ServiceEntityStringHelper {
 
 	public static final String EMPTYSTRING = "";
@@ -221,7 +220,6 @@ public class ServiceEntityStringHelper {
 		}
 	}
 
-
 	/**
 	 * If Input String is combined by sub string by dot('.'). then get the
 	 * @param rawString
@@ -353,7 +351,6 @@ public class ServiceEntityStringHelper {
 		return uuid;
 	}
 
-
 	private static boolean charReg(char charValue) {
 		return (charValue >= 0x4E00 && charValue <= 0X9FA5) || (charValue >= 'a' && charValue <= 'z') || (charValue >= 'A'
 				&& charValue <= 'Z') || (charValue >= '0' && charValue <= '9');
@@ -412,7 +409,6 @@ public class ServiceEntityStringHelper {
 		}
 		return content;
 	}
-
 
 	/**
 	 * Logic to convert String array to String format
@@ -473,7 +469,6 @@ public class ServiceEntityStringHelper {
 		return resultList;
 	}
 
-
 	/**
 	 * Convert String list into Multi String value seperated with space, usually be used for search case.
 	 *
@@ -498,6 +493,5 @@ public class ServiceEntityStringHelper {
 		}
 		return result;
 	}
-
 
 }

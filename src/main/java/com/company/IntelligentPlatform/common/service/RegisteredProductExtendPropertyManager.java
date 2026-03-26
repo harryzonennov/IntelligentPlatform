@@ -20,7 +20,6 @@ import java.util.Map;
 @Service
 public class RegisteredProductExtendPropertyManager {
 
-
 	public static final String METHOD_ConvStandardMaterialUnitToPropertyUI = "convStandardMaterialUnitToPropertyUI";
 
 	public static final String METHOD_ConvRefMaterialSKUToPropertyUI = "convRefMaterialSKUToPropertyUI";
@@ -214,7 +213,5 @@ public class RegisteredProductExtendPropertyManager {
 					.getStringValue());
 		}
 	}
-
-
 
 }

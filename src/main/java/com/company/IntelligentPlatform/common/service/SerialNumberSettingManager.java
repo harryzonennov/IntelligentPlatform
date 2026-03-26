@@ -14,7 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import com.company.IntelligentPlatform.common.dto.SerialNumberSettingUIModel;
-// TODO-DAO: import ...SerialNumberSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.SerialNumberSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
@@ -35,7 +38,6 @@ import com.company.IntelligentPlatform.common.model.SerialNumberSettingConfigure
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 /**
  * Logic Manager CLASS FOR Service Entity [SerialNumberSetting]
  *
@@ -52,11 +54,11 @@ public class SerialNumberSettingManager extends ServiceEntityManager {
 	public static final String METHOD_ConvSerialNumberSettingToUI = "convSerialNumberSettingToUI";
 
 	public static final String METHOD_ConvUIToSerialNumberSetting = "convUIToSerialNumberSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected SerialNumberSettingDAO serialNumberSettingDAO;
-
+    @Autowired
+    protected SerialNumberSettingRepository serialNumberSettingDAO;
 	@Autowired
 	protected SerialNumberSettingConfigureProxy serialNumberSettingConfigureProxy;
 
@@ -98,12 +100,11 @@ public class SerialNumberSettingManager extends ServiceEntityManager {
 
 	public SerialNumberSettingManager() {
 		super.seConfigureProxy = new SerialNumberSettingConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new SerialNumberSettingDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(serialNumberSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serialNumberSettingDAO));
 	}
 
 	@PostConstruct

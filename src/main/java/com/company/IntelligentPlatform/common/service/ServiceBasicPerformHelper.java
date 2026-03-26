@@ -37,7 +37,6 @@ public class ServiceBasicPerformHelper {
             RecordPointTime startTime = recordPointTimeList.get(i -1);
             double duration = endTime.getCurrentTimeMillis() - startTime.getCurrentTimeMillis();
             String messageLine = endTime.getName() + " - " + startTime.getName() + " = " + duration + " ms";
-            System.out.println(messageLine);
             logger.debug(messageLine);
         }
     }

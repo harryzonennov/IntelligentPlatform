@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import jakarta.servlet.ServletContextEvent;
@@ -14,6 +16,7 @@ import jakarta.servlet.ServletContextListener;
  * @author ysc
  */
 public class ScanBarcodeListener  implements ServletContextListener{
+    private static final Logger logger = LoggerFactory.getLogger(ScanBarcodeListener.class);
     private BarcodeProducter barcodeProducter;
     private BarcodeConsumer barcodeConsumer;
     
@@ -50,7 +53,7 @@ public class ScanBarcodeListener  implements ServletContextListener{
         consumer.startConsume();
         
         BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("输入 '<exit>' 退出程序");
+        logger.info("输入 '<exit>' 退出程序");
         String line=reader.readLine();
         while(line!=null){
             if("exit".equals(line)){

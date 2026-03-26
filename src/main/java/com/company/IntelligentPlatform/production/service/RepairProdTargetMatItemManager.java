@@ -40,7 +40,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
 import java.util.*;
 
-
 @Service
 public class RepairProdTargetMatItemManager {
 
@@ -148,7 +147,6 @@ public class RepairProdTargetMatItemManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 
 	}
-
 
 	public Map<Integer, String> initStatusMap(String languageCode) throws ServiceEntityInstallationException {
 		String resourcePath = RepairProdTargetMatItemUIModel.class.getResource("").getPath() +
@@ -325,7 +323,6 @@ public class RepairProdTargetMatItemManager {
 		}
 		repairProdOrderManager.updateSENodeList(repairProdTargetMatItemList, logonUserUUID, organizationUUID);
 	}
-
 
 	/**
 	 * Core Logic to set target item status to [Cancel]
@@ -628,7 +625,6 @@ public class RepairProdTargetMatItemManager {
 		}
 	}
 
-
 	/**
 	 * Utility method: Logic to binding the newly generated target mat item list
 	 * to picking material item
@@ -700,9 +696,6 @@ public class RepairProdTargetMatItemManager {
 					IServiceEntityNodeFieldConstant.UUID, RepairProdTargetMatItem.NODENAME);
 		}
 	}
-
-
-
 
 	/**
 	 * Logic for generate the production item proposal including the sub
@@ -970,7 +963,6 @@ public class RepairProdTargetMatItemManager {
 		resultList.add(repairProdTargetMatItemServiceModel);
 		return resultList;
 	}
-
 
 	/**
 	 * [Internal method] init & copy information from production order to report

@@ -155,7 +155,5 @@ public class MaterialStockKeepUnitSearchProxy extends ServiceSearchProxy {
 		}
 	}
 
-
-
 }
 

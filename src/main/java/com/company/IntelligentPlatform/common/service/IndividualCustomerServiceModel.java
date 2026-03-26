@@ -21,7 +21,6 @@ public class IndividualCustomerServiceModel extends ServiceModule {
 	@IServiceModuleFieldConfig(nodeName = IndividualCustomerAttachment.NODENAME , nodeInstId = IndividualCustomerAttachment.NODENAME)
 	protected List<ServiceEntityNode> individualCustomerAttachmentList = new ArrayList<>();
 
-
 	public List<ServiceEntityNode> getCorporateContactPersonList() {
 		return this.corporateContactPersonList;
 	}
@@ -30,7 +29,6 @@ public class IndividualCustomerServiceModel extends ServiceModule {
 			List<ServiceEntityNode> corporateContactPersonList) {
 		this.corporateContactPersonList = corporateContactPersonList;
 	}
-
 
 	public List<ServiceEntityNode> getIndividualCustomerAttachmentList() {
 		return individualCustomerAttachmentList;

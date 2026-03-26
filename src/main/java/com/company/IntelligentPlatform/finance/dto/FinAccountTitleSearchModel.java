@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 
-
 @Component
 public class FinAccountTitleSearchModel extends SEUIComModel {
 

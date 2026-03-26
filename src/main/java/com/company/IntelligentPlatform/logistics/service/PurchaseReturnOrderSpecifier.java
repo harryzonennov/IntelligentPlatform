@@ -168,7 +168,6 @@ public class PurchaseReturnOrderSpecifier extends DocumentContentSpecifier<Purch
         return uiModelClassMap;
     }
 
-
     @Override
     public List<PropertyMap> getDefFieldProperPathMap() {
         List<PropertyMap> propertyMapList = new ArrayList<>();

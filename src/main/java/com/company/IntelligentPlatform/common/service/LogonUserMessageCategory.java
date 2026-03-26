@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 public class LogonUserMessageCategory implements Comparable<LogonUserMessageCategory>{
 	
 	protected int category;

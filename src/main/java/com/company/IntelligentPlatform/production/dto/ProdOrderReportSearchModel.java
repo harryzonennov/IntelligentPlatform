@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 import com.company.IntelligentPlatform.common.model.LogonUser;
 
-
 @Component
 public class ProdOrderReportSearchModel extends SEUIComModel {
 
@@ -35,7 +34,6 @@ public class ProdOrderReportSearchModel extends SEUIComModel {
 	protected Date reportTimeLow;
 	
 	protected String reportTimeStrLow;	
-
 
 	@BSearchFieldConfig(fieldName = "reportedBy", nodeName = ProdOrderReport.NODENAME, seName = ProdOrderReport.SENAME, nodeInstID = ProdOrderReport.NODENAME, showOnUI = false)
 	protected String reportedBy;

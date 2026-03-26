@@ -212,7 +212,6 @@ public class FlowRouterExtendClassManager {
         }
     }
 
-
     public void moveUpward(FlowRouterExtendClass flowRouterExtendClass, String logonUserUUID,
                            String organziationUUID) throws ServiceEntityConfigureException {
         if (flowRouterExtendClass.getProcessIndex() == 1) {
@@ -295,7 +294,6 @@ public class FlowRouterExtendClassManager {
 
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -305,7 +303,6 @@ public class FlowRouterExtendClassManager {
                                               FlowRouterExtendClassUIModel flowRouterExtendClassUIModel) {
         convFlowRouterExtendClassToUI(flowRouterExtendClass, flowRouterExtendClassUIModel, null);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -358,7 +355,6 @@ public class FlowRouterExtendClassManager {
         }
     }
 
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -373,6 +369,5 @@ public class FlowRouterExtendClassManager {
             flowRouterExtendClassUIModel.setId(logonUser.getId());
         }
     }
-
 
 }

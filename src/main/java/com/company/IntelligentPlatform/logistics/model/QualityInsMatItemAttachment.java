@@ -14,5 +14,4 @@ public class QualityInsMatItemAttachment extends DocAttachmentNode {
 		super.nodeName = NODENAME;
 	}
 
-
 }

@@ -73,7 +73,6 @@ public class ProdReturnOrderEditorController extends SEEditorController {
     @Autowired
     private ProdReturnOrderSpecifier prodReturnOrderSpecifier;
 
-
     public ServiceBasicUtilityController.DocUIModelWithActionRequest getDocUIModelRequest() {
         return new ServiceBasicUtilityController.DocUIModelWithActionRequest(
                 ProdPickingOrderServiceUIModel.class,
@@ -118,7 +117,6 @@ public class ProdReturnOrderEditorController extends SEEditorController {
                     }
                 });
     }
-
 
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody String newModuleService() {
@@ -219,7 +217,6 @@ public class ProdReturnOrderEditorController extends SEEditorController {
                         prodPickingOrderServiceUIModelExtension);
     }
 
-
     @RequestMapping(value = "/getActionCodeMap", produces = "text/html;charset=UTF-8")
     public @ResponseBody String getActionCodeMap() {
         try {
@@ -249,7 +246,6 @@ public class ProdReturnOrderEditorController extends SEEditorController {
                     }
                 });
     }
-
 
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<ProdPickingOrderServiceModel> iActionExecutor) {
@@ -355,7 +351,6 @@ public class ProdReturnOrderEditorController extends SEEditorController {
 
                 }, prodPickingOrderServiceUIModelExtension);
     }
-
 
     protected ProdPickingOrderServiceUIModel refreshLoadServiceUIModel(
             String uuid, String acId, LogonInfo logonInfo)

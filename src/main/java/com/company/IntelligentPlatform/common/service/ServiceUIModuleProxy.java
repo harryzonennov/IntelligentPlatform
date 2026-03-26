@@ -29,16 +29,12 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
 import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityLogModel;
 
 @Service
 public class ServiceUIModuleProxy {
 
     @Autowired
     protected ServiceModuleProxy serviceModuleProxy;
-
-    @Autowired
-    protected ServiceEntityLogModelManager serviceEntityLogModelManager;
 
     @Autowired
     protected ServiceExtensionManager serviceExtensionManager;
@@ -119,13 +115,6 @@ public class ServiceUIModuleProxy {
         if (serviceNodeUpdatedCallback != null) {
             serviceNodeUpdatedCallback.apply(serviceEntityNode);
         }
-        /*
-         * [Step4] LogAction for update/create
-         */
-        serviceEntityLogModelManager.logServiceEntityNodeWrap(
-                serviceEntityNode, serviceEntityNodeBack,
-                ServiceEntityLogModel.MESSAGE_TYPE_INFO, setLogIdNameCallBack,
-                logonUserUUID, organizationUUID);
         return serviceEntityManager.genUIModelFromUIModelExtension(
                 seUIComModel.getClass(), serviceUIModelExtensionUnion,
                 serviceEntityNode, null, null);
@@ -240,16 +229,7 @@ public class ServiceUIModuleProxy {
         if (serviceModuleUpdatedCallback != null) {
             serviceModuleUpdatedCallback.apply(serviceModule);
         }
-        /*
-         * [Step3] Log Action for update/create
-         */
-        serviceEntityLogModelManager.logActionForServiceModuleWrapper(
-                serviceModule, serviceModuleBack,
-                ServiceEntityLogModel.MESSAGE_TYPE_INFO,
-                serviceUIModelExtension, setLogIdNameCallBack, logonUserUUID,
-                organizationUUID, serviceUIModelExtensionUnion);
     }
-
 
     public ServiceModule genServiceModuleFromServiceUIModel(
             Class<?> serviceModuleType, Class<?> serviceUIModuleType,
@@ -883,7 +863,6 @@ public class ServiceUIModuleProxy {
                     e.getMessage());
         }
     }
-
 
     /**
      * Core Logic to get Service UI Model from Service Model With Login Info
@@ -2781,7 +2760,6 @@ public class ServiceUIModuleProxy {
         listTypeField.set(serviceModule, subSeNodeModelList);
     }
 
-
     /**
      * [Internal method] Filter the field out of list fields by node name
      *
@@ -2876,8 +2854,6 @@ public class ServiceUIModuleProxy {
         }
         return null;
     }
-
-
 
     /**
      * Input Service UI Model List, return List of Simple UI Model, by checking field by nodeInstId
@@ -3020,7 +2996,6 @@ public class ServiceUIModuleProxy {
         }
     }
 
-
     public static class ServiceModelNodeMeta{
 
         private String nodeInstId;
@@ -3141,7 +3116,6 @@ public class ServiceUIModuleProxy {
             return StandardFieldTypeProxy.buildServiceFieldMeta(field);
         }).collect(Collectors.toList());
     }
-
 
     /**
      * Core Logic to get the List type field array by given service module type

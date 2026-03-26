@@ -93,7 +93,6 @@ public class ProductiveBOMItem extends BillOfMaterialItem{
 		this.actualStartPrepareDate = actualStartPrepareDate;
 	}
 
-
 	public double getAmountWithLossRate() {
 		return amountWithLossRate;
 	}

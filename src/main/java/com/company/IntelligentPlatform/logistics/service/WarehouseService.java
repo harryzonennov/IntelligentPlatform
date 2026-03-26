@@ -72,7 +72,7 @@ public class WarehouseService extends ServiceEntityService {
 
 	@Transactional(readOnly = true)
 	public List<WarehouseStoreItem> getStoreItemsByDocument(String documentUUID) {
-		return warehouseStoreItemRepository.findByDocumentUUID(documentUUID);
+		return warehouseStoreItemRepository.findByParentNodeUUID(documentUUID);
 	}
 
 	@Transactional(readOnly = true)

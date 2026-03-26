@@ -53,7 +53,6 @@ public class IndividualCustomerEditController extends SEEditorController {
 
 	public static final String AOID_RESOURCE = IDefResourceAuthorizationObject.AOID_COR_CUSTOMER;
 
-
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
 		return new ServiceBasicUtilityController.ServiceUIModelRequest(
 				IndividualCustomerServiceUIModel.class,
@@ -145,7 +144,6 @@ public class IndividualCustomerEditController extends SEEditorController {
 		return exitEditorCore(serviceExitLockJSONModule);
 	}
 
-
 	private DocAttachmentProxy.DocAttachmentProcessPara genDocAttachmentProcessPara() {
 		return new DocAttachmentProxy.DocAttachmentProcessPara(individualCustomerManager,
 				IndividualCustomerAttachment.NODENAME, IndividualCustomer.NODENAME, null, null, null);
@@ -170,7 +168,6 @@ public class IndividualCustomerEditController extends SEEditorController {
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

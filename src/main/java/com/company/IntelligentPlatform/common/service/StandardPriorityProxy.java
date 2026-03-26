@@ -29,7 +29,6 @@ public class StandardPriorityProxy {
                 this.priorityMapLan, this.getClass().getResource("").getPath() + PROPERTIES_RESOURCE);
     }
 
-
     public String getPriorityValue(int key, String languageCode) throws ServiceEntityInstallationException {
         Map<Integer, String> switchMap = getPriorityMap(languageCode);
         return switchMap.get(key);

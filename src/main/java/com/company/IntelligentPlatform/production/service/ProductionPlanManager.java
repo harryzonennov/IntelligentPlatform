@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.production.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -63,7 +65,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 /**
  * Logic Manager CLASS FOR Service Entity [ProductionPlan]
  *
@@ -109,6 +110,9 @@ public class ProductionPlanManager extends ServiceEntityManager {
     private Map<String, ProductionPlan> productionPlanMap = new HashMap<>();
 
     final Logger logger = LoggerFactory.getLogger(ProductionPlanManager.class);
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected ProductionPlanRepository productionPlanDAO;
@@ -244,7 +248,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         }
         return productionPlanServiceModel;
     }
-
 
     public List<PageHeaderModel> getPageHeaderModelList(ProductionPlan productionPlan, String client)
             throws ServiceEntityConfigureException {
@@ -478,7 +481,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         }
     }
 
-
     /**
      * Core Logic to approve productionPlan and update to DB
      *
@@ -496,7 +498,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
                 ServiceCollectionsHelper.asList(ProductionPlan.STATUS_APPROVED), ProductionPlan.STATUS_REJECT_APPROVAL,
                 ProductionPlanActionNode.DOC_ACTION_REJECT_APPROVE, logonUserUUID, organizationUUID);
     }
-
 
     /**
      * Core Logic to approve production plan and update to DB
@@ -545,7 +546,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
                             ProductionPlan.NODENAME, logonUserUUID, organizationUUID);
         }
     }
-
 
     /**
      * Delete all the generated plan sub resources, keep plan basic information
@@ -673,8 +673,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         existProposal.setAmount(storageCoreUnit1.getAmount());
         existProposal.setRefUnitUUID(storageCoreUnit1.getRefUnitUUID());
     }
-
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -827,7 +825,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         return ServiceLanHelper.initDefLanguageMapUIModel(languageCode, this.statusMapLan, ProductionPlanUIModel.class, IDocumentNodeFieldConstant.STATUS);
     }
 
-
     public Map<Integer, String> initItemStatusMap(String languageCode) throws ServiceEntityInstallationException {
         return productionPlanItemManager.initItemStatusMap(languageCode);
     }
@@ -842,14 +839,13 @@ public class ProductionPlanManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(productionPlanDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionPlanDAO));
     }
 
     @PostConstruct
     public void setSeConfigureProxy() {
         super.setSeConfigureProxy(productionPlanConfigureProxy);
     }
-
 
     /**
      * [Internal method] Convert from UI model to SE
@@ -1091,7 +1087,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
 
     public ProductionPlanManager() {
         super.seConfigureProxy = new ProductionPlanConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new ProductionPlanDAO();
     }
 
     @Override
@@ -1107,8 +1102,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
                 ProductionPlan.FIELD_RefMainProdOrderUUID, ProductionPlan.NODENAME, client, null);
         return productionPlan;
     }
-
-
 
     /**
      * Logic of cancel this document
@@ -1137,7 +1130,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
                 DefFinanceControllerResource.PROCESS_CODE_SAVE, logonUser.getUuid(), organization.getRefFinOrgUUID(),
                 organization.getUuid(), logonUser.getClient());
     }
-
 
     public ServiceModule convertToProductionPlanServiceModel(ProductionPlan productionPlan,
                                                              List<ServiceEntityNode> rawProdOrderItemList) throws ServiceEntityConfigureException {
@@ -1227,7 +1219,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
             productionPlan.setRefBillOfMaterialUUID(billOfMaterialOrder.getUuid());
         }
     }
-
 
     /**
      * Main Entrance and logic to release Production Plan to production orders,
@@ -1897,7 +1888,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         return productionPlanItemList;
     }
 
-
     /**
      * Generate the outbound delivery proposal from each warehouse
      *
@@ -2254,7 +2244,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
         return productionPlanSearchProxy;
     }
 
-
     public boolean checkBlockExecutionByDocflow(int actionCode, String uuid, ServiceJSONRequest serviceJSONRequest,
                                                 SerialLogonInfo serialLogonInfo){
         if(actionCode == ProductionPlanActionNode.DOC_ACTION_APPROVE){
@@ -2284,7 +2273,6 @@ public class ProductionPlanManager extends ServiceEntityManager {
                         ProductionPlanActionNode.DOC_ACTION_APPROVE, serialLogonInfo);
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
-
 
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode,

@@ -83,7 +83,6 @@ public class FinAccountMaterialItemServiceUIModelExtension extends
 		finAccountMap.setConvToUIMethod(FinAccountManager.METHOD_ConvFinAccountToItemUI);
 		uiModelNodeMapList.add(finAccountMap);
 
-
 		// UI Model Configure of node:[MaterialStockKeepUnit]
 		Class<?>[] materialStockKeepUnitConvToUIParas = {
 				MaterialStockKeepUnit.class, FinAccountMaterialItemUIModel.class };

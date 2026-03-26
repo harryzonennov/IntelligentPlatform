@@ -117,7 +117,6 @@ public class BillOfMaterialOrderExecutionProxy extends DocActionExecutionProxy<B
         return null;
     }
 
-
     @Override
     public DocumentContentSpecifier<BillOfMaterialOrderServiceModel, BillOfMaterialOrder,
             BillOfMaterialItem> getDocumentContentSpecifier() {
@@ -138,7 +137,6 @@ public class BillOfMaterialOrderExecutionProxy extends DocActionExecutionProxy<B
     public ServiceEntityManager getServiceEntityManager() {
         return billOfMaterialOrderManager;
     }
-
 
     public void executeActionCore(
             BillOfMaterialOrderServiceModel billOfMaterialOrderServiceModel,

@@ -24,7 +24,6 @@ import java.util.Map;
 @Service
 public class FlowTaskPartyHandlerRepository {
 
-
     @Qualifier("financeDeptManagerPartyHandler")
     @Autowired(required = false)
     protected IFlowTaskPartyHandler financeDeptManagerPartyHandler;
@@ -71,7 +70,6 @@ public class FlowTaskPartyHandlerRepository {
         return ServiceLanHelper.initDefLanguageStrMapResource(languageCode,
                 this.taskPartyHandlerMapLan, resourcePath);
     }
-
 
     /**
      * Logic to get search proxy instance by registereed id

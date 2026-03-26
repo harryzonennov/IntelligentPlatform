@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-
 import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
 import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
 import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;

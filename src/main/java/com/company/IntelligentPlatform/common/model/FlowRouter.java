@@ -1,9 +1,13 @@
 package com.company.IntelligentPlatform.common.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.service.SystemSerialParallelProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
-
+@Entity
+@Table(name = "FlowRouter", schema = "platform")
 public class FlowRouter extends ServiceEntityNode {
 
     public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

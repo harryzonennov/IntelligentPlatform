@@ -100,7 +100,6 @@ public class SystemLogicValueCalculator {
         }
     }
 
-
     public static class InputGroup{
 
         private String groupUUID;
@@ -205,6 +204,5 @@ public class SystemLogicValueCalculator {
             this.field = field;
         }
     }
-
 
 }

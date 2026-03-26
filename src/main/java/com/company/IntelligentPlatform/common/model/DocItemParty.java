@@ -7,5 +7,4 @@ package com.company.IntelligentPlatform.common.model;
  */
 public class DocItemParty extends DocInvolveParty {
 
-
 }

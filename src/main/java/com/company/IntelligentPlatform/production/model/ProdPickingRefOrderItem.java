@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class ProdPickingRefOrderItem extends ServiceEntityNode {
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdPickingRefOrderItem;
 
 	public final static String SENAME = ProdPickingOrder.SENAME;

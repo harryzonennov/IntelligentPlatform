@@ -16,28 +16,23 @@ import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.FlowRouter;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
 
-
 @Service
 public class FlowRouterServiceUIModelExtension extends ServiceUIModelExtension {
 
     @Autowired
     protected FlowRouterExtendClassServiceUIModelExtension flowRouterExtendClassServiceUIModelExtension;
 
-
     @Autowired
     protected FlowRouterManager flowRouterManager;
 
-
     @Autowired
     protected LogonUserManager logonUserManager;
-
 
     public List<ServiceUIModelExtension> getChildUIModelExtensions() {
         List<ServiceUIModelExtension> resultList = new ArrayList<>();
         resultList.add(flowRouterExtendClassServiceUIModelExtension);
         return resultList;
     }
-
 
     @Override
     public List<ServiceUIModelExtensionUnion> genUIModelExtensionUnion() {
@@ -61,12 +56,9 @@ public class FlowRouterServiceUIModelExtension extends ServiceUIModelExtension {
         flowRouterMap.setConvUIToMethod(FlowRouterManager.METHOD_ConvUIToFlowRouter);
         uiModelNodeMapList.add(flowRouterMap);
 
-
-
         flowRouterExtensionUnion.setUiModelNodeMapList(uiModelNodeMapList);
         resultList.add(flowRouterExtensionUnion);
         return resultList;
     }
-
 
 }

@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class PurchaseReturnMaterialItemServiceUIModelExtension extends
 		ServiceUIModelExtension {

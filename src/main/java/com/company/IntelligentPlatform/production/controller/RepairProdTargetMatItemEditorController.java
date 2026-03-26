@@ -57,7 +57,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Scope("session")
 @Controller(value = "repairProdTargetMatItemEditorController")
 @RequestMapping(value = "/repairProdTargetMatItem")
@@ -120,7 +119,6 @@ public class RepairProdTargetMatItemEditorController extends SEEditorController 
 						logonUserUUID, organizationUUID);
 		return repairProdTargetMatItemServiceModel;
 	}
-
 
 	@RequestMapping(value = "/saveModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
@@ -468,7 +466,6 @@ public class RepairProdTargetMatItemEditorController extends SEEditorController 
 		}
 	}
 
-
 	@RequestMapping(value = "/getPageHeaderModelList", produces = "text/html;charset=UTF-8")
 	public @ResponseBody
 	String getPageHeaderModelList(@RequestBody SimpleSEJSONRequest request) {
@@ -637,7 +634,6 @@ public class RepairProdTargetMatItemEditorController extends SEEditorController 
 		}
 	}
 
-
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock
 	 * exist or not.
@@ -718,7 +714,6 @@ public class RepairProdTargetMatItemEditorController extends SEEditorController 
 		return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	/**
 	 * Upload the attachment content information.

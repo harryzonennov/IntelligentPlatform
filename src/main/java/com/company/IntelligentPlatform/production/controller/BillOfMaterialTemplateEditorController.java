@@ -132,7 +132,6 @@ public class BillOfMaterialTemplateEditorController extends SEEditorController {
                         classMap);
     }
 
-
     private BillOfMaterialTemplateServiceModel parseToServiceModel(String request)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, ServiceUIModuleProxyException {
         BillOfMaterialTemplateServiceUIModel billOfMaterialTemplateServiceUIModel = this.parseToServiceUIModel(request);
@@ -168,7 +167,6 @@ public class BillOfMaterialTemplateEditorController extends SEEditorController {
                     }
                 });
     }
-
 
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<BillOfMaterialTemplateServiceModel> iActionExecutor) {
@@ -385,7 +383,6 @@ public class BillOfMaterialTemplateEditorController extends SEEditorController {
         return serviceBasicUtilityController.deleteAttachment(request, AOID_RESOURCE,
                 genDocAttachmentProcessPara());
     }
-
 
     /**
      * Upload the attachment content information.

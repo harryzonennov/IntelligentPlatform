@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItemLog;
 import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
 import com.company.IntelligentPlatform.common.model.ServiceModule;

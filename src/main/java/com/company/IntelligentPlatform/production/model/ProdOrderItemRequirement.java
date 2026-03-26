@@ -132,5 +132,4 @@ public class ProdOrderItemRequirement extends ReferenceNode {
 		this.documentType = documentType;
 	}
 
-
 }

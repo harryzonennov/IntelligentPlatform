@@ -44,7 +44,6 @@ public class PrevNextDocItemProxy {
 		return true;
 	}
 
-
 	/**
 	 * API to free Prev-next relationship
 	 *
@@ -82,7 +81,6 @@ public class PrevNextDocItemProxy {
 				serialLogonInfo);
 		return true;
 	}
-
 
 	/**
 	 * API to free Prev-next relationship

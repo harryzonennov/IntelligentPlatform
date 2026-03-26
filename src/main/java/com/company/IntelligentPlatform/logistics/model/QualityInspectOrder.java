@@ -27,8 +27,6 @@ public class QualityInspectOrder extends DocumentContent {
 
 	public static final int STATUS_DELIVERYDONE = 200;
 
-
-
 	public static final int CHECKSTATUS_INITIAL = 1;
 
 	public static final int CHECKSTATUS_PARTPASS = 2;

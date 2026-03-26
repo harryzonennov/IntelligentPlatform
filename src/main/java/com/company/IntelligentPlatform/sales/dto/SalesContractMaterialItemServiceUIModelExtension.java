@@ -102,7 +102,6 @@ public class SalesContractMaterialItemServiceUIModelExtension extends
 
 		uiModelNodeMapList.addAll(docFlowProxy.getDefParentDocMapConfigureList(SalesContractMaterialItem.NODENAME));
 
-
 		// UI Model Configure of node:[MaterialStockKeepUnit]
 		uiModelNodeMapList
 				.addAll(docFlowProxy

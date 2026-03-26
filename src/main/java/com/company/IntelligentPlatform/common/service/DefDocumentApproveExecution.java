@@ -1,22 +1,24 @@
 package com.company.IntelligentPlatform.common.service;
 
-// TODO-LEGACY: import org.flowable.engine.delegate.DelegateExecution;
-// TODO-LEGACY: import org.flowable.engine.delegate.JavaDelegate;
+import org.flowable.engine.delegate.DelegateExecution;
+import org.flowable.engine.delegate.JavaDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonInfo;
 import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
 
-// TODO-LEGACY: implements JavaDelegate removed — Flowable BPM not available
 @Service
-public class DefDocumentApproveExecution {
+public class DefDocumentApproveExecution implements JavaDelegate {
 
     @Autowired
     protected DefDocApproveFlowProxy defDocApproveFlowProxy;
 
-    // TODO-LEGACY: execute(DelegateExecution) not available — Flowable BPM not migrated
-    public void execute(Object execution) {
-        // no-op stub
+    @Override
+    public void execute(DelegateExecution execution){
+        String businessKey = execution.getProcessInstanceBusinessKey();
+        SerialLogonInfo serialLogonInfo = execution.getVariable(LogonInfo.MODELID_LOGONINFO, SerialLogonInfo.class);
+        ServiceJSONRequest serviceJSONRequest = execution.getVariable(ServiceJSONRequest.MODELID_REQUEST, ServiceJSONRequest.class);
+        defDocApproveFlowProxy.approveEnd(businessKey, serialLogonInfo, serviceJSONRequest);
     }
 }

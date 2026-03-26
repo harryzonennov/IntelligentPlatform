@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -75,6 +77,9 @@ public class OrganizationManager extends ServiceEntityManager {
 
     public static final String METHOD_ConvUIToOrganizationBarcodeBasicSetting =
             "convUIToOrganizationBarcodeBasicSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected OrganizationRepository organizationDAO;
@@ -216,7 +221,7 @@ public class OrganizationManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(organizationDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, organizationDAO));
     }
 
     @PostConstruct
@@ -395,7 +400,6 @@ public class OrganizationManager extends ServiceEntityManager {
         }
         return result;
     }
-
 
     public Organization getOrganization(String orgUUID, String client) throws ServiceEntityConfigureException {
         Organization parentOrganization =
@@ -586,7 +590,6 @@ public class OrganizationManager extends ServiceEntityManager {
         }
         return null;
     }
-
 
     public void convUIToOrganization(OrganizationUIModel organizationUIModel,
                                      Organization rawEntity) {

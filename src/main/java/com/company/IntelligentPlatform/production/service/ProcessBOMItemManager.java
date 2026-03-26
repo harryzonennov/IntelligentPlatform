@@ -85,7 +85,6 @@ public class ProcessBOMItemManager {
 		}
 	}
 
-
 	public void convProdProcessToUI(ProdProcess prodProcess,
 			ProcessBOMItemUIModel processBOMItemUIModel) {
 		if (prodProcess != null) {

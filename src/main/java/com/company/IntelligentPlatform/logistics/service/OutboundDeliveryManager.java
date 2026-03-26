@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +47,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 
-
 /**
  * Logic Manager CLASS FOR Service Entity [OutboundDelivery]
  *
@@ -66,6 +67,9 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
     public static final String METHOD_ConvWarehouseToUI = "convWarehouseToUI";
 
     public static final String METHOD_ConvWarehouseAreaToUI = "convWarehouseAreaToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected OutboundDeliveryRepository outboundDeliveryDAO;
@@ -125,12 +129,11 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
 
     public OutboundDeliveryManager() {
         super.seConfigureProxy = new OutboundDeliveryConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new OutboundDeliveryDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(outboundDeliveryDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, outboundDeliveryDAO));
     }
 
     @PostConstruct
@@ -165,7 +168,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         return serviceDocumentComProxy
                 .getDocumentTypeMap(filterFlag, languageCode);
     }
-
 
     /**
      * Provide default logic to copy source doc material item instance as
@@ -500,7 +502,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         return warehouseStoreItemWithReference;
     }
 
-
     /**
      * Core Logic to switch outboundItem pointer to new store item, while old store item original pointer point to
      * new outboundItem.
@@ -566,7 +567,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         //        List<ServiceEntityNode> warehouseStoreLog = warehouseStoreManager.getEntityNodeListByKeyList(keyList,
         //                WarehouseStoreItemLog.NODENAME, outboundItem.getClient(), null);
     }
-
 
     @Override
     public ServiceEntityNode newRootEntityNode(String client) throws ServiceEntityConfigureException {
@@ -645,7 +645,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         return resultMap;
     }
 
-
     public WarehouseStoreItem getRefWarehouseStoreItem (OutboundItem outboundItem) throws ServiceEntityConfigureException {
         WarehouseStoreItem warehouseStoreItem = (WarehouseStoreItem) warehouseStoreManager.getEntityNodeByKey(
                 outboundItem.getRefStoreItemUUID(), IServiceEntityNodeFieldConstant.UUID,
@@ -658,13 +657,11 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         return warehouseStoreItem;
     }
 
-
     public StorageCoreUnit getAvailableStoreItemAmountUnion(
             StoreAvailableStoreItemRequest storeAvailableStoreItemRequest)
             throws ServiceEntityConfigureException, MaterialException {
         return outboundDeliveryWarehouseItemManager.getAvailableStoreItemAmountUnion(storeAvailableStoreItemRequest);
     }
-
 
     public void convWarehouseToScanBarcodeResponseModelUI(Warehouse warehouse,
                                                           OutboundScanBarcodeResponseModel outboundScanBarcodeResponseModel) {
@@ -719,7 +716,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
                     this.freightChargeTypeMap.get(outboundDelivery.getFreightChargeType()));
         }
     }
-
 
     public void convUIToOutboundDelivery(OutboundDeliveryUIModel outboundDeliveryUIModel, OutboundDelivery rawEntity)
             throws ParseException {
@@ -780,7 +776,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
         }
     }
 
-
     public void convOutboundItemToStoreItemUI(OutboundItem outboundItem,
                                                        WarehouseStoreItemUIModel warehouseStoreItemUIModel) {
         if (outboundItem != null) {
@@ -800,7 +795,6 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
             warehouseStoreItemUIModel.setRefWarehouseAreaUUID(outboundItem.getName());
         }
     }
-
 
     public OutboundDelivery getRefOutboundDeliveryFromStoreItem(String storeItemUUID)
             throws ServiceEntityConfigureException {

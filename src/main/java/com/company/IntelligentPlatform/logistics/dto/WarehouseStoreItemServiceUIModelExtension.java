@@ -63,7 +63,6 @@ public class WarehouseStoreItemServiceUIModelExtension extends ServiceUIModelExt
 	@Autowired
 	protected LogisticsFlowProxy logisticsFlowProxy;
 
-
 	public List<ServiceUIModelExtension> getChildUIModelExtensions() throws ServiceEntityConfigureException {
 		List<ServiceUIModelExtension> resultList = new ArrayList<>();
 		resultList.add(docAttachmentProxy.genDefServiceUIModelExtension(new DocAttachmentProxy.DocAttchNodeInputPara(

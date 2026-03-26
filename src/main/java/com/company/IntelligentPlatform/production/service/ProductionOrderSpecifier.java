@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.service;
 
-
 import com.company.IntelligentPlatform.production.dto.ProductionOrderItemUIModel;
 import com.company.IntelligentPlatform.production.service.i18n.IProductionI18nPackage;
 import com.company.IntelligentPlatform.production.dto.ProdOrderTargetMatItemUIModel;
@@ -188,7 +187,6 @@ public class ProductionOrderSpecifier extends DocumentContentSpecifier<Productio
         return docUIModelExtensionBuilder;
     }
 
-
     @Override
     public DocInvolveParty getDocInvolveParty(int partyRole, ProductionOrderServiceModel productionOrderServiceModel) {
         if(partyRole == ProductionOrderParty.PARTY_ROLE_CUSTOMER){
@@ -210,7 +208,6 @@ public class ProductionOrderSpecifier extends DocumentContentSpecifier<Productio
     public DocInvolveParty getDocItemInvolveParty(int partyRole, ServiceModule itemServiceModule) {
         return null;
     }
-
 
     @Override
     public void setDocInvolveParty(ProductionOrderServiceModel productionOrderServiceModel,

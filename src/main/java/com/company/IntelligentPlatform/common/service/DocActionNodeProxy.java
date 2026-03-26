@@ -189,7 +189,6 @@ public class DocActionNodeProxy {
         }
     }
 
-
     /**
      * Internal method update meta info to DocActionNode instance from serviceModule
      * @param docActionNode
@@ -371,7 +370,6 @@ public class DocActionNodeProxy {
 
         List<UIModelNodeMapConfigure> uiModelNodeMapList = new ArrayList<>();
 
-
         // UI Model Configure of node:[ActionCodeUnion]
         uiModelNodeMapList.addAll(getDefActionNodeMapConfigureList(docActionNodeInputPara));
         uiModelNodeMapList.addAll(getDefActionExecuteByConfigureList(docActionNodeInputPara.getNodeInstId()));
@@ -437,7 +435,6 @@ public class DocActionNodeProxy {
         uiModelNodeMapList.add(docActionNodeMap);
         return uiModelNodeMapList;
     }
-
 
     /**
      * Logic to generate Configure map for executed by logon user
@@ -616,7 +613,6 @@ public class DocActionNodeProxy {
         }
     }
 
-
     /**
      * Logic to generate Configure map for target Party
      *
@@ -648,7 +644,6 @@ public class DocActionNodeProxy {
                 .getSpecNodeMapConfigureList(simpleDocConfigurePara));
         return uiModelNodeMapList;
     }
-
 
     public void convDocumentToActionNodeUI(DocumentContent documentContent,
                                            DocActionNodeUIModel docActionNodeUIModel,

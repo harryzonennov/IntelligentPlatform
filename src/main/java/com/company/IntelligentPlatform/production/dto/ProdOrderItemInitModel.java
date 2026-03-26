@@ -4,6 +4,5 @@ import com.company.IntelligentPlatform.common.dto.BasicDocItemInitModel;
 
 public class ProdOrderItemInitModel extends BasicDocItemInitModel {
 
-
 	
 }

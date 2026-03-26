@@ -11,7 +11,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  */
 public class ProdPlanItemReqProposal extends ProdItemReqProposalTemplate{
 
-
 	public final static String NODENAME = IServiceModelConstants.ProdPlanItemReqProposal;
 
 	public final static String SENAME = ProductionPlan.SENAME;

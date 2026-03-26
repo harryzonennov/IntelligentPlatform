@@ -10,7 +10,6 @@ import com.company.IntelligentPlatform.common.service.ServiceModuleProxyExceptio
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @FunctionalInterface
 public interface IConvertSearchDataMethod{
 		List<?> apply(List<ServiceEntityNode> rawDataList)

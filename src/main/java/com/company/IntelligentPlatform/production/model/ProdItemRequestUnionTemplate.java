@@ -1,8 +1,6 @@
 package com.company.IntelligentPlatform.production.model;
 
-
 import com.company.IntelligentPlatform.common.model.DocMatItemNode;
-
 
 /**
  * Internal module, not persist into DB

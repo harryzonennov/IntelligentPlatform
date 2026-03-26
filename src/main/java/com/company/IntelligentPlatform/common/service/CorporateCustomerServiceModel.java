@@ -78,7 +78,6 @@ public class CorporateCustomerServiceModel extends ServiceModule {
 		this.approvedBy = approvedBy;
 	}
 
-
 	public CorporateCustomerActionNode getSubmittedBy() {
 		return submittedBy;
 	}

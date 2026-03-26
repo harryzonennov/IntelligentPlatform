@@ -26,7 +26,6 @@ import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
 import com.company.IntelligentPlatform.common.model.LogonUser;
 import com.company.IntelligentPlatform.common.model.*;
 
-
 @Scope("session")
 @Controller(value = "flowRouterExtendClassEditorController")
 @RequestMapping(value = "/flowRouterExtendClass")
@@ -76,7 +75,6 @@ public class FlowRouterExtendClassEditorController extends SEEditorController {
                 lanCode -> flowRouterExtendClassManager.loadExtendClassMap(lanCode));
     }
 
-
     @RequestMapping(value = "/getHandlerClassMeta", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String getHandlerClassMeta(String extendClassId) {
@@ -98,7 +96,6 @@ public class FlowRouterExtendClassEditorController extends SEEditorController {
         return (FlowRouterExtendClassServiceUIModel) JSONObject.toBean(jsonObject,
                 FlowRouterExtendClassServiceUIModel.class, classMap);
     }
-
 
     @RequestMapping(value = "/saveModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody String saveModuleService(@RequestBody String request) {
@@ -122,7 +119,6 @@ public class FlowRouterExtendClassEditorController extends SEEditorController {
                 flowRouterExtendClassServiceUIModel.getFlowRouterExtendClassUIModel().getUuid(), ISystemActionCode.ACID_EDIT);
     }
 
-
     @RequestMapping(value = "/checkExtendClassValid", produces = "text/html;charset=UTF-8")
     public @ResponseBody
     String checkExtendClassValid(@RequestBody SimpleSEJSONRequest simpleSEJSONRequest) {
@@ -136,7 +132,6 @@ public class FlowRouterExtendClassEditorController extends SEEditorController {
                     }
                 }, AOID_RESOURCE, ISystemActionCode.ACID_VIEW);
     }
-
 
     @RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
     public @ResponseBody String newModuleService(

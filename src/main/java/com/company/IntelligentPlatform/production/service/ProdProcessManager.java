@@ -12,7 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.production.dto.ProdProcessSearchModel;
 import com.company.IntelligentPlatform.production.dto.ProdProcessUIModel;
-// TODO-DAO: import net.thorstein.production.DAO.ProdProcessDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.production.repository.ProdProcessRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
@@ -47,11 +50,11 @@ public class ProdProcessManager extends ServiceEntityManager {
 	public static final String METHOD_ConvUIToProdProcess = "convUIToProdProcess";
 
 	public static final String METHOD_ConvProdWorkCenterToUI = "convProdWorkCenterToUI";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected ProdProcessDAO prodProcessDAO;
-
+    @Autowired
+    protected ProdProcessRepository prodProcessDAO;
 	@Autowired
 	protected ProdProcessConfigureProxy prodProcessConfigureProxy;
 
@@ -90,12 +93,11 @@ public class ProdProcessManager extends ServiceEntityManager {
 
 	public ProdProcessManager() {
 		super.seConfigureProxy = new ProdProcessConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProdProcessDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(prodProcessDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodProcessDAO));
 	}
 
 	@PostConstruct
@@ -235,6 +237,5 @@ public class ProdProcessManager extends ServiceEntityManager {
 				searchModel, searchNodeConfigList, client, true);
 		return resultList;
 	}
-
 
 }

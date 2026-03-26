@@ -336,5 +336,4 @@ public class ProductionPlanSearchModel extends SEUIComModel {
 		this.productionBatchNumber = productionBatchNumber;
 	}
 
-
 }

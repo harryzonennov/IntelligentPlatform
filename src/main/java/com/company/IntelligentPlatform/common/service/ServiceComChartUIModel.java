@@ -6,7 +6,6 @@ import java.util.List;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
 
-
 public class ServiceComChartUIModel extends SEUIComModel {
 
     @ISEUIModelMapping(exportParaFlag = true)
@@ -26,7 +25,6 @@ public class ServiceComChartUIModel extends SEUIComModel {
 
     @ISEUIModelMapping(exportParaFlag = true)
     protected String yAxisTitle;
-
 
     public List<String> getCategories() {
         return categories;

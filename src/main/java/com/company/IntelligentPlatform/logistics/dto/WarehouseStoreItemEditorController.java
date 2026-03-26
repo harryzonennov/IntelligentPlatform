@@ -98,7 +98,6 @@ public class WarehouseStoreItemEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */

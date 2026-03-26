@@ -42,7 +42,6 @@ public class ServiceSearchProxyRepository {
 	@Autowired(required = false)
 	protected ServiceSearchProxy warehouseStoreSearchProxy;
 
-
 	@Qualifier("logonUserSearchProxy")
 	@Autowired(required = false)
 	protected ServiceSearchProxy logonUserSearchProxy;
@@ -59,7 +58,6 @@ public class ServiceSearchProxyRepository {
 	@Autowired(required = false)
 	protected ServiceSearchProxy finAccountSearchProxy;
 
-
 	@Qualifier("employeeToFinSearchProxy")
 	@Autowired(required = false)
 	protected ServiceSearchProxy employeeToFinSearchProxy;
@@ -75,7 +73,6 @@ public class ServiceSearchProxyRepository {
 	@Qualifier("inboundDeliverySearchProxy")
 	@Autowired(required = false)
 	protected ServiceSearchProxy inboundDeliverySearchProxy;
-
 
 	@Qualifier("inventoryTransferOrderSearchProxy")
 	@Autowired(required = false)
@@ -125,7 +122,6 @@ public class ServiceSearchProxyRepository {
 	@Autowired(required = false)
 	protected ServiceSearchProxy productionOrderItemSearchProxy;
 
-
 	/**
 	 * ===============end of register area===============
 	 */
@@ -149,7 +145,6 @@ public class ServiceSearchProxyRepository {
 		return ServiceLanHelper.initDefLanguageStrMapResource(languageCode,
 				this.serviceProxyMapLan, resourcePath);
 	}
-
 
 	/**
 	 * Logic to get search proxy instance by registereed id

@@ -5,7 +5,6 @@ import com.company.IntelligentPlatform.common.service.ServiceEntityException;
 import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 public class ProdOrderTargetItemException extends ServiceEntityException {
 
 	/**

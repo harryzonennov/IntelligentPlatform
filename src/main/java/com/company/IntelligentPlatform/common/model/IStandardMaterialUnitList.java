@@ -30,6 +30,4 @@ public interface IStandardMaterialUnitList {
 
 	public final static double RATIO_MILLILITER =  1000;
 
-
-
 }

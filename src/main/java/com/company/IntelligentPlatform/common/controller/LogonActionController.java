@@ -192,8 +192,6 @@ public class LogonActionController extends SEListController {
 		}
 	}
 
-
-
 	public List<NavigationElementUnion> filterOutFirstLayerElementList(
 			List<NavigationElementUnion> rawElementList) {
 		if (ServiceCollectionsHelper.checkNullList(rawElementList)) {
@@ -208,8 +206,6 @@ public class LogonActionController extends SEListController {
 		}
 		return resultList;
 	}
-
-
 
 	@RequestMapping(value = "/unLock", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String unLock(
@@ -336,7 +332,6 @@ public class LogonActionController extends SEListController {
 		}
 
 	}
-
 
 	public PageComInfo getForwardPage() {
 		return forwardPage;

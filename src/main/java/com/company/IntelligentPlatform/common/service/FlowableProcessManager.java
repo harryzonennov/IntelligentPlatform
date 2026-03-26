@@ -2,12 +2,12 @@ package com.company.IntelligentPlatform.common.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-// TODO-LEGACY: import org.flowable.engine.RepositoryService;
-// TODO-LEGACY: import org.flowable.engine.RuntimeService;
-// TODO-LEGACY: import org.flowable.engine.TaskService;
-// TODO-LEGACY: import org.flowable.engine.repository.Deployment;
-// TODO-LEGACY: import org.flowable.engine.repository.DeploymentBuilder;
-// TODO-LEGACY: import org.flowable.engine.runtime.ProcessInstance;
+import org.flowable.engine.RepositoryService;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
+import org.flowable.engine.repository.Deployment;
+import org.flowable.engine.repository.DeploymentBuilder;
+import org.flowable.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
@@ -32,19 +32,13 @@ public class FlowableProcessManager {
     protected ServiceDocumentComProxy serviceDocumentComProxy;
 
     @Autowired
-
-
-        protected TaskService taskService;
+    protected TaskService taskService;
 
     @Autowired
-
-
-        protected RepositoryService repositoryService;
+    protected RepositoryService repositoryService;
 
     @Autowired
-
-
-        protected RuntimeService runtimeService;
+    protected RuntimeService runtimeService;
 
     protected Logger logger = LoggerFactory.getLogger(FlowableProcessManager.class);
 

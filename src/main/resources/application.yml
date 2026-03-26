@@ -1,34 +1,58 @@
 spring:
+  main:
+    allow-circular-references: true   # pre-existing cycles in legacy service layer
   datasource:
-    # Connect to the platform schema as the default; JPA entities use schema= on each @Table
-    url: jdbc:mysql://localhost:3306/platform?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    # Connect to the platform schema as the default; JPA entities use schema= on each @Table.
+    # All values can be overridden by environment variables: DB_HOST, DB_PORT, DB_NAME,
+    # DB_USERNAME, DB_PASSWORD.  Set these in the OS environment or container spec —
+    # never hard-code credentials in this file for production.
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:platform}?useSSL=${DB_USE_SSL:false}&serverTimezone=UTC&allowPublicKeyRetrieval=${DB_ALLOW_PUBLIC_KEY:true}
+    username: ${DB_USERNAME:ip_user}
+    password: ${DB_PASSWORD:ip_password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: validate          # Flyway manages schema — Hibernate only validates
+      ddl-auto: none              # Schema managed manually — skip Hibernate validation
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
         # No default_schema — each entity declares its own schema via @Table(schema=)
         # Schemas: platform, finance, logistics, sales, production
 
   flyway:
-    enabled: true
-    locations: classpath:db/migration
-    baseline-on-migrate: true
-    # Flyway tracks migration state in the platform schema's flyway_schema_history table
-    schemas: platform,finance,logistics,sales,production
-    # V1 creates the schemas, V2 creates all tables, V3 seeds data
-    # The connection user needs CREATE DATABASE + full DML privileges on all 5 schemas
+    enabled: false   # Schema created manually via V1+V2+dump import; re-enable to use Flyway migrations
+
+  flowable:
+    # IMPORTANT: set to false in production — 'true' is dev-only convenience.
+    # In production, Flowable schema must be pre-created by running the official SQL scripts.
+    database-schema-update: ${FLOWABLE_DB_UPDATE:true}
+    history-level: none             # minimal overhead; no history tables needed
+    check-process-definitions: true # deploy BPMN files from classpath on startup
+    process-definition-location-prefix: classpath*:coreFunction/process/
+    process-definition-location-suffixes:
+      - "**.bpmn20.xml"
 
 jwt:
-  secret: ${JWT_SECRET}
-  expiration-ms: 86400000         # 24 hours
+  # JWT_SECRET must be set as an environment variable in production.
+  # The fallback value here is for local development only — never deploy with it.
+  # Minimum 32 characters; use a cryptographically random value (e.g. openssl rand -base64 32).
+  secret: ${JWT_SECRET:localDevSecretKey1234567890AbcDef}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}   # default 24 hours; override per environment
+  auth-cache-ttl-minutes: 30      # How long the authorization context cache entry lives per user.
+                                  # Set to match your typical session duration.
+                                  # On expiry the next request rebuilds from DB (same cost as login).
+                                  # On role change, call JwtAuthContextCache.evict(userUuid) immediately.
+
+cors:
+  # Comma-separated list of allowed CORS origins.
+  # Override with CORS_ALLOWED_ORIGINS env var in production (e.g. https://app.example.com).
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}

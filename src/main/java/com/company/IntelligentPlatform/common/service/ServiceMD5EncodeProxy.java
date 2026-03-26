@@ -3,6 +3,8 @@ package com.company.IntelligentPlatform.common.service;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
@@ -10,6 +12,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 public class ServiceMD5EncodeProxy implements IServiceEncodeProxy {
 
+	private static final Logger logger = LoggerFactory.getLogger(ServiceMD5EncodeProxy.class);
 	private final static String[] strDigits = { "0", "1", "2", "3", "4", "5",
 			"6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
 
@@ -38,7 +41,7 @@ public class ServiceMD5EncodeProxy implements IServiceEncodeProxy {
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			resultString = byteToString(md.digest(strObj.getBytes()));
 		} catch (NoSuchAlgorithmException ex) {
-			ex.printStackTrace();
+			logger.error("MD5 algorithm not available", ex);
 		}
 		return resultString;
 	}

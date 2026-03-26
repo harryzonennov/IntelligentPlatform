@@ -193,13 +193,11 @@ public abstract class ServiceExcelHandlerProxy{
         return getExcelFilePostfixCore(excelType);
     }
 
-
     /**
      * Should be implemented in child class
      * @return
      */
     public abstract ServiceExcelReportConfig getDefExcelConfigure(SerialLogonInfo serialLogonInfo) throws ServiceExcelConfigException;
-
 
     public ServiceExcelReportConfig getDefExcelConfigureTemplate(String lanCode, String propertyPath) throws ServiceExcelConfigException {
         try {
@@ -211,7 +209,6 @@ public abstract class ServiceExcelHandlerProxy{
             throw new ServiceExcelConfigException(ServiceExcelConfigException.PARA_SYSTEM_WRONG, e.getMessage());
         }
     }
-
 
     public ServiceExcelReportConfig getDefExcelConfigureTemplate(SerialLogonInfo serialLogonInfo) throws ServiceExcelConfigException {
         try {
@@ -239,7 +236,6 @@ public abstract class ServiceExcelHandlerProxy{
         serviceExcelReportConfig.setServiceExcelCellConfigs(serviceExcelCellConfigList);
         return serviceExcelReportConfig;
     }
-
 
     /**
      * Generate default service cell configure list by field name list
@@ -324,7 +320,6 @@ public abstract class ServiceExcelHandlerProxy{
             throw new ServiceExcelConfigException(ServiceExcelConfigException.PARA_SYSTEM_WRONG, e.getMessage());
         }
     }
-
 
     private ServiceExcelReportResponseModel readDataArrayFromSheet(
             Workbook workbook, SerialLogonInfo serialLogonInfo)
@@ -482,7 +477,6 @@ public abstract class ServiceExcelHandlerProxy{
         return null;
     }
 
-
     /**
      * Core method to update excel upload content into persistence
      *
@@ -601,7 +595,7 @@ public abstract class ServiceExcelHandlerProxy{
             try {
                 ServiceReflectiveHelper.reflectSetValue(uiFieldName, seUIModel, value);
             } catch (IllegalAccessException | NoSuchFieldException e) {
-                e.printStackTrace();
+                logger.warn("Failed to set field '{}' via reflection, skipping", uiFieldName, e);
             }
         }
     }
@@ -660,7 +654,6 @@ public abstract class ServiceExcelHandlerProxy{
         return serviceExcelReportResponseModel;
     }
 
-
     public ServiceExcelReportResponseModel readDataArrayFromSheet(
             Sheet sheet, List<Field> fieldList,
             List<ServiceExcelCellConfig> configList, int idColIndex) {
@@ -689,7 +682,6 @@ public abstract class ServiceExcelHandlerProxy{
         serviceExcelReportResponseModel.setDataList(seDataList);
         return serviceExcelReportResponseModel;
     }
-
 
     public static ServiceExcelReportErrorLogUnion recordExcelReadErrorLog(
             Sheet sheet, int rowIndex, String errorMessage,
@@ -743,7 +735,6 @@ public abstract class ServiceExcelHandlerProxy{
             }
         }
     }
-
 
     public static String getValue(Cell cell) {
         if (cell.getCellType() == org.apache.poi.ss.usermodel.CellType.BOOLEAN) {
@@ -873,7 +864,6 @@ public abstract class ServiceExcelHandlerProxy{
         return null;
     }
 
-
     public void buildExcelDocument(
             ServiceExcelReportConfig serviceExcelReportConfig, List<SEUIComModel> seUIModelList,
             Workbook workbook) throws ServiceExcelConfigException, IllegalAccessException {
@@ -920,7 +910,6 @@ public abstract class ServiceExcelHandlerProxy{
         }
     }
 
-
     public interface IConvertDocumentModel<U extends SEUIComModel, R extends ServiceModule>{
 
         void execute(U uiModel, R serviceModule, SerialLogonInfo serialLogonInfo);
@@ -932,7 +921,6 @@ public abstract class ServiceExcelHandlerProxy{
         void execute(U seUIModel);
 
     }
-
 
     public interface InitModelMetaList{
 
@@ -1028,7 +1016,6 @@ public abstract class ServiceExcelHandlerProxy{
         }
     }
 
-
     public static class FieldMeta<U extends SEUIComModel>{
 
         private String fieldName;
@@ -1116,6 +1103,5 @@ public abstract class ServiceExcelHandlerProxy{
             this.defMetaValue = defMetaValue;
         }
     }
-
 
 }

@@ -14,5 +14,4 @@ public class RepairProdTargetItemAttachment extends ProdOrderTargetItemAttachmen
 		super.nodeName = NODENAME;
 	}
 
-
 }

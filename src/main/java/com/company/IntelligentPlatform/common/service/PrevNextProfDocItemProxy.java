@@ -62,7 +62,6 @@ public class PrevNextProfDocItemProxy {
         return true;
     }
 
-
     /**
      * Method to add prev-next relationship
      *

@@ -53,7 +53,6 @@ public class InboundDeliveryServiceUIModel extends ServiceUIModule {
 	@IServiceUIModuleFieldConfig(nodeName = InboundDeliveryAttachment.NODENAME, nodeInstId = InboundDeliveryAttachment.NODENAME)
 	protected List<InboundDeliveryAttachmentUIModel> inboundDeliveryAttachmentUIModelList = new ArrayList<>();
 
-
 	public InboundDeliveryUIModel getInboundDeliveryUIModel() {
 		return this.inboundDeliveryUIModel;
 	}

@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.finance.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 
 /**
@@ -9,6 +11,9 @@ import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
  * @date May 01 2013
  */
 public class FinAccountTitleIdGenerator implements FinanceServiceGenerator {
+
+	private static final Logger logger = LoggerFactory.getLogger(FinAccountTitleIdGenerator.class);
+
 	// Splitting AccountTitle Id
 	int[] splitAccountTitleId;
 	// split String Variable
@@ -43,8 +48,8 @@ public class FinAccountTitleIdGenerator implements FinanceServiceGenerator {
 					s2 = (Integer.toString(subAccountTitleIdArray[i]))
 							.substring(4, 6);
 				}
-			} catch (Exception e) {				
-				e.printStackTrace();
+			} catch (Exception e) {
+				logger.warn("Error parsing account title ID segment", e);
 			}
 		}
 		// Invoke InsertSort()
@@ -54,12 +59,11 @@ public class FinAccountTitleIdGenerator implements FinanceServiceGenerator {
 		if (checkSequenceArray(splitAccountTitleId)) {
 			// Get Max splitAccountTitleId
 			sortedAccountTitleId = getMaxValue(splitAccountTitleId);
-			System.out.println("Max split Id:" + sortedAccountTitleId);
+			logger.debug("Max split Id: {}", sortedAccountTitleId);
 		} else {
 			// Get Max Nonsequence Value
 			sortedAccountTitleId = getNonsequenceMiniValue(splitAccountTitleId);
-			System.out.println("NonsequenceMiniValue Id:"
-					+ sortedAccountTitleId);
+			logger.debug("NonsequenceMiniValue Id: {}", sortedAccountTitleId);
 		}
 		// Generate Secondary AccountTitle Id by generation Category Type
 		// Judge maxSplitAccountTitleId < 10
@@ -77,12 +81,12 @@ public class FinAccountTitleIdGenerator implements FinanceServiceGenerator {
 			}
 		}
 		genAccountTitleId = Integer.parseInt(s3.trim());
-		System.out.println(parentAccountTitleId);
+		logger.debug("parentAccountTitleId: {}", parentAccountTitleId);
 		for (int k : subAccountTitleIdArray) {
-			System.out.println(k + " ");
+			logger.debug("subAccountTitleId: {}", k);
 		}
 		for (int k : splitAccountTitleId) {
-			System.out.println(k);
+			logger.debug("splitAccountTitleId: {}", k);
 		}
 		return genAccountTitleId;
 	}

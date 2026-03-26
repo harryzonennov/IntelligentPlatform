@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// TODO-DAO: import platform.foundation.DAO.CityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.CityRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
@@ -31,11 +34,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 @Service
 @Transactional
 public class CityManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     CityDAO cityDAO;
-
+    @Autowired
+    protected CityRepository cityDAO;
     @Autowired
     ProvinceManager provinceManager;
 
@@ -51,7 +54,7 @@ public class CityManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(cityDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, cityDAO));
     }
 
     @PostConstruct
@@ -149,7 +152,6 @@ public class CityManager extends ServiceEntityManager {
         }
         return null;
     }
-
 
     public City getCityInfoByName(String refCityName) throws ServiceEntityConfigureException {
         ServiceEntityNode locationNode = this.getEntityNodeByKey(refCityName,

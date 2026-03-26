@@ -40,7 +40,6 @@ public class SalesContractMaterialItemExcelHelper extends DocMatItemExcelHandler
         return false;
     }
 
-
     @Override
     public Class<?> getExcelModelClass() {
         return SalesContractMaterialItemUIModel.class;

@@ -136,5 +136,4 @@ public class NavigationSystemSettingUIModel extends SEUIComModel {
 		this.systemCategoryValue = systemCategoryValue;
 	}
 
-
 }

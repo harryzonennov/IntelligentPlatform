@@ -20,5 +20,4 @@ public interface IServiceEntityException {
 
 	void setErrorMessageList(List<SimpleSEMessageResponse> errorMessageList);
 
-
 }

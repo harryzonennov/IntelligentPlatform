@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.production.dto;
 
-
 import com.company.IntelligentPlatform.production.model.RepairProdItemReqProposal;
 import com.company.IntelligentPlatform.production.model.RepairProdOrderItem;
 import org.springframework.stereotype.Component;

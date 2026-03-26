@@ -5,7 +5,6 @@ import java.lang.annotation.RetentionPolicy;
 
 import com.company.IntelligentPlatform.common.model.*;
 
-
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ISQLSepcifyAttribute {
 	

@@ -1,5 +1,8 @@
 package com.company.IntelligentPlatform.production.service;
 
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.annotation.PostConstruct;
 
 import com.company.IntelligentPlatform.production.dto.BillOfMaterialOrderServiceUIModelExtension;
@@ -13,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import com.company.IntelligentPlatform.common.service.MaterialException;
 import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
@@ -60,6 +62,9 @@ import java.util.function.Function;
 @Service
 @Transactional
 public class BillOfMaterialTemplateManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected BillOfMaterialTemplateRepository billOfMaterialTemplateDAO;
@@ -150,12 +155,11 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
 
     public BillOfMaterialTemplateManager() {
         super.seConfigureProxy = new BillOfMaterialTemplateConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new BillOfMaterialTemplateDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(billOfMaterialTemplateDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, billOfMaterialTemplateDAO));
     }
 
     @PostConstruct
@@ -269,7 +273,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
                 logonUserUUID, organizationUUID);
     }
 
-
     /**
      * Core Logic to approve billOfMaterialTemplate and update to DB
      *
@@ -303,7 +306,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
 
     }
 
-
     /**
      * Core Logic to approve billOfMaterialTemplate and update to DB
      *
@@ -322,7 +324,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
                 BillOfMaterialTemplate.STATUS_REJECT_APPROVAL,
                 BillOfMaterialTemplateActionNode.DOC_ACTION_REJECT_APPROVE, null, logonUserUUID, organizationUUID);
     }
-
 
     /**
      * Core Logic to approve billOfMaterialTemplate and update to DB
@@ -369,7 +370,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
                 billOfMaterialTemplateServiceModel, logonUserUUID, organizationUUID, BillOfMaterialTemplate.SENAME,
                 billOfMaterialTemplateServiceUIModelExtension);
     }
-
 
     /**
      * Core Logic to Initialize BOM Order: set status to 'Initial'.
@@ -606,7 +606,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
         return resultList;
     }
 
-
     /**
      * Recursively to generate sub productive BOM model
      *
@@ -834,7 +833,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
         return resultList;
     }
 
-
     /**
      * Filter the online BOM list by next layer
      *
@@ -857,8 +855,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
         }
         return resultList;
     }
-
-
 
     /**
      * Filter the online BOM list by layer
@@ -1290,7 +1286,6 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
         serviceFlowRuntimeEngine.submitFlow(serviceFlowInputPara);
     }
 
-
     @Override
     public void exeFlowActionEnd(int documentType, String uuid, int actionCode, ServiceJSONRequest serviceJSONRequest
             , SerialLogonInfo serialLogonInfo) {
@@ -1311,7 +1306,7 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
                         serialLogonInfo.getHomeOrganizationUUID());
             }
         } catch (ServiceEntityConfigureException | ServiceModuleProxyException e) {
-            e.printStackTrace();
+            logger.error("Failed during bill of material template processing", e);
         }
     }
 }

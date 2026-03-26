@@ -40,7 +40,6 @@ public class MaterialServiceModel extends ServiceModule {
 			MaterialActionLog.NODEINST_ACTION_ARCHIVE)
 	protected MaterialActionLog archivedBy;
 
-
 	public Material getMaterial() {
 		return this.material;
 	}

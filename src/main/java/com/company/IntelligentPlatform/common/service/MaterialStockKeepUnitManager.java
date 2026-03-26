@@ -20,7 +20,9 @@ import com.company.IntelligentPlatform.common.dto.MaterialSKUUnitUIModel;
 import com.company.IntelligentPlatform.common.dto.MaterialStockKeepUnitUIModel;
 import com.company.IntelligentPlatform.common.dto.MaterialUIModel;
 import com.company.IntelligentPlatform.common.dto.MaterialSKUExtendPropertyUIModel;
-// TODO-DAO: import ...MaterialStockKeepUnitDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.MaterialStockKeepUnitRepository;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.DocActionException;
@@ -71,9 +73,11 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
 
     final Logger logger = LoggerFactory.getLogger(MaterialStockKeepUnitManager.class);
 
-    // TODO-DAO: @Autowired
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO:     protected MaterialStockKeepUnitDAO materialStockKeepUnitDAO;
+    @Autowired
+    protected MaterialStockKeepUnitRepository materialStockKeepUnitDAO;
 
     @Autowired
     protected MaterialStockKeepUnitConfigureProxy materialStockKeepUnitConfigureProxy;
@@ -144,12 +148,11 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
 
     public MaterialStockKeepUnitManager() {
         super.seConfigureProxy = new MaterialStockKeepUnitConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new MaterialStockKeepUnitDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(materialStockKeepUnitDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, materialStockKeepUnitDAO));
     }
 
     @PostConstruct
@@ -681,7 +684,6 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
         return refUnitName;
     }
 
-
     @Override
     public void updateBuffer(ServiceEntityNode serviceEntityNode) throws ServiceComExecuteException {
         materialStockKeepUnitCache.updateServiceEntityNodeToCache(serviceEntityNode);
@@ -696,7 +698,6 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
             }
         }
     }
-
 
     /**
      * Merges two {@link StorageCoreUnit} instances by performing the specified operation (addition or subtraction) on their amounts.
@@ -1168,7 +1169,6 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
         return material.getMaterialCategory();
     }
 
-
     public List<ServiceEntityNode> getRecursiveMaterialType(String baseUUID, String client) throws ServiceEntityConfigureException, MaterialException, ServiceComExecuteException {
         MaterialStockKeepUnit materialStockKeepUnit = this
                 .getMaterialSKUWrapper(baseUUID, client, null);
@@ -1490,7 +1490,6 @@ public class MaterialStockKeepUnitManager extends ServiceEntityManager {
     public String getMainUnitUUID(String skuUUID) {
         return skuUUID;
     }
-
 
     /**
      * Get Material SKU instance online, from cache, or finally from DB

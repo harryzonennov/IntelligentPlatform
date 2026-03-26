@@ -74,8 +74,6 @@ public class MatConfigExtPropertySettingServiceUIModelExtension extends
 		standardMaterialUnitMap
 				.setToBaseNodeType(UIModelNodeMapConfigure.TOBASENODE_OTHERS);
 
-
-
 		// UI Model Configure of node:[MatConfigHeaderCondition]
 		UIModelNodeMapConfigure materialConfigureTemplateConditionMap = new UIModelNodeMapConfigure();
 		materialConfigureTemplateConditionMap

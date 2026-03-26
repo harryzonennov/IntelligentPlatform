@@ -44,7 +44,6 @@ public class ServiceDocActionConfigureEditorController extends SEEditorControlle
     @Autowired
     protected ServiceDocumentSettingManager serviceDocumentSettingManager;
 
-
     public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
         return new ServiceBasicUtilityController.ServiceUIModelRequest(
                 ServiceDocActionConfigureServiceUIModel.class,
@@ -130,6 +129,5 @@ public class ServiceDocActionConfigureEditorController extends SEEditorControlle
             @RequestBody SimpleSEJSONRequest serviceExitLockJSONModule) {
         return exitEditorCore(serviceExitLockJSONModule);
     }
-
 
 }

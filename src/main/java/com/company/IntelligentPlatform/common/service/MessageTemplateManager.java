@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.common.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.text.SimpleDateFormat;
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.MessageTemplateUIModel;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.common.repository.MessageTemplateRepository;
 import com.company.IntelligentPlatform.common.service.MessageTemplateHandlerRepository;
 import com.company.IntelligentPlatform.common.service.AuthorizationException;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
@@ -45,11 +48,11 @@ public class MessageTemplateManager extends ServiceEntityManager {
     public static final String METHOD_ConvMessageTemplateToUI = "convMessageTemplateToUI";
 
     public static final String METHOD_ConvUIToMessageTemplate = "convUIToMessageTemplate";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    // TODO-DAO: @Autowired
-
-    // TODO-DAO:     protected MessageTemplateHandlerRepository messageTemplateDAO;
-
+    @Autowired
+    protected MessageTemplateRepository messageTemplateDAO;
     @Autowired
     protected MessageTemplateConfigureProxy messageTemplateConfigureProxy;
 
@@ -136,7 +139,7 @@ public class MessageTemplateManager extends ServiceEntityManager {
                     }
 
                 } catch (ServiceEntityInstallationException e) {
-                    e.printStackTrace();
+                    logger.error("Failed to load message template", e);
                 }
             }
             messageTemplateUIModel.setNavigationSourceId(messageTemplate.getNavigationSourceId());
@@ -326,7 +329,7 @@ public class MessageTemplateManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(messageTemplateDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, messageTemplateDAO));
     }
 
     @PostConstruct

@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.production.dto.ProcessBOMOrderUIModel;
-// TODO-DAO: import net.thorstein.production.DAO.ProcessBOMOrderDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.production.repository.ProcessBOMOrderRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
 import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
@@ -38,11 +41,11 @@ import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
 @Service
 @Transactional
 public class ProcessBOMOrderManager extends ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected ProcessBOMOrderDAO processBOMOrderDAO;
-
+    @Autowired
+    protected ProcessBOMOrderRepository processBOMOrderDAO;
 	@Autowired
 	protected ProcessBOMOrderConfigureProxy processBOMOrderConfigureProxy;
 
@@ -63,12 +66,11 @@ public class ProcessBOMOrderManager extends ServiceEntityManager {
 
 	public ProcessBOMOrderManager() {
 		super.seConfigureProxy = new ProcessBOMOrderConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new ProcessBOMOrderDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(processBOMOrderDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processBOMOrderDAO));
 	}
 
 	@PostConstruct

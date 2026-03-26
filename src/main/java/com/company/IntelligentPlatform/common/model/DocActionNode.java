@@ -33,7 +33,6 @@ public class DocActionNode extends ServiceEntityNode {
 
 	protected String refDocumentUUID;
 
-
 	public DocActionNode(){
 		this.flatNodeSwitch = StandardSwitchProxy.SWITCH_ON;
 		this.processIndex = 1;

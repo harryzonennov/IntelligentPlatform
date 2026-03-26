@@ -119,12 +119,10 @@ public class SystemExecutorRepository {
 			ISystemExecutorAttr.EXECUTIONTYPE_INITIALIZE)
 	protected SystemExecutorTemplate systemDebugExecutor;
 
-
 	@Qualifier("systemRegularUpgradeExecutor")
 	@Autowired(required = false)
 	@ISystemExecutorAttr(status = ISystemExecutorAttr.STATUS_ACTIVE, executionType = ISystemExecutorAttr.EXECUTIONTYPE_SYSTEMUPGRADE)
 	protected SystemExecutorTemplate systemRegularUpgradeExecutor;
-
 
 	@Qualifier("messageTemplateImportExecutor")
 	@Autowired(required = false)
@@ -144,13 +142,11 @@ public class SystemExecutorRepository {
 			ISystemExecutorAttr.EXECUTIONTYPE_SYSTEMINSTALL)
 	protected SystemExecutorTemplate serviceFlowModelGenerateExecutor;
 
-
 	@Qualifier("serviceDocumentSettingsGenerateExecutor")
 	@Autowired(required = false)
 	@ISystemExecutorAttr(status = ISystemExecutorAttr.STATUS_ACTIVE, executionType =
 			ISystemExecutorAttr.EXECUTIONTYPE_SYSTEMINSTALL)
 	protected SystemExecutorTemplate serviceDocumentSettingsGenerateExecutor;
-
 
 	@Qualifier("organizationManWorkRoleExecutor")
 	@Autowired(required = false)
@@ -158,13 +154,11 @@ public class SystemExecutorRepository {
 			ISystemExecutorAttr.EXECUTIONTYPE_SYSTEMUPGRADE)
 	protected SystemExecutorTemplate organizationManWorkRoleExecutor;
 
-
 	@Qualifier("warehouseStoreMigrateExecutor")
 	@Autowired(required = false)
 	@ISystemExecutorAttr(status = ISystemExecutorAttr.STATUS_ACTIVE, executionType =
 			ISystemExecutorAttr.EXECUTIONTYPE_SYSTEMUPGRADE)
 	protected SystemExecutorTemplate warehouseStoreMigrateExecutor;
-
 
 	@Qualifier("systemCodeValueCollectionExecutor")
 	@Autowired(required = false)

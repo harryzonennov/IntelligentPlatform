@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.logistics.dto.*;
 import com.company.IntelligentPlatform.logistics.repository.WasteProcessOrderRepository;
 import com.company.IntelligentPlatform.logistics.model.*;
@@ -35,6 +37,9 @@ public class WasteProcessOrderManager extends ServiceEntityManager {
 
     @Autowired
     protected WarehouseStoreItemManager warehouseStoreItemManager;
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
     @Autowired
     protected WasteProcessOrderRepository wasteProcessOrderDAO;
@@ -110,8 +115,6 @@ public class WasteProcessOrderManager extends ServiceEntityManager {
         return wasteProcessOrder;
     }
 
-
-
     /**
      * [Internal method] Convert from SE model to UI model
      *
@@ -123,7 +126,6 @@ public class WasteProcessOrderManager extends ServiceEntityManager {
             throws ServiceEntityInstallationException {
         convWasteProcessOrderToUI(wasteProcessOrder, wasteProcessOrderUIModel, null);
     }
-
 
     /**
      * [Internal method] Convert from SE model to UI model
@@ -162,7 +164,6 @@ public class WasteProcessOrderManager extends ServiceEntityManager {
         }
     }
 
-
     /**
      * [Internal method] Convert from UI model to se model:wasteProcessOrder
      *
@@ -181,7 +182,7 @@ public class WasteProcessOrderManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(wasteProcessOrderDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, wasteProcessOrderDAO));
     }
 
     @PostConstruct

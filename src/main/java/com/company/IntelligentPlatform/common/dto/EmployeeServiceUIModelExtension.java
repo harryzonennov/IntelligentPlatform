@@ -135,7 +135,6 @@ public class EmployeeServiceUIModelExtension extends ServiceUIModelExtension {
 				.setConvToUIMethod(EmployeeManager.METHOD_ConvLogonUserToUI);
 		uiModelNodeMapList.add(logonUserMap);
 
-
 		employeeExtensionUnion.setUiModelNodeMapList(uiModelNodeMapList);
 		resultList.add(employeeExtensionUnion);
 		return resultList;

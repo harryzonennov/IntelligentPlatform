@@ -53,7 +53,6 @@ public class ProdPlanItemReqProposalManager {
 	
 	protected Logger logger = LoggerFactory.getLogger(ProdPlanItemReqProposalManager.class);
 
-
 	public List<PageHeaderModel> getPageHeaderModelList(SimpleSEJSONRequest request, String client)
 			throws ServiceEntityConfigureException {
 		DocPageHeaderModelProxy.DocPageHeaderInputPara docPageHeaderInputPara =

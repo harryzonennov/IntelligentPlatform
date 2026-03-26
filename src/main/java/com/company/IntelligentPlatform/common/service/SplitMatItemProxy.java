@@ -20,7 +20,6 @@ import com.company.IntelligentPlatform.common.model.LogonInfo;
 import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 
-
 @Service
 public class SplitMatItemProxy {
 
@@ -205,7 +204,6 @@ public class SplitMatItemProxy {
         }
     }
 
-
     public SplitMatItemModel initSplitModel(DocMatItemNode docMatItemNode, LogonInfo logonInfo)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, MaterialException {
         SplitMatItemModel splitMatItemModel = new SplitMatItemModel();
@@ -249,7 +247,6 @@ public class SplitMatItemProxy {
         return materialStockKeepUnitManager.calculateSplitFlag(
                 requestSplitUnit, docMatItemNode.getClient());
     }
-
 
     /**
      * Splits a document material items list based on their relative material SKUs.
@@ -301,7 +298,6 @@ public class SplitMatItemProxy {
         }
         return resultList;
     }
-
 
     /**
      * In case DocMaterial Item pointing to material with [Single trace] mode and need to split to list of registered
@@ -384,6 +380,5 @@ public class SplitMatItemProxy {
     public int getSplitRegProdMandatory(String client) {
         return StandardSwitchProxy.SWITCH_ON;
     }
-
 
 }

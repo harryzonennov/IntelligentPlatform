@@ -133,7 +133,6 @@ public class InventoryTransferOrderCrossConvertRequest extends
         });
     }
 
-
     @Override
     public void setFilterSelectedMatItem(IFilterSelectedMatItem filterSelectedMatItem) {
         super.setFilterSelectedMatItem((docMatItemNode, materialStockKeepUnit, targetServiceModel) -> {

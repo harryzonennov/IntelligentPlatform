@@ -41,7 +41,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "workCalendarDayItemEditorController")
 @RequestMapping(value = "/workCalendarDayItem")

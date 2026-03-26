@@ -1,6 +1,5 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-
 /**
  * Request mode to calculate Available store amount
  *

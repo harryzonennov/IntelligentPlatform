@@ -6,7 +6,6 @@ import com.company.IntelligentPlatform.common.model.CalendarTemplate;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 
-
 @Component
 public class CalendarTemplateSearchModel extends SEUIComModel {
 

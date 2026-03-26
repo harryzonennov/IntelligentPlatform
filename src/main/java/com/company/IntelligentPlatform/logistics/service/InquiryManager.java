@@ -1,5 +1,7 @@
 package com.company.IntelligentPlatform.logistics.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +42,9 @@ public class InquiryManager extends ServiceEntityManager {
 	public static final String METHOD_ConvInquiryToUI = "convInquiryToUI";
 
 	public static final String METHOD_ConvUIToInquiry = "convUIToInquiry";
+    @PersistenceContext
+    private EntityManager entityManager;
+
 
 	@Autowired
 	protected InquiryRepository inquiryDAO;
@@ -83,8 +88,6 @@ public class InquiryManager extends ServiceEntityManager {
 				this.statusLanMap, InquiryUIModel.class, IDocumentNodeFieldConstant.STATUS);
 	}
 
-
-
 	@Override
 	public ServiceEntityNode newRootEntityNode(String client)
 			throws ServiceEntityConfigureException {
@@ -107,7 +110,6 @@ public class InquiryManager extends ServiceEntityManager {
 		return (InquiryParty) this.getEntityNodeByKeyList(ServiceCollectionsHelper.asList(key1,
 				key2), InquiryParty.NODENAME, client, null);
 	}
-
 
 	public void convInquiryToUI(Inquiry inquiry, InquiryUIModel inquiryUIModel)
 			throws ServiceEntityInstallationException {
@@ -192,7 +194,7 @@ public class InquiryManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(inquiryDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inquiryDAO));
 	}
 
 	@PostConstruct

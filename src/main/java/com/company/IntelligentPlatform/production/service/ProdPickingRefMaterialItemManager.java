@@ -40,10 +40,8 @@ import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 
-
 @Service
 public class ProdPickingRefMaterialItemManager {
-
 
 	public static final String METHOD_ConvProdPickingRefMaterialItemToUI = "convProdPickingRefMaterialItemToUI";
 
@@ -147,8 +145,6 @@ public class ProdPickingRefMaterialItemManager {
 		}
 		return prodPickingRefMaterialItem;
 	}
-
-
 
 	/**
 	 * Logic to get free storage according to the reference Material SKU
@@ -700,7 +696,6 @@ public class ProdPickingRefMaterialItemManager {
 		return materialStockKeepUnitManager.mergeStorageUnitCore(storageCoreUnitList, prodPickingRefMaterialItem.getClient());
 	}
 
-
 	/**
 	 * Logic to get all the accountable reserved outbound item list from current picking material item
 	 *
@@ -745,7 +740,6 @@ public class ProdPickingRefMaterialItemManager {
 				.getEntityNodeListByKey(prodOrderItemUUID, "refProdOrderItemUUID", ProdPickingRefMaterialItem.NODENAME, client, null);
 		return prodPickingRefMaterialItemList;
 	}
-
 
 	/**
 	 * @param prodPickingRefMaterialItemList
@@ -838,8 +832,6 @@ public class ProdPickingRefMaterialItemManager {
 		return prodPickingExtendAmountModel;
 	}
 
-
-
 	public void convProdPickingRefMaterialItemToUI(ProdPickingRefMaterialItem prodPickingRefMaterialItem,
 												   ProdPickingRefMaterialItemUIModel prodPickingRefMaterialItemUIModel)
 			throws ServiceEntityInstallationException, ServiceEntityConfigureException {
@@ -912,7 +904,6 @@ public class ProdPickingRefMaterialItemManager {
 			}
 		}
 	}
-
 
 	private String getAmountLabelUnion(ProdPickingRefMaterialItem prodPickingRefMaterialItem, double amount) throws MaterialException,
 			ServiceEntityConfigureException {
@@ -1011,7 +1002,6 @@ public class ProdPickingRefMaterialItemManager {
 		}
 	}
 
-
 	/**
 	 * [Internal method] Convert from SE model to UI model
 	 *
@@ -1025,6 +1015,5 @@ public class ProdPickingRefMaterialItemManager {
 			prodPickingRefMaterialItemUIModel.setRefProdOrderUUID(productionOrder.getUuid());
 		}
 	}
-
 
 }

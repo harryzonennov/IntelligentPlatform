@@ -18,7 +18,6 @@ import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel
 import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
 import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
 
-
 @Component
 public class InquirySearchModel extends SEUIComModel {
 

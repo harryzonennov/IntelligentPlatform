@@ -286,7 +286,6 @@ public class QualityInspectOrderServiceUIModelExtension extends
 				.setConvToUIMethod(QualityInspectOrderManager.METHOD_ConvReservedDocumentToUI);
 		uiModelNodeMapList.add(reservedOrderFromMatItemMap);
 
-
 		Class<?>[] warehouseConvToUIParas = { Warehouse.class,
 				QualityInspectOrderUIModel.class };
 		Class<?>[] warehouseAreaConvToUIParas = { WarehouseArea.class,

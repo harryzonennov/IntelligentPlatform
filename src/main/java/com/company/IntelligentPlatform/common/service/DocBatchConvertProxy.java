@@ -127,7 +127,6 @@ public class DocBatchConvertProxy {
         return resultList;
     }
 
-
     /**
      * Logic to get the Existed & Proper Source Doc Material Item list for
      * batch Target order creation.
@@ -169,6 +168,5 @@ public class DocBatchConvertProxy {
         }
         return targetDocMatItemList;
     }
-
 
 }

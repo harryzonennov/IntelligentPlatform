@@ -36,7 +36,6 @@ public class PurchaseRequestServiceUIModel extends ServiceUIModule {
 	@IServiceUIModuleFieldConfig(nodeName = PurchaseRequestAttachment.NODENAME, nodeInstId = PurchaseRequestAttachment.NODENAME)
 	protected List<PurchaseRequestAttachmentUIModel> purchaseRequestAttachmentUIModelList = new ArrayList<>();
 
-
 	public List<PurchaseRequestMaterialItemServiceUIModel> getPurchaseRequestMaterialItemUIModelList() {
 		return purchaseRequestMaterialItemUIModelList;
 	}

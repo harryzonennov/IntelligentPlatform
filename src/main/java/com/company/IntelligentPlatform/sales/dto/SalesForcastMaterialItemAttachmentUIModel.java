@@ -7,5 +7,4 @@ import com.company.IntelligentPlatform.common.dto.DocAttachmentNodeUIModel;
 
 public class SalesForcastMaterialItemAttachmentUIModel extends DocAttachmentNodeUIModel {
 
-
 }

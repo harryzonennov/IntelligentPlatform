@@ -113,7 +113,6 @@ public class ProductionOrderItemSpecifier extends DocumentContentSpecifier<Produ
         return productionOrderItemServiceModel.getProdOrderItemReqProposalList();
     }
 
-
     @Override
     public Map<Integer, String> getStatusMap(String lanCode) throws ServiceEntityInstallationException {
         return productionOrderManager.initStatusMap(lanCode);

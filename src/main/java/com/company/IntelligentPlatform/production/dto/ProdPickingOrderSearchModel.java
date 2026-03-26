@@ -8,7 +8,6 @@ import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.common.controller.SEUIComModel;
 import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
 
-
 @Component
 public class ProdPickingOrderSearchModel extends SEUIComModel {
 

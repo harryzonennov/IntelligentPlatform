@@ -122,7 +122,6 @@ public class ServiceExtensionManager {
 		return (ServiceExtensionSetting) serviceExtensionSettingManager.newRootEntityNode(client);
 	}
 
-
 	public List<ServiceEntityNode> batchParseFieldSettingCore(Class<?> uiModelClass,
 														   ServiceExtensionSetting serviceExtensionSetting)
 			throws ServiceEntityConfigureException {

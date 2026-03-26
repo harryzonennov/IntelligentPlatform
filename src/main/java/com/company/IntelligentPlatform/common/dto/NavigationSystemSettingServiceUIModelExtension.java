@@ -27,7 +27,6 @@ public class NavigationSystemSettingServiceUIModelExtension extends ServiceUIMod
     @Autowired
     protected DocActionNodeProxy docActionNodeProxy;
 
-
     public List<ServiceUIModelExtension> getChildUIModelExtensions() throws ServiceEntityConfigureException {
         List<ServiceUIModelExtension> resultList = new ArrayList<>();
         resultList.add(navigationGroupSettingServiceUIModelExtension);
@@ -71,7 +70,6 @@ public class NavigationSystemSettingServiceUIModelExtension extends ServiceUIMod
         return resultList;
     }
 
-
     @Override
     public List<ServiceUIModelExtensionUnion> genUIModelExtensionUnion() {
         List<ServiceUIModelExtensionUnion> resultList = new ArrayList<>();
@@ -97,6 +95,5 @@ public class NavigationSystemSettingServiceUIModelExtension extends ServiceUIMod
         resultList.add(navigationSystemSettingExtensionUnion);
         return resultList;
     }
-
 
 }

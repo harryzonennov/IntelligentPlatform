@@ -28,7 +28,6 @@ import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Service
 public class ProdPickingRefOrderltemManager {
 
@@ -189,7 +188,6 @@ public class ProdPickingRefOrderltemManager {
                         storageCoreUnit.getRefUnitUUID(),
                         storageCoreUnit.getAmount(), client);
     }
-
 
     /**
      * Logic to refresh update ref Order item

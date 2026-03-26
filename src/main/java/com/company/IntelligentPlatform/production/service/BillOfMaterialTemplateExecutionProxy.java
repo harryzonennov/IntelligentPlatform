@@ -118,7 +118,6 @@ public class BillOfMaterialTemplateExecutionProxy extends DocActionExecutionProx
         return null;
     }
 
-
     @Override
     public DocumentContentSpecifier<BillOfMaterialTemplateServiceModel, BillOfMaterialTemplate,
             BillOfMaterialTemplateItem> getDocumentContentSpecifier() {
@@ -139,7 +138,6 @@ public class BillOfMaterialTemplateExecutionProxy extends DocActionExecutionProx
     public ServiceEntityManager getServiceEntityManager() {
         return billOfMaterialTemplateManager;
     }
-
 
     public void executeActionCore(
             BillOfMaterialTemplateServiceModel billOfMaterialTemplateServiceModel,

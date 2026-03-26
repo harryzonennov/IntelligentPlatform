@@ -40,7 +40,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
-
 @Scope("session")
 @Controller(value = "prodPickingOrderEditorController")
 @RequestMapping(value = "/prodPickingOrder")
@@ -166,7 +165,6 @@ public class ProdPickingOrderEditorController extends SEEditorController {
         return serviceBasicUtilityController.convUIModuleList(ProdPickingRefMaterialItemUIModel.class, rawList,
                 prodPickingOrderManager, prodPickingRefMaterialItemServiceUIModelExtension);
     }
-
 
     /**
      * pre-check if the edit object list could be locked, whether the EX-lock
@@ -336,7 +334,6 @@ public class ProdPickingOrderEditorController extends SEEditorController {
                 });
     }
 
-
     String executeActionCore(@RequestBody String request,
                              DocActionNodeProxy.IActionExecutor<ProdPickingOrderServiceModel> iActionExecutor) {
         return serviceBasicUtilityController.defaultActionServiceWrapper(request, AOID_RESOURCE,
@@ -388,7 +385,6 @@ public class ProdPickingOrderEditorController extends SEEditorController {
 
                 }, prodPickingOrderServiceUIModelExtension);
     }
-
 
     private ProdPickingOrderServiceModel parseToServiceModel(String request)
             throws ServiceModuleProxyException, ServiceEntityConfigureException, ServiceUIModuleProxyException {

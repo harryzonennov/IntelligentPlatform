@@ -14,7 +14,9 @@ import com.company.IntelligentPlatform.common.dto.CalendarTempWorkScheduleUIMode
 import com.company.IntelligentPlatform.common.dto.CalendarTemplateItemUIModel;
 import com.company.IntelligentPlatform.common.dto.CalendarTemplateSearchModel;
 import com.company.IntelligentPlatform.common.dto.CalendarTemplateUIModel;
-// TODO-DAO: import ...CalendarTemplateDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.CalendarTemplateRepository;
 import com.company.IntelligentPlatform.common.model.CalendarTempWorkSchedule;
 import com.company.IntelligentPlatform.common.model.CalendarTemplate;
 import com.company.IntelligentPlatform.common.model.CalendarTemplateConfigureProxy;
@@ -49,9 +51,11 @@ public class CalendarTemplateManager extends ServiceEntityManager {
 	@Autowired
 	protected BsearchService bsearchService;
 
-	// TODO-DAO: @Autowired
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	// TODO-DAO: 	protected CalendarTemplateDAO calendarTemplateDAO;
+	@Autowired
+	protected CalendarTemplateRepository calendarTemplateDAO;
 
 	@Autowired
 	protected CalendarTemplateConfigureProxy calendarTemplateConfigureProxy;
@@ -141,7 +145,7 @@ public class CalendarTemplateManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(calendarTemplateDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, calendarTemplateDAO));
 	}
 
 	@PostConstruct

@@ -144,7 +144,6 @@ public class MaterialServiceUIModelExtension extends ServiceUIModelExtension {
 				.setConvToUIMethod(MaterialManager.METHOD_ConvMaterialTypeToUI);
 		uiModelNodeMapList.add(materialTypeMap);
 
-
 		UIModelNodeMapConfigure corporateSupplierConfigure = new UIModelNodeMapConfigure();
 		corporateSupplierConfigure.setSeName(CorporateCustomer.SENAME);
 		corporateSupplierConfigure.setNodeName(CorporateCustomer.NODENAME);
@@ -166,6 +165,5 @@ public class MaterialServiceUIModelExtension extends ServiceUIModelExtension {
 		resultList.add(materialExtensionUnion);
 		return resultList;
 	}
-
 
 }

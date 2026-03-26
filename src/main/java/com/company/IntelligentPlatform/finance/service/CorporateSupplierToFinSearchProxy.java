@@ -46,13 +46,10 @@ public class CorporateSupplierToFinSearchProxy extends ServiceSearchProxy {
 		return corporateCustomerManager.getAuthorizationResource();
 	}
 
-
 	@Override
 	public Map<Integer, String> getStatusMap(String languageCode) throws ServiceEntityInstallationException {
 		return null;
 	}
-
-
 
 	@Override
 	public List<BSearchNodeComConfigure> getBasicSearchNodeConfigureList(SearchContext searchContext) throws SearchConfigureException {

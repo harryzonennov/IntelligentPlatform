@@ -104,7 +104,6 @@ public class RepairProdOrderServiceUIModel extends ServiceUIModule {
 		this.repairProdOrderAttachmentList = repairProdOrderAttachmentList;
 	}
 
-
 	public List<RepairProdTargetMatItemServiceUIModel> getRepairProdTargetMatItemList() {
 		return repairProdTargetMatItemList;
 	}

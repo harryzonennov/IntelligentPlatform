@@ -119,7 +119,6 @@ public class ProdReturnOrderActionExecutionProxy
         return prodPickingOrderManager;
     }
 
-
     public void executeActionCore(ProdPickingOrderServiceModel prodPickingOrderServiceModel, int docActionCode,
                                   SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException {

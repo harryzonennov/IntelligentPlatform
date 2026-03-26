@@ -13,7 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
 import com.company.IntelligentPlatform.common.dto.ServiceExtensionSettingUIModel;
-// TODO-DAO: import ...ServiceExtensionSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.ServiceExtensionSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
 import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
@@ -39,11 +42,11 @@ public class ServiceExtensionSettingManager extends ServiceEntityManager {
 	public static final String METHOD_ConvServiceExtensionSettingToUI = "convServiceExtensionSettingToUI";
 
 	public static final String METHOD_ConvUIToServiceExtensionSetting = "convUIToServiceExtensionSetting";
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	protected ServiceExtensionSettingDAO serviceExtensionSettingDAO;
-
+    @Autowired
+    protected ServiceExtensionSettingRepository serviceExtensionSettingDAO;
 	@Autowired
 	protected ServiceExtensionSettingConfigureProxy serviceExtensionSettingConfigureProxy;
 
@@ -100,7 +103,6 @@ public class ServiceExtensionSettingManager extends ServiceEntityManager {
 		pageHeaderModel.setIndex(index);
 		return pageHeaderModel;
 	}
-
 
 	public ServiceExtensionSetting newDummyServiceExtensionSetting(String refSEName, String refNodeName,
 																   String refNodeInstId, String client)
@@ -228,17 +230,15 @@ public class ServiceExtensionSettingManager extends ServiceEntityManager {
 		return serviceLanHelper.getLanMap();
 	}
 
-
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(serviceExtensionSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, serviceExtensionSettingDAO));
 	}
 
 	@PostConstruct
 	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(serviceExtensionSettingConfigureProxy);
 	}
-
 
 	@Override
 	public ServiceSearchProxy getSearchProxy() {

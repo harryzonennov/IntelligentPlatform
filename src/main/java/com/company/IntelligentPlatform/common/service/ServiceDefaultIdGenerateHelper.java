@@ -798,7 +798,6 @@ public class ServiceDefaultIdGenerateHelper {
 
     }
 
-
     /**
      * Core Logic to generate the Prefix, exclude the zeros and run-time index
      *
@@ -844,7 +843,6 @@ public class ServiceDefaultIdGenerateHelper {
         }
         return prefix + indexString;
     }
-
 
     public String genSerialNumberIdCore(int lastIndex, String prefixCode1,
                                         int seperator1, String seperator1Json, String prefixTimeCode,
@@ -932,7 +930,6 @@ public class ServiceDefaultIdGenerateHelper {
                 serialNumberSetting.getCoreStartNumber(),
                 serialNumberSetting.getCoreStepSize());
     }
-
 
     public String genSerialNumberIdCore(int lastIndex,
                                         SerialNumberSetting serialNumberSetting, List<ServiceEntityNode> rawSEList)

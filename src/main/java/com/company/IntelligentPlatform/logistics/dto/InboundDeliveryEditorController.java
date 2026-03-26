@@ -201,7 +201,6 @@ public class InboundDeliveryEditorController extends SEEditorController {
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */
@@ -222,7 +221,6 @@ public class InboundDeliveryEditorController extends SEEditorController {
 		return serviceBasicUtilityController.uploadAttachmentText(request, AOID_RESOURCE,
 				genDocAttachmentProcessPara());
 	}
-
 
 	@RequestMapping(value = "/newModuleService", produces = "text/html;charset=UTF-8")
 	public @ResponseBody String newModuleService(@RequestBody String request) {

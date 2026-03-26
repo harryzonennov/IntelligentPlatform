@@ -72,7 +72,6 @@ public class CalendarWorkTimeSettingEditorController extends SEEditorController 
 		binder.registerCustomEditor(double.class, new DoubleEditor());
 	}
 
-
 	protected String getPreWarnMsg(String key, Map<String, String> preWarnMap) {
 		return preWarnMap.get(key);
 	}
@@ -112,7 +111,6 @@ public class CalendarWorkTimeSettingEditorController extends SEEditorController 
 		return super
 				.checkDuplicateIDCore(simpleRequest, calendarSettingManager);
 	}
-
 
 	/**
 	 * pre-check if the edit object list could be locked, whether the EX-lock

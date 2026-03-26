@@ -13,5 +13,4 @@ public class RepairProdOrderAttachment extends ProductionOrderAttachment {
 		super.nodeName = NODENAME;
 	}
 
-
 }

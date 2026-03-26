@@ -72,7 +72,6 @@ public class PurchaseContractMaterialItemManager {
 		return docPageHeaderModelProxy.getPageHeaderModelList(docPageHeaderInputPara, client);
 	}
 
-
 	/**
 	 * [Internal method] Convert from UI model to se
 	 * model:purchaseContractMaterialItem

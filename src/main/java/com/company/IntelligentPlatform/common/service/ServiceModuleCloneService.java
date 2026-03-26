@@ -288,7 +288,6 @@ public class ServiceModuleCloneService {
         }
     }
 
-
     private static List<ServiceEntityNode> deepCloneListServiceEntityNode(
             Field listField, ServiceModule serviceModule)
             throws IllegalArgumentException, IllegalAccessException {
@@ -454,7 +453,6 @@ public class ServiceModuleCloneService {
             this.newUUID = newUUID;
         }
     }
-
 
     private static void updateParentNodeUUIDUnion(ServiceEntityNode parentNode, List<ServiceEntityNode> subNodeList,
                                                   List<ServiceEntityNode> allSENodeList, List<UUIDUnion> uuidUnionList) {

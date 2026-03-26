@@ -1,7 +1,10 @@
 package com.company.IntelligentPlatform.common.model;
 
 
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+@Entity
+@Table(name = "ServiceExceptionRecord", schema = "platform")
 public class ServiceExceptionRecord extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

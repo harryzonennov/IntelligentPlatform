@@ -4,7 +4,6 @@ import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProx
 import com.company.IntelligentPlatform.common.model.DocActionNode;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 
-
 public class BillOfMaterialOrderActionNode extends DocActionNode {
 
     public static final String NODENAME = IServiceModelConstants.BillOfMaterialOrderActionNode;
@@ -48,9 +47,6 @@ public class BillOfMaterialOrderActionNode extends DocActionNode {
 
     public static final String NODEINST_ACTION_CANCEL =
             SystemDefDocActionCodeProxy.NODEINST_ACTION_CANCEL;
-
-
-
 
     public BillOfMaterialOrderActionNode() {
         this.nodeName = NODENAME;

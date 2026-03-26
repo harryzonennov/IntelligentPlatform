@@ -4,6 +4,9 @@ import java.util.*;
 
 import jakarta.annotation.PostConstruct;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 import com.company.IntelligentPlatform.sales.dto.*;
 import com.company.IntelligentPlatform.sales.model.*;
 import org.slf4j.Logger;
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
 import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.*;
 import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
 import com.company.IntelligentPlatform.common.service.SystemConfigureCategoryManager;
@@ -39,6 +43,9 @@ public class SalesReturnOrderManager extends ServiceEntityManager {
     public static final String METHOD_ConvSalesReturnOrderToUI = "convSalesReturnOrderToUI";
 
     public static final String METHOD_ConvUIToSalesReturnOrder = "convUIToSalesReturnOrder";
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     protected SalesReturnOrderRepository salesReturnOrderDAO;
@@ -96,12 +103,11 @@ public class SalesReturnOrderManager extends ServiceEntityManager {
 
     public SalesReturnOrderManager() {
         super.seConfigureProxy = new SalesReturnOrderConfigureProxy();
-        // TODO-DAO: super.serviceEntityDAO = new SalesReturnOrderDAO();
     }
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        // TODO-DAO: super.setServiceEntityDAO(salesReturnOrderDAO);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, salesReturnOrderDAO));
     }
 
     @PostConstruct
@@ -179,7 +185,6 @@ public class SalesReturnOrderManager extends ServiceEntityManager {
         rawEntity.setGrossPrice(salesReturnOrderUIModel.getGrossPrice());
         rawEntity.setGrossPriceDisplay(salesReturnOrderUIModel.getGrossPriceDisplay());
     }
-
 
     public ServiceDocumentExtendUIModel convSalesReturnOrderToDocExtUIModel(
             SalesReturnOrderUIModel salesReturnOrderUIModel, LogonInfo logonInfo)

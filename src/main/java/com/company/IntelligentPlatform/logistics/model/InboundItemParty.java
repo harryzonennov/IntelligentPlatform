@@ -7,7 +7,6 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 public class InboundItemParty extends DocItemParty {
 
-
 	public final static String NODENAME = IServiceModelConstants.InboundItemParty;
 
 	public final static String SENAME = InboundDelivery.SENAME;

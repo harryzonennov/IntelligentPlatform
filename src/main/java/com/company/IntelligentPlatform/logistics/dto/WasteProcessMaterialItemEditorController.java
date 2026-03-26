@@ -95,7 +95,6 @@ public class WasteProcessMaterialItemEditorController extends
 				genDocAttachmentProcessPara());
 	}
 
-
 	/**
 	 * Upload the attachment content information.
 	 */

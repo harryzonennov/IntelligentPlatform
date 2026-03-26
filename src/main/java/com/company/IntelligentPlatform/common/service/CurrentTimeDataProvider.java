@@ -16,7 +16,6 @@ import com.company.IntelligentPlatform.common.model.LogonInfo;
 import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
 import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
 
-
 /**
  * 
  * @author Zhang,hang

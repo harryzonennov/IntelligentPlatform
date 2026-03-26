@@ -221,7 +221,6 @@ public class ProdOrderItemReqProposalServiceUIModelExtension extends
 				.addAll(docFlowProxy
 						.getDefMaterialNodeMapConfigureList(ProdOrderItemReqProposal.NODENAME));
 
-
 		Class<?>[] warehouseConvToUIParas = { Warehouse.class,
 				ProdOrderItemReqProposalUIModel.class };
 		uiModelNodeMapList.addAll(logisticsFlowProxy.getDefWarehouseMapConfigureList(new LogisticsFlowProxy.WarehouseNodeMapRequest(

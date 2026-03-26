@@ -22,7 +22,6 @@ public class SystemCodeValueUnionUIModel extends SEUIComModel {
 
 	protected String lanKey;
 
-
 	public int getKeyType() {
 		return this.keyType;
 	}

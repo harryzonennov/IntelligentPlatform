@@ -103,5 +103,4 @@ public class WarehouseStoreSettingSearchModel extends SEUIComModel {
 		this.currentPage = currentPage;
 	}
 
-
 }

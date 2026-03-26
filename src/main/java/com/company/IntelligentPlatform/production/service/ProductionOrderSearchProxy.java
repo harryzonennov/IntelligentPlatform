@@ -23,7 +23,6 @@ import com.company.IntelligentPlatform.common.model.Warehouse;
 import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
 import com.company.IntelligentPlatform.common.service.*;
 
-
 @Service
 public class ProductionOrderSearchProxy extends ServiceSearchProxy{
 
@@ -199,6 +198,5 @@ public class ProductionOrderSearchProxy extends ServiceSearchProxy{
 		searchNodeConfigList.add(searchNodeConfig1);
 		return searchNodeConfigList;
 	}
-
 
 }

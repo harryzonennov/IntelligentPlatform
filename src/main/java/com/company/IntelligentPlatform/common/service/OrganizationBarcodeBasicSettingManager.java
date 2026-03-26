@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.common.dto.OrganizationBarcodeBasicSettingUIModel;
-// TODO-DAO: import ...OrganizationBarcodeBasicSettingDAO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import com.company.IntelligentPlatform.common.repository.OrganizationBarcodeBasicSettingRepository;
+import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
 import com.company.IntelligentPlatform.common.service.DocFlowProxy;
 import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
 import com.company.IntelligentPlatform.common.service.HostCompanyManager;
@@ -29,11 +32,11 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureExcept
 @Transactional
 public class OrganizationBarcodeBasicSettingManager extends
 		ServiceEntityManager {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	// TODO-DAO: @Autowired
-
-	// TODO-DAO: 	OrganizationBarcodeBasicSettingDAO organizationBarcodeBasicSettingDAO;
-
+    @Autowired
+    protected OrganizationBarcodeBasicSettingRepository organizationBarcodeBasicSettingDAO;
 	@Autowired
 	OrganizationBarcodeBasicSettingConfigureProxy organizationBarcodeBasicSettingConfigureProxy;	
 
@@ -42,12 +45,11 @@ public class OrganizationBarcodeBasicSettingManager extends
 
 	public OrganizationBarcodeBasicSettingManager() {
 		super.seConfigureProxy = new OrganizationBarcodeBasicSettingConfigureProxy();
-		// TODO-DAO: super.serviceEntityDAO = new OrganizationBarcodeBasicSettingDAO();
 	}
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		// TODO-DAO: super.setServiceEntityDAO(organizationBarcodeBasicSettingDAO);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, organizationBarcodeBasicSettingDAO));
 	}
 
 	@PostConstruct
