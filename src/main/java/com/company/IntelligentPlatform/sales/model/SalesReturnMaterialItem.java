@@ -12,7 +12,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Cross-module ref: refFinAccountUUID → finance schema
  */
 @Entity
-@Table(name = "SalesReturnMaterialItem", schema = "sales")
+@Table(name = "SalesReturnMaterialItem", catalog = "sales")
 public class SalesReturnMaterialItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

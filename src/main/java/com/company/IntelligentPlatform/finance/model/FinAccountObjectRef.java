@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Links a FinAccount to an account object (Customer, Employee, Org) via refUUID.
  */
 @Entity
-@Table(name = "FinAccountObjectRef", schema = "finance")
+@Table(name = "FinAccountObjectRef", catalog = "finance")
 public class FinAccountObjectRef extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: SalesForcastMaterialItem (schema: sales)
  */
 @Entity
-@Table(name = "SalesForcastMaterialItem", schema = "sales")
+@Table(name = "SalesForcastMaterialItem", catalog = "sales")
 public class SalesForcastMaterialItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

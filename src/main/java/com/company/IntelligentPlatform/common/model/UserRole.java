@@ -10,7 +10,7 @@ import jakarta.persistence.*;
  * Links a LogonUser to a Role (refUUID = Role.uuid)
  */
 @Entity
-@Table(name = "UserRole", schema = "platform")
+@Table(name = "UserRole", catalog = "platform")
 public class UserRole extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * A pre-condition that must be recorded-done before a FinAccount can proceed.
  */
 @Entity
-@Table(name = "FinAccountPrerequirement", schema = "finance")
+@Table(name = "FinAccountPrerequirement", catalog = "finance")
 public class FinAccountPrerequirement extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

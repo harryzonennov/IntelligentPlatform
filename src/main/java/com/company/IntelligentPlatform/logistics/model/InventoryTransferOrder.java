@@ -15,7 +15,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  *   refOutboundDeliveryUUID → OutboundDelivery (same module)
  */
 @Entity
-@Table(name = "InventoryTransferOrder", schema = "logistics")
+@Table(name = "InventoryTransferOrder", catalog = "logistics")
 public class InventoryTransferOrder extends Delivery {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

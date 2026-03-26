@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "City", schema = "platform")
+@Table(name = "City", catalog = "platform")
 public class City extends Location {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

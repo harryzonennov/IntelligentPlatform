@@ -186,6 +186,13 @@ public class AuthController {
             // Cache pre-warm failed — not a fatal error.
             // The first API call will trigger a cache miss and rebuild from DB.
             logger.warn("Auth cache pre-warm failed for user {}: {}", user.getId(), e.getMessage());
+        } catch (RuntimeException e) {
+            // Catches UnexpectedRollbackException and other runtime failures from
+            // the authorization-map build (getRoleList, getAuthorizationACListMap, etc.).
+            // Pre-warm failure is non-fatal — login still succeeds and the first
+            // API call after login will rebuild the cache on demand.
+            logger.warn("Auth cache pre-warm runtime failure for user {}: {} — {}",
+                    user.getId(), e.getClass().getSimpleName(), e.getMessage());
         }
 
         return ResponseEntity.ok(Map.of(

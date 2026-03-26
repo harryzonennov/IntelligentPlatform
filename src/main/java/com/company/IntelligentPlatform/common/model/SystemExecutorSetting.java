@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SystemExecutorSetting", schema = "platform")
+@Table(name = "SystemExecutorSetting", catalog = "platform")
 public class SystemExecutorSetting extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

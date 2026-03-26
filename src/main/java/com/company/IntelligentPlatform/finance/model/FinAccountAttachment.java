@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * New table: FinAccountAttachment (schema: finance)
  */
 @Entity
-@Table(name = "FinAccountAttachment", schema = "finance")
+@Table(name = "FinAccountAttachment", catalog = "finance")
 public class FinAccountAttachment extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

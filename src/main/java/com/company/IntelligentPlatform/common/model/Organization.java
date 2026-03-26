@@ -9,7 +9,7 @@ import jakarta.persistence.*;
  * Hierarchy: ServiceEntityNode → Account → CorporateAccount → Organization
  */
 @Entity
-@Table(name = "Organization", schema = "platform")
+@Table(name = "Organization", catalog = "platform")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Organization extends CorporateAccount {
 

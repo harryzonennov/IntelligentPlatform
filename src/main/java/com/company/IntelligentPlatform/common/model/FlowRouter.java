@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.common.service.SystemSerialParallelProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "FlowRouter", schema = "platform")
+@Table(name = "FlowRouter", catalog = "platform")
 public class FlowRouter extends ServiceEntityNode {
 
     public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

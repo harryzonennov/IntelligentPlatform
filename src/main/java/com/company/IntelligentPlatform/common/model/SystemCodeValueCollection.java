@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SystemCodeValueCollection", schema = "platform")
+@Table(name = "SystemCodeValueCollection", catalog = "platform")
 public class SystemCodeValueCollection  extends ServiceEntityNode {
 	
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

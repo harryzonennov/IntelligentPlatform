@@ -12,7 +12,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Records each change to a WarehouseStoreItem (inbound/outbound/transfer events).
  */
 @Entity
-@Table(name = "WarehouseStoreItemLog", schema = "logistics")
+@Table(name = "WarehouseStoreItemLog", catalog = "logistics")
 public class WarehouseStoreItemLog extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

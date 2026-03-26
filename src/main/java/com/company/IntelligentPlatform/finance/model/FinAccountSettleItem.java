@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * Settlement record for a FinAccount against an account object.
  */
 @Entity
-@Table(name = "FinAccountSettleItem", schema = "finance")
+@Table(name = "FinAccountSettleItem", catalog = "finance")
 public class FinAccountSettleItem extends ReferenceNode {
 
 	@Column(name = "settleAccountValue")

@@ -24,7 +24,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  *   refOutboundItemUUID  → logistics schema
  */
 @Entity
-@Table(name = "SalesContractMaterialItem", schema = "sales")
+@Table(name = "SalesContractMaterialItem", catalog = "sales")
 public class SalesContractMaterialItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

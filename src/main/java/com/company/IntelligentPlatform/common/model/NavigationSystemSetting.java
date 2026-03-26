@@ -8,7 +8,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "NavigationSystemSetting", schema = "platform")
+@Table(name = "NavigationSystemSetting", catalog = "platform")
 public class NavigationSystemSetting  extends ServiceEntityNode {
 	
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

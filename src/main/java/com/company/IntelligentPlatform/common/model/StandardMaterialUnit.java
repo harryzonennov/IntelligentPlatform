@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "StandardMaterialUnit", schema = "platform")
+@Table(name = "StandardMaterialUnit", catalog = "platform")
 public class StandardMaterialUnit extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

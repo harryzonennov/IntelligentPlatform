@@ -13,7 +13,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Note: name preserved as "Forcast" (original typo in source).
  */
 @Entity
-@Table(name = "SalesForcast", schema = "sales")
+@Table(name = "SalesForcast", catalog = "sales")
 public class SalesForcast extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -10,7 +10,7 @@ import jakarta.persistence.*;
  * Links a LogonUser to an Organization with a work role (refUUID = Organization.uuid)
  */
 @Entity
-@Table(name = "LogonUserOrgReference", schema = "platform")
+@Table(name = "LogonUserOrgReference", catalog = "platform")
 public class LogonUserOrgReference extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

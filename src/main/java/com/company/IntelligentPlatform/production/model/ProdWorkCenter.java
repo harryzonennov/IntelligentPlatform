@@ -12,7 +12,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * In the unified project it extends ServiceEntityNode directly to avoid cross-schema inheritance.
  */
 @Entity
-@Table(name = "ProdWorkCenter", schema = "production")
+@Table(name = "ProdWorkCenter", catalog = "production")
 public class ProdWorkCenter extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

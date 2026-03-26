@@ -14,7 +14,7 @@ import com.company.IntelligentPlatform.common.model.*;
  *
  */
 @Entity
-@Table(name = "OrganizationBarcodeBasicSetting", schema = "platform")
+@Table(name = "OrganizationBarcodeBasicSetting", catalog = "platform")
 public class OrganizationBarcodeBasicSetting extends ServiceEntityNode {
 
 	public static final int EAN13_COUNTRYHEAD_690 = 690;

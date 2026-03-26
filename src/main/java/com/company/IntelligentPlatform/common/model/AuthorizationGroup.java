@@ -8,7 +8,7 @@ import com.company.IntelligentPlatform.common.service.SystemSerialParallelProxy;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "AuthorizationGroup", schema = "platform")
+@Table(name = "AuthorizationGroup", catalog = "platform")
 public class AuthorizationGroup extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

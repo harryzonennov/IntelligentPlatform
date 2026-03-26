@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "MessageTemplate", schema = "platform")
+@Table(name = "MessageTemplate", catalog = "platform")
 public class MessageTemplate extends ServiceEntityNode {
 
     public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

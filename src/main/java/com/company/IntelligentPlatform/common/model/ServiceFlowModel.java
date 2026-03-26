@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 
 @Entity
-@Table(name = "ServiceFlowModel", schema = "platform")
+@Table(name = "ServiceFlowModel", catalog = "platform")
 public class ServiceFlowModel extends ServiceEntityNode{
 
     public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

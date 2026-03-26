@@ -6,7 +6,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 @Entity
-@Table(name = "CalendarTemplate", schema = "platform")
+@Table(name = "CalendarTemplate", catalog = "platform")
 public class CalendarTemplate extends ServiceEntityNode{
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

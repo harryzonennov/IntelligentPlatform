@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: ProductionOrderItem (schema: production)
  */
 @Entity
-@Table(name = "ProductionOrderItem", schema = "production")
+@Table(name = "ProductionOrderItem", catalog = "production")
 public class ProductionOrderItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

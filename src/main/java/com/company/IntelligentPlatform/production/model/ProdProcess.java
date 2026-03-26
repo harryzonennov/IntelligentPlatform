@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Table: ProdProcess (schema: production)
  */
 @Entity
-@Table(name = "ProdProcess", schema = "production")
+@Table(name = "ProdProcess", catalog = "production")
 public class ProdProcess extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

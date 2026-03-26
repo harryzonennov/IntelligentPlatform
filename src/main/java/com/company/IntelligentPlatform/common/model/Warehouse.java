@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.ISQLSepcifyAttribute;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "Warehouse", schema = "platform")
+@Table(name = "Warehouse", catalog = "platform")
 public class Warehouse extends Organization {
 
 	public final static String NODENAME = ServiceEntityNode.NODENAME_ROOT;

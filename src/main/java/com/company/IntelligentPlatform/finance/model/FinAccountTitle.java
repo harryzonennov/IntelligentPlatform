@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Chart-of-accounts hierarchy node — uses parentAccountTitleUUID for tree structure.
  */
 @Entity
-@Table(name = "FinAccountTitle", schema = "finance")
+@Table(name = "FinAccountTitle", catalog = "finance")
 public class FinAccountTitle extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

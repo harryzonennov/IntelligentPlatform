@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "AuthorizationObject", schema = "platform")
+@Table(name = "AuthorizationObject", catalog = "platform")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class AuthorizationObject extends ServiceEntityNode {
 

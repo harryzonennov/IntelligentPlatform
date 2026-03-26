@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: RepairProdOrder (schema: production)
  */
 @Entity
-@Table(name = "RepairProdOrder", schema = "production")
+@Table(name = "RepairProdOrder", catalog = "production")
 public class RepairProdOrder extends ProductionOrder {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.common.service.StandardSystemDefaultProxy
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "WorkCalendar", schema = "platform")
+@Table(name = "WorkCalendar", catalog = "platform")
 public class WorkCalendar extends ServiceEntityNode{
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

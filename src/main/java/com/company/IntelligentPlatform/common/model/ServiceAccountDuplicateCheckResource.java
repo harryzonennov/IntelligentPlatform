@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.common.model.ISQLSepcifyAttribute;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "ServiceAccountDuplicateCheckResource", schema = "platform")
+@Table(name = "ServiceAccountDuplicateCheckResource", catalog = "platform")
 public class ServiceAccountDuplicateCheckResource extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

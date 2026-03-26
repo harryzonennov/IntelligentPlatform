@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Audit log entry for a FinAccount status change action.
  */
 @Entity
-@Table(name = "FinAccountLog", schema = "finance")
+@Table(name = "FinAccountLog", catalog = "finance")
 public class FinAccountLog extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

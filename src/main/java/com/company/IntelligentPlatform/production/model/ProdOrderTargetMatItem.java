@@ -13,7 +13,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Represents a target output material item of a production order.
  */
 @Entity
-@Table(name = "ProdOrderTargetMatItem", schema = "production")
+@Table(name = "ProdOrderTargetMatItem", catalog = "production")
 public class ProdOrderTargetMatItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

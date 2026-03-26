@@ -15,7 +15,7 @@ import com.company.IntelligentPlatform.common.model.*;
  * 
  */
 @Entity
-@Table(name = "OrganizationFunction", schema = "platform")
+@Table(name = "OrganizationFunction", catalog = "platform")
 public class OrganizationFunction extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;	

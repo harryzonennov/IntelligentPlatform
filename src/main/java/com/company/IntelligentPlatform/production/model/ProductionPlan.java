@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: ProductionPlan (schema: production)
  */
 @Entity
-@Table(name = "ProductionPlan", schema = "production")
+@Table(name = "ProductionPlan", catalog = "production")
 public class ProductionPlan extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

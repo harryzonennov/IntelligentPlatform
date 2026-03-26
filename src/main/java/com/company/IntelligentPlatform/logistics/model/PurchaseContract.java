@@ -14,7 +14,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  *   refFinAccountUUID → FinAccount (finance module)
  */
 @Entity
-@Table(name = "PurchaseContract", schema = "logistics")
+@Table(name = "PurchaseContract", catalog = "logistics")
 public class PurchaseContract extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

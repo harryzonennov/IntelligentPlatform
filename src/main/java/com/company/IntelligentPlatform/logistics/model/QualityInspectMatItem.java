@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: QualityInspectMatItem (schema: logistics)
  */
 @Entity
-@Table(name = "QualityInspectMatItem", schema = "logistics")
+@Table(name = "QualityInspectMatItem", catalog = "logistics")
 public class QualityInspectMatItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

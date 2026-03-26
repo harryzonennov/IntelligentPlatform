@@ -4,7 +4,7 @@ package com.company.IntelligentPlatform.common.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 @Entity
-@Table(name = "ServiceVersionRecord", schema = "platform")
+@Table(name = "ServiceVersionRecord", catalog = "platform")
 public class ServiceVersionRecord extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

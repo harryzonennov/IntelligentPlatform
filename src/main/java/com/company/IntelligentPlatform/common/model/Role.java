@@ -8,7 +8,7 @@ import jakarta.persistence.*;
  * New table: Role (schema: common)
  */
 @Entity
-@Table(name = "Role", schema = "platform")
+@Table(name = "Role", catalog = "platform")
 public class Role extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SystemAuthorizationObject", schema = "platform")
+@Table(name = "SystemAuthorizationObject", catalog = "platform")
 public class SystemAuthorizationObject extends AuthorizationObject {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

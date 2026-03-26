@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Reusable BOM template that BillOfMaterialOrder instances can reference via refTemplateUUID.
  */
 @Entity
-@Table(name = "BillOfMaterialTemplate", schema = "production")
+@Table(name = "BillOfMaterialTemplate", catalog = "production")
 public class BillOfMaterialTemplate extends BillOfMaterialOrder {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

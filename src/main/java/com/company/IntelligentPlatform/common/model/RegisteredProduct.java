@@ -8,7 +8,7 @@ import java.util.Date;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "RegisteredProduct", schema = "platform")
+@Table(name = "RegisteredProduct", catalog = "platform")
 public class RegisteredProduct extends MaterialStockKeepUnit{
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

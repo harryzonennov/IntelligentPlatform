@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: WasteProcessOrder (schema: logistics)
  */
 @Entity
-@Table(name = "WasteProcessOrder", schema = "logistics")
+@Table(name = "WasteProcessOrder", catalog = "logistics")
 public class WasteProcessOrder extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

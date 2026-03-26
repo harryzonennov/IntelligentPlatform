@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Hierarchical sales territory structure (up to 4 levels).
  */
 @Entity
-@Table(name = "SalesArea", schema = "sales")
+@Table(name = "SalesArea", catalog = "sales")
 public class SalesArea extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

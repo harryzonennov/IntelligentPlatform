@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Cross-module ref: refStoreItemUUID → WarehouseStoreItem (same module)
  */
 @Entity
-@Table(name = "InboundItem", schema = "logistics")
+@Table(name = "InboundItem", catalog = "logistics")
 public class InboundItem extends DeliveryItem {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -15,7 +15,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * separate from the base document status field.
  */
 @Entity
-@Table(name = "FinAccount", schema = "finance")
+@Table(name = "FinAccount", catalog = "finance")
 public class FinAccount extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

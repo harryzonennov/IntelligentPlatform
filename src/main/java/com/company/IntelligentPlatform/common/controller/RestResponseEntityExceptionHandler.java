@@ -56,15 +56,14 @@ public class RestResponseEntityExceptionHandler extends
 	}
 
 	@ExceptionHandler({UnexpectedRollbackException.class, TransactionException.class})
-	public @ResponseBody String handleTransactionException(TransactionException ex,
+	public ResponseEntity<Map<String, Object>> handleTransactionException(TransactionException ex,
 			WebRequest request) {
-		List<SimpleSEMessageResponse> errorMessageList = new ArrayList<SimpleSEMessageResponse>();
-		SimpleSEMessageResponse messageResponse = new SimpleSEMessageResponse();
-		messageResponse.setMessageContent(ex.getMessage());
-		messageResponse
-				.setMessageLevel(SimpleSEMessageResponse.MESSAGELEVEL_ERROR);
-		errorMessageList.add(messageResponse);
-		return ServiceJSONParser.generateErrorJSONMessageArray(errorMessageList);
+		log.error("Transaction error: {} — {}", request.getDescription(false), ex.getMessage(), ex);
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+				.body(Map.of(
+						"error", "Internal Server Error",
+						"message", "A transaction error occurred"
+				));
 	}
 
 	// -------------------------------------------------------------------------

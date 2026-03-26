@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: BillOfMaterialOrder (schema: production)
  */
 @Entity
-@Table(name = "BillOfMaterialOrder", schema = "production")
+@Table(name = "BillOfMaterialOrder", catalog = "production")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class BillOfMaterialOrder extends DocumentContent {
 

@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Represents a resource (machine, person, tool) attached to a work center.
  */
 @Entity
-@Table(name = "ProductionResourceUnion", schema = "production")
+@Table(name = "ProductionResourceUnion", catalog = "production")
 public class ProductionResourceUnion extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

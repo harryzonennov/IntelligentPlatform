@@ -9,7 +9,7 @@ import jakarta.persistence.*;
  * New table: FinanceDocument (schema: finance)
  */
 @Entity
-@Table(name = "FinanceDocument", schema = "finance")
+@Table(name = "FinanceDocument", catalog = "finance")
 public class FinanceDocument extends ServiceEntityNode {
 
 	@Column(name = "documentType")

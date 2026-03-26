@@ -8,7 +8,7 @@ import com.company.IntelligentPlatform.common.model.DocumentContent;
 import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Entity
-@Table(name = "Material", schema = "platform")
+@Table(name = "Material", catalog = "platform")
 public class Material extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * New table: LogonUser (schema: platform)
  */
 @Entity
-@Table(name = "LogonUser", schema = "platform")
+@Table(name = "LogonUser", catalog = "platform")
 public class LogonUser extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

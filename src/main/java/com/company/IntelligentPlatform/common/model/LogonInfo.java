@@ -16,7 +16,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "LogonInfo", schema = "platform")
+@Table(name = "LogonInfo", catalog = "platform")
 public class LogonInfo extends ServiceEntityNode implements Serializable {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SystemConfigureCategory", schema = "platform")
+@Table(name = "SystemConfigureCategory", catalog = "platform")
 public class SystemConfigureCategory extends ServiceEntityNode {
 	
 	public static final int SCENARIO_MODE_OFF = 1;

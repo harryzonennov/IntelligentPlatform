@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: InventoryTransferItem (schema: logistics)
  */
 @Entity
-@Table(name = "InventoryTransferItem", schema = "logistics")
+@Table(name = "InventoryTransferItem", catalog = "logistics")
 public class InventoryTransferItem extends DeliveryItem {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

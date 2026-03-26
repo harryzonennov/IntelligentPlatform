@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SerialNumberSetting", schema = "platform")
+@Table(name = "SerialNumberSetting", catalog = "platform")
 public class SerialNumberSetting extends ServiceEntityNode {
 	
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

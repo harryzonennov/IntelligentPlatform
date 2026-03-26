@@ -10,7 +10,7 @@ import java.time.LocalDate;
  * Hierarchy: ServiceEntityNode → Account → CorporateAccount → CorporateCustomer
  */
 @Entity
-@Table(name = "CorporateCustomer", schema = "platform")
+@Table(name = "CorporateCustomer", catalog = "platform")
 public class CorporateCustomer extends CorporateAccount {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

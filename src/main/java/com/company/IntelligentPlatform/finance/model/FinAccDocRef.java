@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Links a FinAccount to a source business document via refUUID.
  */
 @Entity
-@Table(name = "FinAccDocRef", schema = "finance")
+@Table(name = "FinAccDocRef", catalog = "finance")
 public class FinAccDocRef extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

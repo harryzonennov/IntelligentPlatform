@@ -14,7 +14,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  *   refInboundDeliveryUUID → logistics/InboundDelivery
  */
 @Entity
-@Table(name = "SalesReturnOrder", schema = "sales")
+@Table(name = "SalesReturnOrder", catalog = "sales")
 public class SalesReturnOrder extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

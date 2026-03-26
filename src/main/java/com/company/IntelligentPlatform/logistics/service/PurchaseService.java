@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Replaces: ThorsteinLogistics - PurchaseContractManager, PurchaseRequestManager,
- *           PurchaseOrderManager, PurchaseReturnOrderManager, InquiryManager
+ *           PurchaseReturnOrderManager, InquiryManager
  */
 @Service
 @Transactional
@@ -22,9 +22,6 @@ public class PurchaseService extends ServiceEntityService {
 
 	@Autowired
 	protected PurchaseRequestRepository purchaseRequestRepository;
-
-	@Autowired
-	protected PurchaseOrderRepository purchaseOrderRepository;
 
 	@Autowired
 	protected PurchaseReturnOrderRepository purchaseReturnOrderRepository;
@@ -102,42 +99,6 @@ public class PurchaseService extends ServiceEntityService {
 
 	public void deleteRequest(String uuid) {
 		deleteSENode(purchaseRequestRepository, uuid);
-	}
-
-	// --- PurchaseOrder ---
-
-	public PurchaseOrder createOrder(PurchaseOrder order, String userUUID, String orgUUID) {
-		order.setStatus(PurchaseOrder.STATUS_INITIAL);
-		return insertSENode(purchaseOrderRepository, order, userUUID, orgUUID);
-	}
-
-	@Transactional(readOnly = true)
-	public PurchaseOrder getOrderByUuid(String uuid) {
-		return getEntityNodeByUUID(purchaseOrderRepository, uuid);
-	}
-
-	@Transactional(readOnly = true)
-	public List<PurchaseOrder> getOrdersByClient(String client) {
-		return purchaseOrderRepository.findByClient(client);
-	}
-
-	@Transactional(readOnly = true)
-	public List<PurchaseOrder> getOrdersByClientAndStatus(String client, int status) {
-		return purchaseOrderRepository.findByClientAndStatus(client, status);
-	}
-
-	public PurchaseOrder updateOrder(PurchaseOrder order, String userUUID, String orgUUID) {
-		return updateSENode(purchaseOrderRepository, order, userUUID, orgUUID);
-	}
-
-	public void setOrderStatus(String uuid, int status, String userUUID, String orgUUID) {
-		PurchaseOrder order = purchaseOrderRepository.findById(uuid).orElseThrow();
-		order.setStatus(status);
-		updateSENode(purchaseOrderRepository, order, userUUID, orgUUID);
-	}
-
-	public void deleteOrder(String uuid) {
-		deleteSENode(purchaseOrderRepository, uuid);
 	}
 
 	// --- PurchaseReturnOrder ---

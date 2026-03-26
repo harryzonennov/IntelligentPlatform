@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "HostCompany", schema = "platform")
+@Table(name = "HostCompany", catalog = "platform")
 public class HostCompany extends Organization{	
 	
 	protected byte[] comLogo;

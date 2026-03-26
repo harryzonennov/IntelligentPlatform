@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "PricingSetting", schema = "platform")
+@Table(name = "PricingSetting", catalog = "platform")
 public class PricingSetting extends ServiceEntityNode {	
 	
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

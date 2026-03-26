@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: ProdPickingOrder (schema: production)
  */
 @Entity
-@Table(name = "ProdPickingOrder", schema = "production")
+@Table(name = "ProdPickingOrder", catalog = "production")
 public class ProdPickingOrder extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

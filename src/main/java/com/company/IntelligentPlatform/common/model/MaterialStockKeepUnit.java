@@ -12,7 +12,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 
 @Entity
-@Table(name = "MaterialStockKeepUnit", schema = "platform")
+@Table(name = "MaterialStockKeepUnit", catalog = "platform")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class MaterialStockKeepUnit extends ServiceEntityNode {
 

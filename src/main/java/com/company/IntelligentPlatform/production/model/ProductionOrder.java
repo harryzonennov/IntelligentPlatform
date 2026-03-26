@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: ProductionOrder (schema: production)
  */
 @Entity
-@Table(name = "ProductionOrder", schema = "production")
+@Table(name = "ProductionOrder", catalog = "production")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class ProductionOrder extends DocumentContent {
 

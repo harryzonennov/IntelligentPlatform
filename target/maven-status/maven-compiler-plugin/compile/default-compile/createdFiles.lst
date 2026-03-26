@@ -412,7 +412,6 @@ com/company/IntelligentPlatform/common/model/EmployeeAttachment.class
 com/company/IntelligentPlatform/logistics/dto/OutboundDeliveryListController.class
 com/company/IntelligentPlatform/logistics/model/PurchaseRequestActionNode.class
 com/company/IntelligentPlatform/common/service/ServiceFieldUnion.class
-com/company/IntelligentPlatform/logistics/model/PurchaseOrderParty.class
 com/company/IntelligentPlatform/production/controller/ProductionPlanItemEditorController.class
 com/company/IntelligentPlatform/sales/model/SalesForcastConfigureProxy.class
 com/company/IntelligentPlatform/sales/service/SalesService.class
@@ -474,7 +473,6 @@ com/company/IntelligentPlatform/common/model/FileAttachmentTextRequest.class
 com/company/IntelligentPlatform/common/service/ServiceBasicFieldValueUnion.class
 com/company/IntelligentPlatform/common/service/OrganizationFunctionSearchProxy.class
 com/company/IntelligentPlatform/logistics/model/WasteProcessOrderAttachment.class
-com/company/IntelligentPlatform/logistics/model/PurchaseOrderItem.class
 com/company/IntelligentPlatform/common/controller/SystemConfigureElementEditorController.class
 com/company/IntelligentPlatform/common/service/StandardCheckStatusProxy.class
 com/company/IntelligentPlatform/common/service/SystemConfigureElementManager.class
@@ -1289,8 +1287,6 @@ com/company/IntelligentPlatform/production/model/ProductionOrder.class
 com/company/IntelligentPlatform/logistics/service/InventoryCheckOrderSpecifier.class
 com/company/IntelligentPlatform/production/dto/ProdOrderTarSubItemServiceUIModel.class
 com/company/IntelligentPlatform/common/service/EmployeeService.class
-com/company/IntelligentPlatform/logistics/model/PurchaseOrderConfigureProxy.class
-com/company/IntelligentPlatform/logistics/repository/PurchaseOrderRepository.class
 com/company/IntelligentPlatform/production/dto/ProdWorkCenterServiceUIModelExtension.class
 com/company/IntelligentPlatform/common/service/ServiceDocumentComProxy.class
 com/company/IntelligentPlatform/common/model/Employee.class
@@ -1557,7 +1553,6 @@ com/company/IntelligentPlatform/common/service/EmpLogonUserServiceModel.class
 com/company/IntelligentPlatform/common/controller/SystemConfigureElementListController.class
 com/company/IntelligentPlatform/common/service/DocMatItemToParentExecutorCase.class
 com/company/IntelligentPlatform/common/model/ServiceDocActConfigureItem.class
-com/company/IntelligentPlatform/logistics/dto/PurchaseOrderDto.class
 com/company/IntelligentPlatform/common/service/CurrentLogonUserDataProvider.class
 com/company/IntelligentPlatform/finance/service/CorporateSupplierToFinSearchProxy.class
 com/company/IntelligentPlatform/common/controller/LogonUserOrgEditorController.class
@@ -2967,7 +2962,6 @@ com/company/IntelligentPlatform/common/service/BaseLineTextPainter.class
 com/company/IntelligentPlatform/production/dto/BillOfMaterialTemplateActionNodeUIModel.class
 com/company/IntelligentPlatform/common/controller/EmployeeController.class
 com/company/IntelligentPlatform/common/model/SENodeFieldSearchInfo.class
-com/company/IntelligentPlatform/logistics/model/PurchaseOrder.class
 com/company/IntelligentPlatform/common/service/SerialIdDocumentProxy$EditSerialIdUnion.class
 com/company/IntelligentPlatform/production/service/ProductionPlanIdHelper.class
 com/company/IntelligentPlatform/common/service/ServiceDocumentUIModel.class

@@ -13,7 +13,6 @@ import java.util.List;
  * URL patterns:
  *   /api/v1/logistics/purchaseContracts
  *   /api/v1/logistics/purchaseRequests
- *   /api/v1/logistics/purchaseOrders
  *   /api/v1/logistics/purchaseReturnOrders
  *   /api/v1/logistics/inquiries
  */
@@ -83,37 +82,6 @@ public class PurchaseController {
 	@PutMapping("/purchaseRequests/{uuid}/status/{status}")
 	public ApiResponse<Void> setRequestStatus(@PathVariable String uuid, @PathVariable int status) {
 		purchaseService.setRequestStatus(uuid, status, "", "");
-		return ApiResponse.success(null);
-	}
-
-	// --- PurchaseOrder ---
-
-	@GetMapping("/purchaseOrders/{uuid}")
-	public ApiResponse<PurchaseOrder> getOrder(@PathVariable String uuid) {
-		return ApiResponse.success(purchaseService.getOrderByUuid(uuid));
-	}
-
-	@GetMapping("/purchaseOrders")
-	public ApiResponse<List<PurchaseOrder>> getOrdersByClient(@RequestParam String client) {
-		return ApiResponse.success(purchaseService.getOrdersByClient(client));
-	}
-
-	@PostMapping("/purchaseOrders")
-	public ApiResponse<PurchaseOrder> createOrder(@RequestBody PurchaseOrderDto dto) {
-		return ApiResponse.success(purchaseService.createOrder(dto.toEntity(), "", ""));
-	}
-
-	@PutMapping("/purchaseOrders/{uuid}")
-	public ApiResponse<PurchaseOrder> updateOrder(@PathVariable String uuid,
-	                                               @RequestBody PurchaseOrderDto dto) {
-		PurchaseOrder order = purchaseService.getOrderByUuid(uuid);
-		dto.applyTo(order);
-		return ApiResponse.success(purchaseService.updateOrder(order, "", ""));
-	}
-
-	@PutMapping("/purchaseOrders/{uuid}/status/{status}")
-	public ApiResponse<Void> setOrderStatus(@PathVariable String uuid, @PathVariable int status) {
-		purchaseService.setOrderStatus(uuid, status, "", "");
 		return ApiResponse.success(null);
 	}
 

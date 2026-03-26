@@ -13,7 +13,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Cross-module ref: refFinAccountUUID → finance schema (UUID only, no FK)
  */
 @Entity
-@Table(name = "SalesContract", schema = "sales")
+@Table(name = "SalesContract", catalog = "sales")
 public class SalesContract extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

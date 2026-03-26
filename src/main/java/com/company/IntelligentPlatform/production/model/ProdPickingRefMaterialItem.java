@@ -14,7 +14,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Tracks picking of reference materials for a production picking order.
  */
 @Entity
-@Table(name = "ProdPickingRefMaterialItem", schema = "production")
+@Table(name = "ProdPickingRefMaterialItem", catalog = "production")
 public class ProdPickingRefMaterialItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

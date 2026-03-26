@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: InventoryCheckItem (schema: logistics)
  */
 @Entity
-@Table(name = "InventoryCheckItem", schema = "logistics")
+@Table(name = "InventoryCheckItem", catalog = "logistics")
 public class InventoryCheckItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

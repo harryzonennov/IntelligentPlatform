@@ -8,7 +8,7 @@ import java.util.Date;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "ServiceDocumentSetting", schema = "platform")
+@Table(name = "ServiceDocumentSetting", catalog = "platform")
 public class ServiceDocumentSetting extends ServiceEntityNode {
 
 	public static final String FIELD_DOCUMENT_TYPE = "documentType";

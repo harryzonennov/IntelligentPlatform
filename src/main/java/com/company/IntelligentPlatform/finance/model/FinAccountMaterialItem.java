@@ -12,7 +12,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Line-item node of a FinAccount. All material/price fields inherited from DocMatItemNode.
  */
 @Entity
-@Table(name = "FinAccountMaterialItem", schema = "finance")
+@Table(name = "FinAccountMaterialItem", catalog = "finance")
 public class FinAccountMaterialItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

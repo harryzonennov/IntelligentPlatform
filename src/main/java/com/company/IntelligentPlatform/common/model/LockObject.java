@@ -17,7 +17,7 @@ import java.util.Date;
  * <p>Table: {@code platform.LockObject}</p>
  */
 @Entity
-@Table(name = "LockObject", schema = "platform")
+@Table(name = "LockObject", catalog = "platform")
 public class LockObject extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

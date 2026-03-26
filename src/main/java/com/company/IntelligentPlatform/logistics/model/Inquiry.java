@@ -11,7 +11,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: Inquiry (schema: logistics)
  */
 @Entity
-@Table(name = "Inquiry", schema = "logistics")
+@Table(name = "Inquiry", catalog = "logistics")
 public class Inquiry extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Table: ProcessRouteOrder (schema: production)
  */
 @Entity
-@Table(name = "ProcessRouteOrder", schema = "production")
+@Table(name = "ProcessRouteOrder", catalog = "production")
 public class ProcessRouteOrder extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

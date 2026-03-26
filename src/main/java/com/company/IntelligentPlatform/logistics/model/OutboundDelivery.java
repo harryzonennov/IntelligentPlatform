@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * Table: OutboundDelivery (schema: logistics)
  */
 @Entity
-@Table(name = "OutboundDelivery", schema = "logistics")
+@Table(name = "OutboundDelivery", catalog = "logistics")
 public class OutboundDelivery extends Delivery {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

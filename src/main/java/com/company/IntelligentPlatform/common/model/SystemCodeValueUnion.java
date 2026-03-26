@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.common.model.*;
 import com.company.IntelligentPlatform.common.model.*;
 @Entity
-@Table(name = "SystemCodeValueUnion", schema = "platform")
+@Table(name = "SystemCodeValueUnion", catalog = "platform")
 public class SystemCodeValueUnion  extends ServiceEntityNode {
 	
 	public static final String SENAME = IServiceModelConstants.SystemCodeValueCollection;

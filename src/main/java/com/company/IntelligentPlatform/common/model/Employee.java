@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * Note: IndividualAccount is a thin layer (adds nothing beyond mobile) so Employee extends Account directly.
  */
 @Entity
-@Table(name = "Employee", schema = "platform")
+@Table(name = "Employee", catalog = "platform")
 public class Employee extends Account {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

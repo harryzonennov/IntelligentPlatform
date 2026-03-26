@@ -10,7 +10,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
  * Table: ProdJobOrder (schema: production)
  */
 @Entity
-@Table(name = "ProdJobOrder", schema = "production")
+@Table(name = "ProdJobOrder", catalog = "production")
 public class ProdJobOrder extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
