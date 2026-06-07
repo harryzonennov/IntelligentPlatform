@@ -5,11 +5,11 @@ import com.company.IntelligentPlatform.logistics.service.PurchaseRequestMaterial
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.controller.*;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.controller.*;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 import java.util.ArrayList;
 import java.util.List;

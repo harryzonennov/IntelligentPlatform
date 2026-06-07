@@ -1,8 +1,14 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "ProdJobMaterialItem", catalog = "production")
 public class ProdJobMaterialItem extends ServiceEntityNode {
 
 	public final static String NODENAME = IServiceModelConstants.ProdJobMaterialItem;

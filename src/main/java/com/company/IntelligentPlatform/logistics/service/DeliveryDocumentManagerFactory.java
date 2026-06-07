@@ -4,7 +4,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityManagerFactoryInContext;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManagerFactoryInContext;
 
 /**
  * Factory class for managing the different types of Delivery Document Manager

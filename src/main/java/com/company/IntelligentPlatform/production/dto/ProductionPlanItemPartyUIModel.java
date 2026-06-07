@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocInvolvePartyUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocInvolvePartyUIModel;
 
 public class ProductionPlanItemPartyUIModel extends DocInvolvePartyUIModel{
 

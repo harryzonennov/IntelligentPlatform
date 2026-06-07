@@ -10,8 +10,8 @@ import com.company.IntelligentPlatform.finance.model.FinAccountAttachment;
 import com.company.IntelligentPlatform.finance.model.FinAccountLog;
 import com.company.IntelligentPlatform.finance.model.FinAccountMaterialItem;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 @Component
 public class FinAccountServiceUIModel extends ServiceUIModule {

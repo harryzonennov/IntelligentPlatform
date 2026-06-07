@@ -12,9 +12,9 @@ import com.company.IntelligentPlatform.production.model.ProductionResourceUnion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
 
 @Service
 public class ProdWorkCenterResItemServiceUIModelExtension extends

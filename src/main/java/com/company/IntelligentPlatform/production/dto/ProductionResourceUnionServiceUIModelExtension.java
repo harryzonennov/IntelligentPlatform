@@ -10,13 +10,13 @@ import com.company.IntelligentPlatform.production.model.ProductionResourceUnion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.service.SearchConfigConnectCondition;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.Organization;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.SearchConfigConnectCondition;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.Organization;
 
 @Service
 public class ProductionResourceUnionServiceUIModelExtension extends

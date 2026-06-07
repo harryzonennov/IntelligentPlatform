@@ -7,10 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.DocInvolvePartyProxy;
-import com.company.IntelligentPlatform.common.service.DocSplitMergeRequest;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.DocInvolvePartyProxy;
+import com.company.IntelligentPlatform.platform.service.DocSplitMergeRequest;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 @Service
 public class PurchaseContractMergeRequest extends DocSplitMergeRequest<PurchaseContract, PurchaseContractMaterialItem> {

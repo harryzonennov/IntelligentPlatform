@@ -12,17 +12,17 @@ import com.company.IntelligentPlatform.logistics.model.InventoryCheckOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.SearchConfigConnectCondition;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.SearchConfigConnectCondition;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
 
 @Service
 public class InventoryCheckItemServiceUIModelExtension extends

@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocInvolvePartyUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocInvolvePartyUIModel;
 
 public class WarehouseStoreItemPartyUIModel extends DocInvolvePartyUIModel{
 

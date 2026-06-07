@@ -4,8 +4,8 @@ import com.company.IntelligentPlatform.production.model.RepairProdTarSubItem;
 import com.company.IntelligentPlatform.production.model.RepairProdTargetItemAttachment;
 import com.company.IntelligentPlatform.production.model.RepairProdTargetMatItem;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 import java.util.ArrayList;
 import java.util.List;

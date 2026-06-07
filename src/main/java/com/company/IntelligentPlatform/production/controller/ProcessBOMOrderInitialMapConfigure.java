@@ -3,11 +3,11 @@ package com.company.IntelligentPlatform.production.controller;
 import com.company.IntelligentPlatform.production.model.BillOfMaterialOrder;
 import com.company.IntelligentPlatform.production.model.ProcessBOMOrder;
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ISEUIConfigureMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIModelMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
 
 @ISEUIConfigureMapping(uiModelName = "com.company.IntelligentPlatform.production.dto.ProcessBOMOrderInitialModel")
 public class ProcessBOMOrderInitialMapConfigure extends

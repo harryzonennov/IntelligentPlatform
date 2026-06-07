@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.production.model.ProductiveBOMItem;
 
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProductiveBOMItemServiceModel extends ServiceModule {
 

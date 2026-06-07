@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
 
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.text.ParseException;
@@ -20,30 +20,30 @@ import com.company.IntelligentPlatform.production.dto.ProdWorkCenterSearchModel;
 import com.company.IntelligentPlatform.production.dto.ProdWorkCenterUIModel;
 import com.company.IntelligentPlatform.production.dto.ProductionResourceUnionUIModel;
 import com.company.IntelligentPlatform.production.repository.ProdWorkCenterRepository;
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterCalendarItem;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterConfigureProxy;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterResItem;
 import com.company.IntelligentPlatform.production.model.ProductionResourceUnion;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [ProdWorkCenter]
@@ -117,12 +117,8 @@ public class ProdWorkCenterManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodWorkCenterDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(prodWorkCenterConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodWorkCenterDAO, this.getSeConfigureProxy()));
 	}
 
 	public ProdWorkCenterResItem getWorkCenterResItem(String resourceUnionUUID,

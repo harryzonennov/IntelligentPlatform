@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceMessageHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceMessageHelper;
 
 @Service
 public class FinanceAccountMessageHelper extends ServiceMessageHelper {

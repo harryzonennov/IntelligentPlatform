@@ -3,6 +3,7 @@ package com.company.IntelligentPlatform.finance.model;
 // TODO-LEGACY: stub for legacy finance chart model
 public class GMainBusinessIncome {
     public static final String ID   = "GMainBusinessIncome";
+
     public static final String NAME = "Main Business Income";
     protected String month;
     protected double amount;

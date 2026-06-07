@@ -6,8 +6,8 @@ import java.util.List;
 import com.company.IntelligentPlatform.production.model.ProdPlanItemReqProposal;
 import com.company.IntelligentPlatform.production.model.ProductionPlanItem;
 import com.company.IntelligentPlatform.production.model.ProductionPlanItemParty;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProductionPlanItemServiceModel extends ServiceModule {
 

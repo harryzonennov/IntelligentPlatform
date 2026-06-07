@@ -4,7 +4,7 @@ import com.company.IntelligentPlatform.logistics.model.InventoryCheckOrder;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
 
 @Service
 public class InventoryCheckOrderIdHelper extends ServiceDefaultIdGenerateHelper {

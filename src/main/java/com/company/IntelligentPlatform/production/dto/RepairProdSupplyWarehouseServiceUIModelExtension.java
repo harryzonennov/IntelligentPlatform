@@ -4,11 +4,11 @@ import com.company.IntelligentPlatform.production.service.RepairProdOrderManager
 import com.company.IntelligentPlatform.production.model.RepairProdSupplyWarehouse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
 
 import java.util.ArrayList;
 import java.util.List;

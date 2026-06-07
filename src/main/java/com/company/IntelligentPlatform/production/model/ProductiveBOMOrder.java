@@ -2,9 +2,15 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
+@Entity
+@Table(name = "ProductiveBOMOrder", catalog = "production")
 public class ProductiveBOMOrder extends ServiceEntityNode {
 
 	public final static String NODENAME = ServiceEntityNode.NODENAME_ROOT;

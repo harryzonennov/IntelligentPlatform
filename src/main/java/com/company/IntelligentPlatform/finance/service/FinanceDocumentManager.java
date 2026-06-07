@@ -4,7 +4,7 @@ import jakarta.annotation.PostConstruct;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.finance.repository.FinanceDocumentRepository;
 import com.company.IntelligentPlatform.finance.model.FinanceDocumentConfigureProxy;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
 
 /**
  * Logic Manager CLASS FOR Service Entity [FinanceDocument]
@@ -46,12 +46,8 @@ public class FinanceDocumentManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, financeDocumentDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(financeDocumentConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, financeDocumentDAO, this.getSeConfigureProxy()));
 	}
 
 	/**

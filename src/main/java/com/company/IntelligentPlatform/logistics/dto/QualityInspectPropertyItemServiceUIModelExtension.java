@@ -11,14 +11,14 @@ import com.company.IntelligentPlatform.logistics.model.QualityInspectPropertyIte
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.dto.MaterialStockKeepUnitUIModel;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.controller.*;
-import com.company.IntelligentPlatform.common.service.SearchConfigConnectCondition;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.dto.MaterialStockKeepUnitUIModel;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.controller.*;
+import com.company.IntelligentPlatform.platform.service.SearchConfigConnectCondition;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class QualityInspectPropertyItemServiceUIModelExtension extends

@@ -1,10 +1,10 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.model.AuthorizationObject;
-import com.company.IntelligentPlatform.common.model.SystemResource;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.model.AuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.SystemResource;
 
 public class ResFinSystemResourceUIModel extends SEUIComModel{
 

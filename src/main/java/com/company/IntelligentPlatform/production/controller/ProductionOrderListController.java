@@ -9,7 +9,7 @@ import com.company.IntelligentPlatform.production.dto.ProductionOrderUIModel;
 import com.company.IntelligentPlatform.production.service.BillOfMaterialOrderManager;
 import com.company.IntelligentPlatform.production.service.ProductionOrderManager;
 
-import com.company.IntelligentPlatform.sales.dto.SalesContractSearchModel;
+import com.company.IntelligentPlatform.salesDistribution.dto.SalesContractSearchModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -17,18 +17,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEListController;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
-import com.company.IntelligentPlatform.common.model.ISystemActionCode;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEListController;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.model.IDefResourceAuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.ISystemActionCode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 @Scope("session")
 @Controller(value = "productionOrderListController")

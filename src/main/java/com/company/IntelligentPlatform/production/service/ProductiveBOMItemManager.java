@@ -12,15 +12,15 @@ import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProductiveBOMItem;
 import com.company.IntelligentPlatform.production.model.ProductiveBOMOrder;
-import com.company.IntelligentPlatform.common.dto.MaterialUIModel;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.dto.MaterialUIModel;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 @Service
 public class ProductiveBOMItemManager {

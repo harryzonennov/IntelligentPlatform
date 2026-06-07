@@ -1,9 +1,17 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
-import com.company.IntelligentPlatform.common.model.DocActionNode;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.DocActionNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
+@Entity
+@Table(name = "InventoryCheckOrderActionNode", catalog = "logistics")
 public class InventoryCheckOrderActionNode extends DocActionNode {
 
     public static final String NODENAME = IServiceModelConstants.InventoryCheckOrderActionNode;

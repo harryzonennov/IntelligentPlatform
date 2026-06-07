@@ -1,9 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinLogistics - WasteProcessMaterialItem (extends DocMatItemNode)
@@ -13,8 +12,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Table(name = "WasteProcessMaterialItem", catalog = "logistics")
 public class WasteProcessMaterialItem extends DocMatItemNode {
 
-	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
-	public static final String SENAME = IServiceModelConstants.WasteProcessMaterialItem;
+	public static final String NODENAME = IServiceModelConstants.WasteProcessMaterialItem;
+
+	public static final String SENAME = IServiceModelConstants.WasteProcessOrder;
 
 	@Column(name = "storeCheckStatus")
 	protected int storeCheckStatus;

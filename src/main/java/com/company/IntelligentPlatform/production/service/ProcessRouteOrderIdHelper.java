@@ -2,7 +2,7 @@ package com.company.IntelligentPlatform.production.service;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
 
 @Service
 public class ProcessRouteOrderIdHelper extends ServiceDefaultIdGenerateHelper {

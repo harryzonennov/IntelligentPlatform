@@ -3,9 +3,9 @@ package com.company.IntelligentPlatform.production.controller;
 import com.company.IntelligentPlatform.production.dto.ProdProcessUIModel;
 import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
-import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.ISEUIConfigureMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIModelMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
 
 @ISEUIConfigureMapping(uiModelName = "com.company.IntelligentPlatform.production.dto.ProcessRouteProcessItemUIModel")
 public class ProcessRouteProcessItemUIModelMapConfigure extends

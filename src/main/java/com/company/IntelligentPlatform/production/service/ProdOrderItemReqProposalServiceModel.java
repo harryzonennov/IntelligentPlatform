@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.production.model.ProdOrderItemReqProposal;
 import com.company.IntelligentPlatform.production.model.ProductionOrderItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProdOrderItemReqProposalServiceModel extends ServiceModule {
 	

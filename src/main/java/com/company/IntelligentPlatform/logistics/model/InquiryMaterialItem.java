@@ -1,10 +1,9 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinLogistics - InquiryMaterialItem (extends DocMatItemNode)
@@ -14,8 +13,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Table(name = "InquiryMaterialItem", catalog = "logistics")
 public class InquiryMaterialItem extends DocMatItemNode {
 
-	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
-	public static final String SENAME = IServiceModelConstants.InquiryMaterialItem;
+	public static final String NODENAME = IServiceModelConstants.InquiryMaterialItem;
+
+	public static final String SENAME = IServiceModelConstants.Inquiry;
 
 	@Column(name = "shippingPoint")
 	protected String shippingPoint;

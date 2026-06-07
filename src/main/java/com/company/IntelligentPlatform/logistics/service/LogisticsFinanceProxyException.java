@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityException;
 
 public class LogisticsFinanceProxyException extends ServiceEntityException {
 

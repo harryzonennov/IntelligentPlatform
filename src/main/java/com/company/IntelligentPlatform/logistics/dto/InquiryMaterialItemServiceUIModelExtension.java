@@ -12,15 +12,15 @@ import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.CorporateCustomerManager;
-import com.company.IntelligentPlatform.common.service.IndividualCustomerManager;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.controller.*;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManagerFactoryInContext;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.CorporateCustomerManager;
+import com.company.IntelligentPlatform.platform.service.IndividualCustomerManager;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.controller.*;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManagerFactoryInContext;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class InquiryMaterialItemServiceUIModelExtension extends

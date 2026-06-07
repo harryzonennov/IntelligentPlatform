@@ -12,16 +12,16 @@ import com.company.IntelligentPlatform.production.dto.ProductionResourceUnionUIM
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.production.repository.ProductionResourceUnionRepository;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.production.model.ProductionResourceUnion;
 import com.company.IntelligentPlatform.production.model.ProductionResourceUnionConfigureProxy;
 
@@ -91,12 +91,8 @@ public class ProductionResourceUnionManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionResourceUnionDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(productionResourceUnionConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionResourceUnionDAO, this.getSeConfigureProxy()));
 	}
 
 	public void convProductionResourceUnionToUI(

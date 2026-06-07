@@ -1,12 +1,13 @@
 package com.company.IntelligentPlatform.production.model;
 
 import java.time.LocalDateTime;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 public class ProductiveBOMItem extends BillOfMaterialItem{
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.ProductiveBOMItem;
 
 	protected double amount;

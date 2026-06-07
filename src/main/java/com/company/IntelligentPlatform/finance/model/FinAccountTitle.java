@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinFinance - FinAccountTitle.java
@@ -15,6 +15,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 public class FinAccountTitle extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.FinAccountTitle;
 
 	public static final int FIN_ACCOUNTTYPE_DEBIT  = 1;

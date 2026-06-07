@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.model.DocumentMatItemBatchGenRequest;
+import com.company.IntelligentPlatform.platform.model.DocumentMatItemBatchGenRequest;
 
 public class WasteProcessOrderInitModel extends DocumentMatItemBatchGenRequest {
 

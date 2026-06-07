@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.production.dto;
 
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.dto.DocEmbedMaterialSKUSearchModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 import java.util.Date;
 

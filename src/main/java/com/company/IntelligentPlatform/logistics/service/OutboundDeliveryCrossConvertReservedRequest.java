@@ -8,17 +8,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 @Service
 public class OutboundDeliveryCrossConvertReservedRequest extends

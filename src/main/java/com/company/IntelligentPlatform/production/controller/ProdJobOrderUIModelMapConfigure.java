@@ -8,11 +8,11 @@ import com.company.IntelligentPlatform.production.model.ProdJobOrder;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ISEUIConfigureMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIModelMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
 
 @ISEUIConfigureMapping(uiModelName = "com.company.IntelligentPlatform.production.dto.ProdJobOrderUIModel")
 public class ProdJobOrderUIModelMapConfigure extends SEUIModelMapConfigure {

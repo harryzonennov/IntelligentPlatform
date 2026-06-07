@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.controller;
 
-import com.company.IntelligentPlatform.common.model.DocumentMatItemBatchGenRequest;
+import com.company.IntelligentPlatform.platform.model.DocumentMatItemBatchGenRequest;
 
 public class ProductionDocBatchRequest extends DocumentMatItemBatchGenRequest {
 

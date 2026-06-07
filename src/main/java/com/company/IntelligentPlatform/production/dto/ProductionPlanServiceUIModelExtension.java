@@ -11,25 +11,25 @@ import com.company.IntelligentPlatform.production.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.service.DocActionNodeProxy;
-import com.company.IntelligentPlatform.common.service.DocInvolvePartyProxy;
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.SearchConfigConnectCondition;
-import com.company.IntelligentPlatform.common.model.CorporateCustomer;
-import com.company.IntelligentPlatform.common.model.Employee;
-import com.company.IntelligentPlatform.common.model.IndividualCustomer;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.DocActionNodeProxy;
+import com.company.IntelligentPlatform.platform.service.DocInvolvePartyProxy;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.service.SearchConfigConnectCondition;
+import com.company.IntelligentPlatform.platform.model.CorporateCustomer;
+import com.company.IntelligentPlatform.platform.model.Employee;
+import com.company.IntelligentPlatform.platform.model.IndividualCustomer;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class ProductionPlanServiceUIModelExtension extends

@@ -8,13 +8,13 @@ import com.company.IntelligentPlatform.logistics.model.Delivery;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 /**
  * Document class which could generate delivery.

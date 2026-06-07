@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.model.Account;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.model.Account;
 
 public class FinAccountObjectTypeSelect {
 	

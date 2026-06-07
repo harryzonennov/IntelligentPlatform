@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.service.StandardSwitchProxy;
 
 public class PurchaseContractMaterialItemUIModel extends DocMatItemUIModel {
 

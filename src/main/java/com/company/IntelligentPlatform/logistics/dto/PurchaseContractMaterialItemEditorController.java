@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEEditorController;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.model.ISystemActionCode;
-import com.company.IntelligentPlatform.common.model.FileAttachmentTextRequest;
-import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEEditorController;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.model.ISystemActionCode;
+import com.company.IntelligentPlatform.platform.model.FileAttachmentTextRequest;
+import com.company.IntelligentPlatform.platform.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -103,13 +103,15 @@ public class PurchaseContractMaterialItemEditorController extends
 	}
 	
 	public ServiceBasicUtilityController.ServiceUIModelRequest getServiceUIModelRequest() {
-		return new ServiceBasicUtilityController.ServiceUIModelRequest(
+		ServiceBasicUtilityController.ServiceUIModelRequest request = new ServiceBasicUtilityController.ServiceUIModelRequest(
 				PurchaseContractMaterialItemServiceUIModel.class,
 				PurchaseContractMaterialItemServiceModel.class, AOID_RESOURCE,
 				PurchaseContractMaterialItem.NODENAME,
 				PurchaseContractMaterialItem.SENAME, purchaseContractSpecifier,
 				purchaseContractManager
 		);
+		request.setNodeInstId(PurchaseContractMaterialItem.NODENAME);
+		return request;
 	}
 
 	@RequestMapping(value = "/saveModuleService", produces = "text/html;charset=UTF-8")

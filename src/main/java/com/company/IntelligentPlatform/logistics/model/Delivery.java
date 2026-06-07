@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 

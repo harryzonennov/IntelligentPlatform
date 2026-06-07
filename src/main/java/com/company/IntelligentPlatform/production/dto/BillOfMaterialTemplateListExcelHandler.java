@@ -5,15 +5,15 @@ import com.company.IntelligentPlatform.production.service.BillOfMaterialTemplate
 import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.MaterialListExcelHandler;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportConfig;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.service.DocumentContentSpecifier;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceExcelConfigException;
-import com.company.IntelligentPlatform.common.service.ServiceExcelHandlerProxy;
-import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.MaterialListExcelHandler;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.DocumentContentSpecifier;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelConfigException;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelHandlerProxy;
+import com.company.IntelligentPlatform.platform.model.SerialLogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 import java.util.ArrayList;
 import java.util.List;

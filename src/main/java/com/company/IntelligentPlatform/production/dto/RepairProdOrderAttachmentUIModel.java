@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.dto.DocAttachmentNodeUIModel;
+import com.company.IntelligentPlatform.platform.dto.DocAttachmentNodeUIModel;
 
 public class RepairProdOrderAttachmentUIModel extends DocAttachmentNodeUIModel {
 

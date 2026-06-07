@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.DocumentMatItemBatchGenRequest;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.DocumentMatItemBatchGenRequest;
 
 public class DeliveryRequestAmountRequest extends
 		DocumentMatItemBatchGenRequest {

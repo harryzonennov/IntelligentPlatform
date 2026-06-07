@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * General Service Entity class for Application-Account fee value field change
@@ -9,6 +11,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * @author Zhang,Hang
  *
  */
+@Entity
+@Table(name = "AppAccountFieldLog", catalog = "finance")
 public class AppAccountFieldLog extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

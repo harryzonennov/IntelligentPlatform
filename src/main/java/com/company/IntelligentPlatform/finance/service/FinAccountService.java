@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityService;
 import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import com.company.IntelligentPlatform.finance.repository.FinAccountRepository;

@@ -9,13 +9,13 @@ import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.model.CorporateCustomer;
-import com.company.IntelligentPlatform.common.model.Employee;
-import com.company.IntelligentPlatform.common.model.IndividualCustomer;
-import com.company.IntelligentPlatform.common.model.Organization;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.model.CorporateCustomer;
+import com.company.IntelligentPlatform.platform.model.Employee;
+import com.company.IntelligentPlatform.platform.model.IndividualCustomer;
+import com.company.IntelligentPlatform.platform.model.Organization;
 
 @Service
 public class OutboundDeliverySearchProxy extends ServiceSearchProxy {

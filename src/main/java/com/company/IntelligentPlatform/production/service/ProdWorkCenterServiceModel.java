@@ -7,8 +7,8 @@ import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterCalendarItem;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterResItem;
 
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProdWorkCenterServiceModel extends ServiceModule {
 

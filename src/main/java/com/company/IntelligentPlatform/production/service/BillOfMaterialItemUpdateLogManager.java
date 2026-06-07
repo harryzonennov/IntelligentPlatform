@@ -9,17 +9,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.dto.MaterialUIModel;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceCommonDataFormatter;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.dto.MaterialUIModel;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceCommonDataFormatter;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 import java.util.Map;
 

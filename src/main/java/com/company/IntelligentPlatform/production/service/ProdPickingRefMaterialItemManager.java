@@ -19,26 +19,26 @@ import com.company.IntelligentPlatform.production.model.ProdPickingOrder;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefMaterialItem;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefOrderItem;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.logistics.model.StoreAvailableStoreItemRequest;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 @Service
 public class ProdPickingRefMaterialItemManager {
@@ -893,7 +893,7 @@ public class ProdPickingRefMaterialItemManager {
 			prodPickingRefMaterialItemUIModel.setDocumentType(prodPickingRefMaterialItem.getDocumentType());
 			if (prodPickingRefMaterialItem.getCreatedTime() != null) {
 				prodPickingRefMaterialItemUIModel
-						.setCreatedTime(DefaultDateFormatConstant.DATE_FORMAT.format(prodPickingRefMaterialItem.getCreatedTime()));
+						.setCreatedTime(DefaultDateFormatConstant.formatDate(prodPickingRefMaterialItem.getCreatedTime()));
 			}
 			if (logonInfo != null) {
 				Map<Integer, String> itemStatusMap = prodPickingOrderManager.initItemStatusMap(logonInfo.getLanguageCode());

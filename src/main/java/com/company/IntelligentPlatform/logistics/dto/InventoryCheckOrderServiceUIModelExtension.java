@@ -12,18 +12,18 @@ import com.company.IntelligentPlatform.logistics.model.InventoryCheckOrderAction
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.model.WarehouseArea;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.service.DocActionNodeProxy;
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.model.WarehouseArea;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.DocActionNodeProxy;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class InventoryCheckOrderServiceUIModelExtension extends

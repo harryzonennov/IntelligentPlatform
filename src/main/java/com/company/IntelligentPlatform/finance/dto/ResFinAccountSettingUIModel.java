@@ -1,11 +1,11 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
 
 public class ResFinAccountSettingUIModel extends SEUIComModel {
 

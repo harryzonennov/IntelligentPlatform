@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.logistics.dto.WarehouseStoreItemUIModel;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.RegisteredProduct;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.model.WarehouseArea;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.RegisteredProduct;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.model.WarehouseArea;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.SerialIdInputModel;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.service.ServiceExtensionSettingManager;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.SerialIdInputModel;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.ServiceSearchProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceExtensionSettingManager;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 
@@ -133,12 +133,8 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, outboundDeliveryDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(outboundDeliveryConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, outboundDeliveryDAO, this.getSeConfigureProxy()));
     }
 
     public Map<Integer, String> initFreightChargeType() throws ServiceEntityInstallationException {
@@ -700,13 +696,13 @@ public class OutboundDeliveryManager extends ServiceEntityManager {
             outboundDeliveryUIModel.setPlanCategory(outboundDelivery.getPlanCategory());
             if (outboundDelivery.getPlanExecuteDate() != null) {
                 outboundDeliveryUIModel.setPlanExecuteDate(
-                        DefaultDateFormatConstant.DATE_MIN_FORMAT.format(outboundDelivery.getPlanExecuteDate()));
+                        DefaultDateFormatConstant.formatDateMin(outboundDelivery.getPlanExecuteDate()));
             }
             outboundDeliveryUIModel.setGrossPrice(
                     ServiceEntityDoubleHelper.trancateDoubleScale2(outboundDelivery.getGrossPrice()));
             if (outboundDelivery.getShippingTime() != null) {
                 outboundDeliveryUIModel.setShippingTime(
-                        DefaultDateFormatConstant.DATE_FORMAT.format(outboundDelivery.getShippingTime()));
+                        DefaultDateFormatConstant.formatDate(outboundDelivery.getShippingTime()));
             }
             outboundDeliveryUIModel.setShippingPoint(outboundDelivery.getShippingPoint());
             outboundDeliveryUIModel.setFreightCharge(outboundDelivery.getFreightCharge());

@@ -2,10 +2,14 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ReferenceNode;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ReferenceNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "ProdWorkCenterCalendarItem", catalog = "production")
 public class ProdWorkCenterCalendarItem extends ReferenceNode {
 
 	public final static String NODENAME = IServiceModelConstants.ProdWorkCenterCalendarItem;

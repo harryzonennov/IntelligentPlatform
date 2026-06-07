@@ -18,20 +18,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.company.IntelligentPlatform.common.model.RegisteredProduct;
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEEditorController;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.DocAttachmentProxy;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.model.ISystemActionCode;
-import com.company.IntelligentPlatform.common.model.FileAttachmentTextRequest;
-import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.RegisteredProduct;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEEditorController;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.DocAttachmentProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.model.ISystemActionCode;
+import com.company.IntelligentPlatform.platform.model.FileAttachmentTextRequest;
+import com.company.IntelligentPlatform.platform.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 import jakarta.servlet.http.HttpServletRequest;
 

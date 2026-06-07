@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.logistics.service;
 
 import com.company.IntelligentPlatform.logistics.model.InboundItem;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Internal Class: to be used by batch in-bound delivery call-back

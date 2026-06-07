@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.finance.service.SystemResourceManager;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
-import com.company.IntelligentPlatform.common.model.ResFinAccountFieldSetting;
-import com.company.IntelligentPlatform.common.model.ResFinAccountProcessCode;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountFieldSetting;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountProcessCode;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
 
 @Component
 public class ResFinAccountSettingServiceUIModel extends ServiceUIModule {

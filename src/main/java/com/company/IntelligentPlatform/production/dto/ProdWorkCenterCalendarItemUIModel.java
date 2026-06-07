@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.production.dto;
 
 import com.company.IntelligentPlatform.production.model.ProdWorkCenterCalendarItem;
 
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class ProdWorkCenterCalendarItemUIModel extends SEUIComModel {
 

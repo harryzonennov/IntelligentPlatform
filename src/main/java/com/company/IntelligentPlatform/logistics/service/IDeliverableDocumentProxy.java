@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.logistics.model.Delivery;
 import com.company.IntelligentPlatform.logistics.model.DeliveryItem;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Proxy on Delivery life-cycle events and handler on Deliverable Document

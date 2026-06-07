@@ -15,21 +15,21 @@ import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.DocumentContentManager;
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.AccountManager;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.service.SearchConfigConnectCondition;
-import com.company.IntelligentPlatform.common.model.Account;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.DocumentContent;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.DocumentContentManager;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.service.AccountManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.service.SearchConfigConnectCondition;
+import com.company.IntelligentPlatform.platform.model.Account;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 @Service
 public class FinAccountServiceUIModelExtension extends ServiceUIModelExtension {

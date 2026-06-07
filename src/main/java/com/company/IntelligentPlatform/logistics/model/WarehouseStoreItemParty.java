@@ -1,10 +1,20 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocInvolveParty;
-import com.company.IntelligentPlatform.common.model.DocItemParty;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.DocInvolveParty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.DocItemParty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "WarehouseStoreItemParty", catalog = "logistics")
 public class WarehouseStoreItemParty extends DocItemParty {
 
 	public final static String NODENAME = IServiceModelConstants.WarehouseStoreItemParty;

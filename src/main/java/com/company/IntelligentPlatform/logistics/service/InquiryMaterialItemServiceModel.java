@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.logistics.model.InquiryMaterialItem;
 import com.company.IntelligentPlatform.logistics.model.InquiryMaterialItemAttachment;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class InquiryMaterialItemServiceModel extends ServiceModule {
 

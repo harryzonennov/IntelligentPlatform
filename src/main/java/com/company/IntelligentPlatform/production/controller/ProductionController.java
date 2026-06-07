@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.production.dto.*;
 import com.company.IntelligentPlatform.production.model.*;
 import com.company.IntelligentPlatform.production.service.ProductionService;

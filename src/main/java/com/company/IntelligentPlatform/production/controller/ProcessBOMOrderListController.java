@@ -20,23 +20,23 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEListController;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEListController;
 
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.model.IDefResourceAuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 @Scope("session")
 @Controller(value = "processBOMOrderListController")

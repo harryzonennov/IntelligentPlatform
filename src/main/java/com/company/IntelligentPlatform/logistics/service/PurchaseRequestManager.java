@@ -11,21 +11,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.service.SystemConfigureCategoryManager;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.model.IDocumentNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.service.ServiceSearchProxy;
+import com.company.IntelligentPlatform.platform.service.SystemConfigureCategoryManager;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.model.IDocumentNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 import jakarta.annotation.PostConstruct;
 import java.text.ParseException;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 import java.time.ZoneId;
 import java.time.LocalDate;
 
@@ -119,12 +119,8 @@ public class PurchaseRequestManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseRequestDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(purchaseRequestConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseRequestDAO, this.getSeConfigureProxy()));
     }
 
     @Override

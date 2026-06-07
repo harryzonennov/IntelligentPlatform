@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocActionNodeUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocActionNodeUIModel;
 
 public class WasteProcessOrderActionNodeUIModel extends DocActionNodeUIModel {
 }

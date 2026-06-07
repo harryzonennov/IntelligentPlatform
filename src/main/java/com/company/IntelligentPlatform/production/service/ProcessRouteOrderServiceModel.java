@@ -6,9 +6,9 @@ import java.util.List;
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrder;
 import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
 
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProcessRouteOrderServiceModel extends ServiceModule {
 

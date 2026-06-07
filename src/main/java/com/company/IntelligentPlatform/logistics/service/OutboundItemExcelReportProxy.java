@@ -7,11 +7,11 @@ import com.company.IntelligentPlatform.logistics.model.OutboundItem;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.dto.ServiceExcelReportResponseModel;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.ServiceExcelConfigException;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportProxy;
+import com.company.IntelligentPlatform.platform.dto.ServiceExcelReportResponseModel;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.LogonInfoException;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelConfigException;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportProxy;
 
 @Service
 public class OutboundItemExcelReportProxy extends ServiceExcelReportProxy{

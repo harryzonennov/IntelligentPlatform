@@ -20,39 +20,39 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.logistics.repository.InventoryCheckOrderRepository;
 import com.company.IntelligentPlatform.logistics.dto.WarehouseStoreItemSearchModel;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.model.WarehouseArea;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.model.WarehouseArea;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItemLog;
-import com.company.IntelligentPlatform.common.dto.WarehouseSubSearchModel;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
-import com.company.IntelligentPlatform.common.service.StandardPriorityProxy;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
-import com.company.IntelligentPlatform.common.model.IDocumentNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceBasicKeyStructure;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.dto.WarehouseSubSearchModel;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.LogonInfoException;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceLanHelper;
+import com.company.IntelligentPlatform.platform.service.StandardPriorityProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.SerialLogonInfo;
+import com.company.IntelligentPlatform.platform.model.IDocumentNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceBasicKeyStructure;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.logistics.model.InventoryCheckOrderConfigureProxy;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [InventoryCheckOrder]
@@ -129,12 +129,8 @@ public class InventoryCheckOrderManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inventoryCheckOrderDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(inventoryCheckOrderConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, inventoryCheckOrderDAO, this.getSeConfigureProxy()));
 	}
 
 	@Override

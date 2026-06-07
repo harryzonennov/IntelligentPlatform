@@ -1,9 +1,13 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "PurchaseReturnMaterialItem", catalog = "logistics")
 public class PurchaseReturnMaterialItem extends DocMatItemNode {
 
     public static final String NODENAME = IServiceModelConstants.PurchaseReturnMaterialItem;

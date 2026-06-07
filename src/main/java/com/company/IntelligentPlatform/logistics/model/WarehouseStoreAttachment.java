@@ -1,8 +1,14 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocAttachmentNode;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.DocAttachmentNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
+@Entity
+@Table(name = "WarehouseStoreAttachment", catalog = "logistics")
 public class WarehouseStoreAttachment extends DocAttachmentNode {
 
 	public static final String NODENAME = IServiceModelConstants.WarehouseStoreAttachment;

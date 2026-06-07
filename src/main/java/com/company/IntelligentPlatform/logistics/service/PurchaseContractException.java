@@ -3,13 +3,13 @@ package com.company.IntelligentPlatform.logistics.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.ServiceEntityException;
-import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.model.SimpleSEMessageResponse;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityException;
+import com.company.IntelligentPlatform.platform.service.ServiceExceptionHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.model.SimpleSEMessageResponse;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 public class PurchaseContractException extends ServiceEntityException {
 	

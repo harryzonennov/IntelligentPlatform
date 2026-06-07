@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 

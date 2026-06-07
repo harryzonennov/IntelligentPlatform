@@ -6,9 +6,9 @@ import com.company.IntelligentPlatform.logistics.dto.InventoryCheckItemServiceUI
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.service.*;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.service.*;
 
 import java.util.ArrayList;
 import java.util.List;

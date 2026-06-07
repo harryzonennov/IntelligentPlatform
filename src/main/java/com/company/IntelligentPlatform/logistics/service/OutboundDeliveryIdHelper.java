@@ -4,10 +4,10 @@ import com.company.IntelligentPlatform.logistics.model.OutboundDelivery;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
-import com.company.IntelligentPlatform.common.service.ServiceBarcodeException;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceBarcodeException;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class OutboundDeliveryIdHelper extends ServiceDefaultIdGenerateHelper {

@@ -8,9 +8,9 @@ import com.company.IntelligentPlatform.logistics.model.OutboundDelivery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.SpringContextBeanService;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.service.SpringContextBeanService;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 
 /**
  * Central Factory for get the instance of DeliverableDocumentProxy

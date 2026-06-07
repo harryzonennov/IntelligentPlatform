@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.finance.dto;
 
 import org.springframework.stereotype.Component;
 
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.model.CorporateCustomer;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.model.CorporateCustomer;
 
 /**
  * Account Search Model extended to finance account

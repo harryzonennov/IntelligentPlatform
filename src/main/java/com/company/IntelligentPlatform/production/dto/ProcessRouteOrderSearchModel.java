@@ -3,10 +3,10 @@ package com.company.IntelligentPlatform.production.dto;
 import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * ProcessRouteOrder UI Model

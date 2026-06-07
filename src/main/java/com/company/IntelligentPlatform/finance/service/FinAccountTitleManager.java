@@ -8,7 +8,7 @@ import jakarta.annotation.PostConstruct;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 
 import com.company.IntelligentPlatform.finance.dto.FinAccountTitleSearchModel;
 import com.company.IntelligentPlatform.finance.dto.FinAccountTitleUIModel;
@@ -21,23 +21,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityBindModel;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityBindModel;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [AccountTitle]
@@ -99,12 +99,8 @@ public class FinAccountTitleManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountTitleDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(finAccountTitleConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountTitleDAO, this.getSeConfigureProxy()));
 	}
 
 	public Map<Integer, String> initSettleTypeMap()

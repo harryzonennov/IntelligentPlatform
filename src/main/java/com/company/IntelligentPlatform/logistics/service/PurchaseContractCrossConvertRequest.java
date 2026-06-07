@@ -6,17 +6,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.DocInvolvePartyProxy;
-import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
-import com.company.IntelligentPlatform.common.service.CrossDocConvertRequest;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.PricingSettingManager;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.DocInvolvePartyProxy;
+import com.company.IntelligentPlatform.platform.service.StandardSwitchProxy;
+import com.company.IntelligentPlatform.platform.service.CrossDocConvertRequest;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.PricingSettingManager;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 @Service
 public class PurchaseContractCrossConvertRequest extends

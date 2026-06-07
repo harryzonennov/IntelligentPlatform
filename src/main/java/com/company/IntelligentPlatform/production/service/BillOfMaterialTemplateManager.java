@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
 
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.annotation.PostConstruct;
@@ -17,33 +17,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.DocActionNodeProxy;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ServiceBasicKeyStructure;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.DocActionNodeProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceLanHelper;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceSearchProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.SerialLogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceBasicKeyStructure;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -159,12 +159,8 @@ public class BillOfMaterialTemplateManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, billOfMaterialTemplateDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(billOfMaterialTemplateConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, billOfMaterialTemplateDAO, this.getSeConfigureProxy()));
     }
 
     @Override

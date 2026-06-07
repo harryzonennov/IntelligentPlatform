@@ -1,10 +1,9 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinLogistics - QualityInspectMatItem (extends DocMatItemNode)
@@ -14,8 +13,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Table(name = "QualityInspectMatItem", catalog = "logistics")
 public class QualityInspectMatItem extends DocMatItemNode {
 
-	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
-	public static final String SENAME = IServiceModelConstants.QualityInspectMatItem;
+	public static final String NODENAME = IServiceModelConstants.QualityInspectMatItem;
+
+	public static final String SENAME = IServiceModelConstants.QualityInspectOrder;
 
 	@Column(name = "itemInspectType")
 	protected int itemInspectType;

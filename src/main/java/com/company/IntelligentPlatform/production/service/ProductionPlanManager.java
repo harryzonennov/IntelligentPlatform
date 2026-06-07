@@ -25,45 +25,45 @@ import com.company.IntelligentPlatform.finance.service.FinanceAccountValueProxyE
 import com.company.IntelligentPlatform.finance.service.SystemResourceException;
 import com.company.IntelligentPlatform.finance.service.SystemResourceFinanceAccountProxy;
 import com.company.IntelligentPlatform.production.repository.ProductionPlanRepository;
-import com.company.IntelligentPlatform.common.dto.MaterialStockKeepUnitSearchModel;
-import com.company.IntelligentPlatform.common.service.MatDecisionValueSettingManager;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.dto.MaterialStockKeepUnitSearchModel;
+import com.company.IntelligentPlatform.platform.service.MatDecisionValueSettingManager;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.logistics.model.StoreAvailableStoreItemRequest;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreItemException;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreItemManager;
-import com.company.IntelligentPlatform.common.model.MatDecisionValueSetting;
-import com.company.IntelligentPlatform.common.model.Material;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.Warehouse;
+import com.company.IntelligentPlatform.platform.model.MatDecisionValueSetting;
+import com.company.IntelligentPlatform.platform.model.Material;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.controller.DefFinanceControllerResource;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.DocActionNodeProxy;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.ServiceComExecuteException;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDateHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.controller.DefFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.DocActionNodeProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.ServiceComExecuteException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDateHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [ProductionPlan]
@@ -839,12 +839,8 @@ public class ProductionPlanManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionPlanDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(productionPlanConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionPlanDAO, this.getSeConfigureProxy()));
     }
 
     /**
@@ -2120,15 +2116,15 @@ public class ProductionPlanManager extends ServiceEntityManager {
             docFlowProxy.convDocumentToUI(productionPlan, productionPlanUIModel, logonInfo);
             if (productionPlan.getPlanStartPrepareDate() != null) {
                 productionPlanUIModel.setPlanStartPrepareDate(
-                        DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlan.getPlanStartPrepareDate()));
+                        DefaultDateFormatConstant.formatDateMin(productionPlan.getPlanStartPrepareDate()));
             }
             if (productionPlan.getPlanStartTime() != null) {
                 productionPlanUIModel
-                        .setPlanStartTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlan.getPlanStartTime()));
+                        .setPlanStartTime(DefaultDateFormatConstant.formatDateMin(productionPlan.getPlanStartTime()));
             }
             if (productionPlan.getPlanEndTime() != null) {
                 productionPlanUIModel
-                        .setPlanEndTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlan.getPlanEndTime()));
+                        .setPlanEndTime(DefaultDateFormatConstant.formatDateMin(productionPlan.getPlanEndTime()));
             }
             productionPlanUIModel.setRefUnitUUID(productionPlan.getRefUnitUUID());
             productionPlanUIModel.setRefMaterialSKUUUID(productionPlan.getRefMaterialSKUUUID());
@@ -2138,19 +2134,19 @@ public class ProductionPlanManager extends ServiceEntityManager {
             productionPlanUIModel.setApproveBy(productionPlan.getApproveBy());
             productionPlanUIModel.setProductionBatchNumber(productionPlan.getProductionBatchNumber());
             if (productionPlan.getApproveTime() != null) {
-                productionPlanUIModel.setApproveTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionPlan.getApproveTime()));
+                productionPlanUIModel.setApproveTime(DefaultDateFormatConstant.formatDate(productionPlan.getApproveTime()));
             }
             productionPlanUIModel.setCountApproveBy(productionPlan.getCountApproveBy());
             if (productionPlan.getCountApproveTime() != null) {
                 productionPlanUIModel
-                        .setCountApproveTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionPlan.getCountApproveTime()));
+                        .setCountApproveTime(DefaultDateFormatConstant.formatDate(productionPlan.getCountApproveTime()));
             }
             productionPlanUIModel.setRefMainProdOrderUUID(productionPlan.getRefMainProdOrderUUID());
             productionPlanUIModel.setSelfLeadTime(productionPlan.getSelfLeadTime());
             productionPlanUIModel.setNote(productionPlan.getNote());
             if (productionPlan.getActualEndTime() != null) {
                 productionPlanUIModel
-                        .setActualEndTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionPlan.getActualEndTime()));
+                        .setActualEndTime(DefaultDateFormatConstant.formatDate(productionPlan.getActualEndTime()));
             }
             try {
                 String amountLabel = materialStockKeepUnitManager
@@ -2166,7 +2162,7 @@ public class ProductionPlanManager extends ServiceEntityManager {
             }
             if (productionPlan.getActualStartTime() != null) {
                 productionPlanUIModel
-                        .setActualStartTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionPlan.getActualStartTime()));
+                        .setActualStartTime(DefaultDateFormatConstant.formatDate(productionPlan.getActualStartTime()));
             }
             productionPlanUIModel.setId(productionPlan.getId());
             productionPlanUIModel.setStatus(productionPlan.getStatus());

@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.dto.AccountUIModel;
+import com.company.IntelligentPlatform.platform.dto.AccountUIModel;
 
 public class AccountObjectFinUIModel extends AccountUIModel{
 	

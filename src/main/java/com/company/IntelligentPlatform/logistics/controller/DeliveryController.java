@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.logistics.dto.InboundDeliveryDto;
 import com.company.IntelligentPlatform.logistics.dto.OutboundDeliveryDto;
 import com.company.IntelligentPlatform.logistics.model.InboundDelivery;

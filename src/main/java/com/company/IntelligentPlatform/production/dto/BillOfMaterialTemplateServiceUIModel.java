@@ -5,9 +5,9 @@ import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplateIt
 import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplate;
 import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplateActionNode;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinProduction - ProdJobOrder (extends ServiceEntityNode)
@@ -14,6 +14,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 public class ProdJobOrder extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.ProdJobOrder;
 
 	public static final int STATUS_INITIAL    = 1;

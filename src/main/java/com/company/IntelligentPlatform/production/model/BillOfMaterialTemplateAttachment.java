@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 public class BillOfMaterialTemplateAttachment extends BillOfMaterialAttachment {
 

@@ -3,9 +3,9 @@ package com.company.IntelligentPlatform.production.service;
 import com.company.IntelligentPlatform.production.model.RepairProdTarSubItem;
 import com.company.IntelligentPlatform.production.model.RepairProdTargetItemAttachment;
 import com.company.IntelligentPlatform.production.model.RepairProdTargetMatItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 import java.util.ArrayList;
 import java.util.List;

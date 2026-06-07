@@ -2,11 +2,11 @@ package com.company.IntelligentPlatform.logistics.service;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.service.ServiceCalendarHelper;
-import com.company.IntelligentPlatform.common.service.ServiceChartHelper;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.service.ServiceCalendarHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceChartHelper;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
 
 public class WarehouseStoreLogChartRequest extends SEUIComModel{
 	

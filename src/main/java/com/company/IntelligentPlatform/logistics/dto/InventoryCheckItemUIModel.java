@@ -1,12 +1,12 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
 import com.company.IntelligentPlatform.logistics.model.InventoryCheckItem;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.StandardMaterialUnit;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.StandardMaterialUnit;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
 
 /**
  * In-bound delivery UI Model

@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-import com.company.IntelligentPlatform.common.model.IMobileJSONConstant;
+import com.company.IntelligentPlatform.platform.model.IMobileJSONConstant;
 
 public interface ILogisticsMobileJSONConstant extends IMobileJSONConstant{
 

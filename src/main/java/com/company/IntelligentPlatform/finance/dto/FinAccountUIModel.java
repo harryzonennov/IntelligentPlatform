@@ -2,9 +2,9 @@ package com.company.IntelligentPlatform.finance.dto;
 
 import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
-import com.company.IntelligentPlatform.common.controller.DocumentUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.DocumentUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
 
 public class FinAccountUIModel extends DocumentUIModel {
 	

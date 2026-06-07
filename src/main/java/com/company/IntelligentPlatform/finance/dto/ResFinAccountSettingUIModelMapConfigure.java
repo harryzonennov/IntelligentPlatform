@@ -1,12 +1,12 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ResFinAccountFieldSetting;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.controller.ISEUIConfigureMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIModelMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountFieldSetting;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
 
 @ISEUIConfigureMapping(uiModelName = "platform.foundation.Controller.Model.SystemResource.ResFinAccountSettingUIModel")
 public class ResFinAccountSettingUIModelMapConfigure extends

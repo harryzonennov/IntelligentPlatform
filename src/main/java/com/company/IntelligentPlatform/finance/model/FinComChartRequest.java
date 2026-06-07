@@ -2,7 +2,7 @@ package com.company.IntelligentPlatform.finance.model;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
 
 public class FinComChartRequest {
 

@@ -19,22 +19,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.service.CorporateCustomerManager;
-import com.company.IntelligentPlatform.common.service.IndividualCustomerManager;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductException;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.CorporateCustomer;
-import com.company.IntelligentPlatform.common.model.IndividualCustomer;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.CorporateCustomerManager;
+import com.company.IntelligentPlatform.platform.service.IndividualCustomerManager;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductException;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.service.ServiceSearchProxy;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.CorporateCustomer;
+import com.company.IntelligentPlatform.platform.model.IndividualCustomer;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
@@ -248,23 +248,27 @@ public class PurchaseContractManager extends ServiceEntityManager {
             purchaseContractUIModel.setPurchaseBatchNumber(purchaseContract.getPurchaseBatchNumber());
             if (logonInfo != null) {
                 Map<Integer, String> statusMap = this.initStatus(logonInfo.getLanguageCode());
-                purchaseContractUIModel.setStatusValue(statusMap.get(purchaseContract.getStatus()));
+                if (statusMap != null) {
+                    purchaseContractUIModel.setStatusValue(statusMap.get(purchaseContract.getStatus()));
+                }
                 Map<Integer, String> priorityCodMap = initPriorityCode(logonInfo.getLanguageCode());
-                purchaseContractUIModel.setPriorityCodeValue(priorityCodMap.get(purchaseContract.getPriorityCode()));
+                if (priorityCodMap != null) {
+                    purchaseContractUIModel.setPriorityCodeValue(priorityCodMap.get(purchaseContract.getPriorityCode()));
+                }
             }
             purchaseContractUIModel.setPriorityCode(purchaseContract.getPriorityCode());
             purchaseContractUIModel.setCurrencyCode(purchaseContract.getCurrencyCode());
             if (purchaseContract.getCreatedTime() != null) {
                 purchaseContractUIModel.setCreatedDate(
-                        DefaultDateFormatConstant.DATE_FORMAT.format(purchaseContract.getCreatedTime()));
+                        DefaultDateFormatConstant.formatDate(purchaseContract.getCreatedTime()));
             }
             if (purchaseContract.getSignDate() != null) {
                 purchaseContractUIModel.setSignDate(
-                        DefaultDateFormatConstant.DATE_FORMAT.format(purchaseContract.getSignDate()));
+                        DefaultDateFormatConstant.formatDate(purchaseContract.getSignDate()));
             }
             if (purchaseContract.getRequireExecutionDate() != null) {
                 purchaseContractUIModel.setRequireExecutionDate(
-                        DefaultDateFormatConstant.DATE_FORMAT.format(purchaseContract.getRequireExecutionDate()));
+                        DefaultDateFormatConstant.formatDate(purchaseContract.getRequireExecutionDate()));
             }
             purchaseContractUIModel.setContractDetails(purchaseContract.getContractDetails());
             purchaseContractUIModel.setGrossPrice(purchaseContract.getGrossPrice());
@@ -370,12 +374,8 @@ public class PurchaseContractManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseContractDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(purchaseContractConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, purchaseContractDAO, this.getSeConfigureProxy()));
     }
 
     /**
@@ -407,7 +407,7 @@ public class PurchaseContractManager extends ServiceEntityManager {
                                                                MaterialStockKeepUnit materialStockKeepUnit, int offset)
             throws ServiceEntityConfigureException {
         PurchaseContractMaterialItem purchaseContractMaterialItem =
-                (PurchaseContractMaterialItem) newEntityNode(purchaseContract, PurchaseContractMaterialItem.NODENAME);
+                (PurchaseContractMaterialItem) newEntityNode(purchaseContract, PurchaseContractMaterialItem.SENAME);
         initialCopyPurchaseContractToMaterialItem(purchaseContract, purchaseContractPartyB,
                 purchaseContractMaterialItem, offset);
         if (materialStockKeepUnit != null) {
@@ -499,7 +499,7 @@ public class PurchaseContractManager extends ServiceEntityManager {
                 logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, PurchaseContract.SENAME));
             }
         }
-        if (PurchaseContractMaterialItem.NODENAME.equals(seNode.getNodeName())) {
+        if (PurchaseContractMaterialItem.SENAME.equals(seNode.getNodeName())) {
             PurchaseContractMaterialItem purchaseContractMaterialItem = (PurchaseContractMaterialItem) seNode;
             try {
                 PurchaseContractMaterialItemUIModel purchaseContractMaterialItemUIModel =

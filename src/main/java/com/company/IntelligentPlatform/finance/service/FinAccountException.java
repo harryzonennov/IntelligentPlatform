@@ -1,10 +1,10 @@
 package com.company.IntelligentPlatform.finance.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityException;
-import com.company.IntelligentPlatform.common.service.ServiceExceptionHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.model.ServiceExceptionRecord;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityException;
+import com.company.IntelligentPlatform.platform.service.ServiceExceptionHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.model.ServiceExceptionRecord;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 public class FinAccountException extends ServiceEntityException {
 

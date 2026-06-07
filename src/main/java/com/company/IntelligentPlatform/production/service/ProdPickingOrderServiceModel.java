@@ -7,8 +7,8 @@ import com.company.IntelligentPlatform.production.model.ProdPickingOrder;
 import com.company.IntelligentPlatform.production.model.ProdPickingOrderParty;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefOrderItem;
 
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProdPickingOrderServiceModel extends ServiceModule {
 

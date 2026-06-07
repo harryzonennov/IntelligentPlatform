@@ -15,7 +15,7 @@
         <userTask id="sequentialProcess" name="Serial Process" flowable:assignee="${sequential}">
             <documentation>Serial multi-instance, after the value is assigned to multiple users, it must be completed one by one before entering the next node</documentation>
             <extensionElements>
-                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.common.service.DocMultiApproveTaskListener">
+                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.platform.service.DocMultiApproveTaskListener">
                 </flowable:taskListener>
                 <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
             </extensionElements>
@@ -39,7 +39,7 @@
         <userTask id="parallelProcess" name="Parallel Process" flowable:assignee="${parallel}">
             <documentation>Parallel multi-instance test means that after being assigned to multiple users, as long as one of the users completes the next step</documentation>
             <extensionElements>
-                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.common.service.DocMultiApproveTaskListener">
+                <flowable:taskListener event="complete" class="com.company.IntelligentPlatform.platform.service.DocMultiApproveTaskListener">
                 </flowable:taskListener>
                 <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
             </extensionElements>

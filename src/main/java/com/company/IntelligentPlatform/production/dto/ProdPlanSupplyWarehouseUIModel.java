@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class ProdPlanSupplyWarehouseUIModel extends SEUIComModel {
 

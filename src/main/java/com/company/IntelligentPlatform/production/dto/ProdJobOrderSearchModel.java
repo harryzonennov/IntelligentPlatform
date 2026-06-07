@@ -6,9 +6,9 @@ import com.company.IntelligentPlatform.production.model.ProdJobOrder;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * ProdJobOrder UI Model

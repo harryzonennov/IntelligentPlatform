@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import com.company.IntelligentPlatform.finance.service.FinAccountService;
 import org.springframework.beans.factory.annotation.Autowired;

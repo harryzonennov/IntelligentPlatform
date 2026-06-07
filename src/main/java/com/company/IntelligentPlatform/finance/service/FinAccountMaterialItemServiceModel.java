@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.company.IntelligentPlatform.finance.model.FinAccountMatItemAttachment;
 import com.company.IntelligentPlatform.finance.model.FinAccountMaterialItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class FinAccountMaterialItemServiceModel extends ServiceModule {
 

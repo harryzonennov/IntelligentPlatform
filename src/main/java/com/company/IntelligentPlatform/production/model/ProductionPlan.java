@@ -1,10 +1,10 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - ProductionPlan (extends DocumentContent)
@@ -15,6 +15,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 public class ProductionPlan extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.ProductionPlan;
 
 	public static final int STATUS_INITIAL        = 1;

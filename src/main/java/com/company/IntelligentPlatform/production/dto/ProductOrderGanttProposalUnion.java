@@ -3,7 +3,7 @@ package com.company.IntelligentPlatform.production.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * model class for Production order Gantt proposal

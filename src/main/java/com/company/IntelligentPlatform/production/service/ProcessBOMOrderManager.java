@@ -13,15 +13,15 @@ import com.company.IntelligentPlatform.production.dto.ProcessBOMOrderUIModel;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.production.repository.ProcessBOMOrderRepository;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 import com.company.IntelligentPlatform.production.model.BillOfMaterialOrder;
 import com.company.IntelligentPlatform.production.model.ProcessBOMItem;
 import com.company.IntelligentPlatform.production.model.ProcessBOMOrder;
@@ -70,12 +70,8 @@ public class ProcessBOMOrderManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processBOMOrderDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(processBOMOrderConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processBOMOrderDAO, this.getSeConfigureProxy()));
 	}
 
 	/**

@@ -6,9 +6,9 @@ import com.company.IntelligentPlatform.production.model.ProdPickingOrder;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefMaterialItem;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefOrderItem;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
 
 @Component
 public class ProdPickingRefMaterialItemSearchModel extends SEUIComModel {

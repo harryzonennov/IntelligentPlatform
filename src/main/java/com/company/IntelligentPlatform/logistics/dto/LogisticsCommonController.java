@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.company.IntelligentPlatform.common.controller.SEEditorController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEEditorController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
 
 @Scope("session")
 @Controller(value = "logisticsCommonController")

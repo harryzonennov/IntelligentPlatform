@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
 
 public class ProductionDocRequestUIModel extends DocMatItemUIModel {
 

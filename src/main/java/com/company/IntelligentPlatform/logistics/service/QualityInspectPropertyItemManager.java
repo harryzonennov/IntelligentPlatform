@@ -10,17 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.model.RegisteredProduct;
-import com.company.IntelligentPlatform.common.model.RegisteredProductExtendProperty;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.DocPageHeaderModelProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.model.RegisteredProduct;
+import com.company.IntelligentPlatform.platform.model.RegisteredProductExtendProperty;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.DocPageHeaderModelProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 @Service
 @Transactional

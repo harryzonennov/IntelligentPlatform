@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
 
 @Service
 public class QualityInspectOrderIdHelper extends ServiceDefaultIdGenerateHelper{

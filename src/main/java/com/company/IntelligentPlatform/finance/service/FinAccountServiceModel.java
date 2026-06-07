@@ -8,9 +8,9 @@ import com.company.IntelligentPlatform.finance.model.FinAccountAttachment;
 import com.company.IntelligentPlatform.finance.model.FinAccountLog;
 import com.company.IntelligentPlatform.finance.model.FinAccountMaterialItem;
 import com.company.IntelligentPlatform.finance.model.FinAccountObjectRef;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class FinAccountServiceModel extends ServiceModule {
 

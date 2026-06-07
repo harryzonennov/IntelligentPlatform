@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureMap;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureMap;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureProxy;
 
 /**
  * Configure Proxy CLASS FOR Service Entity [PurchaseContract]
@@ -64,7 +64,7 @@ public class PurchaseContractConfigureProxy extends ServiceEntityConfigureProxy 
 		purchaseContractMaterialItemConfigureMap
 				.setNodeType(PurchaseContractMaterialItem.class);
 		purchaseContractMaterialItemConfigureMap
-				.setTableName(PurchaseContractMaterialItem.NODENAME);
+				.setTableName(PurchaseContractMaterialItem.SENAME);
 		purchaseContractMaterialItemConfigureMap.setFieldList(super
 				.getBasicDocMatItemMap());
 		purchaseContractMaterialItemConfigureMap.addNodeFieldMap(
@@ -126,7 +126,7 @@ public class PurchaseContractConfigureProxy extends ServiceEntityConfigureProxy 
 		// [PurchaseContractMaterialItemAttachment] node
 		ServiceEntityConfigureMap purchaseContractMaterialItemAttachmentConfigureMap = new ServiceEntityConfigureMap();
 		purchaseContractMaterialItemAttachmentConfigureMap
-				.setParentNodeName(PurchaseContractMaterialItem.NODENAME);
+				.setParentNodeName(PurchaseContractMaterialItem.SENAME);
 		purchaseContractMaterialItemAttachmentConfigureMap
 				.setNodeName(PurchaseContractMaterialItemAttachment.NODENAME);
 		purchaseContractMaterialItemAttachmentConfigureMap

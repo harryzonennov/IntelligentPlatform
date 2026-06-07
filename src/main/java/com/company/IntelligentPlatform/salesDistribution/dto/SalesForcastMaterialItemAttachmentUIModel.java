@@ -1,0 +1,10 @@
+package com.company.IntelligentPlatform.salesDistribution.dto;
+
+import com.company.IntelligentPlatform.salesDistribution.model.SalesContractMaterialItemAttachment;
+import com.company.IntelligentPlatform.salesDistribution.model.SalesForcastMaterialItemAttachment;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.dto.DocAttachmentNodeUIModel;
+
+public class SalesForcastMaterialItemAttachmentUIModel extends DocAttachmentNodeUIModel {
+
+}

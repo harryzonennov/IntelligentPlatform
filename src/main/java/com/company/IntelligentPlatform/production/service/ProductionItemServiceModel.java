@@ -8,9 +8,9 @@ import com.company.IntelligentPlatform.production.model.ProdOrderSupplyWarehouse
 import com.company.IntelligentPlatform.production.model.ProductionPlan;
 import com.company.IntelligentPlatform.production.model.ProductionPlanAttachment;
 import com.company.IntelligentPlatform.production.model.ProductionPlanItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProductionItemServiceModel extends ServiceModule {
 

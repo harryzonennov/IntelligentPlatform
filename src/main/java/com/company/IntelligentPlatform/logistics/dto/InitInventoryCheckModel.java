@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class InitInventoryCheckModel extends SEUIComModel{
 	

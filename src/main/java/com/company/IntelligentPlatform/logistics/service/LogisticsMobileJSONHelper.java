@@ -3,8 +3,8 @@ package com.company.IntelligentPlatform.logistics.service;
 import net.sf.json.JSONObject;
 
 import com.company.IntelligentPlatform.logistics.service.ILogisticsMobileJSONConstant;
-import com.company.IntelligentPlatform.common.service.ServiceJSONParser;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceJSONParser;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 
 /**
  * The Common JSON data format and process helper class for mobile client

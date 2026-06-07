@@ -3,20 +3,20 @@ package com.company.IntelligentPlatform.logistics.dto;
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.stereotype.Component;
 
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.controller.*;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.service.BSearchGroupConfig;
-import com.company.IntelligentPlatform.common.service.SearchDocConfigHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.dto.WarehouseSubSearchModel;
-import com.company.IntelligentPlatform.common.dto.ServiceDocSearchHeaderModel;
-import com.company.IntelligentPlatform.common.dto.DocActionNodeSearchModel;
-import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel;
-import com.company.IntelligentPlatform.common.dto.DocFlowNodeSearchModel;
-import com.company.IntelligentPlatform.common.dto.ServiceEntityCreateUpdateSearchModel;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.controller.*;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.service.BSearchGroupConfig;
+import com.company.IntelligentPlatform.platform.service.SearchDocConfigHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.dto.WarehouseSubSearchModel;
+import com.company.IntelligentPlatform.platform.dto.ServiceDocSearchHeaderModel;
+import com.company.IntelligentPlatform.platform.dto.DocActionNodeSearchModel;
+import com.company.IntelligentPlatform.platform.dto.DocEmbedMaterialSKUSearchModel;
+import com.company.IntelligentPlatform.platform.dto.DocFlowNodeSearchModel;
+import com.company.IntelligentPlatform.platform.dto.ServiceEntityCreateUpdateSearchModel;
 
 /**
  * InventoryCheckOrder UI Model

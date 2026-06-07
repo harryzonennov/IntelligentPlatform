@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.production.dto;
 
 import com.company.IntelligentPlatform.production.model.ProdPickingRefMaterialItem;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
 
 public class ProdPickingRefMaterialItemUIModel extends DocMatItemUIModel {
 

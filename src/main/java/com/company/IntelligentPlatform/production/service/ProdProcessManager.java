@@ -15,19 +15,19 @@ import com.company.IntelligentPlatform.production.dto.ProdProcessUIModel;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import com.company.IntelligentPlatform.production.repository.ProdProcessRepository;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProdProcessConfigureProxy;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
@@ -97,12 +97,8 @@ public class ProdProcessManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodProcessDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(prodProcessConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodProcessDAO, this.getSeConfigureProxy()));
 	}
 
 	public void convProdProcessToUI(ProdProcess prodProcess,

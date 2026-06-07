@@ -2,11 +2,11 @@ package com.company.IntelligentPlatform.production.controller;
 
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProductionResourceUnion;
-import com.company.IntelligentPlatform.common.controller.ISEUIConfigureMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIModelMapConfigure;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.Organization;
+import com.company.IntelligentPlatform.platform.controller.ISEUIConfigureMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIModelMapConfigure;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.Organization;
 
 @ISEUIConfigureMapping(uiModelName = "com.company.IntelligentPlatform.production.dto.ProdProcessUIModel")
 public class ProdProcessUIModelMapConfigure extends

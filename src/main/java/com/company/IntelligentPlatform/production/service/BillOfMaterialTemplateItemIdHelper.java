@@ -2,12 +2,12 @@ package com.company.IntelligentPlatform.production.service;
 
 import com.company.IntelligentPlatform.production.model.BillOfMaterialTemplateItem;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 import java.util.List;
 

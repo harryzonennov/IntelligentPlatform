@@ -6,11 +6,11 @@ import java.util.List;
 import com.company.IntelligentPlatform.finance.dto.ResourceAuthorizationUIModel;
 import com.company.IntelligentPlatform.finance.service.SystemResourceManager;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
-import com.company.IntelligentPlatform.common.model.ResourceAuthorization;
-import com.company.IntelligentPlatform.common.model.SystemResource;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.model.ResourceAuthorization;
+import com.company.IntelligentPlatform.platform.model.SystemResource;
 
 @Component
 public class ResFinSystemResourceServiceUIModel extends ServiceUIModule {

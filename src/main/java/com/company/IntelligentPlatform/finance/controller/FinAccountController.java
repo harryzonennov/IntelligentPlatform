@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.finance.dto.FinAccountDto;
 import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;

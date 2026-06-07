@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - BillOfMaterialTemplate (extends BillOfMaterialOrder)
@@ -15,6 +15,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 public class BillOfMaterialTemplate extends BillOfMaterialOrder {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.BillOfMaterialTemplate;
 
 }

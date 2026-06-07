@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.dto;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class FinAccountMatItemAttachmentUIModel extends SEUIComModel {
 

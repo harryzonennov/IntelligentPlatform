@@ -4,8 +4,8 @@ import java.util.Date;
 
 // TODO-LEGACY: import org.springframework.beans.factory.annotation.Required; // removed in Spring 6
 
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
 
 /**
  * Inbound delivery UI Model

@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.finance.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.IndividualCustomer;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IndividualCustomer;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 public class FinanceAccountObjectProxyManager extends ServiceEntityManager {
 	

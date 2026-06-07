@@ -18,16 +18,16 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEListController;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.INavigationElementConstants;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEListController;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.INavigationElementConstants;
+import com.company.IntelligentPlatform.platform.service.LogonInfoException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 @Scope("session")
 @Controller(value = "processRouteProcessItemListController")

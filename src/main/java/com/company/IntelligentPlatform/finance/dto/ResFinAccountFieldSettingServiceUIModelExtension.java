@@ -9,11 +9,11 @@ import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.ResFinAccountFieldSetting;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountFieldSetting;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
 
 @Service
 public class ResFinAccountFieldSettingServiceUIModelExtension extends

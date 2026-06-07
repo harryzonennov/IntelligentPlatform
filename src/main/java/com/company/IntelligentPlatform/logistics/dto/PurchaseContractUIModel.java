@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocumentUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocumentUIModel;
 
 public class PurchaseContractUIModel extends DocumentUIModel {
 

@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.finance.dto;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
 
 public class FinanceDocumentUIModel extends SEUIComModel {
 

@@ -12,27 +12,27 @@ import com.company.IntelligentPlatform.finance.model.FinAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.LogonInfoManager;
-import com.company.IntelligentPlatform.common.service.DefTargetMessageHandlerFrameWork;
-import com.company.IntelligentPlatform.common.service.IMessageCategory;
-import com.company.IntelligentPlatform.common.service.LogonUserMessage;
-import com.company.IntelligentPlatform.common.service.LogonUserMessageCategory;
-import com.company.IntelligentPlatform.common.service.LogonUserMessageException;
-import com.company.IntelligentPlatform.common.service.BSearchResponse;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchContextBuilder;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.AuthorizationObject;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.LogonInfoException;
+import com.company.IntelligentPlatform.platform.service.LogonInfoManager;
+import com.company.IntelligentPlatform.platform.service.DefTargetMessageHandlerFrameWork;
+import com.company.IntelligentPlatform.platform.service.IMessageCategory;
+import com.company.IntelligentPlatform.platform.service.LogonUserMessage;
+import com.company.IntelligentPlatform.platform.service.LogonUserMessageCategory;
+import com.company.IntelligentPlatform.platform.service.LogonUserMessageException;
+import com.company.IntelligentPlatform.platform.service.BSearchResponse;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchContextBuilder;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.AuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 @Service
 public class FinAccountToVerifyMessageHandler extends

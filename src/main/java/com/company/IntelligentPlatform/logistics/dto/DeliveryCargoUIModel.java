@@ -1,11 +1,11 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
 import com.company.IntelligentPlatform.logistics.model.InboundItem;
-import com.company.IntelligentPlatform.common.model.Cargo;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.Cargo;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Inbound delivery UI Model

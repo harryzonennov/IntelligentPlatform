@@ -4,9 +4,9 @@ import com.company.IntelligentPlatform.production.model.BillOfMaterialOrder;
 import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.production.model.BillOfMaterialItem;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * BillOfMaterialItem UI Model

@@ -3,8 +3,8 @@ package com.company.IntelligentPlatform.finance.dto;
 import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
 
 @Component
 public class FinAccountTitleSearchModel extends SEUIComModel {

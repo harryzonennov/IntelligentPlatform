@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.production.service;
 
 import com.company.IntelligentPlatform.production.model.RepairProdItemReqProposal;
 import com.company.IntelligentPlatform.production.model.RepairProdOrderItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 import java.util.ArrayList;
 import java.util.List;

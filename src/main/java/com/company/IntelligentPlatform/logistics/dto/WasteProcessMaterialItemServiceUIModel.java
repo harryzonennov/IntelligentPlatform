@@ -3,8 +3,8 @@ package com.company.IntelligentPlatform.logistics.dto;
 import com.company.IntelligentPlatform.logistics.model.WasteProcessMaterialItem;
 import com.company.IntelligentPlatform.logistics.model.WasteProcessMaterialItemAttachment;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 import java.util.ArrayList;
 import java.util.List;

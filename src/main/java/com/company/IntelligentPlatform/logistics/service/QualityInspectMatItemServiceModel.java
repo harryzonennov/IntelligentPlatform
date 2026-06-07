@@ -8,9 +8,9 @@ import com.company.IntelligentPlatform.logistics.model.QualityInspectMatItem;
 import com.company.IntelligentPlatform.logistics.model.QualityInspectMatItemParty;
 import com.company.IntelligentPlatform.logistics.model.QualityInspectPropertyItem;
 
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class QualityInspectMatItemServiceModel extends ServiceModule {
 

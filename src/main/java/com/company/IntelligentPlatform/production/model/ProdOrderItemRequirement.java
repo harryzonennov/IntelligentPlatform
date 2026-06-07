@@ -2,9 +2,13 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ReferenceNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ReferenceNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "ProdOrderItemRequirement", catalog = "production")
 public class ProdOrderItemRequirement extends ReferenceNode {
 
 	public final static String NODENAME = IServiceModelConstants.ProdOrderItemRequirement;

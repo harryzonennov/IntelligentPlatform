@@ -5,7 +5,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import com.company.IntelligentPlatform.production.dto.ProdOrderHeaderExcelProposal;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportProxy;
 
 @Service
 public class ProdOrderHeaderProposalExcelProxy extends ServiceExcelReportProxy{

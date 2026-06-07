@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
 
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
@@ -17,33 +17,33 @@ import com.company.IntelligentPlatform.production.dto.ProcessRouteOrderSearchMod
 import com.company.IntelligentPlatform.production.dto.ProcessRouteOrderUIModel;
 import com.company.IntelligentPlatform.production.dto.ProcessRouteProcessItemUIModel;
 import com.company.IntelligentPlatform.production.repository.ProcessRouteOrderRepository;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.StandardKeyFlagProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.model.IReferenceNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceBasicKeyStructure;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityFieldsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.StandardKeyFlagProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.model.IReferenceNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceBasicKeyStructure;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityFieldsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrder;
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrderConfigureProxy;
 import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
 import com.company.IntelligentPlatform.production.model.ProdProcess;
 import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [ProcessRouteOrder]
@@ -110,12 +110,8 @@ public class ProcessRouteOrderManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processRouteOrderDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(processRouteOrderConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, processRouteOrderDAO, this.getSeConfigureProxy()));
 	}
 
 	public Map<Integer, String> initStatusMap()

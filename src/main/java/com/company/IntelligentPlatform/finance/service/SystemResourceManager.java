@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.finance.service;
 
 import com.company.IntelligentPlatform.finance.repository.SystemResourceRepository;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.lang.reflect.Field;
@@ -24,34 +24,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.dto.IFinSettleConfigure;
-import com.company.IntelligentPlatform.common.controller.IFinanceControllerResource;
-import com.company.IntelligentPlatform.common.service.SystemResourceDAO;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.service.SpringContextBeanService;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ResFinAccountSettingIdHelper;
-import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.service.SystemConfigureException;
-import com.company.IntelligentPlatform.common.service.SystemConfigureResourceManager;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityFieldsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ResFinAccountFieldSetting;
-import com.company.IntelligentPlatform.common.model.ResFinAccountProcessCode;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
-import com.company.IntelligentPlatform.common.model.ResourceAuthorization;
-import com.company.IntelligentPlatform.common.model.SystemResource;
-import com.company.IntelligentPlatform.common.model.SystemResourceConfigureProxy;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.dto.IFinSettleConfigure;
+import com.company.IntelligentPlatform.platform.controller.IFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.service.SystemResourceDAO;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.service.SpringContextBeanService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ResFinAccountSettingIdHelper;
+import com.company.IntelligentPlatform.platform.service.StandardSwitchProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.service.SystemConfigureException;
+import com.company.IntelligentPlatform.platform.service.SystemConfigureResourceManager;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityFieldsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountFieldSetting;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountProcessCode;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.model.ResourceAuthorization;
+import com.company.IntelligentPlatform.platform.model.SystemResource;
+import com.company.IntelligentPlatform.platform.model.SystemResourceConfigureProxy;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 @Service
 @Transactional
@@ -118,12 +118,8 @@ public class SystemResourceManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemResourceDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(systemResourceConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, systemResourceDAO, this.getSeConfigureProxy()));
 	}
 
 	@Override

@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 import com.company.IntelligentPlatform.logistics.model.PurchaseContract;
 import com.company.IntelligentPlatform.production.model.ProdOrderTargetMatItem;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.dto.DocEmbedMaterialSKUSearchModel;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.service.BSearchGroupConfig;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.dto.DocEmbedMaterialSKUSearchModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.service.BSearchGroupConfig;
 
 @Component
 public class ProdOrderTargetMatItemSearchModel extends SEUIComModel {

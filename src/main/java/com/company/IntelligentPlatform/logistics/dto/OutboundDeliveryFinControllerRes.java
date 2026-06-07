@@ -10,13 +10,13 @@ import com.company.IntelligentPlatform.logistics.model.OutboundDelivery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.CustomerManager;
-import com.company.IntelligentPlatform.common.controller.IFinanceControllerResource;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.Account;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.CustomerManager;
+import com.company.IntelligentPlatform.platform.controller.IFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.Account;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 /**
  * Inbound Delivery Manager fin controller resource, should be attribute of

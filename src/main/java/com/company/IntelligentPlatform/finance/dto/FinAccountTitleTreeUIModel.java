@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.finance.dto;
 
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
 
 public class FinAccountTitleTreeUIModel extends SEUIComModel implements
 Comparable<FinAccountTitleTreeUIModel> {

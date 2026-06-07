@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinProduction - ProductionResourceUnion (extends ServiceEntityNode)
@@ -15,6 +15,7 @@ import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
 public class ProductionResourceUnion extends ServiceEntityNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.ProductionResourceUnion;
 
 	public static final int RESOURCE_TYPE_MACHINE = 1;

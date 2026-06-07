@@ -1,7 +1,9 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.ReferenceNode;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ReferenceNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 /**
  * General Service Entity class for Application-Account fee value field
@@ -9,6 +11,8 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
  * @author Zhang,Hang
  *
  */
+@Entity
+@Table(name = "AppAccountField", catalog = "finance")
 public class AppAccountField extends ReferenceNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;

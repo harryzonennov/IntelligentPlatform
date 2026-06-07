@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityService;
 import com.company.IntelligentPlatform.production.model.*;
 import com.company.IntelligentPlatform.production.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;

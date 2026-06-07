@@ -1,7 +1,7 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.service.SystemDefDocActionCodeProxy;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 public class BillOfMaterialTemplateActionNode extends BillOfMaterialOrderActionNode {
 

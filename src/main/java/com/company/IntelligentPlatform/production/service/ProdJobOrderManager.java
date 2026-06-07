@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.service;
 
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.util.ArrayList;
@@ -16,17 +16,17 @@ import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.production.dto.ProdJobMaterialItemUIModel;
 import com.company.IntelligentPlatform.production.dto.ProdJobOrderUIModel;
 import com.company.IntelligentPlatform.production.repository.ProdJobOrderRepository;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.model.MaterialSKUUnitReference;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.model.MaterialSKUUnitReference;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
 import com.company.IntelligentPlatform.production.model.BillOfMaterialItem;
 import com.company.IntelligentPlatform.production.model.ProcessRouteOrder;
 import com.company.IntelligentPlatform.production.model.ProcessRouteProcessItem;
@@ -83,14 +83,10 @@ public class ProdJobOrderManager extends ServiceEntityManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodJobOrderDAO));
+		super.setSeConfigureProxy(prodJobOrderConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, prodJobOrderDAO, this.getSeConfigureProxy()));
 	}
 
-	@PostConstruct
-	public void setSeConfigureProxy() {
-		super.setSeConfigureProxy(prodJobOrderConfigureProxy);
-	}
-	
 	@Override
 	public ServiceEntityNode newRootEntityNode(String client)
 			throws ServiceEntityConfigureException {
@@ -443,10 +439,10 @@ public class ProdJobOrderManager extends ServiceEntityManager {
 					.getRefProdRouteProcessItemUUID());
 			prodJobOrderUIModel.setRefWorkCenterUUID(prodJobOrder
 					.getRefWorkCenterUUID());
-			prodJobOrderUIModel.setStartDate(prodJobOrder.getStartDate() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(prodJobOrder.getStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setPlanStartDate(prodJobOrder.getPlanStartDate() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(prodJobOrder.getPlanStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setEndDate(prodJobOrder.getEndDate() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(prodJobOrder.getEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setPlanEndDate(prodJobOrder.getPlanEndDate() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(prodJobOrder.getPlanEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			prodJobOrderUIModel.setStartDate(prodJobOrder.getStartDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			prodJobOrderUIModel.setPlanStartDate(prodJobOrder.getPlanStartDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getPlanStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			prodJobOrderUIModel.setEndDate(prodJobOrder.getEndDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			prodJobOrderUIModel.setPlanEndDate(prodJobOrder.getPlanEndDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getPlanEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
 			prodJobOrderUIModel.setPlanNeedTime(prodJobOrder.getPlanNeedTime());
 			prodJobOrderUIModel.setStatus(prodJobOrder.getStatus());
 		}

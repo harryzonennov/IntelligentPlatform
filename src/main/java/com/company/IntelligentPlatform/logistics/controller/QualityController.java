@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.logistics.dto.QualityInspectOrderDto;
 import com.company.IntelligentPlatform.logistics.dto.WasteProcessOrderDto;
 import com.company.IntelligentPlatform.logistics.model.QualityInspectOrder;

@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 import jakarta.persistence.*;
 
 /**

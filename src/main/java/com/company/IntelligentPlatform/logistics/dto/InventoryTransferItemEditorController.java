@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.controller.ServiceBasicUtilityController;
-import com.company.IntelligentPlatform.common.controller.LogonActionController;
-import com.company.IntelligentPlatform.common.controller.SEEditorController;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
-import com.company.IntelligentPlatform.common.model.ISystemActionCode;
-import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
-import com.company.IntelligentPlatform.common.model.LogonUser;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.controller.ServiceBasicUtilityController;
+import com.company.IntelligentPlatform.platform.controller.LogonActionController;
+import com.company.IntelligentPlatform.platform.controller.SEEditorController;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.model.IDefResourceAuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.ISystemActionCode;
+import com.company.IntelligentPlatform.platform.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
 
 @Scope("session")
 @Controller(value = "inventoryTransferItemEditorController")

@@ -2,9 +2,15 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "ProdOrderReport", catalog = "production")
 public class ProdOrderReport extends ServiceEntityNode {
 
 	public final static String NODENAME = IServiceModelConstants.ProdOrderReport;

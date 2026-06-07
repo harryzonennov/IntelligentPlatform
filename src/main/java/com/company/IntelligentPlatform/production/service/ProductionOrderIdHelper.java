@@ -4,7 +4,7 @@ import com.company.IntelligentPlatform.production.model.ProductionOrder;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceDefaultIdGenerateHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceDefaultIdGenerateHelper;
 
 @Service
 public class ProductionOrderIdHelper extends ServiceDefaultIdGenerateHelper {

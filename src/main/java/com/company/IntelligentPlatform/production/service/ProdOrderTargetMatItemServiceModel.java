@@ -6,9 +6,9 @@ import java.util.List;
 import com.company.IntelligentPlatform.production.model.ProdOrderTarSubItem;
 import com.company.IntelligentPlatform.production.model.ProdOrderTargetItemAttachment;
 import com.company.IntelligentPlatform.production.model.ProdOrderTargetMatItem;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class ProdOrderTargetMatItemServiceModel extends ServiceModule {
 

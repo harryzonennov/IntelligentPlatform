@@ -1,9 +1,9 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - WarehouseStore (extends DocumentContent)
@@ -14,6 +14,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 public class WarehouseStore extends DocumentContent {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.WarehouseStore;
 
 	public static final int STATUS_INITIAL = 1;

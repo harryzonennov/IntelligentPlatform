@@ -17,33 +17,33 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.service.DocActionException;
-import com.company.IntelligentPlatform.common.service.DocPageHeaderModelProxy;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.ServiceComExecuteException;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.model.SimpleSEJSONRequest;
-import com.company.IntelligentPlatform.common.model.IDocumentNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityCommonFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.service.DocActionException;
+import com.company.IntelligentPlatform.platform.service.DocPageHeaderModelProxy;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceComExecuteException;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.model.SimpleSEJSONRequest;
+import com.company.IntelligentPlatform.platform.model.IDocumentNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityCommonFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 @Service
 public class ProductionPlanItemManager {
@@ -240,15 +240,15 @@ public class ProductionPlanItemManager {
 			productionPlanItemUIModel.setComLeadTime(productionPlanItem.getComLeadTime());
 			if (productionPlanItem.getPlanStartPrepareDate() != null) {
 				productionPlanItemUIModel.setPlanStartPrepareDate(
-						DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlanItem.getPlanStartPrepareDate()));
+						DefaultDateFormatConstant.formatDateMin(productionPlanItem.getPlanStartPrepareDate()));
 			}
 			if (productionPlanItem.getPlanStartDate() != null) {
 				productionPlanItemUIModel
-						.setPlanStartDate(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlanItem.getPlanStartDate()));
+						.setPlanStartDate(DefaultDateFormatConstant.formatDateMin(productionPlanItem.getPlanStartDate()));
 			}
 			if (productionPlanItem.getPlanEndDate() != null) {
 				productionPlanItemUIModel
-						.setPlanEndDate(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionPlanItem.getPlanEndDate()));
+						.setPlanEndDate(DefaultDateFormatConstant.formatDateMin(productionPlanItem.getPlanEndDate()));
 			}
 			productionPlanItemUIModel.setItemStatus(productionPlanItem.getItemStatus());
 			productionPlanItemUIModel.setAvailableAmount(productionPlanItem.getAvailableAmount());
@@ -325,8 +325,8 @@ public class ProductionPlanItemManager {
 	public void convProductionPlanToItemUI(ProductionPlan productionPlan, ProductionPlanItemUIModel productionPlanItemUIModel) {
 		if (productionPlan != null) {
 			productionPlanItemUIModel.setPlanId(productionPlan.getId());
-			productionPlanItemUIModel.setPlanPlanStartTime(productionPlan.getPlanStartTime() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(productionPlan.getPlanStartTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			productionPlanItemUIModel.setPlanPlanEndTime(productionPlan.getPlanEndTime() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(productionPlan.getPlanEndTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			productionPlanItemUIModel.setPlanPlanStartTime(productionPlan.getPlanStartTime() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(productionPlan.getPlanStartTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			productionPlanItemUIModel.setPlanPlanEndTime(productionPlan.getPlanEndTime() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(productionPlan.getPlanEndTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
 			try {
 				String amountLabel = materialStockKeepUnitManager
 						.getAmountLabel(productionPlan.getRefMaterialSKUUUID(), productionPlan.getRefUnitUUID(),
@@ -486,19 +486,19 @@ public class ProductionPlanItemManager {
 			prodPlanItemReqProposalUIModel.setRefUUID(prodPlanItemReqProposal.getRefUUID());
 			if (prodPlanItemReqProposal.getPlanStartPrepareDate() != null) {
 				prodPlanItemReqProposalUIModel.setPlanStartPrepareDate(
-						DefaultDateFormatConstant.DATE_MIN_FORMAT.format(prodPlanItemReqProposal.getPlanStartPrepareDate()));
+						DefaultDateFormatConstant.formatDateMin(prodPlanItemReqProposal.getPlanStartPrepareDate()));
 			}
 			if (prodPlanItemReqProposal.getPlanStartDate() != null) {
 				prodPlanItemReqProposalUIModel
-						.setPlanStartDate(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(prodPlanItemReqProposal.getPlanStartDate()));
+						.setPlanStartDate(DefaultDateFormatConstant.formatDateMin(prodPlanItemReqProposal.getPlanStartDate()));
 			}
 			if (prodPlanItemReqProposal.getPlanEndDate() != null) {
 				prodPlanItemReqProposalUIModel
-						.setPlanEndDate(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(prodPlanItemReqProposal.getPlanEndDate()));
+						.setPlanEndDate(DefaultDateFormatConstant.formatDateMin(prodPlanItemReqProposal.getPlanEndDate()));
 			}
 			if (prodPlanItemReqProposal.getActualStartDate() != null) {
 				prodPlanItemReqProposalUIModel.setActualStartDate(
-						DefaultDateFormatConstant.DATE_MIN_FORMAT.format(prodPlanItemReqProposal.getActualStartDate()));
+						DefaultDateFormatConstant.formatDateMin(prodPlanItemReqProposal.getActualStartDate()));
 			}
 
 			prodPlanItemReqProposalUIModel.setSelfLeadTime(prodPlanItemReqProposal.getSelfLeadTime());
@@ -510,13 +510,13 @@ public class ProductionPlanItemManager {
 			prodPlanItemReqProposalUIModel.setRefBOMItemUUID(prodPlanItemReqProposal.getRefBOMItemUUID());
 			if (prodPlanItemReqProposal.getPlanStartDate() != null) {
 				prodPlanItemReqProposalUIModel
-						.setPlanStartDate(DefaultDateFormatConstant.DATE_FORMAT.format(prodPlanItemReqProposal.getPlanStartDate()));
+						.setPlanStartDate(DefaultDateFormatConstant.formatDate(prodPlanItemReqProposal.getPlanStartDate()));
 			}
 			prodPlanItemReqProposalUIModel
 					.setAmount(ServiceEntityDoubleHelper.trancateDoubleScale4(prodPlanItemReqProposal.getAmount()));
 			if (prodPlanItemReqProposal.getActualStartPrepareDate() != null) {
 				prodPlanItemReqProposalUIModel.setActualStartPrepareDate(
-						DefaultDateFormatConstant.DATE_FORMAT.format(prodPlanItemReqProposal.getActualStartPrepareDate()));
+						DefaultDateFormatConstant.formatDate(prodPlanItemReqProposal.getActualStartPrepareDate()));
 			}
 			if (logonInfo != null) {
 				Map<Integer, String> itemStatusMap = this.initItemStatusMap(logonInfo.getLanguageCode());
@@ -526,7 +526,9 @@ public class ProductionPlanItemManager {
 			prodPlanItemReqProposalUIModel.setDocumentType(prodPlanItemReqProposal.getDocumentType());
 			if (logonInfo != null) {
 				Map<Integer, String> documentTypeMap = productionPlanManager.initDocumentTypeMap(logonInfo.getLanguageCode());
-				prodPlanItemReqProposalUIModel.setDocumentTypeValue(documentTypeMap.get(prodPlanItemReqProposal.getDocumentType()));
+				if (documentTypeMap != null) {
+					prodPlanItemReqProposalUIModel.setDocumentTypeValue(documentTypeMap.get(prodPlanItemReqProposal.getDocumentType()));
+				}
 			}
 			prodPlanItemReqProposalUIModel.setComLeadTime(prodPlanItemReqProposal.getComLeadTime());
 			prodPlanItemReqProposalUIModel.setItemIndex(prodPlanItemReqProposal.getItemIndex());

@@ -4,10 +4,10 @@ import java.util.Date;
 
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
 import com.company.IntelligentPlatform.production.model.ProductionOrderItem;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
 
 public class ProductionOrderItemUIModel extends DocMatItemUIModel {
 

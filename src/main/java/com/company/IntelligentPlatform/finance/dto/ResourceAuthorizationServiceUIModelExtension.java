@@ -8,10 +8,10 @@ import com.company.IntelligentPlatform.finance.service.SystemResourceManager;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtension;
-import com.company.IntelligentPlatform.common.controller.ServiceUIModelExtensionUnion;
-import com.company.IntelligentPlatform.common.controller.UIModelNodeMapConfigure;
-import com.company.IntelligentPlatform.common.model.ResourceAuthorization;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtension;
+import com.company.IntelligentPlatform.platform.controller.ServiceUIModelExtensionUnion;
+import com.company.IntelligentPlatform.platform.controller.UIModelNodeMapConfigure;
+import com.company.IntelligentPlatform.platform.model.ResourceAuthorization;
 
 @Service
 public class ResourceAuthorizationServiceUIModelExtension extends

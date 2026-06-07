@@ -6,8 +6,8 @@ import java.util.List;
 import com.company.IntelligentPlatform.logistics.service.InventoryTransferOrderManager;
 import com.company.IntelligentPlatform.logistics.model.*;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 @Component
 public class InventoryTransferOrderServiceUIModel extends ServiceUIModule {

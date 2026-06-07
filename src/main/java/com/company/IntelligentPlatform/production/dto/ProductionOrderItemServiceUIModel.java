@@ -7,8 +7,8 @@ import com.company.IntelligentPlatform.production.model.ProdOrderItemReqProposal
 import com.company.IntelligentPlatform.production.model.ProductionOrderItem;
 import com.company.IntelligentPlatform.production.model.ProductionOrderItemParty;
 import org.springframework.stereotype.Component;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 @Component
 public class ProductionOrderItemServiceUIModel extends ServiceUIModule {

@@ -3,8 +3,8 @@ package com.company.IntelligentPlatform.production.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 @Entity
 @Table(name = "ProcessBOMOrder", catalog = "production")
 public class ProcessBOMOrder extends ServiceEntityNode {

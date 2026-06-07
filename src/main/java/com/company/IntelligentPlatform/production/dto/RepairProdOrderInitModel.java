@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.model.DocumentMatItemBatchGenRequest;
+import com.company.IntelligentPlatform.platform.model.DocumentMatItemBatchGenRequest;
 
 public class RepairProdOrderInitModel extends DocumentMatItemBatchGenRequest {
 

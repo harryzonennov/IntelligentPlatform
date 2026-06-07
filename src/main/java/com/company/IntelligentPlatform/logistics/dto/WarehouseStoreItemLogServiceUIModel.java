@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItemLog;
-import com.company.IntelligentPlatform.common.dto.IServiceUIModuleFieldConfig;
-import com.company.IntelligentPlatform.common.dto.ServiceUIModule;
+import com.company.IntelligentPlatform.platform.dto.IServiceUIModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.ServiceUIModule;
 
 public class WarehouseStoreItemLogServiceUIModel extends ServiceUIModule {
 

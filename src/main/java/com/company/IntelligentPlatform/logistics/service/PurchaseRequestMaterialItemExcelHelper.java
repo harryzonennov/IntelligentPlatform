@@ -4,16 +4,16 @@ import com.company.IntelligentPlatform.logistics.dto.PurchaseRequestMaterialItem
 import com.company.IntelligentPlatform.logistics.model.PurchaseRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.service.DocMatItemExcelHandler;
-import com.company.IntelligentPlatform.common.service.DocumentContentSpecifier;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceExcelConfigException;
-import com.company.IntelligentPlatform.common.service.ServiceExcelHandlerProxy;
-import com.company.IntelligentPlatform.common.model.SerialLogonInfo;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.service.DocMatItemExcelHandler;
+import com.company.IntelligentPlatform.platform.service.DocumentContentSpecifier;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelConfigException;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelHandlerProxy;
+import com.company.IntelligentPlatform.platform.model.SerialLogonInfo;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
 
 import java.util.List;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportConfig;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportConfig;
 
 @Service
 public class PurchaseRequestMaterialItemExcelHelper extends DocMatItemExcelHandler {

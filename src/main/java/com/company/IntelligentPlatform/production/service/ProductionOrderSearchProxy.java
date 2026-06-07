@@ -18,10 +18,10 @@ import com.company.IntelligentPlatform.production.model.ProdWorkCenter;
 import com.company.IntelligentPlatform.production.model.ProductionOrder;
 import com.company.IntelligentPlatform.production.model.ProductionOrderItem;
 import com.company.IntelligentPlatform.production.model.ProductionPlan;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.Warehouse;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.*;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.*;
 
 @Service
 public class ProductionOrderSearchProxy extends ServiceSearchProxy{

@@ -6,8 +6,8 @@ import com.company.IntelligentPlatform.production.model.ProcessBOMMaterialItem;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
 
 @Service
 public class ProcessBOMMaterialItemManager {

@@ -20,14 +20,14 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.hssf.util.HSSFColor.HSSFColorPredefined;
 // TODO-LEGACY: import org.springframework.web.servlet.view.document.AbstractExcelView; (removed in Spring 5+)
 
-import com.company.IntelligentPlatform.common.service.IServiceExcelConfigureConstants; // migrated from legacy platform.foundation
-import com.company.IntelligentPlatform.common.service.ServiceExcelCellConfig;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportConfig;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportProxy;
-import com.company.IntelligentPlatform.common.service.ServiceExcelXMLConfigureHelper;
-import com.company.IntelligentPlatform.common.service.StandardSwitchProxy;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.service.IServiceExcelConfigureConstants; // migrated from legacy platform.foundation
+import com.company.IntelligentPlatform.platform.service.ServiceExcelCellConfig;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportConfig;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelXMLConfigureHelper;
+import com.company.IntelligentPlatform.platform.service.StandardSwitchProxy;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 
 public class ProductionOrderExcelReportView { // TODO-LEGACY: was extends AbstractExcelView
 	

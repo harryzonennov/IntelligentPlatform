@@ -21,6 +21,7 @@
     <!-- Rolling file appender (production and dev) -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/intelligentplatform.log</file>
+        <immediateFlush>true</immediateFlush>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Roll over daily; keep 30 days of history -->
             <fileNamePattern>logs/intelligentplatform.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
@@ -46,6 +47,8 @@
 
     <!-- Application code -->
     <logger name="com.company.IntelligentPlatform" level="${LOG_LEVEL_APP}"/>
+    <logger name="com.company.IntelligentPlatform.platform.service.AuthorizationManager" level="DEBUG"/>
+    <logger name="com.company.IntelligentPlatform.platform.service.RoleManager" level="DEBUG"/>
 
     <root level="${LOG_LEVEL_ROOT}">
         <appender-ref ref="CONSOLE"/>

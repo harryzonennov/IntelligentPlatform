@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityService;
 import com.company.IntelligentPlatform.logistics.model.*;
 import com.company.IntelligentPlatform.logistics.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;

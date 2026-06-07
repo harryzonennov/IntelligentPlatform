@@ -1,8 +1,14 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "QualityInspectPropertyItem", catalog = "logistics")
 public class QualityInspectPropertyItem extends ServiceEntityNode{
 
 	public static final String NODENAME = IServiceModelConstants.QualityInspectPropertyItem;

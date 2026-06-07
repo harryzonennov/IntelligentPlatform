@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 
 /**
  * Request mode to calculate Available store amount

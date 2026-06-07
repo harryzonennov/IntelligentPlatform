@@ -10,21 +10,21 @@ import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.controller.IFinanceControllerResource;
-import com.company.IntelligentPlatform.common.service.SpringContextBeanService;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.model.ResFinAccountFieldSetting;
-import com.company.IntelligentPlatform.common.model.ResFinAccountProcessCode;
-import com.company.IntelligentPlatform.common.model.ResFinAccountSetting;
-import com.company.IntelligentPlatform.common.model.SystemResource;
+import com.company.IntelligentPlatform.platform.controller.IFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.service.SpringContextBeanService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountFieldSetting;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountProcessCode;
+import com.company.IntelligentPlatform.platform.model.ResFinAccountSetting;
+import com.company.IntelligentPlatform.platform.model.SystemResource;
 
 /**
  * Proxy Service class for update document finance information into finance

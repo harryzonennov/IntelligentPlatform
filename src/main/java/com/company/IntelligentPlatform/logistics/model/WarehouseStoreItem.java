@@ -1,11 +1,11 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinLogistics - WarehouseStoreItem (extends DocMatItemNode)
@@ -16,6 +16,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 public class WarehouseStoreItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.WarehouseStoreItem;
 
 	public static final int STATUS_INSTOCK = 1;

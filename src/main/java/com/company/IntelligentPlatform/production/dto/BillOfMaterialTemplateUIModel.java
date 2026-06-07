@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.production.dto;
 
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
 
 public class BillOfMaterialTemplateUIModel extends BillOfMaterialOrderUIModel {
 

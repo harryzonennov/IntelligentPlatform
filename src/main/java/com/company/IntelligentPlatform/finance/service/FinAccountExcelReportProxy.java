@@ -7,7 +7,7 @@ import com.company.IntelligentPlatform.finance.model.FinAccount;
 
 import org.springframework.stereotype.Service;
 
-import com.company.IntelligentPlatform.common.service.ServiceExcelReportProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceExcelReportProxy;
 
 @Service
 public class FinAccountExcelReportProxy extends ServiceExcelReportProxy{

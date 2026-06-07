@@ -16,15 +16,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import com.company.IntelligentPlatform.common.repository.WarehouseRepository;
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
-import com.company.IntelligentPlatform.common.model.WarehouseConfigureProxy;
+import com.company.IntelligentPlatform.platform.repository.WarehouseRepository;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.model.WarehouseConfigureProxy;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
 
 @Service
 @Transactional
@@ -77,12 +77,8 @@ public class WarehouseLogisticsManager extends WarehouseManager {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, warehouseDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(warehouseConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, warehouseDAO, this.getSeConfigureProxy()));
 	}
 
 }

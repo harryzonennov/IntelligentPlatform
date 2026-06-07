@@ -1,8 +1,14 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
+@Entity
+@Table(name = "FinAccountMatItemAttachment", catalog = "finance")
 public class FinAccountMatItemAttachment extends ServiceEntityNode{
 
 	public static final String NODENAME = IServiceModelConstants.FinAccountMatItemAttachment;

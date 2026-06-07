@@ -1,11 +1,15 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 /**
  * Internal module, not persist into DB
  * For manage production order item and prod order item request proposal
  */
+@Entity
+@Table(name = "ProdItemRequestUnionTemplate", catalog = "production")
 public class ProdItemRequestUnionTemplate extends DocMatItemNode{
 
 	protected double inStockAmount;

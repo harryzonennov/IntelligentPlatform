@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.model.ServiceConvertMeta;
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.model.ServiceConvertMeta;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
 
 /**
  * Inbound delivery UI Model

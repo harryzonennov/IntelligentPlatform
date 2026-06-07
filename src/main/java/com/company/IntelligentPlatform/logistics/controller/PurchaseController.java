@@ -1,12 +1,13 @@
 package com.company.IntelligentPlatform.logistics.controller;
 
-import com.company.IntelligentPlatform.common.response.ApiResponse;
+import com.company.IntelligentPlatform.platform.response.ApiResponse;
 import com.company.IntelligentPlatform.logistics.dto.*;
 import com.company.IntelligentPlatform.logistics.model.*;
 import com.company.IntelligentPlatform.logistics.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -28,6 +29,66 @@ public class PurchaseController {
 	@GetMapping("/purchaseContracts/{uuid}")
 	public ApiResponse<PurchaseContract> getContract(@PathVariable String uuid) {
 		return ApiResponse.success(purchaseService.getContractByUuid(uuid));
+	}
+
+	@GetMapping("/purchaseContracts/{uuid}/detail")
+	public ApiResponse<PurchaseContractDetail> getContractDetail(@PathVariable String uuid) {
+		PurchaseContract contract = purchaseService.getContractByUuid(uuid);
+
+		PurchaseContractParty partyA = purchaseService.getContractPartyByRole(uuid, PurchaseContractParty.ROLE_PARTYA);
+		PurchaseContractParty partyB = purchaseService.getContractPartyByRole(uuid, PurchaseContractParty.ROLE_PARTYB);
+
+		PurchaseContractPartyUIModel purchaseTo = new PurchaseContractPartyUIModel();
+		if (partyA != null) {
+			purchaseTo.setPartyId(partyA.getId());
+			purchaseTo.setPartyName(partyA.getName());
+			purchaseTo.setTelephone(partyA.getTelephone());
+			purchaseTo.setEmail(partyA.getEmail());
+			purchaseTo.setFax(partyA.getFax());
+			purchaseTo.setTaxNumber(partyA.getTaxNumber());
+			purchaseTo.setBankAccount(partyA.getBankAccount());
+			purchaseTo.setDepositBank(partyA.getDepositBank());
+			purchaseTo.setAddress(partyA.getAddress());
+			purchaseTo.setContactName(partyA.getContactName());
+			purchaseTo.setContactId(partyA.getContactId());
+			purchaseTo.setContactMobile(partyA.getContactMobile());
+		}
+
+		PurchaseContractPartyUIModel purchaseFrom = new PurchaseContractPartyUIModel();
+		if (partyB != null) {
+			purchaseFrom.setPartyId(partyB.getId());
+			purchaseFrom.setPartyName(partyB.getName());
+			purchaseFrom.setTelephone(partyB.getTelephone());
+			purchaseFrom.setEmail(partyB.getEmail());
+			purchaseFrom.setFax(partyB.getFax());
+			purchaseFrom.setTaxNumber(partyB.getTaxNumber());
+			purchaseFrom.setBankAccount(partyB.getBankAccount());
+			purchaseFrom.setDepositBank(partyB.getDepositBank());
+			purchaseFrom.setAddress(partyB.getAddress());
+			purchaseFrom.setContactName(partyB.getContactName());
+			purchaseFrom.setContactId(partyB.getContactId());
+			purchaseFrom.setContactMobile(partyB.getContactMobile());
+		}
+
+		List<PurchaseContractMaterialItem> materialItems = purchaseService.getContractMaterialItems(uuid);
+
+		List<PurchaseContractAttachment> attachments = purchaseService.getContractAttachments(uuid);
+		List<PurchaseContractAttachmentUIModel> attachmentUIModels = attachments.stream().map(a -> {
+			PurchaseContractAttachmentUIModel m = new PurchaseContractAttachmentUIModel();
+			m.setAttachmentTitle(a.getName());
+			m.setAttachmentDescription(a.getNote());
+			m.setFileType(a.getFileType());
+			return m;
+		}).toList();
+
+		return ApiResponse.success(new PurchaseContractDetail(
+				contract,
+				purchaseTo,
+				purchaseFrom,
+				Collections.emptyMap(),
+				materialItems,
+				attachmentUIModels
+		));
 	}
 
 	@GetMapping("/purchaseContracts")

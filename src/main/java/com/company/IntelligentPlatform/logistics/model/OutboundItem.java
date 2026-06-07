@@ -1,8 +1,7 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinLogistics - OutboundItem (extends DeliveryItem)
@@ -14,8 +13,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Table(name = "OutboundItem", catalog = "logistics")
 public class OutboundItem extends DeliveryItem {
 
-	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
-	public static final String SENAME = IServiceModelConstants.OutboundItem;
+	public static final String NODENAME = IServiceModelConstants.OutboundItem;
+
+	public static final String SENAME = IServiceModelConstants.OutboundDelivery;
 
 	@Column(name = "outboundFee")
 	protected double outboundFee;

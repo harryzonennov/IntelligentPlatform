@@ -1,8 +1,14 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocInvolveParty;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.DocInvolveParty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
+@Entity
+@Table(name = "InquiryParty", catalog = "logistics")
 public class InquiryParty extends DocInvolveParty {
 
 	public static final String NODENAME = IServiceModelConstants.InquiryParty;

@@ -1,10 +1,10 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - ProductionOrderItem (extends DocMatItemNode)
@@ -15,6 +15,7 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 public class ProductionOrderItem extends DocMatItemNode {
 
 	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
+
 	public static final String SENAME = IServiceModelConstants.ProductionOrderItem;
 
 	public static final int STATUS_INITIAL      = 1;

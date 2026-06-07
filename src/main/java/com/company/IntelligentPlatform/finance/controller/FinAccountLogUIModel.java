@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.finance.controller;
 
 import com.company.IntelligentPlatform.finance.model.FinAccountLog;
 
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class FinAccountLogUIModel extends SEUIComModel {
 

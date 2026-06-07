@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
 
 public class InquiryMaterialItemUIModel extends DocMatItemUIModel {
 	

@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.service;
 
-import com.company.IntelligentPlatform.common.service.JpaServiceEntityDAO;
+import com.company.IntelligentPlatform.platform.service.JpaServiceEntityDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.io.IOException;
@@ -45,54 +45,54 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.company.IntelligentPlatform.common.service.CorporateCustomerManager;
-import com.company.IntelligentPlatform.common.service.EmployeeManager;
-import com.company.IntelligentPlatform.common.service.IndividualCustomerManager;
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.service.DocFlowProxy;
-import com.company.IntelligentPlatform.common.service.LogonUserManager;
-import com.company.IntelligentPlatform.common.service.ServiceModuleProxyException;
-import com.company.IntelligentPlatform.common.service.AccountManager;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.AuthorizationManager;
-import com.company.IntelligentPlatform.common.service.ServiceDropdownListHelper;
-import com.company.IntelligentPlatform.common.service.ServiceEntityInstallationException;
-import com.company.IntelligentPlatform.common.service.ServiceLanHelper;
-import com.company.IntelligentPlatform.common.service.LogonInfoException;
-import com.company.IntelligentPlatform.common.service.LogonInfoManager;
-import com.company.IntelligentPlatform.common.service.ServiceDocumentComProxy;
-import com.company.IntelligentPlatform.common.service.StandardPriorityProxy;
-import com.company.IntelligentPlatform.common.service.ServiceChartDataSeries;
-import com.company.IntelligentPlatform.common.service.ServiceChartHelper;
-import com.company.IntelligentPlatform.common.service.ServiceChartTimeSlot;
-import com.company.IntelligentPlatform.common.service.ServiceComChartModel;
-import com.company.IntelligentPlatform.common.service.FinAccountManagerProxy;
-import com.company.IntelligentPlatform.common.service.BSearchNodeComConfigure;
-import com.company.IntelligentPlatform.common.service.BsearchService;
-import com.company.IntelligentPlatform.common.service.SearchConfigureException;
-import com.company.IntelligentPlatform.common.service.SearchNodeMapping;
-import com.company.IntelligentPlatform.common.service.ServiceSearchProxy;
-import com.company.IntelligentPlatform.common.model.DocumentContent;
-import com.company.IntelligentPlatform.common.model.IReferenceNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceEntityNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityBindModel;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.Account;
-import com.company.IntelligentPlatform.common.model.IDefResourceAuthorizationObject;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.IDefDocumentResource;
-import com.company.IntelligentPlatform.common.model.LogonInfo;
-import com.company.IntelligentPlatform.common.model.LogonUser;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityFieldsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.service.CorporateCustomerManager;
+import com.company.IntelligentPlatform.platform.service.EmployeeManager;
+import com.company.IntelligentPlatform.platform.service.IndividualCustomerManager;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.service.DocFlowProxy;
+import com.company.IntelligentPlatform.platform.service.LogonUserManager;
+import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
+import com.company.IntelligentPlatform.platform.service.AccountManager;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.AuthorizationManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDropdownListHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityInstallationException;
+import com.company.IntelligentPlatform.platform.service.ServiceLanHelper;
+import com.company.IntelligentPlatform.platform.service.LogonInfoException;
+import com.company.IntelligentPlatform.platform.service.LogonInfoManager;
+import com.company.IntelligentPlatform.platform.service.ServiceDocumentComProxy;
+import com.company.IntelligentPlatform.platform.service.StandardPriorityProxy;
+import com.company.IntelligentPlatform.platform.service.ServiceChartDataSeries;
+import com.company.IntelligentPlatform.platform.service.ServiceChartHelper;
+import com.company.IntelligentPlatform.platform.service.ServiceChartTimeSlot;
+import com.company.IntelligentPlatform.platform.service.ServiceComChartModel;
+import com.company.IntelligentPlatform.platform.service.FinAccountManagerProxy;
+import com.company.IntelligentPlatform.platform.service.BSearchNodeComConfigure;
+import com.company.IntelligentPlatform.platform.service.BsearchService;
+import com.company.IntelligentPlatform.platform.service.SearchConfigureException;
+import com.company.IntelligentPlatform.platform.service.SearchNodeMapping;
+import com.company.IntelligentPlatform.platform.service.ServiceSearchProxy;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IReferenceNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceEntityNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityBindModel;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.Account;
+import com.company.IntelligentPlatform.platform.model.IDefResourceAuthorizationObject;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
+import com.company.IntelligentPlatform.platform.model.LogonInfo;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityFieldsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [Account]
@@ -249,12 +249,8 @@ public class FinAccountManager extends FinAccountManagerProxy {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(finAccountConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, finAccountDAO, this.getSeConfigureProxy()));
 	}
 
 	public Map<Integer, String> initPriorityCodeMap(String languageCode)
@@ -593,7 +589,7 @@ public class FinAccountManager extends FinAccountManagerProxy {
 			finAccountLogUIModel.setName(finAccountLog.getName());
 			if (finAccountLog.getFinanceDate() != null) {
 				finAccountLogUIModel
-						.setFinanceDate(finAccountLog.getFinanceDate() != null ? DefaultDateFormatConstant.DATE_FORMAT.format(java.util.Date.from(finAccountLog.getFinanceDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+						.setFinanceDate(finAccountLog.getFinanceDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(finAccountLog.getFinanceDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
 				finAccountLogUIModel.setNote(finAccountLog.getNote());
 				finAccountLogUIModel.setActionCode(finAccountLog
 						.getActionCode());
@@ -2638,8 +2634,10 @@ public class FinAccountManager extends FinAccountManagerProxy {
 		finAccountUIModel.setDocumentType(finAccount.getDocumentType());
 		Map<Integer, String> documentTypeMap = serviceDocumentComProxy
 				.getDocumentTypeMap(false, null);
-		finAccountUIModel.setDocumentTypeValue(documentTypeMap.get(finAccount
-				.getDocumentType()));
+		if (documentTypeMap != null) {
+			finAccountUIModel.setDocumentTypeValue(documentTypeMap.get(finAccount
+					.getDocumentType()));
+		}
 		finAccountUIModel.setPaymentType(finAccount.getPaymentType());
 		Map<Integer, String> paymentTypeMap = serviceDropdownListHelper
 				.getUIDropDownMap(FinAccountUIModel.class, "paymentType");

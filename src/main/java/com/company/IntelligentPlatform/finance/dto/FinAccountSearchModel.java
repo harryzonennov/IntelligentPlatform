@@ -9,12 +9,12 @@ import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountObjectRef;
 import com.company.IntelligentPlatform.finance.model.FinAccountTitle;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.model.IReferenceNodeFieldConstant;
-import com.company.IntelligentPlatform.common.model.Account;
-import com.company.IntelligentPlatform.common.model.LogonUser;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.model.IReferenceNodeFieldConstant;
+import com.company.IntelligentPlatform.platform.model.Account;
+import com.company.IntelligentPlatform.platform.model.LogonUser;
 
 @Component
 public class FinAccountSearchModel extends SEUIComModel {

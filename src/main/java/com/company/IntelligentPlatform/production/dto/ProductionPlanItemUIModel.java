@@ -3,8 +3,8 @@ package com.company.IntelligentPlatform.production.dto;
 import java.util.Date;
 
 import com.company.IntelligentPlatform.production.model.ProductionPlanItem;
-import com.company.IntelligentPlatform.common.controller.DocMatItemUIModel;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelHeader;
+import com.company.IntelligentPlatform.platform.controller.DocMatItemUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelHeader;
 
 @ISEUIModelHeader(i18nFileName = ProductionPlanItem.NODENAME, modelName = ProductionPlanItem.NODENAME)
 public class ProductionPlanItemUIModel extends DocMatItemUIModel {

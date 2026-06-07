@@ -2,7 +2,7 @@ package com.company.IntelligentPlatform.production.dto;
 
 import java.util.Date;
 
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 public class ProdJobOrderUIModel extends SEUIComModel implements Comparable<ProdJobOrderUIModel>{
 

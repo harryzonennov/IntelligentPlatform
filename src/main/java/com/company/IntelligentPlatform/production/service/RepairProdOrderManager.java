@@ -21,31 +21,31 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.company.IntelligentPlatform.common.dto.MaterialStockKeepUnitSearchModel;
+import com.company.IntelligentPlatform.platform.dto.MaterialStockKeepUnitSearchModel;
 import com.company.IntelligentPlatform.logistics.dto.WarehouseStoreItemSearchModel;
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.model.MatDecisionValueSetting;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.RegisteredProduct;
-import com.company.IntelligentPlatform.common.model.Warehouse;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.model.MatDecisionValueSetting;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.RegisteredProduct;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.controller.DefFinanceControllerResource;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.SimpleSEMessageResponse;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.model.*;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.controller.DefFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.SimpleSEMessageResponse;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.model.*;
 
 import jakarta.annotation.PostConstruct;
 import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * Logic Manager CLASS FOR Service Entity [RepairProdOrder]
@@ -1033,12 +1033,8 @@ public class RepairProdOrderManager extends ServiceEntityManager {
 
     @PostConstruct
     public void setServiceEntityDAO() {
-        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, repairProdOrderDAO));
-    }
-
-    @PostConstruct
-    public void setSeConfigureProxy() {
         super.setSeConfigureProxy(repairProdOrderConfigureProxy);
+        super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, repairProdOrderDAO, this.getSeConfigureProxy()));
     }
 
     /**

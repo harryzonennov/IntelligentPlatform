@@ -2,9 +2,9 @@ package com.company.IntelligentPlatform.logistics.service;
 
 import com.company.IntelligentPlatform.logistics.model.WasteProcessMaterialItem;
 import com.company.IntelligentPlatform.logistics.model.WasteProcessMaterialItemAttachment;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 import java.util.ArrayList;
 import java.util.List;

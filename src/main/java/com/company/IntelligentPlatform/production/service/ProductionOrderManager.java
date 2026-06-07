@@ -25,42 +25,42 @@ import com.company.IntelligentPlatform.finance.service.FinanceAccountValueProxyE
 import com.company.IntelligentPlatform.finance.service.SystemResourceException;
 import com.company.IntelligentPlatform.finance.service.SystemResourceFinanceAccountProxy;
 import com.company.IntelligentPlatform.production.repository.ProductionOrderRepository;
-import com.company.IntelligentPlatform.common.dto.MaterialStockKeepUnitSearchModel;
-import com.company.IntelligentPlatform.common.service.OrganizationManager;
-import com.company.IntelligentPlatform.common.service.MatDecisionValueSettingManager;
-import com.company.IntelligentPlatform.common.service.MaterialConfigureTemplateManager;
-import com.company.IntelligentPlatform.common.service.MaterialException;
-import com.company.IntelligentPlatform.common.service.MaterialStockKeepUnitManager;
-import com.company.IntelligentPlatform.common.service.RegisteredProductManager;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.dto.MaterialStockKeepUnitSearchModel;
+import com.company.IntelligentPlatform.platform.service.OrganizationManager;
+import com.company.IntelligentPlatform.platform.service.MatDecisionValueSettingManager;
+import com.company.IntelligentPlatform.platform.service.MaterialConfigureTemplateManager;
+import com.company.IntelligentPlatform.platform.service.MaterialException;
+import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
+import com.company.IntelligentPlatform.platform.service.RegisteredProductManager;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.logistics.model.StoreAvailableStoreItemRequest;
-import com.company.IntelligentPlatform.common.service.WarehouseManager;
+import com.company.IntelligentPlatform.platform.service.WarehouseManager;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreItemException;
 import com.company.IntelligentPlatform.logistics.service.WarehouseStoreItemManager;
-import com.company.IntelligentPlatform.common.model.MatDecisionValueSetting;
-import com.company.IntelligentPlatform.common.model.Material;
-import com.company.IntelligentPlatform.common.model.MaterialStockKeepUnit;
-import com.company.IntelligentPlatform.common.model.RegisteredProduct;
-import com.company.IntelligentPlatform.common.model.Warehouse;
+import com.company.IntelligentPlatform.platform.model.MatDecisionValueSetting;
+import com.company.IntelligentPlatform.platform.model.Material;
+import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
+import com.company.IntelligentPlatform.platform.model.RegisteredProduct;
+import com.company.IntelligentPlatform.platform.model.Warehouse;
 import com.company.IntelligentPlatform.logistics.model.WarehouseStoreItem;
-import com.company.IntelligentPlatform.common.controller.ServiceDocumentExtendUIModel;
-import com.company.IntelligentPlatform.common.controller.PageHeaderModel;
-import com.company.IntelligentPlatform.common.controller.DefFinanceControllerResource;
-import com.company.IntelligentPlatform.common.service.*;
-import com.company.IntelligentPlatform.common.service.AuthorizationException;
-import com.company.IntelligentPlatform.common.service.ServiceFlowRuntimeEngine;
-import com.company.IntelligentPlatform.common.model.*;
-import com.company.IntelligentPlatform.common.model.ServiceJSONRequest;
-import com.company.IntelligentPlatform.common.model.SimpleSEMessageResponse;
-import com.company.IntelligentPlatform.common.model.DefaultDateFormatConstant;
-import com.company.IntelligentPlatform.common.model.ServiceFlowRuntimeException;
-import com.company.IntelligentPlatform.common.model.NodeNotFoundException;
-import com.company.IntelligentPlatform.common.model.ServiceCollectionsHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureException;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDateHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityDoubleHelper;
-import com.company.IntelligentPlatform.common.model.ServiceEntityStringHelper;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
+import com.company.IntelligentPlatform.platform.controller.PageHeaderModel;
+import com.company.IntelligentPlatform.platform.controller.DefFinanceControllerResource;
+import com.company.IntelligentPlatform.platform.service.*;
+import com.company.IntelligentPlatform.platform.service.AuthorizationException;
+import com.company.IntelligentPlatform.platform.service.ServiceFlowRuntimeEngine;
+import com.company.IntelligentPlatform.platform.model.*;
+import com.company.IntelligentPlatform.platform.model.ServiceJSONRequest;
+import com.company.IntelligentPlatform.platform.model.SimpleSEMessageResponse;
+import com.company.IntelligentPlatform.platform.model.DefaultDateFormatConstant;
+import com.company.IntelligentPlatform.platform.model.ServiceFlowRuntimeException;
+import com.company.IntelligentPlatform.platform.model.NodeNotFoundException;
+import com.company.IntelligentPlatform.platform.model.ServiceCollectionsHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureException;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDateHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityDoubleHelper;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 
@@ -1056,12 +1056,8 @@ ServiceEntityConfigureException {
 
 	@PostConstruct
 	public void setServiceEntityDAO() {
-		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionOrderDAO));
-	}
-
-	@PostConstruct
-	public void setSeConfigureProxy() {
 		super.setSeConfigureProxy(productionOrderConfigureProxy);
+		super.setServiceEntityDAO(new JpaServiceEntityDAO(entityManager, productionOrderDAO, this.getSeConfigureProxy()));
 	}
 
 	/**
@@ -2206,24 +2202,24 @@ ServiceEntityConfigureException {
 			docFlowProxy.convDocumentToUI(productionOrder, productionOrderUIModel, logonInfo);
 			if (productionOrder.getPlanStartPrepareDate() != null) {
 				productionOrderUIModel.setPlanStartPrepareDate(
-						DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionOrder.getPlanStartPrepareDate()));
+						DefaultDateFormatConstant.formatDateMin(productionOrder.getPlanStartPrepareDate()));
 			}
 			if (productionOrder.getPlanStartTime() != null) {
 				productionOrderUIModel
-						.setPlanStartTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionOrder.getPlanStartTime()));
+						.setPlanStartTime(DefaultDateFormatConstant.formatDateMin(productionOrder.getPlanStartTime()));
 			}
 			if (productionOrder.getPlanEndTime() != null) {
 				productionOrderUIModel
-						.setPlanEndTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionOrder.getPlanEndTime()));
+						.setPlanEndTime(DefaultDateFormatConstant.formatDateMin(productionOrder.getPlanEndTime()));
 			}
 			productionOrderUIModel.setApproveBy(productionOrder.getApproveBy());
 			if (productionOrder.getApproveTime() != null) {
-				productionOrderUIModel.setApproveTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionOrder.getApproveTime()));
+				productionOrderUIModel.setApproveTime(DefaultDateFormatConstant.formatDate(productionOrder.getApproveTime()));
 			}
 			productionOrderUIModel.setCountApproveBy(productionOrder.getCountApproveBy());
 			if (productionOrder.getCountApproveTime() != null) {
 				productionOrderUIModel
-						.setCountApproveTime(DefaultDateFormatConstant.DATE_FORMAT.format(productionOrder.getCountApproveTime()));
+						.setCountApproveTime(DefaultDateFormatConstant.formatDate(productionOrder.getCountApproveTime()));
 			}
 			productionOrderUIModel.setReservedDocType(productionOrder.getReservedDocType());
 			productionOrderUIModel.setGrossCost(productionOrder.getGrossCost());
@@ -2243,7 +2239,7 @@ ServiceEntityConfigureException {
 			productionOrderUIModel.setRefPlanUUID(productionOrder.getRefPlanUUID());
 			if (productionOrder.getActualEndTime() != null) {
 				productionOrderUIModel
-						.setActualEndTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionOrder.getActualEndTime()));
+						.setActualEndTime(DefaultDateFormatConstant.formatDateMin(productionOrder.getActualEndTime()));
 			}
 			productionOrderUIModel.setAmount(ServiceEntityDoubleHelper.trancateDoubleScale4(productionOrder.getAmount()));
 			String amountLabel = productionOrder.getAmount() + "";
@@ -2264,7 +2260,7 @@ ServiceEntityConfigureException {
 			}
 			if (productionOrder.getActualStartTime() != null) {
 				productionOrderUIModel
-						.setActualStartTime(DefaultDateFormatConstant.DATE_MIN_FORMAT.format(productionOrder.getActualStartTime()));
+						.setActualStartTime(DefaultDateFormatConstant.formatDateMin(productionOrder.getActualStartTime()));
 			}
 			productionOrderUIModel.setId(productionOrder.getId());
 			if (logonInfo != null) {

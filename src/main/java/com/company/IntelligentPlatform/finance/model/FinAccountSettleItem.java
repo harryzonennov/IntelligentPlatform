@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.finance.model;
 
-import com.company.IntelligentPlatform.common.model.ReferenceNode;
+import com.company.IntelligentPlatform.platform.model.ReferenceNode;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 

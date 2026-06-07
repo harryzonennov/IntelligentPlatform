@@ -1,8 +1,8 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
 import com.company.IntelligentPlatform.logistics.model.Inquiry;
-import com.company.IntelligentPlatform.common.controller.ISEUIModelMapping;
-import com.company.IntelligentPlatform.common.controller.DocumentUIModel;
+import com.company.IntelligentPlatform.platform.controller.ISEUIModelMapping;
+import com.company.IntelligentPlatform.platform.controller.DocumentUIModel;
 
 public class InquiryUIModel extends DocumentUIModel {
 

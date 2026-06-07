@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureMap;
-import com.company.IntelligentPlatform.common.model.ServiceEntityConfigureProxy;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureMap;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityConfigureProxy;
 
 /**
  * Configure Proxy CLASS FOR Service Entity [WasteProcessOrder]

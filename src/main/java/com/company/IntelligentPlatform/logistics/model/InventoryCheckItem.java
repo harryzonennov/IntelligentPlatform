@@ -1,9 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
 import jakarta.persistence.*;
-import com.company.IntelligentPlatform.common.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 /**
  * Migrated from: ThorsteinLogistics - InventoryCheckItem (extends DocMatItemNode)
@@ -13,8 +12,9 @@ import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
 @Table(name = "InventoryCheckItem", catalog = "logistics")
 public class InventoryCheckItem extends DocMatItemNode {
 
-	public static final String NODENAME = ServiceEntityNode.NODENAME_ROOT;
-	public static final String SENAME = IServiceModelConstants.InventoryCheckItem;
+	public static final String NODENAME = IServiceModelConstants.InventoryCheckItem;
+
+	public static final String SENAME = IServiceModelConstants.InventoryCheckOrder;
 
 	public static final int CHECK_RESULT_BALANCE = 1;
 

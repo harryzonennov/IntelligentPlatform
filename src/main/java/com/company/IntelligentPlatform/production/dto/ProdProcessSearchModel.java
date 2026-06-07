@@ -3,10 +3,10 @@ package com.company.IntelligentPlatform.production.dto;
 import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.production.model.ProdProcess;
-import com.company.IntelligentPlatform.common.controller.ISEDropDownResourceMapping;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.model.Organization;
-import com.company.IntelligentPlatform.common.controller.SEUIComModel;
+import com.company.IntelligentPlatform.platform.controller.ISEDropDownResourceMapping;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.model.Organization;
+import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 /**
  * ProdProcess UI Model

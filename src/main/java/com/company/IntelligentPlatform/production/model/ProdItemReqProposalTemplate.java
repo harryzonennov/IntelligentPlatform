@@ -2,8 +2,12 @@ package com.company.IntelligentPlatform.production.model;
 
 import java.time.LocalDateTime;
 
-import com.company.IntelligentPlatform.common.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "ProdItemReqProposalTemplate", catalog = "production")
 public class ProdItemReqProposalTemplate extends DocMatItemNode implements
 		Comparable<ProdItemReqProposalTemplate> {
 

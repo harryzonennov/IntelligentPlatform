@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.dto;
 
-import com.company.IntelligentPlatform.common.dto.ScanBarcodeResponseModel;
+import com.company.IntelligentPlatform.platform.dto.ScanBarcodeResponseModel;
 
 public class OutboundScanBarcodeResponseModel extends ScanBarcodeResponseModel{
 	

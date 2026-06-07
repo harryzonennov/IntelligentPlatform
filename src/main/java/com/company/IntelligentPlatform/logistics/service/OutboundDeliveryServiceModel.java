@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.IntelligentPlatform.logistics.model.*;
-import com.company.IntelligentPlatform.common.service.IServiceModuleFieldConfig;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
-import com.company.IntelligentPlatform.common.model.ServiceModule;
+import com.company.IntelligentPlatform.platform.service.IServiceModuleFieldConfig;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.model.ServiceModule;
 
 public class OutboundDeliveryServiceModel extends ServiceModule {
 

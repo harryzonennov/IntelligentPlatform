@@ -2,8 +2,8 @@ package com.company.IntelligentPlatform.production.service;
 import com.company.IntelligentPlatform.production.service.ProdPickingExtendAmountModel;
 
 import java.util.List;
-import com.company.IntelligentPlatform.common.service.StorageCoreUnit;
-import com.company.IntelligentPlatform.common.model.ServiceEntityNode;
+import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
+import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 import com.company.IntelligentPlatform.production.model.ProdPickingRefMaterialItem;
 
 /**

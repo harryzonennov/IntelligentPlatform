@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.finance.model.FinAccount;
 import com.company.IntelligentPlatform.finance.model.FinAccountObjectRef;
-import com.company.IntelligentPlatform.common.service.BSearchFieldConfig;
-import com.company.IntelligentPlatform.common.dto.AccountSearchModel;
+import com.company.IntelligentPlatform.platform.service.BSearchFieldConfig;
+import com.company.IntelligentPlatform.platform.dto.AccountSearchModel;
 
 /**
  * Account Search Model extended to finance account

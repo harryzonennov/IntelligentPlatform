@@ -1,6 +1,6 @@
 package com.company.IntelligentPlatform.logistics.service;
 
-import com.company.IntelligentPlatform.common.service.ServiceEntityService;
+import com.company.IntelligentPlatform.platform.service.ServiceEntityService;
 import com.company.IntelligentPlatform.logistics.model.*;
 import com.company.IntelligentPlatform.logistics.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,15 @@ public class PurchaseService extends ServiceEntityService {
 
 	@Autowired
 	protected PurchaseContractRepository purchaseContractRepository;
+
+	@Autowired
+	protected PurchaseContractMaterialItemRepository purchaseContractMaterialItemRepository;
+
+	@Autowired
+	protected PurchaseContractPartyRepository purchaseContractPartyRepository;
+
+	@Autowired
+	protected PurchaseContractAttachmentRepository purchaseContractAttachmentRepository;
 
 	@Autowired
 	protected PurchaseRequestRepository purchaseRequestRepository;
@@ -63,6 +72,23 @@ public class PurchaseService extends ServiceEntityService {
 
 	public void deleteContract(String uuid) {
 		deleteSENode(purchaseContractRepository, uuid);
+	}
+
+	@Transactional(readOnly = true)
+	public List<PurchaseContractMaterialItem> getContractMaterialItems(String contractUUID) {
+		return purchaseContractMaterialItemRepository.findByParentNodeUUID(contractUUID);
+	}
+
+	@Transactional(readOnly = true)
+	public PurchaseContractParty getContractPartyByRole(String contractUUID, int partyRole) {
+		return purchaseContractPartyRepository
+				.findByRootNodeUUIDAndPartyRole(contractUUID, partyRole)
+				.orElse(null);
+	}
+
+	@Transactional(readOnly = true)
+	public List<PurchaseContractAttachment> getContractAttachments(String contractUUID) {
+		return purchaseContractAttachmentRepository.findByParentNodeUUID(contractUUID);
 	}
 
 	// --- PurchaseRequest ---
