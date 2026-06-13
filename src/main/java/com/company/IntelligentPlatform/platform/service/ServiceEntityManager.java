@@ -20,8 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
@@ -58,7 +56,6 @@ import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
  * @author ZhangHang
  * @date Nov 7, 2012
  */
-@Transactional
 @Service
 public class ServiceEntityManager {
 
@@ -177,6 +174,7 @@ public class ServiceEntityManager {
                 Class<ServiceEntityNode> nodeCls = seConfigureMap.getNodeType();
                 try {
                     ServiceEntityNode seNode = nodeCls.newInstance();
+                    seNode.setUuid(java.util.UUID.randomUUID().toString());
                     seNode.setParentNodeUUID(parentNode.getUuid());
                     // Check if this node is cross client
                     boolean crossClientFlag = ServiceEntityPersistenceHelper
@@ -297,7 +295,6 @@ public class ServiceEntityManager {
      * @param logonUserUUID  : user UUID to update this SE node instance
      * @throws ServiceEntityConfigureException
      */
-    @Transactional(propagation = Propagation.REQUIRED)
     public void updateSEBindList(List<ServiceEntityBindModel> seBindList,
                                  List<ServiceEntityBindModel> seBindListBack, String logonUserUUID,
                                  String organizationUUID) throws ServiceEntityConfigureException {
@@ -466,7 +463,6 @@ public class ServiceEntityManager {
      * @param seBindListBack
      * @throws ServiceEntityConfigureException
      */
-    @Transactional(propagation = Propagation.REQUIRED)
     public void updateSEBindList(List<ServiceEntityBindModel> seBindList,
                                  List<ServiceEntityBindModel> seBindListBack)
             throws ServiceEntityConfigureException {
@@ -1787,7 +1783,6 @@ public class ServiceEntityManager {
      * @throws ServiceUIModuleProxyException
      * @throws ServiceEntityConfigureException
      */
-    @Transactional
     public ServiceUIModule updateServiceModuleDeleteWrapper(
             Class<?> serviceModuleType,
             ServiceUIModule serviceUIModule,
@@ -1815,7 +1810,6 @@ public class ServiceEntityManager {
      * @throws ServiceEntityConfigureException
      * @throws ServiceUIModuleProxyException
      */
-    @Transactional
     public ServiceModule updateModelWithDelete(Class<?> serviceModuleType,
                                                ServiceUIModule serviceUIModule, String logonUserUUID,
                                                ServiceUIModelExtension serviceUIModelExtension,
@@ -1850,7 +1844,6 @@ public class ServiceEntityManager {
      * @throws ServiceModuleProxyException
      * @throws ServiceEntityConfigureException
      */
-    @Transactional
     public void updateServiceModuleWithDelete(Class<?> serviceModuleType,
                                               ServiceModule serviceModule, String logonUserUUID,
                                               String organizationUUID) throws ServiceModuleProxyException,

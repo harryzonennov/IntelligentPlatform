@@ -1,5 +1,6 @@
 package com.company.IntelligentPlatform.logistics.model;
 
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -37,6 +38,12 @@ public class InboundItem extends DeliveryItem {
 
 	public void setRefStoreItemUUID(String refStoreItemUUID) {
 		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
+	public InboundItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_INBOUNDDELIVERY;
 	}
 
 }

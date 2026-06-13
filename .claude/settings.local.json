@@ -1,12 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(for f:*)",
-      "Bash(do)",
-      "Bash(echo \"=== $f ===\")",
-      "Read(//Users/I043125/work2/IntelligentPlatform/**)",
-      "Bash(done)",
-      "WebSearch"
+      "Read(**)",
+      "Glob(**)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(sed:*)",
+      "Bash(python3:*)",
+      "Bash(mvn:*)",
+      "Bash(npm:*)",
+      "Bash(cp:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }

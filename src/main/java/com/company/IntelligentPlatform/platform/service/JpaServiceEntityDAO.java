@@ -76,52 +76,60 @@ public class JpaServiceEntityDAO implements ServiceEntityDAO {
     }
 
     // ---- Write operations ----
+    // EntityManager is used directly so that any @Entity subclass can be persisted
+    // regardless of the typed repository declared by the manager. This mirrors the
+    // behaviour of the legacy Hibernate session.save() which resolved the table from
+    // the runtime class, not from a statically-typed DAO.
 
     @Override
-    @SuppressWarnings("unchecked")
     public void insertEntity(ServiceEntityNode seNode) {
         if (seNode != null) {
-            repository.save(seNode);
+            entityManager.persist(seNode);
         }
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void insertEntity(List<ServiceEntityNode> seNodeList) {
-        if (seNodeList != null && !seNodeList.isEmpty()) {
-            repository.saveAll(seNodeList);
+        if (seNodeList != null) {
+            for (ServiceEntityNode seNode : seNodeList) {
+                entityManager.persist(seNode);
+            }
         }
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void updateEntity(ServiceEntityNode seNode) {
         if (seNode != null) {
-            repository.save(seNode);
+            entityManager.merge(seNode);
         }
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void updateEntity(List<ServiceEntityNode> seNodeList) {
-        if (seNodeList != null && !seNodeList.isEmpty()) {
-            repository.saveAll(seNodeList);
+        if (seNodeList != null) {
+            for (ServiceEntityNode seNode : seNodeList) {
+                entityManager.merge(seNode);
+            }
         }
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void deleteEntityNode(ServiceEntityNode seNode) {
         if (seNode != null) {
-            repository.delete(seNode);
+            ServiceEntityNode managed = entityManager.contains(seNode)
+                    ? seNode : entityManager.merge(seNode);
+            entityManager.remove(managed);
         }
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void deleteEntityNodeList(List<ServiceEntityNode> seNodeList) {
-        if (seNodeList != null && !seNodeList.isEmpty()) {
-            repository.deleteAll(seNodeList);
+        if (seNodeList != null) {
+            for (ServiceEntityNode seNode : seNodeList) {
+                ServiceEntityNode managed = entityManager.contains(seNode)
+                        ? seNode : entityManager.merge(seNode);
+                entityManager.remove(managed);
+            }
         }
     }
 

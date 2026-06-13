@@ -36,7 +36,6 @@ import java.util.UUID;
  *  - Bind-list diff (updateSEBindList) compares a new list against a backup
  *    list and drives create / update / delete per item.
  */
-@Transactional
 public abstract class ServiceEntityService {
 
 	/** Prefix added to client field when a node is archived */

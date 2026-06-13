@@ -1,5 +1,4 @@
 # Java Code Style Guide
-## Derived from the 5 legacy projects (ThorsteinPlatform, ThorsteinFinance, ThorsteinLogistics, ThorsteinSalesDistribution, ThorsteinProduction)
 
 This style MUST be followed exactly when generating or modifying any Java code in IntelligentPlatform.
 

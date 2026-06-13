@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.platform.service.MaterialStockKeepUnitManager;
 import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.platform.service.*;
@@ -64,7 +63,24 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
 
     protected Logger logger = LoggerFactory.getLogger(CrossDocBatchConvertProxy.class);
 
-    @Transactional
+    /**
+     * [DIAG] Log if the current transaction is already marked rollback-only.
+     * This helps narrow down which call inside createTargetDocumentBatch is
+     * marking the tx for rollback (so the caller's UnexpectedRollbackException
+     * has a paper trail).
+     */
+    protected void logRollbackStatus(String checkpoint) {
+        try {
+            if (org.springframework.transaction.support.TransactionSynchronizationManager.isActualTransactionActive()
+                    && org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().isRollbackOnly()) {
+                logger.error("[DIAG] Transaction is rollback-only at checkpoint: {} — stack:",
+                        checkpoint, new RuntimeException("rollback-only first detected here"));
+            }
+        } catch (IllegalStateException ignore) {
+            // No transaction status — checkpoint outside @Transactional, ignore.
+        }
+    }
+
     public List<DocContentCreateContext> createTargetDocumentBatch(SourceServiceModel sourceServiceModel, int sourceDocType,
                                                         List<ServiceEntityNode> selectedSourceDocMatItemList,
                                                         CrossDocConvertRequest<TargetServiceModel, TargetItem, TargetItemServiceModel> crossDocConvertRequest,
@@ -82,6 +98,7 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
         TargetServiceModel targetDocServiceModel = (TargetServiceModel) getExistedTargetDocServiceModule(genRequest,
                 crossDocConvertRequest, sourceServiceModel,sourceDocType,
                 DocMatItemNode::getNextDocMatItemUUID, logonInfo);
+        logRollbackStatus("after getExistedTargetDocServiceModule");
         /*
          * [Step2] Batch creation of in-bound item list from purchase contract
          * material item list
@@ -96,14 +113,29 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
                                         docContentCreateContextList,
                                         targetDocServiceModel,
                                         crossDocConvertRequest,genRequest, targetDocOffset, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
+                        logRollbackStatus("after genDefTargetMatItemServiceModelPrev for item="
+                                + (sourceDocMatItemNode != null ? sourceDocMatItemNode.getUuid() : "null"));
                         // in case need to break loops
                         return !docMatItemCreateContext.getBreakFlag();
-                    } catch (ServiceModuleProxyException | DocActionException | ServiceEntityConfigureException e) {
-                        logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, ""));
+                    } catch (DocActionException e) {
+                        logger.error("[DIAG] genDefTargetMatItemServiceModelPrev threw DocActionException for sourceDocMatItem={} ", sourceDocMatItemNode != null ? sourceDocMatItemNode.getUuid() : "null", e);
+                        throw e;
+                    } catch (ServiceModuleProxyException | ServiceEntityConfigureException e) {
+                        logger.error("[DIAG] genDefTargetMatItemServiceModelPrev threw checked exception for sourceDocMatItem={} ", sourceDocMatItemNode != null ? sourceDocMatItemNode.getUuid() : "null", e);
+                        throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage());
+                    } catch (RuntimeException e) {
+                        logger.error("[DIAG] genDefTargetMatItemServiceModelPrev threw RUNTIME exception for sourceDocMatItem={} ", sourceDocMatItemNode != null ? sourceDocMatItemNode.getUuid() : "null", e);
+                        throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage() != null ? e.getMessage() : e.getClass().getSimpleName());
                     }
-                    return true;
                 }, inputOption, logonInfo);
-        storeContext(docContentCreateContextList,LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
+        logRollbackStatus("after loadPrevDocFramework loop");
+        try {
+            storeContext(docContentCreateContextList,LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
+            logRollbackStatus("after storeContext");
+        } catch (RuntimeException e) {
+            logger.error("[DIAG] storeContext threw RUNTIME exception", e);
+            throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage() != null ? e.getMessage() : e.getClass().getSimpleName());
+        }
         return docContentCreateContextList;
     }
 
@@ -338,13 +370,16 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
             // if target doc can not find, then create new target root document
             targetServiceModule = (TargetServiceModel) initCopyToTargetDoc(sourceServiceModel, sourceDocActionProxy, targetDocActionProxy,
                     crossDocConvertRequest, serialLogonInfo.getClient(), 0);
+            logRollbackStatus("genDefTargetMatItemServiceModelPrev:after initCopyToTargetDoc");
             if (crossDocConvertRequest.getParseBatchGenRequest() != null) {
                 // Parse useful info from external gen request to target doc service model
                 crossDocConvertRequest.getParseBatchGenRequest().execute(genRequest, targetServiceModule);
+                logRollbackStatus("genDefTargetMatItemServiceModelPrev:after parseBatchGenRequest");
             }
             docContentCreateContextList =
                     mergeToTargetRootDoc(docContentCreateContextList, targetDocSpecifier, targetServiceModule,
                             null);
+            logRollbackStatus("genDefTargetMatItemServiceModelPrev:after mergeToTargetRootDoc");
         }
         ServiceEntityNode targetDocument = targetDocSpecifier.getCoreEntity(targetServiceModule);
         Map<Integer, CrossCopyDocConversionConfig> srcCrossCopyDocConversionConfigMap =
@@ -354,6 +389,7 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
         DocMatItemCreateContext docMatItemCreateContext =
                 initConvertToTargetMatItem(sourceMatItemNode, targetDocSpecifier, targetDocument,
                         srcToTargetConversionConfig, genRequest, targetDocOffset, serialLogonInfo);
+        logRollbackStatus("genDefTargetMatItemServiceModelPrev:after initConvertToTargetMatItem");
         if (docMatItemCreateContext == null) {
             return null;
         }
@@ -362,9 +398,11 @@ public class CrossDocBatchConvertProxy<SourceServiceModel extends ServiceModule,
                 genDefTargetMatItemServiceModel(sourceServiceModel, sourceMatItemNode, targetServiceModule,
                         sourceDocActionProxy, sourceDocSpecifier, targetDocSpecifier,
                         crossDocConvertRequest, docMatItemCreateContext);
+        logRollbackStatus("genDefTargetMatItemServiceModelPrev:after genDefTargetMatItemServiceModel");
         docMatItemCreateContext.setTargetItemServiceModel(targetItemServiceModel);
         // To merge doc mat item context to root list
         mergeItemCreateContext(docContentCreateContextList, docMatItemCreateContext, targetDocSpecifier);
+        logRollbackStatus("genDefTargetMatItemServiceModelPrev:after mergeItemCreateContext");
         return docMatItemCreateContext;
     }
 

@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.platform.service.*;
@@ -57,7 +56,6 @@ public class CrossDocBatchConvertReservedProxy<SourceServiceModel extends Servic
      * @throws ServiceModuleProxyException If problems occur during proxy module interactions.
      * @throws DocActionException If errors arise during document actions, such as creation or manipulation.
      */
-    @Transactional
     public List<DocContentCreateContext> createTargetBatchDocFromReservedDoc(SourceServiceModel reservedServiceModel,
                                                                              int reservedDocType, int sourceDocType,
                                                                              List<ServiceEntityNode> selectedToReserveDocMatItemList,

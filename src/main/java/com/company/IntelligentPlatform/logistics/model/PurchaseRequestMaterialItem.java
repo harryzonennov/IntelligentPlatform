@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -25,6 +27,13 @@ public class PurchaseRequestMaterialItem extends DocMatItemNode {
 
 	public void setItemStatus(int itemStatus) {
 		this.itemStatus = itemStatus;
+	}
+
+	public PurchaseRequestMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_PURCHASEREQUEST;
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
@@ -81,6 +83,13 @@ public class PurchaseContractMaterialItem extends DocMatItemNode {
 
 	public void setRefFinAccountUUID(String refFinAccountUUID) {
 		this.refFinAccountUUID = refFinAccountUUID;
+	}
+
+	public PurchaseContractMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_PURCHASECONTRACT;
 	}
 
 }

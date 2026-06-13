@@ -50,6 +50,7 @@ public class ServiceEntityFieldsHelper {
 					continue;
 				// Check if the field access type is [Protected]
 				if (Modifier.isProtected(field.getModifiers())) {
+					field.setAccessible(true);
 					fieldList.add(field);
 				}
 			}
@@ -168,6 +169,7 @@ public class ServiceEntityFieldsHelper {
 					continue;
 				// Check if the field access type is [Protected]
 				if (Modifier.isProtected(field.getModifiers())) {
+					field.setAccessible(true);
 					fieldList.add(field);
 				}
 			}

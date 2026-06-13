@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.platform.service.StorageCoreUnit;
 import com.company.IntelligentPlatform.platform.service.*;
 import com.company.IntelligentPlatform.platform.service.DocActionExecutorCase;
@@ -194,8 +193,7 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         return null;
     }
 
-    @Transactional
-    public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateDocumentBatch(ServiceModule sourceServiceModule,
+public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateDocumentBatch(ServiceModule sourceServiceModule,
                                                   List<ServiceEntityNode> selectedSourceDocMatItemList,
                                                   DocumentMatItemBatchGenRequest genRequest,
                                                   LogonInfo logonInfo)
@@ -205,8 +203,7 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                 new CrossDocConvertRequest.InputOption(), logonInfo);
     }
 
-    @Transactional
-    public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocReserved(
+public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocReserved(
             ServiceModule reservedServiceModule, List<ServiceEntityNode> selectedSourceDocMatItemList,
             DocumentMatItemBatchGenRequest genRequest, LogonInfo logonInfo)
             throws ServiceEntityConfigureException, ServiceModuleProxyException, DocActionException,
@@ -215,8 +212,7 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                 new CrossDocConvertRequest.InputOption(), logonInfo);
     }
 
-    @Transactional
-    public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocFromPrevProf(
+public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocFromPrevProf(
             ServiceModule prevProfServiceModule, List<ServiceEntityNode> selectedPrevProfDocMatItemList,
             DocumentMatItemBatchGenRequest genRequest, LogonInfo logonInfo)
             throws ServiceEntityConfigureException, ServiceModuleProxyException, DocActionException {
@@ -224,8 +220,7 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                 new CrossDocConvertRequest.InputOption(false, true), logonInfo);
     }
 
-    @Transactional
-    public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocToPrevProf(
+public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchDocToPrevProf(
             ServiceModule sourceServiceModule, List<ServiceEntityNode> selectedSourceDocMatItemList,
             DocumentMatItemBatchGenRequest genRequest, LogonInfo logonInfo)
             throws ServiceEntityConfigureException, ServiceModuleProxyException, DocActionException, SearchConfigureException {
@@ -256,13 +251,24 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         /*
          * [step1] Execute the batch cross-creation
          */
-        List<CrossDocBatchConvertProxy.DocContentCreateContext> docContentCreateContextList = crossCreateDocumentCore(sourceServiceModule,
-                selectedSourceDocMatItemList, genRequest, inputOption,
-                logonInfo);
+        List<CrossDocBatchConvertProxy.DocContentCreateContext> docContentCreateContextList;
+        try {
+            docContentCreateContextList = crossCreateDocumentCore(sourceServiceModule,
+                    selectedSourceDocMatItemList, genRequest, inputOption,
+                    logonInfo);
+        } catch (RuntimeException e) {
+            logger.error("[DIAG] crossCreateDocumentCore threw RUNTIME exception", e);
+            throw e;
+        }
         /*
          * [step2]: trigger home action code
          */
-        postTriggerSourceAction(genRequest.getTargetDocType(), (R) sourceServiceModule, selectedSourceDocMatItemList, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
+        try {
+            postTriggerSourceAction(genRequest.getTargetDocType(), (R) sourceServiceModule, selectedSourceDocMatItemList, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
+        } catch (RuntimeException e) {
+            logger.error("[DIAG] postTriggerSourceAction threw RUNTIME exception", e);
+            throw e;
+        }
         return docContentCreateContextList;
     }
 
@@ -1031,8 +1037,7 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                 this.getServiceEntityManager(), serviceModule, parentDocNode, logonUserUUID, organizationUUID);
     }
 
-    @Transactional
-    public void defExecuteActionCore(R serviceModel, int docActionCode, DocActionExecution<T> docActionCallback,
+public void defExecuteActionCore(R serviceModel, int docActionCode, DocActionExecution<T> docActionCallback,
                                      DocItemActionExecution<Item> docItemActionCallback,
                                      SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException {
@@ -1091,15 +1096,13 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
         }
     }
 
-    @Transactional
-    public void batchExecItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList, int docActionCode,
+public void batchExecItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList, int docActionCode,
                                         SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException, ServiceEntityInstallationException, ServiceEntityConfigureException {
         defBatchExecItemHomeAction(serviceModel, selectedSourceDocMatItemList, docActionCode, null, null, serialLogonInfo);
     }
 
-    @Transactional
-    public void defBatchExecItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList,  int docActionCode, DocActionExecution<T> docActionCallback,
+public void defBatchExecItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList,  int docActionCode, DocActionExecution<T> docActionCallback,
                                            DocItemActionExecution<Item> docItemActionCallback,
                                      SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException, ServiceEntityInstallationException, ServiceEntityConfigureException {
@@ -1108,15 +1111,13 @@ public abstract class DocActionExecutionProxy<R extends ServiceModule, T extends
                         selectedSourceDocMatItemList, docActionCode, docActionCallback, docItemActionCallback), serialLogonInfo);
     }
 
-    @Transactional
-    public void execItemExclusiveHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList, int docActionCode, int secondaryActionCode,
+public void execItemExclusiveHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList, int docActionCode, int secondaryActionCode,
                                         SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException, ServiceEntityInstallationException, ServiceEntityConfigureException {
         defBatchExclusiveItemHomeAction(serviceModel, selectedSourceDocMatItemList, docActionCode, secondaryActionCode,null, null, serialLogonInfo);
     }
 
-    @Transactional
-    public void defBatchExclusiveItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList,  int docActionCode, int secondaryActionCode, DocActionExecution<T> docActionCallback,
+public void defBatchExclusiveItemHomeAction(ServiceModule serviceModel, List<ServiceEntityNode> selectedSourceDocMatItemList,  int docActionCode, int secondaryActionCode, DocActionExecution<T> docActionCallback,
                                            DocItemActionExecution<Item> docItemActionCallback,
                                            SerialLogonInfo serialLogonInfo)
             throws ServiceModuleProxyException, DocActionException, ServiceEntityInstallationException, ServiceEntityConfigureException {

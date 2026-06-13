@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
@@ -469,6 +471,13 @@ public class ProductionOrderItem extends DocMatItemNode {
 
 	public void setTaxRate(double taxRate) {
 		this.taxRate = taxRate;
+	}
+
+	public ProductionOrderItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_PRODUCTORDERITEM;
 	}
 
 }

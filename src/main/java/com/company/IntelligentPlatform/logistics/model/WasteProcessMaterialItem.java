@@ -1,6 +1,7 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -36,6 +37,12 @@ public class WasteProcessMaterialItem extends DocMatItemNode {
 
 	public void setRefStoreItemUUID(String refStoreItemUUID) {
 		this.refStoreItemUUID = refStoreItemUUID;
+	}
+
+	public WasteProcessMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_WASTEPROCESSORDER;
 	}
 
 }

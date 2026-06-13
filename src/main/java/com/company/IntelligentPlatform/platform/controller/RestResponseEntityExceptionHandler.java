@@ -58,7 +58,16 @@ public class RestResponseEntityExceptionHandler extends
 	@ExceptionHandler({UnexpectedRollbackException.class, TransactionException.class})
 	public ResponseEntity<Map<String, Object>> handleTransactionException(TransactionException ex,
 			WebRequest request) {
-		log.error("Transaction error: {} — {}", request.getDescription(false), ex.getMessage(), ex);
+		Throwable rootCause = ex;
+		while (rootCause.getCause() != null && rootCause.getCause() != rootCause) {
+			rootCause = rootCause.getCause();
+		}
+		log.error("Transaction error: {} — {} (root cause: {}: {})",
+				request.getDescription(false), ex.getMessage(),
+				rootCause.getClass().getName(), rootCause.getMessage(), ex);
+		if (rootCause != ex) {
+			log.error("Root cause stacktrace:", rootCause);
+		}
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
 				.body(Map.of(
 						"error", "Internal Server Error",

@@ -1,0 +1,623 @@
+-- V14: Patch all DocMatItemNode subclass tables with missing columns.
+-- Uses INFORMATION_SCHEMA-based procedure instead of ADD COLUMN IF NOT EXISTS
+-- for compatibility with MySQL < 8.0.3.
+
+DROP PROCEDURE IF EXISTS add_col;
+
+DELIMITER $$
+CREATE PROCEDURE add_col(
+  IN p_schema VARCHAR(64),
+  IN p_table  VARCHAR(64),
+  IN p_col    VARCHAR(64),
+  IN p_def    TEXT
+)
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_SCHEMA = p_schema
+      AND TABLE_NAME   = p_table
+      AND COLUMN_NAME  = p_col
+  ) THEN
+    SET @sql = CONCAT('ALTER TABLE `', p_schema, '`.`', p_table, '` ADD COLUMN `', p_col, '` ', p_def);
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+  END IF;
+END$$
+DELIMITER ;
+
+-- ============================================================
+-- Base DocMatItemNode columns shared by all tables below
+-- (ReferenceNode + DocMatItemNode fields that may be missing)
+-- ============================================================
+
+-- Helper: add base columns to a given schema.table
+-- Called once per table below.
+
+-- logistics.QualityInspectMatItem
+CALL add_col('logistics','QualityInspectMatItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','QualityInspectMatItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','QualityInspectMatItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','QualityInspectMatItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','QualityInspectMatItem','amount','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','QualityInspectMatItem','homeDocumentType','int DEFAULT 28');
+CALL add_col('logistics','QualityInspectMatItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','itemInspectType','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','itemCheckStatus','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','itemCheckResult','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','checkDate','date DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','checkTimes','int DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','sampleRate','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','sampleAmount','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','sampleUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','failAmount','double DEFAULT 0');
+CALL add_col('logistics','QualityInspectMatItem','failRefUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refWarehouseAreaUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refWasteWarehouseUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','QualityInspectMatItem','refWasteWareAreaUUID','varchar(100) DEFAULT NULL');
+
+-- logistics.PurchaseRequestMaterialItem
+CALL add_col('logistics','PurchaseRequestMaterialItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','PurchaseRequestMaterialItem','amount','double DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','PurchaseRequestMaterialItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseRequestMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','PurchaseRequestMaterialItem','homeDocumentType','int DEFAULT 34');
+
+-- logistics.WarehouseStoreItem
+CALL add_col('logistics','WarehouseStoreItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','WarehouseStoreItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','WarehouseStoreItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','WarehouseStoreItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','WarehouseStoreItem','amount','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','WarehouseStoreItem','homeDocumentType','int DEFAULT 30');
+CALL add_col('logistics','WarehouseStoreItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','refUnitName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','inboundDate','datetime DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','outboundDate','datetime DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refWarehouseUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refWarehouseAreaUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refShelfNumberId','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','volume','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','weight','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','declaredValue','double DEFAULT 0');
+CALL add_col('logistics','WarehouseStoreItem','refMaterialTemplateUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refMaterialSKUId','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','refMaterialSKUName','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','packageStandard','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','WarehouseStoreItem','productionPlace','varchar(200) DEFAULT NULL');
+
+-- logistics.WasteProcessMaterialItem
+CALL add_col('logistics','WasteProcessMaterialItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','WasteProcessMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','WasteProcessMaterialItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','WasteProcessMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','WasteProcessMaterialItem','amount','double DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','WasteProcessMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','WasteProcessMaterialItem','homeDocumentType','int DEFAULT 38');
+CALL add_col('logistics','WasteProcessMaterialItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','WasteProcessMaterialItem','storeCheckStatus','int DEFAULT 0');
+
+-- logistics.InventoryCheckItem
+CALL add_col('logistics','InventoryCheckItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','InventoryCheckItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','InventoryCheckItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','InventoryCheckItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','InventoryCheckItem','amount','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','InventoryCheckItem','homeDocumentType','int DEFAULT 13');
+CALL add_col('logistics','InventoryCheckItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','refWarehouseStoreItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','declaredValue','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','resultAmount','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','resultUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryCheckItem','resultDeclaredValue','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','updateAmount','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','updateDeclaredValue','double DEFAULT 0');
+CALL add_col('logistics','InventoryCheckItem','updateUnitUUID','varchar(100) DEFAULT NULL');
+
+-- logistics.InboundItem
+CALL add_col('logistics','InboundItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','InboundItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','InboundItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','InboundItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','InboundItem','amount','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','InboundItem','homeDocumentType','int DEFAULT 11');
+CALL add_col('logistics','InboundItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','InboundItem','volume','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','weight','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','actualAmount','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','actualVolume','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','actualWeight','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','declaredValue','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','refMaterialSKUName','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refMaterialSKUId','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','productionDate','date DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refUnitName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refUnitNodeInstID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refWarehouseAreaUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','refShelfNumberID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','producerName','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','InboundItem','itemPriceNoTax','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','unitPriceNoTax','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','taxRate','double DEFAULT 0');
+CALL add_col('logistics','InboundItem','packageStandard','varchar(200) DEFAULT NULL');
+
+-- logistics.OutboundItem
+CALL add_col('logistics','OutboundItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','OutboundItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('logistics','OutboundItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','prevDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','nextDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','OutboundItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('logistics','OutboundItem','amount','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','itemPrice','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','unitPrice','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','materialStatus','int DEFAULT 1');
+CALL add_col('logistics','OutboundItem','homeDocumentType','int DEFAULT 12');
+CALL add_col('logistics','OutboundItem','itemStatus','int DEFAULT 0');
+CALL add_col('logistics','OutboundItem','volume','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','weight','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','actualAmount','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','actualVolume','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','actualWeight','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','declaredValue','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','refMaterialSKUName','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refMaterialSKUId','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','productionDate','date DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refUnitName','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refUnitNodeInstID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refWarehouseAreaUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','refShelfNumberID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','producerName','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','itemPriceNoTax','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','unitPriceNoTax','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','taxRate','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','packageStandard','varchar(200) DEFAULT NULL');
+CALL add_col('logistics','OutboundItem','outboundFee','double DEFAULT 0');
+CALL add_col('logistics','OutboundItem','storageFee','double DEFAULT 0');
+
+-- sales.SalesForcastMaterialItem
+CALL add_col('sales','SalesForcastMaterialItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesForcastMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesForcastMaterialItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','prevDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','nextDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesForcastMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesForcastMaterialItem','amount','double DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','itemPrice','double DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','unitPrice','double DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('sales','SalesForcastMaterialItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesForcastMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('sales','SalesForcastMaterialItem','homeDocumentType','int DEFAULT 33');
+CALL add_col('sales','SalesForcastMaterialItem','itemStatus','int DEFAULT 0');
+
+-- sales.SalesReturnMaterialItem
+CALL add_col('sales','SalesReturnMaterialItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesReturnMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesReturnMaterialItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','prevDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','nextDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesReturnMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesReturnMaterialItem','amount','double DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','itemPrice','double DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','unitPrice','double DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('sales','SalesReturnMaterialItem','homeDocumentType','int DEFAULT 18');
+CALL add_col('sales','SalesReturnMaterialItem','itemStatus','int DEFAULT 0');
+CALL add_col('sales','SalesReturnMaterialItem','refFinAccountUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refDocItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesReturnMaterialItem','refDocItemType','int DEFAULT 0');
+
+-- sales.SalesContractMaterialItem (V2 table, patching missing columns)
+CALL add_col('sales','SalesContractMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('sales','SalesContractMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesContractMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('sales','SalesContractMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesContractMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesContractMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesContractMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('sales','SalesContractMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('sales','SalesContractMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('sales','SalesContractMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('sales','SalesContractMaterialItem','homeDocumentType','int DEFAULT 19');
+CALL add_col('sales','SalesContractMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('sales','SalesContractMaterialItem','unitPriceDisplay','double DEFAULT 0');
+
+-- production.ProductionOrderItem
+CALL add_col('production','ProductionOrderItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','reservedDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('production','ProductionOrderItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('production','ProductionOrderItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','prevDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','nextDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('production','ProductionOrderItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('production','ProductionOrderItem','amount','double DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','itemPrice','double DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','unitPrice','double DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('production','ProductionOrderItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','materialStatus','int DEFAULT 1');
+CALL add_col('production','ProductionOrderItem','homeDocumentType','int DEFAULT 31');
+CALL add_col('production','ProductionOrderItem','planStartDate','date DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','planStartPrepareDate','date DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','planEndDate','date DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','actualStartDate','date DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','actualEndDate','date DEFAULT NULL');
+CALL add_col('production','ProductionOrderItem','actualStartPrepareDate','date DEFAULT NULL');
+
+-- production.ProdOrderTargetMatItem
+CALL add_col('production','ProdOrderTargetMatItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','reservedDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('production','ProdOrderTargetMatItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('production','ProdOrderTargetMatItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','prevDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','nextDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('production','ProdOrderTargetMatItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('production','ProdOrderTargetMatItem','amount','double DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','itemPrice','double DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','unitPrice','double DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('production','ProdOrderTargetMatItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdOrderTargetMatItem','materialStatus','int DEFAULT 1');
+CALL add_col('production','ProdOrderTargetMatItem','homeDocumentType','int DEFAULT 17');
+
+-- finance.FinAccountMaterialItem
+CALL add_col('finance','FinAccountMaterialItem','refUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','refSEName','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','refNodeName','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','refPackageName','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('finance','FinAccountMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+CALL add_col('finance','FinAccountMaterialItem','prevDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','prevDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','prevDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','nextDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','nextDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','nextDocMatItemArrayUUID','varchar(2000) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','prevProfDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','prevProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','prevProfDocMatItemArrayUUID','text');
+CALL add_col('finance','FinAccountMaterialItem','nextProfDocType','int DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','nextProfDocMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','nextProfDocMatItemArrayUUID','text');
+CALL add_col('finance','FinAccountMaterialItem','amount','double DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','refUnitUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','refMaterialSKUUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','itemPrice','double DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','unitPrice','double DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','itemPriceDisplay','double DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','unitPriceDisplay','double DEFAULT 0');
+CALL add_col('finance','FinAccountMaterialItem','currencyCode','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','refFinMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','productionBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','purchaseBatchNumber','varchar(100) DEFAULT NULL');
+CALL add_col('finance','FinAccountMaterialItem','materialStatus','int DEFAULT 1');
+CALL add_col('finance','FinAccountMaterialItem','homeDocumentType','int DEFAULT 4');
+CALL add_col('finance','FinAccountMaterialItem','itemStatus','int DEFAULT 0');
+
+-- Existing V2 tables: patch reserved*/reserveTarget* columns added later to DocMatItemNode
+CALL add_col('logistics','InquiryMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InquiryMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','InquiryMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','InquiryMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InquiryMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','InquiryMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+
+CALL add_col('logistics','PurchaseContractMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseContractMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseContractMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','PurchaseContractMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','PurchaseContractMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','PurchaseContractMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+
+CALL add_col('logistics','InventoryTransferItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryTransferItem','reservedDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryTransferItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('logistics','InventoryTransferItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('logistics','InventoryTransferItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('logistics','InventoryTransferItem','reserveTargetDocMatItemArrayUUID','text');
+
+CALL add_col('production','ProdPickingRefMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdPickingRefMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('production','ProdPickingRefMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('production','ProdPickingRefMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','ProdPickingRefMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('production','ProdPickingRefMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+
+CALL add_col('production','BillOfMaterialItem','reservedMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','BillOfMaterialItem','reservedDocType','int DEFAULT 0');
+CALL add_col('production','BillOfMaterialItem','reservedDocMatItemArrayUUID','text');
+CALL add_col('production','BillOfMaterialItem','reserveTargetMatItemUUID','varchar(100) DEFAULT NULL');
+CALL add_col('production','BillOfMaterialItem','reserveTargetDocType','int DEFAULT 0');
+CALL add_col('production','BillOfMaterialItem','reserveTargetDocMatItemArrayUUID','text');
+
+DROP PROCEDURE IF EXISTS add_col;

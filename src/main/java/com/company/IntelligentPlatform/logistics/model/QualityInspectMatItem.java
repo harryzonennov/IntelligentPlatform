@@ -1,6 +1,7 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
@@ -169,6 +170,12 @@ public class QualityInspectMatItem extends DocMatItemNode {
 
 	public void setRefWasteWareAreaUUID(String refWasteWareAreaUUID) {
 		this.refWasteWareAreaUUID = refWasteWareAreaUUID;
+	}
+
+	public QualityInspectMatItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_QUALITYINSPECTORDER;
 	}
 
 }

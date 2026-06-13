@@ -29,7 +29,7 @@ Run:
 git status --short
 ```
 
-If there are **no changes** (output is empty), stop and report: "Nothing to commit on branch `<BRANCH>`."
+If there are **no changes** (output is empty), stop and report: "Nothing to commit on branch `<BRANCH>`." — **do not push**.
 
 ---
 
@@ -97,6 +97,8 @@ EOF
 ```
 
 If the commit fails (e.g. pre-commit hook rejection), report the hook output and stop — do **not** retry or bypass hooks with `--no-verify`.
+
+If the commit output indicates "nothing to commit" or "nothing added to commit", stop and report: "Nothing to commit on branch `<BRANCH>`." — **do not push**.
 
 ---
 

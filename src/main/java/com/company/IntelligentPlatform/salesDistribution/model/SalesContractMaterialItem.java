@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.salesDistribution.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
@@ -173,6 +175,13 @@ public class SalesContractMaterialItem extends DocMatItemNode {
 
 	public void setStoreCheckStatus(int storeCheckStatus) {
 		this.storeCheckStatus = storeCheckStatus;
+	}
+
+	public SalesContractMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_SALESCONTRACT;
 	}
 
 }

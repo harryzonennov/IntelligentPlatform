@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
@@ -113,6 +115,13 @@ public class BillOfMaterialItem extends DocMatItemNode {
 
 	public void setRefWocUUID(String refWocUUID) {
 		this.refWocUUID = refWocUUID;
+	}
+
+	public BillOfMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_BILLOFMATERIALORDER;
 	}
 
 }

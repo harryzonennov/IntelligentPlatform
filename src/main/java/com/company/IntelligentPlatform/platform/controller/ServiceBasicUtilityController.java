@@ -50,6 +50,7 @@ import com.company.IntelligentPlatform.platform.model.Organization;
 import com.company.IntelligentPlatform.platform.model.ServiceDocDeletionSetting;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 
 @Scope("session")
@@ -1445,6 +1446,7 @@ public class ServiceBasicUtilityController {
         return result;
     }
 
+    @Transactional
     public String voidExecuteWrapper(IVoidExecutor voidExecutor, String resourceId,
                                      String acId) {
         try {
@@ -1902,6 +1904,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String defaultActionServiceWrapper(String request, String aoId, String acId,
                                               int documentType, int actionCode,
                                               String nodeInstId,
@@ -2916,6 +2919,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String defaultActionServiceWrapper(String request, String aoId, DocActionExecutionProxy docActionExecutionProxy,
                                               String nodeInstId,
                                               ServiceEntityManager serviceEntityManager,
@@ -3027,23 +3031,60 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String genDefNextDocBatchWrapper(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
+        // [DIAG] Hook into the transaction lifecycle so we can detect and log if the
+        // transaction is marked rollback-only somewhere inside this call (which would
+        // otherwise surface only as UnexpectedRollbackException at commit time with no cause).
+        if (org.springframework.transaction.support.TransactionSynchronizationManager.isSynchronizationActive()) {
+            org.springframework.transaction.support.TransactionSynchronizationManager.registerSynchronization(
+                new org.springframework.transaction.support.TransactionSynchronization() {
+                    @Override
+                    public void afterCompletion(int status) {
+                        if (status == STATUS_ROLLED_BACK) {
+                            logger.error("[DIAG] genDefNextDocBatchWrapper transaction was ROLLED BACK (status={}) — see earlier [DIAG] log lines for the triggering exception",
+                                    status);
+                        }
+                    }
+                });
+        }
         try {
             CreateDocInput createDocInput = genDefNextDocBatchCore(request, documentType, aoId, GenRequestType,
                     genNextDocBatchRequest);
             DocActionExecutionProxy<?, ?, ?> sourceDocActionProxy = createDocInput.getSourceDocActionProxy();
             sourceDocActionProxy.crossCreateDocumentBatch(createDocInput.getServiceModel(),
                     createDocInput.getSelectedMatItemList(), createDocInput.getGenRequest(), logonActionController.getLogonInfo());
+            // [DIAG] At this point everything completed without throwing.  If the transaction
+            // is already marked rollback-only here, then a nested @Transactional method
+            // failed and got swallowed somewhere inside the call chain — log it loudly.
+            if (org.springframework.transaction.support.TransactionSynchronizationManager.isActualTransactionActive()
+                    && org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().isRollbackOnly()) {
+                logger.error("[DIAG] crossCreateDocumentBatch returned normally BUT the transaction is already marked rollback-only. "
+                        + "This means a nested @Transactional Manager method threw a RuntimeException that was caught and swallowed somewhere in the chain. "
+                        + "Stack at detection point:", new RuntimeException("rollback-only detected here"));
+            }
             return ServiceJSONParser.genSimpleOKResponse();
         } catch (AuthorizationException | LogonInfoException e) {
+            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             return e.generateSimpleErrorJSON();
         } catch (ServiceEntityConfigureException | ServiceEntityInstallationException e) {
+            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            logger.error("genDefNextDocBatchWrapper failed", e);
             return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
         } catch (SearchConfigureException | ServiceModuleProxyException | DocActionException e) {
+            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            logger.error("genDefNextDocBatchWrapper failed", e);
             return ServiceJSONParser.generateSimpleErrorJSON(e
                     .getErrorMessage());
+        } catch (RuntimeException e) {
+            // Surface the real cause that would otherwise be hidden behind
+            // UnexpectedRollbackException at commit time.
+            logger.error("genDefNextDocBatchWrapper failed with runtime exception", e);
+            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return ServiceJSONParser.generateSimpleErrorJSON(
+                    e.getMessage() != null ? e.getMessage() : e.getClass().getSimpleName());
         }
     }
 
@@ -3132,6 +3173,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String genDefNextDocBatchReserved(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
@@ -3152,6 +3194,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String genDefNextDocBatchFromPrevProf(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
@@ -3172,6 +3215,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String genDefNextDocBatchToPrevProf(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
@@ -3233,6 +3277,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String batchExecItemHomeAction(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
@@ -3338,6 +3383,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String mergeDocBatchWrapper(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {

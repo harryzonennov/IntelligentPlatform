@@ -1,8 +1,12 @@
 package com.company.IntelligentPlatform.platform.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 import com.company.IntelligentPlatform.platform.model.InvolvePartyTemplate;
 
+@Entity
+@Table(name = "RegisteredProductInvolveParty", catalog = "platform")
 public class RegisteredProductInvolveParty extends InvolvePartyTemplate{
 
 	public static final String NODENAME = IServiceModelConstants.RegisteredProductInvolveParty;

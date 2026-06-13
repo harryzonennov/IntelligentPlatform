@@ -1,6 +1,7 @@
 package com.company.IntelligentPlatform.production.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -398,6 +399,12 @@ public class ProdPickingRefMaterialItem extends DocMatItemNode {
 
 	public void setPickedAmount(double pickedAmount) {
 		this.pickedAmount = pickedAmount;
+	}
+
+	public ProdPickingRefMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_PRODPICKINGORDER;
 	}
 
 }

@@ -3,12 +3,15 @@ package com.company.IntelligentPlatform.platform.service;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * JPA replacement for the legacy platform.foundation.DAO.HibernateDefaultImpDAO.
@@ -27,6 +30,8 @@ import java.util.List;
  */
 @Component
 public class HibernateDefaultImpDAO {
+
+    private static final Logger logger = LoggerFactory.getLogger(HibernateDefaultImpDAO.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -54,6 +59,53 @@ public class HibernateDefaultImpDAO {
             Query query = entityManager.createQuery(jpqlCommand);
             return (List<ServiceEntityNode>) query.getResultList();
         } catch (Exception e) {
+            // The legacy contract is "fail-safe: return empty list on error".
+            // BUT: when the EntityManager throws (e.g. invalid JPQL, unknown entity,
+            // mapping mismatch), Spring's transaction interceptor has ALREADY marked
+            // the surrounding transaction as rollback-only. Silently swallowing the
+            // exception leaves the caller proceeding as if nothing happened, only to
+            // get UnexpectedRollbackException at commit time with no visible cause.
+            // Log the JPQL and the exception so the real failure is debuggable.
+            logger.error("getEntityNodeListBySQLCommand failed for JPQL: [{}] — {}",
+                    jpqlCommand, e.getMessage(), e);
+            return new ArrayList<>();
+        }
+    }
+
+    /**
+     * Parameter-binding variant of {@link #getEntityNodeListBySQLCommand(String)}.
+     *
+     * <p>Use this when the JPQL contains typed parameters such as {@code LocalDateTime}
+     * or {@code Date} that cannot be safely interpolated as a string literal.
+     * Hibernate 6 enforces strict type checking on JPQL comparisons, so e.g.
+     * {@code where e.lastUpdateTime > '2026-06-11'} (a String literal compared to a
+     * {@code LocalDateTime} field) is rejected at parse time. This method lets the
+     * caller bind the value with its correct Java type:
+     * <pre>
+     *   "from QualityInspectOrder q where q.lastUpdateTime > :yesterday"
+     *   parameters = Map.of("yesterday", LocalDateTime.now().minusDays(1))
+     * </pre>
+     *
+     * <p>Same fail-safe contract as the unparameterized variant: any exception is
+     * logged with the JPQL and an empty list is returned.</p>
+     */
+    @SuppressWarnings("unchecked")
+    public List<ServiceEntityNode> getEntityNodeListBySQLCommand(String jpqlCommand,
+                                                                 Map<String, Object> parameters) {
+        if (jpqlCommand == null || jpqlCommand.isBlank()) {
+            return new ArrayList<>();
+        }
+        try {
+            Query query = entityManager.createQuery(jpqlCommand);
+            if (parameters != null) {
+                for (Map.Entry<String, Object> entry : parameters.entrySet()) {
+                    query.setParameter(entry.getKey(), entry.getValue());
+                }
+            }
+            return (List<ServiceEntityNode>) query.getResultList();
+        } catch (Exception e) {
+            logger.error("getEntityNodeListBySQLCommand(parameterized) failed for JPQL: [{}] params={} — {}",
+                    jpqlCommand, parameters, e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -90,6 +142,8 @@ public class HibernateDefaultImpDAO {
             }
             return uuidList;
         } catch (Exception e) {
+            logger.error("getUUIDListBySQLCommand failed for JPQL: [{}] — {}",
+                    jpqlCommand, e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -125,6 +179,8 @@ public class HibernateDefaultImpDAO {
             Long count = (Long) query.getSingleResult();
             return count != null ? count.intValue() : 0;
         } catch (Exception e) {
+            logger.error("getRecordNumBySQLCommand failed for JPQL: [{}] — {}",
+                    jpqlCommand, e.getMessage(), e);
             return 0;
         }
     }
@@ -157,6 +213,8 @@ public class HibernateDefaultImpDAO {
             query.setParameter("keyValue", keyValue);
             return (List<ServiceEntityNode>) query.getResultList();
         } catch (Exception e) {
+            logger.error("getEntityNodeListByKey failed for nodeName=[{}] field=[{}] value=[{}] — {}",
+                    nodeName, fieldName, keyValue, e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -211,6 +269,8 @@ public class HibernateDefaultImpDAO {
             }
             return result;
         } catch (Exception e) {
+            logger.error("getStringListBySQLCommand failed for JPQL: [{}] — {}",
+                    jpqlCommand, e.getMessage(), e);
             return new ArrayList<>();
         }
     }
@@ -236,6 +296,8 @@ public class HibernateDefaultImpDAO {
             Query query = entityManager.createQuery(jpqlCommand);
             return query.getResultList();
         } catch (Exception e) {
+            logger.error("executeBySQLCommand failed for JPQL: [{}] — {}",
+                    jpqlCommand, e.getMessage(), e);
             return new ArrayList<>();
         }
     }

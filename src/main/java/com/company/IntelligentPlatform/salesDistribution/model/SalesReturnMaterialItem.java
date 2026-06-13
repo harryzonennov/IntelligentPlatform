@@ -1,6 +1,8 @@
 package com.company.IntelligentPlatform.salesDistribution.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.DocumentContent;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -59,6 +61,13 @@ public class SalesReturnMaterialItem extends DocMatItemNode {
 
 	public void setRefDocItemType(int refDocItemType) {
 		this.refDocItemType = refDocItemType;
+	}
+
+	public SalesReturnMaterialItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_SALESRETURNORDER;
 	}
 
 }

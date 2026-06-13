@@ -1,14 +1,15 @@
 package com.company.IntelligentPlatform.platform.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 @Entity
 @Table(name = "MaterialSKUExtendProperty", catalog = "platform")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class MaterialSKUExtendProperty extends ServiceEntityNode {
 
 	public static final String NODENAME = IServiceModelConstants.MaterialSKUExtendProperty;

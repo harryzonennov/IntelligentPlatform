@@ -1,6 +1,7 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -197,6 +198,12 @@ public class WarehouseStoreItem extends DocMatItemNode {
 
 	public void setProductionPlace(String productionPlace) {
 		this.productionPlace = productionPlace;
+	}
+
+	public WarehouseStoreItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_WAREHOUSESTOREITEM;
 	}
 
 }

@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import com.company.IntelligentPlatform.platform.model.MaterialStockKeepUnit;
 import com.company.IntelligentPlatform.platform.service.*;
 import com.company.IntelligentPlatform.platform.service.LogonInfoManager;
@@ -33,7 +32,6 @@ public class CrossDocBatchConvertProfProxy<SourceServiceModel extends ServiceMod
     @Autowired
     protected PrevNextProfDocItemProxy prevNextProfDocItemProxy;
 
-    @Transactional
     public List<DocContentCreateContext> createTargetBatchDocToPrevDoc(SourceServiceModel sourceServiceModel, int prevProfDocType, int sourceDocType,
                                                                          List<ServiceEntityNode> selectedSourceDocMatItemList,
                                                                          CrossDocConvertProfRequest<TargetServiceModel, TargetItem, TargetItemServiceModel> crossDocConvertProfRequest,
@@ -62,10 +60,11 @@ public class CrossDocBatchConvertProfProxy<SourceServiceModel extends ServiceMod
                                         crossDocConvertProfRequest, genRequest, targetDocOffset, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
                         // in case need to break loops
                         return !docMatItemCreateContext.getBreakFlag();
-                    } catch (ServiceModuleProxyException | DocActionException | ServiceEntityConfigureException | IllegalAccessException e) {
-                        logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, ""));
+                    } catch (DocActionException e) {
+                        throw e;
+                    } catch (ServiceModuleProxyException | ServiceEntityConfigureException | IllegalAccessException e) {
+                        throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage());
                     }
-                    return true;
                 });
         storeContext(docContentCreateContextList, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
         return docContentCreateContextList;
@@ -116,10 +115,11 @@ public class CrossDocBatchConvertProfProxy<SourceServiceModel extends ServiceMod
                                         crossDocConvertProfRequest, genRequest, targetDocOffset, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
                         // in case need to break loops
                         return !docMatItemCreateContext.getBreakFlag();
-                    } catch (ServiceModuleProxyException | DocActionException | ServiceEntityConfigureException | IllegalAccessException e) {
-                        logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, ""));
+                    } catch (DocActionException e) {
+                        throw e;
+                    } catch (ServiceModuleProxyException | ServiceEntityConfigureException | IllegalAccessException e) {
+                        throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getMessage());
                     }
-                    return true;
                 }, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
         storeContext(docContentCreateContextList,LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
         return docContentCreateContextList;

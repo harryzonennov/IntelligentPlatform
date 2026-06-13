@@ -1,5 +1,6 @@
 package com.company.IntelligentPlatform.logistics.model;
 
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -59,6 +60,12 @@ public class OutboundItem extends DeliveryItem {
 
 	public void setStoreDay(int storeDay) {
 		this.storeDay = storeDay;
+	}
+
+	public OutboundItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_OUTBOUNDDELIVERY;
 	}
 
 }

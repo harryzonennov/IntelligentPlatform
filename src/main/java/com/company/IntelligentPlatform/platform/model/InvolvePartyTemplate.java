@@ -1,16 +1,16 @@
 package com.company.IntelligentPlatform.platform.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
-import com.company.IntelligentPlatform.platform.model.*;
-
-import java.util.Date;
 
 /**
  * Involve Party Super class for Material, registered product
  */
 @Entity
 @Table(name = "InvolvePartyTemplate", catalog = "platform")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class InvolvePartyTemplate extends DocInvolveParty {
 
 	public static final int PARTY_ROLE_CUSTOMER = DocInvolveParty.PARTY_ROLE_CUSTOMER;

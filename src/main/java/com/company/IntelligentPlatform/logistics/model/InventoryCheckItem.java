@@ -1,6 +1,7 @@
 package com.company.IntelligentPlatform.logistics.model;
 
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.IDefDocumentResource;
 import jakarta.persistence.*;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
@@ -119,6 +120,13 @@ public class InventoryCheckItem extends DocMatItemNode {
 
 	public void setUpdateUnitUUID(String updateUnitUUID) {
 		this.updateUnitUUID = updateUnitUUID;
+	}
+
+	public InventoryCheckItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.inventCheckResult = CHECK_RESULT_BALANCE;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_INVENTORY_CHECKORDER;
 	}
 
 }

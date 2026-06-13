@@ -2,6 +2,7 @@ package com.company.IntelligentPlatform.platform.service;
 
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -95,20 +96,25 @@ public class ServiceDefaultIdGenerateHelper {
      */
     public int getLastIDIndexToday(String client, String tableName,
                                    int indexLength) throws SearchConfigureException {
-        String yesterday = getYesterdaySqlString();
+        // Hibernate 6 enforces strict type comparison: lastUpdateTime is LocalDateTime,
+        // so we must bind it as a parameter — not interpolate a String literal.
+        LocalDateTime yesterday = LocalDateTime.now().minusDays(1);
         String varName = ServiceEntityStringHelper.headerToLowerCase(tableName);
         String sqlCommand = "from " + tableName + " " + varName + " where "
-                + varName + "." + FIELD_LAST_UPDATE + " > '" + yesterday + "'";
+                + varName + "." + FIELD_LAST_UPDATE + " > :yesterday";
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("yesterday", yesterday);
         if (client != null
                 && !client.equals(ServiceEntityStringHelper.EMPTYSTRING)) {
             boolean crossFlag = ServiceEntityPersistenceHelper
                     .checkTableCrossClient(tableName);
             if (!crossFlag) {
-                sqlCommand = sqlCommand + " and client like '%" + client + "%'";
+                sqlCommand = sqlCommand + " and " + varName + ".client like :client";
+                parameters.put("client", "%" + client + "%");
             }
         }
         List<ServiceEntityNode> seNodeList = hibernateDefaultImpDAO
-                .getEntityNodeListBySQLCommand(sqlCommand);
+                .getEntityNodeListBySQLCommand(sqlCommand, parameters);
         int biggestValue = 0;
         for (ServiceEntityNode seNode : seNodeList) {
             int index = parseIndexFromID(seNode.getId(), indexLength);
@@ -129,21 +135,25 @@ public class ServiceDefaultIdGenerateHelper {
     public int getLastIndexToday(String client, String tableName,
                                  String idFieldName, int indexLength)
             throws SearchConfigureException {
-        String yesterday = getYesterdaySqlString();
+        // Hibernate 6: bind LocalDateTime as a parameter; do not interpolate a String.
+        LocalDateTime yesterday = LocalDateTime.now().minusDays(1);
         String varName = ServiceEntityStringHelper.headerToLowerCase(tableName);
         String sqlCommand = "from " + tableName + " " + varName + " where "
-                + varName + "." + FIELD_CREATED + " > '" + yesterday + "' or "
-                + FIELD_LAST_UPDATE + " > '" + yesterday + "'";
+                + varName + "." + FIELD_CREATED + " > :yesterday or "
+                + varName + "." + FIELD_LAST_UPDATE + " > :yesterday";
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("yesterday", yesterday);
         if (client != null
                 && !client.equals(ServiceEntityStringHelper.EMPTYSTRING)) {
             boolean crossFlag = ServiceEntityPersistenceHelper
                     .checkTableCrossClient(tableName);
             if (!crossFlag) {
-                sqlCommand = sqlCommand + " and client like '%" + client + "%'";
+                sqlCommand = sqlCommand + " and " + varName + ".client like :client";
+                parameters.put("client", "%" + client + "%");
             }
         }
         List<ServiceEntityNode> seNodeList = hibernateDefaultImpDAO
-                .getEntityNodeListBySQLCommand(sqlCommand);
+                .getEntityNodeListBySQLCommand(sqlCommand, parameters);
         int biggestValue = 0;
         for (ServiceEntityNode seNode : seNodeList) {
             Object rawValue = ServiceReflectiveHelper.getFieldValue(seNode,

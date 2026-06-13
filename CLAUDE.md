@@ -30,6 +30,7 @@ The most common mistakes to avoid:
 4. **Table name = Java class name** (camelCase). **Column name = Java field name** (camelCase). No renaming.
 5. **`@Table(schema=...)` required** on every `@Entity`. Schemas: `platform`, `finance`, `logistics`, `sales`, `production`.
 6. **URL paths camelCase, no hyphens**: `/api/v1/logistics/purchaseContracts` — never `/purchase-contracts`.
+7. **`NODENAME` and `SENAME` constants must exactly match the legacy projects** — these were set manually at the start of the migration and must never be changed or "corrected". Before writing any entity class, read the corresponding class in the old project (`/Users/I043125/work/`) to copy the exact constant values. `NODENAME` = the entity's own discriminator constant; `SENAME` = the parent document's constant. Child/item entities (extending `DocMatItemNode` or `DeliveryItem`) must NOT use `NODENAME_ROOT`.
 
 ## Module → Schema mapping
 | Module package | Schema |
@@ -61,3 +62,19 @@ The most common mistakes to avoid:
 - Next migration: `V4__...sql`
 - Location: `src/main/resources/db/migration/`
 - All table DDL uses schema prefix: `CREATE TABLE IF NOT EXISTS \`platform\`.\`tableName\``
+
+---
+
+## After-Update Summary Rule
+
+After completing any task that modifies, creates, or deletes files, you MUST append a summary
+entry to `/Users/I043125/work-migration/docs/MIGRATION_CONVERSATIONS.md` under a new
+`#### Update log — <YYYY-MM-DD>` sub-heading inside the relevant conversation, OR as a
+standalone `### Update — <topic> (<YYYY-MM-DD>)` entry if it is not tied to a specific
+conversation. The entry must list:
+
+- **Files modified** — path + one-line description of what changed
+- **Files created** — path + purpose
+- **Files deleted** — path + reason
+
+Only skip this step if the task was pure read/research with no file changes.

@@ -252,6 +252,9 @@ public class PurchaseContractActionExecutionProxy extends DocActionExecutionProx
         } catch (MaterialException e) {
             logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, ""));
             throw new DocActionException(DocActionException.PARA_SYSTEM_ERROR, e.getErrorMessage() );
+        } catch (RuntimeException e) {
+            logger.error("[DIAG] PurchaseContractActionExecutionProxy.crossCreateDocumentBatch RUNTIME exception", e);
+            throw e;
         }
     }
 

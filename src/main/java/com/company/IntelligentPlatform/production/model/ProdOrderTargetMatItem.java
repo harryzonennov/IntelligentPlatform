@@ -1,10 +1,8 @@
 package com.company.IntelligentPlatform.production.model;
 
-import com.company.IntelligentPlatform.platform.model.DocMatItemNode;
+import com.company.IntelligentPlatform.platform.model.*;
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
-import com.company.IntelligentPlatform.platform.model.ServiceEntityNode;
 
 /**
  * Migrated from: ThorsteinProduction - ProdOrderTargetMatItem (extends DocMatItemNode)
@@ -177,6 +175,13 @@ public class ProdOrderTargetMatItem extends DocMatItemNode {
 
 	public void setProductionDate(LocalDate productionDate) {
 		this.productionDate = productionDate;
+	}
+
+	public ProdOrderTargetMatItem() {
+		this.nodeName = NODENAME;
+		this.serviceEntityName = SENAME;
+		this.itemStatus = DocumentContent.STATUS_INITIAL;
+		this.homeDocumentType = IDefDocumentResource.DOCUMENT_TYPE_PRODUCTIONORDER;
 	}
 
 }
