@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.company.IntelligentPlatform.platform.controller.SEUIComModel;
 import com.company.IntelligentPlatform.platform.controller.ServiceDocumentExtendUIModel;
@@ -56,6 +57,7 @@ import com.company.IntelligentPlatform.platform.model.ServiceEntityStringHelper;
  * @author ZhangHang
  * @date Nov 7, 2012
  */
+@Transactional
 @Service
 public class ServiceEntityManager {
 

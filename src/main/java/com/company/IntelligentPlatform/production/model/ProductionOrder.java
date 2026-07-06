@@ -19,25 +19,25 @@ public class ProductionOrder extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.ProductionOrder;
 
-	public static final int STATUS_INITIAL        = 1;
+	public static final int STATUS_INITIAL         = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_SUBMITTED      = 2;
+	public static final int STATUS_APPROVED        = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_APPROVED       = 3;
+	public static final int STATUS_INPRODUCTION    = DocumentContent.STATUS_INPROCESS;
 
-	public static final int STATUS_INPRODUCTION   = 4;
+	public static final int STATUS_INPROCESS       = DocumentContent.STATUS_INPROCESS;
 
-	public static final int STATUS_INPROCESS      = 4;
+	public static final int STATUS_FINISHED        = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_FINISHED       = 5;
+	public static final int STATUS_PROCESS_DONE    = DocumentContent.STATUS_PROCESSDONE;
 
-	public static final int STATUS_PROCESS_DONE   = 100;
+	public static final int STATUS_BLOCKED         = DocumentContent.STATUS_BLOCKED;
 
-	public static final int STATUS_BLOCKED        = 6;
+	public static final int STATUS_REJECT_APPROVAL = DocumentContent.STATUS_REJECT_APPROVAL;
 
-	public static final int STATUS_REJECT_APPROVAL = 305;
+	public static final int STATUS_DELIVERYDONE    = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_DELIVERYDONE   = 200;
+	public static final int STATUS_SUBMITTED       = DocumentContent.STATUS_SUBMITTED;
 
 	public static final int CATEGORY_MANUAL = 1;
 

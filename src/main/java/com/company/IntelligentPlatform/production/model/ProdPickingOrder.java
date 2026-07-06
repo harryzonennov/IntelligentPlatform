@@ -18,17 +18,17 @@ public class ProdPickingOrder extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.ProdPickingOrder;
 
-	public static final int STATUS_INITIAL        = 1;
+	public static final int STATUS_INITIAL         = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_APPROVED       = 2;
+	public static final int STATUS_APPROVED        = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_INPROCESS      = 3;
+	public static final int STATUS_INPROCESS       = DocumentContent.STATUS_INPROCESS;
 
-	public static final int STATUS_DELIVERYDONE   = 200;
+	public static final int STATUS_DELIVERYDONE    = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_PROCESSDONE    = 100;
+	public static final int STATUS_PROCESSDONE     = DocumentContent.STATUS_PROCESSDONE;
 
-	public static final int STATUS_REJECT_APPROVAL = 305;
+	public static final int STATUS_REJECT_APPROVAL = DocumentContent.STATUS_REJECT_APPROVAL;
 
 	public static final int CATEGORY_MANUAL         = 1;
 

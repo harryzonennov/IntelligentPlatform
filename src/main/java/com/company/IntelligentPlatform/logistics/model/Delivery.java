@@ -13,19 +13,19 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class Delivery extends DocumentContent {
 
-	public static final int STATUS_INITIAL = 1;
+	public static final int STATUS_INITIAL = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_SUBMITTED = 2;
+	public static final int STATUS_APPROVED = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_APPROVED = 3;
+	public static final int STATUS_PROCESSDONE = DocumentContent.STATUS_PROCESSDONE;
 
-	public static final int STATUS_PROCESSDONE = 100;
+	public static final int STATUS_DELIVERYDONE = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_DELIVERYDONE = 200;
+	public static final int STATUS_REJECTED = DocumentContent.STATUS_REJECT_APPROVAL;
 
-	public static final int STATUS_REJECTED = 305;
+	public static final int STATUS_SUBMITTED = DocumentContent.STATUS_SUBMITTED;
 
-	public static final int STATUS_REVOKE_SUBMIT = 4;
+	public static final int STATUS_REVOKE_SUBMIT = DocumentContent.STATUS_REVOKE_SUBMIT;
 
 	public static final int FREIGHTCHARGE_TYPE_SENDER = 1;
 

@@ -18,15 +18,15 @@ public class QualityInspectOrder extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.QualityInspectOrder;
 
-	public static final int STATUS_INITIAL = 1;
+	public static final int STATUS_INITIAL = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_INPROCESS = 2;
+	public static final int STATUS_INPROCESS = DocumentContent.STATUS_INPROCESS;
 
 	public static final int STATUS_TESTDONE = 190;
 
-	public static final int STATUS_PROCESSDONE = 100;
+	public static final int STATUS_PROCESSDONE = DocumentContent.STATUS_PROCESSDONE;
 
-	public static final int STATUS_DELIVERYDONE = 200;
+	public static final int STATUS_DELIVERYDONE = DocumentContent.STATUS_DELIVERYDONE;
 
 	public static final int CHECKSTATUS_INITIAL = 1;
 

@@ -26,23 +26,58 @@ public abstract class DocumentContent extends ServiceEntityNode {
 	public static final String SENAME = IServiceModelConstants.DocumentContent;
 
 	// Document status constants
+	//
+	// NOTE: Numeric values must match the legacy ThorsteinPlatform DocumentContent
+	// constants exactly. The framework stores `actionCode` and `targetStatus` in the
+	// same integer namespace inside DocActionConfigure, and several DOC_ACTION_*
+	// constants in SystemDefDocActionCodeProxy are *defined as* these STATUS_*
+	// values (e.g. DOC_ACTION_SUBMIT = STATUS_SUBMITTED). Any redefinition that
+	// puts a STATUS_* in the same numeric range as the hard-coded action codes
+	// (DOC_ACTION_APPROVE=2, COUNTAPPROVE=3, DELIVERY_DONE=5, PROCESS_DONE=6)
+	// causes getDocActionConfigureByCode() to return the wrong configure entry —
+	// observed as documents and items being silently reset to STATUS_INITIAL after
+	// cross-document creation calls. Do NOT renumber to small contiguous ints.
 	public static final int STATUS_INITIAL = 1;
 
-	public static final int STATUS_SUBMITTED = 2;
+	public static final int STATUS_APPROVED = 2;
 
-	public static final int STATUS_APPROVED = 3;
+	public static final int STATUS_DELIVERYDONE = 4;
 
-	public static final int STATUS_ACTIVE = 4;
+	public static final int STATUS_PROCESSDONE = 5;
 
-	public static final int STATUS_REVOKE_SUBMIT = 5;
+	public static final int STATUS_SUBMITTED = 299;
 
-	public static final int STATUS_REJECT_APPROVAL = 6;
+	public static final int STATUS_INPROCESS = 310;
 
-	public static final int STATUS_CANCELED = 7;
+	public static final int STATUS_ACTIVE = 305;
 
-	public static final int STATUS_DELETED = 8;
+	public static final int STATUS_REVOKE_SUBMIT = 690;
+
+	public static final int STATUS_REJECT_APPROVAL = 790;
+
+	public static final int STATUS_BLOCKED = 910;
 
 	public static final int STATUS_ARCHIVED = 980;
+
+	public static final int STATUS_CANCELED = 990;
+
+	public static final int STATUS_DELETED = 991;
+
+	// Priority constants (legacy values)
+	public static final int PRIORITY_LOW = 1;
+
+	public static final int PRIORITY_MIDDLE = 2;
+
+	public static final int PRIORITY_HIGH = 3;
+
+	public static final int PRIORITY_VERYHIGH = 4;
+
+	// Document category type constants (legacy values)
+	public static final int DOCUMENTCATTYPE_ORDER = 1;
+
+	public static final int DOCUMENTCATTYPE_REQUEST = 2;
+
+	public static final double DEF_TAXRATE = 17;
 
 	@Column(name = "status")
 	protected int status;

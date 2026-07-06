@@ -301,8 +301,16 @@ public class PurchaseContractEditorController extends SEEditorController {
 
 	/**
 	 * load the attachment content to consumer.
+	 * `produces = APPLICATION_OCTET_STREAM_VALUE` is defensive: without it,
+	 * Spring's content negotiation could pick `StringHttpMessageConverter`
+	 * for the `byte[]` return (based on class-level defaults or the
+	 * request's `Accept` header), which would UTF-8-round-trip the body
+	 * and corrupt every non-ASCII byte to `EF BF BD` (U+FFFD). The runtime
+	 * `Content-Type` header set by `setAttachmentHttpHeaders` (image/jpeg,
+	 * application/pdf, etc.) still takes precedence for the actual response
+	 * header — `produces` only affects converter selection.
 	 */
-	@RequestMapping(value = "/loadAttachment")
+	@RequestMapping(value = "/loadAttachment", produces = org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	public ResponseEntity<byte[]> loadAttachment(String uuid) {
 		return serviceBasicUtilityController.loadAttachment(uuid, AOID_RESOURCE,
 				genDocAttachmentProcessPara());

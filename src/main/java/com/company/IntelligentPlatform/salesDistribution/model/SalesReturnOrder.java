@@ -21,23 +21,23 @@ public class SalesReturnOrder extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.SalesReturnOrder;
 
-	public static final int STATUS_INITIAL        = 1;
+	public static final int STATUS_INITIAL         = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_SUBMITTED      = 2;
+	public static final int STATUS_APPROVED        = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_APPROVED       = 3;
+	public static final int STATUS_INDELIVERY      = DocumentContent.STATUS_INPROCESS;
 
-	public static final int STATUS_INDELIVERY     = 4;
+	public static final int STATUS_DELIVERY_DONE   = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_DELIVERY_DONE  = 5;
+	public static final int STATUS_DELIVERYDONE    = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_DELIVERYDONE   = 5;
+	public static final int STATUS_PROCESS_DONE    = DocumentContent.STATUS_PROCESSDONE;
 
-	public static final int STATUS_PROCESS_DONE   = 6;
+	public static final int STATUS_REJECT_APPROVAL = DocumentContent.STATUS_REJECT_APPROVAL;
 
-	public static final int STATUS_REJECT_APPROVAL = 305;
+	public static final int STATUS_SUBMITTED       = DocumentContent.STATUS_SUBMITTED;
 
-	public static final int STATUS_ARCHIVED       = 400;
+	public static final int STATUS_ARCHIVED        = DocumentContent.STATUS_ARCHIVED;
 
 	@Column(name = "grossPrice")
 	protected double grossPrice;

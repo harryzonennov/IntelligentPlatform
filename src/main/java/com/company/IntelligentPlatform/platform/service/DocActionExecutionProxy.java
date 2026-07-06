@@ -251,24 +251,14 @@ public List<CrossDocBatchConvertProxy.DocContentCreateContext> crossCreateBatchD
         /*
          * [step1] Execute the batch cross-creation
          */
-        List<CrossDocBatchConvertProxy.DocContentCreateContext> docContentCreateContextList;
-        try {
-            docContentCreateContextList = crossCreateDocumentCore(sourceServiceModule,
-                    selectedSourceDocMatItemList, genRequest, inputOption,
-                    logonInfo);
-        } catch (RuntimeException e) {
-            logger.error("[DIAG] crossCreateDocumentCore threw RUNTIME exception", e);
-            throw e;
-        }
+        List<CrossDocBatchConvertProxy.DocContentCreateContext> docContentCreateContextList =
+                crossCreateDocumentCore(sourceServiceModule, selectedSourceDocMatItemList, genRequest,
+                        inputOption, logonInfo);
         /*
          * [step2]: trigger home action code
          */
-        try {
-            postTriggerSourceAction(genRequest.getTargetDocType(), (R) sourceServiceModule, selectedSourceDocMatItemList, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
-        } catch (RuntimeException e) {
-            logger.error("[DIAG] postTriggerSourceAction threw RUNTIME exception", e);
-            throw e;
-        }
+        postTriggerSourceAction(genRequest.getTargetDocType(), (R) sourceServiceModule,
+                selectedSourceDocMatItemList, LogonInfoManager.cloneToSerialLogonInfo(logonInfo));
         return docContentCreateContextList;
     }
 

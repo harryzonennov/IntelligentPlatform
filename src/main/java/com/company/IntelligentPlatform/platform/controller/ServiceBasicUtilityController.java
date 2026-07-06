@@ -1040,6 +1040,7 @@ public class ServiceBasicUtilityController {
     }
 
     //TODO to merge this this deleteModule method
+    @Transactional
     public String deleteModuleTemplate(DeleteServiceEntityRequest deleteServiceEntityRequest, ServiceUIModelRequest serviceUIModelRequest) {
         try {
             preCheckResourceAccessCore(serviceUIModelRequest.getResourceId(), deleteServiceEntityRequest.getAcId());
@@ -1250,6 +1251,7 @@ public class ServiceBasicUtilityController {
         return deleteModule(uuid, acId, serviceUIModelRequest, null, null);
     }
 
+    @Transactional
     public String deleteModule(String uuid, String acId, ServiceUIModelRequest serviceUIModelRequest,
                                IServieEntityExecutor preDeleteExecutor, IServieEntityExecutor deleteExecutor) {
         try {
@@ -1272,6 +1274,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String deleteDocMatItem(String uuid, String acId, ServiceUIModelRequest serviceUIModelRequest) {
         try {
             preCheckResourceAccessCore(serviceUIModelRequest.getResourceId(), acId);
@@ -1541,6 +1544,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String saveModuleService(ServiceUIModelRequest serviceUIModelRequest, ServiceUIModule serviceUIModule,
                                     IGetServiceModuleExecutor preSaveExecutor,
                                     IGetServiceModuleExecutor postSaveExecutor, IServiceUIModuleExecutor serviceUIModuleExecutor, String uuid,
@@ -1579,6 +1583,7 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    @Transactional
     public String saveModuleService(String request, ServiceUIModelRequest serviceUIModelRequest, String acId) {
         try {
             ServiceUIModelExtension serviceUIModelExtension = getUIModelExtensionFromRequest(serviceUIModelRequest);
@@ -1633,6 +1638,7 @@ public class ServiceBasicUtilityController {
         return docUIModelExtensionBuilder.buildSubNode(nodeInstId);
     }
 
+    @Transactional
     public String saveModuleService(ServiceUIModelRequest serviceUIModelRequest, ServiceUIModule serviceUIModule,
                                     String uuid, String acId) {
         return saveModuleService(serviceUIModelRequest, serviceUIModule, null, null, null, uuid, acId);
@@ -2919,6 +2925,23 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    /**
+     * Generic action-execution wrapper used by every document's executeDocAction
+     * endpoint. Does in order: parseToServiceModule → updateServiceModuleWrapper
+     * (which calls EntityManager.merge on the changed nodes) → executeService
+     * (the workflow action callback, which typically writes additional rows) →
+     * refreshServiceUIModel → postHandle.
+     *
+     * <p><b>Why {@code @Transactional} here:</b> all of those steps share one
+     * logical unit of work — if any fails, the partial writes from the merge
+     * must roll back. The data-layer {@link ServiceEntityManager} and
+     * {@link JpaServiceEntityDAO} methods rely on a thread-bound transaction
+     * being already open (so they can call {@code entityManager.merge} /
+     * {@code persist} without managing their own tx). This is the outermost
+     * call site in the controller chain — declaring the transaction here
+     * keeps the data-layer methods free of transaction concerns and matches
+     * the legacy single-tx-per-request shape.
+     */
     @Transactional
     public String defaultActionServiceWrapper(String request, String aoId, DocActionExecutionProxy docActionExecutionProxy,
                                               String nodeInstId,
@@ -3031,60 +3054,48 @@ public class ServiceBasicUtilityController {
         }
     }
 
+    /**
+     * Cross-document batch creation entry point.
+     *
+     * <p><b>Transaction semantics (intentional, matches legacy):</b> the catch
+     * blocks below swallow the listed checked exceptions and return a JSON
+     * error envelope. Because no exception escapes the method, Spring's
+     * transaction interceptor sees normal completion and <b>commits</b> the
+     * transaction — including any rows that {@code genDefNextDocBatchCore} or
+     * {@code crossCreateDocumentBatch} wrote before the exception was raised.
+     *
+     * <p>This matches the legacy behaviour and is acceptable here because the
+     * write paths inside the call chain are themselves transactional units
+     * that either complete or throw atomically — a half-written document is
+     * not a state any of them can leave behind. If a future change introduces
+     * multi-step writes at this level, switch to the inner-{@code @Transactional}
+     * + outer-catch pattern so the inner method's rollback covers the partial
+     * writes (or restore {@code setRollbackOnly()} in the catches).
+     *
+     * <p>Runtime exceptions are intentionally NOT caught here. They propagate
+     * out, which (a) triggers Spring's default rollback for unchecked
+     * exceptions, and (b) lets {@link RestResponseEntityExceptionHandler}
+     * log the full root-cause chain and return a structured 500 to the client.
+     */
     @Transactional
     public String genDefNextDocBatchWrapper(
             String request, int documentType, String aoId,
             Class<? extends DocumentMatItemBatchGenRequest> GenRequestType, IGenNextDocBatchRequest genNextDocBatchRequest) {
-        // [DIAG] Hook into the transaction lifecycle so we can detect and log if the
-        // transaction is marked rollback-only somewhere inside this call (which would
-        // otherwise surface only as UnexpectedRollbackException at commit time with no cause).
-        if (org.springframework.transaction.support.TransactionSynchronizationManager.isSynchronizationActive()) {
-            org.springframework.transaction.support.TransactionSynchronizationManager.registerSynchronization(
-                new org.springframework.transaction.support.TransactionSynchronization() {
-                    @Override
-                    public void afterCompletion(int status) {
-                        if (status == STATUS_ROLLED_BACK) {
-                            logger.error("[DIAG] genDefNextDocBatchWrapper transaction was ROLLED BACK (status={}) — see earlier [DIAG] log lines for the triggering exception",
-                                    status);
-                        }
-                    }
-                });
-        }
         try {
             CreateDocInput createDocInput = genDefNextDocBatchCore(request, documentType, aoId, GenRequestType,
                     genNextDocBatchRequest);
             DocActionExecutionProxy<?, ?, ?> sourceDocActionProxy = createDocInput.getSourceDocActionProxy();
             sourceDocActionProxy.crossCreateDocumentBatch(createDocInput.getServiceModel(),
                     createDocInput.getSelectedMatItemList(), createDocInput.getGenRequest(), logonActionController.getLogonInfo());
-            // [DIAG] At this point everything completed without throwing.  If the transaction
-            // is already marked rollback-only here, then a nested @Transactional method
-            // failed and got swallowed somewhere inside the call chain — log it loudly.
-            if (org.springframework.transaction.support.TransactionSynchronizationManager.isActualTransactionActive()
-                    && org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().isRollbackOnly()) {
-                logger.error("[DIAG] crossCreateDocumentBatch returned normally BUT the transaction is already marked rollback-only. "
-                        + "This means a nested @Transactional Manager method threw a RuntimeException that was caught and swallowed somewhere in the chain. "
-                        + "Stack at detection point:", new RuntimeException("rollback-only detected here"));
-            }
             return ServiceJSONParser.genSimpleOKResponse();
         } catch (AuthorizationException | LogonInfoException e) {
-            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             return e.generateSimpleErrorJSON();
         } catch (ServiceEntityConfigureException | ServiceEntityInstallationException e) {
-            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             logger.error("genDefNextDocBatchWrapper failed", e);
             return ServiceJSONParser.generateSimpleErrorJSON(e.getMessage());
         } catch (SearchConfigureException | ServiceModuleProxyException | DocActionException e) {
-            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             logger.error("genDefNextDocBatchWrapper failed", e);
-            return ServiceJSONParser.generateSimpleErrorJSON(e
-                    .getErrorMessage());
-        } catch (RuntimeException e) {
-            // Surface the real cause that would otherwise be hidden behind
-            // UnexpectedRollbackException at commit time.
-            logger.error("genDefNextDocBatchWrapper failed with runtime exception", e);
-            org.springframework.transaction.interceptor.TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-            return ServiceJSONParser.generateSimpleErrorJSON(
-                    e.getMessage() != null ? e.getMessage() : e.getClass().getSimpleName());
+            return ServiceJSONParser.generateSimpleErrorJSON(e.getErrorMessage());
         }
     }
 

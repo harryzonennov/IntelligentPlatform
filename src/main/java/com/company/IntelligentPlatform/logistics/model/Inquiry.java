@@ -18,19 +18,19 @@ public class Inquiry extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.Inquiry;
 
-	public static final int STATUS_INIT = 1;
+	public static final int STATUS_INIT = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_INITIAL = 1;
+	public static final int STATUS_INITIAL = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_SUBMITTED = 2;
+	public static final int STATUS_SUBMITTED = DocumentContent.STATUS_SUBMITTED;
 
-	public static final int STATUS_APPROVED = 3;
+	public static final int STATUS_APPROVED = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_REJECT_APPROVAL = 4;
+	public static final int STATUS_REJECT_APPROVAL = DocumentContent.STATUS_REJECT_APPROVAL;
 
-	public static final int STATUS_INPROCESS = 5;
+	public static final int STATUS_INPROCESS = DocumentContent.STATUS_INPROCESS;
 
-	public static final int STATUS_DELIVERYDONE = 100;
+	public static final int STATUS_DELIVERYDONE = DocumentContent.STATUS_DELIVERYDONE;
 
 	@Column(name = "grossPrice")
 	protected double grossPrice;

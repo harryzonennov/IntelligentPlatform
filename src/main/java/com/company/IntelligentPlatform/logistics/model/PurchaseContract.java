@@ -21,15 +21,13 @@ public class PurchaseContract extends DocumentContent {
 
 	public static final String SENAME = IServiceModelConstants.PurchaseContract;
 
-	public static final int STATUS_INITIAL = 1;
+	public static final int STATUS_INITIAL = DocumentContent.STATUS_INITIAL;
 
-	public static final int STATUS_SUBMITTED = 2;
+	public static final int STATUS_APPROVED = DocumentContent.STATUS_APPROVED;
 
-	public static final int STATUS_APPROVED = 3;
+	public static final int STATUS_DELIVERYDONE = DocumentContent.STATUS_DELIVERYDONE;
 
-	public static final int STATUS_DELIVERYDONE = 200;
-
-	public static final int STATUS_PROCESSDONE = 100;
+	public static final int STATUS_PROCESSDONE = DocumentContent.STATUS_PROCESSDONE;
 
 	@Column(name = "grossPrice")
 	protected double grossPrice;
