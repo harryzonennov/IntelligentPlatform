@@ -31,6 +31,10 @@ public class PurchaseContractServiceUIModel extends ServiceUIModule {
 			PurchaseContractActionNode.NODEINST_ACTION_SUBMIT)
 	protected PurchaseContractActionNodeUIModel submittedBy;
 
+	@IServiceUIModuleFieldConfig(nodeName = PurchaseContractActionNode.NODENAME, nodeInstId =
+			PurchaseContractActionNode.NODEINST_ACTION_REJECT_APPROVE)
+	protected PurchaseContractActionNodeUIModel rejectApprovedBy;
+
 	@IServiceUIModuleFieldConfig(nodeName = PurchaseContractMaterialItem.NODENAME, nodeInstId = PurchaseContractMaterialItem.NODENAME)
 	protected List<PurchaseContractMaterialItemServiceUIModel> purchaseContractMaterialItemUIModelList = new ArrayList<>();
 
@@ -81,6 +85,14 @@ public class PurchaseContractServiceUIModel extends ServiceUIModule {
 
 	public void setSubmittedBy(PurchaseContractActionNodeUIModel submittedBy) {
 		this.submittedBy = submittedBy;
+	}
+
+	public PurchaseContractActionNodeUIModel getRejectApprovedBy() {
+		return rejectApprovedBy;
+	}
+
+	public void setRejectApprovedBy(PurchaseContractActionNodeUIModel rejectApprovedBy) {
+		this.rejectApprovedBy = rejectApprovedBy;
 	}
 
 	public PurchaseContractPartyUIModel getPurchaseToOrgUIModel() {

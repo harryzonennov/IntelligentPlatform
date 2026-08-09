@@ -1,8 +1,10 @@
 package com.company.IntelligentPlatform.platform.model;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,8 +43,10 @@ public class DefaultDateFormatConstant {
 	private static final DateTimeFormatter DT_DATE_TIME = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, or {@link LocalDateTime}
-	 * using the DATE_FORMAT pattern (yyyy-MM-dd).
+	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
+	 * or {@link Instant} using the DATE_FORMAT pattern (yyyy-MM-dd).
+	 * Hibernate 6 may return any of these for a DATETIME/DATE column declared as java.util.Date
+	 * without @Temporal — all are handled safely here.
 	 */
 	public static String formatDate(Object value) {
 		if (value == null) {
@@ -54,15 +58,18 @@ public class DefaultDateFormatConstant {
 		if (value instanceof LocalDate) {
 			return ((LocalDate) value).format(DT_DATE);
 		}
+		if (value instanceof Instant) {
+			return LocalDateTime.ofInstant((Instant) value, ZoneId.systemDefault()).format(DT_DATE);
+		}
 		if (value instanceof Date) {
 			return DATE_FORMAT.format((Date) value);
 		}
-		return DATE_FORMAT.format(value);
+		return value.toString();
 	}
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, or {@link LocalDateTime}
-	 * using the DATE_MIN_FORMAT pattern (yyyy-MM-dd HH:mm).
+	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
+	 * or {@link Instant} using the DATE_MIN_FORMAT pattern (yyyy-MM-dd HH:mm).
 	 */
 	public static String formatDateMin(Object value) {
 		if (value == null) {
@@ -74,15 +81,18 @@ public class DefaultDateFormatConstant {
 		if (value instanceof LocalDate) {
 			return ((LocalDate) value).format(DT_DATE);
 		}
+		if (value instanceof Instant) {
+			return LocalDateTime.ofInstant((Instant) value, ZoneId.systemDefault()).format(DT_DATE_MIN);
+		}
 		if (value instanceof Date) {
 			return DATE_MIN_FORMAT.format((Date) value);
 		}
-		return DATE_MIN_FORMAT.format(value);
+		return value.toString();
 	}
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, or {@link LocalDateTime}
-	 * using the DATE_TIME_FORMAT pattern (yyyy-MM-dd HH:mm:ss).
+	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
+	 * or {@link Instant} using the DATE_TIME_FORMAT pattern (yyyy-MM-dd HH:mm:ss).
 	 */
 	public static String formatDateTime(Object value) {
 		if (value == null) {
@@ -94,10 +104,13 @@ public class DefaultDateFormatConstant {
 		if (value instanceof LocalDate) {
 			return ((LocalDate) value).format(DT_DATE);
 		}
+		if (value instanceof Instant) {
+			return LocalDateTime.ofInstant((Instant) value, ZoneId.systemDefault()).format(DT_DATE_TIME);
+		}
 		if (value instanceof Date) {
 			return DATE_TIME_FORMAT.format((Date) value);
 		}
-		return DATE_TIME_FORMAT.format(value);
+		return value.toString();
 	}
 
 	@ISEDropDownResourceMapping(resouceMapping = "DefaultDateFormat", valueFieldName = "")

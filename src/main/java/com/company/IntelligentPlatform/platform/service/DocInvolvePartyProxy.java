@@ -478,7 +478,7 @@ public class DocInvolvePartyProxy {
         docInvolvePartyUIModel.setAddress(docInvolveParty.getAddress());
         if (docInvolveParty.getRefDocumentDate() != null) {
             docInvolvePartyUIModel.setCreatedDate(
-                    DefaultDateFormatConstant.DATE_FORMAT.format(docInvolveParty.getRefDocumentDate()));
+                    DefaultDateFormatConstant.formatDate(docInvolveParty.getRefDocumentDate()));
         }
         docInvolvePartyUIModel.setRefDocMatItemUUID(docInvolveParty.getRefDocMatItemUUID());
         docInvolvePartyUIModel.setRefDocumentType(docInvolveParty.getRefDocumentType());

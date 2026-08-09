@@ -504,8 +504,8 @@ public class DocActionNodeProxy {
         docActionNodeUIModel.setExecutedByUUID(docActionNode.getExecutedByUUID());
         if (docActionNode.getExecutionTime() != null) {
             docActionNodeUIModel
-                    .setExecutionTime(DefaultDateFormatConstant.DATE_MIN_FORMAT
-                            .format(docActionNode.getExecutionTime()));
+                    .setExecutionTime(DefaultDateFormatConstant.formatDateMin(
+                            docActionNode.getExecutionTime()));
         }
         docActionNodeUIModel.setRefDocMatItemUUID(docActionNode.getRefDocMatItemUUID());
         docActionNodeUIModel.setDocumentType(docActionNode.getDocumentType());

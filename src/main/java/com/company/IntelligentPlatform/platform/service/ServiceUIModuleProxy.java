@@ -1005,9 +1005,15 @@ public class ServiceUIModuleProxy {
             }
             return serviceUIModule;
         } catch (ServiceEntityConfigureException | IllegalArgumentException | IllegalAccessException | InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
+            Throwable rootCause = (e instanceof InvocationTargetException && e.getCause() != null)
+                    ? e.getCause() : e;
+            String detail = "[serviceUIModuleType=" + serviceUIModuleType.getSimpleName()
+                    + " serviceModuleType=" + serviceModuleType.getSimpleName() + "] "
+                    + rootCause.getClass().getSimpleName() + ": " + rootCause.getMessage();
+            logger.error("genServiceUIModuleFromServiceModelCore failed: " + detail, rootCause);
             throw new ServiceModuleProxyException(
                     ServiceModuleProxyException.PARA_SYSTEM_WRONG,
-                    e.getMessage());
+                    detail);
         }
     }
 
@@ -1894,11 +1900,16 @@ public class ServiceUIModuleProxy {
             return uiModelInstance;
         } catch (InstantiationException | IllegalAccessException | SecurityException | NoSuchMethodException
                 | IllegalArgumentException | InvocationTargetException | NoSuchFieldException e) {
-            logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e,
-                    null));
+            // Unwrap InvocationTargetException so the real cause (e.g. IllegalArgumentException
+            // from SimpleDateFormat.format on a wrong date type) is surfaced with its message.
+            Throwable rootCause = (e instanceof InvocationTargetException && e.getCause() != null)
+                    ? e.getCause() : e;
+            String detail = "[" + uiModelClass.getSimpleName() + "] "
+                    + rootCause.getClass().getSimpleName() + ": " + rootCause.getMessage();
+            logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, uiModelClass.getSimpleName()));
             throw new ServiceModuleProxyException(
                     ServiceModuleProxyException.PARA_SYSTEM_WRONG,
-                    e.getMessage());
+                    detail);
         }
     }
 

@@ -1709,6 +1709,13 @@ public class ServiceBasicUtilityController {
             logger.error(e.getErrorMessage());
             return ServiceJSONParser.generateSimpleErrorJSON(e
                     .getErrorMessage());
+        } catch (RuntimeException e) {
+            // loadModuleViewService is a pure read; an unchecked exception here
+            // has nothing to roll back. Log the true root cause and return it,
+            // rather than letting it surface as an opaque UnexpectedRollbackException.
+            logger.error("Unexpected runtime error loading view service", e);
+            return ServiceJSONParser.generateSimpleErrorJSON(
+                    ServiceEntityStringHelper.genDefaultErrorMessage(e, "loadModuleViewService"));
         }
     }
 
@@ -1737,6 +1744,14 @@ public class ServiceBasicUtilityController {
             logger.error(e.getErrorMessage());
             return ServiceJSONParser.generateSimpleErrorJSON(e
                     .getErrorMessage());
+        } catch (RuntimeException e) {
+            // loadModuleEditService is a pure read; an unchecked exception here
+            // (e.g. NPE from a missing config lookup) has nothing to roll back.
+            // Log the true root cause and return it, rather than letting it
+            // surface as an opaque UnexpectedRollbackException.
+            logger.error("Unexpected runtime error loading edit service for uuid=" + uuid, e);
+            return ServiceJSONParser.generateSimpleErrorJSON(
+                    ServiceEntityStringHelper.genDefaultErrorMessage(e, "loadModuleEditService"));
         }
     }
 

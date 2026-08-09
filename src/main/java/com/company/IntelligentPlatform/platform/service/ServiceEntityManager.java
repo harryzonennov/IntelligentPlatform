@@ -1640,6 +1640,7 @@ public class ServiceEntityManager {
      * @throws ServiceModuleProxyException
      * @throws ServiceEntityConfigureException
      */
+    @Transactional(readOnly = true, noRollbackFor = Exception.class)
     public ServiceModule loadServiceModule(Class<?> serviceModuleType,
                                            ServiceEntityNode serviceEntityNode)
             throws ServiceModuleProxyException, ServiceEntityConfigureException {
@@ -1657,6 +1658,7 @@ public class ServiceEntityManager {
      * @throws ServiceModuleProxyException
      * @throws ServiceEntityConfigureException
      */
+    @Transactional(readOnly = true, noRollbackFor = Exception.class)
     public ServiceModule loadServiceModule(Class<?> serviceModuleType,
                                            ServiceEntityNode serviceEntityNode,
                                            ServiceUIModelExtension serviceUIModelExtension)
@@ -1900,6 +1902,7 @@ public class ServiceEntityManager {
      * @throws ServiceUIModuleProxyException
      * @throws ServiceEntityConfigureException
      */
+    @Transactional(readOnly = true, noRollbackFor = Exception.class)
     public ServiceUIModule genServiceUIModuleFromServiceModel(
             Class<?> serviceUIModuleType, Class<?> serviceModuleType,
             ServiceModule serviceModule,
@@ -1920,6 +1923,7 @@ public class ServiceEntityManager {
      * @throws ServiceUIModuleProxyException
      * @throws ServiceEntityConfigureException
      */
+    @Transactional(readOnly = true, noRollbackFor = Exception.class)
     public ServiceUIModule genServiceUIModuleFromServiceModel(
             Class<?> serviceUIModuleType, Class<?> serviceModuleType,
             ServiceModule serviceModule,

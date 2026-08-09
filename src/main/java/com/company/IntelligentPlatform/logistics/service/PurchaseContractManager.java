@@ -499,7 +499,7 @@ public class PurchaseContractManager extends ServiceEntityManager {
                 logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, PurchaseContract.SENAME));
             }
         }
-        if (PurchaseContractMaterialItem.SENAME.equals(seNode.getNodeName())) {
+        if (PurchaseContractMaterialItem.NODENAME.equals(seNode.getNodeName())) {
             PurchaseContractMaterialItem purchaseContractMaterialItem = (PurchaseContractMaterialItem) seNode;
             try {
                 PurchaseContractMaterialItemUIModel purchaseContractMaterialItemUIModel =

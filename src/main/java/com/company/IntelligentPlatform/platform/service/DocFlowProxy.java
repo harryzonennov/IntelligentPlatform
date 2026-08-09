@@ -463,6 +463,9 @@ public class DocFlowProxy {
 		int documentType = docMatItemNode.getHomeDocumentType();
 		DocumentContentSpecifier<?, ?, ?> documentContentSpecifier =
 				docActionExecutionProxyFactory.getSpecifierByDocType(documentType);
+		if (documentContentSpecifier == null) {
+			return null;
+		}
 		ServiceEntityManager refDocumentManager = documentContentSpecifier.getDocumentManager();
 		if (refDocumentManager == null) {
 			return null;

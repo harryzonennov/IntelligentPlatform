@@ -106,13 +106,13 @@ public class PurchaseContractMaterialItemManager {
 		docFlowProxy.convParentDocToItemUI(purchaseContract, purchaseContractMaterialItemUIModel, logonInfo);
 		if(purchaseContract.getSignDate() != null){
 			purchaseContractMaterialItemUIModel
-					.setSignDate(DefaultDateFormatConstant.DATE_FORMAT
-							.format(purchaseContract.getSignDate()));
+					.setSignDate(DefaultDateFormatConstant.formatDate(
+							purchaseContract.getSignDate()));
 		}
 		if(purchaseContract.getRequireExecutionDate() != null){
 			purchaseContractMaterialItemUIModel
-					.setRequireExecutionDate(DefaultDateFormatConstant.DATE_FORMAT
-							.format(purchaseContract.getRequireExecutionDate()));
+					.setRequireExecutionDate(DefaultDateFormatConstant.formatDate(
+							purchaseContract.getRequireExecutionDate()));
 		}
 	}
 

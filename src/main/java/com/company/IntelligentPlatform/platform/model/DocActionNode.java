@@ -1,6 +1,9 @@
 package com.company.IntelligentPlatform.platform.model;
 
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import com.company.IntelligentPlatform.platform.service.StandardSwitchProxy;
 
 import java.util.Date;
@@ -25,6 +28,8 @@ public class DocActionNode extends ServiceEntityNode {
 	
 	protected int docActionCode;
 
+	@Column(name = "executionTime")
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date executionTime;
 
 	protected String executedByUUID;

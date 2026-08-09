@@ -62,16 +62,23 @@ public class RestResponseEntityExceptionHandler extends
 		while (rootCause.getCause() != null && rootCause.getCause() != rootCause) {
 			rootCause = rootCause.getCause();
 		}
-		log.error("Transaction error: {} — {} (root cause: {}: {})",
-				request.getDescription(false), ex.getMessage(),
-				rootCause.getClass().getName(), rootCause.getMessage(), ex);
+		// UnexpectedRollbackException means the transaction was marked rollback-only
+		// and the ORIGINAL application exception was overridden by the commit failure.
+		// Always log AND report the true root cause so the error is never opaque —
+		// a bare "A transaction error occurred" hides the real defect (e.g. an NPE
+		// during a read that had nothing to roll back in the first place).
+		String rootDetail = rootCause.getClass().getSimpleName()
+				+ (rootCause.getMessage() != null ? ": " + rootCause.getMessage() : "");
+		log.error("Transaction error: {} — {} (root cause: {})",
+				request.getDescription(false), ex.getMessage(), rootDetail, ex);
 		if (rootCause != ex) {
 			log.error("Root cause stacktrace:", rootCause);
 		}
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
 				.body(Map.of(
 						"error", "Internal Server Error",
-						"message", "A transaction error occurred"
+						"message", "A transaction error occurred",
+						"rootCause", rootDetail
 				));
 	}
 
