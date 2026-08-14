@@ -43,10 +43,60 @@ public class DefaultDateFormatConstant {
 	private static final DateTimeFormatter DT_DATE_TIME = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
-	 * or {@link Instant} using the DATE_FORMAT pattern (yyyy-MM-dd).
-	 * Hibernate 6 may return any of these for a DATETIME/DATE column declared as java.util.Date
-	 * without @Temporal — all are handled safely here.
+	 * Automatically format any date/time value using the most appropriate pattern.
+	 *
+	 * <p>This is the preferred method to use at call sites where you don't want
+	 * to think about which formatter to choose — the output pattern is decided
+	 * by the actual runtime type of {@code value}:
+	 * <pre>
+	 *   LocalDate       → "2026-08-12"           (date only, no time)
+	 *   LocalDateTime   → "2026-08-12 11:07"     (date + HH:mm)
+	 *   Instant         → "2026-08-12 11:07"     (converted via system timezone)
+	 *   java.util.Date  → "2026-08-12 11:07"
+	 * </pre>
+	 *
+	 * <p>Use the explicit methods when you need a specific format regardless of type:
+	 * {@link #formatDate} for date-only, {@link #formatDateMin} for HH:mm,
+	 * {@link #formatDateTime} for HH:mm:ss.
+	 */
+	public static String formatAuto(Object value) {
+		if (value == null) {
+			return null;
+		}
+		if (value instanceof LocalDate) {
+			return ((LocalDate) value).format(DT_DATE);
+		}
+		if (value instanceof LocalDateTime) {
+			return ((LocalDateTime) value).format(DT_DATE_MIN);
+		}
+		if (value instanceof Instant) {
+			return LocalDateTime.ofInstant((Instant) value, ZoneId.systemDefault()).format(DT_DATE_MIN);
+		}
+		if (value instanceof Date) {
+			return DATE_MIN_FORMAT.format((Date) value);
+		}
+		return value.toString();
+	}
+
+	/**
+	 * Safely format any date/time value as a date-only string (yyyy-MM-dd).
+	 *
+	 * <p>Use this method when the field represents a <b>date only</b>, e.g.
+	 * {@code signDate}, {@code planExecutionDate}, {@code requireExecutionDate}.
+	 *
+	 * <p>Accepted input types and example output:
+	 * <pre>
+	 *   LocalDate       "2026-08-11"
+	 *   LocalDateTime   "2026-08-11"          (time part is dropped)
+	 *   Instant         "2026-08-11"          (converted via system timezone)
+	 *   java.util.Date  "2026-08-11"
+	 * </pre>
+	 *
+	 * <p><b>Why these overloads exist:</b> Hibernate 6 maps a {@code java.util.Date}
+	 * field that lacks {@code @Temporal} to {@link LocalDateTime} at runtime.
+	 * Calling {@code SimpleDateFormat.format()} directly on a {@code LocalDateTime}
+	 * throws {@code IllegalArgumentException: Cannot format given Object as a Date}.
+	 * Always use these wrapper methods instead of {@code DATE_FORMAT.format(value)}.
 	 */
 	public static String formatDate(Object value) {
 		if (value == null) {
@@ -68,8 +118,27 @@ public class DefaultDateFormatConstant {
 	}
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
-	 * or {@link Instant} using the DATE_MIN_FORMAT pattern (yyyy-MM-dd HH:mm).
+	 * Safely format any date/time value as a date + hour:minute string (yyyy-MM-dd HH:mm).
+	 *
+	 * <p>Use this method when the field represents a <b>timestamp without seconds</b>,
+	 * e.g. {@code executionTime}, {@code createdTime} displayed in a list or form.
+	 * This is the most common choice for UI datetime fields in this codebase.
+	 *
+	 * <p>Accepted input types and example output:
+	 * <pre>
+	 *   LocalDateTime   "2026-08-11 11:07"
+	 *   LocalDate       "2026-08-11"          (no time component — date only returned)
+	 *   Instant         "2026-08-11 11:07"    (converted via system timezone)
+	 *   java.util.Date  "2026-08-11 11:07"
+	 * </pre>
+	 *
+	 * <p><b>Difference from {@link #formatDate}:</b> includes HH:mm in the output
+	 * for LocalDateTime/Instant/Date inputs. For a LocalDate input both methods
+	 * return the same date-only string.
+	 *
+	 * <p><b>Difference from {@link #formatDateTime}:</b> omits seconds (HH:mm vs HH:mm:ss).
+	 * Use {@code formatDateMin} for general UI display; use {@code formatDateTime} only
+	 * when second-level precision is meaningful (e.g. audit logs).
 	 */
 	public static String formatDateMin(Object value) {
 		if (value == null) {
@@ -91,8 +160,22 @@ public class DefaultDateFormatConstant {
 	}
 
 	/**
-	 * Format an Object that may be a {@link Date}, {@link LocalDate}, {@link LocalDateTime},
-	 * or {@link Instant} using the DATE_TIME_FORMAT pattern (yyyy-MM-dd HH:mm:ss).
+	 * Safely format any date/time value as a full timestamp string (yyyy-MM-dd HH:mm:ss).
+	 *
+	 * <p>Use this method when <b>second-level precision</b> is meaningful, e.g. audit logs
+	 * or precise event timestamps. For general UI datetime display prefer
+	 * {@link #formatDateMin} (HH:mm is usually sufficient and cleaner).
+	 *
+	 * <p>Accepted input types and example output:
+	 * <pre>
+	 *   LocalDateTime   "2026-08-11 11:07:27"
+	 *   LocalDate       "2026-08-11"          (no time component — date only returned)
+	 *   Instant         "2026-08-11 11:07:27" (converted via system timezone)
+	 *   java.util.Date  "2026-08-11 11:07:27"
+	 * </pre>
+	 *
+	 * <p><b>Difference from {@link #formatDateMin}:</b> includes seconds in the output
+	 * (HH:mm:ss vs HH:mm) for LocalDateTime/Instant/Date inputs.
 	 */
 	public static String formatDateTime(Object value) {
 		if (value == null) {

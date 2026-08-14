@@ -74,7 +74,7 @@ public class SalesForcastConfigureProxy extends ServiceEntityConfigureProxy {
         seConfigureMapList.add(salesForcastActionNodeConfigureMap);
 //Init configuration of SalesContract [SalesContractMaterialItemAttachment] node
         ServiceEntityConfigureMap salesContractMaterialItemAttachmentConfigureMap = new ServiceEntityConfigureMap();
-        salesContractMaterialItemAttachmentConfigureMap.setParentNodeName("SalesForcastMaterialItem");
+        salesContractMaterialItemAttachmentConfigureMap.setParentNodeName(SalesForcastMaterialItem.NODENAME);
         salesContractMaterialItemAttachmentConfigureMap.setNodeName(SalesForcastMaterialItemAttachment.NODENAME);
         salesContractMaterialItemAttachmentConfigureMap.setNodeType(SalesForcastMaterialItemAttachment.class);
         salesContractMaterialItemAttachmentConfigureMap.setTableName(SalesForcastMaterialItemAttachment.NODENAME);

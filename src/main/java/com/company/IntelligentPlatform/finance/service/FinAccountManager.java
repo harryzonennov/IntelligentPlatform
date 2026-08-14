@@ -589,7 +589,7 @@ public class FinAccountManager extends FinAccountManagerProxy {
 			finAccountLogUIModel.setName(finAccountLog.getName());
 			if (finAccountLog.getFinanceDate() != null) {
 				finAccountLogUIModel
-						.setFinanceDate(finAccountLog.getFinanceDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(finAccountLog.getFinanceDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+						.setFinanceDate(finAccountLog.getFinanceDate() != null ? DefaultDateFormatConstant.formatAuto(finAccountLog.getFinanceDate()) : null);
 				finAccountLogUIModel.setNote(finAccountLog.getNote());
 				finAccountLogUIModel.setActionCode(finAccountLog
 						.getActionCode());

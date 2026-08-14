@@ -295,8 +295,10 @@ public class MaterialManager extends ServiceEntityManager {
 			if(logonInfo != null){
 				try {
 					Map<Integer, String> materialCategoryMap = this.initMaterialCategoryMap(logonInfo.getLanguageCode());
-					materialUIModel.setMaterialCategoryValue(materialCategoryMap
-							.get(material.getMaterialCategory()));
+					if (materialCategoryMap != null) {
+						materialUIModel.setMaterialCategoryValue(materialCategoryMap
+								.get(material.getMaterialCategory()));
+					}
 				} catch (ServiceEntityInstallationException e) {
 					logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(e, ""));
 				}
@@ -320,9 +322,11 @@ public class MaterialManager extends ServiceEntityManager {
 									.get(material.getQualityInspectFlag()));
 					Map<Integer, String> statusMap = this
 							.initStatusMap(logonInfo.getLanguageCode());
-					materialUIModel
-							.setStatusValue(statusMap
-									.get(material.getStatus()));
+					if (statusMap != null) {
+						materialUIModel
+								.setStatusValue(statusMap
+										.get(material.getStatus()));
+					}
 				} catch (ServiceEntityInstallationException e) {
 					logger.error(ServiceEntityStringHelper
 							.genDefaultErrorMessage(e, "qualityInspect"));
@@ -375,8 +379,10 @@ public class MaterialManager extends ServiceEntityManager {
 			if (logonInfo != null) {
 				try {
 					Map<Integer, String> operationModeMap = this.initOperationModeMap(logonInfo.getLanguageCode());
-					materialUIModel.setOperationModeValue(operationModeMap
-							.get(material.getOperationMode()));
+					if (operationModeMap != null) {
+						materialUIModel.setOperationModeValue(operationModeMap
+								.get(material.getOperationMode()));
+					}
 				} catch (ServiceEntityInstallationException e) {
 					// do nothing
 				}
@@ -409,8 +415,10 @@ public class MaterialManager extends ServiceEntityManager {
 			if(logonInfo!= null){
 				try {
 					Map<Integer, String> supplyTypeMap = this.initSupplyTypeMap(logonInfo.getLanguageCode());
-					materialUIModel.setSupplyTypeValue(supplyTypeMap.get(material
-							.getSupplyType()));
+					if (supplyTypeMap != null) {
+						materialUIModel.setSupplyTypeValue(supplyTypeMap.get(material
+								.getSupplyType()));
+					}
 				} catch (ServiceEntityInstallationException e) {
 					// skip
 					logger.error(ServiceEntityStringHelper.genDefaultErrorMessage(

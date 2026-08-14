@@ -126,7 +126,7 @@ public class PurchaseContractConfigureProxy extends ServiceEntityConfigureProxy 
 		// [PurchaseContractMaterialItemAttachment] node
 		ServiceEntityConfigureMap purchaseContractMaterialItemAttachmentConfigureMap = new ServiceEntityConfigureMap();
 		purchaseContractMaterialItemAttachmentConfigureMap
-				.setParentNodeName(PurchaseContractMaterialItem.SENAME);
+				.setParentNodeName(PurchaseContractMaterialItem.NODENAME);
 		purchaseContractMaterialItemAttachmentConfigureMap
 				.setNodeName(PurchaseContractMaterialItemAttachment.NODENAME);
 		purchaseContractMaterialItemAttachmentConfigureMap

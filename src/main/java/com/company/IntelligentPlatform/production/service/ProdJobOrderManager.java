@@ -439,10 +439,10 @@ public class ProdJobOrderManager extends ServiceEntityManager {
 					.getRefProdRouteProcessItemUUID());
 			prodJobOrderUIModel.setRefWorkCenterUUID(prodJobOrder
 					.getRefWorkCenterUUID());
-			prodJobOrderUIModel.setStartDate(prodJobOrder.getStartDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setPlanStartDate(prodJobOrder.getPlanStartDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getPlanStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setEndDate(prodJobOrder.getEndDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			prodJobOrderUIModel.setPlanEndDate(prodJobOrder.getPlanEndDate() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(prodJobOrder.getPlanEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			prodJobOrderUIModel.setStartDate(prodJobOrder.getStartDate() != null ? DefaultDateFormatConstant.formatAuto(prodJobOrder.getStartDate()) : null);
+			prodJobOrderUIModel.setPlanStartDate(prodJobOrder.getPlanStartDate() != null ? DefaultDateFormatConstant.formatAuto(prodJobOrder.getPlanStartDate()) : null);
+			prodJobOrderUIModel.setEndDate(prodJobOrder.getEndDate() != null ? DefaultDateFormatConstant.formatAuto(prodJobOrder.getEndDate()) : null);
+			prodJobOrderUIModel.setPlanEndDate(prodJobOrder.getPlanEndDate() != null ? DefaultDateFormatConstant.formatAuto(prodJobOrder.getPlanEndDate()) : null);
 			prodJobOrderUIModel.setPlanNeedTime(prodJobOrder.getPlanNeedTime());
 			prodJobOrderUIModel.setStatus(prodJobOrder.getStatus());
 		}

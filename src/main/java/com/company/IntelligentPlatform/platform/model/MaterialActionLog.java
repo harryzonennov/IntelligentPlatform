@@ -3,14 +3,8 @@ package com.company.IntelligentPlatform.platform.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.service.SystemDefDocActionCodeProxy;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.DocActionNode;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.ISQLSepcifyAttribute;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import com.company.IntelligentPlatform.platform.model.IServiceModelConstants;
 
 @Entity

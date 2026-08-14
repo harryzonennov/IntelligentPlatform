@@ -325,8 +325,8 @@ public class ProductionPlanItemManager {
 	public void convProductionPlanToItemUI(ProductionPlan productionPlan, ProductionPlanItemUIModel productionPlanItemUIModel) {
 		if (productionPlan != null) {
 			productionPlanItemUIModel.setPlanId(productionPlan.getId());
-			productionPlanItemUIModel.setPlanPlanStartTime(productionPlan.getPlanStartTime() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(productionPlan.getPlanStartTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
-			productionPlanItemUIModel.setPlanPlanEndTime(productionPlan.getPlanEndTime() != null ? DefaultDateFormatConstant.formatDate(java.util.Date.from(productionPlan.getPlanEndTime().atZone(java.time.ZoneId.systemDefault()).toInstant())) : null);
+			productionPlanItemUIModel.setPlanPlanStartTime(productionPlan.getPlanStartTime() != null ? DefaultDateFormatConstant.formatAuto(productionPlan.getPlanStartTime()) : null);
+			productionPlanItemUIModel.setPlanPlanEndTime(productionPlan.getPlanEndTime() != null ? DefaultDateFormatConstant.formatAuto(productionPlan.getPlanEndTime()) : null);
 			try {
 				String amountLabel = materialStockKeepUnitManager
 						.getAmountLabel(productionPlan.getRefMaterialSKUUUID(), productionPlan.getRefUnitUUID(),

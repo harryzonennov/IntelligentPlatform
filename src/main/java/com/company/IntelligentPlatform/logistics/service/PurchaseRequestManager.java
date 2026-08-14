@@ -174,20 +174,24 @@ public class PurchaseRequestManager extends ServiceEntityManager {
             if (logonInfo != null) {
                 Map<Integer, String> priorityCodeMap = initPriorityCode(logonInfo
                         .getLanguageCode());
-                purchaseRequestUIModel.setPriorityCodeValue(priorityCodeMap
-                        .get(purchaseRequest.getPriorityCode()));
+                if (priorityCodeMap != null) {
+                    purchaseRequestUIModel.setPriorityCodeValue(priorityCodeMap
+                            .get(purchaseRequest.getPriorityCode()));
+                }
             }
             purchaseRequestUIModel.setStatus(purchaseRequest.getStatus());
             if (logonInfo != null) {
                 Map<Integer, String> statusMap = initStatus(logonInfo
                         .getLanguageCode());
-                purchaseRequestUIModel.setStatusValue(statusMap
-                        .get(purchaseRequest.getStatus()));
+                if (statusMap != null) {
+                    purchaseRequestUIModel.setStatusValue(statusMap
+                            .get(purchaseRequest.getStatus()));
+                }
             }
             if (purchaseRequest.getPlanExecutionDate() != null) {
                 purchaseRequestUIModel
-                        .setPlanExecutionDate(DefaultDateFormatConstant.DATE_FORMAT
-                                .format(purchaseRequest.getPlanExecutionDate()));
+                        .setPlanExecutionDate(DefaultDateFormatConstant.formatDate(
+                                purchaseRequest.getPlanExecutionDate()));
             }
             purchaseRequestUIModel.setGrossPrice(purchaseRequest.getGrossPrice());
             purchaseRequestUIModel.setGrossPriceDisplay(purchaseRequest.getGrossPriceDisplay());

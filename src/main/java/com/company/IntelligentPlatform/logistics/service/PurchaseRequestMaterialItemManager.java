@@ -119,8 +119,8 @@ public class PurchaseRequestMaterialItemManager {
             docFlowProxy.convParentDocToItemUI(purchaseRequest, purchaseRequestMaterialItemUIModel, logonInfo);
             if(purchaseRequest.getPlanExecutionDate() != null){
                 purchaseRequestMaterialItemUIModel
-                        .setPlanExecutionDate(DefaultDateFormatConstant.DATE_FORMAT
-                                .format(purchaseRequest.getPlanExecutionDate()));
+                        .setPlanExecutionDate(DefaultDateFormatConstant.formatAuto(
+                                purchaseRequest.getPlanExecutionDate()));
             }
         }
     }

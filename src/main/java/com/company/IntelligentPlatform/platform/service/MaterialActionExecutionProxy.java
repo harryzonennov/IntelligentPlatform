@@ -8,11 +8,6 @@ import com.company.IntelligentPlatform.platform.dto.MaterialServiceUIModelExtens
 import com.company.IntelligentPlatform.platform.dto.MaterialUIModel;
 import com.company.IntelligentPlatform.platform.model.Material;
 import com.company.IntelligentPlatform.platform.model.MaterialActionLog;
-import com.company.IntelligentPlatform.platform.service.*;
-import com.company.IntelligentPlatform.platform.service.CrossDocConvertRequest;
-import com.company.IntelligentPlatform.platform.service.DocSplitMergeRequest;
-import com.company.IntelligentPlatform.platform.service.ServiceEntityManager;
-import com.company.IntelligentPlatform.platform.service.ServiceModuleProxyException;
 import com.company.IntelligentPlatform.platform.model.ISystemActionCode;
 import com.company.IntelligentPlatform.platform.model.SerialLogonInfo;
 import com.company.IntelligentPlatform.platform.model.DocMatItemNode;

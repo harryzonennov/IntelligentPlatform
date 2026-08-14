@@ -132,15 +132,21 @@ public class StandardMaterialUnitManager extends ServiceEntityManager {
 					.getUnitType());
 			if (logonInfo != null) {
 				Map<Integer, String> unitTypeMap = this.initUnitTypeMap(logonInfo.getLanguageCode());
-				standardMaterialUnitUIModel.setUnitTypeValue(unitTypeMap
-						.get(standardMaterialUnit.getUnitCategory()));
-				Map<Integer, String> unitCategoryMap =  this.initUnitCategoryMap(logonInfo.getLanguageCode());
-				standardMaterialUnitUIModel
-						.setUnitCategoryValue(unitCategoryMap
-								.get(standardMaterialUnit.getUnitCategory()));
-				Map<Integer, String>  systemCategoryMap = this.initSystemCategoryMap(logonInfo.getLanguageCode());
-				standardMaterialUnitUIModel.setSystemCategoryValue(systemCategoryMap.get(standardMaterialUnit
-						.getSystemCategory()));
+				if (unitTypeMap != null) {
+					standardMaterialUnitUIModel.setUnitTypeValue(unitTypeMap
+							.get(standardMaterialUnit.getUnitCategory()));
+				}
+				Map<Integer, String> unitCategoryMap = this.initUnitCategoryMap(logonInfo.getLanguageCode());
+				if (unitCategoryMap != null) {
+					standardMaterialUnitUIModel
+							.setUnitCategoryValue(unitCategoryMap
+									.get(standardMaterialUnit.getUnitCategory()));
+				}
+				Map<Integer, String> systemCategoryMap = this.initSystemCategoryMap(logonInfo.getLanguageCode());
+				if (systemCategoryMap != null) {
+					standardMaterialUnitUIModel.setSystemCategoryValue(systemCategoryMap.get(standardMaterialUnit
+							.getSystemCategory()));
+				}
 			}
 			standardMaterialUnitUIModel.setUnitCategory(standardMaterialUnit
 					.getUnitCategory());

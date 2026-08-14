@@ -1116,13 +1116,13 @@ public class ProductionOrderItemManager {
             productionOrderItemUIModel.setItemCostActual(productionOrderItem.getItemCostActual());
             productionOrderItemUIModel.setItemCostLossRate(productionOrderItem.getItemCostLossRate());
             if (productionOrderItem.getPlanStartPrepareDate() != null) {
-                productionOrderItemUIModel.setPlanStartPrepareDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(productionOrderItem.getPlanStartPrepareDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                productionOrderItemUIModel.setPlanStartPrepareDate(DefaultDateFormatConstant.formatAuto(productionOrderItem.getPlanStartPrepareDate()));
             }
             if (productionOrderItem.getPlanStartDate() != null) {
-                productionOrderItemUIModel.setPlanStartDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(productionOrderItem.getPlanStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                productionOrderItemUIModel.setPlanStartDate(DefaultDateFormatConstant.formatAuto(productionOrderItem.getPlanStartDate()));
             }
             if (productionOrderItem.getPlanEndDate() != null) {
-                productionOrderItemUIModel.setPlanEndDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(productionOrderItem.getPlanEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                productionOrderItemUIModel.setPlanEndDate(DefaultDateFormatConstant.formatAuto(productionOrderItem.getPlanEndDate()));
             }
             if (logonInfo != null) {
                 Map<Integer, String> itemStatusMap = initItemStatusMap(logonInfo.getLanguageCode());
@@ -1280,16 +1280,16 @@ public class ProductionOrderItemManager {
             docFlowProxy.convDocMatItemToUI(prodOrderItemReqProposal, prodOrderItemReqProposalUIModel, logonInfo);
             prodOrderItemReqProposalUIModel.setRefUUID(prodOrderItemReqProposal.getRefUUID());
             if (prodOrderItemReqProposal.getPlanStartPrepareDate() != null) {
-                prodOrderItemReqProposalUIModel.setPlanStartPrepareDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(prodOrderItemReqProposal.getPlanStartPrepareDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                prodOrderItemReqProposalUIModel.setPlanStartPrepareDate(DefaultDateFormatConstant.formatAuto(prodOrderItemReqProposal.getPlanStartPrepareDate()));
             }
             if (prodOrderItemReqProposal.getPlanStartDate() != null) {
-                prodOrderItemReqProposalUIModel.setPlanStartDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(prodOrderItemReqProposal.getPlanStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                prodOrderItemReqProposalUIModel.setPlanStartDate(DefaultDateFormatConstant.formatAuto(prodOrderItemReqProposal.getPlanStartDate()));
             }
             if (prodOrderItemReqProposal.getPlanEndDate() != null) {
-                prodOrderItemReqProposalUIModel.setPlanEndDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(prodOrderItemReqProposal.getPlanEndDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                prodOrderItemReqProposalUIModel.setPlanEndDate(DefaultDateFormatConstant.formatAuto(prodOrderItemReqProposal.getPlanEndDate()));
             }
             if (prodOrderItemReqProposal.getActualStartDate() != null) {
-                prodOrderItemReqProposalUIModel.setActualStartDate(DefaultDateFormatConstant.formatDateMin(java.util.Date.from(prodOrderItemReqProposal.getActualStartDate().atZone(java.time.ZoneId.systemDefault()).toInstant())));
+                prodOrderItemReqProposalUIModel.setActualStartDate(DefaultDateFormatConstant.formatAuto(prodOrderItemReqProposal.getActualStartDate()));
             }
 
             prodOrderItemReqProposalUIModel.setSelfLeadTime(prodOrderItemReqProposal.getSelfLeadTime());
